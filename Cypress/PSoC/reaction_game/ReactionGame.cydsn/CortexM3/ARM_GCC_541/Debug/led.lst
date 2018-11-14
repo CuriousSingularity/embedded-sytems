@@ -1,0 +1,923 @@
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccdxq9an.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m3
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 1
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.thumb
+  14              		.syntax unified
+  15              		.file	"led.c"
+  16              		.text
+  17              	.Ltext0:
+  18              		.cfi_sections	.debug_frame
+  19              		.section	.text.LEDStateChange,"ax",%progbits
+  20              		.align	2
+  21              		.global	LEDStateChange
+  22              		.thumb
+  23              		.thumb_func
+  24              		.type	LEDStateChange, %function
+  25              	LEDStateChange:
+  26              	.LFB63:
+  27              		.file 1 "source\\bsw\\led.c"
+   1:source\bsw/led.c **** /**
+   2:source\bsw/led.c **** * \file <led.c>
+   3:source\bsw/led.c **** * \author <Bharath Ramachandraiah>
+   4:source\bsw/led.c **** * \date <25/09/2018>
+   5:source\bsw/led.c **** *
+   6:source\bsw/led.c **** * \brief <Symbolic File name>
+   7:source\bsw/led.c **** *
+   8:source\bsw/led.c **** * \copyright Copyright ©2016
+   9:source\bsw/led.c **** * Department of electrical engineering and information technology, Hochschule Darmstadt - Universit
+  10:source\bsw/led.c **** * Permission to use, copy, modify, and distribute this software and its documentation for education
+  11:source\bsw/led.c **** * (unless permitted by h_da) and official h_da projects, is hereby granted for enrolled students of
+  12:source\bsw/led.c **** * this paragraph and the following paragraph appear in all copies, modifications, and distributions
+  13:source\bsw/led.c **** * Contact Prof.Dr.-Ing. Peter Fromm, peter.fromm@h-da.de, Birkenweg 8 64295 Darmstadt - GERMANY for
+  14:source\bsw/led.c **** *
+  15:source\bsw/led.c **** * \warning This software is a PROTOTYPE version and is not designed or intended for use in producti
+  16:source\bsw/led.c **** * The user represents and warrants that it will NOT use or redistribute the Software for such purpo
+  17:source\bsw/led.c **** * This prototype is for research purposes only. This software is provided "AS IS," without a warran
+  18:source\bsw/led.c **** */
+  19:source\bsw/led.c **** 
+  20:source\bsw/led.c **** /*****************************************************************************/
+  21:source\bsw/led.c **** /* Include files                                                             */
+  22:source\bsw/led.c **** /*****************************************************************************/
+  23:source\bsw/led.c **** #include "global.h"
+  24:source\bsw/led.c **** #include "Pin_LedRed.h"
+  25:source\bsw/led.c **** #include "Pin_LedGreen.h"
+  26:source\bsw/led.c **** #include "Pin_LedYellow.h"
+  27:source\bsw/led.c **** #include "led.h"
+  28:source\bsw/led.c **** 
+  29:source\bsw/led.c **** /*****************************************************************************/
+  30:source\bsw/led.c **** /* Local pre-processor symbols/macros ('#define')                            */
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccdxq9an.s 			page 2
+
+
+  31:source\bsw/led.c **** /*****************************************************************************/
+  32:source\bsw/led.c **** 
+  33:source\bsw/led.c **** /*****************************************************************************/
+  34:source\bsw/led.c **** /* Global variable definitions (declared in header file with 'extern')       */
+  35:source\bsw/led.c **** /*****************************************************************************/
+  36:source\bsw/led.c **** 
+  37:source\bsw/led.c **** /*****************************************************************************/
+  38:source\bsw/led.c **** /* Local type definitions ('typedef')                                        */
+  39:source\bsw/led.c **** /*****************************************************************************/
+  40:source\bsw/led.c **** 
+  41:source\bsw/led.c **** /*****************************************************************************/
+  42:source\bsw/led.c **** /* Local variable definitions ('static')                                     */
+  43:source\bsw/led.c **** /*****************************************************************************/
+  44:source\bsw/led.c **** 
+  45:source\bsw/led.c **** 
+  46:source\bsw/led.c **** 
+  47:source\bsw/led.c **** /*****************************************************************************/
+  48:source\bsw/led.c **** /* Local function prototypes ('static')                                      */
+  49:source\bsw/led.c **** /*****************************************************************************/
+  50:source\bsw/led.c **** 
+  51:source\bsw/led.c **** 
+  52:source\bsw/led.c **** /*****************************************************************************/
+  53:source\bsw/led.c **** /* Function implementation - global ('extern') and local ('static')          */
+  54:source\bsw/led.c **** /*****************************************************************************/
+  55:source\bsw/led.c **** 
+  56:source\bsw/led.c **** /**
+  57:source\bsw/led.c ****  * A Generic function which changes the state of an led between ON and OFF.
+  58:source\bsw/led.c ****  * @param eLEDTypes_t Pin       : IN Led Type (Red, Yellow, Green or all)
+  59:source\bsw/led.c ****  * @param int Value             : IN ON or OFF
+  60:source\bsw/led.c ****  * @return the changed state of the requested LED/s.
+  61:source\bsw/led.c ****  */
+  62:source\bsw/led.c **** void LEDStateChange(eLEDTypes_t Pin, uint8_t Value)
+  63:source\bsw/led.c **** {
+  28              		.loc 1 63 0
+  29              		.cfi_startproc
+  30              		@ args = 0, pretend = 0, frame = 0
+  31              		@ frame_needed = 0, uses_anonymous_args = 0
+  32              	.LVL0:
+  33 0000 10B5     		push	{r4, lr}
+  34              		.cfi_def_cfa_offset 8
+  35              		.cfi_offset 4, -8
+  36              		.cfi_offset 14, -4
+  64:source\bsw/led.c ****     /* If the Value is non-zero turn ON else OFF*/
+  65:source\bsw/led.c ****     Value = Value ? 1 : 0;
+  37              		.loc 1 65 0
+  38 0002 0C1C     		adds	r4, r1, #0
+  39 0004 18BF     		it	ne
+  40 0006 0124     		movne	r4, #1
+  41              	.LVL1:
+  66:source\bsw/led.c ****     
+  67:source\bsw/led.c ****     switch (Pin)
+  42              		.loc 1 67 0
+  43 0008 0328     		cmp	r0, #3
+  44 000a 18D8     		bhi	.L1
+  45 000c DFE800F0 		tbb	[pc, r0]
+  46              	.L4:
+  47 0010 02       		.byte	(.L3-.L4)/2
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccdxq9an.s 			page 3
+
+
+  48 0011 06       		.byte	(.L5-.L4)/2
+  49 0012 0A       		.byte	(.L6-.L4)/2
+  50 0013 0E       		.byte	(.L7-.L4)/2
+  51              		.p2align 1
+  52              	.L3:
+  68:source\bsw/led.c ****     {
+  69:source\bsw/led.c ****         case LED_RED:
+  70:source\bsw/led.c ****             Pin_LedRed_Write(Value);
+  53              		.loc 1 70 0
+  54 0014 2046     		mov	r0, r4
+  55              	.LVL2:
+  56 0016 FFF7FEFF 		bl	Pin_LedRed_Write
+  57              	.LVL3:
+  71:source\bsw/led.c ****         break;
+  58              		.loc 1 71 0
+  59 001a 10BD     		pop	{r4, pc}
+  60              	.LVL4:
+  61              	.L5:
+  72:source\bsw/led.c ****         
+  73:source\bsw/led.c ****         case LED_GREEN:
+  74:source\bsw/led.c ****             Pin_LedGreen_Write(Value);
+  62              		.loc 1 74 0
+  63 001c 2046     		mov	r0, r4
+  64              	.LVL5:
+  65 001e FFF7FEFF 		bl	Pin_LedGreen_Write
+  66              	.LVL6:
+  75:source\bsw/led.c ****         break;
+  67              		.loc 1 75 0
+  68 0022 10BD     		pop	{r4, pc}
+  69              	.LVL7:
+  70              	.L6:
+  76:source\bsw/led.c ****         
+  77:source\bsw/led.c ****         case LED_YELLOW:
+  78:source\bsw/led.c ****             Pin_LedYellow_Write(Value);
+  71              		.loc 1 78 0
+  72 0024 2046     		mov	r0, r4
+  73              	.LVL8:
+  74 0026 FFF7FEFF 		bl	Pin_LedYellow_Write
+  75              	.LVL9:
+  79:source\bsw/led.c ****         break;
+  76              		.loc 1 79 0
+  77 002a 10BD     		pop	{r4, pc}
+  78              	.LVL10:
+  79              	.L7:
+  80:source\bsw/led.c ****         
+  81:source\bsw/led.c ****         case LED_ALL:
+  82:source\bsw/led.c ****             Pin_LedRed_Write(Value);
+  80              		.loc 1 82 0
+  81 002c 2046     		mov	r0, r4
+  82              	.LVL11:
+  83 002e FFF7FEFF 		bl	Pin_LedRed_Write
+  84              	.LVL12:
+  83:source\bsw/led.c ****             Pin_LedGreen_Write(Value);
+  85              		.loc 1 83 0
+  86 0032 2046     		mov	r0, r4
+  87 0034 FFF7FEFF 		bl	Pin_LedGreen_Write
+  88              	.LVL13:
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccdxq9an.s 			page 4
+
+
+  84:source\bsw/led.c ****             Pin_LedYellow_Write(Value);
+  89              		.loc 1 84 0
+  90 0038 2046     		mov	r0, r4
+  91 003a FFF7FEFF 		bl	Pin_LedYellow_Write
+  92              	.LVL14:
+  93              	.L1:
+  94 003e 10BD     		pop	{r4, pc}
+  95              		.cfi_endproc
+  96              	.LFE63:
+  97              		.size	LEDStateChange, .-LEDStateChange
+  98              		.text
+  99              	.Letext0:
+ 100              		.file 2 "c:\\program files (x86)\\cypress\\psoc creator\\4.2\\psoc creator\\import\\gnu\\arm\\5.4.
+ 101              		.file 3 "c:\\program files (x86)\\cypress\\psoc creator\\4.2\\psoc creator\\import\\gnu\\arm\\5.4.
+ 102              		.file 4 "source\\bsw\\led.h"
+ 103              		.file 5 "Generated_Source\\PSoC5/Pin_LedRed.h"
+ 104              		.file 6 "Generated_Source\\PSoC5/Pin_LedGreen.h"
+ 105              		.file 7 "Generated_Source\\PSoC5/Pin_LedYellow.h"
+ 106              		.file 8 "Generated_Source\\PSoC5/core_cm3.h"
+ 107              		.section	.debug_info,"",%progbits
+ 108              	.Ldebug_info0:
+ 109 0000 C5010000 		.4byte	0x1c5
+ 110 0004 0400     		.2byte	0x4
+ 111 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 112 000a 04       		.byte	0x4
+ 113 000b 01       		.uleb128 0x1
+ 114 000c 9D000000 		.4byte	.LASF27
+ 115 0010 0C       		.byte	0xc
+ 116 0011 F5010000 		.4byte	.LASF28
+ 117 0015 30000000 		.4byte	.LASF29
+ 118 0019 00000000 		.4byte	.Ldebug_ranges0+0
+ 119 001d 00000000 		.4byte	0
+ 120 0021 00000000 		.4byte	.Ldebug_line0
+ 121 0025 02       		.uleb128 0x2
+ 122 0026 01       		.byte	0x1
+ 123 0027 06       		.byte	0x6
+ 124 0028 48020000 		.4byte	.LASF0
+ 125 002c 03       		.uleb128 0x3
+ 126 002d 0A000000 		.4byte	.LASF4
+ 127 0031 02       		.byte	0x2
+ 128 0032 1D       		.byte	0x1d
+ 129 0033 37000000 		.4byte	0x37
+ 130 0037 02       		.uleb128 0x2
+ 131 0038 01       		.byte	0x1
+ 132 0039 08       		.byte	0x8
+ 133 003a 8F000000 		.4byte	.LASF1
+ 134 003e 02       		.uleb128 0x2
+ 135 003f 02       		.byte	0x2
+ 136 0040 05       		.byte	0x5
+ 137 0041 8A010000 		.4byte	.LASF2
+ 138 0045 02       		.uleb128 0x2
+ 139 0046 02       		.byte	0x2
+ 140 0047 07       		.byte	0x7
+ 141 0048 3F010000 		.4byte	.LASF3
+ 142 004c 03       		.uleb128 0x3
+ 143 004d 1F000000 		.4byte	.LASF5
+ 144 0051 02       		.byte	0x2
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccdxq9an.s 			page 5
+
+
+ 145 0052 3F       		.byte	0x3f
+ 146 0053 57000000 		.4byte	0x57
+ 147 0057 02       		.uleb128 0x2
+ 148 0058 04       		.byte	0x4
+ 149 0059 05       		.byte	0x5
+ 150 005a 1A020000 		.4byte	.LASF6
+ 151 005e 02       		.uleb128 0x2
+ 152 005f 04       		.byte	0x4
+ 153 0060 07       		.byte	0x7
+ 154 0061 78010000 		.4byte	.LASF7
+ 155 0065 02       		.uleb128 0x2
+ 156 0066 08       		.byte	0x8
+ 157 0067 05       		.byte	0x5
+ 158 0068 E2010000 		.4byte	.LASF8
+ 159 006c 02       		.uleb128 0x2
+ 160 006d 08       		.byte	0x8
+ 161 006e 07       		.byte	0x7
+ 162 006f A1010000 		.4byte	.LASF9
+ 163 0073 04       		.uleb128 0x4
+ 164 0074 04       		.byte	0x4
+ 165 0075 05       		.byte	0x5
+ 166 0076 696E7400 		.ascii	"int\000"
+ 167 007a 02       		.uleb128 0x2
+ 168 007b 04       		.byte	0x4
+ 169 007c 07       		.byte	0x7
+ 170 007d 94010000 		.4byte	.LASF10
+ 171 0081 03       		.uleb128 0x3
+ 172 0082 B8010000 		.4byte	.LASF11
+ 173 0086 03       		.byte	0x3
+ 174 0087 18       		.byte	0x18
+ 175 0088 2C000000 		.4byte	0x2c
+ 176 008c 03       		.uleb128 0x3
+ 177 008d C0010000 		.4byte	.LASF12
+ 178 0091 03       		.byte	0x3
+ 179 0092 2C       		.byte	0x2c
+ 180 0093 4C000000 		.4byte	0x4c
+ 181 0097 02       		.uleb128 0x2
+ 182 0098 04       		.byte	0x4
+ 183 0099 04       		.byte	0x4
+ 184 009a 89000000 		.4byte	.LASF13
+ 185 009e 02       		.uleb128 0x2
+ 186 009f 08       		.byte	0x8
+ 187 00a0 04       		.byte	0x4
+ 188 00a1 29000000 		.4byte	.LASF14
+ 189 00a5 02       		.uleb128 0x2
+ 190 00a6 01       		.byte	0x1
+ 191 00a7 08       		.byte	0x8
+ 192 00a8 F0010000 		.4byte	.LASF15
+ 193 00ac 02       		.uleb128 0x2
+ 194 00ad 08       		.byte	0x8
+ 195 00ae 04       		.byte	0x4
+ 196 00af 32020000 		.4byte	.LASF16
+ 197 00b3 02       		.uleb128 0x2
+ 198 00b4 04       		.byte	0x4
+ 199 00b5 07       		.byte	0x7
+ 200 00b6 C8010000 		.4byte	.LASF17
+ 201 00ba 05       		.uleb128 0x5
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccdxq9an.s 			page 6
+
+
+ 202 00bb 00000000 		.4byte	.LASF30
+ 203 00bf 01       		.byte	0x1
+ 204 00c0 37000000 		.4byte	0x37
+ 205 00c4 04       		.byte	0x4
+ 206 00c5 56       		.byte	0x56
+ 207 00c6 E3000000 		.4byte	0xe3
+ 208 00ca 06       		.uleb128 0x6
+ 209 00cb 54020000 		.4byte	.LASF18
+ 210 00cf 00       		.byte	0
+ 211 00d0 06       		.uleb128 0x6
+ 212 00d1 3E020000 		.4byte	.LASF19
+ 213 00d5 01       		.byte	0x1
+ 214 00d6 06       		.uleb128 0x6
+ 215 00d7 14000000 		.4byte	.LASF20
+ 216 00db 02       		.byte	0x2
+ 217 00dc 06       		.uleb128 0x6
+ 218 00dd 06020000 		.4byte	.LASF21
+ 219 00e1 03       		.byte	0x3
+ 220 00e2 00       		.byte	0
+ 221 00e3 03       		.uleb128 0x3
+ 222 00e4 0E020000 		.4byte	.LASF22
+ 223 00e8 04       		.byte	0x4
+ 224 00e9 5D       		.byte	0x5d
+ 225 00ea BA000000 		.4byte	0xba
+ 226 00ee 07       		.uleb128 0x7
+ 227 00ef 23020000 		.4byte	.LASF31
+ 228 00f3 01       		.byte	0x1
+ 229 00f4 3E       		.byte	0x3e
+ 230 00f5 00000000 		.4byte	.LFB63
+ 231 00f9 40000000 		.4byte	.LFE63-.LFB63
+ 232 00fd 01       		.uleb128 0x1
+ 233 00fe 9C       		.byte	0x9c
+ 234 00ff 96010000 		.4byte	0x196
+ 235 0103 08       		.uleb128 0x8
+ 236 0104 50696E00 		.ascii	"Pin\000"
+ 237 0108 01       		.byte	0x1
+ 238 0109 3E       		.byte	0x3e
+ 239 010a E3000000 		.4byte	0xe3
+ 240 010e 00000000 		.4byte	.LLST0
+ 241 0112 09       		.uleb128 0x9
+ 242 0113 72010000 		.4byte	.LASF23
+ 243 0117 01       		.byte	0x1
+ 244 0118 3E       		.byte	0x3e
+ 245 0119 81000000 		.4byte	0x81
+ 246 011d 6C000000 		.4byte	.LLST1
+ 247 0121 0A       		.uleb128 0xa
+ 248 0122 1A000000 		.4byte	.LVL3
+ 249 0126 A7010000 		.4byte	0x1a7
+ 250 012a 35010000 		.4byte	0x135
+ 251 012e 0B       		.uleb128 0xb
+ 252 012f 01       		.uleb128 0x1
+ 253 0130 50       		.byte	0x50
+ 254 0131 02       		.uleb128 0x2
+ 255 0132 74       		.byte	0x74
+ 256 0133 00       		.sleb128 0
+ 257 0134 00       		.byte	0
+ 258 0135 0A       		.uleb128 0xa
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccdxq9an.s 			page 7
+
+
+ 259 0136 22000000 		.4byte	.LVL6
+ 260 013a B2010000 		.4byte	0x1b2
+ 261 013e 49010000 		.4byte	0x149
+ 262 0142 0B       		.uleb128 0xb
+ 263 0143 01       		.uleb128 0x1
+ 264 0144 50       		.byte	0x50
+ 265 0145 02       		.uleb128 0x2
+ 266 0146 74       		.byte	0x74
+ 267 0147 00       		.sleb128 0
+ 268 0148 00       		.byte	0
+ 269 0149 0A       		.uleb128 0xa
+ 270 014a 2A000000 		.4byte	.LVL9
+ 271 014e BD010000 		.4byte	0x1bd
+ 272 0152 5D010000 		.4byte	0x15d
+ 273 0156 0B       		.uleb128 0xb
+ 274 0157 01       		.uleb128 0x1
+ 275 0158 50       		.byte	0x50
+ 276 0159 02       		.uleb128 0x2
+ 277 015a 74       		.byte	0x74
+ 278 015b 00       		.sleb128 0
+ 279 015c 00       		.byte	0
+ 280 015d 0A       		.uleb128 0xa
+ 281 015e 32000000 		.4byte	.LVL12
+ 282 0162 A7010000 		.4byte	0x1a7
+ 283 0166 71010000 		.4byte	0x171
+ 284 016a 0B       		.uleb128 0xb
+ 285 016b 01       		.uleb128 0x1
+ 286 016c 50       		.byte	0x50
+ 287 016d 02       		.uleb128 0x2
+ 288 016e 74       		.byte	0x74
+ 289 016f 00       		.sleb128 0
+ 290 0170 00       		.byte	0
+ 291 0171 0A       		.uleb128 0xa
+ 292 0172 38000000 		.4byte	.LVL13
+ 293 0176 B2010000 		.4byte	0x1b2
+ 294 017a 85010000 		.4byte	0x185
+ 295 017e 0B       		.uleb128 0xb
+ 296 017f 01       		.uleb128 0x1
+ 297 0180 50       		.byte	0x50
+ 298 0181 02       		.uleb128 0x2
+ 299 0182 74       		.byte	0x74
+ 300 0183 00       		.sleb128 0
+ 301 0184 00       		.byte	0
+ 302 0185 0C       		.uleb128 0xc
+ 303 0186 3E000000 		.4byte	.LVL14
+ 304 018a BD010000 		.4byte	0x1bd
+ 305 018e 0B       		.uleb128 0xb
+ 306 018f 01       		.uleb128 0x1
+ 307 0190 50       		.byte	0x50
+ 308 0191 02       		.uleb128 0x2
+ 309 0192 74       		.byte	0x74
+ 310 0193 00       		.sleb128 0
+ 311 0194 00       		.byte	0
+ 312 0195 00       		.byte	0
+ 313 0196 0D       		.uleb128 0xd
+ 314 0197 65010000 		.4byte	.LASF32
+ 315 019b 08       		.byte	0x8
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccdxq9an.s 			page 8
+
+
+ 316 019c 1207     		.2byte	0x712
+ 317 019e A2010000 		.4byte	0x1a2
+ 318 01a2 0E       		.uleb128 0xe
+ 319 01a3 8C000000 		.4byte	0x8c
+ 320 01a7 0F       		.uleb128 0xf
+ 321 01a8 D1010000 		.4byte	.LASF24
+ 322 01ac D1010000 		.4byte	.LASF24
+ 323 01b0 05       		.byte	0x5
+ 324 01b1 26       		.byte	0x26
+ 325 01b2 0F       		.uleb128 0xf
+ 326 01b3 52010000 		.4byte	.LASF25
+ 327 01b7 52010000 		.4byte	.LASF25
+ 328 01bb 06       		.byte	0x6
+ 329 01bc 26       		.byte	0x26
+ 330 01bd 0F       		.uleb128 0xf
+ 331 01be 2B010000 		.4byte	.LASF26
+ 332 01c2 2B010000 		.4byte	.LASF26
+ 333 01c6 07       		.byte	0x7
+ 334 01c7 26       		.byte	0x26
+ 335 01c8 00       		.byte	0
+ 336              		.section	.debug_abbrev,"",%progbits
+ 337              	.Ldebug_abbrev0:
+ 338 0000 01       		.uleb128 0x1
+ 339 0001 11       		.uleb128 0x11
+ 340 0002 01       		.byte	0x1
+ 341 0003 25       		.uleb128 0x25
+ 342 0004 0E       		.uleb128 0xe
+ 343 0005 13       		.uleb128 0x13
+ 344 0006 0B       		.uleb128 0xb
+ 345 0007 03       		.uleb128 0x3
+ 346 0008 0E       		.uleb128 0xe
+ 347 0009 1B       		.uleb128 0x1b
+ 348 000a 0E       		.uleb128 0xe
+ 349 000b 55       		.uleb128 0x55
+ 350 000c 17       		.uleb128 0x17
+ 351 000d 11       		.uleb128 0x11
+ 352 000e 01       		.uleb128 0x1
+ 353 000f 10       		.uleb128 0x10
+ 354 0010 17       		.uleb128 0x17
+ 355 0011 00       		.byte	0
+ 356 0012 00       		.byte	0
+ 357 0013 02       		.uleb128 0x2
+ 358 0014 24       		.uleb128 0x24
+ 359 0015 00       		.byte	0
+ 360 0016 0B       		.uleb128 0xb
+ 361 0017 0B       		.uleb128 0xb
+ 362 0018 3E       		.uleb128 0x3e
+ 363 0019 0B       		.uleb128 0xb
+ 364 001a 03       		.uleb128 0x3
+ 365 001b 0E       		.uleb128 0xe
+ 366 001c 00       		.byte	0
+ 367 001d 00       		.byte	0
+ 368 001e 03       		.uleb128 0x3
+ 369 001f 16       		.uleb128 0x16
+ 370 0020 00       		.byte	0
+ 371 0021 03       		.uleb128 0x3
+ 372 0022 0E       		.uleb128 0xe
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccdxq9an.s 			page 9
+
+
+ 373 0023 3A       		.uleb128 0x3a
+ 374 0024 0B       		.uleb128 0xb
+ 375 0025 3B       		.uleb128 0x3b
+ 376 0026 0B       		.uleb128 0xb
+ 377 0027 49       		.uleb128 0x49
+ 378 0028 13       		.uleb128 0x13
+ 379 0029 00       		.byte	0
+ 380 002a 00       		.byte	0
+ 381 002b 04       		.uleb128 0x4
+ 382 002c 24       		.uleb128 0x24
+ 383 002d 00       		.byte	0
+ 384 002e 0B       		.uleb128 0xb
+ 385 002f 0B       		.uleb128 0xb
+ 386 0030 3E       		.uleb128 0x3e
+ 387 0031 0B       		.uleb128 0xb
+ 388 0032 03       		.uleb128 0x3
+ 389 0033 08       		.uleb128 0x8
+ 390 0034 00       		.byte	0
+ 391 0035 00       		.byte	0
+ 392 0036 05       		.uleb128 0x5
+ 393 0037 04       		.uleb128 0x4
+ 394 0038 01       		.byte	0x1
+ 395 0039 03       		.uleb128 0x3
+ 396 003a 0E       		.uleb128 0xe
+ 397 003b 0B       		.uleb128 0xb
+ 398 003c 0B       		.uleb128 0xb
+ 399 003d 49       		.uleb128 0x49
+ 400 003e 13       		.uleb128 0x13
+ 401 003f 3A       		.uleb128 0x3a
+ 402 0040 0B       		.uleb128 0xb
+ 403 0041 3B       		.uleb128 0x3b
+ 404 0042 0B       		.uleb128 0xb
+ 405 0043 01       		.uleb128 0x1
+ 406 0044 13       		.uleb128 0x13
+ 407 0045 00       		.byte	0
+ 408 0046 00       		.byte	0
+ 409 0047 06       		.uleb128 0x6
+ 410 0048 28       		.uleb128 0x28
+ 411 0049 00       		.byte	0
+ 412 004a 03       		.uleb128 0x3
+ 413 004b 0E       		.uleb128 0xe
+ 414 004c 1C       		.uleb128 0x1c
+ 415 004d 0B       		.uleb128 0xb
+ 416 004e 00       		.byte	0
+ 417 004f 00       		.byte	0
+ 418 0050 07       		.uleb128 0x7
+ 419 0051 2E       		.uleb128 0x2e
+ 420 0052 01       		.byte	0x1
+ 421 0053 3F       		.uleb128 0x3f
+ 422 0054 19       		.uleb128 0x19
+ 423 0055 03       		.uleb128 0x3
+ 424 0056 0E       		.uleb128 0xe
+ 425 0057 3A       		.uleb128 0x3a
+ 426 0058 0B       		.uleb128 0xb
+ 427 0059 3B       		.uleb128 0x3b
+ 428 005a 0B       		.uleb128 0xb
+ 429 005b 27       		.uleb128 0x27
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccdxq9an.s 			page 10
+
+
+ 430 005c 19       		.uleb128 0x19
+ 431 005d 11       		.uleb128 0x11
+ 432 005e 01       		.uleb128 0x1
+ 433 005f 12       		.uleb128 0x12
+ 434 0060 06       		.uleb128 0x6
+ 435 0061 40       		.uleb128 0x40
+ 436 0062 18       		.uleb128 0x18
+ 437 0063 9742     		.uleb128 0x2117
+ 438 0065 19       		.uleb128 0x19
+ 439 0066 01       		.uleb128 0x1
+ 440 0067 13       		.uleb128 0x13
+ 441 0068 00       		.byte	0
+ 442 0069 00       		.byte	0
+ 443 006a 08       		.uleb128 0x8
+ 444 006b 05       		.uleb128 0x5
+ 445 006c 00       		.byte	0
+ 446 006d 03       		.uleb128 0x3
+ 447 006e 08       		.uleb128 0x8
+ 448 006f 3A       		.uleb128 0x3a
+ 449 0070 0B       		.uleb128 0xb
+ 450 0071 3B       		.uleb128 0x3b
+ 451 0072 0B       		.uleb128 0xb
+ 452 0073 49       		.uleb128 0x49
+ 453 0074 13       		.uleb128 0x13
+ 454 0075 02       		.uleb128 0x2
+ 455 0076 17       		.uleb128 0x17
+ 456 0077 00       		.byte	0
+ 457 0078 00       		.byte	0
+ 458 0079 09       		.uleb128 0x9
+ 459 007a 05       		.uleb128 0x5
+ 460 007b 00       		.byte	0
+ 461 007c 03       		.uleb128 0x3
+ 462 007d 0E       		.uleb128 0xe
+ 463 007e 3A       		.uleb128 0x3a
+ 464 007f 0B       		.uleb128 0xb
+ 465 0080 3B       		.uleb128 0x3b
+ 466 0081 0B       		.uleb128 0xb
+ 467 0082 49       		.uleb128 0x49
+ 468 0083 13       		.uleb128 0x13
+ 469 0084 02       		.uleb128 0x2
+ 470 0085 17       		.uleb128 0x17
+ 471 0086 00       		.byte	0
+ 472 0087 00       		.byte	0
+ 473 0088 0A       		.uleb128 0xa
+ 474 0089 898201   		.uleb128 0x4109
+ 475 008c 01       		.byte	0x1
+ 476 008d 11       		.uleb128 0x11
+ 477 008e 01       		.uleb128 0x1
+ 478 008f 31       		.uleb128 0x31
+ 479 0090 13       		.uleb128 0x13
+ 480 0091 01       		.uleb128 0x1
+ 481 0092 13       		.uleb128 0x13
+ 482 0093 00       		.byte	0
+ 483 0094 00       		.byte	0
+ 484 0095 0B       		.uleb128 0xb
+ 485 0096 8A8201   		.uleb128 0x410a
+ 486 0099 00       		.byte	0
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccdxq9an.s 			page 11
+
+
+ 487 009a 02       		.uleb128 0x2
+ 488 009b 18       		.uleb128 0x18
+ 489 009c 9142     		.uleb128 0x2111
+ 490 009e 18       		.uleb128 0x18
+ 491 009f 00       		.byte	0
+ 492 00a0 00       		.byte	0
+ 493 00a1 0C       		.uleb128 0xc
+ 494 00a2 898201   		.uleb128 0x4109
+ 495 00a5 01       		.byte	0x1
+ 496 00a6 11       		.uleb128 0x11
+ 497 00a7 01       		.uleb128 0x1
+ 498 00a8 31       		.uleb128 0x31
+ 499 00a9 13       		.uleb128 0x13
+ 500 00aa 00       		.byte	0
+ 501 00ab 00       		.byte	0
+ 502 00ac 0D       		.uleb128 0xd
+ 503 00ad 34       		.uleb128 0x34
+ 504 00ae 00       		.byte	0
+ 505 00af 03       		.uleb128 0x3
+ 506 00b0 0E       		.uleb128 0xe
+ 507 00b1 3A       		.uleb128 0x3a
+ 508 00b2 0B       		.uleb128 0xb
+ 509 00b3 3B       		.uleb128 0x3b
+ 510 00b4 05       		.uleb128 0x5
+ 511 00b5 49       		.uleb128 0x49
+ 512 00b6 13       		.uleb128 0x13
+ 513 00b7 3F       		.uleb128 0x3f
+ 514 00b8 19       		.uleb128 0x19
+ 515 00b9 3C       		.uleb128 0x3c
+ 516 00ba 19       		.uleb128 0x19
+ 517 00bb 00       		.byte	0
+ 518 00bc 00       		.byte	0
+ 519 00bd 0E       		.uleb128 0xe
+ 520 00be 35       		.uleb128 0x35
+ 521 00bf 00       		.byte	0
+ 522 00c0 49       		.uleb128 0x49
+ 523 00c1 13       		.uleb128 0x13
+ 524 00c2 00       		.byte	0
+ 525 00c3 00       		.byte	0
+ 526 00c4 0F       		.uleb128 0xf
+ 527 00c5 2E       		.uleb128 0x2e
+ 528 00c6 00       		.byte	0
+ 529 00c7 3F       		.uleb128 0x3f
+ 530 00c8 19       		.uleb128 0x19
+ 531 00c9 3C       		.uleb128 0x3c
+ 532 00ca 19       		.uleb128 0x19
+ 533 00cb 6E       		.uleb128 0x6e
+ 534 00cc 0E       		.uleb128 0xe
+ 535 00cd 03       		.uleb128 0x3
+ 536 00ce 0E       		.uleb128 0xe
+ 537 00cf 3A       		.uleb128 0x3a
+ 538 00d0 0B       		.uleb128 0xb
+ 539 00d1 3B       		.uleb128 0x3b
+ 540 00d2 0B       		.uleb128 0xb
+ 541 00d3 00       		.byte	0
+ 542 00d4 00       		.byte	0
+ 543 00d5 00       		.byte	0
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccdxq9an.s 			page 12
+
+
+ 544              		.section	.debug_loc,"",%progbits
+ 545              	.Ldebug_loc0:
+ 546              	.LLST0:
+ 547 0000 00000000 		.4byte	.LVL0
+ 548 0004 16000000 		.4byte	.LVL2
+ 549 0008 0100     		.2byte	0x1
+ 550 000a 50       		.byte	0x50
+ 551 000b 16000000 		.4byte	.LVL2
+ 552 000f 1C000000 		.4byte	.LVL4
+ 553 0013 0400     		.2byte	0x4
+ 554 0015 F3       		.byte	0xf3
+ 555 0016 01       		.uleb128 0x1
+ 556 0017 50       		.byte	0x50
+ 557 0018 9F       		.byte	0x9f
+ 558 0019 1C000000 		.4byte	.LVL4
+ 559 001d 1E000000 		.4byte	.LVL5
+ 560 0021 0100     		.2byte	0x1
+ 561 0023 50       		.byte	0x50
+ 562 0024 1E000000 		.4byte	.LVL5
+ 563 0028 24000000 		.4byte	.LVL7
+ 564 002c 0400     		.2byte	0x4
+ 565 002e F3       		.byte	0xf3
+ 566 002f 01       		.uleb128 0x1
+ 567 0030 50       		.byte	0x50
+ 568 0031 9F       		.byte	0x9f
+ 569 0032 24000000 		.4byte	.LVL7
+ 570 0036 26000000 		.4byte	.LVL8
+ 571 003a 0100     		.2byte	0x1
+ 572 003c 50       		.byte	0x50
+ 573 003d 26000000 		.4byte	.LVL8
+ 574 0041 2C000000 		.4byte	.LVL10
+ 575 0045 0400     		.2byte	0x4
+ 576 0047 F3       		.byte	0xf3
+ 577 0048 01       		.uleb128 0x1
+ 578 0049 50       		.byte	0x50
+ 579 004a 9F       		.byte	0x9f
+ 580 004b 2C000000 		.4byte	.LVL10
+ 581 004f 2E000000 		.4byte	.LVL11
+ 582 0053 0100     		.2byte	0x1
+ 583 0055 50       		.byte	0x50
+ 584 0056 2E000000 		.4byte	.LVL11
+ 585 005a 40000000 		.4byte	.LFE63
+ 586 005e 0400     		.2byte	0x4
+ 587 0060 F3       		.byte	0xf3
+ 588 0061 01       		.uleb128 0x1
+ 589 0062 50       		.byte	0x50
+ 590 0063 9F       		.byte	0x9f
+ 591 0064 00000000 		.4byte	0
+ 592 0068 00000000 		.4byte	0
+ 593              	.LLST1:
+ 594 006c 00000000 		.4byte	.LVL0
+ 595 0070 08000000 		.4byte	.LVL1
+ 596 0074 0100     		.2byte	0x1
+ 597 0076 51       		.byte	0x51
+ 598 0077 08000000 		.4byte	.LVL1
+ 599 007b 40000000 		.4byte	.LFE63
+ 600 007f 0100     		.2byte	0x1
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccdxq9an.s 			page 13
+
+
+ 601 0081 54       		.byte	0x54
+ 602 0082 00000000 		.4byte	0
+ 603 0086 00000000 		.4byte	0
+ 604              		.section	.debug_aranges,"",%progbits
+ 605 0000 1C000000 		.4byte	0x1c
+ 606 0004 0200     		.2byte	0x2
+ 607 0006 00000000 		.4byte	.Ldebug_info0
+ 608 000a 04       		.byte	0x4
+ 609 000b 00       		.byte	0
+ 610 000c 0000     		.2byte	0
+ 611 000e 0000     		.2byte	0
+ 612 0010 00000000 		.4byte	.LFB63
+ 613 0014 40000000 		.4byte	.LFE63-.LFB63
+ 614 0018 00000000 		.4byte	0
+ 615 001c 00000000 		.4byte	0
+ 616              		.section	.debug_ranges,"",%progbits
+ 617              	.Ldebug_ranges0:
+ 618 0000 00000000 		.4byte	.LFB63
+ 619 0004 40000000 		.4byte	.LFE63
+ 620 0008 00000000 		.4byte	0
+ 621 000c 00000000 		.4byte	0
+ 622              		.section	.debug_line,"",%progbits
+ 623              	.Ldebug_line0:
+ 624 0000 A7010000 		.section	.debug_str,"MS",%progbits,1
+ 624      02008701 
+ 624      00000201 
+ 624      FB0E0D00 
+ 624      01010101 
+ 625              	.LASF30:
+ 626 0000 654C4544 		.ascii	"eLEDTypes\000"
+ 626      54797065 
+ 626      7300
+ 627              	.LASF4:
+ 628 000a 5F5F7569 		.ascii	"__uint8_t\000"
+ 628      6E74385F 
+ 628      7400
+ 629              	.LASF20:
+ 630 0014 4C45445F 		.ascii	"LED_YELLOW\000"
+ 630      59454C4C 
+ 630      4F5700
+ 631              	.LASF5:
+ 632 001f 5F5F696E 		.ascii	"__int32_t\000"
+ 632      7433325F 
+ 632      7400
+ 633              	.LASF14:
+ 634 0029 646F7562 		.ascii	"double\000"
+ 634      6C6500
+ 635              	.LASF29:
+ 636 0030 443A5C48 		.ascii	"D:\\HDA\\Pre-Semester\\2_Microcontroller\\LabWorksp"
+ 636      44415C50 
+ 636      72652D53 
+ 636      656D6573 
+ 636      7465725C 
+ 637 005f 6163655C 		.ascii	"ace\\LabMicrocontroller\\ReactionGame.cydsn\000"
+ 637      4C61624D 
+ 637      6963726F 
+ 637      636F6E74 
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccdxq9an.s 			page 14
+
+
+ 637      726F6C6C 
+ 638              	.LASF13:
+ 639 0089 666C6F61 		.ascii	"float\000"
+ 639      7400
+ 640              	.LASF1:
+ 641 008f 756E7369 		.ascii	"unsigned char\000"
+ 641      676E6564 
+ 641      20636861 
+ 641      7200
+ 642              	.LASF27:
+ 643 009d 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
+ 643      43313120 
+ 643      352E342E 
+ 643      31203230 
+ 643      31363036 
+ 644 00d0 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m3 -mthumb -g -O"
+ 644      20726576 
+ 644      6973696F 
+ 644      6E203233 
+ 644      37373135 
+ 645 0103 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
+ 645      66756E63 
+ 645      74696F6E 
+ 645      2D736563 
+ 645      74696F6E 
+ 646              	.LASF26:
+ 647 012b 50696E5F 		.ascii	"Pin_LedYellow_Write\000"
+ 647      4C656459 
+ 647      656C6C6F 
+ 647      775F5772 
+ 647      69746500 
+ 648              	.LASF3:
+ 649 013f 73686F72 		.ascii	"short unsigned int\000"
+ 649      7420756E 
+ 649      7369676E 
+ 649      65642069 
+ 649      6E7400
+ 650              	.LASF25:
+ 651 0152 50696E5F 		.ascii	"Pin_LedGreen_Write\000"
+ 651      4C656447 
+ 651      7265656E 
+ 651      5F577269 
+ 651      746500
+ 652              	.LASF32:
+ 653 0165 49544D5F 		.ascii	"ITM_RxBuffer\000"
+ 653      52784275 
+ 653      66666572 
+ 653      00
+ 654              	.LASF23:
+ 655 0172 56616C75 		.ascii	"Value\000"
+ 655      6500
+ 656              	.LASF7:
+ 657 0178 6C6F6E67 		.ascii	"long unsigned int\000"
+ 657      20756E73 
+ 657      69676E65 
+ 657      6420696E 
+ 657      7400
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccdxq9an.s 			page 15
+
+
+ 658              	.LASF2:
+ 659 018a 73686F72 		.ascii	"short int\000"
+ 659      7420696E 
+ 659      7400
+ 660              	.LASF10:
+ 661 0194 756E7369 		.ascii	"unsigned int\000"
+ 661      676E6564 
+ 661      20696E74 
+ 661      00
+ 662              	.LASF9:
+ 663 01a1 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 663      206C6F6E 
+ 663      6720756E 
+ 663      7369676E 
+ 663      65642069 
+ 664              	.LASF11:
+ 665 01b8 75696E74 		.ascii	"uint8_t\000"
+ 665      385F7400 
+ 666              	.LASF12:
+ 667 01c0 696E7433 		.ascii	"int32_t\000"
+ 667      325F7400 
+ 668              	.LASF17:
+ 669 01c8 73697A65 		.ascii	"sizetype\000"
+ 669      74797065 
+ 669      00
+ 670              	.LASF24:
+ 671 01d1 50696E5F 		.ascii	"Pin_LedRed_Write\000"
+ 671      4C656452 
+ 671      65645F57 
+ 671      72697465 
+ 671      00
+ 672              	.LASF8:
+ 673 01e2 6C6F6E67 		.ascii	"long long int\000"
+ 673      206C6F6E 
+ 673      6720696E 
+ 673      7400
+ 674              	.LASF15:
+ 675 01f0 63686172 		.ascii	"char\000"
+ 675      00
+ 676              	.LASF28:
+ 677 01f5 736F7572 		.ascii	"source\\bsw\\led.c\000"
+ 677      63655C62 
+ 677      73775C6C 
+ 677      65642E63 
+ 677      00
+ 678              	.LASF21:
+ 679 0206 4C45445F 		.ascii	"LED_ALL\000"
+ 679      414C4C00 
+ 680              	.LASF22:
+ 681 020e 654C4544 		.ascii	"eLEDTypes_t\000"
+ 681      54797065 
+ 681      735F7400 
+ 682              	.LASF6:
+ 683 021a 6C6F6E67 		.ascii	"long int\000"
+ 683      20696E74 
+ 683      00
+ 684              	.LASF31:
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccdxq9an.s 			page 16
+
+
+ 685 0223 4C454453 		.ascii	"LEDStateChange\000"
+ 685      74617465 
+ 685      4368616E 
+ 685      676500
+ 686              	.LASF16:
+ 687 0232 6C6F6E67 		.ascii	"long double\000"
+ 687      20646F75 
+ 687      626C6500 
+ 688              	.LASF19:
+ 689 023e 4C45445F 		.ascii	"LED_GREEN\000"
+ 689      47524545 
+ 689      4E00
+ 690              	.LASF0:
+ 691 0248 7369676E 		.ascii	"signed char\000"
+ 691      65642063 
+ 691      68617200 
+ 692              	.LASF18:
+ 693 0254 4C45445F 		.ascii	"LED_RED\000"
+ 693      52454400 
+ 694              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran
