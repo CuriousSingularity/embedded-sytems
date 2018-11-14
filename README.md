@@ -5,3 +5,5 @@
 		|-> FRDM-KL25z
 	2. TI
 		|-> MSP430
+	3. Cypress
+		|-> PSoC
