@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cc7nas30.s 			page 1
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccaErhNs.s 			page 1
 
 
    1              		.syntax unified
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cc7nas30.s 			page 1
   28:Generated_Source\PSoC5/ErikaOS_ee_evwait.c ****  * exception statement from your version.
   29:Generated_Source\PSoC5/ErikaOS_ee_evwait.c ****  *
   30:Generated_Source\PSoC5/ErikaOS_ee_evwait.c ****  * ERIKA Enterprise is distributed in the hope that it will be
-ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cc7nas30.s 			page 2
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccaErhNs.s 			page 2
 
 
   31:Generated_Source\PSoC5/ErikaOS_ee_evwait.c ****  * useful, but WITHOUT ANY WARRANTY; without even the implied warranty
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cc7nas30.s 			page 1
    2:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_cpu.inc ****  * ERIKA Enterprise - a tiny RTOS for small microcontrollers
    3:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_cpu.inc ****  *
    4:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_cpu.inc ****  * Copyright (C) 2002-2011  Evidence Srl
-ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cc7nas30.s 			page 3
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccaErhNs.s 			page 3
 
 
    5:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_cpu.inc ****  *
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cc7nas30.s 			page 1
   59:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_cpu.inc **** 
   60:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_cpu.inc **** 
   61:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_cpu.inc **** #ifdef __GNU__
-ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cc7nas30.s 			page 4
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccaErhNs.s 			page 4
 
 
   62:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_cpu.inc **** #include "ErikaOS_common_ee_compiler_gcc.inc"
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cc7nas30.s 			page 1
  116:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_cpu.inc **** /* ISR Priority representation type */
  117:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_cpu.inc **** typedef EE_UREG EE_TYPEISR2PRIO;
  118:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_cpu.inc **** 
-ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cc7nas30.s 			page 5
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccaErhNs.s 			page 5
 
 
  119:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_cpu.inc **** /* Thread IDs */
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cc7nas30.s 			page 1
  173:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_cpu.inc **** 
  174:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_cpu.inc **** /* Used to check the value returned by EE_cortex_mx_disableIRQ */
  175:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_cpu.inc **** #define EE_cortex_mx_are_IRQs_enabled(ie) ((ie) ^ 1)
-ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cc7nas30.s 			page 6
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccaErhNs.s 			page 6
 
 
  176:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_cpu.inc **** 
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cc7nas30.s 			page 1
  230:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_cpu.inc **** 	PRIMASK = f;
  231:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_cpu.inc **** #else	/* __KEIL__ */
  232:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_cpu.inc **** 	__ASM volatile("msr primask, %0" :: "r" (f));
-ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cc7nas30.s 			page 7
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccaErhNs.s 			page 7
 
 
  233:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_cpu.inc **** #endif	/* !__KEIL__ */
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cc7nas30.s 			page 1
    7:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc ****  *
    8:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc ****  * ERIKA Enterprise is free software; you can redistribute it
    9:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc ****  * and/or modify it under the terms of the GNU General Public License
-ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cc7nas30.s 			page 8
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccaErhNs.s 			page 8
 
 
   10:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc ****  * version 2 as published by the Free Software Foundation, 
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cc7nas30.s 			page 1
   64:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** #define EE_OS_PARAM(param_name)   EE_os_param param_name
   65:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** #define EE_OS_PARAM_VALUE(param_name, param_value)  \
   66:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc ****   ((param_name).value_param = (param_value))
-ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cc7nas30.s 			page 9
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccaErhNs.s 			page 9
 
 
   67:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** 
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cc7nas30.s 			page 1
  121:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** 
  122:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** #define EE_os_fill_error_data(ServiceID,param1,param2,param3) ((void)0)
  123:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** #endif /* !__OO_ERRORHOOK_NOMACROS__ */
-ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cc7nas30.s 			page 10
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccaErhNs.s 			page 10
 
 
  124:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** 
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cc7nas30.s 			page 1
  178:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** /* Macro used for remapping to prevent compiler warnings on unused parameters */
  179:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** #define EE_os_notify_error_from_us(x,y,z) EE_os_notify_error_from_us_impl(z)
  180:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** 
-ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cc7nas30.s 			page 11
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccaErhNs.s 			page 11
 
 
  181:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** __INLINE__ void  EE_os_notify_error_from_us_impl(
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cc7nas30.s 			page 1
  235:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** #ifndef __PRIVATE_STK_QUERYFIRST__
  236:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** __INLINE__ EE_TID  EE_stk_queryfirst(void)
  237:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** {
-ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cc7nas30.s 			page 12
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccaErhNs.s 			page 12
 
 
  238:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc ****     return EE_stkfirst;  
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cc7nas30.s 			page 1
   46:Generated_Source\PSoC5/ErikaOS_common_ee_primitives.inc ****  */
   47:Generated_Source\PSoC5/ErikaOS_common_ee_primitives.inc **** 
   48:Generated_Source\PSoC5/ErikaOS_common_ee_primitives.inc **** /*
-ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cc7nas30.s 			page 13
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccaErhNs.s 			page 13
 
 
   49:Generated_Source\PSoC5/ErikaOS_common_ee_primitives.inc ****  * PSoC Port and API Generation
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cc7nas30.s 			page 1
   87:Generated_Source\PSoC5/ErikaOS_ee_evwait.c ****       AND is currently not inside a Category 1 ISR the Operating System module
   88:Generated_Source\PSoC5/ErikaOS_ee_evwait.c ****       shall not perform the requested action (the service call shall have no
   89:Generated_Source\PSoC5/ErikaOS_ee_evwait.c ****       effect), and return E_OS_CALLEVEL (see [12], section 13.1) or the
-ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cc7nas30.s 			page 14
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccaErhNs.s 			page 14
 
 
   90:Generated_Source\PSoC5/ErikaOS_ee_evwait.c ****       "invalid value" of  the service. (BSW11009, BSW11013) */
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cc7nas30.s 			page 1
  133:Generated_Source\PSoC5/ErikaOS_ee_evwait.c **** 
  134:Generated_Source\PSoC5/ErikaOS_ee_evwait.c **** #if (defined(EE_AS_OSAPPLICATIONS__)) && (defined(__EE_MEMORY_PROTECTION__))
  135:Generated_Source\PSoC5/ErikaOS_ee_evwait.c **** #if (defined(EE_SYSCALL_NR)) && (defined(EE_MAX_SYS_SERVICEID)) \
-ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cc7nas30.s 			page 15
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccaErhNs.s 			page 15
 
 
  136:Generated_Source\PSoC5/ErikaOS_ee_evwait.c ****   && (EE_SYSCALL_NR > EE_MAX_SYS_SERVICEID)
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cc7nas30.s 			page 1
  265:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** 
  266:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** /* Helper function (0 as increment means next tick)*/
  267:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** void EE_oo_counter_object_insert( CounterObjectType ObjectID, TickType
-ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cc7nas30.s 			page 16
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccaErhNs.s 			page 16
 
 
  268:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc ****   increment );
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cc7nas30.s 			page 1
  322:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** /* cancellation */
  323:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** __INLINE__ void  EE_oo_handle_counter_object_cancellation(
  324:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc ****   CounterObjectType ObjectID )
-ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cc7nas30.s 			page 17
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccaErhNs.s 			page 17
 
 
  325:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** {
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cc7nas30.s 			page 1
  379:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc ****  * Internal data structures and functions
  380:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc ****  ***************************************************************************/
  381:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** 
-ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cc7nas30.s 			page 18
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccaErhNs.s 			page 18
 
 
  382:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** /*
@@ -1078,7 +1078,7 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cc7nas30.s 			page 1
  436:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc ****   } else {
  437:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc ****     x += (EE_INT8)8;
  438:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc ****   }
-ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cc7nas30.s 			page 19
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccaErhNs.s 			page 19
 
 
  439:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc ****   return x;
@@ -1138,7 +1138,7 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cc7nas30.s 			page 1
  493:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** /*
  494:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc ****     Method to release all resources locked by a Thread,
  495:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc ****     used to fulfill AS requirement OS070
-ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cc7nas30.s 			page 20
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccaErhNs.s 			page 20
 
 
  496:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc ****  */
@@ -1198,7 +1198,7 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cc7nas30.s 			page 1
  550:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc ****     When an extended task is transferred from suspended state
  551:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc ****     into ready state all its events have to be cleared cleared
  552:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** */
-ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cc7nas30.s 			page 21
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccaErhNs.s 			page 21
 
 
  553:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** __INLINE__ void  EE_oo_reset_th_event_active(TaskType tnotactive)
@@ -1258,7 +1258,7 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cc7nas30.s 			page 1
  607:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc ****         EE_oo_reset_th_event_active(TaskID);
  608:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc ****     }
  609:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** }
-ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cc7nas30.s 			page 22
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccaErhNs.s 			page 22
 
 
  610:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** #else
@@ -1318,7 +1318,7 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cc7nas30.s 			page 1
  664:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc ****         (EE_as_Application_RAM[EE_as_active_app].
  665:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc ****           TrustedFunctionCallsCounter == 0U) ||
  666:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc ****         (EE_as_Application_ROM[EE_as_active_app].Mode == EE_MEMPROT_TRUST_MODE)
-ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cc7nas30.s 			page 23
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccaErhNs.s 			page 23
 
 
  667:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc ****      )
@@ -1378,7 +1378,7 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cc7nas30.s 			page 1
  717:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** 
  718:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc ****   /* Call the Post Task Hook before change stk data structure */
  719:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc ****   EE_oo_call_PostTaskHook();
-ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cc7nas30.s 			page 24
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccaErhNs.s 			page 24
 
 
  720:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** 
@@ -1438,7 +1438,7 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cc7nas30.s 			page 1
  131 0068 53F82020 		ldr	r2, [r3, r0, lsl #2]
  132 006c 244B     		ldr	r3, .L13+28
  133 006e 1B68     		ldr	r3, [r3]
-ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cc7nas30.s 			page 25
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccaErhNs.s 			page 25
 
 
  134 0070 9A42     		cmp	r2, r3
@@ -1498,7 +1498,7 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cc7nas30.s 			page 1
   26:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_context.inc ****  * this exception to your version of the code, but you are not
   27:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_context.inc ****  * obligated to do so.  If you do not wish to do so, delete this
   28:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_context.inc ****  * exception statement from your version.
-ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cc7nas30.s 			page 26
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccaErhNs.s 			page 26
 
 
   29:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_context.inc ****  *
@@ -1558,7 +1558,7 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cc7nas30.s 			page 1
   83:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_context.inc ****       if is_not_the_current_stack(tos_index) {
   84:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_context.inc ****           save_caller_saved_registers();
   85:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_context.inc ****           switch_stacks(tos_index);
-ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cc7nas30.s 			page 27
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccaErhNs.s 			page 27
 
 
   86:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_context.inc ****           restore_caller_saved_registers();
@@ -1618,7 +1618,7 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cc7nas30.s 			page 1
  140:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_context.inc **** #define EE_std_need_context_change(tid) ((tid) >= 0)
  141:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_context.inc **** 
  142:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_context.inc **** #endif /* __MONO__ */
-ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cc7nas30.s 			page 28
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccaErhNs.s 			page 28
 
 
  143:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_context.inc **** 
@@ -1678,7 +1678,7 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cc7nas30.s 			page 1
  181              	.LVL10:
  567:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc ****       /* if the task was waiting switch the context to restart it */
  182              		.loc 3 567 0
-ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cc7nas30.s 			page 29
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccaErhNs.s 			page 29
 
 
  183 00a8 164B     		ldr	r3, .L13+32
@@ -1738,7 +1738,7 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cc7nas30.s 			page 1
  162:Generated_Source\PSoC5/ErikaOS_ee_evwait.c ****      * check if there is to schedule a ready thread or pop a preempted
  163:Generated_Source\PSoC5/ErikaOS_ee_evwait.c ****      * thread */
  164:Generated_Source\PSoC5/ErikaOS_ee_evwait.c ****     EE_oo_reschedule_on_block();
-ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cc7nas30.s 			page 30
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccaErhNs.s 			page 30
 
 
  165:Generated_Source\PSoC5/ErikaOS_ee_evwait.c **** 
@@ -1798,7 +1798,7 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cc7nas30.s 			page 1
  173:Generated_Source\PSoC5/ErikaOS_ee_evwait.c **** 
  174:Generated_Source\PSoC5/ErikaOS_ee_evwait.c ****   if ( ev != E_OK ) {
  175:Generated_Source\PSoC5/ErikaOS_ee_evwait.c ****     EE_ORTI_set_lasterror(ev);
-ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cc7nas30.s 			page 31
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccaErhNs.s 			page 31
 
 
  176:Generated_Source\PSoC5/ErikaOS_ee_evwait.c ****     EE_oo_notify_error_WaitEvent(Mask, ev);
@@ -1858,7 +1858,7 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cc7nas30.s 			page 1
  304 002e 08       		.byte	0x8
  305 002f D0020000 		.4byte	.LASF1
  306 0033 02       		.uleb128 0x2
-ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cc7nas30.s 			page 32
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccaErhNs.s 			page 32
 
 
  307 0034 02       		.byte	0x2
@@ -1918,7 +1918,7 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cc7nas30.s 			page 1
  361 009a 5D000000 		.4byte	0x5d
  362 009e 04       		.uleb128 0x4
  363 009f 27010000 		.4byte	.LASF14
-ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cc7nas30.s 			page 33
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccaErhNs.s 			page 33
 
 
  364 00a3 06       		.byte	0x6
@@ -1978,7 +1978,7 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cc7nas30.s 			page 1
  418 011d 01       		.byte	0x1
  419 011e 07       		.uleb128 0x7
  420 011f 42010000 		.4byte	.LASF25
-ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cc7nas30.s 			page 34
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccaErhNs.s 			page 34
 
 
  421 0123 02       		.byte	0x2
@@ -2038,7 +2038,7 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cc7nas30.s 			page 1
  475 018e B4000000 		.4byte	0xb4
  476 0192 00       		.byte	0
  477 0193 0C       		.uleb128 0xc
-ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cc7nas30.s 			page 35
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccaErhNs.s 			page 35
 
 
  478 0194 18020000 		.4byte	.LASF36
@@ -2098,7 +2098,7 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cc7nas30.s 			page 1
  532 0209 EC       		.byte	0xec
  533 020a CA000000 		.4byte	0xca
  534 020e 03       		.byte	0x3
-ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cc7nas30.s 			page 36
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccaErhNs.s 			page 36
 
 
  535 020f 0A       		.uleb128 0xa
@@ -2158,7 +2158,7 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cc7nas30.s 			page 1
  589 027c 07       		.byte	0x7
  590 027d 9A03     		.2byte	0x39a
  591 027f 03       		.byte	0x3
-ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cc7nas30.s 			page 37
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccaErhNs.s 			page 37
 
 
  592 0280 90020000 		.4byte	0x290
@@ -2218,7 +2218,7 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cc7nas30.s 			page 1
  646 02ee FF020000 		.4byte	0x2ff
  647 02f2 12       		.uleb128 0x12
  648 02f3 5F000000 		.4byte	.LASF58
-ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cc7nas30.s 			page 38
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccaErhNs.s 			page 38
 
 
  649 02f7 03       		.byte	0x3
@@ -2278,7 +2278,7 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cc7nas30.s 			page 1
  703 0374 01       		.byte	0x1
  704 0375 49       		.byte	0x49
  705 0376 9E030000 		.4byte	0x39e
-ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cc7nas30.s 			page 39
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccaErhNs.s 			page 39
 
 
  706 037a 19       		.uleb128 0x19
@@ -2338,7 +2338,7 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cc7nas30.s 			page 1
  760 0402 1A       		.uleb128 0x1a
  761 0403 5C000000 		.4byte	.LBB98
  762 0407 6A000000 		.4byte	.LBE98-.LBB98
-ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cc7nas30.s 			page 40
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccaErhNs.s 			page 40
 
 
  763 040b 1B       		.uleb128 0x1b
@@ -2398,7 +2398,7 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cc7nas30.s 			page 1
  817 04a5 03       		.byte	0x3
  818 04a6 3F02     		.2byte	0x23f
  819 04a8 BF040000 		.4byte	0x4bf
-ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cc7nas30.s 			page 41
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccaErhNs.s 			page 41
 
 
  820 04ac 20       		.uleb128 0x20
@@ -2458,7 +2458,7 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cc7nas30.s 			page 1
  874 052d 02       		.uleb128 0x2
  875 052e 04       		.byte	0x4
  876 052f 07       		.byte	0x7
-ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cc7nas30.s 			page 42
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccaErhNs.s 			page 42
 
 
  877 0530 4D050000 		.4byte	.LASF63
@@ -2518,7 +2518,7 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cc7nas30.s 			page 1
  931 05b1 D1       		.byte	0xd1
  932 05b2 9C050000 		.4byte	0x59c
  933 05b6 22       		.uleb128 0x22
-ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cc7nas30.s 			page 43
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccaErhNs.s 			page 43
 
 
  934 05b7 B6040000 		.4byte	.LASF69
@@ -2578,7 +2578,7 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cc7nas30.s 			page 1
  988 0639 BF000000 		.4byte	0xbf
  989 063d 26       		.uleb128 0x26
  990 063e 2C020000 		.4byte	.LASF75
-ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cc7nas30.s 			page 44
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccaErhNs.s 			page 44
 
 
  991 0642 07       		.byte	0x7
@@ -2638,7 +2638,7 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cc7nas30.s 			page 1
  1045 0000 01       		.uleb128 0x1
  1046 0001 11       		.uleb128 0x11
  1047 0002 01       		.byte	0x1
-ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cc7nas30.s 			page 45
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccaErhNs.s 			page 45
 
 
  1048 0003 25       		.uleb128 0x25
@@ -2698,7 +2698,7 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cc7nas30.s 			page 1
  1102 0039 03       		.uleb128 0x3
  1103 003a 0E       		.uleb128 0xe
  1104 003b 3A       		.uleb128 0x3a
-ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cc7nas30.s 			page 46
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccaErhNs.s 			page 46
 
 
  1105 003c 0B       		.uleb128 0xb
@@ -2758,7 +2758,7 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cc7nas30.s 			page 1
  1159 0072 0E       		.uleb128 0xe
  1160 0073 3A       		.uleb128 0x3a
  1161 0074 0B       		.uleb128 0xb
-ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cc7nas30.s 			page 47
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccaErhNs.s 			page 47
 
 
  1162 0075 3B       		.uleb128 0x3b
@@ -2818,7 +2818,7 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cc7nas30.s 			page 1
  1216 00ab 05       		.uleb128 0x5
  1217 00ac 00       		.byte	0
  1218 00ad 03       		.uleb128 0x3
-ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cc7nas30.s 			page 48
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccaErhNs.s 			page 48
 
 
  1219 00ae 08       		.uleb128 0x8
@@ -2878,7 +2878,7 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cc7nas30.s 			page 1
  1273 00e4 11       		.uleb128 0x11
  1274 00e5 2E       		.uleb128 0x2e
  1275 00e6 00       		.byte	0
-ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cc7nas30.s 			page 49
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccaErhNs.s 			page 49
 
 
  1276 00e7 03       		.uleb128 0x3
@@ -2938,7 +2938,7 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cc7nas30.s 			page 1
  1330 011d 13       		.uleb128 0x13
  1331 011e 11       		.uleb128 0x11
  1332 011f 01       		.uleb128 0x1
-ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cc7nas30.s 			page 50
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccaErhNs.s 			page 50
 
 
  1333 0120 12       		.uleb128 0x12
@@ -2998,7 +2998,7 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cc7nas30.s 			page 1
  1387 0157 00       		.byte	0
  1388 0158 18       		.uleb128 0x18
  1389 0159 1D       		.uleb128 0x1d
-ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cc7nas30.s 			page 51
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccaErhNs.s 			page 51
 
 
  1390 015a 01       		.byte	0x1
@@ -3058,7 +3058,7 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cc7nas30.s 			page 1
  1444 0190 01       		.uleb128 0x1
  1445 0191 12       		.uleb128 0x12
  1446 0192 06       		.uleb128 0x6
-ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cc7nas30.s 			page 52
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccaErhNs.s 			page 52
 
 
  1447 0193 58       		.uleb128 0x58
@@ -3118,7 +3118,7 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cc7nas30.s 			page 1
  1501 01c9 21       		.uleb128 0x21
  1502 01ca 898201   		.uleb128 0x4109
  1503 01cd 00       		.byte	0
-ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cc7nas30.s 			page 53
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccaErhNs.s 			page 53
 
 
  1504 01ce 11       		.uleb128 0x11
@@ -3178,7 +3178,7 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cc7nas30.s 			page 1
  1558 0204 05       		.uleb128 0x5
  1559 0205 49       		.uleb128 0x49
  1560 0206 13       		.uleb128 0x13
-ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cc7nas30.s 			page 54
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccaErhNs.s 			page 54
 
 
  1561 0207 3F       		.uleb128 0x3f
@@ -3238,7 +3238,7 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cc7nas30.s 			page 1
  1615 0004 42000000 		.4byte	.LVL3
  1616 0008 0100     		.2byte	0x1
  1617 000a 50       		.byte	0x50
-ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cc7nas30.s 			page 55
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccaErhNs.s 			page 55
 
 
  1618 000b 5F000000 		.4byte	.LVL4-1
@@ -3298,7 +3298,7 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cc7nas30.s 			page 1
  1672 0085 CE000000 		.4byte	.LVL16
  1673 0089 D0000000 		.4byte	.LVL17
  1674 008d 0200     		.2byte	0x2
-ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cc7nas30.s 			page 56
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccaErhNs.s 			page 56
 
 
  1675 008f 30       		.byte	0x30
@@ -3358,7 +3358,7 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cc7nas30.s 			page 1
  1729 0121 0100     		.2byte	0x1
  1730 0123 50       		.byte	0x50
  1731 0124 00000000 		.4byte	0
-ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cc7nas30.s 			page 57
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccaErhNs.s 			page 57
 
 
  1732 0128 00000000 		.4byte	0
@@ -3418,7 +3418,7 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cc7nas30.s 			page 1
  1770 003f 45455F55 		.ascii	"EE_UREG\000"
  1770      52454700 
  1771              	.LASF38:
-ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cc7nas30.s 			page 58
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccaErhNs.s 			page 58
 
 
  1772 0047 45455F4F 		.ascii	"EE_ORTI_set_th_priority\000"
@@ -3478,7 +3478,7 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cc7nas30.s 			page 1
  1793      685F7265 
  1793      6164795F 
  1793      7072696F 
-ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cc7nas30.s 			page 59
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccaErhNs.s 			page 59
 
 
  1793      00
@@ -3538,7 +3538,7 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cc7nas30.s 			page 1
  1815      00
  1816              	.LASF6:
  1817 01e9 6C6F6E67 		.ascii	"long long int\000"
-ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cc7nas30.s 			page 60
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccaErhNs.s 			page 60
 
 
  1817      206C6F6E 
@@ -3598,7 +3598,7 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cc7nas30.s 			page 1
  1837      00
  1838              	.LASF9:
  1839 029f 6C6F6E67 		.ascii	"long double\000"
-ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cc7nas30.s 			page 61
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccaErhNs.s 			page 61
 
 
  1839      20646F75 
@@ -3658,7 +3658,7 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cc7nas30.s 			page 1
  1860              	.LASF42:
  1861 0366 45455F73 		.ascii	"EE_stk_queryfirst\000"
  1861      746B5F71 
-ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cc7nas30.s 			page 62
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccaErhNs.s 			page 62
 
 
  1861      75657279 
@@ -3718,7 +3718,7 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cc7nas30.s 			page 1
  1883 040e 416C6172 		.ascii	"AlarmCallback_Context\000"
  1883      6D43616C 
  1883      6C626163 
-ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cc7nas30.s 			page 63
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccaErhNs.s 			page 63
 
 
  1883      6B5F436F 
@@ -3778,7 +3778,7 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cc7nas30.s 			page 1
  1903      65637469 
  1903      6F6E486F 
  1903      6F6B5F43 
-ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cc7nas30.s 			page 64
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccaErhNs.s 			page 64
 
 
  1903      6F6E7465 
@@ -3838,7 +3838,7 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cc7nas30.s 			page 1
  1927 0595 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
  1927      43313120 
  1927      352E342E 
-ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cc7nas30.s 			page 65
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccaErhNs.s 			page 65
 
 
  1927      31203230 

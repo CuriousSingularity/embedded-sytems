@@ -20,6 +20,8 @@
 #include "cyfitter.h"
 #include "cydisabledsheets.h"
 #include "ErikaOS_ee.h"
+#include "UART_LOG.h"
+#include "UART_LOG_IntClock.h"
 #include "core_cm3_psoc5.h"
 #include "CyDmac.h"
 #include "CyFlash.h"

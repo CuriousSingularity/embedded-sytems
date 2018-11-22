@@ -4,6 +4,12 @@ Archive member included to satisfy reference by file (symbol)
                               .\CortexM3\ARM_GCC_541\Debug\Cm3Start.o (CyHalt)
 .\CortexM3\ARM_GCC_541\Debug\ReactionGame.a(cyPm.o)
                               .\CortexM3\ARM_GCC_541\Debug\ReactionGame.a(CyLib.o) (CyPmReadStatus)
+.\CortexM3\ARM_GCC_541\Debug\ReactionGame.a(UART_LOG.o)
+                              .\CortexM3\ARM_GCC_541\Debug\main.o (UART_LOG_Start)
+.\CortexM3\ARM_GCC_541\Debug\ReactionGame.a(UART_LOG_INT.o)
+                              .\CortexM3\ARM_GCC_541\Debug\ReactionGame.a(UART_LOG.o) (UART_LOG_TXISR)
+.\CortexM3\ARM_GCC_541\Debug\ReactionGame.a(UART_LOG_IntClock.o)
+                              .\CortexM3\ARM_GCC_541\Debug\ReactionGame.a(UART_LOG.o) (UART_LOG_IntClock_Start)
 .\CortexM3\ARM_GCC_541\Debug\ReactionGame.a(CyBootAsmGnu.o)
                               .\CortexM3\ARM_GCC_541\Debug\cyfitter_cfg.o (CyDelayCycles)
 .\CortexM3\ARM_GCC_541\Debug\ReactionGame.a(CyFlash.o)
@@ -26,6 +32,7 @@ d:/installations/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/
 Allocating common symbols
 Common symbol       size              file
 
+UART_LOG_txBuffer   0x10              .\CortexM3\ARM_GCC_541\Debug\ReactionGame.a(UART_LOG.o)
 dieTemperature      0x2               .\CortexM3\ARM_GCC_541\Debug\ReactionGame.a(CyFlash.o)
 
 Discarded input sections
@@ -42,6 +49,11 @@ Discarded input sections
  .text          0x00000000        0x0 .\CortexM3\ARM_GCC_541\Debug\main.o
  .data          0x00000000        0x0 .\CortexM3\ARM_GCC_541\Debug\main.o
  .bss           0x00000000        0x0 .\CortexM3\ARM_GCC_541\Debug\main.o
+ .text          0x00000000        0x0 .\CortexM3\ARM_GCC_541\Debug\console.o
+ .data          0x00000000        0x0 .\CortexM3\ARM_GCC_541\Debug\console.o
+ .bss           0x00000000        0x0 .\CortexM3\ARM_GCC_541\Debug\console.o
+ .text.CONSOLE_Write
+                0x00000000        0x8 .\CortexM3\ARM_GCC_541\Debug\console.o
  .text          0x00000000        0x0 .\CortexM3\ARM_GCC_541\Debug\cyfitter_cfg.o
  .data          0x00000000        0x0 .\CortexM3\ARM_GCC_541\Debug\cyfitter_cfg.o
  .bss           0x00000000        0x0 .\CortexM3\ARM_GCC_541\Debug\cyfitter_cfg.o
@@ -122,7 +134,6 @@ Discarded input sections
                 0x00000000       0x18 .\CortexM3\ARM_GCC_541\Debug\ReactionGame.a(CyLib.o)
  .text.CyXTAL_SetWdVoltage
                 0x00000000       0x18 .\CortexM3\ARM_GCC_541\Debug\ReactionGame.a(CyLib.o)
- .text.CyHalt   0x00000000        0x4 .\CortexM3\ARM_GCC_541\Debug\ReactionGame.a(CyLib.o)
  .text.CyPLL_OUT_SetPQ
                 0x00000000       0x60 .\CortexM3\ARM_GCC_541\Debug\ReactionGame.a(CyLib.o)
  .text.CyPLL_OUT_SetSource
@@ -174,12 +185,8 @@ Discarded input sections
                 0x00000000       0x28 .\CortexM3\ARM_GCC_541\Debug\ReactionGame.a(CyLib.o)
  .text.CyIntGetSysVector
                 0x00000000       0x20 .\CortexM3\ARM_GCC_541\Debug\ReactionGame.a(CyLib.o)
- .text.CyIntSetVector
-                0x00000000       0x28 .\CortexM3\ARM_GCC_541\Debug\ReactionGame.a(CyLib.o)
  .text.CyIntGetVector
                 0x00000000       0x24 .\CortexM3\ARM_GCC_541\Debug\ReactionGame.a(CyLib.o)
- .text.CyIntSetPriority
-                0x00000000       0x30 .\CortexM3\ARM_GCC_541\Debug\ReactionGame.a(CyLib.o)
  .text.CyIntGetPriority
                 0x00000000       0x20 .\CortexM3\ARM_GCC_541\Debug\ReactionGame.a(CyLib.o)
  .text.CyIntGetState
@@ -254,6 +261,82 @@ Discarded input sections
  .text.CyPmFtwSetInterval
                 0x00000000       0x5c .\CortexM3\ARM_GCC_541\Debug\ReactionGame.a(cyPm.o)
  .rodata        0x00000000        0xf .\CortexM3\ARM_GCC_541\Debug\ReactionGame.a(cyPm.o)
+ .text          0x00000000        0x0 .\CortexM3\ARM_GCC_541\Debug\ReactionGame.a(UART_LOG.o)
+ .data          0x00000000        0x0 .\CortexM3\ARM_GCC_541\Debug\ReactionGame.a(UART_LOG.o)
+ .text.UART_LOG_Stop
+                0x00000000       0x48 .\CortexM3\ARM_GCC_541\Debug\ReactionGame.a(UART_LOG.o)
+ .text.UART_LOG_ReadControlRegister
+                0x00000000        0x4 .\CortexM3\ARM_GCC_541\Debug\ReactionGame.a(UART_LOG.o)
+ .text.UART_LOG_WriteControlRegister
+                0x00000000        0x4 .\CortexM3\ARM_GCC_541\Debug\ReactionGame.a(UART_LOG.o)
+ .text.UART_LOG_SetRxInterruptMode
+                0x00000000        0xc .\CortexM3\ARM_GCC_541\Debug\ReactionGame.a(UART_LOG.o)
+ .text.UART_LOG_ReadRxData
+                0x00000000        0xc .\CortexM3\ARM_GCC_541\Debug\ReactionGame.a(UART_LOG.o)
+ .text.UART_LOG_ReadRxStatus
+                0x00000000       0x10 .\CortexM3\ARM_GCC_541\Debug\ReactionGame.a(UART_LOG.o)
+ .text.UART_LOG_GetChar
+                0x00000000       0x2c .\CortexM3\ARM_GCC_541\Debug\ReactionGame.a(UART_LOG.o)
+ .text.UART_LOG_GetByte
+                0x00000000       0x14 .\CortexM3\ARM_GCC_541\Debug\ReactionGame.a(UART_LOG.o)
+ .text.UART_LOG_GetRxBufferSize
+                0x00000000       0x18 .\CortexM3\ARM_GCC_541\Debug\ReactionGame.a(UART_LOG.o)
+ .text.UART_LOG_ClearRxBuffer
+                0x00000000       0x24 .\CortexM3\ARM_GCC_541\Debug\ReactionGame.a(UART_LOG.o)
+ .text.UART_LOG_SetRxAddressMode
+                0x00000000        0x4 .\CortexM3\ARM_GCC_541\Debug\ReactionGame.a(UART_LOG.o)
+ .text.UART_LOG_SetRxAddress1
+                0x00000000        0xc .\CortexM3\ARM_GCC_541\Debug\ReactionGame.a(UART_LOG.o)
+ .text.UART_LOG_SetRxAddress2
+                0x00000000        0xc .\CortexM3\ARM_GCC_541\Debug\ReactionGame.a(UART_LOG.o)
+ .text.UART_LOG_SetTxInterruptMode
+                0x00000000        0xc .\CortexM3\ARM_GCC_541\Debug\ReactionGame.a(UART_LOG.o)
+ .text.UART_LOG_WriteTxData
+                0x00000000       0x60 .\CortexM3\ARM_GCC_541\Debug\ReactionGame.a(UART_LOG.o)
+ .text.UART_LOG_ReadTxStatus
+                0x00000000        0xc .\CortexM3\ARM_GCC_541\Debug\ReactionGame.a(UART_LOG.o)
+ .text.UART_LOG_PutChar
+                0x00000000       0x70 .\CortexM3\ARM_GCC_541\Debug\ReactionGame.a(UART_LOG.o)
+ .text.UART_LOG_PutString
+                0x00000000       0x24 .\CortexM3\ARM_GCC_541\Debug\ReactionGame.a(UART_LOG.o)
+ .text.UART_LOG_PutArray
+                0x00000000       0x28 .\CortexM3\ARM_GCC_541\Debug\ReactionGame.a(UART_LOG.o)
+ .text.UART_LOG_PutCRLF
+                0x00000000       0x20 .\CortexM3\ARM_GCC_541\Debug\ReactionGame.a(UART_LOG.o)
+ .text.UART_LOG_GetTxBufferSize
+                0x00000000       0x48 .\CortexM3\ARM_GCC_541\Debug\ReactionGame.a(UART_LOG.o)
+ .text.UART_LOG_ClearTxBuffer
+                0x00000000       0x40 .\CortexM3\ARM_GCC_541\Debug\ReactionGame.a(UART_LOG.o)
+ .text.UART_LOG_SendBreak
+                0x00000000       0x58 .\CortexM3\ARM_GCC_541\Debug\ReactionGame.a(UART_LOG.o)
+ .text.UART_LOG_SetTxAddressMode
+                0x00000000        0x4 .\CortexM3\ARM_GCC_541\Debug\ReactionGame.a(UART_LOG.o)
+ .text          0x00000000        0x0 .\CortexM3\ARM_GCC_541\Debug\ReactionGame.a(UART_LOG_INT.o)
+ .data          0x00000000        0x0 .\CortexM3\ARM_GCC_541\Debug\ReactionGame.a(UART_LOG_INT.o)
+ .bss           0x00000000        0x0 .\CortexM3\ARM_GCC_541\Debug\ReactionGame.a(UART_LOG_INT.o)
+ .text          0x00000000        0x0 .\CortexM3\ARM_GCC_541\Debug\ReactionGame.a(UART_LOG_IntClock.o)
+ .data          0x00000000        0x0 .\CortexM3\ARM_GCC_541\Debug\ReactionGame.a(UART_LOG_IntClock.o)
+ .bss           0x00000000        0x0 .\CortexM3\ARM_GCC_541\Debug\ReactionGame.a(UART_LOG_IntClock.o)
+ .text.UART_LOG_IntClock_Stop
+                0x00000000       0x1c .\CortexM3\ARM_GCC_541\Debug\ReactionGame.a(UART_LOG_IntClock.o)
+ .text.UART_LOG_IntClock_StopBlock
+                0x00000000       0x6c .\CortexM3\ARM_GCC_541\Debug\ReactionGame.a(UART_LOG_IntClock.o)
+ .text.UART_LOG_IntClock_StandbyPower
+                0x00000000       0x20 .\CortexM3\ARM_GCC_541\Debug\ReactionGame.a(UART_LOG_IntClock.o)
+ .text.UART_LOG_IntClock_GetDividerRegister
+                0x00000000        0xc .\CortexM3\ARM_GCC_541\Debug\ReactionGame.a(UART_LOG_IntClock.o)
+ .text.UART_LOG_IntClock_SetModeRegister
+                0x00000000       0x14 .\CortexM3\ARM_GCC_541\Debug\ReactionGame.a(UART_LOG_IntClock.o)
+ .text.UART_LOG_IntClock_ClearModeRegister
+                0x00000000       0x18 .\CortexM3\ARM_GCC_541\Debug\ReactionGame.a(UART_LOG_IntClock.o)
+ .text.UART_LOG_IntClock_GetModeRegister
+                0x00000000       0x10 .\CortexM3\ARM_GCC_541\Debug\ReactionGame.a(UART_LOG_IntClock.o)
+ .text.UART_LOG_IntClock_GetSourceRegister
+                0x00000000       0x10 .\CortexM3\ARM_GCC_541\Debug\ReactionGame.a(UART_LOG_IntClock.o)
+ .text.UART_LOG_IntClock_SetDividerRegister
+                0x00000000       0xd8 .\CortexM3\ARM_GCC_541\Debug\ReactionGame.a(UART_LOG_IntClock.o)
+ .text.UART_LOG_IntClock_SetSourceRegister
+                0x00000000       0x5c .\CortexM3\ARM_GCC_541\Debug\ReactionGame.a(UART_LOG_IntClock.o)
  .data          0x00000000        0x0 .\CortexM3\ARM_GCC_541\Debug\ReactionGame.a(CyBootAsmGnu.o)
  .bss           0x00000000        0x0 .\CortexM3\ARM_GCC_541\Debug\ReactionGame.a(CyBootAsmGnu.o)
  .text          0x00000000        0x0 .\CortexM3\ARM_GCC_541\Debug\ReactionGame.a(CyFlash.o)
@@ -359,6 +442,7 @@ LOAD d:/installations/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1
 LOAD d:/installations/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m/crt0.o
 START GROUP
 LOAD .\CortexM3\ARM_GCC_541\Debug\main.o
+LOAD .\CortexM3\ARM_GCC_541\Debug\console.o
 LOAD .\CortexM3\ARM_GCC_541\Debug\cyfitter_cfg.o
 LOAD .\CortexM3\ARM_GCC_541\Debug\cymetadata.o
 LOAD .\CortexM3\ARM_GCC_541\Debug\Cm3Start.o
@@ -407,7 +491,7 @@ END GROUP
                 0x00000800                ee_size = (CY_APPL_LOADABLE && ! (CY_EE_IN_BTLDR))?(CY_EE_SIZE / CY_APPL_MAX):CY_EE_SIZE
                 [!provide]                PROVIDE (CY_ECC_OFFSET, ecc_offset)
 
-.text           0x00000000      0x36e
+.text           0x00000000      0x58e
  CREATE_OBJECT_SYMBOLS
                 0x00000000                PROVIDE (__cy_interrupt_vector, RomVectors)
  *(.romvectors)
@@ -424,128 +508,154 @@ END GROUP
                 0x00000001                ASSERT ((((appl_start + .) <= 0x10000) || 0x1), DMA Init must be within the first 64k of flash)
  *(.text .text.* .gnu.linkonce.t.*)
  .text          0x00000028       0x5c d:/installations/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m/crtbegin.o
- .text.main     0x00000084        0x4 .\CortexM3\ARM_GCC_541\Debug\main.o
+ .text.main     0x00000084        0xc .\CortexM3\ARM_GCC_541\Debug\main.o
                 0x00000084                main
  .text.CyClockStartupError
-                0x00000088        0x4 .\CortexM3\ARM_GCC_541\Debug\cyfitter_cfg.o
+                0x00000090        0x4 .\CortexM3\ARM_GCC_541\Debug\cyfitter_cfg.o
+ .text.cfg_write_bytes32
+                0x00000094       0x34 .\CortexM3\ARM_GCC_541\Debug\cyfitter_cfg.o
  .text.AnalogSetDefault
-                0x0000008c       0x28 .\CortexM3\ARM_GCC_541\Debug\cyfitter_cfg.o
+                0x000000c8       0x28 .\CortexM3\ARM_GCC_541\Debug\cyfitter_cfg.o
  .text.CYMEMZERO
-                0x000000b4        0xc .\CortexM3\ARM_GCC_541\Debug\cyfitter_cfg.o
+                0x000000f0        0xc .\CortexM3\ARM_GCC_541\Debug\cyfitter_cfg.o
  .text.ClockSetup
-                0x000000c0       0x9c .\CortexM3\ARM_GCC_541\Debug\cyfitter_cfg.o
+                0x000000fc       0xb4 .\CortexM3\ARM_GCC_541\Debug\cyfitter_cfg.o
  .text.CYCONFIGCPY
-                0x0000015c        0x8 .\CortexM3\ARM_GCC_541\Debug\cyfitter_cfg.o
+                0x000001b0        0x8 .\CortexM3\ARM_GCC_541\Debug\cyfitter_cfg.o
  .text.cyfitter_cfg
-                0x00000164       0xa4 .\CortexM3\ARM_GCC_541\Debug\cyfitter_cfg.o
-                0x00000164                cyfitter_cfg
+                0x000001b8       0xfc .\CortexM3\ARM_GCC_541\Debug\cyfitter_cfg.o
+                0x000001b8                cyfitter_cfg
  .text.IntDefaultHandler
-                0x00000208       0x10 .\CortexM3\ARM_GCC_541\Debug\Cm3Start.o
-                0x00000208                IntDefaultHandler
- .text.Start_c  0x00000218       0x4c .\CortexM3\ARM_GCC_541\Debug\Cm3Start.o
-                0x00000218                Start_c
+                0x000002b4       0x10 .\CortexM3\ARM_GCC_541\Debug\Cm3Start.o
+                0x000002b4                IntDefaultHandler
+ .text.Start_c  0x000002c4       0x4c .\CortexM3\ARM_GCC_541\Debug\Cm3Start.o
+                0x000002c4                Start_c
  .text.initialize_psoc
-                0x00000264       0x68 .\CortexM3\ARM_GCC_541\Debug\Cm3Start.o
-                0x00000264                initialize_psoc
- *fill*         0x000002cc        0x4 
- .text          0x000002d0       0x20 .\CortexM3\ARM_GCC_541\Debug\ReactionGame.a(CyBootAsmGnu.o)
-                0x000002d0                CyDelayCycles
-                0x000002e0                CyEnterCriticalSection
-                0x000002e8                CyExitCriticalSection
- .text.__errno  0x000002f0        0xc d:/installations/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-errno.o)
-                0x000002f0                __errno
+                0x00000310       0x68 .\CortexM3\ARM_GCC_541\Debug\Cm3Start.o
+                0x00000310                initialize_psoc
+ .text.CyHalt   0x00000378        0x4 .\CortexM3\ARM_GCC_541\Debug\ReactionGame.a(CyLib.o)
+                0x00000378                CyHalt
+ .text.CyIntSetVector
+                0x0000037c       0x28 .\CortexM3\ARM_GCC_541\Debug\ReactionGame.a(CyLib.o)
+                0x0000037c                CyIntSetVector
+ .text.CyIntSetPriority
+                0x000003a4       0x30 .\CortexM3\ARM_GCC_541\Debug\ReactionGame.a(CyLib.o)
+                0x000003a4                CyIntSetPriority
+ .text.UART_LOG_Init
+                0x000003d4       0x40 .\CortexM3\ARM_GCC_541\Debug\ReactionGame.a(UART_LOG.o)
+                0x000003d4                UART_LOG_Init
+ .text.UART_LOG_Enable
+                0x00000414       0x48 .\CortexM3\ARM_GCC_541\Debug\ReactionGame.a(UART_LOG.o)
+                0x00000414                UART_LOG_Enable
+ .text.UART_LOG_Start
+                0x0000045c       0x1c .\CortexM3\ARM_GCC_541\Debug\ReactionGame.a(UART_LOG.o)
+                0x0000045c                UART_LOG_Start
+ .text.UART_LOG_TXISR
+                0x00000478       0x58 .\CortexM3\ARM_GCC_541\Debug\ReactionGame.a(UART_LOG_INT.o)
+                0x00000478                UART_LOG_TXISR
+ .text.UART_LOG_IntClock_Start
+                0x000004d0       0x1c .\CortexM3\ARM_GCC_541\Debug\ReactionGame.a(UART_LOG_IntClock.o)
+                0x000004d0                UART_LOG_IntClock_Start
+ *fill*         0x000004ec        0x4 
+ .text          0x000004f0       0x20 .\CortexM3\ARM_GCC_541\Debug\ReactionGame.a(CyBootAsmGnu.o)
+                0x000004f0                CyDelayCycles
+                0x00000500                CyEnterCriticalSection
+                0x00000508                CyExitCriticalSection
+ .text.__errno  0x00000510        0xc d:/installations/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-errno.o)
+                0x00000510                __errno
  .text.__libc_init_array
-                0x000002fc       0x4c d:/installations/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-init.o)
-                0x000002fc                __libc_init_array
- .text.memcpy   0x00000348       0x16 d:/installations/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-memcpy-stub.o)
-                0x00000348                memcpy
- .text.memset   0x0000035e       0x10 d:/installations/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-memset.o)
-                0x0000035e                memset
+                0x0000051c       0x4c d:/installations/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-init.o)
+                0x0000051c                __libc_init_array
+ .text.memcpy   0x00000568       0x16 d:/installations/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-memcpy-stub.o)
+                0x00000568                memcpy
+ .text.memset   0x0000057e       0x10 d:/installations/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-memset.o)
+                0x0000057e                memset
  *(.plt)
  *(.gnu.warning)
  *(.glue_7t)
- .glue_7t       0x0000036e        0x0 linker stubs
+ .glue_7t       0x0000058e        0x0 linker stubs
  *(.glue_7)
- .glue_7        0x0000036e        0x0 linker stubs
+ .glue_7        0x0000058e        0x0 linker stubs
  *(.vfp11_veneer)
- .vfp11_veneer  0x0000036e        0x0 linker stubs
+ .vfp11_veneer  0x0000058e        0x0 linker stubs
  *(.bootloader)
  *(.ARM.extab* .gnu.linkonce.armextab.*)
  *(.gcc_except_table)
 
-.v4_bx          0x00000370        0x0
- .v4_bx         0x00000370        0x0 linker stubs
+.v4_bx          0x00000590        0x0
+ .v4_bx         0x00000590        0x0 linker stubs
 
-.iplt           0x00000370        0x0
- .iplt          0x00000370        0x0 d:/installations/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m/crtbegin.o
+.iplt           0x00000590        0x0
+ .iplt          0x00000590        0x0 d:/installations/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m/crtbegin.o
 
 .eh_frame_hdr
  *(.eh_frame_hdr)
 
-.eh_frame       0x00000370        0x4
+.eh_frame       0x00000590        0x4
  *(.eh_frame)
- .eh_frame      0x00000370        0x0 d:/installations/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m/crtbegin.o
- .eh_frame      0x00000370        0x4 d:/installations/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m/crtend.o
+ .eh_frame      0x00000590        0x0 d:/installations/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m/crtbegin.o
+ .eh_frame      0x00000590        0x4 d:/installations/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m/crtend.o
                 [!provide]                PROVIDE (__exidx_start, .)
 
 .ARM.exidx
  *(.ARM.exidx* .gnu.linkonce.armexidx.*)
-                0x00000374                __exidx_end = .
+                0x00000594                __exidx_end = .
 
-.rodata         0x00000374       0x6c
+.rodata         0x00000594       0x74
  *(.rodata .rodata.* .gnu.linkonce.r.*)
- .rodata        0x00000374       0x36 .\CortexM3\ARM_GCC_541\Debug\cyfitter_cfg.o
+ .rodata        0x00000594       0x3a .\CortexM3\ARM_GCC_541\Debug\cyfitter_cfg.o
  .rodata.str1.1
-                0x000003aa        0x2 d:/installations/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-impure.o)
-                0x000003ac                . = ALIGN (0x4)
+                0x000005ce        0x2 d:/installations/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-impure.o)
+                0x000005d0                . = ALIGN (0x4)
  *(.init)
- .init          0x000003ac        0x4 d:/installations/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m/crti.o
-                0x000003ac                _init
- .init          0x000003b0        0x8 d:/installations/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m/crtn.o
-                0x000003b8                . = ALIGN (0x4)
-                0x000003b8                __preinit_array_start = .
+ .init          0x000005d0        0x4 d:/installations/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m/crti.o
+                0x000005d0                _init
+ .init          0x000005d4        0x8 d:/installations/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m/crtn.o
+                0x000005dc                . = ALIGN (0x4)
+                0x000005dc                __preinit_array_start = .
  *(.preinit_array)
-                0x000003b8                __preinit_array_end = .
-                0x000003b8                . = ALIGN (0x4)
-                0x000003b8                __init_array_start = .
+                0x000005dc                __preinit_array_end = .
+                0x000005dc                . = ALIGN (0x4)
+                0x000005dc                __init_array_start = .
  *(SORT(.init_array.*))
  *(.init_array)
- .init_array    0x000003b8        0x4 d:/installations/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m/crtbegin.o
- .init_array    0x000003bc        0x4 .\CortexM3\ARM_GCC_541\Debug\Cm3Start.o
-                0x000003c0                __init_array_end = .
-                0x000003c0                . = ALIGN (0x4)
+ .init_array    0x000005dc        0x4 d:/installations/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m/crtbegin.o
+ .init_array    0x000005e0        0x4 .\CortexM3\ARM_GCC_541\Debug\Cm3Start.o
+                0x000005e4                __init_array_end = .
+                0x000005e4                . = ALIGN (0x4)
  *(.fini)
- .fini          0x000003c0        0x4 d:/installations/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m/crti.o
-                0x000003c0                _fini
- .fini          0x000003c4        0x8 d:/installations/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m/crtn.o
-                0x000003cc                . = ALIGN (0x4)
-                0x000003cc                __fini_array_start = .
+ .fini          0x000005e4        0x4 d:/installations/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m/crti.o
+                0x000005e4                _fini
+ .fini          0x000005e8        0x8 d:/installations/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m/crtn.o
+                0x000005f0                . = ALIGN (0x4)
+                0x000005f0                __fini_array_start = .
  *(.fini_array)
- .fini_array    0x000003cc        0x4 d:/installations/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m/crtbegin.o
+ .fini_array    0x000005f0        0x4 d:/installations/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m/crtbegin.o
  *(SORT(.fini_array.*))
-                0x000003d0                __fini_array_end = .
-                0x000003d0                . = ALIGN (0x4)
+                0x000005f4                __fini_array_end = .
+                0x000005f4                . = ALIGN (0x4)
  *crtbegin.o(.ctors)
  *(EXCLUDE_FILE(*crtend.o) .ctors)
  *(SORT(.ctors.*))
  *crtend.o(.ctors)
-                0x000003d0                . = ALIGN (0x4)
+                0x000005f4                . = ALIGN (0x4)
  *crtbegin.o(.dtors)
  *(EXCLUDE_FILE(*crtend.o) .dtors)
  *(SORT(.dtors.*))
  *crtend.o(.dtors)
-                0x000003d0                . = ALIGN (0x4)
-                0x000003d0                __cy_regions = .
-                0x000003d0        0x4 LONG 0x3e0 __cy_region_init_ram
-                0x000003d4        0x4 LONG 0x1fff80c8 __cy_region_start_data
-                0x000003d8        0x4 LONG 0x68 __cy_region_init_size_ram
-                0x000003dc        0x4 LONG 0x20 __cy_region_zero_size_ram
-                0x000003e0                __cy_regions_end = .
-                0x000003e0                . = ALIGN (0x8)
-                0x000003e0                _etext = .
+                0x000005f4                . = ALIGN (0x4)
+                0x000005f4                __cy_regions = .
+                0x000005f4        0x4 LONG 0x608 __cy_region_init_ram
+                0x000005f8        0x4 LONG 0x1fff80c8 __cy_region_start_data
+                0x000005fc        0x4 LONG 0x68 __cy_region_init_size_ram
+                0x00000600        0x4 LONG 0x30 __cy_region_zero_size_ram
+                0x00000604                __cy_regions_end = .
+                0x00000608                . = ALIGN (0x8)
+ *fill*         0x00000604        0x4 
+                0x00000608                _etext = .
 
 .cy_checksum_exclude
-                0x000003e0        0x0
+                0x00000608        0x0
  *(.cy_checksum_exclude)
 
 .ramvectors     0x1fff8000       0xc0
@@ -559,7 +669,7 @@ END GROUP
  .noinit        0x1fff80c0        0x1 .\CortexM3\ARM_GCC_541\Debug\ReactionGame.a(CyLib.o)
                 0x1fff80c0                CyResetStatus
 
-.data           0x1fff80c8       0x68 load address 0x000003e0
+.data           0x1fff80c8       0x68 load address 0x00000608
                 0x1fff80c8                __cy_region_start_data = .
  *(.jcr)
  .jcr           0x1fff80c8        0x0 d:/installations/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m/crtbegin.o
@@ -577,31 +687,36 @@ END GROUP
  *(.ram)
                 0x1fff8130                _edata = .
 
-.igot.plt       0x1fff8130        0x0 load address 0x00000448
+.igot.plt       0x1fff8130        0x0 load address 0x00000670
  .igot.plt      0x1fff8130        0x0 d:/installations/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m/crtbegin.o
 
-.bss            0x1fff8130       0x20 load address 0x00000448
+.bss            0x1fff8130       0x30 load address 0x00000670
                 0x1fff8130                PROVIDE (__bss_start__, .)
  *(.shbss)
  *(.bss .bss.* .gnu.linkonce.b.*)
  .bss           0x1fff8130       0x1c d:/installations/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m/crtbegin.o
+ .bss           0x1fff814c        0x4 .\CortexM3\ARM_GCC_541\Debug\ReactionGame.a(UART_LOG.o)
+                0x1fff814c                UART_LOG_initVar
+                0x1fff814d                UART_LOG_txBufferRead
+                0x1fff814e                UART_LOG_txBufferWrite
  *(COMMON)
-                0x1fff8150                . = ALIGN (0x8)
- *fill*         0x1fff814c        0x4 
+ COMMON         0x1fff8150       0x10 .\CortexM3\ARM_GCC_541\Debug\ReactionGame.a(UART_LOG.o)
+                0x1fff8150                UART_LOG_txBuffer
+                0x1fff8160                . = ALIGN (0x8)
  *(.ram.b)
-                0x1fff8150                _end = .
-                0x1fff8150                __end = .
-                0x1fff8150                PROVIDE (end, .)
-                0x1fff8150                PROVIDE (__bss_end__, .)
-                0x000003e0                __cy_region_init_ram = LOADADDR (.data)
+                0x1fff8160                _end = .
+                0x1fff8160                __end = .
+                0x1fff8160                PROVIDE (end, .)
+                0x1fff8160                PROVIDE (__bss_end__, .)
+                0x00000608                __cy_region_init_ram = LOADADDR (.data)
                 0x00000068                __cy_region_init_size_ram = (_edata - ADDR (.data))
-                0x00000020                __cy_region_zero_size_ram = (_end - _edata)
+                0x00000030                __cy_region_zero_size_ram = (_end - _edata)
 
-.heap           0x1fff8150       0x80 load address 0x00000448
-                0x1fff8150                . = _end
-                0x1fff81d0                . = (. + 0x80)
- *fill*         0x1fff8150       0x80 
-                0x1fff81d0                __cy_heap_limit = .
+.heap           0x1fff8160       0x80 load address 0x00000670
+                0x1fff8160                . = _end
+                0x1fff81e0                . = (. + 0x80)
+ *fill*         0x1fff8160       0x80 
+                0x1fff81e0                __cy_heap_limit = .
 
 .stack          0x20007800      0x800
                 0x20007800                __cy_stack_limit = .
@@ -617,9 +732,9 @@ END GROUP
 .cyloadablemeta
  *(.cyloadablemeta)
 
-.cyconfigecc    0x80000000        0x8
+.cyconfigecc    0x80000000      0x3c0
  *(.cyconfigecc)
- .cyconfigecc   0x80000000        0x8 .\CortexM3\ARM_GCC_541\Debug\cymetadata.o
+ .cyconfigecc   0x80000000      0x3c0 .\CortexM3\ARM_GCC_541\Debug\cymetadata.o
                 0x80000000                cy_meta_configecc
 
 .cycustnvl      0x90000000        0x4
@@ -648,8 +763,8 @@ END GROUP
  .cymeta        0x90500000        0xc .\CortexM3\ARM_GCC_541\Debug\cymetadata.o
                 0x90500000                cy_metadata
 
-.rel.dyn        0x00000448        0x0 load address 0x9050000c
- .rel.iplt      0x00000448        0x0 d:/installations/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m/crtbegin.o
+.rel.dyn        0x00000670        0x0 load address 0x9050000c
+ .rel.iplt      0x00000670        0x0 d:/installations/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m/crtbegin.o
 
 .stab
  *(.stab)
@@ -669,130 +784,173 @@ END GROUP
 .debug_sfnames
  *(.debug_sfnames)
 
-.debug_aranges  0x00000000      0x530
+.debug_aranges  0x00000000      0x6d8
  *(.debug_aranges)
  .debug_aranges
                 0x00000000       0x20 .\CortexM3\ARM_GCC_541\Debug\main.o
  .debug_aranges
-                0x00000020       0x50 .\CortexM3\ARM_GCC_541\Debug\cyfitter_cfg.o
+                0x00000020       0x20 .\CortexM3\ARM_GCC_541\Debug\console.o
  .debug_aranges
-                0x00000070       0x18 .\CortexM3\ARM_GCC_541\Debug\cymetadata.o
+                0x00000040       0x58 .\CortexM3\ARM_GCC_541\Debug\cyfitter_cfg.o
  .debug_aranges
-                0x00000088       0x48 .\CortexM3\ARM_GCC_541\Debug\Cm3Start.o
+                0x00000098       0x18 .\CortexM3\ARM_GCC_541\Debug\cymetadata.o
  .debug_aranges
-                0x000000d0      0x2a0 .\CortexM3\ARM_GCC_541\Debug\ReactionGame.a(CyLib.o)
+                0x000000b0       0x48 .\CortexM3\ARM_GCC_541\Debug\Cm3Start.o
  .debug_aranges
-                0x00000370       0x98 .\CortexM3\ARM_GCC_541\Debug\ReactionGame.a(cyPm.o)
+                0x000000f8      0x2a0 .\CortexM3\ARM_GCC_541\Debug\ReactionGame.a(CyLib.o)
  .debug_aranges
-                0x00000408       0x20 .\CortexM3\ARM_GCC_541\Debug\ReactionGame.a(CyBootAsmGnu.o)
+                0x00000398       0x98 .\CortexM3\ARM_GCC_541\Debug\ReactionGame.a(cyPm.o)
  .debug_aranges
-                0x00000428       0x88 .\CortexM3\ARM_GCC_541\Debug\ReactionGame.a(CyFlash.o)
+                0x00000430       0xf0 .\CortexM3\ARM_GCC_541\Debug\ReactionGame.a(UART_LOG.o)
  .debug_aranges
-                0x000004b0       0x80 .\CortexM3\ARM_GCC_541\Debug\ReactionGame.a(CySpc.o)
+                0x00000520       0x20 .\CortexM3\ARM_GCC_541\Debug\ReactionGame.a(UART_LOG_INT.o)
+ .debug_aranges
+                0x00000540       0x70 .\CortexM3\ARM_GCC_541\Debug\ReactionGame.a(UART_LOG_IntClock.o)
+ .debug_aranges
+                0x000005b0       0x20 .\CortexM3\ARM_GCC_541\Debug\ReactionGame.a(CyBootAsmGnu.o)
+ .debug_aranges
+                0x000005d0       0x88 .\CortexM3\ARM_GCC_541\Debug\ReactionGame.a(CyFlash.o)
+ .debug_aranges
+                0x00000658       0x80 .\CortexM3\ARM_GCC_541\Debug\ReactionGame.a(CySpc.o)
 
 .debug_pubnames
  *(.debug_pubnames)
 
-.debug_info     0x00000000     0x33b5
+.debug_info     0x00000000     0x414c
  *(.debug_info .gnu.linkonce.wi.*)
- .debug_info    0x00000000      0x139 .\CortexM3\ARM_GCC_541\Debug\main.o
- .debug_info    0x00000139      0x3ac .\CortexM3\ARM_GCC_541\Debug\cyfitter_cfg.o
- .debug_info    0x000004e5      0x134 .\CortexM3\ARM_GCC_541\Debug\cymetadata.o
- .debug_info    0x00000619      0x3bb .\CortexM3\ARM_GCC_541\Debug\Cm3Start.o
- .debug_info    0x000009d4     0x1374 .\CortexM3\ARM_GCC_541\Debug\ReactionGame.a(CyLib.o)
- .debug_info    0x00001d48      0xa2a .\CortexM3\ARM_GCC_541\Debug\ReactionGame.a(cyPm.o)
- .debug_info    0x00002772       0xa6 .\CortexM3\ARM_GCC_541\Debug\ReactionGame.a(CyBootAsmGnu.o)
- .debug_info    0x00002818      0x64d .\CortexM3\ARM_GCC_541\Debug\ReactionGame.a(CyFlash.o)
- .debug_info    0x00002e65      0x550 .\CortexM3\ARM_GCC_541\Debug\ReactionGame.a(CySpc.o)
+ .debug_info    0x00000000      0x152 .\CortexM3\ARM_GCC_541\Debug\main.o
+ .debug_info    0x00000152      0x170 .\CortexM3\ARM_GCC_541\Debug\console.o
+ .debug_info    0x000002c2      0x56f .\CortexM3\ARM_GCC_541\Debug\cyfitter_cfg.o
+ .debug_info    0x00000831      0x135 .\CortexM3\ARM_GCC_541\Debug\cymetadata.o
+ .debug_info    0x00000966      0x3bb .\CortexM3\ARM_GCC_541\Debug\Cm3Start.o
+ .debug_info    0x00000d21     0x1374 .\CortexM3\ARM_GCC_541\Debug\ReactionGame.a(CyLib.o)
+ .debug_info    0x00002095      0xa2a .\CortexM3\ARM_GCC_541\Debug\ReactionGame.a(cyPm.o)
+ .debug_info    0x00002abf      0x6d1 .\CortexM3\ARM_GCC_541\Debug\ReactionGame.a(UART_LOG.o)
+ .debug_info    0x00003190       0xf6 .\CortexM3\ARM_GCC_541\Debug\ReactionGame.a(UART_LOG_INT.o)
+ .debug_info    0x00003286      0x283 .\CortexM3\ARM_GCC_541\Debug\ReactionGame.a(UART_LOG_IntClock.o)
+ .debug_info    0x00003509       0xa6 .\CortexM3\ARM_GCC_541\Debug\ReactionGame.a(CyBootAsmGnu.o)
+ .debug_info    0x000035af      0x64d .\CortexM3\ARM_GCC_541\Debug\ReactionGame.a(CyFlash.o)
+ .debug_info    0x00003bfc      0x550 .\CortexM3\ARM_GCC_541\Debug\ReactionGame.a(CySpc.o)
 
-.debug_abbrev   0x00000000      0xbbc
+.debug_abbrev   0x00000000     0x1026
  *(.debug_abbrev)
- .debug_abbrev  0x00000000       0x7d .\CortexM3\ARM_GCC_541\Debug\main.o
- .debug_abbrev  0x0000007d      0x1ac .\CortexM3\ARM_GCC_541\Debug\cyfitter_cfg.o
- .debug_abbrev  0x00000229       0x5d .\CortexM3\ARM_GCC_541\Debug\cymetadata.o
- .debug_abbrev  0x00000286      0x1e8 .\CortexM3\ARM_GCC_541\Debug\Cm3Start.o
- .debug_abbrev  0x0000046e      0x254 .\CortexM3\ARM_GCC_541\Debug\ReactionGame.a(CyLib.o)
- .debug_abbrev  0x000006c2      0x1ab .\CortexM3\ARM_GCC_541\Debug\ReactionGame.a(cyPm.o)
- .debug_abbrev  0x0000086d       0x14 .\CortexM3\ARM_GCC_541\Debug\ReactionGame.a(CyBootAsmGnu.o)
- .debug_abbrev  0x00000881      0x1a7 .\CortexM3\ARM_GCC_541\Debug\ReactionGame.a(CyFlash.o)
- .debug_abbrev  0x00000a28      0x194 .\CortexM3\ARM_GCC_541\Debug\ReactionGame.a(CySpc.o)
+ .debug_abbrev  0x00000000       0x9b .\CortexM3\ARM_GCC_541\Debug\main.o
+ .debug_abbrev  0x0000009b       0xc1 .\CortexM3\ARM_GCC_541\Debug\console.o
+ .debug_abbrev  0x0000015c      0x20d .\CortexM3\ARM_GCC_541\Debug\cyfitter_cfg.o
+ .debug_abbrev  0x00000369       0x66 .\CortexM3\ARM_GCC_541\Debug\cymetadata.o
+ .debug_abbrev  0x000003cf      0x1e8 .\CortexM3\ARM_GCC_541\Debug\Cm3Start.o
+ .debug_abbrev  0x000005b7      0x254 .\CortexM3\ARM_GCC_541\Debug\ReactionGame.a(CyLib.o)
+ .debug_abbrev  0x0000080b      0x1ab .\CortexM3\ARM_GCC_541\Debug\ReactionGame.a(cyPm.o)
+ .debug_abbrev  0x000009b6      0x16f .\CortexM3\ARM_GCC_541\Debug\ReactionGame.a(UART_LOG.o)
+ .debug_abbrev  0x00000b25       0x79 .\CortexM3\ARM_GCC_541\Debug\ReactionGame.a(UART_LOG_INT.o)
+ .debug_abbrev  0x00000b9e      0x139 .\CortexM3\ARM_GCC_541\Debug\ReactionGame.a(UART_LOG_IntClock.o)
+ .debug_abbrev  0x00000cd7       0x14 .\CortexM3\ARM_GCC_541\Debug\ReactionGame.a(CyBootAsmGnu.o)
+ .debug_abbrev  0x00000ceb      0x1a7 .\CortexM3\ARM_GCC_541\Debug\ReactionGame.a(CyFlash.o)
+ .debug_abbrev  0x00000e92      0x194 .\CortexM3\ARM_GCC_541\Debug\ReactionGame.a(CySpc.o)
 
-.debug_line     0x00000000     0x1755
+.debug_line     0x00000000     0x1ec0
  *(.debug_line)
- .debug_line    0x00000000      0x1fc .\CortexM3\ARM_GCC_541\Debug\main.o
- .debug_line    0x000001fc      0x19f .\CortexM3\ARM_GCC_541\Debug\cyfitter_cfg.o
- .debug_line    0x0000039b      0x135 .\CortexM3\ARM_GCC_541\Debug\cymetadata.o
- .debug_line    0x000004d0      0x228 .\CortexM3\ARM_GCC_541\Debug\Cm3Start.o
- .debug_line    0x000006f8      0x816 .\CortexM3\ARM_GCC_541\Debug\ReactionGame.a(CyLib.o)
- .debug_line    0x00000f0e      0x367 .\CortexM3\ARM_GCC_541\Debug\ReactionGame.a(cyPm.o)
- .debug_line    0x00001275       0x66 .\CortexM3\ARM_GCC_541\Debug\ReactionGame.a(CyBootAsmGnu.o)
- .debug_line    0x000012db      0x21a .\CortexM3\ARM_GCC_541\Debug\ReactionGame.a(CyFlash.o)
- .debug_line    0x000014f5      0x260 .\CortexM3\ARM_GCC_541\Debug\ReactionGame.a(CySpc.o)
+ .debug_line    0x00000000      0x20b .\CortexM3\ARM_GCC_541\Debug\main.o
+ .debug_line    0x0000020b      0x20d .\CortexM3\ARM_GCC_541\Debug\console.o
+ .debug_line    0x00000418      0x1ec .\CortexM3\ARM_GCC_541\Debug\cyfitter_cfg.o
+ .debug_line    0x00000604      0x135 .\CortexM3\ARM_GCC_541\Debug\cymetadata.o
+ .debug_line    0x00000739      0x228 .\CortexM3\ARM_GCC_541\Debug\Cm3Start.o
+ .debug_line    0x00000961      0x816 .\CortexM3\ARM_GCC_541\Debug\ReactionGame.a(CyLib.o)
+ .debug_line    0x00001177      0x367 .\CortexM3\ARM_GCC_541\Debug\ReactionGame.a(cyPm.o)
+ .debug_line    0x000014de      0x2fd .\CortexM3\ARM_GCC_541\Debug\ReactionGame.a(UART_LOG.o)
+ .debug_line    0x000017db       0x85 .\CortexM3\ARM_GCC_541\Debug\ReactionGame.a(UART_LOG_INT.o)
+ .debug_line    0x00001860      0x180 .\CortexM3\ARM_GCC_541\Debug\ReactionGame.a(UART_LOG_IntClock.o)
+ .debug_line    0x000019e0       0x66 .\CortexM3\ARM_GCC_541\Debug\ReactionGame.a(CyBootAsmGnu.o)
+ .debug_line    0x00001a46      0x21a .\CortexM3\ARM_GCC_541\Debug\ReactionGame.a(CyFlash.o)
+ .debug_line    0x00001c60      0x260 .\CortexM3\ARM_GCC_541\Debug\ReactionGame.a(CySpc.o)
 
-.debug_frame    0x00000000      0xe90
+.debug_frame    0x00000000     0x1250
  *(.debug_frame)
- .debug_frame   0x00000000       0x20 .\CortexM3\ARM_GCC_541\Debug\main.o
- .debug_frame   0x00000020       0xb8 .\CortexM3\ARM_GCC_541\Debug\cyfitter_cfg.o
- .debug_frame   0x000000d8       0xb8 .\CortexM3\ARM_GCC_541\Debug\Cm3Start.o
- .debug_frame   0x00000190      0x738 .\CortexM3\ARM_GCC_541\Debug\ReactionGame.a(CyLib.o)
- .debug_frame   0x000008c8      0x1f8 .\CortexM3\ARM_GCC_541\Debug\ReactionGame.a(cyPm.o)
- .debug_frame   0x00000ac0      0x194 .\CortexM3\ARM_GCC_541\Debug\ReactionGame.a(CyFlash.o)
- .debug_frame   0x00000c54      0x180 .\CortexM3\ARM_GCC_541\Debug\ReactionGame.a(CySpc.o)
- .debug_frame   0x00000dd4       0x20 d:/installations/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-errno.o)
- .debug_frame   0x00000df4       0x28 d:/installations/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-exit.o)
- .debug_frame   0x00000e1c       0x2c d:/installations/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-init.o)
- .debug_frame   0x00000e48       0x28 d:/installations/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-memcpy-stub.o)
- .debug_frame   0x00000e70       0x20 d:/installations/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-memset.o)
+ .debug_frame   0x00000000       0x2c .\CortexM3\ARM_GCC_541\Debug\main.o
+ .debug_frame   0x0000002c       0x2c .\CortexM3\ARM_GCC_541\Debug\console.o
+ .debug_frame   0x00000058       0xe4 .\CortexM3\ARM_GCC_541\Debug\cyfitter_cfg.o
+ .debug_frame   0x0000013c       0xb8 .\CortexM3\ARM_GCC_541\Debug\Cm3Start.o
+ .debug_frame   0x000001f4      0x738 .\CortexM3\ARM_GCC_541\Debug\ReactionGame.a(CyLib.o)
+ .debug_frame   0x0000092c      0x1f8 .\CortexM3\ARM_GCC_541\Debug\ReactionGame.a(cyPm.o)
+ .debug_frame   0x00000b24      0x25c .\CortexM3\ARM_GCC_541\Debug\ReactionGame.a(UART_LOG.o)
+ .debug_frame   0x00000d80       0x20 .\CortexM3\ARM_GCC_541\Debug\ReactionGame.a(UART_LOG_INT.o)
+ .debug_frame   0x00000da0       0xe0 .\CortexM3\ARM_GCC_541\Debug\ReactionGame.a(UART_LOG_IntClock.o)
+ .debug_frame   0x00000e80      0x194 .\CortexM3\ARM_GCC_541\Debug\ReactionGame.a(CyFlash.o)
+ .debug_frame   0x00001014      0x180 .\CortexM3\ARM_GCC_541\Debug\ReactionGame.a(CySpc.o)
+ .debug_frame   0x00001194       0x20 d:/installations/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-errno.o)
+ .debug_frame   0x000011b4       0x28 d:/installations/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-exit.o)
+ .debug_frame   0x000011dc       0x2c d:/installations/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-init.o)
+ .debug_frame   0x00001208       0x28 d:/installations/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-memcpy-stub.o)
+ .debug_frame   0x00001230       0x20 d:/installations/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-memset.o)
 
-.debug_str      0x00000000     0x133b
+.debug_str      0x00000000     0x1943
  *(.debug_str)
- .debug_str     0x00000000      0x21b .\CortexM3\ARM_GCC_541\Debug\main.o
-                                0x263 (size before relaxing)
- .debug_str     0x0000021b      0x130 .\CortexM3\ARM_GCC_541\Debug\cyfitter_cfg.o
-                                0x2ce (size before relaxing)
- .debug_str     0x0000034b       0x7f .\CortexM3\ARM_GCC_541\Debug\cymetadata.o
+ .debug_str     0x00000000      0x22a .\CortexM3\ARM_GCC_541\Debug\main.o
+                                0x272 (size before relaxing)
+ .debug_str     0x0000022a       0x3f .\CortexM3\ARM_GCC_541\Debug\console.o
+                                0x28b (size before relaxing)
+ .debug_str     0x00000269      0x1b6 .\CortexM3\ARM_GCC_541\Debug\cyfitter_cfg.o
+                                0x35a (size before relaxing)
+ .debug_str     0x0000041f       0x7f .\CortexM3\ARM_GCC_541\Debug\cymetadata.o
                                 0x1fa (size before relaxing)
- .debug_str     0x000003ca      0x144 .\CortexM3\ARM_GCC_541\Debug\Cm3Start.o
+ .debug_str     0x0000049e      0x144 .\CortexM3\ARM_GCC_541\Debug\Cm3Start.o
                                 0x320 (size before relaxing)
- .debug_str     0x0000050e      0x85a .\CortexM3\ARM_GCC_541\Debug\ReactionGame.a(CyLib.o)
+ .debug_str     0x000005e2      0x854 .\CortexM3\ARM_GCC_541\Debug\ReactionGame.a(CyLib.o)
                                 0xa5d (size before relaxing)
- .debug_str     0x00000d68      0x365 .\CortexM3\ARM_GCC_541\Debug\ReactionGame.a(cyPm.o)
+ .debug_str     0x00000e36      0x365 .\CortexM3\ARM_GCC_541\Debug\ReactionGame.a(cyPm.o)
                                 0x749 (size before relaxing)
- .debug_str     0x000010cd      0x1bb .\CortexM3\ARM_GCC_541\Debug\ReactionGame.a(CyFlash.o)
+ .debug_str     0x0000119b      0x361 .\CortexM3\ARM_GCC_541\Debug\ReactionGame.a(UART_LOG.o)
+                                0x594 (size before relaxing)
+ .debug_str     0x000014fc       0x35 .\CortexM3\ARM_GCC_541\Debug\ReactionGame.a(UART_LOG_INT.o)
+                                0x210 (size before relaxing)
+ .debug_str     0x00001531      0x1ab .\CortexM3\ARM_GCC_541\Debug\ReactionGame.a(UART_LOG_IntClock.o)
+                                0x37c (size before relaxing)
+ .debug_str     0x000016dc      0x1bb .\CortexM3\ARM_GCC_541\Debug\ReactionGame.a(CyFlash.o)
                                 0x3d6 (size before relaxing)
- .debug_str     0x00001288       0xb3 .\CortexM3\ARM_GCC_541\Debug\ReactionGame.a(CySpc.o)
+ .debug_str     0x00001897       0xac .\CortexM3\ARM_GCC_541\Debug\ReactionGame.a(CySpc.o)
                                 0x34e (size before relaxing)
 
-.debug_loc      0x00000000     0x1958
+.debug_loc      0x00000000     0x1e0c
  *(.debug_loc)
- .debug_loc     0x00000000      0x168 .\CortexM3\ARM_GCC_541\Debug\cyfitter_cfg.o
- .debug_loc     0x00000168      0x144 .\CortexM3\ARM_GCC_541\Debug\Cm3Start.o
- .debug_loc     0x000002ac      0xa11 .\CortexM3\ARM_GCC_541\Debug\ReactionGame.a(CyLib.o)
- .debug_loc     0x00000cbd      0x1e4 .\CortexM3\ARM_GCC_541\Debug\ReactionGame.a(cyPm.o)
- .debug_loc     0x00000ea1      0x3b2 .\CortexM3\ARM_GCC_541\Debug\ReactionGame.a(CyFlash.o)
- .debug_loc     0x00001253      0x705 .\CortexM3\ARM_GCC_541\Debug\ReactionGame.a(CySpc.o)
+ .debug_loc     0x00000000       0x21 .\CortexM3\ARM_GCC_541\Debug\console.o
+ .debug_loc     0x00000021      0x259 .\CortexM3\ARM_GCC_541\Debug\cyfitter_cfg.o
+ .debug_loc     0x0000027a      0x144 .\CortexM3\ARM_GCC_541\Debug\Cm3Start.o
+ .debug_loc     0x000003be      0xa11 .\CortexM3\ARM_GCC_541\Debug\ReactionGame.a(CyLib.o)
+ .debug_loc     0x00000dcf      0x1e4 .\CortexM3\ARM_GCC_541\Debug\ReactionGame.a(cyPm.o)
+ .debug_loc     0x00000fb3      0x276 .\CortexM3\ARM_GCC_541\Debug\ReactionGame.a(UART_LOG.o)
+ .debug_loc     0x00001229      0x12c .\CortexM3\ARM_GCC_541\Debug\ReactionGame.a(UART_LOG_IntClock.o)
+ .debug_loc     0x00001355      0x3b2 .\CortexM3\ARM_GCC_541\Debug\ReactionGame.a(CyFlash.o)
+ .debug_loc     0x00001707      0x705 .\CortexM3\ARM_GCC_541\Debug\ReactionGame.a(CySpc.o)
 
 .debug_macinfo
  *(.debug_macinfo)
 
-.debug_ranges   0x00000000      0x488
+.debug_ranges   0x00000000      0x5f0
  *(.debug_ranges)
  .debug_ranges  0x00000000       0x10 .\CortexM3\ARM_GCC_541\Debug\main.o
- .debug_ranges  0x00000010       0x40 .\CortexM3\ARM_GCC_541\Debug\cyfitter_cfg.o
- .debug_ranges  0x00000050       0x38 .\CortexM3\ARM_GCC_541\Debug\Cm3Start.o
- .debug_ranges  0x00000088      0x290 .\CortexM3\ARM_GCC_541\Debug\ReactionGame.a(CyLib.o)
- .debug_ranges  0x00000318       0x88 .\CortexM3\ARM_GCC_541\Debug\ReactionGame.a(cyPm.o)
- .debug_ranges  0x000003a0       0x78 .\CortexM3\ARM_GCC_541\Debug\ReactionGame.a(CyFlash.o)
- .debug_ranges  0x00000418       0x70 .\CortexM3\ARM_GCC_541\Debug\ReactionGame.a(CySpc.o)
+ .debug_ranges  0x00000010       0x10 .\CortexM3\ARM_GCC_541\Debug\console.o
+ .debug_ranges  0x00000020       0x48 .\CortexM3\ARM_GCC_541\Debug\cyfitter_cfg.o
+ .debug_ranges  0x00000068       0x38 .\CortexM3\ARM_GCC_541\Debug\Cm3Start.o
+ .debug_ranges  0x000000a0      0x290 .\CortexM3\ARM_GCC_541\Debug\ReactionGame.a(CyLib.o)
+ .debug_ranges  0x00000330       0x88 .\CortexM3\ARM_GCC_541\Debug\ReactionGame.a(cyPm.o)
+ .debug_ranges  0x000003b8       0xe0 .\CortexM3\ARM_GCC_541\Debug\ReactionGame.a(UART_LOG.o)
+ .debug_ranges  0x00000498       0x10 .\CortexM3\ARM_GCC_541\Debug\ReactionGame.a(UART_LOG_INT.o)
+ .debug_ranges  0x000004a8       0x60 .\CortexM3\ARM_GCC_541\Debug\ReactionGame.a(UART_LOG_IntClock.o)
+ .debug_ranges  0x00000508       0x78 .\CortexM3\ARM_GCC_541\Debug\ReactionGame.a(CyFlash.o)
+ .debug_ranges  0x00000580       0x70 .\CortexM3\ARM_GCC_541\Debug\ReactionGame.a(CySpc.o)
 
 .comment        0x00000000       0x6e
  .comment       0x00000000       0x6e .\CortexM3\ARM_GCC_541\Debug\main.o
                                  0x6f (size before relaxing)
+ .comment       0x0000006e       0x6f .\CortexM3\ARM_GCC_541\Debug\console.o
  .comment       0x0000006e       0x6f .\CortexM3\ARM_GCC_541\Debug\cyfitter_cfg.o
  .comment       0x0000006e       0x6f .\CortexM3\ARM_GCC_541\Debug\cymetadata.o
  .comment       0x0000006e       0x6f .\CortexM3\ARM_GCC_541\Debug\Cm3Start.o
  .comment       0x0000006e       0x6f .\CortexM3\ARM_GCC_541\Debug\ReactionGame.a(CyLib.o)
  .comment       0x0000006e       0x6f .\CortexM3\ARM_GCC_541\Debug\ReactionGame.a(cyPm.o)
+ .comment       0x0000006e       0x6f .\CortexM3\ARM_GCC_541\Debug\ReactionGame.a(UART_LOG.o)
+ .comment       0x0000006e       0x6f .\CortexM3\ARM_GCC_541\Debug\ReactionGame.a(UART_LOG_INT.o)
+ .comment       0x0000006e       0x6f .\CortexM3\ARM_GCC_541\Debug\ReactionGame.a(UART_LOG_IntClock.o)
  .comment       0x0000006e       0x6f .\CortexM3\ARM_GCC_541\Debug\ReactionGame.a(CyFlash.o)
  .comment       0x0000006e       0x6f .\CortexM3\ARM_GCC_541\Debug\ReactionGame.a(CySpc.o)
 
@@ -823,37 +981,45 @@ END GROUP
  .ARM.attributes
                 0x00000065       0x33 .\CortexM3\ARM_GCC_541\Debug\main.o
  .ARM.attributes
-                0x00000098       0x33 .\CortexM3\ARM_GCC_541\Debug\cyfitter_cfg.o
+                0x00000098       0x33 .\CortexM3\ARM_GCC_541\Debug\console.o
  .ARM.attributes
-                0x000000cb       0x33 .\CortexM3\ARM_GCC_541\Debug\cymetadata.o
+                0x000000cb       0x33 .\CortexM3\ARM_GCC_541\Debug\cyfitter_cfg.o
  .ARM.attributes
-                0x000000fe       0x33 .\CortexM3\ARM_GCC_541\Debug\Cm3Start.o
+                0x000000fe       0x33 .\CortexM3\ARM_GCC_541\Debug\cymetadata.o
  .ARM.attributes
-                0x00000131       0x33 .\CortexM3\ARM_GCC_541\Debug\ReactionGame.a(CyLib.o)
+                0x00000131       0x33 .\CortexM3\ARM_GCC_541\Debug\Cm3Start.o
  .ARM.attributes
-                0x00000164       0x33 .\CortexM3\ARM_GCC_541\Debug\ReactionGame.a(cyPm.o)
+                0x00000164       0x33 .\CortexM3\ARM_GCC_541\Debug\ReactionGame.a(CyLib.o)
  .ARM.attributes
-                0x00000197       0x21 .\CortexM3\ARM_GCC_541\Debug\ReactionGame.a(CyBootAsmGnu.o)
+                0x00000197       0x33 .\CortexM3\ARM_GCC_541\Debug\ReactionGame.a(cyPm.o)
  .ARM.attributes
-                0x000001b8       0x33 .\CortexM3\ARM_GCC_541\Debug\ReactionGame.a(CyFlash.o)
+                0x000001ca       0x33 .\CortexM3\ARM_GCC_541\Debug\ReactionGame.a(UART_LOG.o)
  .ARM.attributes
-                0x000001eb       0x33 .\CortexM3\ARM_GCC_541\Debug\ReactionGame.a(CySpc.o)
+                0x000001fd       0x33 .\CortexM3\ARM_GCC_541\Debug\ReactionGame.a(UART_LOG_INT.o)
  .ARM.attributes
-                0x0000021e       0x2d d:/installations/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-errno.o)
+                0x00000230       0x33 .\CortexM3\ARM_GCC_541\Debug\ReactionGame.a(UART_LOG_IntClock.o)
  .ARM.attributes
-                0x0000024b       0x2d d:/installations/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-exit.o)
+                0x00000263       0x21 .\CortexM3\ARM_GCC_541\Debug\ReactionGame.a(CyBootAsmGnu.o)
  .ARM.attributes
-                0x00000278       0x2d d:/installations/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-impure.o)
+                0x00000284       0x33 .\CortexM3\ARM_GCC_541\Debug\ReactionGame.a(CyFlash.o)
  .ARM.attributes
-                0x000002a5       0x2d d:/installations/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-init.o)
+                0x000002b7       0x33 .\CortexM3\ARM_GCC_541\Debug\ReactionGame.a(CySpc.o)
  .ARM.attributes
-                0x000002d2       0x2d d:/installations/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-memcpy-stub.o)
+                0x000002ea       0x2d d:/installations/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-errno.o)
  .ARM.attributes
-                0x000002ff       0x2d d:/installations/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-memset.o)
+                0x00000317       0x2d d:/installations/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-exit.o)
  .ARM.attributes
-                0x0000032c       0x2d d:/installations/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m/crtend.o
+                0x00000344       0x2d d:/installations/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-impure.o)
  .ARM.attributes
-                0x00000359       0x1d d:/installations/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m/crtn.o
+                0x00000371       0x2d d:/installations/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-init.o)
+ .ARM.attributes
+                0x0000039e       0x2d d:/installations/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-memcpy-stub.o)
+ .ARM.attributes
+                0x000003cb       0x2d d:/installations/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-memset.o)
+ .ARM.attributes
+                0x000003f8       0x2d d:/installations/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m/crtend.o
+ .ARM.attributes
+                0x00000425       0x1d d:/installations/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m/crtn.o
 
 /DISCARD/
  *(.note.GNU-stack)
