@@ -1,0 +1,1225 @@
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccKvAaCs.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m3
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 1
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.thumb
+  14              		.syntax unified
+  15              		.file	"ErikaOS_ee_gettaskstate.c"
+  16              		.text
+  17              	.Ltext0:
+  18              		.cfi_sections	.debug_frame
+  19              		.section	.text.EE_oo_GetTaskState,"ax",%progbits
+  20              		.align	2
+  21              		.global	EE_oo_GetTaskState
+  22              		.thumb
+  23              		.thumb_func
+  24              		.type	EE_oo_GetTaskState, %function
+  25              	EE_oo_GetTaskState:
+  26              	.LFB59:
+  27              		.file 1 "Generated_Source\\PSoC5\\ErikaOS_ee_gettaskstate.c"
+   1:Generated_Source\PSoC5/ErikaOS_ee_gettaskstate.c **** /* ###*B*###
+   2:Generated_Source\PSoC5/ErikaOS_ee_gettaskstate.c ****  * ERIKA Enterprise - a tiny RTOS for small microcontrollers
+   3:Generated_Source\PSoC5/ErikaOS_ee_gettaskstate.c ****  *
+   4:Generated_Source\PSoC5/ErikaOS_ee_gettaskstate.c ****  * Copyright (C) 2002-2008  Evidence Srl
+   5:Generated_Source\PSoC5/ErikaOS_ee_gettaskstate.c ****  *
+   6:Generated_Source\PSoC5/ErikaOS_ee_gettaskstate.c ****  * This file is part of ERIKA Enterprise.
+   7:Generated_Source\PSoC5/ErikaOS_ee_gettaskstate.c ****  *
+   8:Generated_Source\PSoC5/ErikaOS_ee_gettaskstate.c ****  * ERIKA Enterprise is free software; you can redistribute it
+   9:Generated_Source\PSoC5/ErikaOS_ee_gettaskstate.c ****  * and/or modify it under the terms of the GNU General Public License
+  10:Generated_Source\PSoC5/ErikaOS_ee_gettaskstate.c ****  * version 2 as published by the Free Software Foundation, 
+  11:Generated_Source\PSoC5/ErikaOS_ee_gettaskstate.c ****  * (with a special exception described below).
+  12:Generated_Source\PSoC5/ErikaOS_ee_gettaskstate.c ****  *
+  13:Generated_Source\PSoC5/ErikaOS_ee_gettaskstate.c ****  * Linking this code statically or dynamically with other modules is
+  14:Generated_Source\PSoC5/ErikaOS_ee_gettaskstate.c ****  * making a combined work based on this code.  Thus, the terms and
+  15:Generated_Source\PSoC5/ErikaOS_ee_gettaskstate.c ****  * conditions of the GNU General Public License cover the whole
+  16:Generated_Source\PSoC5/ErikaOS_ee_gettaskstate.c ****  * combination.
+  17:Generated_Source\PSoC5/ErikaOS_ee_gettaskstate.c ****  *
+  18:Generated_Source\PSoC5/ErikaOS_ee_gettaskstate.c ****  * As a special exception, the copyright holders of this library give you
+  19:Generated_Source\PSoC5/ErikaOS_ee_gettaskstate.c ****  * permission to link this code with independent modules to produce an
+  20:Generated_Source\PSoC5/ErikaOS_ee_gettaskstate.c ****  * executable, regardless of the license terms of these independent
+  21:Generated_Source\PSoC5/ErikaOS_ee_gettaskstate.c ****  * modules, and to copy and distribute the resulting executable under
+  22:Generated_Source\PSoC5/ErikaOS_ee_gettaskstate.c ****  * terms of your choice, provided that you also meet, for each linked
+  23:Generated_Source\PSoC5/ErikaOS_ee_gettaskstate.c ****  * independent module, the terms and conditions of the license of that
+  24:Generated_Source\PSoC5/ErikaOS_ee_gettaskstate.c ****  * module.  An independent module is a module which is not derived from
+  25:Generated_Source\PSoC5/ErikaOS_ee_gettaskstate.c ****  * or based on this library.  If you modify this code, you may extend
+  26:Generated_Source\PSoC5/ErikaOS_ee_gettaskstate.c ****  * this exception to your version of the code, but you are not
+  27:Generated_Source\PSoC5/ErikaOS_ee_gettaskstate.c ****  * obligated to do so.  If you do not wish to do so, delete this
+  28:Generated_Source\PSoC5/ErikaOS_ee_gettaskstate.c ****  * exception statement from your version.
+  29:Generated_Source\PSoC5/ErikaOS_ee_gettaskstate.c ****  *
+  30:Generated_Source\PSoC5/ErikaOS_ee_gettaskstate.c ****  * ERIKA Enterprise is distributed in the hope that it will be
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccKvAaCs.s 			page 2
+
+
+  31:Generated_Source\PSoC5/ErikaOS_ee_gettaskstate.c ****  * useful, but WITHOUT ANY WARRANTY; without even the implied warranty
+  32:Generated_Source\PSoC5/ErikaOS_ee_gettaskstate.c ****  * of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  33:Generated_Source\PSoC5/ErikaOS_ee_gettaskstate.c ****  * GNU General Public License version 2 for more details.
+  34:Generated_Source\PSoC5/ErikaOS_ee_gettaskstate.c ****  *
+  35:Generated_Source\PSoC5/ErikaOS_ee_gettaskstate.c ****  * You should have received a copy of the GNU General Public License
+  36:Generated_Source\PSoC5/ErikaOS_ee_gettaskstate.c ****  * version 2 along with ERIKA Enterprise; if not, write to the
+  37:Generated_Source\PSoC5/ErikaOS_ee_gettaskstate.c ****  * Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
+  38:Generated_Source\PSoC5/ErikaOS_ee_gettaskstate.c ****  * Boston, MA 02110-1301 USA.
+  39:Generated_Source\PSoC5/ErikaOS_ee_gettaskstate.c ****  * ###*E*### */
+  40:Generated_Source\PSoC5/ErikaOS_ee_gettaskstate.c **** 
+  41:Generated_Source\PSoC5/ErikaOS_ee_gettaskstate.c **** /*
+  42:Generated_Source\PSoC5/ErikaOS_ee_gettaskstate.c ****  * Author: 2004 Paolo Gai
+  43:Generated_Source\PSoC5/ErikaOS_ee_gettaskstate.c ****  * CVS: $Id: ee_gettaskstate.c,v 1.1 2005/07/16 12:23:42 pj Exp $
+  44:Generated_Source\PSoC5/ErikaOS_ee_gettaskstate.c ****  */
+  45:Generated_Source\PSoC5/ErikaOS_ee_gettaskstate.c **** 
+  46:Generated_Source\PSoC5/ErikaOS_ee_gettaskstate.c **** /*
+  47:Generated_Source\PSoC5/ErikaOS_ee_gettaskstate.c ****  * PSoC Port and API Generation
+  48:Generated_Source\PSoC5/ErikaOS_ee_gettaskstate.c ****  * Carlos Fernando Meier Martinez
+  49:Generated_Source\PSoC5/ErikaOS_ee_gettaskstate.c ****  * Hochschule Darmstadt, Germany. 2017.
+  50:Generated_Source\PSoC5/ErikaOS_ee_gettaskstate.c ****  */
+  51:Generated_Source\PSoC5/ErikaOS_ee_gettaskstate.c **** 
+  52:Generated_Source\PSoC5/ErikaOS_ee_gettaskstate.c **** #include "ErikaOS_ee_internal.inc"
+  53:Generated_Source\PSoC5/ErikaOS_ee_gettaskstate.c **** 
+  54:Generated_Source\PSoC5/ErikaOS_ee_gettaskstate.c **** /***************************************************************************
+  55:Generated_Source\PSoC5/ErikaOS_ee_gettaskstate.c ****  * 13.2 Task management 
+  56:Generated_Source\PSoC5/ErikaOS_ee_gettaskstate.c ****  ***************************************************************************/
+  57:Generated_Source\PSoC5/ErikaOS_ee_gettaskstate.c **** 
+  58:Generated_Source\PSoC5/ErikaOS_ee_gettaskstate.c **** /* 13.2.3.6: BCC1, BCC2, ECC1, ECC2 */
+  59:Generated_Source\PSoC5/ErikaOS_ee_gettaskstate.c **** #ifndef __PRIVATE_GETTASKSTATE__
+  60:Generated_Source\PSoC5/ErikaOS_ee_gettaskstate.c **** 
+  61:Generated_Source\PSoC5/ErikaOS_ee_gettaskstate.c **** StatusType EE_oo_GetTaskState(TaskType TaskID, TaskStateRefType State)
+  62:Generated_Source\PSoC5/ErikaOS_ee_gettaskstate.c **** {
+  28              		.loc 1 62 0
+  29              		.cfi_startproc
+  30              		@ args = 0, pretend = 0, frame = 0
+  31              		@ frame_needed = 0, uses_anonymous_args = 0
+  32              		@ link register save eliminated.
+  33              	.LVL0:
+  63:Generated_Source\PSoC5/ErikaOS_ee_gettaskstate.c ****   register StatusType ev;
+  64:Generated_Source\PSoC5/ErikaOS_ee_gettaskstate.c **** 
+  65:Generated_Source\PSoC5/ErikaOS_ee_gettaskstate.c ****   EE_ORTI_set_service_in(EE_SERVICETRACE_GETTASKSTATE);
+  66:Generated_Source\PSoC5/ErikaOS_ee_gettaskstate.c **** 
+  67:Generated_Source\PSoC5/ErikaOS_ee_gettaskstate.c **** #ifdef EE_SERVICE_PROTECTION__
+  68:Generated_Source\PSoC5/ErikaOS_ee_gettaskstate.c ****   /* [OS093]: If interrupts are disabled/suspended by a Task/OsIsr and the
+  69:Generated_Source\PSoC5/ErikaOS_ee_gettaskstate.c ****       Task/OsIsr calls any OS service (excluding the interrupt services)
+  70:Generated_Source\PSoC5/ErikaOS_ee_gettaskstate.c ****       then the Operating System shall ignore the service AND shall return
+  71:Generated_Source\PSoC5/ErikaOS_ee_gettaskstate.c ****       E_OS_DISABLEDINT if the service returns a StatusType value. */
+  72:Generated_Source\PSoC5/ErikaOS_ee_gettaskstate.c ****   /* [OS088]: If an OS-Application makes a service call from the wrong context
+  73:Generated_Source\PSoC5/ErikaOS_ee_gettaskstate.c ****       AND is currently not inside a Category 1 ISR the Operating System module
+  74:Generated_Source\PSoC5/ErikaOS_ee_gettaskstate.c ****       shall not perform the requested action (the service call shall have no
+  75:Generated_Source\PSoC5/ErikaOS_ee_gettaskstate.c ****       effect), and return E_OS_CALLEVEL (see [12], section 13.1) or the
+  76:Generated_Source\PSoC5/ErikaOS_ee_gettaskstate.c ****       "invalid value" of  the service. (BSW11009, BSW11013) */
+  77:Generated_Source\PSoC5/ErikaOS_ee_gettaskstate.c ****   /* GetTaskID is callable by Task, ISR2, ErrorHook, ProtectionHook, Pre and
+  78:Generated_Source\PSoC5/ErikaOS_ee_gettaskstate.c ****      Post TaskHook */
+  79:Generated_Source\PSoC5/ErikaOS_ee_gettaskstate.c ****   if ( (EE_as_execution_context > ErrorHook_Context) &&
+  80:Generated_Source\PSoC5/ErikaOS_ee_gettaskstate.c ****        (EE_as_execution_context != PreTaskHook_Context) &&
+  81:Generated_Source\PSoC5/ErikaOS_ee_gettaskstate.c ****        (EE_as_execution_context != PostTaskHook_Context) )
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccKvAaCs.s 			page 3
+
+
+  82:Generated_Source\PSoC5/ErikaOS_ee_gettaskstate.c ****   {
+  83:Generated_Source\PSoC5/ErikaOS_ee_gettaskstate.c ****     ev = E_OS_CALLEVEL;
+  84:Generated_Source\PSoC5/ErikaOS_ee_gettaskstate.c ****   } else if ( EE_oo_check_disableint_error() ) {
+  85:Generated_Source\PSoC5/ErikaOS_ee_gettaskstate.c ****     ev = E_OS_DISABLEDINT;
+  86:Generated_Source\PSoC5/ErikaOS_ee_gettaskstate.c ****   } else
+  87:Generated_Source\PSoC5/ErikaOS_ee_gettaskstate.c **** #endif /* EE_SERVICE_PROTECTION__ */
+  88:Generated_Source\PSoC5/ErikaOS_ee_gettaskstate.c **** 
+  89:Generated_Source\PSoC5/ErikaOS_ee_gettaskstate.c ****   /* [OS566]: The Operating System API shall check in extended mode all pointer
+  90:Generated_Source\PSoC5/ErikaOS_ee_gettaskstate.c ****      argument for NULL pointer and return OS_E_PARAMETER_POINTER
+  91:Generated_Source\PSoC5/ErikaOS_ee_gettaskstate.c ****      if such argument is NULL. 
+  92:Generated_Source\PSoC5/ErikaOS_ee_gettaskstate.c ****      + 
+  93:Generated_Source\PSoC5/ErikaOS_ee_gettaskstate.c ****      MISRA dictate NULL check for pointers always. */
+  94:Generated_Source\PSoC5/ErikaOS_ee_gettaskstate.c ****   if ( State == NULL ) {
+  34              		.loc 1 94 0
+  35 0000 09B9     		cbnz	r1, .L3
+  95:Generated_Source\PSoC5/ErikaOS_ee_gettaskstate.c ****     ev = E_OS_PARAM_POINTER;
+  36              		.loc 1 95 0
+  37 0002 0E20     		movs	r0, #14
+  38              	.LVL1:
+  39 0004 7047     		bx	lr
+  40              	.LVL2:
+  41              	.L3:
+  96:Generated_Source\PSoC5/ErikaOS_ee_gettaskstate.c ****   } else
+  97:Generated_Source\PSoC5/ErikaOS_ee_gettaskstate.c **** #if (defined(EE_AS_OSAPPLICATIONS__)) && (defined(EE_SERVICE_PROTECTION__)) \
+  98:Generated_Source\PSoC5/ErikaOS_ee_gettaskstate.c ****   && (defined(__EE_MEMORY_PROTECTION__))
+  99:Generated_Source\PSoC5/ErikaOS_ee_gettaskstate.c ****   /* [SWS_Os_00051]: If an invalid address (address is not writable by this
+ 100:Generated_Source\PSoC5/ErikaOS_ee_gettaskstate.c ****       OS-Application) is passed as an out-parameter to an Operating System
+ 101:Generated_Source\PSoC5/ErikaOS_ee_gettaskstate.c ****       service, the Operating System module shall return the status code
+ 102:Generated_Source\PSoC5/ErikaOS_ee_gettaskstate.c ****       E_OS_ILLEGAL_ADDRESS. (SRS_Os_11009, SRS_Os_11013) */
+ 103:Generated_Source\PSoC5/ErikaOS_ee_gettaskstate.c ****   if ( !OSMEMORY_IS_WRITEABLE( EE_hal_get_app_mem_access(EE_as_active_app,
+ 104:Generated_Source\PSoC5/ErikaOS_ee_gettaskstate.c ****     State, sizeof(*State))) )
+ 105:Generated_Source\PSoC5/ErikaOS_ee_gettaskstate.c ****   {
+ 106:Generated_Source\PSoC5/ErikaOS_ee_gettaskstate.c ****     ev = E_OS_ILLEGAL_ADDRESS;
+ 107:Generated_Source\PSoC5/ErikaOS_ee_gettaskstate.c ****   } else
+ 108:Generated_Source\PSoC5/ErikaOS_ee_gettaskstate.c **** #endif /* EE_AS_OSAPPLICATIONS__ && EE_SERVICE_PROTECTION__ &&
+ 109:Generated_Source\PSoC5/ErikaOS_ee_gettaskstate.c ****   __EE_MEMORY_PROTECTION__ */
+ 110:Generated_Source\PSoC5/ErikaOS_ee_gettaskstate.c **** 
+ 111:Generated_Source\PSoC5/ErikaOS_ee_gettaskstate.c **** #ifdef EE_AS_RPC__
+ 112:Generated_Source\PSoC5/ErikaOS_ee_gettaskstate.c ****   if ( EE_IS_TID_REMOTE(TaskID) )
+ 113:Generated_Source\PSoC5/ErikaOS_ee_gettaskstate.c ****   {
+ 114:Generated_Source\PSoC5/ErikaOS_ee_gettaskstate.c ****     /* Tmp Tid (introduced to meet MISRA requirements) */
+ 115:Generated_Source\PSoC5/ErikaOS_ee_gettaskstate.c ****     EE_TID tmp_tid;
+ 116:Generated_Source\PSoC5/ErikaOS_ee_gettaskstate.c ****     EE_os_param as_state;
+ 117:Generated_Source\PSoC5/ErikaOS_ee_gettaskstate.c ****     EE_os_param unmarked_tid;
+ 118:Generated_Source\PSoC5/ErikaOS_ee_gettaskstate.c **** 	/* Two steps macro assignment to meet MISRA 10.3 required rule */
+ 119:Generated_Source\PSoC5/ErikaOS_ee_gettaskstate.c ****     tmp_tid = EE_UNMARK_REMOTE_TID(TaskID);
+ 120:Generated_Source\PSoC5/ErikaOS_ee_gettaskstate.c ****     unmarked_tid.value_param = (EE_UREG)tmp_tid;
+ 121:Generated_Source\PSoC5/ErikaOS_ee_gettaskstate.c ****     as_state.task_state_ref = State;
+ 122:Generated_Source\PSoC5/ErikaOS_ee_gettaskstate.c **** 
+ 123:Generated_Source\PSoC5/ErikaOS_ee_gettaskstate.c ****     /* forward the request to another CPU in synchronous way */
+ 124:Generated_Source\PSoC5/ErikaOS_ee_gettaskstate.c ****     ev = EE_as_rpc_from_us(OSServiceId_GetTaskState, unmarked_tid, as_state,
+ 125:Generated_Source\PSoC5/ErikaOS_ee_gettaskstate.c ****       EE_OS_INVALID_PARAM);
+ 126:Generated_Source\PSoC5/ErikaOS_ee_gettaskstate.c ****   } else {
+ 127:Generated_Source\PSoC5/ErikaOS_ee_gettaskstate.c **** #endif /* EE_AS_RPC__ */
+ 128:Generated_Source\PSoC5/ErikaOS_ee_gettaskstate.c **** 
+ 129:Generated_Source\PSoC5/ErikaOS_ee_gettaskstate.c **** #if (defined(EE_AS_OSAPPLICATIONS__)) && (defined(EE_SERVICE_PROTECTION__))
+ 130:Generated_Source\PSoC5/ErikaOS_ee_gettaskstate.c ****     /* check if the task Id is valid */
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccKvAaCs.s 			page 4
+
+
+ 131:Generated_Source\PSoC5/ErikaOS_ee_gettaskstate.c ****     if ( (TaskID < 0) || (TaskID >= EE_MAX_TASK) ) {
+ 132:Generated_Source\PSoC5/ErikaOS_ee_gettaskstate.c ****       ev = E_OS_ID;
+ 133:Generated_Source\PSoC5/ErikaOS_ee_gettaskstate.c ****     } else if ( EE_TASK_ACCESS_ERR(TaskID, EE_as_active_app) ) {
+ 134:Generated_Source\PSoC5/ErikaOS_ee_gettaskstate.c ****       ev = E_OS_ACCESS;
+ 135:Generated_Source\PSoC5/ErikaOS_ee_gettaskstate.c ****     } else
+ 136:Generated_Source\PSoC5/ErikaOS_ee_gettaskstate.c **** #elif defined(__OO_EXTENDED_STATUS__)
+ 137:Generated_Source\PSoC5/ErikaOS_ee_gettaskstate.c ****     /* check if the task Id is valid */
+ 138:Generated_Source\PSoC5/ErikaOS_ee_gettaskstate.c ****     if ( (TaskID < 0) || (TaskID >= EE_MAX_TASK) ) {
+ 139:Generated_Source\PSoC5/ErikaOS_ee_gettaskstate.c ****       ev = E_OS_ID;
+  42              		.loc 1 139 0
+  43 0006 0320     		movs	r0, #3
+  44              	.LVL3:
+ 140:Generated_Source\PSoC5/ErikaOS_ee_gettaskstate.c ****     } else
+ 141:Generated_Source\PSoC5/ErikaOS_ee_gettaskstate.c **** #endif /* EE_AS_OSAPPLICATIONS__ || E_SERVICE_PROTECTION__ ||
+ 142:Generated_Source\PSoC5/ErikaOS_ee_gettaskstate.c **** __OO_EXTENDED_STATUS__ */
+ 143:Generated_Source\PSoC5/ErikaOS_ee_gettaskstate.c ****     {
+ 144:Generated_Source\PSoC5/ErikaOS_ee_gettaskstate.c ****     /* XXX: This SHALL be atomic. Check this architectures other than TriCore */
+ 145:Generated_Source\PSoC5/ErikaOS_ee_gettaskstate.c ****       *State = EE_th_status[TaskID];
+ 146:Generated_Source\PSoC5/ErikaOS_ee_gettaskstate.c ****       ev = E_OK;
+ 147:Generated_Source\PSoC5/ErikaOS_ee_gettaskstate.c ****     }
+ 148:Generated_Source\PSoC5/ErikaOS_ee_gettaskstate.c **** #ifdef EE_AS_RPC__
+ 149:Generated_Source\PSoC5/ErikaOS_ee_gettaskstate.c ****   }
+ 150:Generated_Source\PSoC5/ErikaOS_ee_gettaskstate.c **** #endif /*  EE_AS_RPC__ */
+ 151:Generated_Source\PSoC5/ErikaOS_ee_gettaskstate.c **** 
+ 152:Generated_Source\PSoC5/ErikaOS_ee_gettaskstate.c ****   if ( ev != E_OK ) {
+ 153:Generated_Source\PSoC5/ErikaOS_ee_gettaskstate.c ****     EE_OS_ERROR_PARAMETERS();
+ 154:Generated_Source\PSoC5/ErikaOS_ee_gettaskstate.c ****     EE_OS_ERROR_PARAMETERS_PARAM1_REF(task_state_ref,State);
+ 155:Generated_Source\PSoC5/ErikaOS_ee_gettaskstate.c **** 
+ 156:Generated_Source\PSoC5/ErikaOS_ee_gettaskstate.c ****     EE_os_notify_error_from_us(OSServiceId_GetTaskState, &error_parameters, ev);
+ 157:Generated_Source\PSoC5/ErikaOS_ee_gettaskstate.c ****     EE_ORTI_set_service_out(EE_SERVICETRACE_GETTASKSTATE);
+ 158:Generated_Source\PSoC5/ErikaOS_ee_gettaskstate.c ****   } else {
+ 159:Generated_Source\PSoC5/ErikaOS_ee_gettaskstate.c ****     EE_ORTI_set_service_out(EE_SERVICETRACE_GETTASKSTATE);
+ 160:Generated_Source\PSoC5/ErikaOS_ee_gettaskstate.c ****   }
+ 161:Generated_Source\PSoC5/ErikaOS_ee_gettaskstate.c **** 
+ 162:Generated_Source\PSoC5/ErikaOS_ee_gettaskstate.c ****   return ev;
+ 163:Generated_Source\PSoC5/ErikaOS_ee_gettaskstate.c **** }
+  45              		.loc 1 163 0
+  46 0008 7047     		bx	lr
+  47              		.cfi_endproc
+  48              	.LFE59:
+  49              		.size	EE_oo_GetTaskState, .-EE_oo_GetTaskState
+  50 000a 00BF     		.text
+  51              	.Letext0:
+  52              		.file 2 "Generated_Source\\PSoC5\\ErikaOS_common_ee_types.inc"
+  53              		.file 3 "Generated_Source\\PSoC5\\ErikaOS_cortex_mx_ee_cpu.inc"
+  54              		.file 4 "Generated_Source\\PSoC5\\ErikaOS_ee_oo_common.inc"
+  55              		.file 5 "Generated_Source\\PSoC5\\ErikaOS_ee_oo_internal.inc"
+  56              		.file 6 "Generated_Source\\PSoC5\\ErikaOS_common_ee_primitives.inc"
+  57              		.file 7 "Generated_Source\\PSoC5\\ErikaOS_cortex_mx_ee_context.inc"
+  58              		.file 8 "Generated_Source\\PSoC5\\ErikaOS_ee_oo_intfunc.inc"
+  59              		.section	.debug_info,"",%progbits
+  60              	.Ldebug_info0:
+  61 0000 FB020000 		.4byte	0x2fb
+  62 0004 0400     		.2byte	0x4
+  63 0006 00000000 		.4byte	.Ldebug_abbrev0
+  64 000a 04       		.byte	0x4
+  65 000b 01       		.uleb128 0x1
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccKvAaCs.s 			page 5
+
+
+  66 000c 16030000 		.4byte	.LASF47
+  67 0010 0C       		.byte	0xc
+  68 0011 E3010000 		.4byte	.LASF48
+  69 0015 32000000 		.4byte	.LASF49
+  70 0019 00000000 		.4byte	.Ldebug_ranges0+0
+  71 001d 00000000 		.4byte	0
+  72 0021 00000000 		.4byte	.Ldebug_line0
+  73 0025 02       		.uleb128 0x2
+  74 0026 01       		.byte	0x1
+  75 0027 06       		.byte	0x6
+  76 0028 D7010000 		.4byte	.LASF0
+  77 002c 02       		.uleb128 0x2
+  78 002d 01       		.byte	0x1
+  79 002e 08       		.byte	0x8
+  80 002f C9010000 		.4byte	.LASF1
+  81 0033 02       		.uleb128 0x2
+  82 0034 02       		.byte	0x2
+  83 0035 05       		.byte	0x5
+  84 0036 96000000 		.4byte	.LASF2
+  85 003a 02       		.uleb128 0x2
+  86 003b 02       		.byte	0x2
+  87 003c 07       		.byte	0x7
+  88 003d 4F020000 		.4byte	.LASF3
+  89 0041 02       		.uleb128 0x2
+  90 0042 04       		.byte	0x4
+  91 0043 05       		.byte	0x5
+  92 0044 81010000 		.4byte	.LASF4
+  93 0048 02       		.uleb128 0x2
+  94 0049 04       		.byte	0x4
+  95 004a 07       		.byte	0x7
+  96 004b 85020000 		.4byte	.LASF5
+  97 004f 02       		.uleb128 0x2
+  98 0050 08       		.byte	0x8
+  99 0051 05       		.byte	0x5
+ 100 0052 25010000 		.4byte	.LASF6
+ 101 0056 02       		.uleb128 0x2
+ 102 0057 08       		.byte	0x8
+ 103 0058 07       		.byte	0x7
+ 104 0059 33010000 		.4byte	.LASF7
+ 105 005d 03       		.uleb128 0x3
+ 106 005e 04       		.byte	0x4
+ 107 005f 05       		.byte	0x5
+ 108 0060 696E7400 		.ascii	"int\000"
+ 109 0064 02       		.uleb128 0x2
+ 110 0065 04       		.byte	0x4
+ 111 0066 07       		.byte	0x7
+ 112 0067 14020000 		.4byte	.LASF8
+ 113 006b 02       		.uleb128 0x2
+ 114 006c 08       		.byte	0x8
+ 115 006d 04       		.byte	0x4
+ 116 006e B4010000 		.4byte	.LASF9
+ 117 0072 04       		.uleb128 0x4
+ 118 0073 00000000 		.4byte	.LASF10
+ 119 0077 02       		.byte	0x2
+ 120 0078 3E       		.byte	0x3e
+ 121 0079 2C000000 		.4byte	0x2c
+ 122 007d 04       		.uleb128 0x4
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccKvAaCs.s 			page 6
+
+
+ 123 007e 79010000 		.4byte	.LASF11
+ 124 0082 02       		.byte	0x2
+ 125 0083 3F       		.byte	0x3f
+ 126 0084 25000000 		.4byte	0x25
+ 127 0088 04       		.uleb128 0x4
+ 128 0089 62020000 		.4byte	.LASF12
+ 129 008d 02       		.byte	0x2
+ 130 008e 52       		.byte	0x52
+ 131 008f 3A000000 		.4byte	0x3a
+ 132 0093 04       		.uleb128 0x4
+ 133 0094 46020000 		.4byte	.LASF13
+ 134 0098 02       		.byte	0x2
+ 135 0099 53       		.byte	0x53
+ 136 009a 5D000000 		.4byte	0x5d
+ 137 009e 04       		.uleb128 0x4
+ 138 009f C6000000 		.4byte	.LASF14
+ 139 00a3 02       		.byte	0x2
+ 140 00a4 54       		.byte	0x54
+ 141 00a5 64000000 		.4byte	0x64
+ 142 00a9 04       		.uleb128 0x4
+ 143 00aa 17000000 		.4byte	.LASF15
+ 144 00ae 03       		.byte	0x3
+ 145 00af 4D       		.byte	0x4d
+ 146 00b0 9E000000 		.4byte	0x9e
+ 147 00b4 04       		.uleb128 0x4
+ 148 00b5 BE000000 		.4byte	.LASF16
+ 149 00b9 03       		.byte	0x3
+ 150 00ba 4F       		.byte	0x4f
+ 151 00bb 9E000000 		.4byte	0x9e
+ 152 00bf 04       		.uleb128 0x4
+ 153 00c0 97020000 		.4byte	.LASF17
+ 154 00c4 03       		.byte	0x3
+ 155 00c5 54       		.byte	0x54
+ 156 00c6 A9000000 		.4byte	0xa9
+ 157 00ca 04       		.uleb128 0x4
+ 158 00cb E1000000 		.4byte	.LASF18
+ 159 00cf 03       		.byte	0x3
+ 160 00d0 78       		.byte	0x78
+ 161 00d1 93000000 		.4byte	0x93
+ 162 00d5 05       		.uleb128 0x5
+ 163 00d6 63010000 		.4byte	.LASF19
+ 164 00da 04       		.byte	0x4
+ 165 00db 0801     		.2byte	0x108
+ 166 00dd 88000000 		.4byte	0x88
+ 167 00e1 05       		.uleb128 0x5
+ 168 00e2 C0010000 		.4byte	.LASF20
+ 169 00e6 04       		.byte	0x4
+ 170 00e7 EE01     		.2byte	0x1ee
+ 171 00e9 CA000000 		.4byte	0xca
+ 172 00ed 05       		.uleb128 0x5
+ 173 00ee C3020000 		.4byte	.LASF21
+ 174 00f2 04       		.byte	0x4
+ 175 00f3 F701     		.2byte	0x1f7
+ 176 00f5 F9000000 		.4byte	0xf9
+ 177 00f9 06       		.uleb128 0x6
+ 178 00fa 04       		.byte	0x4
+ 179 00fb A9000000 		.4byte	0xa9
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccKvAaCs.s 			page 7
+
+
+ 180 00ff 05       		.uleb128 0x5
+ 181 0100 A0000000 		.4byte	.LASF22
+ 182 0104 04       		.byte	0x4
+ 183 0105 1803     		.2byte	0x318
+ 184 0107 2C000000 		.4byte	0x2c
+ 185 010b 07       		.uleb128 0x7
+ 186 010c 8A010000 		.4byte	.LASF23
+ 187 0110 04       		.byte	0x4
+ 188 0111 8E03     		.2byte	0x38e
+ 189 0113 03       		.byte	0x3
+ 190 0114 25010000 		.4byte	0x125
+ 191 0118 08       		.uleb128 0x8
+ 192 0119 73727600 		.ascii	"srv\000"
+ 193 011d 04       		.byte	0x4
+ 194 011e 8E03     		.2byte	0x38e
+ 195 0120 72000000 		.4byte	0x72
+ 196 0124 00       		.byte	0
+ 197 0125 07       		.uleb128 0x7
+ 198 0126 0E010000 		.4byte	.LASF24
+ 199 012a 04       		.byte	0x4
+ 200 012b 9A03     		.2byte	0x39a
+ 201 012d 03       		.byte	0x3
+ 202 012e 3E010000 		.4byte	0x13e
+ 203 0132 08       		.uleb128 0x8
+ 204 0133 696400   		.ascii	"id\000"
+ 205 0136 04       		.byte	0x4
+ 206 0137 9A03     		.2byte	0x39a
+ 207 0139 72000000 		.4byte	0x72
+ 208 013d 00       		.byte	0
+ 209 013e 07       		.uleb128 0x7
+ 210 013f BC030000 		.4byte	.LASF25
+ 211 0143 04       		.byte	0x4
+ 212 0144 9F03     		.2byte	0x39f
+ 213 0146 03       		.byte	0x3
+ 214 0147 57010000 		.4byte	0x157
+ 215 014b 08       		.uleb128 0x8
+ 216 014c 696400   		.ascii	"id\000"
+ 217 014f 04       		.byte	0x4
+ 218 0150 9F03     		.2byte	0x39f
+ 219 0152 72000000 		.4byte	0x72
+ 220 0156 00       		.byte	0
+ 221 0157 09       		.uleb128 0x9
+ 222 0158 A3020000 		.4byte	.LASF26
+ 223 015c 05       		.byte	0x5
+ 224 015d B5       		.byte	0xb5
+ 225 015e 03       		.byte	0x3
+ 226 015f 6F010000 		.4byte	0x16f
+ 227 0163 0A       		.uleb128 0xa
+ 228 0164 6C020000 		.4byte	.LASF27
+ 229 0168 05       		.byte	0x5
+ 230 0169 B6       		.byte	0xb6
+ 231 016a FF000000 		.4byte	0xff
+ 232 016e 00       		.byte	0
+ 233 016f 0B       		.uleb128 0xb
+ 234 0170 AB000000 		.4byte	.LASF50
+ 235 0174 01       		.byte	0x1
+ 236 0175 3D       		.byte	0x3d
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccKvAaCs.s 			page 8
+
+
+ 237 0176 FF000000 		.4byte	0xff
+ 238 017a 00000000 		.4byte	.LFB59
+ 239 017e 0A000000 		.4byte	.LFE59-.LFB59
+ 240 0182 01       		.uleb128 0x1
+ 241 0183 9C       		.byte	0x9c
+ 242 0184 B1010000 		.4byte	0x1b1
+ 243 0188 0C       		.uleb128 0xc
+ 244 0189 9E010000 		.4byte	.LASF28
+ 245 018d 01       		.byte	0x1
+ 246 018e 3D       		.byte	0x3d
+ 247 018f E1000000 		.4byte	0xe1
+ 248 0193 00000000 		.4byte	.LLST0
+ 249 0197 0D       		.uleb128 0xd
+ 250 0198 73010000 		.4byte	.LASF29
+ 251 019c 01       		.byte	0x1
+ 252 019d 3D       		.byte	0x3d
+ 253 019e ED000000 		.4byte	0xed
+ 254 01a2 01       		.uleb128 0x1
+ 255 01a3 51       		.byte	0x51
+ 256 01a4 0E       		.uleb128 0xe
+ 257 01a5 657600   		.ascii	"ev\000"
+ 258 01a8 01       		.byte	0x1
+ 259 01a9 3F       		.byte	0x3f
+ 260 01aa FF000000 		.4byte	0xff
+ 261 01ae 01       		.uleb128 0x1
+ 262 01af 50       		.byte	0x50
+ 263 01b0 00       		.byte	0
+ 264 01b1 0F       		.uleb128 0xf
+ 265 01b2 F9000000 		.4byte	.LASF30
+ 266 01b6 06       		.byte	0x6
+ 267 01b7 44       		.byte	0x44
+ 268 01b8 A9000000 		.4byte	0xa9
+ 269 01bc 0F       		.uleb128 0xf
+ 270 01bd 2D020000 		.4byte	.LASF31
+ 271 01c1 07       		.byte	0x7
+ 272 01c2 48       		.byte	0x48
+ 273 01c3 CA000000 		.4byte	0xca
+ 274 01c7 10       		.uleb128 0x10
+ 275 01c8 DD010000 		.4byte	0x1dd
+ 276 01cc D6010000 		.4byte	0x1d6
+ 277 01d0 11       		.uleb128 0x11
+ 278 01d1 D6010000 		.4byte	0x1d6
+ 279 01d5 00       		.byte	0
+ 280 01d6 02       		.uleb128 0x2
+ 281 01d7 04       		.byte	0x4
+ 282 01d8 07       		.byte	0x7
+ 283 01d9 D4020000 		.4byte	.LASF32
+ 284 01dd 12       		.uleb128 0x12
+ 285 01de A9000000 		.4byte	0xa9
+ 286 01e2 0F       		.uleb128 0xf
+ 287 01e3 D0000000 		.4byte	.LASF33
+ 288 01e7 04       		.byte	0x4
+ 289 01e8 B2       		.byte	0xb2
+ 290 01e9 ED010000 		.4byte	0x1ed
+ 291 01ed 12       		.uleb128 0x12
+ 292 01ee C7010000 		.4byte	0x1c7
+ 293 01f2 10       		.uleb128 0x10
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccKvAaCs.s 			page 9
+
+
+ 294 01f3 DD010000 		.4byte	0x1dd
+ 295 01f7 01020000 		.4byte	0x201
+ 296 01fb 11       		.uleb128 0x11
+ 297 01fc D6010000 		.4byte	0x1d6
+ 298 0200 00       		.byte	0
+ 299 0201 0F       		.uleb128 0xf
+ 300 0202 F7020000 		.4byte	.LASF34
+ 301 0206 04       		.byte	0x4
+ 302 0207 B3       		.byte	0xb3
+ 303 0208 0C020000 		.4byte	0x20c
+ 304 020c 12       		.uleb128 0x12
+ 305 020d F2010000 		.4byte	0x1f2
+ 306 0211 10       		.uleb128 0x10
+ 307 0212 A9000000 		.4byte	0xa9
+ 308 0216 20020000 		.4byte	0x220
+ 309 021a 11       		.uleb128 0x11
+ 310 021b D6010000 		.4byte	0x1d6
+ 311 021f 00       		.byte	0
+ 312 0220 0F       		.uleb128 0xf
+ 313 0221 EA020000 		.4byte	.LASF35
+ 314 0225 04       		.byte	0x4
+ 315 0226 C1       		.byte	0xc1
+ 316 0227 11020000 		.4byte	0x211
+ 317 022b 10       		.uleb128 0x10
+ 318 022c CA000000 		.4byte	0xca
+ 319 0230 3A020000 		.4byte	0x23a
+ 320 0234 11       		.uleb128 0x11
+ 321 0235 D6010000 		.4byte	0x1d6
+ 322 0239 00       		.byte	0
+ 323 023a 0F       		.uleb128 0xf
+ 324 023b 0B030000 		.4byte	.LASF36
+ 325 023f 04       		.byte	0x4
+ 326 0240 C9       		.byte	0xc9
+ 327 0241 2B020000 		.4byte	0x22b
+ 328 0245 10       		.uleb128 0x10
+ 329 0246 A9000000 		.4byte	0xa9
+ 330 024a 54020000 		.4byte	0x254
+ 331 024e 11       		.uleb128 0x11
+ 332 024f D6010000 		.4byte	0x1d6
+ 333 0253 00       		.byte	0
+ 334 0254 0F       		.uleb128 0xf
+ 335 0255 21020000 		.4byte	.LASF37
+ 336 0259 04       		.byte	0x4
+ 337 025a D1       		.byte	0xd1
+ 338 025b 45020000 		.4byte	0x245
+ 339 025f 0F       		.uleb128 0xf
+ 340 0260 8A000000 		.4byte	.LASF38
+ 341 0264 04       		.byte	0x4
+ 342 0265 D9       		.byte	0xd9
+ 343 0266 CA000000 		.4byte	0xca
+ 344 026a 0F       		.uleb128 0xf
+ 345 026b A5010000 		.4byte	.LASF39
+ 346 026f 04       		.byte	0x4
+ 347 0270 EE       		.byte	0xee
+ 348 0271 A9000000 		.4byte	0xa9
+ 349 0275 13       		.uleb128 0x13
+ 350 0276 09000000 		.4byte	.LASF40
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccKvAaCs.s 			page 10
+
+
+ 351 027a 04       		.byte	0x4
+ 352 027b 3601     		.2byte	0x136
+ 353 027d D5000000 		.4byte	0xd5
+ 354 0281 10       		.uleb128 0x10
+ 355 0282 A9000000 		.4byte	0xa9
+ 356 0286 90020000 		.4byte	0x290
+ 357 028a 11       		.uleb128 0x11
+ 358 028b D6010000 		.4byte	0x1d6
+ 359 028f 00       		.byte	0
+ 360 0290 13       		.uleb128 0x13
+ 361 0291 1F000000 		.4byte	.LASF41
+ 362 0295 04       		.byte	0x4
+ 363 0296 5301     		.2byte	0x153
+ 364 0298 81020000 		.4byte	0x281
+ 365 029c 10       		.uleb128 0x10
+ 366 029d BF000000 		.4byte	0xbf
+ 367 02a1 AB020000 		.4byte	0x2ab
+ 368 02a5 11       		.uleb128 0x11
+ 369 02a6 D6010000 		.4byte	0x1d6
+ 370 02aa 00       		.byte	0
+ 371 02ab 13       		.uleb128 0x13
+ 372 02ac E8000000 		.4byte	.LASF42
+ 373 02b0 04       		.byte	0x4
+ 374 02b1 5E01     		.2byte	0x15e
+ 375 02b3 9C020000 		.4byte	0x29c
+ 376 02b7 0F       		.uleb128 0xf
+ 377 02b8 A4030000 		.4byte	.LASF43
+ 378 02bc 08       		.byte	0x8
+ 379 02bd 40       		.byte	0x40
+ 380 02be A9000000 		.4byte	0xa9
+ 381 02c2 0F       		.uleb128 0xf
+ 382 02c3 4A010000 		.4byte	.LASF44
+ 383 02c7 08       		.byte	0x8
+ 384 02c8 47       		.byte	0x47
+ 385 02c9 B4000000 		.4byte	0xb4
+ 386 02cd 0F       		.uleb128 0xf
+ 387 02ce 72020000 		.4byte	.LASF45
+ 388 02d2 08       		.byte	0x8
+ 389 02d3 4A       		.byte	0x4a
+ 390 02d4 A9000000 		.4byte	0xa9
+ 391 02d8 10       		.uleb128 0x10
+ 392 02d9 E8020000 		.4byte	0x2e8
+ 393 02dd E8020000 		.4byte	0x2e8
+ 394 02e1 14       		.uleb128 0x14
+ 395 02e2 D6010000 		.4byte	0x1d6
+ 396 02e6 FF       		.byte	0xff
+ 397 02e7 00       		.byte	0
+ 398 02e8 12       		.uleb128 0x12
+ 399 02e9 7D000000 		.4byte	0x7d
+ 400 02ed 13       		.uleb128 0x13
+ 401 02ee DD020000 		.4byte	.LASF46
+ 402 02f2 05       		.byte	0x5
+ 403 02f3 AB01     		.2byte	0x1ab
+ 404 02f5 F9020000 		.4byte	0x2f9
+ 405 02f9 12       		.uleb128 0x12
+ 406 02fa D8020000 		.4byte	0x2d8
+ 407 02fe 00       		.byte	0
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccKvAaCs.s 			page 11
+
+
+ 408              		.section	.debug_abbrev,"",%progbits
+ 409              	.Ldebug_abbrev0:
+ 410 0000 01       		.uleb128 0x1
+ 411 0001 11       		.uleb128 0x11
+ 412 0002 01       		.byte	0x1
+ 413 0003 25       		.uleb128 0x25
+ 414 0004 0E       		.uleb128 0xe
+ 415 0005 13       		.uleb128 0x13
+ 416 0006 0B       		.uleb128 0xb
+ 417 0007 03       		.uleb128 0x3
+ 418 0008 0E       		.uleb128 0xe
+ 419 0009 1B       		.uleb128 0x1b
+ 420 000a 0E       		.uleb128 0xe
+ 421 000b 55       		.uleb128 0x55
+ 422 000c 17       		.uleb128 0x17
+ 423 000d 11       		.uleb128 0x11
+ 424 000e 01       		.uleb128 0x1
+ 425 000f 10       		.uleb128 0x10
+ 426 0010 17       		.uleb128 0x17
+ 427 0011 00       		.byte	0
+ 428 0012 00       		.byte	0
+ 429 0013 02       		.uleb128 0x2
+ 430 0014 24       		.uleb128 0x24
+ 431 0015 00       		.byte	0
+ 432 0016 0B       		.uleb128 0xb
+ 433 0017 0B       		.uleb128 0xb
+ 434 0018 3E       		.uleb128 0x3e
+ 435 0019 0B       		.uleb128 0xb
+ 436 001a 03       		.uleb128 0x3
+ 437 001b 0E       		.uleb128 0xe
+ 438 001c 00       		.byte	0
+ 439 001d 00       		.byte	0
+ 440 001e 03       		.uleb128 0x3
+ 441 001f 24       		.uleb128 0x24
+ 442 0020 00       		.byte	0
+ 443 0021 0B       		.uleb128 0xb
+ 444 0022 0B       		.uleb128 0xb
+ 445 0023 3E       		.uleb128 0x3e
+ 446 0024 0B       		.uleb128 0xb
+ 447 0025 03       		.uleb128 0x3
+ 448 0026 08       		.uleb128 0x8
+ 449 0027 00       		.byte	0
+ 450 0028 00       		.byte	0
+ 451 0029 04       		.uleb128 0x4
+ 452 002a 16       		.uleb128 0x16
+ 453 002b 00       		.byte	0
+ 454 002c 03       		.uleb128 0x3
+ 455 002d 0E       		.uleb128 0xe
+ 456 002e 3A       		.uleb128 0x3a
+ 457 002f 0B       		.uleb128 0xb
+ 458 0030 3B       		.uleb128 0x3b
+ 459 0031 0B       		.uleb128 0xb
+ 460 0032 49       		.uleb128 0x49
+ 461 0033 13       		.uleb128 0x13
+ 462 0034 00       		.byte	0
+ 463 0035 00       		.byte	0
+ 464 0036 05       		.uleb128 0x5
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccKvAaCs.s 			page 12
+
+
+ 465 0037 16       		.uleb128 0x16
+ 466 0038 00       		.byte	0
+ 467 0039 03       		.uleb128 0x3
+ 468 003a 0E       		.uleb128 0xe
+ 469 003b 3A       		.uleb128 0x3a
+ 470 003c 0B       		.uleb128 0xb
+ 471 003d 3B       		.uleb128 0x3b
+ 472 003e 05       		.uleb128 0x5
+ 473 003f 49       		.uleb128 0x49
+ 474 0040 13       		.uleb128 0x13
+ 475 0041 00       		.byte	0
+ 476 0042 00       		.byte	0
+ 477 0043 06       		.uleb128 0x6
+ 478 0044 0F       		.uleb128 0xf
+ 479 0045 00       		.byte	0
+ 480 0046 0B       		.uleb128 0xb
+ 481 0047 0B       		.uleb128 0xb
+ 482 0048 49       		.uleb128 0x49
+ 483 0049 13       		.uleb128 0x13
+ 484 004a 00       		.byte	0
+ 485 004b 00       		.byte	0
+ 486 004c 07       		.uleb128 0x7
+ 487 004d 2E       		.uleb128 0x2e
+ 488 004e 01       		.byte	0x1
+ 489 004f 03       		.uleb128 0x3
+ 490 0050 0E       		.uleb128 0xe
+ 491 0051 3A       		.uleb128 0x3a
+ 492 0052 0B       		.uleb128 0xb
+ 493 0053 3B       		.uleb128 0x3b
+ 494 0054 05       		.uleb128 0x5
+ 495 0055 27       		.uleb128 0x27
+ 496 0056 19       		.uleb128 0x19
+ 497 0057 20       		.uleb128 0x20
+ 498 0058 0B       		.uleb128 0xb
+ 499 0059 01       		.uleb128 0x1
+ 500 005a 13       		.uleb128 0x13
+ 501 005b 00       		.byte	0
+ 502 005c 00       		.byte	0
+ 503 005d 08       		.uleb128 0x8
+ 504 005e 05       		.uleb128 0x5
+ 505 005f 00       		.byte	0
+ 506 0060 03       		.uleb128 0x3
+ 507 0061 08       		.uleb128 0x8
+ 508 0062 3A       		.uleb128 0x3a
+ 509 0063 0B       		.uleb128 0xb
+ 510 0064 3B       		.uleb128 0x3b
+ 511 0065 05       		.uleb128 0x5
+ 512 0066 49       		.uleb128 0x49
+ 513 0067 13       		.uleb128 0x13
+ 514 0068 00       		.byte	0
+ 515 0069 00       		.byte	0
+ 516 006a 09       		.uleb128 0x9
+ 517 006b 2E       		.uleb128 0x2e
+ 518 006c 01       		.byte	0x1
+ 519 006d 03       		.uleb128 0x3
+ 520 006e 0E       		.uleb128 0xe
+ 521 006f 3A       		.uleb128 0x3a
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccKvAaCs.s 			page 13
+
+
+ 522 0070 0B       		.uleb128 0xb
+ 523 0071 3B       		.uleb128 0x3b
+ 524 0072 0B       		.uleb128 0xb
+ 525 0073 27       		.uleb128 0x27
+ 526 0074 19       		.uleb128 0x19
+ 527 0075 20       		.uleb128 0x20
+ 528 0076 0B       		.uleb128 0xb
+ 529 0077 01       		.uleb128 0x1
+ 530 0078 13       		.uleb128 0x13
+ 531 0079 00       		.byte	0
+ 532 007a 00       		.byte	0
+ 533 007b 0A       		.uleb128 0xa
+ 534 007c 05       		.uleb128 0x5
+ 535 007d 00       		.byte	0
+ 536 007e 03       		.uleb128 0x3
+ 537 007f 0E       		.uleb128 0xe
+ 538 0080 3A       		.uleb128 0x3a
+ 539 0081 0B       		.uleb128 0xb
+ 540 0082 3B       		.uleb128 0x3b
+ 541 0083 0B       		.uleb128 0xb
+ 542 0084 49       		.uleb128 0x49
+ 543 0085 13       		.uleb128 0x13
+ 544 0086 00       		.byte	0
+ 545 0087 00       		.byte	0
+ 546 0088 0B       		.uleb128 0xb
+ 547 0089 2E       		.uleb128 0x2e
+ 548 008a 01       		.byte	0x1
+ 549 008b 3F       		.uleb128 0x3f
+ 550 008c 19       		.uleb128 0x19
+ 551 008d 03       		.uleb128 0x3
+ 552 008e 0E       		.uleb128 0xe
+ 553 008f 3A       		.uleb128 0x3a
+ 554 0090 0B       		.uleb128 0xb
+ 555 0091 3B       		.uleb128 0x3b
+ 556 0092 0B       		.uleb128 0xb
+ 557 0093 27       		.uleb128 0x27
+ 558 0094 19       		.uleb128 0x19
+ 559 0095 49       		.uleb128 0x49
+ 560 0096 13       		.uleb128 0x13
+ 561 0097 11       		.uleb128 0x11
+ 562 0098 01       		.uleb128 0x1
+ 563 0099 12       		.uleb128 0x12
+ 564 009a 06       		.uleb128 0x6
+ 565 009b 40       		.uleb128 0x40
+ 566 009c 18       		.uleb128 0x18
+ 567 009d 9742     		.uleb128 0x2117
+ 568 009f 19       		.uleb128 0x19
+ 569 00a0 01       		.uleb128 0x1
+ 570 00a1 13       		.uleb128 0x13
+ 571 00a2 00       		.byte	0
+ 572 00a3 00       		.byte	0
+ 573 00a4 0C       		.uleb128 0xc
+ 574 00a5 05       		.uleb128 0x5
+ 575 00a6 00       		.byte	0
+ 576 00a7 03       		.uleb128 0x3
+ 577 00a8 0E       		.uleb128 0xe
+ 578 00a9 3A       		.uleb128 0x3a
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccKvAaCs.s 			page 14
+
+
+ 579 00aa 0B       		.uleb128 0xb
+ 580 00ab 3B       		.uleb128 0x3b
+ 581 00ac 0B       		.uleb128 0xb
+ 582 00ad 49       		.uleb128 0x49
+ 583 00ae 13       		.uleb128 0x13
+ 584 00af 02       		.uleb128 0x2
+ 585 00b0 17       		.uleb128 0x17
+ 586 00b1 00       		.byte	0
+ 587 00b2 00       		.byte	0
+ 588 00b3 0D       		.uleb128 0xd
+ 589 00b4 05       		.uleb128 0x5
+ 590 00b5 00       		.byte	0
+ 591 00b6 03       		.uleb128 0x3
+ 592 00b7 0E       		.uleb128 0xe
+ 593 00b8 3A       		.uleb128 0x3a
+ 594 00b9 0B       		.uleb128 0xb
+ 595 00ba 3B       		.uleb128 0x3b
+ 596 00bb 0B       		.uleb128 0xb
+ 597 00bc 49       		.uleb128 0x49
+ 598 00bd 13       		.uleb128 0x13
+ 599 00be 02       		.uleb128 0x2
+ 600 00bf 18       		.uleb128 0x18
+ 601 00c0 00       		.byte	0
+ 602 00c1 00       		.byte	0
+ 603 00c2 0E       		.uleb128 0xe
+ 604 00c3 34       		.uleb128 0x34
+ 605 00c4 00       		.byte	0
+ 606 00c5 03       		.uleb128 0x3
+ 607 00c6 08       		.uleb128 0x8
+ 608 00c7 3A       		.uleb128 0x3a
+ 609 00c8 0B       		.uleb128 0xb
+ 610 00c9 3B       		.uleb128 0x3b
+ 611 00ca 0B       		.uleb128 0xb
+ 612 00cb 49       		.uleb128 0x49
+ 613 00cc 13       		.uleb128 0x13
+ 614 00cd 02       		.uleb128 0x2
+ 615 00ce 18       		.uleb128 0x18
+ 616 00cf 00       		.byte	0
+ 617 00d0 00       		.byte	0
+ 618 00d1 0F       		.uleb128 0xf
+ 619 00d2 34       		.uleb128 0x34
+ 620 00d3 00       		.byte	0
+ 621 00d4 03       		.uleb128 0x3
+ 622 00d5 0E       		.uleb128 0xe
+ 623 00d6 3A       		.uleb128 0x3a
+ 624 00d7 0B       		.uleb128 0xb
+ 625 00d8 3B       		.uleb128 0x3b
+ 626 00d9 0B       		.uleb128 0xb
+ 627 00da 49       		.uleb128 0x49
+ 628 00db 13       		.uleb128 0x13
+ 629 00dc 3F       		.uleb128 0x3f
+ 630 00dd 19       		.uleb128 0x19
+ 631 00de 3C       		.uleb128 0x3c
+ 632 00df 19       		.uleb128 0x19
+ 633 00e0 00       		.byte	0
+ 634 00e1 00       		.byte	0
+ 635 00e2 10       		.uleb128 0x10
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccKvAaCs.s 			page 15
+
+
+ 636 00e3 01       		.uleb128 0x1
+ 637 00e4 01       		.byte	0x1
+ 638 00e5 49       		.uleb128 0x49
+ 639 00e6 13       		.uleb128 0x13
+ 640 00e7 01       		.uleb128 0x1
+ 641 00e8 13       		.uleb128 0x13
+ 642 00e9 00       		.byte	0
+ 643 00ea 00       		.byte	0
+ 644 00eb 11       		.uleb128 0x11
+ 645 00ec 21       		.uleb128 0x21
+ 646 00ed 00       		.byte	0
+ 647 00ee 49       		.uleb128 0x49
+ 648 00ef 13       		.uleb128 0x13
+ 649 00f0 00       		.byte	0
+ 650 00f1 00       		.byte	0
+ 651 00f2 12       		.uleb128 0x12
+ 652 00f3 26       		.uleb128 0x26
+ 653 00f4 00       		.byte	0
+ 654 00f5 49       		.uleb128 0x49
+ 655 00f6 13       		.uleb128 0x13
+ 656 00f7 00       		.byte	0
+ 657 00f8 00       		.byte	0
+ 658 00f9 13       		.uleb128 0x13
+ 659 00fa 34       		.uleb128 0x34
+ 660 00fb 00       		.byte	0
+ 661 00fc 03       		.uleb128 0x3
+ 662 00fd 0E       		.uleb128 0xe
+ 663 00fe 3A       		.uleb128 0x3a
+ 664 00ff 0B       		.uleb128 0xb
+ 665 0100 3B       		.uleb128 0x3b
+ 666 0101 05       		.uleb128 0x5
+ 667 0102 49       		.uleb128 0x49
+ 668 0103 13       		.uleb128 0x13
+ 669 0104 3F       		.uleb128 0x3f
+ 670 0105 19       		.uleb128 0x19
+ 671 0106 3C       		.uleb128 0x3c
+ 672 0107 19       		.uleb128 0x19
+ 673 0108 00       		.byte	0
+ 674 0109 00       		.byte	0
+ 675 010a 14       		.uleb128 0x14
+ 676 010b 21       		.uleb128 0x21
+ 677 010c 00       		.byte	0
+ 678 010d 49       		.uleb128 0x49
+ 679 010e 13       		.uleb128 0x13
+ 680 010f 2F       		.uleb128 0x2f
+ 681 0110 0B       		.uleb128 0xb
+ 682 0111 00       		.byte	0
+ 683 0112 00       		.byte	0
+ 684 0113 00       		.byte	0
+ 685              		.section	.debug_loc,"",%progbits
+ 686              	.Ldebug_loc0:
+ 687              	.LLST0:
+ 688 0000 00000000 		.4byte	.LVL0
+ 689 0004 04000000 		.4byte	.LVL1
+ 690 0008 0100     		.2byte	0x1
+ 691 000a 50       		.byte	0x50
+ 692 000b 04000000 		.4byte	.LVL1
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccKvAaCs.s 			page 16
+
+
+ 693 000f 06000000 		.4byte	.LVL2
+ 694 0013 0400     		.2byte	0x4
+ 695 0015 F3       		.byte	0xf3
+ 696 0016 01       		.uleb128 0x1
+ 697 0017 50       		.byte	0x50
+ 698 0018 9F       		.byte	0x9f
+ 699 0019 06000000 		.4byte	.LVL2
+ 700 001d 08000000 		.4byte	.LVL3
+ 701 0021 0100     		.2byte	0x1
+ 702 0023 50       		.byte	0x50
+ 703 0024 08000000 		.4byte	.LVL3
+ 704 0028 0A000000 		.4byte	.LFE59
+ 705 002c 0400     		.2byte	0x4
+ 706 002e F3       		.byte	0xf3
+ 707 002f 01       		.uleb128 0x1
+ 708 0030 50       		.byte	0x50
+ 709 0031 9F       		.byte	0x9f
+ 710 0032 00000000 		.4byte	0
+ 711 0036 00000000 		.4byte	0
+ 712              		.section	.debug_aranges,"",%progbits
+ 713 0000 1C000000 		.4byte	0x1c
+ 714 0004 0200     		.2byte	0x2
+ 715 0006 00000000 		.4byte	.Ldebug_info0
+ 716 000a 04       		.byte	0x4
+ 717 000b 00       		.byte	0
+ 718 000c 0000     		.2byte	0
+ 719 000e 0000     		.2byte	0
+ 720 0010 00000000 		.4byte	.LFB59
+ 721 0014 0A000000 		.4byte	.LFE59-.LFB59
+ 722 0018 00000000 		.4byte	0
+ 723 001c 00000000 		.4byte	0
+ 724              		.section	.debug_ranges,"",%progbits
+ 725              	.Ldebug_ranges0:
+ 726 0000 00000000 		.4byte	.LFB59
+ 727 0004 0A000000 		.4byte	.LFE59
+ 728 0008 00000000 		.4byte	0
+ 729 000c 00000000 		.4byte	0
+ 730              		.section	.debug_line,"",%progbits
+ 731              	.Ldebug_line0:
+ 732 0000 44010000 		.section	.debug_str,"MS",%progbits,1
+ 732      02002501 
+ 732      00000201 
+ 732      FB0E0D00 
+ 732      01010101 
+ 733              	.LASF10:
+ 734 0000 45455F55 		.ascii	"EE_UINT8\000"
+ 734      494E5438 
+ 734      00
+ 735              	.LASF40:
+ 736 0009 45455F72 		.ascii	"EE_rq_bitmask\000"
+ 736      715F6269 
+ 736      746D6173 
+ 736      6B00
+ 737              	.LASF15:
+ 738 0017 45455F55 		.ascii	"EE_UREG\000"
+ 738      52454700 
+ 739              	.LASF41:
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccKvAaCs.s 			page 17
+
+
+ 740 001f 45455F74 		.ascii	"EE_th_event_active\000"
+ 740      685F6576 
+ 740      656E745F 
+ 740      61637469 
+ 740      766500
+ 741              	.LASF49:
+ 742 0032 443A5C48 		.ascii	"D:\\HDA\\1_sem\\Embedded System Design\\Lab\\Assign"
+ 742      44415C31 
+ 742      5F73656D 
+ 742      5C456D62 
+ 742      65646465 
+ 743 0060 6D656E74 		.ascii	"ment_1\\ReactionGame_OS\\ReactionGame.cydsn\000"
+ 743      5F315C52 
+ 743      65616374 
+ 743      696F6E47 
+ 743      616D655F 
+ 744              	.LASF38:
+ 745 008a 45455F73 		.ascii	"EE_stkfirst\000"
+ 745      746B6669 
+ 745      72737400 
+ 746              	.LASF2:
+ 747 0096 73686F72 		.ascii	"short int\000"
+ 747      7420696E 
+ 747      7400
+ 748              	.LASF22:
+ 749 00a0 53746174 		.ascii	"StatusType\000"
+ 749      75735479 
+ 749      706500
+ 750              	.LASF50:
+ 751 00ab 45455F6F 		.ascii	"EE_oo_GetTaskState\000"
+ 751      6F5F4765 
+ 751      74546173 
+ 751      6B537461 
+ 751      746500
+ 752              	.LASF16:
+ 753 00be 45455F46 		.ascii	"EE_FREG\000"
+ 753      52454700 
+ 754              	.LASF14:
+ 755 00c6 45455F55 		.ascii	"EE_UINT32\000"
+ 755      494E5433 
+ 755      3200
+ 756              	.LASF33:
+ 757 00d0 45455F74 		.ascii	"EE_th_ready_prio\000"
+ 757      685F7265 
+ 757      6164795F 
+ 757      7072696F 
+ 757      00
+ 758              	.LASF18:
+ 759 00e1 45455F54 		.ascii	"EE_TID\000"
+ 759      494400
+ 760              	.LASF42:
+ 761 00e8 45455F74 		.ascii	"EE_th_waswaiting\000"
+ 761      685F7761 
+ 761      73776169 
+ 761      74696E67 
+ 761      00
+ 762              	.LASF30:
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccKvAaCs.s 			page 18
+
+
+ 763 00f9 45455F49 		.ascii	"EE_IRQ_nesting_level\000"
+ 763      52515F6E 
+ 763      65737469 
+ 763      6E675F6C 
+ 763      6576656C 
+ 764              	.LASF24:
+ 765 010e 45455F4F 		.ascii	"EE_ORTI_set_service_in\000"
+ 765      5254495F 
+ 765      7365745F 
+ 765      73657276 
+ 765      6963655F 
+ 766              	.LASF6:
+ 767 0125 6C6F6E67 		.ascii	"long long int\000"
+ 767      206C6F6E 
+ 767      6720696E 
+ 767      7400
+ 768              	.LASF7:
+ 769 0133 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 769      206C6F6E 
+ 769      6720756E 
+ 769      7369676E 
+ 769      65642069 
+ 770              	.LASF44:
+ 771 014a 45455F6F 		.ascii	"EE_oo_IRQ_suspend_status\000"
+ 771      6F5F4952 
+ 771      515F7375 
+ 771      7370656E 
+ 771      645F7374 
+ 772              	.LASF19:
+ 773 0163 45455F54 		.ascii	"EE_TYPE_RQ_MASK\000"
+ 773      5950455F 
+ 773      52515F4D 
+ 773      41534B00 
+ 774              	.LASF29:
+ 775 0173 53746174 		.ascii	"State\000"
+ 775      6500
+ 776              	.LASF11:
+ 777 0179 45455F49 		.ascii	"EE_INT8\000"
+ 777      4E543800 
+ 778              	.LASF4:
+ 779 0181 6C6F6E67 		.ascii	"long int\000"
+ 779      20696E74 
+ 779      00
+ 780              	.LASF23:
+ 781 018a 45455F4F 		.ascii	"EE_ORTI_set_service\000"
+ 781      5254495F 
+ 781      7365745F 
+ 781      73657276 
+ 781      69636500 
+ 782              	.LASF28:
+ 783 019e 5461736B 		.ascii	"TaskID\000"
+ 783      494400
+ 784              	.LASF39:
+ 785 01a5 45455F73 		.ascii	"EE_sys_ceiling\000"
+ 785      79735F63 
+ 785      65696C69 
+ 785      6E6700
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccKvAaCs.s 			page 19
+
+
+ 786              	.LASF9:
+ 787 01b4 6C6F6E67 		.ascii	"long double\000"
+ 787      20646F75 
+ 787      626C6500 
+ 788              	.LASF20:
+ 789 01c0 5461736B 		.ascii	"TaskType\000"
+ 789      54797065 
+ 789      00
+ 790              	.LASF1:
+ 791 01c9 756E7369 		.ascii	"unsigned char\000"
+ 791      676E6564 
+ 791      20636861 
+ 791      7200
+ 792              	.LASF0:
+ 793 01d7 7369676E 		.ascii	"signed char\000"
+ 793      65642063 
+ 793      68617200 
+ 794              	.LASF48:
+ 795 01e3 47656E65 		.ascii	"Generated_Source\\PSoC5\\ErikaOS_ee_gettaskstate.c\000"
+ 795      72617465 
+ 795      645F536F 
+ 795      75726365 
+ 795      5C50536F 
+ 796              	.LASF8:
+ 797 0214 756E7369 		.ascii	"unsigned int\000"
+ 797      676E6564 
+ 797      20696E74 
+ 797      00
+ 798              	.LASF37:
+ 799 0221 45455F74 		.ascii	"EE_th_rnact\000"
+ 799      685F726E 
+ 799      61637400 
+ 800              	.LASF31:
+ 801 022d 45455F73 		.ascii	"EE_std_endcycle_next_tid\000"
+ 801      74645F65 
+ 801      6E646379 
+ 801      636C655F 
+ 801      6E657874 
+ 802              	.LASF13:
+ 803 0246 45455F49 		.ascii	"EE_INT32\000"
+ 803      4E543332 
+ 803      00
+ 804              	.LASF3:
+ 805 024f 73686F72 		.ascii	"short unsigned int\000"
+ 805      7420756E 
+ 805      7369676E 
+ 805      65642069 
+ 805      6E7400
+ 806              	.LASF12:
+ 807 0262 45455F55 		.ascii	"EE_UINT16\000"
+ 807      494E5431 
+ 807      3600
+ 808              	.LASF27:
+ 809 026c 4572726F 		.ascii	"Error\000"
+ 809      7200
+ 810              	.LASF45:
+ 811 0272 45455F41 		.ascii	"EE_ApplicationMode\000"
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccKvAaCs.s 			page 20
+
+
+ 811      70706C69 
+ 811      63617469 
+ 811      6F6E4D6F 
+ 811      646500
+ 812              	.LASF5:
+ 813 0285 6C6F6E67 		.ascii	"long unsigned int\000"
+ 813      20756E73 
+ 813      69676E65 
+ 813      6420696E 
+ 813      7400
+ 814              	.LASF17:
+ 815 0297 45455F54 		.ascii	"EE_TYPEBOOL\000"
+ 815      59504542 
+ 815      4F4F4C00 
+ 816              	.LASF26:
+ 817 02a3 45455F6F 		.ascii	"EE_os_notify_error_from_us_impl\000"
+ 817      735F6E6F 
+ 817      74696679 
+ 817      5F657272 
+ 817      6F725F66 
+ 818              	.LASF21:
+ 819 02c3 5461736B 		.ascii	"TaskStateRefType\000"
+ 819      53746174 
+ 819      65526566 
+ 819      54797065 
+ 819      00
+ 820              	.LASF32:
+ 821 02d4 73697A65 		.ascii	"sizetype\000"
+ 821      74797065 
+ 821      00
+ 822              	.LASF46:
+ 823 02dd 45455F72 		.ascii	"EE_rq_lookup\000"
+ 823      715F6C6F 
+ 823      6F6B7570 
+ 823      00
+ 824              	.LASF35:
+ 825 02ea 45455F74 		.ascii	"EE_th_status\000"
+ 825      685F7374 
+ 825      61747573 
+ 825      00
+ 826              	.LASF34:
+ 827 02f7 45455F74 		.ascii	"EE_th_dispatch_prio\000"
+ 827      685F6469 
+ 827      73706174 
+ 827      63685F70 
+ 827      72696F00 
+ 828              	.LASF36:
+ 829 030b 45455F74 		.ascii	"EE_th_next\000"
+ 829      685F6E65 
+ 829      787400
+ 830              	.LASF47:
+ 831 0316 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
+ 831      43313120 
+ 831      352E342E 
+ 831      31203230 
+ 831      31363036 
+ 832 0349 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m3 -mthumb -g -O"
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccKvAaCs.s 			page 21
+
+
+ 832      20726576 
+ 832      6973696F 
+ 832      6E203233 
+ 832      37373135 
+ 833 037c 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
+ 833      66756E63 
+ 833      74696F6E 
+ 833      2D736563 
+ 833      74696F6E 
+ 834              	.LASF43:
+ 835 03a4 45455F6F 		.ascii	"EE_oo_IRQ_disable_count\000"
+ 835      6F5F4952 
+ 835      515F6469 
+ 835      7361626C 
+ 835      655F636F 
+ 836              	.LASF25:
+ 837 03bc 45455F4F 		.ascii	"EE_ORTI_set_service_out\000"
+ 837      5254495F 
+ 837      7365745F 
+ 837      73657276 
+ 837      6963655F 
+ 838              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran

@@ -1,0 +1,3114 @@
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccXJJiz6.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m3
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 1
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.thumb
+  14              		.syntax unified
+  15              		.file	"ErikaOS_ee_thendin.c"
+  16              		.text
+  17              	.Ltext0:
+  18              		.cfi_sections	.debug_frame
+  19              		.section	.text.EE_thread_rnact_max,"ax",%progbits
+  20              		.align	2
+  21              		.thumb
+  22              		.thumb_func
+  23              		.type	EE_thread_rnact_max, %function
+  24              	EE_thread_rnact_max:
+  25              	.LFB59:
+  26              		.file 1 "Generated_Source\\PSoC5\\ErikaOS_ee_thendin.c"
+   1:Generated_Source\PSoC5/ErikaOS_ee_thendin.c **** /* ###*B*###
+   2:Generated_Source\PSoC5/ErikaOS_ee_thendin.c ****  * ERIKA Enterprise - a tiny RTOS for small microcontrollers
+   3:Generated_Source\PSoC5/ErikaOS_ee_thendin.c ****  *
+   4:Generated_Source\PSoC5/ErikaOS_ee_thendin.c ****  * Copyright (C) 2002-2008  Evidence Srl
+   5:Generated_Source\PSoC5/ErikaOS_ee_thendin.c ****  *
+   6:Generated_Source\PSoC5/ErikaOS_ee_thendin.c ****  * This file is part of ERIKA Enterprise.
+   7:Generated_Source\PSoC5/ErikaOS_ee_thendin.c ****  *
+   8:Generated_Source\PSoC5/ErikaOS_ee_thendin.c ****  * ERIKA Enterprise is free software; you can redistribute it
+   9:Generated_Source\PSoC5/ErikaOS_ee_thendin.c ****  * and/or modify it under the terms of the GNU General Public License
+  10:Generated_Source\PSoC5/ErikaOS_ee_thendin.c ****  * version 2 as published by the Free Software Foundation, 
+  11:Generated_Source\PSoC5/ErikaOS_ee_thendin.c ****  * (with a special exception described below).
+  12:Generated_Source\PSoC5/ErikaOS_ee_thendin.c ****  *
+  13:Generated_Source\PSoC5/ErikaOS_ee_thendin.c ****  * Linking this code statically or dynamically with other modules is
+  14:Generated_Source\PSoC5/ErikaOS_ee_thendin.c ****  * making a combined work based on this code.  Thus, the terms and
+  15:Generated_Source\PSoC5/ErikaOS_ee_thendin.c ****  * conditions of the GNU General Public License cover the whole
+  16:Generated_Source\PSoC5/ErikaOS_ee_thendin.c ****  * combination.
+  17:Generated_Source\PSoC5/ErikaOS_ee_thendin.c ****  *
+  18:Generated_Source\PSoC5/ErikaOS_ee_thendin.c ****  * As a special exception, the copyright holders of this library give you
+  19:Generated_Source\PSoC5/ErikaOS_ee_thendin.c ****  * permission to link this code with independent modules to produce an
+  20:Generated_Source\PSoC5/ErikaOS_ee_thendin.c ****  * executable, regardless of the license terms of these independent
+  21:Generated_Source\PSoC5/ErikaOS_ee_thendin.c ****  * modules, and to copy and distribute the resulting executable under
+  22:Generated_Source\PSoC5/ErikaOS_ee_thendin.c ****  * terms of your choice, provided that you also meet, for each linked
+  23:Generated_Source\PSoC5/ErikaOS_ee_thendin.c ****  * independent module, the terms and conditions of the license of that
+  24:Generated_Source\PSoC5/ErikaOS_ee_thendin.c ****  * module.  An independent module is a module which is not derived from
+  25:Generated_Source\PSoC5/ErikaOS_ee_thendin.c ****  * or based on this library.  If you modify this code, you may extend
+  26:Generated_Source\PSoC5/ErikaOS_ee_thendin.c ****  * this exception to your version of the code, but you are not
+  27:Generated_Source\PSoC5/ErikaOS_ee_thendin.c ****  * obligated to do so.  If you do not wish to do so, delete this
+  28:Generated_Source\PSoC5/ErikaOS_ee_thendin.c ****  * exception statement from your version.
+  29:Generated_Source\PSoC5/ErikaOS_ee_thendin.c ****  *
+  30:Generated_Source\PSoC5/ErikaOS_ee_thendin.c ****  * ERIKA Enterprise is distributed in the hope that it will be
+  31:Generated_Source\PSoC5/ErikaOS_ee_thendin.c ****  * useful, but WITHOUT ANY WARRANTY; without even the implied warranty
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccXJJiz6.s 			page 2
+
+
+  32:Generated_Source\PSoC5/ErikaOS_ee_thendin.c ****  * of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  33:Generated_Source\PSoC5/ErikaOS_ee_thendin.c ****  * GNU General Public License version 2 for more details.
+  34:Generated_Source\PSoC5/ErikaOS_ee_thendin.c ****  *
+  35:Generated_Source\PSoC5/ErikaOS_ee_thendin.c ****  * You should have received a copy of the GNU General Public License
+  36:Generated_Source\PSoC5/ErikaOS_ee_thendin.c ****  * version 2 along with ERIKA Enterprise; if not, write to the
+  37:Generated_Source\PSoC5/ErikaOS_ee_thendin.c ****  * Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
+  38:Generated_Source\PSoC5/ErikaOS_ee_thendin.c ****  * Boston, MA 02110-1301 USA.
+  39:Generated_Source\PSoC5/ErikaOS_ee_thendin.c ****  * ###*E*### */
+  40:Generated_Source\PSoC5/ErikaOS_ee_thendin.c **** 
+  41:Generated_Source\PSoC5/ErikaOS_ee_thendin.c **** /*
+  42:Generated_Source\PSoC5/ErikaOS_ee_thendin.c ****  * Author: 2002-2004 Paolo Gai
+  43:Generated_Source\PSoC5/ErikaOS_ee_thendin.c ****  * CVS: $Id: ee_thendin.c,v 1.3 2006/01/24 10:20:20 pj Exp $
+  44:Generated_Source\PSoC5/ErikaOS_ee_thendin.c ****  */
+  45:Generated_Source\PSoC5/ErikaOS_ee_thendin.c **** 
+  46:Generated_Source\PSoC5/ErikaOS_ee_thendin.c **** /*
+  47:Generated_Source\PSoC5/ErikaOS_ee_thendin.c ****  * PSoC Port and API Generation
+  48:Generated_Source\PSoC5/ErikaOS_ee_thendin.c ****  * Carlos Fernando Meier Martinez
+  49:Generated_Source\PSoC5/ErikaOS_ee_thendin.c ****  * Hochschule Darmstadt, Germany. 2017.
+  50:Generated_Source\PSoC5/ErikaOS_ee_thendin.c ****  */
+  51:Generated_Source\PSoC5/ErikaOS_ee_thendin.c **** 
+  52:Generated_Source\PSoC5/ErikaOS_ee_thendin.c **** #include "ErikaOS_ee_internal.inc"
+  53:Generated_Source\PSoC5/ErikaOS_ee_thendin.c **** 
+  54:Generated_Source\PSoC5/ErikaOS_ee_thendin.c **** #ifndef __PRIVATE_THREAD_END_INSTANCE__
+  55:Generated_Source\PSoC5/ErikaOS_ee_thendin.c **** 
+  56:Generated_Source\PSoC5/ErikaOS_ee_thendin.c **** #if (defined(__OO_BCC2__)) || (defined(__OO_ECC2__))
+  57:Generated_Source\PSoC5/ErikaOS_ee_thendin.c **** static EE_BIT EE_thread_rnact_max(EE_TID current) {
+  27              		.loc 1 57 0
+  28              		.cfi_startproc
+  29              		@ args = 0, pretend = 0, frame = 0
+  30              		@ frame_needed = 0, uses_anonymous_args = 0
+  31              		@ link register save eliminated.
+  32              	.LVL0:
+  58:Generated_Source\PSoC5/ErikaOS_ee_thendin.c ****   return (EE_th_rnact[current] == EE_th_rnact_max[current]) ? 1U : 0U;
+  33              		.loc 1 58 0
+  34 0000 054B     		ldr	r3, .L4
+  35 0002 53F82020 		ldr	r2, [r3, r0, lsl #2]
+  36 0006 054B     		ldr	r3, .L4+4
+  37 0008 53F82030 		ldr	r3, [r3, r0, lsl #2]
+  38 000c 9A42     		cmp	r2, r3
+  39 000e 01D1     		bne	.L3
+  40 0010 0120     		movs	r0, #1
+  41              	.LVL1:
+  42 0012 7047     		bx	lr
+  43              	.LVL2:
+  44              	.L3:
+  45 0014 0020     		movs	r0, #0
+  46              	.LVL3:
+  59:Generated_Source\PSoC5/ErikaOS_ee_thendin.c **** }
+  47              		.loc 1 59 0
+  48 0016 7047     		bx	lr
+  49              	.L5:
+  50              		.align	2
+  51              	.L4:
+  52 0018 00000000 		.word	EE_th_rnact
+  53 001c 00000000 		.word	EE_th_rnact_max
+  54              		.cfi_endproc
+  55              	.LFE59:
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccXJJiz6.s 			page 3
+
+
+  56              		.size	EE_thread_rnact_max, .-EE_thread_rnact_max
+  57              		.section	.text.EE_thread_endcycle_next,"ax",%progbits
+  58              		.align	2
+  59              		.thumb
+  60              		.thumb_func
+  61              		.type	EE_thread_endcycle_next, %function
+  62              	EE_thread_endcycle_next:
+  63              	.LFB60:
+  60:Generated_Source\PSoC5/ErikaOS_ee_thendin.c **** #else /* __OO_BCC2__ || __OO_ECC2__ */
+  61:Generated_Source\PSoC5/ErikaOS_ee_thendin.c **** #define EE_thread_rnact_max(current)  (1U)
+  62:Generated_Source\PSoC5/ErikaOS_ee_thendin.c **** #endif /* __OO_BCC2__ || __OO_ECC2__ */
+  63:Generated_Source\PSoC5/ErikaOS_ee_thendin.c **** 
+  64:Generated_Source\PSoC5/ErikaOS_ee_thendin.c **** static void EE_thread_endcycle_next(void);
+  65:Generated_Source\PSoC5/ErikaOS_ee_thendin.c **** 
+  66:Generated_Source\PSoC5/ErikaOS_ee_thendin.c **** #if (defined(__OO_ECC1__)) || (defined(__OO_ECC2__))
+  67:Generated_Source\PSoC5/ErikaOS_ee_thendin.c **** static void EE_thread_endcycle_next(void)
+  68:Generated_Source\PSoC5/ErikaOS_ee_thendin.c **** {
+  64              		.loc 1 68 0
+  65              		.cfi_startproc
+  66              		@ args = 0, pretend = 0, frame = 0
+  67              		@ frame_needed = 0, uses_anonymous_args = 0
+  68 0000 08B5     		push	{r3, lr}
+  69              		.cfi_def_cfa_offset 8
+  70              		.cfi_offset 3, -8
+  71              		.cfi_offset 14, -4
+  69:Generated_Source\PSoC5/ErikaOS_ee_thendin.c ****   register EE_TID nexttid;
+  70:Generated_Source\PSoC5/ErikaOS_ee_thendin.c ****   nexttid = EE_rq2stk_exchange();
+  72              		.loc 1 70 0
+  73 0002 FFF7FEFF 		bl	EE_rq2stk_exchange
+  74              	.LVL4:
+  71:Generated_Source\PSoC5/ErikaOS_ee_thendin.c ****   if (EE_th_waswaiting[nexttid]) {
+  75              		.loc 1 71 0
+  76 0006 084B     		ldr	r3, .L10
+  77 0008 53F82030 		ldr	r3, [r3, r0, lsl #2]
+  78 000c 43B1     		cbz	r3, .L7
+  72:Generated_Source\PSoC5/ErikaOS_ee_thendin.c ****     EE_th_waswaiting[nexttid] = EE_FALSE;
+  79              		.loc 1 72 0
+  80 000e 0022     		movs	r2, #0
+  81 0010 054B     		ldr	r3, .L10
+  82 0012 43F82020 		str	r2, [r3, r0, lsl #2]
+  83              	.LVL5:
+  84              	.LBB36:
+  85              	.LBB37:
+  86              		.file 2 "Generated_Source\\PSoC5\\ErikaOS_cortex_mx_ee_context.inc"
+   1:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_context.inc **** /* ###*B*###
+   2:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_context.inc ****  * ERIKA Enterprise - a tiny RTOS for small microcontrollers
+   3:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_context.inc ****  *
+   4:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_context.inc ****  * Copyright (C) 2002-2011  Evidence Srl
+   5:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_context.inc ****  *
+   6:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_context.inc ****  * This file is part of ERIKA Enterprise.
+   7:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_context.inc ****  *
+   8:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_context.inc ****  * ERIKA Enterprise is free software; you can redistribute it
+   9:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_context.inc ****  * and/or modify it under the terms of the GNU General Public License
+  10:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_context.inc ****  * version 2 as published by the Free Software Foundation, 
+  11:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_context.inc ****  * (with a special exception described below).
+  12:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_context.inc ****  *
+  13:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_context.inc ****  * Linking this code statically or dynamically with other modules is
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccXJJiz6.s 			page 4
+
+
+  14:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_context.inc ****  * making a combined work based on this code.  Thus, the terms and
+  15:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_context.inc ****  * conditions of the GNU General Public License cover the whole
+  16:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_context.inc ****  * combination.
+  17:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_context.inc ****  *
+  18:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_context.inc ****  * As a special exception, the copyright holders of this library give you
+  19:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_context.inc ****  * permission to link this code with independent modules to produce an
+  20:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_context.inc ****  * executable, regardless of the license terms of these independent
+  21:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_context.inc ****  * modules, and to copy and distribute the resulting executable under
+  22:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_context.inc ****  * terms of your choice, provided that you also meet, for each linked
+  23:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_context.inc ****  * independent module, the terms and conditions of the license of that
+  24:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_context.inc ****  * module.  An independent module is a module which is not derived from
+  25:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_context.inc ****  * or based on this library.  If you modify this code, you may extend
+  26:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_context.inc ****  * this exception to your version of the code, but you are not
+  27:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_context.inc ****  * obligated to do so.  If you do not wish to do so, delete this
+  28:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_context.inc ****  * exception statement from your version.
+  29:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_context.inc ****  *
+  30:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_context.inc ****  * ERIKA Enterprise is distributed in the hope that it will be
+  31:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_context.inc ****  * useful, but WITHOUT ANY WARRANTY; without even the implied warranty
+  32:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_context.inc ****  * of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  33:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_context.inc ****  * GNU General Public License version 2 for more details.
+  34:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_context.inc ****  *
+  35:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_context.inc ****  * You should have received a copy of the GNU General Public License
+  36:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_context.inc ****  * version 2 along with ERIKA Enterprise; if not, write to the
+  37:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_context.inc ****  * Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
+  38:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_context.inc ****  * Boston, MA 02110-1301 USA.
+  39:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_context.inc ****  * ###*E*### */
+  40:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_context.inc **** 
+  41:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_context.inc **** /** 
+  42:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_context.inc **** 	@file ee_internal.h
+  43:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_context.inc **** 	@brief Derived from cpu/common/inc/ee_internal.h
+  44:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_context.inc **** 	@author Gianluca Franchino
+  45:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_context.inc **** 	@author Giuseppe Serano
+  46:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_context.inc **** 	@date 2011
+  47:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_context.inc **** */  
+  48:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_context.inc ****     
+  49:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_context.inc **** /*
+  50:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_context.inc ****  * PSoC Port and API Generation
+  51:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_context.inc ****  * Carlos Fernando Meier Martinez
+  52:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_context.inc ****  * Hochschule Darmstadt, Germany. 2017.
+  53:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_context.inc ****  */
+  54:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_context.inc **** 
+  55:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_context.inc **** #ifndef __INCLUDE_CPU_CORTEX_MX_EE_CONTEXT__
+  56:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_context.inc **** #define __INCLUDE_CPU_CORTEX_MX_EE_CONTEXT__
+  57:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_context.inc **** 
+  58:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_context.inc **** /*
+  59:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_context.inc ****  * Instructions
+  60:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_context.inc ****  *
+  61:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_context.inc ****  * The monostack part is complete (obviously, the functions to disable/enable
+  62:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_context.inc ****  *  interrupts are not included here).  For the multistack part you have to
+  63:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_context.inc ****  *  provide two additional things:
+  64:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_context.inc ****  *  1. An assembly implementation of EE_std_change_context_multi(); see below.
+  65:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_context.inc ****  *  2. A #define directive for EE_hal_active_tos, which is just an alias for the
+  66:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_context.inc ****  *  actual architecture-dependent variable.  This variable contains the index of
+  67:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_context.inc ****  *  the current stack.
+  68:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_context.inc ****  */
+  69:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_context.inc **** 
+  70:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_context.inc **** /* After a task terminates, the scheduler puts the id of the new task to launch
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccXJJiz6.s 			page 5
+
+
+  71:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_context.inc ****  * or switch to in this variable.  If the is stacked, its id is marked so. */
+  72:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_context.inc **** extern EE_TID EE_std_endcycle_next_tid;
+  73:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_context.inc **** 
+  74:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_context.inc **** /* The multistack version must be implemented in ASM; no standard
+  75:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_context.inc ****  * implementation, sorry.  This is the only function that performs context
+  76:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_context.inc ****  * switching.  The multistack version doesn't jump to the task body if its TID
+  77:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_context.inc ****  * has been maked as stacked.  This is used to switch to a task that has been
+  78:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_context.inc ****  * suspend by a previous call to EE_std_change_contex(). */
+  79:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_context.inc **** void EE_cortex_mx_change_context(EE_TID tid);
+  80:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_context.inc **** /* Pseudo code for EE_std_change_context_multi():
+  81:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_context.inc ****      begin:
+  82:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_context.inc ****       tos_index = EE_std_thread_tos[tid+1];
+  83:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_context.inc ****       if is_not_the_current_stack(tos_index) {
+  84:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_context.inc ****           save_caller_saved_registers();
+  85:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_context.inc ****           switch_stacks(tos_index);
+  86:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_context.inc ****           restore_caller_saved_registers();
+  87:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_context.inc ****       }
+  88:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_context.inc ****       if (is_not_marked_stacked(tid)) {
+  89:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_context.inc ****           tid = EE_std_run_task_code(tid);
+  90:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_context.inc ****           goto begin;
+  91:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_context.inc ****       }
+  92:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_context.inc **** 
+  93:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_context.inc ****       Please notice that the "goto begin" is actually a recursive call to
+  94:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_context.inc ****       EE_std_change_context_multi(), but in this way there is no stack growing.
+  95:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_context.inc ****       
+  96:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_context.inc ****       Please notice also that 'tid' must NOT be saved onto the stack before
+  97:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_context.inc ****       switching stacks, otherwise when switching from another stack back to the
+  98:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_context.inc ****       current one, you would overwrite its value.
+  99:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_context.inc **** 
+ 100:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_context.inc ****       For processors where the return address is saved in a register, that
+ 101:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_context.inc ****       register must be saved in the stack too.
+ 102:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_context.inc **** 
+ 103:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_context.inc ****       switch_stacks() should also update EE_hal_active_tos.
+ 104:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_context.inc **** */
+ 105:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_context.inc **** 
+ 106:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_context.inc **** /* Call a the body of a task */
+ 107:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_context.inc **** #if defined(__OO_BCC1__) || defined(__OO_BCC2__) || \
+ 108:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_context.inc ****  defined(__OO_ECC1__) || defined(__OO_ECC2__)
+ 109:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_context.inc **** #define EE_call_task_body(tid)  EE_oo_thread_stub()
+ 110:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_context.inc **** #else
+ 111:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_context.inc **** #define EE_call_task_body(tid)  (((void (*)(void))EE_hal_thread_body[tid])())
+ 112:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_context.inc **** #endif
+ 113:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_context.inc **** 
+ 114:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_context.inc **** 
+ 115:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_context.inc **** /* Launch a new task, possibly switching to a different stack, clean up the task
+ 116:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_context.inc ****  * after it ends, and call the scheduler (and switch to other tasks/stacks)
+ 117:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_context.inc ****  * until there are no more tasks to switch to.  In the multistack version, also
+ 118:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_context.inc ****  * change the current stack before returning if the scheduler asks for it. */
+ 119:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_context.inc **** __DECLARE_INLINE__ void EE_hal_ready2stacked(EE_TID tid);
+ 120:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_context.inc **** 
+ 121:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_context.inc **** 
+ 122:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_context.inc **** /* Launch a new task on the current stack, clean up the task after it ends, and
+ 123:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_context.inc ****  * call the scheduler.  Return the next task to launch, which is "marked as
+ 124:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_context.inc ****  * stacked" if there is no new task to launch. */
+ 125:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_context.inc **** EE_TID EE_std_run_task_code(EE_TID tid);
+ 126:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_context.inc **** 
+ 127:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_context.inc **** 
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccXJJiz6.s 			page 6
+
+
+ 128:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_context.inc **** /*
+ 129:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_context.inc ****  * Inline implementations
+ 130:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_context.inc ****  */
+ 131:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_context.inc **** 
+ 132:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_context.inc **** 
+ 133:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_context.inc **** #ifdef __MONO__
+ 134:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_context.inc **** 
+ 135:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_context.inc **** /* With monostack, we need only the information that the task is stacked.  We
+ 136:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_context.inc ****  * don't need to know which task it is, as there is no new stack to switch
+ 137:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_context.inc ****  * to. */
+ 138:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_context.inc **** #define EE_std_mark_tid_stacked(tid) ((EE_TID)-1)
+ 139:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_context.inc **** 
+ 140:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_context.inc **** #define EE_std_need_context_change(tid) ((tid) >= 0)
+ 141:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_context.inc **** 
+ 142:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_context.inc **** #endif /* __MONO__ */
+ 143:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_context.inc **** 
+ 144:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_context.inc **** 
+ 145:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_context.inc **** #ifdef __MULTI__
+ 146:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_context.inc **** 
+ 147:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_context.inc **** /* TID_IS_STACKED_MARK must set the most significative bit */
+ 148:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_context.inc **** #define EE_std_mark_tid_stacked(tid) ((tid) | (EE_TID)TID_IS_STACKED_MARK)
+ 149:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_context.inc **** 
+ 150:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_context.inc **** extern int EE_std_need_context_change(EE_TID tid);
+ 151:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_context.inc **** 
+ 152:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_context.inc **** __INLINE__ void  EE_hal_stkchange(EE_TID tid)
+ 153:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_context.inc **** {
+ 154:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_context.inc ****     EE_cortex_mx_change_context(EE_std_mark_tid_stacked(tid));
+ 155:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_context.inc **** }
+ 156:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_context.inc **** 
+ 157:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_context.inc **** #endif /* __MULTI__ */
+ 158:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_context.inc **** 
+ 159:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_context.inc **** 
+ 160:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_context.inc **** /* The functions below should work for both the monostack and multistack
+ 161:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_context.inc ****  * versions of the kernel, thanks to the macros defined above.  In the mono
+ 162:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_context.inc ****  * version, all the stack-related stuff is ignored. */
+ 163:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_context.inc **** 
+ 164:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_context.inc **** 
+ 165:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_context.inc **** __INLINE__ void  EE_hal_ready2stacked(EE_TID tid)
+ 166:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_context.inc **** {
+ 167:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_context.inc ****     EE_cortex_mx_change_context(tid);
+ 168:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_context.inc **** }
+ 169:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_context.inc **** 
+ 170:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_context.inc **** 
+ 171:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_context.inc **** __INLINE__ void  EE_hal_endcycle_ready(EE_TID tid)
+ 172:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_context.inc **** {
+ 173:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_context.inc ****     EE_std_endcycle_next_tid = tid;
+ 174:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_context.inc **** }
+ 175:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_context.inc **** 
+ 176:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_context.inc **** 
+ 177:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_context.inc **** __INLINE__ void  EE_hal_endcycle_stacked(EE_TID tid)
+ 178:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_context.inc **** {
+ 179:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_context.inc ****     EE_std_endcycle_next_tid = EE_std_mark_tid_stacked(tid);
+  87              		.loc 2 179 0
+  88 0016 40F00040 		orr	r0, r0, #-2147483648
+  89              	.LVL6:
+  90 001a 044B     		ldr	r3, .L10+4
+  91 001c 1860     		str	r0, [r3]
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccXJJiz6.s 			page 7
+
+
+  92 001e 08BD     		pop	{r3, pc}
+  93              	.LVL7:
+  94              	.L7:
+  95              	.LBE37:
+  96              	.LBE36:
+  97              	.LBB38:
+  98              	.LBB39:
+ 173:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_context.inc **** }
+  99              		.loc 2 173 0
+ 100 0020 024B     		ldr	r3, .L10+4
+ 101 0022 1860     		str	r0, [r3]
+ 102 0024 08BD     		pop	{r3, pc}
+ 103              	.L11:
+ 104 0026 00BF     		.align	2
+ 105              	.L10:
+ 106 0028 00000000 		.word	EE_th_waswaiting
+ 107 002c 00000000 		.word	EE_std_endcycle_next_tid
+ 108              	.LBE39:
+ 109              	.LBE38:
+ 110              		.cfi_endproc
+ 111              	.LFE60:
+ 112              		.size	EE_thread_endcycle_next, .-EE_thread_endcycle_next
+ 113              		.section	.text.EE_thread_end_instance,"ax",%progbits
+ 114              		.align	2
+ 115              		.global	EE_thread_end_instance
+ 116              		.thumb
+ 117              		.thumb_func
+ 118              		.type	EE_thread_end_instance, %function
+ 119              	EE_thread_end_instance:
+ 120              	.LFB61:
+  73:Generated_Source\PSoC5/ErikaOS_ee_thendin.c ****     EE_oo_call_PreTaskHook();
+  74:Generated_Source\PSoC5/ErikaOS_ee_thendin.c ****     EE_hal_endcycle_stacked(nexttid);
+  75:Generated_Source\PSoC5/ErikaOS_ee_thendin.c ****   } else {
+  76:Generated_Source\PSoC5/ErikaOS_ee_thendin.c ****     EE_hal_endcycle_ready(nexttid);
+  77:Generated_Source\PSoC5/ErikaOS_ee_thendin.c ****   }
+  78:Generated_Source\PSoC5/ErikaOS_ee_thendin.c ****   /* Remember: after hal_endcycle_XXX there MUST be NOTHING!!! */
+  79:Generated_Source\PSoC5/ErikaOS_ee_thendin.c **** }
+  80:Generated_Source\PSoC5/ErikaOS_ee_thendin.c **** #else /* __OO_ECC1__ || __OO_ECC2__ */
+  81:Generated_Source\PSoC5/ErikaOS_ee_thendin.c **** static void EE_thread_endcycle_next(void)
+  82:Generated_Source\PSoC5/ErikaOS_ee_thendin.c **** {
+  83:Generated_Source\PSoC5/ErikaOS_ee_thendin.c ****   EE_hal_endcycle_ready(EE_rq2stk_exchange());
+  84:Generated_Source\PSoC5/ErikaOS_ee_thendin.c ****   /* Remember: after hal_endcycle_XXX there MUST be NOTHING!!! */
+  85:Generated_Source\PSoC5/ErikaOS_ee_thendin.c **** }
+  86:Generated_Source\PSoC5/ErikaOS_ee_thendin.c **** #endif /* __OO_ECC1__ || __OO_ECC2__ */
+  87:Generated_Source\PSoC5/ErikaOS_ee_thendin.c **** 
+  88:Generated_Source\PSoC5/ErikaOS_ee_thendin.c **** void EE_thread_end_instance(void)
+  89:Generated_Source\PSoC5/ErikaOS_ee_thendin.c **** {
+ 121              		.loc 1 89 0
+ 122              		.cfi_startproc
+ 123              		@ args = 0, pretend = 0, frame = 0
+ 124              		@ frame_needed = 0, uses_anonymous_args = 0
+ 125 0000 38B5     		push	{r3, r4, r5, lr}
+ 126              		.cfi_def_cfa_offset 16
+ 127              		.cfi_offset 3, -16
+ 128              		.cfi_offset 4, -12
+ 129              		.cfi_offset 5, -8
+ 130              		.cfi_offset 14, -4
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccXJJiz6.s 			page 8
+
+
+ 131              	.LBB40:
+ 132              	.LBB41:
+ 133              		.file 3 "Generated_Source\\PSoC5\\ErikaOS_ee_oo_internal.inc"
+   1:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** /* ###*B*###
+   2:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc ****  * ERIKA Enterprise - a tiny RTOS for small microcontrollers
+   3:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc ****  *
+   4:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc ****  * Copyright (C) 2002-2008  Evidence Srl
+   5:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc ****  *
+   6:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc ****  * This file is part of ERIKA Enterprise.
+   7:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc ****  *
+   8:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc ****  * ERIKA Enterprise is free software; you can redistribute it
+   9:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc ****  * and/or modify it under the terms of the GNU General Public License
+  10:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc ****  * version 2 as published by the Free Software Foundation, 
+  11:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc ****  * (with a special exception described below).
+  12:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc ****  *
+  13:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc ****  * Linking this code statically or dynamically with other modules is
+  14:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc ****  * making a combined work based on this code.  Thus, the terms and
+  15:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc ****  * conditions of the GNU General Public License cover the whole
+  16:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc ****  * combination.
+  17:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc ****  *
+  18:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc ****  * As a special exception, the copyright holders of this library give you
+  19:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc ****  * permission to link this code with independent modules to produce an
+  20:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc ****  * executable, regardless of the license terms of these independent
+  21:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc ****  * modules, and to copy and distribute the resulting executable under
+  22:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc ****  * terms of your choice, provided that you also meet, for each linked
+  23:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc ****  * independent module, the terms and conditions of the license of that
+  24:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc ****  * module.  An independent module is a module which is not derived from
+  25:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc ****  * or based on this library.  If you modify this code, you may extend
+  26:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc ****  * this exception to your version of the code, but you are not
+  27:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc ****  * obligated to do so.  If you do not wish to do so, delete this
+  28:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc ****  * exception statement from your version.
+  29:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc ****  *
+  30:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc ****  * ERIKA Enterprise is distributed in the hope that it will be
+  31:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc ****  * useful, but WITHOUT ANY WARRANTY; without even the implied warranty
+  32:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc ****  * of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  33:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc ****  * GNU General Public License version 2 for more details.
+  34:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc ****  *
+  35:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc ****  * You should have received a copy of the GNU General Public License
+  36:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc ****  * version 2 along with ERIKA Enterprise; if not, write to the
+  37:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc ****  * Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
+  38:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc ****  * Boston, MA 02110-1301 USA.
+  39:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc ****  * ###*E*### */
+  40:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** 
+  41:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** /*
+  42:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc ****  * Author: 2002 Paolo Gai
+  43:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc ****  * CVS: $Id: ee_internal.h,v 1.6 2006/12/03 22:07:50 pj Exp $
+  44:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc ****  */
+  45:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** 
+  46:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** /*
+  47:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc ****  * PSoC Port and API Generation
+  48:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc ****  * Carlos Fernando Meier Martinez
+  49:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc ****  * Hochschule Darmstadt, Germany. 2017.
+  50:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc ****  */
+  51:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** 
+  52:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** #ifndef PKG_KERNEL_OO_INC_EE_OO_INTERNAL_H
+  53:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** #define PKG_KERNEL_OO_INC_EE_OO_INTERNAL_H
+  54:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** 
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccXJJiz6.s 			page 9
+
+
+  55:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** #include "ErikaOS_ee_oo_common.inc"
+  56:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** #include "ErikaOS_ee_oo_intfunc.inc"
+  57:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** #include "ErikaOS_ee_oo_irq.inc"
+  58:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** 
+  59:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** /*******************************************************************************
+  60:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc ****  *                    New Error Handling Internal Utilities
+  61:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc ****  ******************************************************************************/
+  62:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** 
+  63:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** /* Error Parameters Utilities Macros */
+  64:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** #define EE_OS_PARAM(param_name)   EE_os_param param_name
+  65:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** #define EE_OS_PARAM_VALUE(param_name, param_value)  \
+  66:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc ****   ((param_name).value_param = (param_value))
+  67:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** 
+  68:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** #define EE_OS_PARAM_REF(param_name, param_field, param_ref) \
+  69:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc ****   ((param_name).param_field = (param_ref))
+  70:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** 
+  71:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** #ifdef __OO_HAS_ERRORHOOK__
+  72:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** /* Error Parameters Data Structure Utilities Macros from user space */
+  73:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** #define EE_OS_ERROR_PARAMETERS()  EE_oo_ErrorHook_parameters error_parameters
+  74:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** 
+  75:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** #define EE_OS_ERROR_PARAMETERS_INIT(param1_in,param2_in,param3_in)  \
+  76:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc ****   EE_oo_ErrorHook_parameters error_parameters = { param1_in, param2_in, \
+  77:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc ****     param3_in }
+  78:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** 
+  79:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** #define EE_OS_ERROR_PARAMETERS_PARAM1_VALUE(param1_value) \
+  80:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc ****   (error_parameters.param1.value_param = param1_value)
+  81:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** #define EE_OS_ERROR_PARAMETERS_PARAM2_VALUE(param2_value) \
+  82:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc ****   (error_parameters.param2.value_param = param2_value)
+  83:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** #define EE_OS_ERROR_PARAMETERS_PARAM3_VALUE(param3_value) \
+  84:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc ****   (error_parameters.param3.value_param = param3_value)
+  85:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** 
+  86:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** #define EE_OS_ERROR_PARAMETERS_PARAM1_REF(param_field,param_ref)  \
+  87:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc ****   (error_parameters.param1.param_field = (param_ref))
+  88:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** #define EE_OS_ERROR_PARAMETERS_PARAM2_REF(param_field,param_ref)  \
+  89:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc ****   (error_parameters.param2.param_field = (param_ref))
+  90:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** #define EE_OS_ERROR_PARAMETERS_PARAM3_REF(param_field,param_ref)  \
+  91:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc ****   (error_parameters.param3.param_field = (param_ref))
+  92:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** #else /* __OO_HAS_ERRORHOOK__ */
+  93:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** #define EE_OS_ERROR_PARAMETERS()                                    ((void)0)
+  94:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** 
+  95:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** #define EE_OS_ERROR_PARAMETERS_INIT(param1_in,param2_in,param3_in)  ((void)0)
+  96:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** 
+  97:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** #define EE_OS_ERROR_PARAMETERS_PARAM1_VALUE(param1_value)           ((void)0)
+  98:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** #define EE_OS_ERROR_PARAMETERS_PARAM2_VALUE(param2_value)           ((void)0)
+  99:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** #define EE_OS_ERROR_PARAMETERS_PARAM3_VALUE(param3_value)           ((void)0)
+ 100:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** 
+ 101:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** #define EE_OS_ERROR_PARAMETERS_PARAM1_REF(param_field,param_ref)    ((void)0)
+ 102:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** #define EE_OS_ERROR_PARAMETERS_PARAM2_REF(param_field,param_ref)    ((void)0)
+ 103:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** #define EE_OS_ERROR_PARAMETERS_PARAM3_REF(param_field,param_ref)    ((void)0)
+ 104:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** #endif /* __OO_HAS_ERRORHOOK__ */
+ 105:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** 
+ 106:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** /* Error Handling */
+ 107:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** #ifdef __OO_HAS_ERRORHOOK__
+ 108:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** #ifndef  __OO_ERRORHOOK_NOMACROS__
+ 109:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** 
+ 110:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** __INLINE__ void  EE_os_fill_error_data( OSServiceIdType
+ 111:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc ****   ServiceID, EE_os_param param1, EE_os_param param2, EE_os_param param3 )
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccXJJiz6.s 			page 10
+
+
+ 112:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** {
+ 113:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc ****   register EE_oo_ErrorHook_parameters * const
+ 114:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc ****     p_errorhook_parameter = EE_oo_get_errorhook_data();
+ 115:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc ****   (*EE_oo_get_errorhook_service_id()) = ServiceID;
+ 116:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc ****   p_errorhook_parameter->param1 = param1;
+ 117:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc ****   p_errorhook_parameter->param2 = param2;
+ 118:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc ****   p_errorhook_parameter->param3 = param3;
+ 119:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** }
+ 120:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** #else /* !__OO_ERRORHOOK_NOMACROS__ */
+ 121:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** 
+ 122:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** #define EE_os_fill_error_data(ServiceID,param1,param2,param3) ((void)0)
+ 123:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** #endif /* !__OO_ERRORHOOK_NOMACROS__ */
+ 124:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** 
+ 125:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** __INLINE__ void  EE_os_notify_error( OSServiceIdType ServiceID,
+ 126:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc ****   EE_os_param param1, EE_os_param param2, EE_os_param param3,
+ 127:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc ****   StatusType Error )
+ 128:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** {
+ 129:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc ****   EE_ORTI_set_lasterror(Error);
+ 130:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc ****   if ( EE_ErrorHook_nested_flag == 0U )
+ 131:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc ****   {
+ 132:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc ****     EE_os_fill_error_data(ServiceID, param1, param2, param3);
+ 133:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc ****     EE_ErrorHook_nested_flag = 1U;
+ 134:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc ****     EE_oo_call_ErrorHook(Error);
+ 135:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc ****     EE_ErrorHook_nested_flag = 0U;
+ 136:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc ****   }
+ 137:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** }
+ 138:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** 
+ 139:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** #ifndef __EE_MEMORY_PROTECTION__
+ 140:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** __INLINE__ void  EE_os_notify_error_from_us(
+ 141:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc ****   OSServiceIdType ServiceID, const EE_oo_ErrorHook_parameters * const
+ 142:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc ****     error_parameters_ref, StatusType Error )
+ 143:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** {
+ 144:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc ****   if ( error_parameters_ref != NULL ) {
+ 145:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc ****     register EE_FREG const flag = EE_hal_begin_nested_primitive();
+ 146:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc ****     EE_os_notify_error(ServiceID, error_parameters_ref->param1,
+ 147:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc ****       error_parameters_ref->param2, error_parameters_ref->param3, Error);
+ 148:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc ****     EE_hal_end_nested_primitive(flag);
+ 149:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc ****   }
+ 150:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** }
+ 151:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** #else /* !__EE_MEMORY_PROTECTION__ */
+ 152:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** /* If MemMap.h support is enabled (i.e. because memory protection): use it */
+ 153:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** #ifdef EE_SUPPORT_MEMMAP_H
+ 154:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** /* The following code belong to ERIKA API section ee_api_text */
+ 155:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** #define API_START_SEC_CODE
+ 156:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** #include "MemMap.inc"
+ 157:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** #endif /* EE_SUPPORT_MEMMAP_H */
+ 158:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** 
+ 159:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** void EE_os_notify_error_from_us( OSServiceIdType ServiceID,
+ 160:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc ****   const EE_oo_ErrorHook_parameters * const error_parameters_ref,
+ 161:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc ****   StatusType Error );
+ 162:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** 
+ 163:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** #ifdef EE_SUPPORT_MEMMAP_H
+ 164:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** #define API_STOP_SEC_CODE
+ 165:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** #include "MemMap.inc"
+ 166:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** #endif /* EE_SUPPORT_MEMMAP_H */
+ 167:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** #endif /* !__EE_MEMORY_PROTECTION__ */
+ 168:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** #else /* __OO_HAS_ERRORHOOK__ */
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccXJJiz6.s 			page 11
+
+
+ 169:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** 
+ 170:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** /* Macro used for remapping to prevent compiler warnings on unused parameters */
+ 171:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** #define EE_os_notify_error(k,j,x,y,z) EE_os_notify_error_impl(z)
+ 172:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** 
+ 173:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** __INLINE__ void  EE_os_notify_error_impl(StatusType Error)
+ 174:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** {
+ 175:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc ****   EE_ORTI_set_lasterror(Error);
+ 176:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** }
+ 177:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** 
+ 178:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** /* Macro used for remapping to prevent compiler warnings on unused parameters */
+ 179:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** #define EE_os_notify_error_from_us(x,y,z) EE_os_notify_error_from_us_impl(z)
+ 180:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** 
+ 181:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** __INLINE__ void  EE_os_notify_error_from_us_impl(
+ 182:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc ****   StatusType Error )
+ 183:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** {
+ 184:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc ****   EE_ORTI_set_lasterror(Error);
+ 185:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** }
+ 186:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** #endif /* __OO_HAS_ERRORHOOK__ */
+ 187:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** 
+ 188:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** /*******************************************************************************
+ 189:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc ****  *                  Kernel Critical Section Utility Macros
+ 190:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc ****  ******************************************************************************/
+ 191:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** #ifndef __EE_MEMORY_PROTECTION__
+ 192:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** 
+ 193:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** #define EE_OS_DECLARE_CRITICAL_SECTION()  register EE_FREG flag
+ 194:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** 
+ 195:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** #define EE_OS_ENTER_CRITICAL_SECTION()          \
+ 196:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc ****   do {                                          \
+ 197:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc ****     flag = EE_hal_begin_nested_primitive();     \
+ 198:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc ****     EE_as_tp_active_pause_and_update_budgets(); \
+ 199:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc ****   } while ( 0 )
+ 200:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** 
+ 201:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** #define EE_OS_DECLARE_AND_ENTER_CRITICAL_SECTION()  \
+ 202:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc ****   EE_OS_DECLARE_CRITICAL_SECTION();                 \
+ 203:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc ****   EE_OS_ENTER_CRITICAL_SECTION()
+ 204:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** 
+ 205:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** #define EE_OS_EXIT_CRITICAL_SECTION()             \
+ 206:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc ****   do {                                            \
+ 207:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc ****     EE_as_tp_active_update_budgets_and_restart(); \
+ 208:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc ****     EE_hal_end_nested_primitive(flag);            \
+ 209:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc ****   } while ( 0 )
+ 210:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** 
+ 211:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** #define EE_OS_FOREVER_CRITICAL_SECTION()          \
+ 212:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc ****   do {                                            \
+ 213:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc ****     EE_hal_disableIRQ();                          \
+ 214:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc ****     EE_as_tp_active_pause_and_update_budgets();   \
+ 215:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc ****   } while ( 0 )
+ 216:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** 
+ 217:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** #else /* !__EE_MEMORY_PROTECTION__ */
+ 218:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** /* TP in any case have to be handled in Service Implementation. Syscall
+ 219:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc ****    mechanism can be implement in C language and, in that case, a function call
+ 220:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc ****    cannot be done in syscall handler. */
+ 221:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** #define EE_OS_DECLARE_CRITICAL_SECTION()            ((void)0)
+ 222:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** #define EE_OS_ENTER_CRITICAL_SECTION()              \
+ 223:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc ****   EE_as_tp_active_pause_and_update_budgets()
+ 224:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** #define EE_OS_DECLARE_AND_ENTER_CRITICAL_SECTION()  \
+ 225:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc ****   EE_as_tp_active_pause_and_update_budgets()
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccXJJiz6.s 			page 12
+
+
+ 226:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** #define EE_OS_EXIT_CRITICAL_SECTION()               \
+ 227:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc ****   EE_as_tp_active_update_budgets_and_restart()
+ 228:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** #define EE_OS_FOREVER_CRITICAL_SECTION()			\
+ 229:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc ****   EE_as_tp_active_pause_and_update_budgets()
+ 230:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** #endif /* !__EE_MEMORY_PROTECTION__ */
+ 231:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** 
+ 232:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** /* return the first stacked task (the running task) without extracting it 
+ 233:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc ****    we suppose that this function can be called ALSO at interrupt ENABLED!!!
+ 234:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc ****    (see WaitEvent.c) */
+ 235:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** #ifndef __PRIVATE_STK_QUERYFIRST__
+ 236:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** __INLINE__ EE_TID  EE_stk_queryfirst(void)
+ 237:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** {
+ 238:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc ****     return EE_stkfirst;  
+ 134              		.loc 3 238 0
+ 135 0002 364B     		ldr	r3, .L23
+ 136 0004 1C68     		ldr	r4, [r3]
+ 137              	.LBE41:
+ 138              	.LBE40:
+  90:Generated_Source\PSoC5/ErikaOS_ee_thendin.c ****   EE_TID current, rqfirst;
+  91:Generated_Source\PSoC5/ErikaOS_ee_thendin.c ****   EE_TID ntask;
+  92:Generated_Source\PSoC5/ErikaOS_ee_thendin.c **** 
+  93:Generated_Source\PSoC5/ErikaOS_ee_thendin.c ****   current = EE_stk_queryfirst();
+  94:Generated_Source\PSoC5/ErikaOS_ee_thendin.c **** 
+  95:Generated_Source\PSoC5/ErikaOS_ee_thendin.c ****   EE_oo_call_PostTaskHook();
+  96:Generated_Source\PSoC5/ErikaOS_ee_thendin.c **** 
+  97:Generated_Source\PSoC5/ErikaOS_ee_thendin.c ****   /* [SWS_Os_00473] The Operating System module shall reset a task’s
+  98:Generated_Source\PSoC5/ErikaOS_ee_thendin.c ****       OsTaskExecutionBudget on a transition to the SUSPENDED or WAITING states.
+  99:Generated_Source\PSoC5/ErikaOS_ee_thendin.c ****       (SRS_Os_11008) */
+ 100:Generated_Source\PSoC5/ErikaOS_ee_thendin.c ****   /* Reset ALL TP Budgets, just in case */
+ 101:Generated_Source\PSoC5/ErikaOS_ee_thendin.c ****   EE_as_tp_active_reset_budgets();
+ 102:Generated_Source\PSoC5/ErikaOS_ee_thendin.c **** 
+ 103:Generated_Source\PSoC5/ErikaOS_ee_thendin.c ****   /* Reset ISRs counters */
+ 104:Generated_Source\PSoC5/ErikaOS_ee_thendin.c ****   EE_oo_IRQ_disable_count = 0U;
+ 139              		.loc 1 104 0
+ 140 0006 0022     		movs	r2, #0
+ 141 0008 354B     		ldr	r3, .L23+4
+ 142 000a 1A60     		str	r2, [r3]
+ 105:Generated_Source\PSoC5/ErikaOS_ee_thendin.c **** 
+ 106:Generated_Source\PSoC5/ErikaOS_ee_thendin.c ****   /* Increase the remaining activations...*/
+ 107:Generated_Source\PSoC5/ErikaOS_ee_thendin.c ****   EE_th_rnact[current]++;
+ 143              		.loc 1 107 0
+ 144 000c 354A     		ldr	r2, .L23+8
+ 145 000e 52F82430 		ldr	r3, [r2, r4, lsl #2]
+ 146 0012 0133     		adds	r3, r3, #1
+ 147 0014 42F82430 		str	r3, [r2, r4, lsl #2]
+ 108:Generated_Source\PSoC5/ErikaOS_ee_thendin.c **** 
+ 109:Generated_Source\PSoC5/ErikaOS_ee_thendin.c **** #ifndef __OO_NO_CHAINTASK__
+ 110:Generated_Source\PSoC5/ErikaOS_ee_thendin.c ****   /* If we called a ChainTask, 
+ 111:Generated_Source\PSoC5/ErikaOS_ee_thendin.c ****      EE_th_terminate_nextask[current] != NIL */
+ 112:Generated_Source\PSoC5/ErikaOS_ee_thendin.c ****   ntask = EE_th_terminate_nextask[current];
+ 148              		.loc 1 112 0
+ 149 0018 334B     		ldr	r3, .L23+12
+ 150 001a 53F82450 		ldr	r5, [r3, r4, lsl #2]
+ 151              	.LVL8:
+ 113:Generated_Source\PSoC5/ErikaOS_ee_thendin.c **** #else /* __OO_NO_CHAINTASK__ */
+ 114:Generated_Source\PSoC5/ErikaOS_ee_thendin.c ****   ntask = EE_NIL;
+ 115:Generated_Source\PSoC5/ErikaOS_ee_thendin.c **** #endif  /* __OO_NO_CHAINTASK__ */
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccXJJiz6.s 			page 13
+
+
+ 116:Generated_Source\PSoC5/ErikaOS_ee_thendin.c **** 
+ 117:Generated_Source\PSoC5/ErikaOS_ee_thendin.c ****   /* The task state switch from STACKED TO READY because it end its
+ 118:Generated_Source\PSoC5/ErikaOS_ee_thendin.c ****    * instance. Note that status=READY and
+ 119:Generated_Source\PSoC5/ErikaOS_ee_thendin.c ****    * rnact==maximum number of pending activations ==>> the task is
+ 120:Generated_Source\PSoC5/ErikaOS_ee_thendin.c ****    * SUSPENDED!!! */
+ 121:Generated_Source\PSoC5/ErikaOS_ee_thendin.c **** #if (defined(__OO_BCC2__)) || (defined(__OO_ECC2__))
+ 122:Generated_Source\PSoC5/ErikaOS_ee_thendin.c ****   if( (1U == EE_thread_rnact_max(current)) || (current == ntask) ) {
+ 152              		.loc 1 122 0
+ 153 001e 2046     		mov	r0, r4
+ 154 0020 FFF7FEFF 		bl	EE_thread_rnact_max
+ 155              	.LVL9:
+ 156 0024 0128     		cmp	r0, #1
+ 157 0026 01D0     		beq	.L13
+ 158              		.loc 1 122 0 is_stmt 0 discriminator 1
+ 159 0028 A542     		cmp	r5, r4
+ 160 002a 04D1     		bne	.L14
+ 161              	.L13:
+ 123:Generated_Source\PSoC5/ErikaOS_ee_thendin.c ****     EE_th_status[current] = SUSPENDED;
+ 162              		.loc 1 123 0 is_stmt 1
+ 163 002c 0322     		movs	r2, #3
+ 164 002e 2F4B     		ldr	r3, .L23+16
+ 165 0030 43F82420 		str	r2, [r3, r4, lsl #2]
+ 166 0034 03E0     		b	.L15
+ 167              	.L14:
+ 124:Generated_Source\PSoC5/ErikaOS_ee_thendin.c ****   } else {   
+ 125:Generated_Source\PSoC5/ErikaOS_ee_thendin.c ****     EE_th_status[current] = READY;
+ 168              		.loc 1 125 0
+ 169 0036 0222     		movs	r2, #2
+ 170 0038 2C4B     		ldr	r3, .L23+16
+ 171 003a 43F82420 		str	r2, [r3, r4, lsl #2]
+ 172              	.L15:
+ 126:Generated_Source\PSoC5/ErikaOS_ee_thendin.c ****   }
+ 127:Generated_Source\PSoC5/ErikaOS_ee_thendin.c **** #else /* __OO_BCC2__ || __OO_ECC2__ */
+ 128:Generated_Source\PSoC5/ErikaOS_ee_thendin.c ****   EE_th_status[current] = SUSPENDED;
+ 129:Generated_Source\PSoC5/ErikaOS_ee_thendin.c **** #endif /* __OO_BCC2__ || __OO_ECC2__ */
+ 130:Generated_Source\PSoC5/ErikaOS_ee_thendin.c **** 
+ 131:Generated_Source\PSoC5/ErikaOS_ee_thendin.c ****   /* Reset the thread priority bit in the system_ceiling */
+ 132:Generated_Source\PSoC5/ErikaOS_ee_thendin.c ****   EE_sys_ceiling &= ~EE_th_dispatch_prio[current];
+ 173              		.loc 1 132 0
+ 174 003e 2C4B     		ldr	r3, .L23+20
+ 175 0040 53F82410 		ldr	r1, [r3, r4, lsl #2]
+ 176 0044 2B4A     		ldr	r2, .L23+24
+ 177 0046 1368     		ldr	r3, [r2]
+ 178 0048 23EA0103 		bic	r3, r3, r1
+ 179 004c 1360     		str	r3, [r2]
+ 180              	.LBB42:
+ 181              	.LBB43:
+ 239:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** }
+ 240:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** #endif /* __PRIVATE_STK_QUERYFIRST__ */
+ 241:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** 
+ 242:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** /* This function notifies a tick to a hardware counter.
+ 243:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc ****    That is, the counter is
+ 244:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc ****    incremented by 1.  It must be called into an ISR2 or into a
+ 245:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc ****    task notify that the event linked to the counter occurred.
+ 246:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** 
+ 247:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc ****    The function will also implement the notification of expired alarms
+ 248:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc ****    (calling an alarm callback, setting an event, or activating a
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccXJJiz6.s 			page 14
+
+
+ 249:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc ****    task).
+ 250:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** 
+ 251:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc ****    The function can be considered atomic, and NO RESCHEDULING will
+ 252:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc ****    take place after the execution of this function. To implement the
+ 253:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc ****    rescheduling at task level, you can use the Schedule() or the
+ 254:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc ****    ForceSchedule() functions just after this notification.
+ 255:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** 
+ 256:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc ****    see also internal.h
+ 257:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** */
+ 258:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** #if (!defined(__OO_NO_ALARMS__)) || (defined(EE_AS_SCHEDULETABLES__))
+ 259:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** 
+ 260:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** StatusType EE_oo_IncrementCounterHardware(CounterType CounterID);
+ 261:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** void       EE_oo_IncrementCounterImplementation(CounterType CounterID);
+ 262:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** 
+ 263:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** /* kernel internal API */
+ 264:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** #define IncrementCounterHardware EE_oo_IncrementCounterHardware
+ 265:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** 
+ 266:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** /* Helper function (0 as increment means next tick)*/
+ 267:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** void EE_oo_counter_object_insert( CounterObjectType ObjectID, TickType
+ 268:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc ****   increment );
+ 269:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** 
+ 270:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** #if defined (EE_COUNTER_OBJECTS_ROM_SIZE)
+ 271:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** #if (EE_COUNTER_OBJECTS_ROM_SIZE > 0)
+ 272:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** __INLINE__ void 
+ 273:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc ****   EE_oo_handle_abs_counter_object_insertion( CounterObjectType ObjectID,
+ 274:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc ****     TickType absstart, TickType abscycle ) 
+ 275:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** {
+ 276:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc ****   /* These are used to evaluate alarm time handling wrap around */
+ 277:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc ****   register TickType           alarm_time;
+ 278:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc ****   register TickType           start_rel;
+ 279:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc ****   register CounterType const  cnt = EE_oo_counter_object_ROM[ObjectID].c;
+ 280:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** 
+ 281:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc ****   /* first, use the alarm and set the cycle */
+ 282:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc ****   EE_oo_counter_object_RAM[ObjectID].used = EE_TRUE;
+ 283:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc ****   EE_oo_counter_object_RAM[ObjectID].cntcycle = abscycle;
+ 284:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** 
+ 285:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc ****   /* Handling wrap around for alarm time */
+ 286:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc ****   start_rel = absstart - EE_counter_RAM[cnt].value;
+ 287:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** 
+ 288:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc ****   /*  When will be here start value will be already checked against counter
+ 289:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc ****       max allowed value */
+ 290:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc ****   if ( start_rel == 0U ) {
+ 291:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc ****     /* start_rel == 0U -> the alarm should start now or next time that counter
+ 292:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc ****        has this value. Has been chosen the second option */
+ 293:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc ****     alarm_time = EE_counter_ROM[cnt].maxallowedvalue;
+ 294:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc ****   } else if ( start_rel < EE_TYPETICK_HALF_VALUE ) {
+ 295:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc ****     /* Normal behavior */
+ 296:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc ****     alarm_time = start_rel - 1U;
+ 297:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc ****   } else {
+ 298:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc ****     /* start_rel is "negative" in this case (unsigned wrap around do the
+ 299:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc ****        work) */
+ 300:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc ****     alarm_time = EE_counter_ROM[cnt].maxallowedvalue + start_rel;
+ 301:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc ****   }
+ 302:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** 
+ 303:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc ****   /* Set alarm with a relative amount of time (alarm_time already is a "0 as
+ 304:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc ****      next tick" value)*/
+ 305:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc ****   EE_oo_counter_object_insert(ObjectID, alarm_time);
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccXJJiz6.s 			page 15
+
+
+ 306:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** }
+ 307:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** 
+ 308:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** __INLINE__ void 
+ 309:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc ****   EE_oo_handle_rel_counter_object_insertion( CounterObjectType ObjectID,
+ 310:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc ****     TickType increment, TickType relcycle )
+ 311:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** {
+ 312:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** 
+ 313:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc ****   /* first, use the alarm and set the cycle */
+ 314:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc ****   EE_oo_counter_object_RAM[ObjectID].used = EE_TRUE;
+ 315:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc ****   EE_oo_counter_object_RAM[ObjectID].cntcycle = relcycle;
+ 316:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** 
+ 317:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc ****   /* then, insert the task into the delta queue with an increment equal
+ 318:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc ****      (increment - 1U) increment equal to 0 means next tick */
+ 319:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc ****   EE_oo_counter_object_insert(ObjectID, (increment - 1U));
+ 320:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** }
+ 321:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** 
+ 322:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** /* cancellation */
+ 323:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** __INLINE__ void  EE_oo_handle_counter_object_cancellation(
+ 324:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc ****   CounterObjectType ObjectID )
+ 325:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** {
+ 326:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc ****   register CounterObjectType current, previous;
+ 327:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc ****   register CounterType       ct      = EE_oo_counter_object_ROM[ObjectID].c;
+ 328:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** 
+ 329:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc ****   /* to compute the relative value in ticks, we have to follow the counter
+ 330:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc ****      delay chain */
+ 331:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc ****   current = EE_counter_RAM[ct].first;
+ 332:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** 
+ 333:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc ****   if ( current == ObjectID ) {
+ 334:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc ****     /* the alarm is the first one in the delta queue */
+ 335:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc ****     EE_counter_RAM[ct].first = EE_oo_counter_object_RAM[ObjectID].next;
+ 336:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc ****   } else {
+ 337:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc ****     /* the alarm is not the first one in the delta queue */
+ 338:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc ****     /* Find it */
+ 339:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc ****     do {
+ 340:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc ****       previous = current;
+ 341:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc ****       current = EE_oo_counter_object_RAM[current].next;
+ 342:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc ****     } while ( current != ObjectID );
+ 343:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc ****     /* remove it from the queue */
+ 344:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc ****     EE_oo_counter_object_RAM[previous].next =
+ 345:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc ****       EE_oo_counter_object_RAM[ObjectID].next;
+ 346:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc ****   }
+ 347:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc ****   /* Adjust delta value */
+ 348:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc ****   if ( EE_oo_counter_object_RAM[ObjectID].next != INVALID_COUNTER_OBJECT ) {
+ 349:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc ****     EE_oo_counter_object_RAM[EE_oo_counter_object_RAM[ObjectID].next].delta +=
+ 350:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc ****       EE_oo_counter_object_RAM[ObjectID].delta;
+ 351:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc ****   }
+ 352:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** 
+ 353:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc ****   EE_oo_counter_object_RAM[ObjectID].used = EE_FALSE;
+ 354:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** }
+ 355:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** #endif /* EE_COUNTER_OBJECTS_ROM_SIZE */
+ 356:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** #endif /* EE_COUNTER_OBJECTS_ROM_SIZE > 0 */
+ 357:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** #endif /* !__OO_NO_ALARMS__ || EE_AS_SCHEDULETABLES__ */
+ 358:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** 
+ 359:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** /*************************************************************************
+ 360:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc ****  HAL extensions
+ 361:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc ****  *************************************************************************/
+ 362:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** 
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccXJJiz6.s 			page 16
+
+
+ 363:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc ****  /* these are the functions that have been inserted to support tha OO layer
+ 364:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc ****     under the EE HAL.
+ 365:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc ****     
+ 366:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc ****     - all the functions for interrupt handling (13.3)
+ 367:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc ****     - EE_hal_begin_nested_primitive
+ 368:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc ****       EE_hal_end_nested_primitive 
+ 369:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc ****       (for primitives that can be called both into a task and into an ISR2
+ 370:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc ****     - EE_hal_terminate_task(EE_TID t)
+ 371:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc ****     - EE_hal_terminate_savestk(EE_TID t)
+ 372:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc ****       EE_oo_preemption_point() execute task preemption if is needed
+ 373:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc ****     - EE_oo_shutdown() if not redefined it does for(;;);
+ 374:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc ****     - All the alarm constants listed in 13.6.4
+ 375:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc ****  */
+ 376:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** 
+ 377:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** 
+ 378:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** /***************************************************************************
+ 379:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc ****  * Internal data structures and functions
+ 380:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc ****  ***************************************************************************/
+ 381:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** 
+ 382:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** /*
+ 383:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc ****     Call Hooks utilities
+ 384:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc ****  */
+ 385:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** 
+ 386:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** #ifdef __OO_HAS_PRETASKHOOK__
+ 387:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** __INLINE__ void  EE_oo_call_PreTaskHook(void)
+ 388:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** {
+ 389:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc ****   EE_as_set_execution_context( PreTaskHook_Context );
+ 390:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc ****   PreTaskHook();
+ 391:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc ****   /* Set the execution context on TASK */
+ 392:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc ****   EE_as_set_execution_context( TASK_Context );
+ 393:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** }
+ 394:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** 
+ 395:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** #else /* __OO_HAS_PRETASKHOOK__ */
+ 396:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** __INLINE__ void  EE_oo_call_PreTaskHook(void)
+ 397:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** {
+ 398:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc ****   /* Set the execution context on TASK */
+ 399:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc ****   EE_as_set_execution_context( TASK_Context );
+ 400:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** }
+ 401:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** #endif /* __OO_HAS_PRETASKHOOK__ */
+ 402:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** 
+ 403:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** #if defined(__OO_HAS_POSTTASKHOOK__)
+ 404:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** __INLINE__ void  EE_oo_call_PostTaskHook(void)
+ 405:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** {
+ 406:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc ****   EE_as_set_execution_context( PostTaskHook_Context );
+ 407:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc ****   PostTaskHook();
+ 408:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** }
+ 409:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** #else /* __OO_HAS_POSTTASKHOOK__ */
+ 410:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** __INLINE__ void  EE_oo_call_PostTaskHook(void) {}
+ 411:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** #endif /* __OO_HAS_POSTTASKHOOK__ */
+ 412:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** 
+ 413:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** 
+ 414:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** /* StartOS Flag defined inside ee_startos.c to check that the system has correctly started */
+ 415:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** extern EE_UREG volatile EE_oo_started;
+ 416:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** 
+ 417:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** 
+ 418:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** /* Used to check if we are in disable interrupt error. It return
+ 419:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc ****    'signed register type' because usually it is native integer type. */
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccXJJiz6.s 			page 17
+
+
+ 420:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** __INLINE__ EE_TYPEBOOL  EE_oo_check_disableint_error(void)
+ 421:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** {
+ 422:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc ****   return ( EE_oo_IRQ_disable_count != 0U );
+ 423:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** }
+ 424:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** 
+ 425:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** #if (defined(__OO_BCC2__)) || (defined(__OO_ECC2__))
+ 426:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** /* A lookup table to speedup ready queue handling */
+ 427:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** extern const EE_INT8 EE_rq_lookup[256];
+ 428:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** /* Lookup functions */
+ 429:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** #if defined(__OO_ECC2__)
+ 430:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** __INLINE__ EE_INT8  EE_rq_get_first_not_empty_queue( void )
+ 431:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** {
+ 432:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc ****   /* Lookup at bits 15-9 */
+ 433:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc ****   EE_INT8 x = EE_rq_lookup[(EE_rq_bitmask & 0xFF00U) >> 8];
+ 434:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc ****   if (x == (EE_INT8)-1) {
+ 435:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc ****     x = EE_rq_lookup[EE_rq_bitmask];
+ 436:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc ****   } else {
+ 437:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc ****     x += (EE_INT8)8;
+ 438:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc ****   }
+ 439:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc ****   return x;
+ 440:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** }
+ 441:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** #else /* __OO_ECC2__ */
+ 442:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** __INLINE__ EE_INT8  EE_rq_get_first_not_empty_queue( void )
+ 443:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** {
+ 444:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc ****   return EE_rq_lookup[EE_rq_bitmask];
+ 445:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** }
+ 446:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** #endif /* __OO_ECC2__ */
+ 447:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** #endif /* __OO_BCC2__ || __OO_ECC2__ */
+ 448:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** 
+ 449:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** /* Internal Queue management functions */
+ 450:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** 
+ 451:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** /* return the first ready task without extracting it */
+ 452:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** #ifndef __PRIVATE_RQ_QUERYFIRST__
+ 453:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** #if (defined(__OO_BCC1__)) || (defined(__OO_ECC1__))
+ 454:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** __INLINE__ EE_TID  EE_rq_queryfirst(void)
+ 455:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** { return EE_rq_first; }
+ 456:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** #endif
+ 457:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** 
+ 458:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** #if (defined(__OO_BCC2__)) || (defined(__OO_ECC2__))
+ 459:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** EE_TID EE_rq_queryfirst(void);
+ 460:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** #endif
+ 461:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** #endif
+ 462:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** 
+ 463:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** /* __INLINE__ EE_TID  EE_stk_queryfirst(void) in intfunc.h */
+ 464:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** 
+ 465:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** /* Extract the RUNNING task from the stack, and return the new head */
+ 466:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** #ifndef __PRIVATE_STK_GETFIRST__
+ 467:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** __INLINE__ EE_TID  EE_stk_getfirst(void)
+ 468:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** {
+ 469:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc ****   return (EE_stkfirst = EE_th_next[EE_stkfirst]);
+ 182              		.loc 3 469 0
+ 183 004e 2A4B     		ldr	r3, .L23+28
+ 184 0050 53F82440 		ldr	r4, [r3, r4, lsl #2]
+ 185 0054 214B     		ldr	r3, .L23
+ 186 0056 1C60     		str	r4, [r3]
+ 187              	.LBE43:
+ 188              	.LBE42:
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccXJJiz6.s 			page 18
+
+
+ 133:Generated_Source\PSoC5/ErikaOS_ee_thendin.c **** 
+ 134:Generated_Source\PSoC5/ErikaOS_ee_thendin.c ****   EE_ORTI_set_th_priority(current, 0U);
+ 135:Generated_Source\PSoC5/ErikaOS_ee_thendin.c **** 
+ 136:Generated_Source\PSoC5/ErikaOS_ee_thendin.c ****   /* Extract the TASK from the stk queue and return the new head */
+ 137:Generated_Source\PSoC5/ErikaOS_ee_thendin.c ****   current = EE_stk_getfirst();
+ 138:Generated_Source\PSoC5/ErikaOS_ee_thendin.c **** 
+ 139:Generated_Source\PSoC5/ErikaOS_ee_thendin.c **** #ifndef __OO_NO_CHAINTASK__
+ 140:Generated_Source\PSoC5/ErikaOS_ee_thendin.c ****   /* If we called a ChainTask, 
+ 141:Generated_Source\PSoC5/ErikaOS_ee_thendin.c ****      EE_th_terminate_nextask[current] != NIL */
+ 142:Generated_Source\PSoC5/ErikaOS_ee_thendin.c ****   if ( ntask != EE_NIL ) {
+ 189              		.loc 1 142 0
+ 190 0058 B5F1FF3F 		cmp	r5, #-1
+ 191 005c 0FD0     		beq	.L16
+ 192              	.LVL10:
+ 193              	.LBB44:
+ 194              	.LBB45:
+ 470:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** }
+ 471:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** #endif /* __PRIVATE_STK_GETFIRST__ */
+ 472:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** 
+ 473:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** /* insert a task into the stack data structures */
+ 474:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** #ifndef __PRIVATE_STK_INSERTFIRST__
+ 475:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** __INLINE__ void  EE_stk_insertfirst(EE_TID t)
+ 476:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** {
+ 477:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc ****     EE_th_next[t] = EE_stkfirst;
+ 478:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc ****     EE_stkfirst = t;
+ 479:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** }
+ 480:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** #endif
+ 481:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** 
+ 482:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** /* insert a task into the ready queue */
+ 483:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** #ifndef __PRIVATE_RQ_INSERT__
+ 484:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** void EE_rq_insert(EE_TID t);
+ 485:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** #endif
+ 486:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** 
+ 487:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** /* put the first ready task into the stack */
+ 488:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** #ifndef __PRIVATE_RQ2STK_EXCHANGE__
+ 489:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** EE_TID EE_rq2stk_exchange(void);
+ 490:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** #endif
+ 491:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** 
+ 492:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** #ifndef __OO_NO_RESOURCES__
+ 493:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** /*
+ 494:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc ****     Method to release all resources locked by a Thread,
+ 495:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc ****     used to fulfill AS requirement OS070
+ 496:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc ****  */
+ 497:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** #if ((!defined(__OO_EXTENDED_STATUS__)) && \
+ 498:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc ****     (!defined(__PRIVATE_RELEASEALLRESOURCE__))) && \
+ 499:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc ****     (!defined(__OO_ISR2_RESOURCES__))
+ 500:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** __INLINE__ void  EE_oo_release_all_resources(EE_TID tid)
+ 501:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** {
+ 502:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc ****   /* release the internal resource. a EE_TYPEPRIO is a bit mask with only one
+ 503:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc ****      bit set to one.
+ 504:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc ****      If i subtract one to this I obtain a bit mask with all
+ 505:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc ****      ones before the starting one and all zeros after 
+ 506:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc ****      (exactly what I want to release resources!)
+ 507:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc ****   */
+ 508:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc ****   EE_sys_ceiling &= (EE_th_dispatch_prio[tid] - 1U);
+ 509:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** }
+ 510:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** #else
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccXJJiz6.s 			page 19
+
+
+ 511:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** EE_UREG EE_oo_release_all_resources(EE_TID tid);
+ 512:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** #endif /* !__OO_EXTENDED_STATUS__ && !__OO_ISR2_RESOURCES__ */
+ 513:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** #else /* __OO_NO_RESOURCES__ */
+ 514:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** #define EE_oo_release_all_resources(tid)    ((void)0)
+ 515:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** #endif /* __OO_NO_RESOURCES__ */
+ 516:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** 
+ 517:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** #ifndef __PRIVATE_THREANTERMINATED__
+ 518:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** /* this the function that will be called if a Task doesn't end calling
+ 519:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc ****    TerminateTask */
+ 520:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** 
+ 521:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** extern void EE_thread_not_terminated( void );
+ 522:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** #endif /* __PRIVATE_THREANTERMINATED__ */
+ 523:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** 
+ 524:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** /* This call terminates a thread instance. It must be called as the
+ 525:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc ****    LAST function call BEFORE the `}' that ends a thread. If the
+ 526:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc ****    primitive is not inserted at the end of */
+ 527:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** #ifndef __PRIVATE_THREAD_END_INSTANCE__
+ 528:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** void EE_thread_end_instance(void);
+ 529:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** #endif
+ 530:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** 
+ 531:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** #if (defined(__OO_ISR2_RESOURCES__)) || (defined(EE_AS_USER_SPINLOCKS__))
+ 532:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** /* Index used to give ISR2 Temporary TID value and to access at
+ 533:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc ****    EE_isr2_nesting_level array */
+ 534:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** extern EE_UREG EE_isr2_index;
+ 535:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** 
+ 536:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** /* Assign a fake TID to an ISR2 to eventually handle resources clean-up */
+ 537:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** EE_TID  EE_oo_assign_TID_to_ISR2(void);
+ 538:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** 
+ 539:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** /* Get the last assigned fake ISR2 TID */
+ 540:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** __INLINE__ EE_TID  EE_oo_get_ISR2_TID(void) {
+ 541:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc ****   return (EE_isr2_index != EE_UREG_MINUS1)?
+ 542:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc ****     (EE_MAX_TASK + (EE_TID)EE_isr2_index): EE_NIL;
+ 543:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** }
+ 544:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** #endif /* __OO_ISR2_RESOURCES__ || EE_AS_USER_SPINLOCKS__ */
+ 545:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** 
+ 546:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** #if (defined(__OO_ECC1__)) || (defined(__OO_ECC2__))
+ 547:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** /*
+ 548:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc ****     Reset Active Events  THREAD utility method.
+ 549:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** 
+ 550:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc ****     When an extended task is transferred from suspended state
+ 551:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc ****     into ready state all its events have to be cleared cleared
+ 552:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** */
+ 553:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** __INLINE__ void  EE_oo_reset_th_event_active(TaskType tnotactive)
+ 554:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** {
+ 555:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc ****     EE_th_event_active[tnotactive] = 0U;
+ 556:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** }
+ 557:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** 
+ 558:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** /* 
+ 559:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc ****   This method actually do a CONTEXT SWITCH, with the highest priority TASK
+ 560:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** */
+ 561:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** #ifdef __MULTI__
+ 562:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** __INLINE__ void  EE_oo_run_next_task(void)
+ 563:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** {
+ 564:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc ****     register TaskType tmp;
+ 565:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc ****     /* swap from ready queue to stack queue */
+ 566:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc ****     tmp = EE_rq2stk_exchange();
+ 567:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc ****     if ( EE_th_waswaiting[tmp] ) {
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccXJJiz6.s 			page 20
+
+
+ 568:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc ****       /* if the task was waiting switch the context to restart it */
+ 569:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc ****       EE_th_waswaiting[tmp] = EE_FALSE;
+ 570:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc ****       /* Call the PreTaskHook, here no stub will do that for you */
+ 571:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc ****       EE_oo_call_PreTaskHook();
+ 572:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc ****       EE_hal_stkchange(tmp);
+ 573:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc ****     } else {
+ 574:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc ****       /* the next task have to be started */
+ 575:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc ****       EE_hal_ready2stacked(tmp);
+ 576:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc ****     }
+ 577:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** }
+ 578:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** #else
+ 579:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** __INLINE__ void  EE_oo_run_next_task(void)
+ 580:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** {
+ 581:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc ****     EE_hal_ready2stacked(EE_rq2stk_exchange());
+ 582:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** }
+ 583:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** #endif /* __MULTI__ */
+ 584:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** #else
+ 585:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** #define EE_oo_reset_th_event_active(TaskID)    ((void) 0)
+ 586:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** 
+ 587:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** /* 
+ 588:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc ****   This method actually do a CONTEXT SWITCH, with the highest priority TASK
+ 589:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** */
+ 590:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** __INLINE__ void  EE_oo_run_next_task(void)
+ 591:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** {
+ 592:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc ****     EE_hal_ready2stacked(EE_rq2stk_exchange());
+ 593:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** }
+ 594:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** #endif /* defined(__OO_ECC1__) || defined(__OO_ECC2__) */
+ 595:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** 
+ 596:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** 
+ 597:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** #if (defined(__OO_BCC2__)) || (defined(__OO_ECC2__))
+ 598:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc ****   /*
+ 599:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc ****     Set THREAD ready utility method.
+ 600:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc ****     If the task is BCC2/ECC2 it can be that it is ready or 
+ 601:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc ****     running. in that case we have to check and queue it anyway
+ 602:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc ****   */
+ 603:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** __INLINE__ void  EE_oo_set_th_status_ready(TaskType TaskID)
+ 604:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** {
+ 605:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc ****     if (EE_th_status[TaskID] == SUSPENDED) {
+ 195              		.loc 3 605 0
+ 196 005e 234B     		ldr	r3, .L23+16
+ 197 0060 53F82530 		ldr	r3, [r3, r5, lsl #2]
+ 198 0064 032B     		cmp	r3, #3
+ 199 0066 07D1     		bne	.L17
+ 606:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc ****         EE_th_status[TaskID] = READY;
+ 200              		.loc 3 606 0
+ 201 0068 0222     		movs	r2, #2
+ 202 006a 204B     		ldr	r3, .L23+16
+ 203 006c 43F82520 		str	r2, [r3, r5, lsl #2]
+ 204              	.LVL11:
+ 205              	.LBB46:
+ 206              	.LBB47:
+ 555:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** }
+ 207              		.loc 3 555 0
+ 208 0070 0022     		movs	r2, #0
+ 209 0072 224B     		ldr	r3, .L23+32
+ 210 0074 43F82520 		str	r2, [r3, r5, lsl #2]
+ 211              	.LVL12:
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccXJJiz6.s 			page 21
+
+
+ 212              	.L17:
+ 213              	.LBE47:
+ 214              	.LBE46:
+ 215              	.LBE45:
+ 216              	.LBE44:
+ 143:Generated_Source\PSoC5/ErikaOS_ee_thendin.c **** 
+ 144:Generated_Source\PSoC5/ErikaOS_ee_thendin.c ****     /* See also activate.c
+ 145:Generated_Source\PSoC5/ErikaOS_ee_thendin.c ****        Put the task in the ready state:
+ 146:Generated_Source\PSoC5/ErikaOS_ee_thendin.c ****        - if the task is basic/BCC1 or extended it can be here only because
+ 147:Generated_Source\PSoC5/ErikaOS_ee_thendin.c ****          it had rnact=1 before the call, and so it is in suspended state
+ 148:Generated_Source\PSoC5/ErikaOS_ee_thendin.c ****        - if the task is basic/BCC2 it can be that it is ready or 
+ 149:Generated_Source\PSoC5/ErikaOS_ee_thendin.c ****          running. In that case we have to check and queue it anyway */
+ 150:Generated_Source\PSoC5/ErikaOS_ee_thendin.c ****     EE_oo_set_th_status_ready(ntask);
+ 151:Generated_Source\PSoC5/ErikaOS_ee_thendin.c **** 
+ 152:Generated_Source\PSoC5/ErikaOS_ee_thendin.c ****     /* insert the task in the ready queue */
+ 153:Generated_Source\PSoC5/ErikaOS_ee_thendin.c ****     EE_rq_insert(ntask);
+ 217              		.loc 1 153 0
+ 218 0078 2846     		mov	r0, r5
+ 219 007a FFF7FEFF 		bl	EE_rq_insert
+ 220              	.LVL13:
+ 221              	.L16:
+ 154:Generated_Source\PSoC5/ErikaOS_ee_thendin.c ****   }
+ 155:Generated_Source\PSoC5/ErikaOS_ee_thendin.c **** #endif /* __OO_NO_CHAINTASK__ */
+ 156:Generated_Source\PSoC5/ErikaOS_ee_thendin.c **** 
+ 157:Generated_Source\PSoC5/ErikaOS_ee_thendin.c ****   /* Check if there is to schedule a ready thread or pop a preempted thread */
+ 158:Generated_Source\PSoC5/ErikaOS_ee_thendin.c ****   rqfirst = EE_rq_queryfirst();
+ 222              		.loc 1 158 0
+ 223 007e FFF7FEFF 		bl	EE_rq_queryfirst
+ 224              	.LVL14:
+ 159:Generated_Source\PSoC5/ErikaOS_ee_thendin.c ****   if ( rqfirst == EE_NIL ) {
+ 225              		.loc 1 159 0
+ 226 0082 B0F1FF3F 		cmp	r0, #-1
+ 227 0086 0BD1     		bne	.L18
+ 160:Generated_Source\PSoC5/ErikaOS_ee_thendin.c ****     /* No threads in the ready queue, return to the preempted TASK
+ 161:Generated_Source\PSoC5/ErikaOS_ee_thendin.c ****       (maybe Idle) */
+ 162:Generated_Source\PSoC5/ErikaOS_ee_thendin.c ****     if ( current != EE_NIL ) {
+ 228              		.loc 1 162 0
+ 229 0088 B4F1FF3F 		cmp	r4, #-1
+ 230 008c 03D0     		beq	.L19
+ 163:Generated_Source\PSoC5/ErikaOS_ee_thendin.c ****       EE_th_status[current] = RUNNING;
+ 231              		.loc 1 163 0
+ 232 008e 0022     		movs	r2, #0
+ 233 0090 164B     		ldr	r3, .L23+16
+ 234 0092 43F82420 		str	r2, [r3, r4, lsl #2]
+ 235              	.L19:
+ 236              	.LVL15:
+ 237              	.LBB48:
+ 238              	.LBB49:
+ 239              		.loc 2 179 0
+ 240 0096 44F00044 		orr	r4, r4, #-2147483648
+ 241              	.LVL16:
+ 242 009a 194B     		ldr	r3, .L23+36
+ 243 009c 1C60     		str	r4, [r3]
+ 244 009e 38BD     		pop	{r3, r4, r5, pc}
+ 245              	.LVL17:
+ 246              	.L18:
+ 247              	.LBE49:
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccXJJiz6.s 			page 22
+
+
+ 248              	.LBE48:
+ 164:Generated_Source\PSoC5/ErikaOS_ee_thendin.c ****       EE_oo_call_PreTaskHook();
+ 165:Generated_Source\PSoC5/ErikaOS_ee_thendin.c ****       /* Enable the TASK Timing Protection Set */
+ 166:Generated_Source\PSoC5/ErikaOS_ee_thendin.c ****       EE_as_tp_active_set_from_TASK(current);
+ 167:Generated_Source\PSoC5/ErikaOS_ee_thendin.c ****     } else {
+ 168:Generated_Source\PSoC5/ErikaOS_ee_thendin.c ****       /* We are switching back to the Idle loop */
+ 169:Generated_Source\PSoC5/ErikaOS_ee_thendin.c ****       EE_as_set_execution_context( Idle_Context );
+ 170:Generated_Source\PSoC5/ErikaOS_ee_thendin.c ****       EE_as_tp_active_start_idle();
+ 171:Generated_Source\PSoC5/ErikaOS_ee_thendin.c ****     }
+ 172:Generated_Source\PSoC5/ErikaOS_ee_thendin.c ****     EE_hal_endcycle_stacked(current);
+ 173:Generated_Source\PSoC5/ErikaOS_ee_thendin.c ****   } else if ( EE_sys_ceiling >= EE_th_ready_prio[rqfirst] ) {
+ 249              		.loc 1 173 0
+ 250 00a0 184B     		ldr	r3, .L23+40
+ 251 00a2 53F82020 		ldr	r2, [r3, r0, lsl #2]
+ 252 00a6 134B     		ldr	r3, .L23+24
+ 253 00a8 1B68     		ldr	r3, [r3]
+ 254 00aa 9A42     		cmp	r2, r3
+ 255 00ac 08D8     		bhi	.L21
+ 174:Generated_Source\PSoC5/ErikaOS_ee_thendin.c ****     /* We have to schedule an interrupted thread (already on the stack!!!) */
+ 175:Generated_Source\PSoC5/ErikaOS_ee_thendin.c ****     EE_th_status[current] = RUNNING;
+ 256              		.loc 1 175 0
+ 257 00ae 0022     		movs	r2, #0
+ 258 00b0 0E4B     		ldr	r3, .L23+16
+ 259 00b2 43F82420 		str	r2, [r3, r4, lsl #2]
+ 260              	.LVL18:
+ 261              	.LBB50:
+ 262              	.LBB51:
+ 263              		.loc 2 179 0
+ 264 00b6 44F00044 		orr	r4, r4, #-2147483648
+ 265              	.LVL19:
+ 266 00ba 114B     		ldr	r3, .L23+36
+ 267 00bc 1C60     		str	r4, [r3]
+ 268 00be 38BD     		pop	{r3, r4, r5, pc}
+ 269              	.LVL20:
+ 270              	.L21:
+ 271              	.LBE51:
+ 272              	.LBE50:
+ 176:Generated_Source\PSoC5/ErikaOS_ee_thendin.c ****     EE_oo_call_PreTaskHook();
+ 177:Generated_Source\PSoC5/ErikaOS_ee_thendin.c **** 
+ 178:Generated_Source\PSoC5/ErikaOS_ee_thendin.c ****     /* Enable the TASK Timing Protection Set */
+ 179:Generated_Source\PSoC5/ErikaOS_ee_thendin.c ****     EE_as_tp_active_set_from_TASK(current);
+ 180:Generated_Source\PSoC5/ErikaOS_ee_thendin.c ****     /* Prepare to Context SWITCH, It doesn't do the switch by it self. */
+ 181:Generated_Source\PSoC5/ErikaOS_ee_thendin.c ****     EE_hal_endcycle_stacked(current);
+ 182:Generated_Source\PSoC5/ErikaOS_ee_thendin.c ****   } else {
+ 183:Generated_Source\PSoC5/ErikaOS_ee_thendin.c ****     /* We have to schedule a ready thread */
+ 184:Generated_Source\PSoC5/ErikaOS_ee_thendin.c ****     EE_th_status[rqfirst] = RUNNING;
+ 273              		.loc 1 184 0
+ 274 00c0 0021     		movs	r1, #0
+ 275 00c2 0A4A     		ldr	r2, .L23+16
+ 276 00c4 42F82010 		str	r1, [r2, r0, lsl #2]
+ 185:Generated_Source\PSoC5/ErikaOS_ee_thendin.c ****     EE_sys_ceiling |= EE_th_dispatch_prio[rqfirst];
+ 277              		.loc 1 185 0
+ 278 00c8 094A     		ldr	r2, .L23+20
+ 279 00ca 52F82020 		ldr	r2, [r2, r0, lsl #2]
+ 280 00ce 1343     		orrs	r3, r3, r2
+ 281 00d0 084A     		ldr	r2, .L23+24
+ 282 00d2 1360     		str	r3, [r2]
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccXJJiz6.s 			page 23
+
+
+ 186:Generated_Source\PSoC5/ErikaOS_ee_thendin.c **** 
+ 187:Generated_Source\PSoC5/ErikaOS_ee_thendin.c ****     EE_ORTI_set_th_eq_dispatch_prio(rqfirst);
+ 188:Generated_Source\PSoC5/ErikaOS_ee_thendin.c **** 
+ 189:Generated_Source\PSoC5/ErikaOS_ee_thendin.c ****     /* "Press TP start for the first time" for this new activation or release
+ 190:Generated_Source\PSoC5/ErikaOS_ee_thendin.c ****         from wait of the TASK */
+ 191:Generated_Source\PSoC5/ErikaOS_ee_thendin.c ****     EE_as_tp_active_start_on_TASK_stacking(rqfirst);
+ 192:Generated_Source\PSoC5/ErikaOS_ee_thendin.c **** 
+ 193:Generated_Source\PSoC5/ErikaOS_ee_thendin.c ****     /* Prepare to Context SWITCH, It doesn't do the switch by it self. */
+ 194:Generated_Source\PSoC5/ErikaOS_ee_thendin.c ****     EE_thread_endcycle_next();
+ 283              		.loc 1 194 0
+ 284 00d4 FFF7FEFF 		bl	EE_thread_endcycle_next
+ 285              	.LVL21:
+ 286 00d8 38BD     		pop	{r3, r4, r5, pc}
+ 287              	.LVL22:
+ 288              	.L24:
+ 289 00da 00BF     		.align	2
+ 290              	.L23:
+ 291 00dc 00000000 		.word	EE_stkfirst
+ 292 00e0 00000000 		.word	EE_oo_IRQ_disable_count
+ 293 00e4 00000000 		.word	EE_th_rnact
+ 294 00e8 00000000 		.word	EE_th_terminate_nextask
+ 295 00ec 00000000 		.word	EE_th_status
+ 296 00f0 00000000 		.word	EE_th_dispatch_prio
+ 297 00f4 00000000 		.word	EE_sys_ceiling
+ 298 00f8 00000000 		.word	EE_th_next
+ 299 00fc 00000000 		.word	EE_th_event_active
+ 300 0100 00000000 		.word	EE_std_endcycle_next_tid
+ 301 0104 00000000 		.word	EE_th_ready_prio
+ 302              		.cfi_endproc
+ 303              	.LFE61:
+ 304              		.size	EE_thread_end_instance, .-EE_thread_end_instance
+ 305              		.text
+ 306              	.Letext0:
+ 307              		.file 4 "Generated_Source\\PSoC5\\ErikaOS_common_ee_types.inc"
+ 308              		.file 5 "Generated_Source\\PSoC5\\ErikaOS_cortex_mx_ee_cpu.inc"
+ 309              		.file 6 "Generated_Source\\PSoC5\\ErikaOS_ee_oo_common.inc"
+ 310              		.file 7 "Generated_Source\\PSoC5\\ErikaOS_common_ee_primitives.inc"
+ 311              		.file 8 "Generated_Source\\PSoC5\\ErikaOS_ee_oo_intfunc.inc"
+ 312              		.section	.debug_info,"",%progbits
+ 313              	.Ldebug_info0:
+ 314 0000 70050000 		.4byte	0x570
+ 315 0004 0400     		.2byte	0x4
+ 316 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 317 000a 04       		.byte	0x4
+ 318 000b 01       		.uleb128 0x1
+ 319 000c 24050000 		.4byte	.LASF73
+ 320 0010 0C       		.byte	0xc
+ 321 0011 94030000 		.4byte	.LASF74
+ 322 0015 85000000 		.4byte	.LASF75
+ 323 0019 00000000 		.4byte	.Ldebug_ranges0+0
+ 324 001d 00000000 		.4byte	0
+ 325 0021 00000000 		.4byte	.Ldebug_line0
+ 326 0025 02       		.uleb128 0x2
+ 327 0026 01       		.byte	0x1
+ 328 0027 06       		.byte	0x6
+ 329 0028 C3020000 		.4byte	.LASF0
+ 330 002c 02       		.uleb128 0x2
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccXJJiz6.s 			page 24
+
+
+ 331 002d 01       		.byte	0x1
+ 332 002e 08       		.byte	0x8
+ 333 002f B5020000 		.4byte	.LASF1
+ 334 0033 02       		.uleb128 0x2
+ 335 0034 02       		.byte	0x2
+ 336 0035 05       		.byte	0x5
+ 337 0036 EE000000 		.4byte	.LASF2
+ 338 003a 02       		.uleb128 0x2
+ 339 003b 02       		.byte	0x2
+ 340 003c 07       		.byte	0x7
+ 341 003d 6C030000 		.4byte	.LASF3
+ 342 0041 02       		.uleb128 0x2
+ 343 0042 04       		.byte	0x4
+ 344 0043 05       		.byte	0x5
+ 345 0044 31020000 		.4byte	.LASF4
+ 346 0048 02       		.uleb128 0x2
+ 347 0049 04       		.byte	0x4
+ 348 004a 07       		.byte	0x7
+ 349 004b 45040000 		.4byte	.LASF5
+ 350 004f 02       		.uleb128 0x2
+ 351 0050 08       		.byte	0x8
+ 352 0051 05       		.byte	0x5
+ 353 0052 E8010000 		.4byte	.LASF6
+ 354 0056 02       		.uleb128 0x2
+ 355 0057 08       		.byte	0x8
+ 356 0058 07       		.byte	0x7
+ 357 0059 CF020000 		.4byte	.LASF7
+ 358 005d 03       		.uleb128 0x3
+ 359 005e 04       		.byte	0x4
+ 360 005f 05       		.byte	0x5
+ 361 0060 696E7400 		.ascii	"int\000"
+ 362 0064 02       		.uleb128 0x2
+ 363 0065 04       		.byte	0x4
+ 364 0066 07       		.byte	0x7
+ 365 0067 12030000 		.4byte	.LASF8
+ 366 006b 02       		.uleb128 0x2
+ 367 006c 08       		.byte	0x8
+ 368 006d 04       		.byte	0x4
+ 369 006e A0020000 		.4byte	.LASF9
+ 370 0072 04       		.uleb128 0x4
+ 371 0073 FE010000 		.4byte	.LASF10
+ 372 0077 04       		.byte	0x4
+ 373 0078 3B       		.byte	0x3b
+ 374 0079 2C000000 		.4byte	0x2c
+ 375 007d 04       		.uleb128 0x4
+ 376 007e F6010000 		.4byte	.LASF11
+ 377 0082 04       		.byte	0x4
+ 378 0083 3F       		.byte	0x3f
+ 379 0084 25000000 		.4byte	0x25
+ 380 0088 04       		.uleb128 0x4
+ 381 0089 CD030000 		.4byte	.LASF12
+ 382 008d 04       		.byte	0x4
+ 383 008e 52       		.byte	0x52
+ 384 008f 3A000000 		.4byte	0x3a
+ 385 0093 04       		.uleb128 0x4
+ 386 0094 3E030000 		.4byte	.LASF13
+ 387 0098 04       		.byte	0x4
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccXJJiz6.s 			page 25
+
+
+ 388 0099 53       		.byte	0x53
+ 389 009a 5D000000 		.4byte	0x5d
+ 390 009e 04       		.uleb128 0x4
+ 391 009f 41010000 		.4byte	.LASF14
+ 392 00a3 04       		.byte	0x4
+ 393 00a4 54       		.byte	0x54
+ 394 00a5 64000000 		.4byte	0x64
+ 395 00a9 04       		.uleb128 0x4
+ 396 00aa 1D000000 		.4byte	.LASF15
+ 397 00ae 05       		.byte	0x5
+ 398 00af 4D       		.byte	0x4d
+ 399 00b0 9E000000 		.4byte	0x9e
+ 400 00b4 04       		.uleb128 0x4
+ 401 00b5 39010000 		.4byte	.LASF16
+ 402 00b9 05       		.byte	0x5
+ 403 00ba 4F       		.byte	0x4f
+ 404 00bb 9E000000 		.4byte	0x9e
+ 405 00bf 04       		.uleb128 0x4
+ 406 00c0 5F040000 		.4byte	.LASF17
+ 407 00c4 05       		.byte	0x5
+ 408 00c5 54       		.byte	0x54
+ 409 00c6 A9000000 		.4byte	0xa9
+ 410 00ca 04       		.uleb128 0x4
+ 411 00cb 69010000 		.4byte	.LASF18
+ 412 00cf 05       		.byte	0x5
+ 413 00d0 78       		.byte	0x78
+ 414 00d1 93000000 		.4byte	0x93
+ 415 00d5 05       		.uleb128 0x5
+ 416 00d6 05020000 		.4byte	.LASF19
+ 417 00da 06       		.byte	0x6
+ 418 00db 0801     		.2byte	0x108
+ 419 00dd 88000000 		.4byte	0x88
+ 420 00e1 05       		.uleb128 0x5
+ 421 00e2 AC020000 		.4byte	.LASF20
+ 422 00e6 06       		.byte	0x6
+ 423 00e7 EE01     		.2byte	0x1ee
+ 424 00e9 CA000000 		.4byte	0xca
+ 425 00ed 06       		.uleb128 0x6
+ 426 00ee 01       		.byte	0x1
+ 427 00ef 2C000000 		.4byte	0x2c
+ 428 00f3 06       		.byte	0x6
+ 429 00f4 5004     		.2byte	0x450
+ 430 00f6 3D010000 		.4byte	0x13d
+ 431 00fa 07       		.uleb128 0x7
+ 432 00fb 00000000 		.4byte	.LASF21
+ 433 00ff 00       		.byte	0
+ 434 0100 07       		.uleb128 0x7
+ 435 0101 5F030000 		.4byte	.LASF22
+ 436 0105 01       		.byte	0x1
+ 437 0106 07       		.uleb128 0x7
+ 438 0107 5C010000 		.4byte	.LASF23
+ 439 010b 02       		.byte	0x2
+ 440 010c 07       		.uleb128 0x7
+ 441 010d F8000000 		.4byte	.LASF24
+ 442 0111 03       		.byte	0x3
+ 443 0112 07       		.uleb128 0x7
+ 444 0113 8F040000 		.4byte	.LASF25
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccXJJiz6.s 			page 26
+
+
+ 445 0117 04       		.byte	0x4
+ 446 0118 07       		.uleb128 0x7
+ 447 0119 A6040000 		.4byte	.LASF26
+ 448 011d 05       		.byte	0x5
+ 449 011e 07       		.uleb128 0x7
+ 450 011f BA040000 		.4byte	.LASF27
+ 451 0123 06       		.byte	0x6
+ 452 0124 07       		.uleb128 0x7
+ 453 0125 CA050000 		.4byte	.LASF28
+ 454 0129 07       		.byte	0x7
+ 455 012a 07       		.uleb128 0x7
+ 456 012b 7F030000 		.4byte	.LASF29
+ 457 012f 08       		.byte	0x8
+ 458 0130 07       		.uleb128 0x7
+ 459 0131 D7030000 		.4byte	.LASF30
+ 460 0135 09       		.byte	0x9
+ 461 0136 07       		.uleb128 0x7
+ 462 0137 C3010000 		.4byte	.LASF31
+ 463 013b 0A       		.byte	0xa
+ 464 013c 00       		.byte	0
+ 465 013d 05       		.uleb128 0x5
+ 466 013e 70010000 		.4byte	.LASF32
+ 467 0142 06       		.byte	0x6
+ 468 0143 5C04     		.2byte	0x45c
+ 469 0145 ED000000 		.4byte	0xed
+ 470 0149 08       		.uleb128 0x8
+ 471 014a 53020000 		.4byte	.LASF33
+ 472 014e 06       		.byte	0x6
+ 473 014f 7B04     		.2byte	0x47b
+ 474 0151 03       		.byte	0x3
+ 475 0152 63010000 		.4byte	0x163
+ 476 0156 09       		.uleb128 0x9
+ 477 0157 63747800 		.ascii	"ctx\000"
+ 478 015b 06       		.byte	0x6
+ 479 015c 7C04     		.2byte	0x47c
+ 480 015e 3D010000 		.4byte	0x13d
+ 481 0162 00       		.byte	0
+ 482 0163 08       		.uleb128 0x8
+ 483 0164 15020000 		.4byte	.LASF34
+ 484 0168 03       		.byte	0x3
+ 485 0169 2902     		.2byte	0x229
+ 486 016b 03       		.byte	0x3
+ 487 016c 7D010000 		.4byte	0x17d
+ 488 0170 0A       		.uleb128 0xa
+ 489 0171 7F010000 		.4byte	.LASF35
+ 490 0175 03       		.byte	0x3
+ 491 0176 2902     		.2byte	0x229
+ 492 0178 E1000000 		.4byte	0xe1
+ 493 017c 00       		.byte	0
+ 494 017d 0B       		.uleb128 0xb
+ 495 017e D0010000 		.4byte	.LASF36
+ 496 0182 02       		.byte	0x2
+ 497 0183 B1       		.byte	0xb1
+ 498 0184 03       		.byte	0x3
+ 499 0185 95010000 		.4byte	0x195
+ 500 0189 0C       		.uleb128 0xc
+ 501 018a 74696400 		.ascii	"tid\000"
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccXJJiz6.s 			page 27
+
+
+ 502 018e 02       		.byte	0x2
+ 503 018f B1       		.byte	0xb1
+ 504 0190 CA000000 		.4byte	0xca
+ 505 0194 00       		.byte	0
+ 506 0195 0D       		.uleb128 0xd
+ 507 0196 43000000 		.4byte	.LASF38
+ 508 019a 03       		.byte	0x3
+ 509 019b 8C01     		.2byte	0x18c
+ 510 019d 03       		.byte	0x3
+ 511 019e 0B       		.uleb128 0xb
+ 512 019f 25000000 		.4byte	.LASF37
+ 513 01a3 02       		.byte	0x2
+ 514 01a4 AB       		.byte	0xab
+ 515 01a5 03       		.byte	0x3
+ 516 01a6 B6010000 		.4byte	0x1b6
+ 517 01aa 0C       		.uleb128 0xc
+ 518 01ab 74696400 		.ascii	"tid\000"
+ 519 01af 02       		.byte	0x2
+ 520 01b0 AB       		.byte	0xab
+ 521 01b1 CA000000 		.4byte	0xca
+ 522 01b5 00       		.byte	0
+ 523 01b6 0D       		.uleb128 0xd
+ 524 01b7 47030000 		.4byte	.LASF39
+ 525 01bb 03       		.byte	0x3
+ 526 01bc 9A01     		.2byte	0x19a
+ 527 01be 03       		.byte	0x3
+ 528 01bf 0E       		.uleb128 0xe
+ 529 01c0 00030000 		.4byte	.LASF40
+ 530 01c4 03       		.byte	0x3
+ 531 01c5 EC       		.byte	0xec
+ 532 01c6 CA000000 		.4byte	0xca
+ 533 01ca 03       		.byte	0x3
+ 534 01cb 0F       		.uleb128 0xf
+ 535 01cc 19010000 		.4byte	.LASF41
+ 536 01d0 03       		.byte	0x3
+ 537 01d1 D301     		.2byte	0x1d3
+ 538 01d3 CA000000 		.4byte	0xca
+ 539 01d7 03       		.byte	0x3
+ 540 01d8 08       		.uleb128 0x8
+ 541 01d9 5A000000 		.4byte	.LASF42
+ 542 01dd 06       		.byte	0x6
+ 543 01de CA03     		.2byte	0x3ca
+ 544 01e0 03       		.byte	0x3
+ 545 01e1 FE010000 		.4byte	0x1fe
+ 546 01e5 0A       		.uleb128 0xa
+ 547 01e6 8F010000 		.4byte	.LASF43
+ 548 01ea 06       		.byte	0x6
+ 549 01eb CA03     		.2byte	0x3ca
+ 550 01ed CA000000 		.4byte	0xca
+ 551 01f1 0A       		.uleb128 0xa
+ 552 01f2 8A010000 		.4byte	.LASF44
+ 553 01f6 06       		.byte	0x6
+ 554 01f7 CA03     		.2byte	0x3ca
+ 555 01f9 A9000000 		.4byte	0xa9
+ 556 01fd 00       		.byte	0
+ 557 01fe 08       		.uleb128 0x8
+ 558 01ff E6020000 		.4byte	.LASF45
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccXJJiz6.s 			page 28
+
+
+ 559 0203 03       		.byte	0x3
+ 560 0204 5B02     		.2byte	0x25b
+ 561 0206 03       		.byte	0x3
+ 562 0207 18020000 		.4byte	0x218
+ 563 020b 0A       		.uleb128 0xa
+ 564 020c 6F020000 		.4byte	.LASF46
+ 565 0210 03       		.byte	0x3
+ 566 0211 5B02     		.2byte	0x25b
+ 567 0213 E1000000 		.4byte	0xe1
+ 568 0217 00       		.byte	0
+ 569 0218 08       		.uleb128 0x8
+ 570 0219 ED030000 		.4byte	.LASF47
+ 571 021d 06       		.byte	0x6
+ 572 021e C903     		.2byte	0x3c9
+ 573 0220 03       		.byte	0x3
+ 574 0221 32020000 		.4byte	0x232
+ 575 0225 09       		.uleb128 0x9
+ 576 0226 746D7000 		.ascii	"tmp\000"
+ 577 022a 06       		.byte	0x6
+ 578 022b C903     		.2byte	0x3c9
+ 579 022d CA000000 		.4byte	0xca
+ 580 0231 00       		.byte	0
+ 581 0232 10       		.uleb128 0x10
+ 582 0233 1E040000 		.4byte	.LASF76
+ 583 0237 01       		.byte	0x1
+ 584 0238 39       		.byte	0x39
+ 585 0239 72000000 		.4byte	0x72
+ 586 023d 00000000 		.4byte	.LFB59
+ 587 0241 20000000 		.4byte	.LFE59-.LFB59
+ 588 0245 01       		.uleb128 0x1
+ 589 0246 9C       		.byte	0x9c
+ 590 0247 5B020000 		.4byte	0x25b
+ 591 024b 11       		.uleb128 0x11
+ 592 024c FD040000 		.4byte	.LASF77
+ 593 0250 01       		.byte	0x1
+ 594 0251 39       		.byte	0x39
+ 595 0252 CA000000 		.4byte	0xca
+ 596 0256 00000000 		.4byte	.LLST0
+ 597 025a 00       		.byte	0
+ 598 025b 12       		.uleb128 0x12
+ 599 025c 77040000 		.4byte	.LASF78
+ 600 0260 01       		.byte	0x1
+ 601 0261 43       		.byte	0x43
+ 602 0262 00000000 		.4byte	.LFB60
+ 603 0266 30000000 		.4byte	.LFE60-.LFB60
+ 604 026a 01       		.uleb128 0x1
+ 605 026b 9C       		.byte	0x9c
+ 606 026c C1020000 		.4byte	0x2c1
+ 607 0270 13       		.uleb128 0x13
+ 608 0271 57040000 		.4byte	.LASF48
+ 609 0275 01       		.byte	0x1
+ 610 0276 45       		.byte	0x45
+ 611 0277 CA000000 		.4byte	0xca
+ 612 027b 3A000000 		.4byte	.LLST1
+ 613 027f 14       		.uleb128 0x14
+ 614 0280 7D010000 		.4byte	0x17d
+ 615 0284 16000000 		.4byte	.LBB36
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccXJJiz6.s 			page 29
+
+
+ 616 0288 0A000000 		.4byte	.LBE36-.LBB36
+ 617 028c 01       		.byte	0x1
+ 618 028d 4A       		.byte	0x4a
+ 619 028e 9C020000 		.4byte	0x29c
+ 620 0292 15       		.uleb128 0x15
+ 621 0293 89010000 		.4byte	0x189
+ 622 0297 58000000 		.4byte	.LLST2
+ 623 029b 00       		.byte	0
+ 624 029c 14       		.uleb128 0x14
+ 625 029d 9E010000 		.4byte	0x19e
+ 626 02a1 20000000 		.4byte	.LBB38
+ 627 02a5 10000000 		.4byte	.LBE38-.LBB38
+ 628 02a9 01       		.byte	0x1
+ 629 02aa 4C       		.byte	0x4c
+ 630 02ab B7020000 		.4byte	0x2b7
+ 631 02af 16       		.uleb128 0x16
+ 632 02b0 AA010000 		.4byte	0x1aa
+ 633 02b4 01       		.uleb128 0x1
+ 634 02b5 50       		.byte	0x50
+ 635 02b6 00       		.byte	0
+ 636 02b7 17       		.uleb128 0x17
+ 637 02b8 06000000 		.4byte	.LVL4
+ 638 02bc 4F050000 		.4byte	0x54f
+ 639 02c0 00       		.byte	0
+ 640 02c1 18       		.uleb128 0x18
+ 641 02c2 76020000 		.4byte	.LASF79
+ 642 02c6 01       		.byte	0x1
+ 643 02c7 58       		.byte	0x58
+ 644 02c8 00000000 		.4byte	.LFB61
+ 645 02cc 08010000 		.4byte	.LFE61-.LFB61
+ 646 02d0 01       		.uleb128 0x1
+ 647 02d1 9C       		.byte	0x9c
+ 648 02d2 C9030000 		.4byte	0x3c9
+ 649 02d6 19       		.uleb128 0x19
+ 650 02d7 FD040000 		.4byte	.LASF77
+ 651 02db 01       		.byte	0x1
+ 652 02dc 5A       		.byte	0x5a
+ 653 02dd CA000000 		.4byte	0xca
+ 654 02e1 13       		.uleb128 0x13
+ 655 02e2 3B000000 		.4byte	.LASF49
+ 656 02e6 01       		.byte	0x1
+ 657 02e7 5A       		.byte	0x5a
+ 658 02e8 CA000000 		.4byte	0xca
+ 659 02ec 6B000000 		.4byte	.LLST3
+ 660 02f0 13       		.uleb128 0x13
+ 661 02f1 2C030000 		.4byte	.LASF50
+ 662 02f5 01       		.byte	0x1
+ 663 02f6 5B       		.byte	0x5b
+ 664 02f7 CA000000 		.4byte	0xca
+ 665 02fb 7E000000 		.4byte	.LLST4
+ 666 02ff 1A       		.uleb128 0x1a
+ 667 0300 BF010000 		.4byte	0x1bf
+ 668 0304 02000000 		.4byte	.LBB40
+ 669 0308 04000000 		.4byte	.LBE40-.LBB40
+ 670 030c 01       		.byte	0x1
+ 671 030d 5D       		.byte	0x5d
+ 672 030e 1A       		.uleb128 0x1a
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccXJJiz6.s 			page 30
+
+
+ 673 030f CB010000 		.4byte	0x1cb
+ 674 0313 4E000000 		.4byte	.LBB42
+ 675 0317 0A000000 		.4byte	.LBE42-.LBB42
+ 676 031b 01       		.byte	0x1
+ 677 031c 89       		.byte	0x89
+ 678 031d 14       		.uleb128 0x14
+ 679 031e FE010000 		.4byte	0x1fe
+ 680 0322 5E000000 		.4byte	.LBB44
+ 681 0326 1A000000 		.4byte	.LBE44-.LBB44
+ 682 032a 01       		.byte	0x1
+ 683 032b 96       		.byte	0x96
+ 684 032c 54030000 		.4byte	0x354
+ 685 0330 15       		.uleb128 0x15
+ 686 0331 0B020000 		.4byte	0x20b
+ 687 0335 91000000 		.4byte	.LLST5
+ 688 0339 1B       		.uleb128 0x1b
+ 689 033a 63010000 		.4byte	0x163
+ 690 033e 70000000 		.4byte	.LBB46
+ 691 0342 08000000 		.4byte	.LBE46-.LBB46
+ 692 0346 03       		.byte	0x3
+ 693 0347 5F02     		.2byte	0x25f
+ 694 0349 15       		.uleb128 0x15
+ 695 034a 70010000 		.4byte	0x170
+ 696 034e A4000000 		.4byte	.LLST6
+ 697 0352 00       		.byte	0
+ 698 0353 00       		.byte	0
+ 699 0354 14       		.uleb128 0x14
+ 700 0355 7D010000 		.4byte	0x17d
+ 701 0359 96000000 		.4byte	.LBB48
+ 702 035d 0A000000 		.4byte	.LBE48-.LBB48
+ 703 0361 01       		.byte	0x1
+ 704 0362 AC       		.byte	0xac
+ 705 0363 71030000 		.4byte	0x371
+ 706 0367 15       		.uleb128 0x15
+ 707 0368 89010000 		.4byte	0x189
+ 708 036c B7000000 		.4byte	.LLST7
+ 709 0370 00       		.byte	0
+ 710 0371 14       		.uleb128 0x14
+ 711 0372 7D010000 		.4byte	0x17d
+ 712 0376 B6000000 		.4byte	.LBB50
+ 713 037a 0A000000 		.4byte	.LBE50-.LBB50
+ 714 037e 01       		.byte	0x1
+ 715 037f B5       		.byte	0xb5
+ 716 0380 8E030000 		.4byte	0x38e
+ 717 0384 15       		.uleb128 0x15
+ 718 0385 89010000 		.4byte	0x189
+ 719 0389 CA000000 		.4byte	.LLST8
+ 720 038d 00       		.byte	0
+ 721 038e 1C       		.uleb128 0x1c
+ 722 038f 24000000 		.4byte	.LVL9
+ 723 0393 32020000 		.4byte	0x232
+ 724 0397 A2030000 		.4byte	0x3a2
+ 725 039b 1D       		.uleb128 0x1d
+ 726 039c 01       		.uleb128 0x1
+ 727 039d 50       		.byte	0x50
+ 728 039e 02       		.uleb128 0x2
+ 729 039f 74       		.byte	0x74
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccXJJiz6.s 			page 31
+
+
+ 730 03a0 00       		.sleb128 0
+ 731 03a1 00       		.byte	0
+ 732 03a2 1C       		.uleb128 0x1c
+ 733 03a3 7E000000 		.4byte	.LVL13
+ 734 03a7 5B050000 		.4byte	0x55b
+ 735 03ab B6030000 		.4byte	0x3b6
+ 736 03af 1D       		.uleb128 0x1d
+ 737 03b0 01       		.uleb128 0x1
+ 738 03b1 50       		.byte	0x50
+ 739 03b2 02       		.uleb128 0x2
+ 740 03b3 75       		.byte	0x75
+ 741 03b4 00       		.sleb128 0
+ 742 03b5 00       		.byte	0
+ 743 03b6 17       		.uleb128 0x17
+ 744 03b7 82000000 		.4byte	.LVL14
+ 745 03bb 67050000 		.4byte	0x567
+ 746 03bf 17       		.uleb128 0x17
+ 747 03c0 D8000000 		.4byte	.LVL21
+ 748 03c4 5B020000 		.4byte	0x25b
+ 749 03c8 00       		.byte	0
+ 750 03c9 1E       		.uleb128 0x1e
+ 751 03ca 95010000 		.4byte	.LASF51
+ 752 03ce 07       		.byte	0x7
+ 753 03cf 44       		.byte	0x44
+ 754 03d0 A9000000 		.4byte	0xa9
+ 755 03d4 1E       		.uleb128 0x1e
+ 756 03d5 AA010000 		.4byte	.LASF52
+ 757 03d9 02       		.byte	0x2
+ 758 03da 48       		.byte	0x48
+ 759 03db CA000000 		.4byte	0xca
+ 760 03df 1F       		.uleb128 0x1f
+ 761 03e0 F5030000 		.4byte	0x3f5
+ 762 03e4 EE030000 		.4byte	0x3ee
+ 763 03e8 20       		.uleb128 0x20
+ 764 03e9 EE030000 		.4byte	0x3ee
+ 765 03ed 00       		.byte	0
+ 766 03ee 02       		.uleb128 0x2
+ 767 03ef 04       		.byte	0x4
+ 768 03f0 07       		.byte	0x7
+ 769 03f1 CF040000 		.4byte	.LASF53
+ 770 03f5 21       		.uleb128 0x21
+ 771 03f6 A9000000 		.4byte	0xa9
+ 772 03fa 1E       		.uleb128 0x1e
+ 773 03fb 29010000 		.4byte	.LASF54
+ 774 03ff 06       		.byte	0x6
+ 775 0400 AE       		.byte	0xae
+ 776 0401 05040000 		.4byte	0x405
+ 777 0405 21       		.uleb128 0x21
+ 778 0406 DF030000 		.4byte	0x3df
+ 779 040a 1F       		.uleb128 0x1f
+ 780 040b F5030000 		.4byte	0x3f5
+ 781 040f 19040000 		.4byte	0x419
+ 782 0413 20       		.uleb128 0x20
+ 783 0414 EE030000 		.4byte	0x3ee
+ 784 0418 00       		.byte	0
+ 785 0419 1E       		.uleb128 0x1e
+ 786 041a 4B010000 		.4byte	.LASF55
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccXJJiz6.s 			page 32
+
+
+ 787 041e 06       		.byte	0x6
+ 788 041f B2       		.byte	0xb2
+ 789 0420 24040000 		.4byte	0x424
+ 790 0424 21       		.uleb128 0x21
+ 791 0425 0A040000 		.4byte	0x40a
+ 792 0429 1F       		.uleb128 0x1f
+ 793 042a F5030000 		.4byte	0x3f5
+ 794 042e 38040000 		.4byte	0x438
+ 795 0432 20       		.uleb128 0x20
+ 796 0433 EE030000 		.4byte	0x3ee
+ 797 0437 00       		.byte	0
+ 798 0438 1E       		.uleb128 0x1e
+ 799 0439 05050000 		.4byte	.LASF56
+ 800 043d 06       		.byte	0x6
+ 801 043e B3       		.byte	0xb3
+ 802 043f 43040000 		.4byte	0x443
+ 803 0443 21       		.uleb128 0x21
+ 804 0444 29040000 		.4byte	0x429
+ 805 0448 1F       		.uleb128 0x1f
+ 806 0449 A9000000 		.4byte	0xa9
+ 807 044d 57040000 		.4byte	0x457
+ 808 0451 20       		.uleb128 0x20
+ 809 0452 EE030000 		.4byte	0x3ee
+ 810 0456 00       		.byte	0
+ 811 0457 1E       		.uleb128 0x1e
+ 812 0458 1F030000 		.4byte	.LASF57
+ 813 045c 06       		.byte	0x6
+ 814 045d C1       		.byte	0xc1
+ 815 045e 48040000 		.4byte	0x448
+ 816 0462 1F       		.uleb128 0x1f
+ 817 0463 CA000000 		.4byte	0xca
+ 818 0467 71040000 		.4byte	0x471
+ 819 046b 20       		.uleb128 0x20
+ 820 046c EE030000 		.4byte	0x3ee
+ 821 0470 00       		.byte	0
+ 822 0471 1E       		.uleb128 0x1e
+ 823 0472 19050000 		.4byte	.LASF58
+ 824 0476 06       		.byte	0x6
+ 825 0477 C9       		.byte	0xc9
+ 826 0478 62040000 		.4byte	0x462
+ 827 047c 1F       		.uleb128 0x1f
+ 828 047d A9000000 		.4byte	0xa9
+ 829 0481 8B040000 		.4byte	0x48b
+ 830 0485 20       		.uleb128 0x20
+ 831 0486 EE030000 		.4byte	0x3ee
+ 832 048a 00       		.byte	0
+ 833 048b 1E       		.uleb128 0x1e
+ 834 048c 32030000 		.4byte	.LASF59
+ 835 0490 06       		.byte	0x6
+ 836 0491 D1       		.byte	0xd1
+ 837 0492 7C040000 		.4byte	0x47c
+ 838 0496 1F       		.uleb128 0x1f
+ 839 0497 CA000000 		.4byte	0xca
+ 840 049b A5040000 		.4byte	0x4a5
+ 841 049f 20       		.uleb128 0x20
+ 842 04a0 EE030000 		.4byte	0x3ee
+ 843 04a4 00       		.byte	0
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccXJJiz6.s 			page 33
+
+
+ 844 04a5 1E       		.uleb128 0x1e
+ 845 04a6 E5040000 		.4byte	.LASF60
+ 846 04aa 06       		.byte	0x6
+ 847 04ab D5       		.byte	0xd5
+ 848 04ac 96040000 		.4byte	0x496
+ 849 04b0 1E       		.uleb128 0x1e
+ 850 04b1 6B040000 		.4byte	.LASF61
+ 851 04b5 06       		.byte	0x6
+ 852 04b6 D9       		.byte	0xd9
+ 853 04b7 CA000000 		.4byte	0xca
+ 854 04bb 1E       		.uleb128 0x1e
+ 855 04bc 0A010000 		.4byte	.LASF62
+ 856 04c0 06       		.byte	0x6
+ 857 04c1 EE       		.byte	0xee
+ 858 04c2 A9000000 		.4byte	0xa9
+ 859 04c6 22       		.uleb128 0x22
+ 860 04c7 0F000000 		.4byte	.LASF63
+ 861 04cb 06       		.byte	0x6
+ 862 04cc 3601     		.2byte	0x136
+ 863 04ce D5000000 		.4byte	0xd5
+ 864 04d2 1F       		.uleb128 0x1f
+ 865 04d3 A9000000 		.4byte	0xa9
+ 866 04d7 E1040000 		.4byte	0x4e1
+ 867 04db 20       		.uleb128 0x20
+ 868 04dc EE030000 		.4byte	0x3ee
+ 869 04e0 00       		.byte	0
+ 870 04e1 22       		.uleb128 0x22
+ 871 04e2 72000000 		.4byte	.LASF64
+ 872 04e6 06       		.byte	0x6
+ 873 04e7 5301     		.2byte	0x153
+ 874 04e9 D2040000 		.4byte	0x4d2
+ 875 04ed 1F       		.uleb128 0x1f
+ 876 04ee BF000000 		.4byte	0xbf
+ 877 04f2 FC040000 		.4byte	0x4fc
+ 878 04f6 20       		.uleb128 0x20
+ 879 04f7 EE030000 		.4byte	0x3ee
+ 880 04fb 00       		.byte	0
+ 881 04fc 22       		.uleb128 0x22
+ 882 04fd DD000000 		.4byte	.LASF65
+ 883 0501 06       		.byte	0x6
+ 884 0502 5E01     		.2byte	0x15e
+ 885 0504 ED040000 		.4byte	0x4ed
+ 886 0508 1E       		.uleb128 0x1e
+ 887 0509 B2050000 		.4byte	.LASF66
+ 888 050d 08       		.byte	0x8
+ 889 050e 40       		.byte	0x40
+ 890 050f A9000000 		.4byte	0xa9
+ 891 0513 1E       		.uleb128 0x1e
+ 892 0514 3A020000 		.4byte	.LASF67
+ 893 0518 08       		.byte	0x8
+ 894 0519 47       		.byte	0x47
+ 895 051a B4000000 		.4byte	0xb4
+ 896 051e 1E       		.uleb128 0x1e
+ 897 051f 32040000 		.4byte	.LASF68
+ 898 0523 08       		.byte	0x8
+ 899 0524 4A       		.byte	0x4a
+ 900 0525 A9000000 		.4byte	0xa9
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccXJJiz6.s 			page 34
+
+
+ 901 0529 1F       		.uleb128 0x1f
+ 902 052a 39050000 		.4byte	0x539
+ 903 052e 39050000 		.4byte	0x539
+ 904 0532 23       		.uleb128 0x23
+ 905 0533 EE030000 		.4byte	0x3ee
+ 906 0537 FF       		.byte	0xff
+ 907 0538 00       		.byte	0
+ 908 0539 21       		.uleb128 0x21
+ 909 053a 7D000000 		.4byte	0x7d
+ 910 053e 22       		.uleb128 0x22
+ 911 053f D8040000 		.4byte	.LASF69
+ 912 0543 03       		.byte	0x3
+ 913 0544 AB01     		.2byte	0x1ab
+ 914 0546 4A050000 		.4byte	0x54a
+ 915 054a 21       		.uleb128 0x21
+ 916 054b 29050000 		.4byte	0x529
+ 917 054f 24       		.uleb128 0x24
+ 918 0550 8D020000 		.4byte	.LASF70
+ 919 0554 8D020000 		.4byte	.LASF70
+ 920 0558 03       		.byte	0x3
+ 921 0559 E901     		.2byte	0x1e9
+ 922 055b 24       		.uleb128 0x24
+ 923 055c C0030000 		.4byte	.LASF71
+ 924 0560 C0030000 		.4byte	.LASF71
+ 925 0564 03       		.byte	0x3
+ 926 0565 E401     		.2byte	0x1e4
+ 927 0567 24       		.uleb128 0x24
+ 928 0568 0D040000 		.4byte	.LASF72
+ 929 056c 0D040000 		.4byte	.LASF72
+ 930 0570 03       		.byte	0x3
+ 931 0571 CB01     		.2byte	0x1cb
+ 932 0573 00       		.byte	0
+ 933              		.section	.debug_abbrev,"",%progbits
+ 934              	.Ldebug_abbrev0:
+ 935 0000 01       		.uleb128 0x1
+ 936 0001 11       		.uleb128 0x11
+ 937 0002 01       		.byte	0x1
+ 938 0003 25       		.uleb128 0x25
+ 939 0004 0E       		.uleb128 0xe
+ 940 0005 13       		.uleb128 0x13
+ 941 0006 0B       		.uleb128 0xb
+ 942 0007 03       		.uleb128 0x3
+ 943 0008 0E       		.uleb128 0xe
+ 944 0009 1B       		.uleb128 0x1b
+ 945 000a 0E       		.uleb128 0xe
+ 946 000b 55       		.uleb128 0x55
+ 947 000c 17       		.uleb128 0x17
+ 948 000d 11       		.uleb128 0x11
+ 949 000e 01       		.uleb128 0x1
+ 950 000f 10       		.uleb128 0x10
+ 951 0010 17       		.uleb128 0x17
+ 952 0011 00       		.byte	0
+ 953 0012 00       		.byte	0
+ 954 0013 02       		.uleb128 0x2
+ 955 0014 24       		.uleb128 0x24
+ 956 0015 00       		.byte	0
+ 957 0016 0B       		.uleb128 0xb
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccXJJiz6.s 			page 35
+
+
+ 958 0017 0B       		.uleb128 0xb
+ 959 0018 3E       		.uleb128 0x3e
+ 960 0019 0B       		.uleb128 0xb
+ 961 001a 03       		.uleb128 0x3
+ 962 001b 0E       		.uleb128 0xe
+ 963 001c 00       		.byte	0
+ 964 001d 00       		.byte	0
+ 965 001e 03       		.uleb128 0x3
+ 966 001f 24       		.uleb128 0x24
+ 967 0020 00       		.byte	0
+ 968 0021 0B       		.uleb128 0xb
+ 969 0022 0B       		.uleb128 0xb
+ 970 0023 3E       		.uleb128 0x3e
+ 971 0024 0B       		.uleb128 0xb
+ 972 0025 03       		.uleb128 0x3
+ 973 0026 08       		.uleb128 0x8
+ 974 0027 00       		.byte	0
+ 975 0028 00       		.byte	0
+ 976 0029 04       		.uleb128 0x4
+ 977 002a 16       		.uleb128 0x16
+ 978 002b 00       		.byte	0
+ 979 002c 03       		.uleb128 0x3
+ 980 002d 0E       		.uleb128 0xe
+ 981 002e 3A       		.uleb128 0x3a
+ 982 002f 0B       		.uleb128 0xb
+ 983 0030 3B       		.uleb128 0x3b
+ 984 0031 0B       		.uleb128 0xb
+ 985 0032 49       		.uleb128 0x49
+ 986 0033 13       		.uleb128 0x13
+ 987 0034 00       		.byte	0
+ 988 0035 00       		.byte	0
+ 989 0036 05       		.uleb128 0x5
+ 990 0037 16       		.uleb128 0x16
+ 991 0038 00       		.byte	0
+ 992 0039 03       		.uleb128 0x3
+ 993 003a 0E       		.uleb128 0xe
+ 994 003b 3A       		.uleb128 0x3a
+ 995 003c 0B       		.uleb128 0xb
+ 996 003d 3B       		.uleb128 0x3b
+ 997 003e 05       		.uleb128 0x5
+ 998 003f 49       		.uleb128 0x49
+ 999 0040 13       		.uleb128 0x13
+ 1000 0041 00       		.byte	0
+ 1001 0042 00       		.byte	0
+ 1002 0043 06       		.uleb128 0x6
+ 1003 0044 04       		.uleb128 0x4
+ 1004 0045 01       		.byte	0x1
+ 1005 0046 0B       		.uleb128 0xb
+ 1006 0047 0B       		.uleb128 0xb
+ 1007 0048 49       		.uleb128 0x49
+ 1008 0049 13       		.uleb128 0x13
+ 1009 004a 3A       		.uleb128 0x3a
+ 1010 004b 0B       		.uleb128 0xb
+ 1011 004c 3B       		.uleb128 0x3b
+ 1012 004d 05       		.uleb128 0x5
+ 1013 004e 01       		.uleb128 0x1
+ 1014 004f 13       		.uleb128 0x13
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccXJJiz6.s 			page 36
+
+
+ 1015 0050 00       		.byte	0
+ 1016 0051 00       		.byte	0
+ 1017 0052 07       		.uleb128 0x7
+ 1018 0053 28       		.uleb128 0x28
+ 1019 0054 00       		.byte	0
+ 1020 0055 03       		.uleb128 0x3
+ 1021 0056 0E       		.uleb128 0xe
+ 1022 0057 1C       		.uleb128 0x1c
+ 1023 0058 0B       		.uleb128 0xb
+ 1024 0059 00       		.byte	0
+ 1025 005a 00       		.byte	0
+ 1026 005b 08       		.uleb128 0x8
+ 1027 005c 2E       		.uleb128 0x2e
+ 1028 005d 01       		.byte	0x1
+ 1029 005e 03       		.uleb128 0x3
+ 1030 005f 0E       		.uleb128 0xe
+ 1031 0060 3A       		.uleb128 0x3a
+ 1032 0061 0B       		.uleb128 0xb
+ 1033 0062 3B       		.uleb128 0x3b
+ 1034 0063 05       		.uleb128 0x5
+ 1035 0064 27       		.uleb128 0x27
+ 1036 0065 19       		.uleb128 0x19
+ 1037 0066 20       		.uleb128 0x20
+ 1038 0067 0B       		.uleb128 0xb
+ 1039 0068 01       		.uleb128 0x1
+ 1040 0069 13       		.uleb128 0x13
+ 1041 006a 00       		.byte	0
+ 1042 006b 00       		.byte	0
+ 1043 006c 09       		.uleb128 0x9
+ 1044 006d 05       		.uleb128 0x5
+ 1045 006e 00       		.byte	0
+ 1046 006f 03       		.uleb128 0x3
+ 1047 0070 08       		.uleb128 0x8
+ 1048 0071 3A       		.uleb128 0x3a
+ 1049 0072 0B       		.uleb128 0xb
+ 1050 0073 3B       		.uleb128 0x3b
+ 1051 0074 05       		.uleb128 0x5
+ 1052 0075 49       		.uleb128 0x49
+ 1053 0076 13       		.uleb128 0x13
+ 1054 0077 00       		.byte	0
+ 1055 0078 00       		.byte	0
+ 1056 0079 0A       		.uleb128 0xa
+ 1057 007a 05       		.uleb128 0x5
+ 1058 007b 00       		.byte	0
+ 1059 007c 03       		.uleb128 0x3
+ 1060 007d 0E       		.uleb128 0xe
+ 1061 007e 3A       		.uleb128 0x3a
+ 1062 007f 0B       		.uleb128 0xb
+ 1063 0080 3B       		.uleb128 0x3b
+ 1064 0081 05       		.uleb128 0x5
+ 1065 0082 49       		.uleb128 0x49
+ 1066 0083 13       		.uleb128 0x13
+ 1067 0084 00       		.byte	0
+ 1068 0085 00       		.byte	0
+ 1069 0086 0B       		.uleb128 0xb
+ 1070 0087 2E       		.uleb128 0x2e
+ 1071 0088 01       		.byte	0x1
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccXJJiz6.s 			page 37
+
+
+ 1072 0089 03       		.uleb128 0x3
+ 1073 008a 0E       		.uleb128 0xe
+ 1074 008b 3A       		.uleb128 0x3a
+ 1075 008c 0B       		.uleb128 0xb
+ 1076 008d 3B       		.uleb128 0x3b
+ 1077 008e 0B       		.uleb128 0xb
+ 1078 008f 27       		.uleb128 0x27
+ 1079 0090 19       		.uleb128 0x19
+ 1080 0091 20       		.uleb128 0x20
+ 1081 0092 0B       		.uleb128 0xb
+ 1082 0093 01       		.uleb128 0x1
+ 1083 0094 13       		.uleb128 0x13
+ 1084 0095 00       		.byte	0
+ 1085 0096 00       		.byte	0
+ 1086 0097 0C       		.uleb128 0xc
+ 1087 0098 05       		.uleb128 0x5
+ 1088 0099 00       		.byte	0
+ 1089 009a 03       		.uleb128 0x3
+ 1090 009b 08       		.uleb128 0x8
+ 1091 009c 3A       		.uleb128 0x3a
+ 1092 009d 0B       		.uleb128 0xb
+ 1093 009e 3B       		.uleb128 0x3b
+ 1094 009f 0B       		.uleb128 0xb
+ 1095 00a0 49       		.uleb128 0x49
+ 1096 00a1 13       		.uleb128 0x13
+ 1097 00a2 00       		.byte	0
+ 1098 00a3 00       		.byte	0
+ 1099 00a4 0D       		.uleb128 0xd
+ 1100 00a5 2E       		.uleb128 0x2e
+ 1101 00a6 00       		.byte	0
+ 1102 00a7 03       		.uleb128 0x3
+ 1103 00a8 0E       		.uleb128 0xe
+ 1104 00a9 3A       		.uleb128 0x3a
+ 1105 00aa 0B       		.uleb128 0xb
+ 1106 00ab 3B       		.uleb128 0x3b
+ 1107 00ac 05       		.uleb128 0x5
+ 1108 00ad 27       		.uleb128 0x27
+ 1109 00ae 19       		.uleb128 0x19
+ 1110 00af 20       		.uleb128 0x20
+ 1111 00b0 0B       		.uleb128 0xb
+ 1112 00b1 00       		.byte	0
+ 1113 00b2 00       		.byte	0
+ 1114 00b3 0E       		.uleb128 0xe
+ 1115 00b4 2E       		.uleb128 0x2e
+ 1116 00b5 00       		.byte	0
+ 1117 00b6 03       		.uleb128 0x3
+ 1118 00b7 0E       		.uleb128 0xe
+ 1119 00b8 3A       		.uleb128 0x3a
+ 1120 00b9 0B       		.uleb128 0xb
+ 1121 00ba 3B       		.uleb128 0x3b
+ 1122 00bb 0B       		.uleb128 0xb
+ 1123 00bc 27       		.uleb128 0x27
+ 1124 00bd 19       		.uleb128 0x19
+ 1125 00be 49       		.uleb128 0x49
+ 1126 00bf 13       		.uleb128 0x13
+ 1127 00c0 20       		.uleb128 0x20
+ 1128 00c1 0B       		.uleb128 0xb
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccXJJiz6.s 			page 38
+
+
+ 1129 00c2 00       		.byte	0
+ 1130 00c3 00       		.byte	0
+ 1131 00c4 0F       		.uleb128 0xf
+ 1132 00c5 2E       		.uleb128 0x2e
+ 1133 00c6 00       		.byte	0
+ 1134 00c7 03       		.uleb128 0x3
+ 1135 00c8 0E       		.uleb128 0xe
+ 1136 00c9 3A       		.uleb128 0x3a
+ 1137 00ca 0B       		.uleb128 0xb
+ 1138 00cb 3B       		.uleb128 0x3b
+ 1139 00cc 05       		.uleb128 0x5
+ 1140 00cd 27       		.uleb128 0x27
+ 1141 00ce 19       		.uleb128 0x19
+ 1142 00cf 49       		.uleb128 0x49
+ 1143 00d0 13       		.uleb128 0x13
+ 1144 00d1 20       		.uleb128 0x20
+ 1145 00d2 0B       		.uleb128 0xb
+ 1146 00d3 00       		.byte	0
+ 1147 00d4 00       		.byte	0
+ 1148 00d5 10       		.uleb128 0x10
+ 1149 00d6 2E       		.uleb128 0x2e
+ 1150 00d7 01       		.byte	0x1
+ 1151 00d8 03       		.uleb128 0x3
+ 1152 00d9 0E       		.uleb128 0xe
+ 1153 00da 3A       		.uleb128 0x3a
+ 1154 00db 0B       		.uleb128 0xb
+ 1155 00dc 3B       		.uleb128 0x3b
+ 1156 00dd 0B       		.uleb128 0xb
+ 1157 00de 27       		.uleb128 0x27
+ 1158 00df 19       		.uleb128 0x19
+ 1159 00e0 49       		.uleb128 0x49
+ 1160 00e1 13       		.uleb128 0x13
+ 1161 00e2 11       		.uleb128 0x11
+ 1162 00e3 01       		.uleb128 0x1
+ 1163 00e4 12       		.uleb128 0x12
+ 1164 00e5 06       		.uleb128 0x6
+ 1165 00e6 40       		.uleb128 0x40
+ 1166 00e7 18       		.uleb128 0x18
+ 1167 00e8 9742     		.uleb128 0x2117
+ 1168 00ea 19       		.uleb128 0x19
+ 1169 00eb 01       		.uleb128 0x1
+ 1170 00ec 13       		.uleb128 0x13
+ 1171 00ed 00       		.byte	0
+ 1172 00ee 00       		.byte	0
+ 1173 00ef 11       		.uleb128 0x11
+ 1174 00f0 05       		.uleb128 0x5
+ 1175 00f1 00       		.byte	0
+ 1176 00f2 03       		.uleb128 0x3
+ 1177 00f3 0E       		.uleb128 0xe
+ 1178 00f4 3A       		.uleb128 0x3a
+ 1179 00f5 0B       		.uleb128 0xb
+ 1180 00f6 3B       		.uleb128 0x3b
+ 1181 00f7 0B       		.uleb128 0xb
+ 1182 00f8 49       		.uleb128 0x49
+ 1183 00f9 13       		.uleb128 0x13
+ 1184 00fa 02       		.uleb128 0x2
+ 1185 00fb 17       		.uleb128 0x17
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccXJJiz6.s 			page 39
+
+
+ 1186 00fc 00       		.byte	0
+ 1187 00fd 00       		.byte	0
+ 1188 00fe 12       		.uleb128 0x12
+ 1189 00ff 2E       		.uleb128 0x2e
+ 1190 0100 01       		.byte	0x1
+ 1191 0101 03       		.uleb128 0x3
+ 1192 0102 0E       		.uleb128 0xe
+ 1193 0103 3A       		.uleb128 0x3a
+ 1194 0104 0B       		.uleb128 0xb
+ 1195 0105 3B       		.uleb128 0x3b
+ 1196 0106 0B       		.uleb128 0xb
+ 1197 0107 27       		.uleb128 0x27
+ 1198 0108 19       		.uleb128 0x19
+ 1199 0109 11       		.uleb128 0x11
+ 1200 010a 01       		.uleb128 0x1
+ 1201 010b 12       		.uleb128 0x12
+ 1202 010c 06       		.uleb128 0x6
+ 1203 010d 40       		.uleb128 0x40
+ 1204 010e 18       		.uleb128 0x18
+ 1205 010f 9742     		.uleb128 0x2117
+ 1206 0111 19       		.uleb128 0x19
+ 1207 0112 01       		.uleb128 0x1
+ 1208 0113 13       		.uleb128 0x13
+ 1209 0114 00       		.byte	0
+ 1210 0115 00       		.byte	0
+ 1211 0116 13       		.uleb128 0x13
+ 1212 0117 34       		.uleb128 0x34
+ 1213 0118 00       		.byte	0
+ 1214 0119 03       		.uleb128 0x3
+ 1215 011a 0E       		.uleb128 0xe
+ 1216 011b 3A       		.uleb128 0x3a
+ 1217 011c 0B       		.uleb128 0xb
+ 1218 011d 3B       		.uleb128 0x3b
+ 1219 011e 0B       		.uleb128 0xb
+ 1220 011f 49       		.uleb128 0x49
+ 1221 0120 13       		.uleb128 0x13
+ 1222 0121 02       		.uleb128 0x2
+ 1223 0122 17       		.uleb128 0x17
+ 1224 0123 00       		.byte	0
+ 1225 0124 00       		.byte	0
+ 1226 0125 14       		.uleb128 0x14
+ 1227 0126 1D       		.uleb128 0x1d
+ 1228 0127 01       		.byte	0x1
+ 1229 0128 31       		.uleb128 0x31
+ 1230 0129 13       		.uleb128 0x13
+ 1231 012a 11       		.uleb128 0x11
+ 1232 012b 01       		.uleb128 0x1
+ 1233 012c 12       		.uleb128 0x12
+ 1234 012d 06       		.uleb128 0x6
+ 1235 012e 58       		.uleb128 0x58
+ 1236 012f 0B       		.uleb128 0xb
+ 1237 0130 59       		.uleb128 0x59
+ 1238 0131 0B       		.uleb128 0xb
+ 1239 0132 01       		.uleb128 0x1
+ 1240 0133 13       		.uleb128 0x13
+ 1241 0134 00       		.byte	0
+ 1242 0135 00       		.byte	0
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccXJJiz6.s 			page 40
+
+
+ 1243 0136 15       		.uleb128 0x15
+ 1244 0137 05       		.uleb128 0x5
+ 1245 0138 00       		.byte	0
+ 1246 0139 31       		.uleb128 0x31
+ 1247 013a 13       		.uleb128 0x13
+ 1248 013b 02       		.uleb128 0x2
+ 1249 013c 17       		.uleb128 0x17
+ 1250 013d 00       		.byte	0
+ 1251 013e 00       		.byte	0
+ 1252 013f 16       		.uleb128 0x16
+ 1253 0140 05       		.uleb128 0x5
+ 1254 0141 00       		.byte	0
+ 1255 0142 31       		.uleb128 0x31
+ 1256 0143 13       		.uleb128 0x13
+ 1257 0144 02       		.uleb128 0x2
+ 1258 0145 18       		.uleb128 0x18
+ 1259 0146 00       		.byte	0
+ 1260 0147 00       		.byte	0
+ 1261 0148 17       		.uleb128 0x17
+ 1262 0149 898201   		.uleb128 0x4109
+ 1263 014c 00       		.byte	0
+ 1264 014d 11       		.uleb128 0x11
+ 1265 014e 01       		.uleb128 0x1
+ 1266 014f 31       		.uleb128 0x31
+ 1267 0150 13       		.uleb128 0x13
+ 1268 0151 00       		.byte	0
+ 1269 0152 00       		.byte	0
+ 1270 0153 18       		.uleb128 0x18
+ 1271 0154 2E       		.uleb128 0x2e
+ 1272 0155 01       		.byte	0x1
+ 1273 0156 3F       		.uleb128 0x3f
+ 1274 0157 19       		.uleb128 0x19
+ 1275 0158 03       		.uleb128 0x3
+ 1276 0159 0E       		.uleb128 0xe
+ 1277 015a 3A       		.uleb128 0x3a
+ 1278 015b 0B       		.uleb128 0xb
+ 1279 015c 3B       		.uleb128 0x3b
+ 1280 015d 0B       		.uleb128 0xb
+ 1281 015e 27       		.uleb128 0x27
+ 1282 015f 19       		.uleb128 0x19
+ 1283 0160 11       		.uleb128 0x11
+ 1284 0161 01       		.uleb128 0x1
+ 1285 0162 12       		.uleb128 0x12
+ 1286 0163 06       		.uleb128 0x6
+ 1287 0164 40       		.uleb128 0x40
+ 1288 0165 18       		.uleb128 0x18
+ 1289 0166 9742     		.uleb128 0x2117
+ 1290 0168 19       		.uleb128 0x19
+ 1291 0169 01       		.uleb128 0x1
+ 1292 016a 13       		.uleb128 0x13
+ 1293 016b 00       		.byte	0
+ 1294 016c 00       		.byte	0
+ 1295 016d 19       		.uleb128 0x19
+ 1296 016e 34       		.uleb128 0x34
+ 1297 016f 00       		.byte	0
+ 1298 0170 03       		.uleb128 0x3
+ 1299 0171 0E       		.uleb128 0xe
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccXJJiz6.s 			page 41
+
+
+ 1300 0172 3A       		.uleb128 0x3a
+ 1301 0173 0B       		.uleb128 0xb
+ 1302 0174 3B       		.uleb128 0x3b
+ 1303 0175 0B       		.uleb128 0xb
+ 1304 0176 49       		.uleb128 0x49
+ 1305 0177 13       		.uleb128 0x13
+ 1306 0178 00       		.byte	0
+ 1307 0179 00       		.byte	0
+ 1308 017a 1A       		.uleb128 0x1a
+ 1309 017b 1D       		.uleb128 0x1d
+ 1310 017c 00       		.byte	0
+ 1311 017d 31       		.uleb128 0x31
+ 1312 017e 13       		.uleb128 0x13
+ 1313 017f 11       		.uleb128 0x11
+ 1314 0180 01       		.uleb128 0x1
+ 1315 0181 12       		.uleb128 0x12
+ 1316 0182 06       		.uleb128 0x6
+ 1317 0183 58       		.uleb128 0x58
+ 1318 0184 0B       		.uleb128 0xb
+ 1319 0185 59       		.uleb128 0x59
+ 1320 0186 0B       		.uleb128 0xb
+ 1321 0187 00       		.byte	0
+ 1322 0188 00       		.byte	0
+ 1323 0189 1B       		.uleb128 0x1b
+ 1324 018a 1D       		.uleb128 0x1d
+ 1325 018b 01       		.byte	0x1
+ 1326 018c 31       		.uleb128 0x31
+ 1327 018d 13       		.uleb128 0x13
+ 1328 018e 11       		.uleb128 0x11
+ 1329 018f 01       		.uleb128 0x1
+ 1330 0190 12       		.uleb128 0x12
+ 1331 0191 06       		.uleb128 0x6
+ 1332 0192 58       		.uleb128 0x58
+ 1333 0193 0B       		.uleb128 0xb
+ 1334 0194 59       		.uleb128 0x59
+ 1335 0195 05       		.uleb128 0x5
+ 1336 0196 00       		.byte	0
+ 1337 0197 00       		.byte	0
+ 1338 0198 1C       		.uleb128 0x1c
+ 1339 0199 898201   		.uleb128 0x4109
+ 1340 019c 01       		.byte	0x1
+ 1341 019d 11       		.uleb128 0x11
+ 1342 019e 01       		.uleb128 0x1
+ 1343 019f 31       		.uleb128 0x31
+ 1344 01a0 13       		.uleb128 0x13
+ 1345 01a1 01       		.uleb128 0x1
+ 1346 01a2 13       		.uleb128 0x13
+ 1347 01a3 00       		.byte	0
+ 1348 01a4 00       		.byte	0
+ 1349 01a5 1D       		.uleb128 0x1d
+ 1350 01a6 8A8201   		.uleb128 0x410a
+ 1351 01a9 00       		.byte	0
+ 1352 01aa 02       		.uleb128 0x2
+ 1353 01ab 18       		.uleb128 0x18
+ 1354 01ac 9142     		.uleb128 0x2111
+ 1355 01ae 18       		.uleb128 0x18
+ 1356 01af 00       		.byte	0
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccXJJiz6.s 			page 42
+
+
+ 1357 01b0 00       		.byte	0
+ 1358 01b1 1E       		.uleb128 0x1e
+ 1359 01b2 34       		.uleb128 0x34
+ 1360 01b3 00       		.byte	0
+ 1361 01b4 03       		.uleb128 0x3
+ 1362 01b5 0E       		.uleb128 0xe
+ 1363 01b6 3A       		.uleb128 0x3a
+ 1364 01b7 0B       		.uleb128 0xb
+ 1365 01b8 3B       		.uleb128 0x3b
+ 1366 01b9 0B       		.uleb128 0xb
+ 1367 01ba 49       		.uleb128 0x49
+ 1368 01bb 13       		.uleb128 0x13
+ 1369 01bc 3F       		.uleb128 0x3f
+ 1370 01bd 19       		.uleb128 0x19
+ 1371 01be 3C       		.uleb128 0x3c
+ 1372 01bf 19       		.uleb128 0x19
+ 1373 01c0 00       		.byte	0
+ 1374 01c1 00       		.byte	0
+ 1375 01c2 1F       		.uleb128 0x1f
+ 1376 01c3 01       		.uleb128 0x1
+ 1377 01c4 01       		.byte	0x1
+ 1378 01c5 49       		.uleb128 0x49
+ 1379 01c6 13       		.uleb128 0x13
+ 1380 01c7 01       		.uleb128 0x1
+ 1381 01c8 13       		.uleb128 0x13
+ 1382 01c9 00       		.byte	0
+ 1383 01ca 00       		.byte	0
+ 1384 01cb 20       		.uleb128 0x20
+ 1385 01cc 21       		.uleb128 0x21
+ 1386 01cd 00       		.byte	0
+ 1387 01ce 49       		.uleb128 0x49
+ 1388 01cf 13       		.uleb128 0x13
+ 1389 01d0 00       		.byte	0
+ 1390 01d1 00       		.byte	0
+ 1391 01d2 21       		.uleb128 0x21
+ 1392 01d3 26       		.uleb128 0x26
+ 1393 01d4 00       		.byte	0
+ 1394 01d5 49       		.uleb128 0x49
+ 1395 01d6 13       		.uleb128 0x13
+ 1396 01d7 00       		.byte	0
+ 1397 01d8 00       		.byte	0
+ 1398 01d9 22       		.uleb128 0x22
+ 1399 01da 34       		.uleb128 0x34
+ 1400 01db 00       		.byte	0
+ 1401 01dc 03       		.uleb128 0x3
+ 1402 01dd 0E       		.uleb128 0xe
+ 1403 01de 3A       		.uleb128 0x3a
+ 1404 01df 0B       		.uleb128 0xb
+ 1405 01e0 3B       		.uleb128 0x3b
+ 1406 01e1 05       		.uleb128 0x5
+ 1407 01e2 49       		.uleb128 0x49
+ 1408 01e3 13       		.uleb128 0x13
+ 1409 01e4 3F       		.uleb128 0x3f
+ 1410 01e5 19       		.uleb128 0x19
+ 1411 01e6 3C       		.uleb128 0x3c
+ 1412 01e7 19       		.uleb128 0x19
+ 1413 01e8 00       		.byte	0
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccXJJiz6.s 			page 43
+
+
+ 1414 01e9 00       		.byte	0
+ 1415 01ea 23       		.uleb128 0x23
+ 1416 01eb 21       		.uleb128 0x21
+ 1417 01ec 00       		.byte	0
+ 1418 01ed 49       		.uleb128 0x49
+ 1419 01ee 13       		.uleb128 0x13
+ 1420 01ef 2F       		.uleb128 0x2f
+ 1421 01f0 0B       		.uleb128 0xb
+ 1422 01f1 00       		.byte	0
+ 1423 01f2 00       		.byte	0
+ 1424 01f3 24       		.uleb128 0x24
+ 1425 01f4 2E       		.uleb128 0x2e
+ 1426 01f5 00       		.byte	0
+ 1427 01f6 3F       		.uleb128 0x3f
+ 1428 01f7 19       		.uleb128 0x19
+ 1429 01f8 3C       		.uleb128 0x3c
+ 1430 01f9 19       		.uleb128 0x19
+ 1431 01fa 6E       		.uleb128 0x6e
+ 1432 01fb 0E       		.uleb128 0xe
+ 1433 01fc 03       		.uleb128 0x3
+ 1434 01fd 0E       		.uleb128 0xe
+ 1435 01fe 3A       		.uleb128 0x3a
+ 1436 01ff 0B       		.uleb128 0xb
+ 1437 0200 3B       		.uleb128 0x3b
+ 1438 0201 05       		.uleb128 0x5
+ 1439 0202 00       		.byte	0
+ 1440 0203 00       		.byte	0
+ 1441 0204 00       		.byte	0
+ 1442              		.section	.debug_loc,"",%progbits
+ 1443              	.Ldebug_loc0:
+ 1444              	.LLST0:
+ 1445 0000 00000000 		.4byte	.LVL0
+ 1446 0004 12000000 		.4byte	.LVL1
+ 1447 0008 0100     		.2byte	0x1
+ 1448 000a 50       		.byte	0x50
+ 1449 000b 12000000 		.4byte	.LVL1
+ 1450 000f 14000000 		.4byte	.LVL2
+ 1451 0013 0400     		.2byte	0x4
+ 1452 0015 F3       		.byte	0xf3
+ 1453 0016 01       		.uleb128 0x1
+ 1454 0017 50       		.byte	0x50
+ 1455 0018 9F       		.byte	0x9f
+ 1456 0019 14000000 		.4byte	.LVL2
+ 1457 001d 16000000 		.4byte	.LVL3
+ 1458 0021 0100     		.2byte	0x1
+ 1459 0023 50       		.byte	0x50
+ 1460 0024 16000000 		.4byte	.LVL3
+ 1461 0028 20000000 		.4byte	.LFE59
+ 1462 002c 0400     		.2byte	0x4
+ 1463 002e F3       		.byte	0xf3
+ 1464 002f 01       		.uleb128 0x1
+ 1465 0030 50       		.byte	0x50
+ 1466 0031 9F       		.byte	0x9f
+ 1467 0032 00000000 		.4byte	0
+ 1468 0036 00000000 		.4byte	0
+ 1469              	.LLST1:
+ 1470 003a 06000000 		.4byte	.LVL4
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccXJJiz6.s 			page 44
+
+
+ 1471 003e 1A000000 		.4byte	.LVL6
+ 1472 0042 0100     		.2byte	0x1
+ 1473 0044 50       		.byte	0x50
+ 1474 0045 20000000 		.4byte	.LVL7
+ 1475 0049 30000000 		.4byte	.LFE60
+ 1476 004d 0100     		.2byte	0x1
+ 1477 004f 50       		.byte	0x50
+ 1478 0050 00000000 		.4byte	0
+ 1479 0054 00000000 		.4byte	0
+ 1480              	.LLST2:
+ 1481 0058 16000000 		.4byte	.LVL5
+ 1482 005c 1A000000 		.4byte	.LVL6
+ 1483 0060 0100     		.2byte	0x1
+ 1484 0062 50       		.byte	0x50
+ 1485 0063 00000000 		.4byte	0
+ 1486 0067 00000000 		.4byte	0
+ 1487              	.LLST3:
+ 1488 006b 82000000 		.4byte	.LVL14
+ 1489 006f D7000000 		.4byte	.LVL21-1
+ 1490 0073 0100     		.2byte	0x1
+ 1491 0075 50       		.byte	0x50
+ 1492 0076 00000000 		.4byte	0
+ 1493 007a 00000000 		.4byte	0
+ 1494              	.LLST4:
+ 1495 007e 1E000000 		.4byte	.LVL8
+ 1496 0082 DA000000 		.4byte	.LVL22
+ 1497 0086 0100     		.2byte	0x1
+ 1498 0088 55       		.byte	0x55
+ 1499 0089 00000000 		.4byte	0
+ 1500 008d 00000000 		.4byte	0
+ 1501              	.LLST5:
+ 1502 0091 5E000000 		.4byte	.LVL10
+ 1503 0095 78000000 		.4byte	.LVL12
+ 1504 0099 0100     		.2byte	0x1
+ 1505 009b 55       		.byte	0x55
+ 1506 009c 00000000 		.4byte	0
+ 1507 00a0 00000000 		.4byte	0
+ 1508              	.LLST6:
+ 1509 00a4 70000000 		.4byte	.LVL11
+ 1510 00a8 78000000 		.4byte	.LVL12
+ 1511 00ac 0100     		.2byte	0x1
+ 1512 00ae 55       		.byte	0x55
+ 1513 00af 00000000 		.4byte	0
+ 1514 00b3 00000000 		.4byte	0
+ 1515              	.LLST7:
+ 1516 00b7 96000000 		.4byte	.LVL15
+ 1517 00bb 9A000000 		.4byte	.LVL16
+ 1518 00bf 0100     		.2byte	0x1
+ 1519 00c1 54       		.byte	0x54
+ 1520 00c2 00000000 		.4byte	0
+ 1521 00c6 00000000 		.4byte	0
+ 1522              	.LLST8:
+ 1523 00ca B6000000 		.4byte	.LVL18
+ 1524 00ce BA000000 		.4byte	.LVL19
+ 1525 00d2 0100     		.2byte	0x1
+ 1526 00d4 54       		.byte	0x54
+ 1527 00d5 00000000 		.4byte	0
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccXJJiz6.s 			page 45
+
+
+ 1528 00d9 00000000 		.4byte	0
+ 1529              		.section	.debug_aranges,"",%progbits
+ 1530 0000 2C000000 		.4byte	0x2c
+ 1531 0004 0200     		.2byte	0x2
+ 1532 0006 00000000 		.4byte	.Ldebug_info0
+ 1533 000a 04       		.byte	0x4
+ 1534 000b 00       		.byte	0
+ 1535 000c 0000     		.2byte	0
+ 1536 000e 0000     		.2byte	0
+ 1537 0010 00000000 		.4byte	.LFB59
+ 1538 0014 20000000 		.4byte	.LFE59-.LFB59
+ 1539 0018 00000000 		.4byte	.LFB60
+ 1540 001c 30000000 		.4byte	.LFE60-.LFB60
+ 1541 0020 00000000 		.4byte	.LFB61
+ 1542 0024 08010000 		.4byte	.LFE61-.LFB61
+ 1543 0028 00000000 		.4byte	0
+ 1544 002c 00000000 		.4byte	0
+ 1545              		.section	.debug_ranges,"",%progbits
+ 1546              	.Ldebug_ranges0:
+ 1547 0000 00000000 		.4byte	.LFB59
+ 1548 0004 20000000 		.4byte	.LFE59
+ 1549 0008 00000000 		.4byte	.LFB60
+ 1550 000c 30000000 		.4byte	.LFE60
+ 1551 0010 00000000 		.4byte	.LFB61
+ 1552 0014 08010000 		.4byte	.LFE61
+ 1553 0018 00000000 		.4byte	0
+ 1554 001c 00000000 		.4byte	0
+ 1555              		.section	.debug_line,"",%progbits
+ 1556              	.Ldebug_line0:
+ 1557 0000 B3010000 		.section	.debug_str,"MS",%progbits,1
+ 1557      02002001 
+ 1557      00000201 
+ 1557      FB0E0D00 
+ 1557      01010101 
+ 1558              	.LASF21:
+ 1559 0000 4B65726E 		.ascii	"Kernel_Context\000"
+ 1559      656C5F43 
+ 1559      6F6E7465 
+ 1559      787400
+ 1560              	.LASF63:
+ 1561 000f 45455F72 		.ascii	"EE_rq_bitmask\000"
+ 1561      715F6269 
+ 1561      746D6173 
+ 1561      6B00
+ 1562              	.LASF15:
+ 1563 001d 45455F55 		.ascii	"EE_UREG\000"
+ 1563      52454700 
+ 1564              	.LASF37:
+ 1565 0025 45455F68 		.ascii	"EE_hal_endcycle_ready\000"
+ 1565      616C5F65 
+ 1565      6E646379 
+ 1565      636C655F 
+ 1565      72656164 
+ 1566              	.LASF49:
+ 1567 003b 72716669 		.ascii	"rqfirst\000"
+ 1567      72737400 
+ 1568              	.LASF38:
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccXJJiz6.s 			page 46
+
+
+ 1569 0043 45455F6F 		.ascii	"EE_oo_call_PreTaskHook\000"
+ 1569      6F5F6361 
+ 1569      6C6C5F50 
+ 1569      72655461 
+ 1569      736B486F 
+ 1570              	.LASF42:
+ 1571 005a 45455F4F 		.ascii	"EE_ORTI_set_th_priority\000"
+ 1571      5254495F 
+ 1571      7365745F 
+ 1571      74685F70 
+ 1571      72696F72 
+ 1572              	.LASF64:
+ 1573 0072 45455F74 		.ascii	"EE_th_event_active\000"
+ 1573      685F6576 
+ 1573      656E745F 
+ 1573      61637469 
+ 1573      766500
+ 1574              	.LASF75:
+ 1575 0085 443A5C48 		.ascii	"D:\\HDA\\1_sem\\Embedded System Design\\Lab\\Assign"
+ 1575      44415C31 
+ 1575      5F73656D 
+ 1575      5C456D62 
+ 1575      65646465 
+ 1576 00b3 6D656E74 		.ascii	"ment_1\\ReactionGame_OS\\ReactionGame.cydsn\000"
+ 1576      5F315C52 
+ 1576      65616374 
+ 1576      696F6E47 
+ 1576      616D655F 
+ 1577              	.LASF65:
+ 1578 00dd 45455F74 		.ascii	"EE_th_waswaiting\000"
+ 1578      685F7761 
+ 1578      73776169 
+ 1578      74696E67 
+ 1578      00
+ 1579              	.LASF2:
+ 1580 00ee 73686F72 		.ascii	"short int\000"
+ 1580      7420696E 
+ 1580      7400
+ 1581              	.LASF24:
+ 1582 00f8 4572726F 		.ascii	"ErrorHook_Context\000"
+ 1582      72486F6F 
+ 1582      6B5F436F 
+ 1582      6E746578 
+ 1582      7400
+ 1583              	.LASF62:
+ 1584 010a 45455F73 		.ascii	"EE_sys_ceiling\000"
+ 1584      79735F63 
+ 1584      65696C69 
+ 1584      6E6700
+ 1585              	.LASF41:
+ 1586 0119 45455F73 		.ascii	"EE_stk_getfirst\000"
+ 1586      746B5F67 
+ 1586      65746669 
+ 1586      72737400 
+ 1587              	.LASF54:
+ 1588 0129 45455F74 		.ascii	"EE_th_rnact_max\000"
+ 1588      685F726E 
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccXJJiz6.s 			page 47
+
+
+ 1588      6163745F 
+ 1588      6D617800 
+ 1589              	.LASF16:
+ 1590 0139 45455F46 		.ascii	"EE_FREG\000"
+ 1590      52454700 
+ 1591              	.LASF14:
+ 1592 0141 45455F55 		.ascii	"EE_UINT32\000"
+ 1592      494E5433 
+ 1592      3200
+ 1593              	.LASF55:
+ 1594 014b 45455F74 		.ascii	"EE_th_ready_prio\000"
+ 1594      685F7265 
+ 1594      6164795F 
+ 1594      7072696F 
+ 1594      00
+ 1595              	.LASF23:
+ 1596 015c 49535232 		.ascii	"ISR2_Context\000"
+ 1596      5F436F6E 
+ 1596      74657874 
+ 1596      00
+ 1597              	.LASF18:
+ 1598 0169 45455F54 		.ascii	"EE_TID\000"
+ 1598      494400
+ 1599              	.LASF32:
+ 1600 0170 45455F54 		.ascii	"EE_TYPECONTEXT\000"
+ 1600      59504543 
+ 1600      4F4E5445 
+ 1600      585400
+ 1601              	.LASF35:
+ 1602 017f 746E6F74 		.ascii	"tnotactive\000"
+ 1602      61637469 
+ 1602      766500
+ 1603              	.LASF44:
+ 1604 018a 7072696F 		.ascii	"prio\000"
+ 1604      00
+ 1605              	.LASF43:
+ 1606 018f 696E6465 		.ascii	"index\000"
+ 1606      7800
+ 1607              	.LASF51:
+ 1608 0195 45455F49 		.ascii	"EE_IRQ_nesting_level\000"
+ 1608      52515F6E 
+ 1608      65737469 
+ 1608      6E675F6C 
+ 1608      6576656C 
+ 1609              	.LASF52:
+ 1610 01aa 45455F73 		.ascii	"EE_std_endcycle_next_tid\000"
+ 1610      74645F65 
+ 1610      6E646379 
+ 1610      636C655F 
+ 1610      6E657874 
+ 1611              	.LASF31:
+ 1612 01c3 49646C65 		.ascii	"Idle_Context\000"
+ 1612      5F436F6E 
+ 1612      74657874 
+ 1612      00
+ 1613              	.LASF36:
+ 1614 01d0 45455F68 		.ascii	"EE_hal_endcycle_stacked\000"
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccXJJiz6.s 			page 48
+
+
+ 1614      616C5F65 
+ 1614      6E646379 
+ 1614      636C655F 
+ 1614      73746163 
+ 1615              	.LASF6:
+ 1616 01e8 6C6F6E67 		.ascii	"long long int\000"
+ 1616      206C6F6E 
+ 1616      6720696E 
+ 1616      7400
+ 1617              	.LASF11:
+ 1618 01f6 45455F49 		.ascii	"EE_INT8\000"
+ 1618      4E543800 
+ 1619              	.LASF10:
+ 1620 01fe 45455F42 		.ascii	"EE_BIT\000"
+ 1620      495400
+ 1621              	.LASF19:
+ 1622 0205 45455F54 		.ascii	"EE_TYPE_RQ_MASK\000"
+ 1622      5950455F 
+ 1622      52515F4D 
+ 1622      41534B00 
+ 1623              	.LASF34:
+ 1624 0215 45455F6F 		.ascii	"EE_oo_reset_th_event_active\000"
+ 1624      6F5F7265 
+ 1624      7365745F 
+ 1624      74685F65 
+ 1624      76656E74 
+ 1625              	.LASF4:
+ 1626 0231 6C6F6E67 		.ascii	"long int\000"
+ 1626      20696E74 
+ 1626      00
+ 1627              	.LASF67:
+ 1628 023a 45455F6F 		.ascii	"EE_oo_IRQ_suspend_status\000"
+ 1628      6F5F4952 
+ 1628      515F7375 
+ 1628      7370656E 
+ 1628      645F7374 
+ 1629              	.LASF33:
+ 1630 0253 45455F61 		.ascii	"EE_as_set_execution_context\000"
+ 1630      735F7365 
+ 1630      745F6578 
+ 1630      65637574 
+ 1630      696F6E5F 
+ 1631              	.LASF46:
+ 1632 026f 5461736B 		.ascii	"TaskID\000"
+ 1632      494400
+ 1633              	.LASF79:
+ 1634 0276 45455F74 		.ascii	"EE_thread_end_instance\000"
+ 1634      68726561 
+ 1634      645F656E 
+ 1634      645F696E 
+ 1634      7374616E 
+ 1635              	.LASF70:
+ 1636 028d 45455F72 		.ascii	"EE_rq2stk_exchange\000"
+ 1636      71327374 
+ 1636      6B5F6578 
+ 1636      6368616E 
+ 1636      676500
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccXJJiz6.s 			page 49
+
+
+ 1637              	.LASF9:
+ 1638 02a0 6C6F6E67 		.ascii	"long double\000"
+ 1638      20646F75 
+ 1638      626C6500 
+ 1639              	.LASF20:
+ 1640 02ac 5461736B 		.ascii	"TaskType\000"
+ 1640      54797065 
+ 1640      00
+ 1641              	.LASF1:
+ 1642 02b5 756E7369 		.ascii	"unsigned char\000"
+ 1642      676E6564 
+ 1642      20636861 
+ 1642      7200
+ 1643              	.LASF0:
+ 1644 02c3 7369676E 		.ascii	"signed char\000"
+ 1644      65642063 
+ 1644      68617200 
+ 1645              	.LASF7:
+ 1646 02cf 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 1646      206C6F6E 
+ 1646      6720756E 
+ 1646      7369676E 
+ 1646      65642069 
+ 1647              	.LASF45:
+ 1648 02e6 45455F6F 		.ascii	"EE_oo_set_th_status_ready\000"
+ 1648      6F5F7365 
+ 1648      745F7468 
+ 1648      5F737461 
+ 1648      7475735F 
+ 1649              	.LASF40:
+ 1650 0300 45455F73 		.ascii	"EE_stk_queryfirst\000"
+ 1650      746B5F71 
+ 1650      75657279 
+ 1650      66697273 
+ 1650      7400
+ 1651              	.LASF8:
+ 1652 0312 756E7369 		.ascii	"unsigned int\000"
+ 1652      676E6564 
+ 1652      20696E74 
+ 1652      00
+ 1653              	.LASF57:
+ 1654 031f 45455F74 		.ascii	"EE_th_status\000"
+ 1654      685F7374 
+ 1654      61747573 
+ 1654      00
+ 1655              	.LASF50:
+ 1656 032c 6E746173 		.ascii	"ntask\000"
+ 1656      6B00
+ 1657              	.LASF59:
+ 1658 0332 45455F74 		.ascii	"EE_th_rnact\000"
+ 1658      685F726E 
+ 1658      61637400 
+ 1659              	.LASF13:
+ 1660 033e 45455F49 		.ascii	"EE_INT32\000"
+ 1660      4E543332 
+ 1660      00
+ 1661              	.LASF39:
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccXJJiz6.s 			page 50
+
+
+ 1662 0347 45455F6F 		.ascii	"EE_oo_call_PostTaskHook\000"
+ 1662      6F5F6361 
+ 1662      6C6C5F50 
+ 1662      6F737454 
+ 1662      61736B48 
+ 1663              	.LASF22:
+ 1664 035f 5441534B 		.ascii	"TASK_Context\000"
+ 1664      5F436F6E 
+ 1664      74657874 
+ 1664      00
+ 1665              	.LASF3:
+ 1666 036c 73686F72 		.ascii	"short unsigned int\000"
+ 1666      7420756E 
+ 1666      7369676E 
+ 1666      65642069 
+ 1666      6E7400
+ 1667              	.LASF29:
+ 1668 037f 53687574 		.ascii	"ShutdownHook_Context\000"
+ 1668      646F776E 
+ 1668      486F6F6B 
+ 1668      5F436F6E 
+ 1668      74657874 
+ 1669              	.LASF74:
+ 1670 0394 47656E65 		.ascii	"Generated_Source\\PSoC5\\ErikaOS_ee_thendin.c\000"
+ 1670      72617465 
+ 1670      645F536F 
+ 1670      75726365 
+ 1670      5C50536F 
+ 1671              	.LASF71:
+ 1672 03c0 45455F72 		.ascii	"EE_rq_insert\000"
+ 1672      715F696E 
+ 1672      73657274 
+ 1672      00
+ 1673              	.LASF12:
+ 1674 03cd 45455F55 		.ascii	"EE_UINT16\000"
+ 1674      494E5431 
+ 1674      3600
+ 1675              	.LASF30:
+ 1676 03d7 416C6172 		.ascii	"AlarmCallback_Context\000"
+ 1676      6D43616C 
+ 1676      6C626163 
+ 1676      6B5F436F 
+ 1676      6E746578 
+ 1677              	.LASF47:
+ 1678 03ed 45455F4F 		.ascii	"EE_ORTI_set_th_eq_dispatch_prio\000"
+ 1678      5254495F 
+ 1678      7365745F 
+ 1678      74685F65 
+ 1678      715F6469 
+ 1679              	.LASF72:
+ 1680 040d 45455F72 		.ascii	"EE_rq_queryfirst\000"
+ 1680      715F7175 
+ 1680      65727966 
+ 1680      69727374 
+ 1680      00
+ 1681              	.LASF76:
+ 1682 041e 45455F74 		.ascii	"EE_thread_rnact_max\000"
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccXJJiz6.s 			page 51
+
+
+ 1682      68726561 
+ 1682      645F726E 
+ 1682      6163745F 
+ 1682      6D617800 
+ 1683              	.LASF68:
+ 1684 0432 45455F41 		.ascii	"EE_ApplicationMode\000"
+ 1684      70706C69 
+ 1684      63617469 
+ 1684      6F6E4D6F 
+ 1684      646500
+ 1685              	.LASF5:
+ 1686 0445 6C6F6E67 		.ascii	"long unsigned int\000"
+ 1686      20756E73 
+ 1686      69676E65 
+ 1686      6420696E 
+ 1686      7400
+ 1687              	.LASF48:
+ 1688 0457 6E657874 		.ascii	"nexttid\000"
+ 1688      74696400 
+ 1689              	.LASF17:
+ 1690 045f 45455F54 		.ascii	"EE_TYPEBOOL\000"
+ 1690      59504542 
+ 1690      4F4F4C00 
+ 1691              	.LASF61:
+ 1692 046b 45455F73 		.ascii	"EE_stkfirst\000"
+ 1692      746B6669 
+ 1692      72737400 
+ 1693              	.LASF78:
+ 1694 0477 45455F74 		.ascii	"EE_thread_endcycle_next\000"
+ 1694      68726561 
+ 1694      645F656E 
+ 1694      64637963 
+ 1694      6C655F6E 
+ 1695              	.LASF25:
+ 1696 048f 50726F74 		.ascii	"ProtectionHook_Context\000"
+ 1696      65637469 
+ 1696      6F6E486F 
+ 1696      6F6B5F43 
+ 1696      6F6E7465 
+ 1697              	.LASF26:
+ 1698 04a6 50726554 		.ascii	"PreTaskHook_Context\000"
+ 1698      61736B48 
+ 1698      6F6F6B5F 
+ 1698      436F6E74 
+ 1698      65787400 
+ 1699              	.LASF27:
+ 1700 04ba 506F7374 		.ascii	"PostTaskHook_Context\000"
+ 1700      5461736B 
+ 1700      486F6F6B 
+ 1700      5F436F6E 
+ 1700      74657874 
+ 1701              	.LASF53:
+ 1702 04cf 73697A65 		.ascii	"sizetype\000"
+ 1702      74797065 
+ 1702      00
+ 1703              	.LASF69:
+ 1704 04d8 45455F72 		.ascii	"EE_rq_lookup\000"
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccXJJiz6.s 			page 52
+
+
+ 1704      715F6C6F 
+ 1704      6F6B7570 
+ 1704      00
+ 1705              	.LASF60:
+ 1706 04e5 45455F74 		.ascii	"EE_th_terminate_nextask\000"
+ 1706      685F7465 
+ 1706      726D696E 
+ 1706      6174655F 
+ 1706      6E657874 
+ 1707              	.LASF77:
+ 1708 04fd 63757272 		.ascii	"current\000"
+ 1708      656E7400 
+ 1709              	.LASF56:
+ 1710 0505 45455F74 		.ascii	"EE_th_dispatch_prio\000"
+ 1710      685F6469 
+ 1710      73706174 
+ 1710      63685F70 
+ 1710      72696F00 
+ 1711              	.LASF58:
+ 1712 0519 45455F74 		.ascii	"EE_th_next\000"
+ 1712      685F6E65 
+ 1712      787400
+ 1713              	.LASF73:
+ 1714 0524 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
+ 1714      43313120 
+ 1714      352E342E 
+ 1714      31203230 
+ 1714      31363036 
+ 1715 0557 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m3 -mthumb -g -O"
+ 1715      20726576 
+ 1715      6973696F 
+ 1715      6E203233 
+ 1715      37373135 
+ 1716 058a 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
+ 1716      66756E63 
+ 1716      74696F6E 
+ 1716      2D736563 
+ 1716      74696F6E 
+ 1717              	.LASF66:
+ 1718 05b2 45455F6F 		.ascii	"EE_oo_IRQ_disable_count\000"
+ 1718      6F5F4952 
+ 1718      515F6469 
+ 1718      7361626C 
+ 1718      655F636F 
+ 1719              	.LASF28:
+ 1720 05ca 53746172 		.ascii	"StartupHook_Context\000"
+ 1720      74757048 
+ 1720      6F6F6B5F 
+ 1720      436F6E74 
+ 1720      65787400 
+ 1721              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran
