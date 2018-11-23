@@ -1,77 +1,5 @@
---------------- Rebuild Started: 11/23/2018 00:13:17 Project: ReactionGame, Configuration: ARM GCC 5.4-2016-q2-update Debug ---------------
-Deleting file ".\CortexM3\ARM_GCC_541\Debug\main.o"
-Deleting file ".\CortexM3\ARM_GCC_541\Debug\console.o"
-Deleting file ".\CortexM3\ARM_GCC_541\Debug\cyfitter_cfg.o"
-Deleting file ".\CortexM3\ARM_GCC_541\Debug\cymetadata.o"
-Deleting file ".\CortexM3\ARM_GCC_541\Debug\ErikaOS_ee_activate.o"
-Deleting file ".\CortexM3\ARM_GCC_541\Debug\ErikaOS_ee_alcancel.o"
-Deleting file ".\CortexM3\ARM_GCC_541\Debug\ErikaOS_ee_alget.o"
-Deleting file ".\CortexM3\ARM_GCC_541\Debug\ErikaOS_ee_algetbase.o"
-Deleting file ".\CortexM3\ARM_GCC_541\Debug\ErikaOS_ee_alsetabs.o"
-Deleting file ".\CortexM3\ARM_GCC_541\Debug\ErikaOS_ee_alsetrel.o"
-Deleting file ".\CortexM3\ARM_GCC_541\Debug\ErikaOS_ee_altick.o"
-Deleting file ".\CortexM3\ARM_GCC_541\Debug\ErikaOS_ee_chaintas.o"
-Deleting file ".\CortexM3\ARM_GCC_541\Debug\ErikaOS_ee_evclear.o"
-Deleting file ".\CortexM3\ARM_GCC_541\Debug\ErikaOS_ee_evget.o"
-Deleting file ".\CortexM3\ARM_GCC_541\Debug\ErikaOS_ee_evset.o"
-Deleting file ".\CortexM3\ARM_GCC_541\Debug\ErikaOS_ee_evwait.o"
-Deleting file ".\CortexM3\ARM_GCC_541\Debug\ErikaOS_ee_force_schedule.o"
-Deleting file ".\CortexM3\ARM_GCC_541\Debug\ErikaOS_ee_getcountervalue.o"
-Deleting file ".\CortexM3\ARM_GCC_541\Debug\ErikaOS_ee_getelapsedvalue.o"
-Deleting file ".\CortexM3\ARM_GCC_541\Debug\ErikaOS_ee_gettaskid.o"
-Deleting file ".\CortexM3\ARM_GCC_541\Debug\ErikaOS_ee_gettaskstate.o"
-Deleting file ".\CortexM3\ARM_GCC_541\Debug\ErikaOS_ee_iparam.o"
-Deleting file ".\CortexM3\ARM_GCC_541\Debug\ErikaOS_ee_irqendin.o"
-Deleting file ".\CortexM3\ARM_GCC_541\Debug\ErikaOS_ee_lockres.o"
-Deleting file ".\CortexM3\ARM_GCC_541\Debug\ErikaOS_ee_lookup.o"
-Deleting file ".\CortexM3\ARM_GCC_541\Debug\ErikaOS_ee_rq_exchg.o"
-Deleting file ".\CortexM3\ARM_GCC_541\Debug\ErikaOS_ee_rq_first.o"
-Deleting file ".\CortexM3\ARM_GCC_541\Debug\ErikaOS_ee_rq_inser.o"
-Deleting file ".\CortexM3\ARM_GCC_541\Debug\ErikaOS_ee_schedule.o"
-Deleting file ".\CortexM3\ARM_GCC_541\Debug\ErikaOS_ee_semgetvalue.o"
-Deleting file ".\CortexM3\ARM_GCC_541\Debug\ErikaOS_ee_sempost.o"
-Deleting file ".\CortexM3\ARM_GCC_541\Debug\ErikaOS_ee_semtrywait.o"
-Deleting file ".\CortexM3\ARM_GCC_541\Debug\ErikaOS_ee_semwait.o"
-Deleting file ".\CortexM3\ARM_GCC_541\Debug\ErikaOS_ee_shtdown.o"
-Deleting file ".\CortexM3\ARM_GCC_541\Debug\ErikaOS_ee_startos.o"
-Deleting file ".\CortexM3\ARM_GCC_541\Debug\ErikaOS_ee_terminat.o"
-Deleting file ".\CortexM3\ARM_GCC_541\Debug\ErikaOS_ee_thendin.o"
-Deleting file ".\CortexM3\ARM_GCC_541\Debug\ErikaOS_ee_tnterm.o"
-Deleting file ".\CortexM3\ARM_GCC_541\Debug\ErikaOS_ee_tstub.o"
-Deleting file ".\CortexM3\ARM_GCC_541\Debug\ErikaOS_ee_ulockallres.o"
-Deleting file ".\CortexM3\ARM_GCC_541\Debug\ErikaOS_ee_ulockres.o"
-Deleting file ".\CortexM3\ARM_GCC_541\Debug\ErikaOS_cortex_mx_ee_context.o"
-Deleting file ".\CortexM3\ARM_GCC_541\Debug\ErikaOS_cortex_mx_ee_system_timer.o"
-Deleting file ".\CortexM3\ARM_GCC_541\Debug\ErikaOS_cortex_mx_ee_utils.o"
-Deleting file ".\CortexM3\ARM_GCC_541\Debug\ErikaOS_ee_gnu_change_context_isr.o"
-Deleting file ".\CortexM3\ARM_GCC_541\Debug\ErikaOS_ee_gnu_irq_stack.o"
-Deleting file ".\CortexM3\ARM_GCC_541\Debug\ErikaOS_ee_gnu_multi_context.o"
-Deleting file ".\CortexM3\ARM_GCC_541\Debug\ErikaOS_ee_gnu_oo.o"
-Deleting file ".\CortexM3\ARM_GCC_541\Debug\ErikaOS_common_ee_hal_structs.o"
-Deleting file ".\CortexM3\ARM_GCC_541\Debug\ErikaOS_eecfg.o"
-Deleting file ".\CortexM3\ARM_GCC_541\Debug\Cm3Start.o"
-Deleting file ".\CortexM3\ARM_GCC_541\Debug\CyBootAsmGnu.o"
-Deleting file ".\CortexM3\ARM_GCC_541\Debug\CyDmac.o"
-Deleting file ".\CortexM3\ARM_GCC_541\Debug\CyFlash.o"
-Deleting file ".\CortexM3\ARM_GCC_541\Debug\CyLib.o"
-Deleting file ".\CortexM3\ARM_GCC_541\Debug\cyPm.o"
-Deleting file ".\CortexM3\ARM_GCC_541\Debug\CySpc.o"
-Deleting file ".\CortexM3\ARM_GCC_541\Debug\cyutils.o"
-Deleting file ".\CortexM3\ARM_GCC_541\Debug\cy_em_eeprom.o"
-Deleting file ".\CortexM3\ARM_GCC_541\Debug\UART_LOG.o"
-Deleting file ".\CortexM3\ARM_GCC_541\Debug\UART_LOG_PM.o"
-Deleting file ".\CortexM3\ARM_GCC_541\Debug\UART_LOG_INT.o"
-Deleting file ".\CortexM3\ARM_GCC_541\Debug\UART_LOG_BOOT.o"
-Deleting file ".\CortexM3\ARM_GCC_541\Debug\UART_LOG_IntClock.o"
-Deleting file ".\CortexM3\ARM_GCC_541\Debug\ReactionGame.hex"
-Deleting file ".\CortexM3\ARM_GCC_541\Debug\ReactionGame.elf"
-Deleting file ".\CortexM3\ARM_GCC_541\Debug\ReactionGame.map"
-Deleting file ".\ReactionGame.cycdx"
-Deleting file ".\ReactionGame.svd"
+--------------- Rebuild Started: 11/23/2018 00:34:15 Project: ReactionGame, Configuration: ARM GCC 5.4-2016-q2-update Debug ---------------
 Deleting file ".\ReactionGame.rpt"
-Deleting file ".\ReactionGame_timing.html"
-Deleting file ".\CortexM3\ARM_GCC_541\Debug\.deps\SOURCE_C__ARM_GCC_GENERIC.P"
-Deleting file ".\CortexM3\ARM_GCC_541\Debug\.deps\SOURCE_ASM__ARM_GCC_GENERIC.P"
 cydsfit.exe -.appdatapath "C:\Users\rbhar\AppData\Local\Cypress Semiconductor\PSoC Creator\4.2" -.fdsnotice -.fdswarpdepfile=warp_dependencies.txt -.fdselabdepfile=elab_dependencies.txt -.fdsbldfile=generated_files.txt -.fdsreffile=referenced_files.txt -p "D:\HDA\1_sem\Embedded System Design\Lab\Assignment_1\ReactionGame_OS\ReactionGame.cydsn\ReactionGame.cyprj" -d CY8C5888LTQ-LP097 -s "D:\HDA\1_sem\Embedded System Design\Lab\Assignment_1\ReactionGame_OS\ReactionGame.cydsn\Generated_Source\PSoC5" -- -yv2 -q10 -ygs -o2 -v3 -.fftcfgtype=LE
 Elaborating Design...
 HDL Generation...
@@ -90,6 +18,11 @@ Dependency Generation...
 Cleanup...
 arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -I.\source\asw -I.\source\bsw -I. -IGenerated_Source\PSoC5 -Wa,-alh=.\CortexM3\ARM_GCC_541\Debug/main.lst -g -D DEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -Og -c source\asw\main.c -o .\CortexM3\ARM_GCC_541\Debug\main.o
 arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -I.\source\asw -I.\source\bsw -I. -IGenerated_Source\PSoC5 -Wa,-alh=.\CortexM3\ARM_GCC_541\Debug/console.lst -g -D DEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -Og -c source\bsw\console.c -o .\CortexM3\ARM_GCC_541\Debug\console.o
+arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -I.\source\asw -I.\source\bsw -I. -IGenerated_Source\PSoC5 -Wa,-alh=.\CortexM3\ARM_GCC_541\Debug/button.lst -g -D DEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -Og -c source\bsw\button.c -o .\CortexM3\ARM_GCC_541\Debug\button.o
+source\bsw\button.c: In function 'ISR_Button1_Callback':
+source\bsw\button.c:61:5: warning: implicit declaration of function 'StopTimerMeasurement' [-Wimplicit-function-declaration]
+     StopTimerMeasurement();
+     ^
 arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -I.\source\asw -I.\source\bsw -I. -IGenerated_Source\PSoC5 -Wa,-alh=.\CortexM3\ARM_GCC_541\Debug/cyfitter_cfg.lst -g -D DEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -Og -c Generated_Source\PSoC5\cyfitter_cfg.c -o .\CortexM3\ARM_GCC_541\Debug\cyfitter_cfg.o
 arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -I.\source\asw -I.\source\bsw -I. -IGenerated_Source\PSoC5 -Wa,-alh=.\CortexM3\ARM_GCC_541\Debug/cymetadata.lst -g -D DEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -Og -c Generated_Source\PSoC5\cymetadata.c -o .\CortexM3\ARM_GCC_541\Debug\cymetadata.o
 arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -I.\source\asw -I.\source\bsw -I. -IGenerated_Source\PSoC5 -Wa,-alh=.\CortexM3\ARM_GCC_541\Debug/ErikaOS_ee_activate.lst -g -D DEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -Og -c Generated_Source\PSoC5\ErikaOS_ee_activate.c -o .\CortexM3\ARM_GCC_541\Debug\ErikaOS_ee_activate.o
@@ -143,6 +76,7 @@ Generated_Source\PSoC5\CyLib.h:44:22: warning: unused variable 'CyResetStatus' [
 In file included from Generated_Source\PSoC5\cyPm.h:25:0,
                  from Generated_Source\PSoC5\CyLib.h:29,
                  from Generated_Source\PSoC5\ErikaOS_ee_startos.c:304:
+arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -I.\source\asw -I.\source\bsw -I. -IGenerated_Source\PSoC5 -Wa,-alh=.\CortexM3\ARM_GCC_541\Debug/ErikaOS_ee_terminat.lst -g -D DEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -Og -c Generated_Source\PSoC5\ErikaOS_ee_terminat.c -o .\CortexM3\ARM_GCC_541\Debug\ErikaOS_ee_terminat.o
 Generated_Source\PSoC5\CyFlash.h:28:14: warning: unused variable 'dieTemperature' [-Wunused-variable]
  extern uint8 dieTemperature[CY_FLASH_DIE_TEMP_DATA_SIZE];
               ^
@@ -170,6 +104,7 @@ Generated_Source\PSoC5\cytypes.h:490:25: warning: typedef 'float32' locally defi
 Generated_Source\PSoC5\cytypes.h:494:34: warning: typedef 'float64' locally defined but not used [-Wunused-local-typedefs]
      typedef               double float64;
                                   ^
+arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -I.\source\asw -I.\source\bsw -I. -IGenerated_Source\PSoC5 -Wa,-alh=.\CortexM3\ARM_GCC_541\Debug/ErikaOS_ee_thendin.lst -g -D DEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -Og -c Generated_Source\PSoC5\ErikaOS_ee_thendin.c -o .\CortexM3\ARM_GCC_541\Debug\ErikaOS_ee_thendin.o
 Generated_Source\PSoC5\cytypes.h:495:34: warning: typedef 'int64' locally defined but not used [-Wunused-local-typedefs]
      typedef          long long   int64;
                                   ^
@@ -182,7 +117,7 @@ Generated_Source\PSoC5\cytypes.h:501:25: warning: typedef 'char8' locally define
 Generated_Source\PSoC5\cytypes.h:654:33: warning: typedef 'reg8' locally defined but not used [-Wunused-local-typedefs]
  typedef volatile uint8  CYXDATA reg8;
                                  ^
-arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -I.\source\asw -I.\source\bsw -I. -IGenerated_Source\PSoC5 -Wa,-alh=.\CortexM3\ARM_GCC_541\Debug/ErikaOS_ee_terminat.lst -g -D DEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -Og -c Generated_Source\PSoC5\ErikaOS_ee_terminat.c -o .\CortexM3\ARM_GCC_541\Debug\ErikaOS_ee_terminat.o
+arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -I.\source\asw -I.\source\bsw -I. -IGenerated_Source\PSoC5 -Wa,-alh=.\CortexM3\ARM_GCC_541\Debug/ErikaOS_ee_tnterm.lst -g -D DEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -Og -c Generated_Source\PSoC5\ErikaOS_ee_tnterm.c -o .\CortexM3\ARM_GCC_541\Debug\ErikaOS_ee_tnterm.o
 Generated_Source\PSoC5\cytypes.h:655:33: warning: typedef 'reg16' locally defined but not used [-Wunused-local-typedefs]
  typedef volatile uint16 CYXDATA reg16;
                                  ^
@@ -197,8 +132,6 @@ Generated_Source\PSoC5\cyPm.h:267:3: warning: typedef 'CY_PM_CLOCK_BACKUP_STRUCT
 Generated_Source\PSoC5\cyPm.h:315:3: warning: typedef 'CY_PM_BACKUP_STRUCT' locally defined but not used [-Wunused-local-typedefs]
  } CY_PM_BACKUP_STRUCT;
    ^
-arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -I.\source\asw -I.\source\bsw -I. -IGenerated_Source\PSoC5 -Wa,-alh=.\CortexM3\ARM_GCC_541\Debug/ErikaOS_ee_thendin.lst -g -D DEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -Og -c Generated_Source\PSoC5\ErikaOS_ee_thendin.c -o .\CortexM3\ARM_GCC_541\Debug\ErikaOS_ee_thendin.o
-arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -I.\source\asw -I.\source\bsw -I. -IGenerated_Source\PSoC5 -Wa,-alh=.\CortexM3\ARM_GCC_541\Debug/ErikaOS_ee_tnterm.lst -g -D DEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -Og -c Generated_Source\PSoC5\ErikaOS_ee_tnterm.c -o .\CortexM3\ARM_GCC_541\Debug\ErikaOS_ee_tnterm.o
 arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -I.\source\asw -I.\source\bsw -I. -IGenerated_Source\PSoC5 -Wa,-alh=.\CortexM3\ARM_GCC_541\Debug/ErikaOS_ee_tstub.lst -g -D DEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -Og -c Generated_Source\PSoC5\ErikaOS_ee_tstub.c -o .\CortexM3\ARM_GCC_541\Debug\ErikaOS_ee_tstub.o
 arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -I.\source\asw -I.\source\bsw -I. -IGenerated_Source\PSoC5 -Wa,-alh=.\CortexM3\ARM_GCC_541\Debug/ErikaOS_ee_ulockallres.lst -g -D DEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -Og -c Generated_Source\PSoC5\ErikaOS_ee_ulockallres.c -o .\CortexM3\ARM_GCC_541\Debug\ErikaOS_ee_ulockallres.o
 arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -I.\source\asw -I.\source\bsw -I. -IGenerated_Source\PSoC5 -Wa,-alh=.\CortexM3\ARM_GCC_541\Debug/ErikaOS_ee_ulockres.lst -g -D DEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -Og -c Generated_Source\PSoC5\ErikaOS_ee_ulockres.c -o .\CortexM3\ARM_GCC_541\Debug\ErikaOS_ee_ulockres.o
@@ -220,19 +153,22 @@ arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -I.\source\asw -I.\source\bsw -I. 
 arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -I.\source\asw -I.\source\bsw -I. -IGenerated_Source\PSoC5 -Wa,-alh=.\CortexM3\ARM_GCC_541\Debug/UART_LOG_INT.lst -g -D DEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -Og -c Generated_Source\PSoC5\UART_LOG_INT.c -o .\CortexM3\ARM_GCC_541\Debug\UART_LOG_INT.o
 arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -I.\source\asw -I.\source\bsw -I. -IGenerated_Source\PSoC5 -Wa,-alh=.\CortexM3\ARM_GCC_541\Debug/UART_LOG_BOOT.lst -g -D DEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -Og -c Generated_Source\PSoC5\UART_LOG_BOOT.c -o .\CortexM3\ARM_GCC_541\Debug\UART_LOG_BOOT.o
 arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -I.\source\asw -I.\source\bsw -I. -IGenerated_Source\PSoC5 -Wa,-alh=.\CortexM3\ARM_GCC_541\Debug/UART_LOG_IntClock.lst -g -D DEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -Og -c Generated_Source\PSoC5\UART_LOG_IntClock.c -o .\CortexM3\ARM_GCC_541\Debug\UART_LOG_IntClock.o
+arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -I.\source\asw -I.\source\bsw -I. -IGenerated_Source\PSoC5 -Wa,-alh=.\CortexM3\ARM_GCC_541\Debug/BUTTON_b2.lst -g -D DEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -Og -c Generated_Source\PSoC5\BUTTON_b2.c -o .\CortexM3\ARM_GCC_541\Debug\BUTTON_b2.o
+arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -I.\source\asw -I.\source\bsw -I. -IGenerated_Source\PSoC5 -Wa,-alh=.\CortexM3\ARM_GCC_541\Debug/BUTTON_b1.lst -g -D DEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -Og -c Generated_Source\PSoC5\BUTTON_b1.c -o .\CortexM3\ARM_GCC_541\Debug\BUTTON_b1.o
+arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -I.\source\asw -I.\source\bsw -I. -IGenerated_Source\PSoC5 -Wa,-alh=.\CortexM3\ARM_GCC_541\Debug/isr_BUTTON.lst -g -D DEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -Og -c Generated_Source\PSoC5\isr_BUTTON.c -o .\CortexM3\ARM_GCC_541\Debug\isr_BUTTON.o
 arm-none-eabi-as.exe -mcpu=cortex-m3 -mthumb -I. -IGenerated_Source\PSoC5 -alh=.\CortexM3\ARM_GCC_541\Debug/ErikaOS_ee_gnu_change_context_isr.lst -g -W -o .\CortexM3\ARM_GCC_541\Debug\ErikaOS_ee_gnu_change_context_isr.o Generated_Source\PSoC5\ErikaOS_ee_gnu_change_context_isr.s
 arm-none-eabi-as.exe -mcpu=cortex-m3 -mthumb -I. -IGenerated_Source\PSoC5 -alh=.\CortexM3\ARM_GCC_541\Debug/ErikaOS_ee_gnu_irq_stack.lst -g -W -o .\CortexM3\ARM_GCC_541\Debug\ErikaOS_ee_gnu_irq_stack.o Generated_Source\PSoC5\ErikaOS_ee_gnu_irq_stack.s
 arm-none-eabi-as.exe -mcpu=cortex-m3 -mthumb -I. -IGenerated_Source\PSoC5 -alh=.\CortexM3\ARM_GCC_541\Debug/ErikaOS_ee_gnu_multi_context.lst -g -W -o .\CortexM3\ARM_GCC_541\Debug\ErikaOS_ee_gnu_multi_context.o Generated_Source\PSoC5\ErikaOS_ee_gnu_multi_context.s
 arm-none-eabi-as.exe -mcpu=cortex-m3 -mthumb -I. -IGenerated_Source\PSoC5 -alh=.\CortexM3\ARM_GCC_541\Debug/ErikaOS_ee_gnu_oo.lst -g -W -o .\CortexM3\ARM_GCC_541\Debug\ErikaOS_ee_gnu_oo.o Generated_Source\PSoC5\ErikaOS_ee_gnu_oo.s
 arm-none-eabi-as.exe -mcpu=cortex-m3 -mthumb -I. -IGenerated_Source\PSoC5 -alh=.\CortexM3\ARM_GCC_541\Debug/CyBootAsmGnu.lst -g -W -o .\CortexM3\ARM_GCC_541\Debug\CyBootAsmGnu.o Generated_Source\PSoC5\CyBootAsmGnu.s
-arm-none-eabi-ar.exe -rs .\CortexM3\ARM_GCC_541\Debug\ReactionGame.a .\CortexM3\ARM_GCC_541\Debug\ErikaOS_ee_activate.o .\CortexM3\ARM_GCC_541\Debug\ErikaOS_ee_alcancel.o .\CortexM3\ARM_GCC_541\Debug\ErikaOS_ee_alget.o .\CortexM3\ARM_GCC_541\Debug\ErikaOS_ee_algetbase.o .\CortexM3\ARM_GCC_541\Debug\ErikaOS_ee_alsetabs.o .\CortexM3\ARM_GCC_541\Debug\ErikaOS_ee_alsetrel.o .\CortexM3\ARM_GCC_541\Debug\ErikaOS_ee_altick.o .\CortexM3\ARM_GCC_541\Debug\ErikaOS_ee_chaintas.o .\CortexM3\ARM_GCC_541\Debug\ErikaOS_ee_evclear.o .\CortexM3\ARM_GCC_541\Debug\ErikaOS_ee_evget.o .\CortexM3\ARM_GCC_541\Debug\ErikaOS_ee_evset.o .\CortexM3\ARM_GCC_541\Debug\ErikaOS_ee_evwait.o .\CortexM3\ARM_GCC_541\Debug\ErikaOS_ee_force_schedule.o .\CortexM3\ARM_GCC_541\Debug\ErikaOS_ee_getcountervalue.o .\CortexM3\ARM_GCC_541\Debug\ErikaOS_ee_getelapsedvalue.o .\CortexM3\ARM_GCC_541\Debug\ErikaOS_ee_gettaskid.o .\CortexM3\ARM_GCC_541\Debug\ErikaOS_ee_gettaskstate.o .\CortexM3\ARM_GCC_541\Debug\ErikaOS_ee_iparam.o .\CortexM3\ARM_GCC_541\Debug\ErikaOS_ee_irqendin.o .\CortexM3\ARM_GCC_541\Debug\ErikaOS_ee_lockres.o .\CortexM3\ARM_GCC_541\Debug\ErikaOS_ee_lookup.o .\CortexM3\ARM_GCC_541\Debug\ErikaOS_ee_rq_exchg.o .\CortexM3\ARM_GCC_541\Debug\ErikaOS_ee_rq_first.o .\CortexM3\ARM_GCC_541\Debug\ErikaOS_ee_rq_inser.o .\CortexM3\ARM_GCC_541\Debug\ErikaOS_ee_schedule.o .\CortexM3\ARM_GCC_541\Debug\ErikaOS_ee_semgetvalue.o .\CortexM3\ARM_GCC_541\Debug\ErikaOS_ee_sempost.o .\CortexM3\ARM_GCC_541\Debug\ErikaOS_ee_semtrywait.o .\CortexM3\ARM_GCC_541\Debug\ErikaOS_ee_semwait.o .\CortexM3\ARM_GCC_541\Debug\ErikaOS_ee_shtdown.o .\CortexM3\ARM_GCC_541\Debug\ErikaOS_ee_startos.o .\CortexM3\ARM_GCC_541\Debug\ErikaOS_ee_terminat.o .\CortexM3\ARM_GCC_541\Debug\ErikaOS_ee_thendin.o .\CortexM3\ARM_GCC_541\Debug\ErikaOS_ee_tnterm.o .\CortexM3\ARM_GCC_541\Debug\ErikaOS_ee_tstub.o .\CortexM3\ARM_GCC_541\Debug\ErikaOS_ee_ulockallres.o .\CortexM3\ARM_GCC_541\Debug\ErikaOS_ee_ulockres.o .\CortexM3\ARM_GCC_541\Debug\ErikaOS_cortex_mx_ee_context.o .\CortexM3\ARM_GCC_541\Debug\ErikaOS_cortex_mx_ee_system_timer.o .\CortexM3\ARM_GCC_541\Debug\ErikaOS_cortex_mx_ee_utils.o .\CortexM3\ARM_GCC_541\Debug\ErikaOS_common_ee_hal_structs.o .\CortexM3\ARM_GCC_541\Debug\ErikaOS_eecfg.o .\CortexM3\ARM_GCC_541\Debug\CyDmac.o .\CortexM3\ARM_GCC_541\Debug\CyFlash.o .\CortexM3\ARM_GCC_541\Debug\CyLib.o .\CortexM3\ARM_GCC_541\Debug\cyPm.o .\CortexM3\ARM_GCC_541\Debug\CySpc.o .\CortexM3\ARM_GCC_541\Debug\cyutils.o .\CortexM3\ARM_GCC_541\Debug\cy_em_eeprom.o .\CortexM3\ARM_GCC_541\Debug\UART_LOG.o .\CortexM3\ARM_GCC_541\Debug\UART_LOG_PM.o .\CortexM3\ARM_GCC_541\Debug\UART_LOG_INT.o .\CortexM3\ARM_GCC_541\Debug\UART_LOG_BOOT.o .\CortexM3\ARM_GCC_541\Debug\UART_LOG_IntClock.o .\CortexM3\ARM_GCC_541\Debug\ErikaOS_ee_gnu_change_context_isr.o .\CortexM3\ARM_GCC_541\Debug\ErikaOS_ee_gnu_irq_stack.o .\CortexM3\ARM_GCC_541\Debug\ErikaOS_ee_gnu_multi_context.o .\CortexM3\ARM_GCC_541\Debug\ErikaOS_ee_gnu_oo.o .\CortexM3\ARM_GCC_541\Debug\CyBootAsmGnu.o
+arm-none-eabi-ar.exe -rs .\CortexM3\ARM_GCC_541\Debug\ReactionGame.a .\CortexM3\ARM_GCC_541\Debug\ErikaOS_ee_activate.o .\CortexM3\ARM_GCC_541\Debug\ErikaOS_ee_alcancel.o .\CortexM3\ARM_GCC_541\Debug\ErikaOS_ee_alget.o .\CortexM3\ARM_GCC_541\Debug\ErikaOS_ee_algetbase.o .\CortexM3\ARM_GCC_541\Debug\ErikaOS_ee_alsetabs.o .\CortexM3\ARM_GCC_541\Debug\ErikaOS_ee_alsetrel.o .\CortexM3\ARM_GCC_541\Debug\ErikaOS_ee_altick.o .\CortexM3\ARM_GCC_541\Debug\ErikaOS_ee_chaintas.o .\CortexM3\ARM_GCC_541\Debug\ErikaOS_ee_evclear.o .\CortexM3\ARM_GCC_541\Debug\ErikaOS_ee_evget.o .\CortexM3\ARM_GCC_541\Debug\ErikaOS_ee_evset.o .\CortexM3\ARM_GCC_541\Debug\ErikaOS_ee_evwait.o .\CortexM3\ARM_GCC_541\Debug\ErikaOS_ee_force_schedule.o .\CortexM3\ARM_GCC_541\Debug\ErikaOS_ee_getcountervalue.o .\CortexM3\ARM_GCC_541\Debug\ErikaOS_ee_getelapsedvalue.o .\CortexM3\ARM_GCC_541\Debug\ErikaOS_ee_gettaskid.o .\CortexM3\ARM_GCC_541\Debug\ErikaOS_ee_gettaskstate.o .\CortexM3\ARM_GCC_541\Debug\ErikaOS_ee_iparam.o .\CortexM3\ARM_GCC_541\Debug\ErikaOS_ee_irqendin.o .\CortexM3\ARM_GCC_541\Debug\ErikaOS_ee_lockres.o .\CortexM3\ARM_GCC_541\Debug\ErikaOS_ee_lookup.o .\CortexM3\ARM_GCC_541\Debug\ErikaOS_ee_rq_exchg.o .\CortexM3\ARM_GCC_541\Debug\ErikaOS_ee_rq_first.o .\CortexM3\ARM_GCC_541\Debug\ErikaOS_ee_rq_inser.o .\CortexM3\ARM_GCC_541\Debug\ErikaOS_ee_schedule.o .\CortexM3\ARM_GCC_541\Debug\ErikaOS_ee_semgetvalue.o .\CortexM3\ARM_GCC_541\Debug\ErikaOS_ee_sempost.o .\CortexM3\ARM_GCC_541\Debug\ErikaOS_ee_semtrywait.o .\CortexM3\ARM_GCC_541\Debug\ErikaOS_ee_semwait.o .\CortexM3\ARM_GCC_541\Debug\ErikaOS_ee_shtdown.o .\CortexM3\ARM_GCC_541\Debug\ErikaOS_ee_startos.o .\CortexM3\ARM_GCC_541\Debug\ErikaOS_ee_terminat.o .\CortexM3\ARM_GCC_541\Debug\ErikaOS_ee_thendin.o .\CortexM3\ARM_GCC_541\Debug\ErikaOS_ee_tnterm.o .\CortexM3\ARM_GCC_541\Debug\ErikaOS_ee_tstub.o .\CortexM3\ARM_GCC_541\Debug\ErikaOS_ee_ulockallres.o .\CortexM3\ARM_GCC_541\Debug\ErikaOS_ee_ulockres.o .\CortexM3\ARM_GCC_541\Debug\ErikaOS_cortex_mx_ee_context.o .\CortexM3\ARM_GCC_541\Debug\ErikaOS_cortex_mx_ee_system_timer.o .\CortexM3\ARM_GCC_541\Debug\ErikaOS_cortex_mx_ee_utils.o .\CortexM3\ARM_GCC_541\Debug\ErikaOS_common_ee_hal_structs.o .\CortexM3\ARM_GCC_541\Debug\ErikaOS_eecfg.o .\CortexM3\ARM_GCC_541\Debug\CyDmac.o .\CortexM3\ARM_GCC_541\Debug\CyFlash.o .\CortexM3\ARM_GCC_541\Debug\CyLib.o .\CortexM3\ARM_GCC_541\Debug\cyPm.o .\CortexM3\ARM_GCC_541\Debug\CySpc.o .\CortexM3\ARM_GCC_541\Debug\cyutils.o .\CortexM3\ARM_GCC_541\Debug\cy_em_eeprom.o .\CortexM3\ARM_GCC_541\Debug\UART_LOG.o .\CortexM3\ARM_GCC_541\Debug\UART_LOG_PM.o .\CortexM3\ARM_GCC_541\Debug\UART_LOG_INT.o .\CortexM3\ARM_GCC_541\Debug\UART_LOG_BOOT.o .\CortexM3\ARM_GCC_541\Debug\UART_LOG_IntClock.o .\CortexM3\ARM_GCC_541\Debug\BUTTON_b2.o .\CortexM3\ARM_GCC_541\Debug\BUTTON_b1.o .\CortexM3\ARM_GCC_541\Debug\isr_BUTTON.o .\CortexM3\ARM_GCC_541\Debug\ErikaOS_ee_gnu_change_context_isr.o .\CortexM3\ARM_GCC_541\Debug\ErikaOS_ee_gnu_irq_stack.o .\CortexM3\ARM_GCC_541\Debug\ErikaOS_ee_gnu_multi_context.o .\CortexM3\ARM_GCC_541\Debug\ErikaOS_ee_gnu_oo.o .\CortexM3\ARM_GCC_541\Debug\CyBootAsmGnu.o
 arm-none-eabi-ar.exe: creating .\CortexM3\ARM_GCC_541\Debug\ReactionGame.a
-arm-none-eabi-gcc.exe -Wl,--start-group -o "D:\HDA\1_sem\Embedded System Design\Lab\Assignment_1\ReactionGame_OS\ReactionGame.cydsn\CortexM3\ARM_GCC_541\Debug\ReactionGame.elf" .\CortexM3\ARM_GCC_541\Debug\main.o .\CortexM3\ARM_GCC_541\Debug\console.o .\CortexM3\ARM_GCC_541\Debug\cyfitter_cfg.o .\CortexM3\ARM_GCC_541\Debug\cymetadata.o .\CortexM3\ARM_GCC_541\Debug\Cm3Start.o .\CortexM3\ARM_GCC_541\Debug\ReactionGame.a "D:\Installations\Cypress\PSoC Creator\4.2\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CortexM3\ARM_GCC_541\Debug\CyComponentLibrary.a" -mcpu=cortex-m3 -mthumb -L Generated_Source\PSoC5 -Wl,-Map,.\CortexM3\ARM_GCC_541\Debug/ReactionGame.map -T Generated_Source\PSoC5\cm3gcc.ld -specs=nano.specs -Wl,--gc-sections -g -ffunction-sections -Og -ffat-lto-objects -Wl,--end-group
+arm-none-eabi-gcc.exe -Wl,--start-group -o "D:\HDA\1_sem\Embedded System Design\Lab\Assignment_1\ReactionGame_OS\ReactionGame.cydsn\CortexM3\ARM_GCC_541\Debug\ReactionGame.elf" .\CortexM3\ARM_GCC_541\Debug\main.o .\CortexM3\ARM_GCC_541\Debug\console.o .\CortexM3\ARM_GCC_541\Debug\button.o .\CortexM3\ARM_GCC_541\Debug\cyfitter_cfg.o .\CortexM3\ARM_GCC_541\Debug\cymetadata.o .\CortexM3\ARM_GCC_541\Debug\Cm3Start.o .\CortexM3\ARM_GCC_541\Debug\ReactionGame.a "D:\Installations\Cypress\PSoC Creator\4.2\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CortexM3\ARM_GCC_541\Debug\CyComponentLibrary.a" -mcpu=cortex-m3 -mthumb -L Generated_Source\PSoC5 -Wl,-Map,.\CortexM3\ARM_GCC_541\Debug/ReactionGame.map -T Generated_Source\PSoC5\cm3gcc.ld -specs=nano.specs -Wl,--gc-sections -g -ffunction-sections -Og -ffat-lto-objects -Wl,--end-group
 cyelftool.exe -C "D:\HDA\1_sem\Embedded System Design\Lab\Assignment_1\ReactionGame_OS\ReactionGame.cydsn\CortexM3\ARM_GCC_541\Debug\ReactionGame.elf" --flash_row_size 256 --flash_size 262144 --flash_offset 0x00000000
 No ELF section .cychecksum found, creating one
 Application checksum calculated and stored in ELF section .cychecksum
 Checksum calculated and stored in ELF section .cymeta
 cyelftool.exe -S "D:\HDA\1_sem\Embedded System Design\Lab\Assignment_1\ReactionGame_OS\ReactionGame.cydsn\CortexM3\ARM_GCC_541\Debug\ReactionGame.elf"
-Flash used: 1646 of 262144 bytes (0.6%).
-SRAM used: 2521 of 65536 bytes (3.8%). Stack: 2048 bytes. Heap: 128 bytes.
---------------- Rebuild Succeeded: 11/23/2018 00:13:35 ---------------
+Flash used: 3574 of 262144 bytes (1.4%).
+SRAM used: 3217 of 65536 bytes (4.9%). Stack: 2048 bytes. Heap: 128 bytes.
+--------------- Rebuild Succeeded: 11/23/2018 00:34:34 ---------------

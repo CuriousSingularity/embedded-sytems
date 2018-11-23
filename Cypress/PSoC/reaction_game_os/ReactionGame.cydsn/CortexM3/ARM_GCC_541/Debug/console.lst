@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cc2ybi1c.s 			page 1
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccBxL3AZ.s 			page 1
 
 
    1              		.syntax unified
@@ -26,7 +26,7 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cc2ybi1c.s 			page 1
   23              		.thumb_func
   24              		.type	CONSOLE_Write, %function
   25              	CONSOLE_Write:
-  26              	.LFB103:
+  26              	.LFB102:
   27              		.file 1 "source\\bsw\\console.c"
    1:source\bsw/console.c **** /**
    2:source\bsw/console.c **** * \file <console.c>
@@ -51,49 +51,47 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cc2ybi1c.s 			page 1
   21:source\bsw/console.c **** /* Include files                                                             */
   22:source\bsw/console.c **** /*****************************************************************************/
   23:source\bsw/console.c **** #include "global.h"
-  24:source\bsw/console.c **** #include "UART_LOG.h"
-  25:source\bsw/console.c **** #include "console.h"
-  26:source\bsw/console.c **** #include <stdarg.h>
-  27:source\bsw/console.c **** #include <stdio.h>
-  28:source\bsw/console.c **** 
+  24:source\bsw/console.c **** #include "console.h"
+  25:source\bsw/console.c **** #include "UART_LOG.h"
+  26:source\bsw/console.c **** 
+  27:source\bsw/console.c **** /*****************************************************************************/
+  28:source\bsw/console.c **** /* Local pre-processor symbols/macros ('#define')                            */
   29:source\bsw/console.c **** /*****************************************************************************/
-  30:source\bsw/console.c **** /* Local pre-processor symbols/macros ('#define')                            */
-ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cc2ybi1c.s 			page 2
+  30:source\bsw/console.c **** 
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccBxL3AZ.s 			page 2
 
 
   31:source\bsw/console.c **** /*****************************************************************************/
-  32:source\bsw/console.c **** 
+  32:source\bsw/console.c **** /* Global variable definitions (declared in header file with 'extern')       */
   33:source\bsw/console.c **** /*****************************************************************************/
-  34:source\bsw/console.c **** /* Global variable definitions (declared in header file with 'extern')       */
+  34:source\bsw/console.c **** 
   35:source\bsw/console.c **** /*****************************************************************************/
-  36:source\bsw/console.c **** 
+  36:source\bsw/console.c **** /* Local type definitions ('typedef')                                        */
   37:source\bsw/console.c **** /*****************************************************************************/
-  38:source\bsw/console.c **** /* Local type definitions ('typedef')                                        */
+  38:source\bsw/console.c **** 
   39:source\bsw/console.c **** /*****************************************************************************/
-  40:source\bsw/console.c **** 
+  40:source\bsw/console.c **** /* Local variable definitions ('static')                                     */
   41:source\bsw/console.c **** /*****************************************************************************/
-  42:source\bsw/console.c **** /* Local variable definitions ('static')                                     */
-  43:source\bsw/console.c **** /*****************************************************************************/
+  42:source\bsw/console.c **** 
+  43:source\bsw/console.c **** 
   44:source\bsw/console.c **** 
-  45:source\bsw/console.c **** 
-  46:source\bsw/console.c **** 
+  45:source\bsw/console.c **** /*****************************************************************************/
+  46:source\bsw/console.c **** /* Local function prototypes ('static')                                      */
   47:source\bsw/console.c **** /*****************************************************************************/
-  48:source\bsw/console.c **** /* Local function prototypes ('static')                                      */
-  49:source\bsw/console.c **** /*****************************************************************************/
-  50:source\bsw/console.c **** 
-  51:source\bsw/console.c **** 
+  48:source\bsw/console.c **** 
+  49:source\bsw/console.c **** 
+  50:source\bsw/console.c **** /*****************************************************************************/
+  51:source\bsw/console.c **** /* Function implementation - global ('extern') and local ('static')          */
   52:source\bsw/console.c **** /*****************************************************************************/
-  53:source\bsw/console.c **** /* Function implementation - global ('extern') and local ('static')          */
-  54:source\bsw/console.c **** /*****************************************************************************/
-  55:source\bsw/console.c **** 
-  56:source\bsw/console.c **** /**
-  57:source\bsw/console.c ****  * A function transmits the string characters over serial console.
-  58:source\bsw/console.c ****  * @param const sint8_t *pMessaage      : IN String
-  59:source\bsw/console.c ****  * @return Transmits the messsage character by character over the UART.
-  60:source\bsw/console.c ****  */
-  61:source\bsw/console.c **** void CONSOLE_Write(const char *pMessage)
-  62:source\bsw/console.c **** {
-  28              		.loc 1 62 0
+  53:source\bsw/console.c **** 
+  54:source\bsw/console.c **** /**
+  55:source\bsw/console.c ****  * A function transmits the string characters over serial console.
+  56:source\bsw/console.c ****  * @param const sint8_t *pMessaage      : IN String
+  57:source\bsw/console.c ****  * @return Transmits the messsage character by character over the UART.
+  58:source\bsw/console.c ****  */
+  59:source\bsw/console.c **** void CONSOLE_Write(const char *pMessage)
+  60:source\bsw/console.c **** {
+  28              		.loc 1 60 0
   29              		.cfi_startproc
   30              		@ args = 0, pretend = 0, frame = 0
   31              		@ frame_needed = 0, uses_anonymous_args = 0
@@ -102,13 +100,13 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cc2ybi1c.s 			page 1
   34              		.cfi_def_cfa_offset 8
   35              		.cfi_offset 3, -8
   36              		.cfi_offset 14, -4
-  63:source\bsw/console.c ****     UART_LOG_PutString(pMessage);
-  37              		.loc 1 63 0
+  61:source\bsw/console.c ****     UART_LOG_PutString(pMessage);
+  37              		.loc 1 61 0
   38 0002 FFF7FEFF 		bl	UART_LOG_PutString
   39              	.LVL1:
   40 0006 08BD     		pop	{r3, pc}
   41              		.cfi_endproc
-  42              	.LFE103:
+  42              	.LFE102:
   43              		.size	CONSOLE_Write, .-CONSOLE_Write
   44              		.text
   45              	.Letext0:
@@ -118,11 +116,11 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cc2ybi1c.s 			page 1
   49              		.file 5 "Generated_Source\\PSoC5/ErikaOS_cortex_mx_ee_cpu.inc"
   50              		.file 6 "Generated_Source\\PSoC5/ErikaOS_ee_oo_intfunc.inc"
   51              		.file 7 "Generated_Source\\PSoC5/ErikaOS_cortex_mx_ee_context.inc"
-ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cc2ybi1c.s 			page 3
-
-
   52              		.file 8 "Generated_Source\\PSoC5/ErikaOS_common_ee_primitives.inc"
   53              		.file 9 "Generated_Source\\PSoC5/core_cm3.h"
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccBxL3AZ.s 			page 3
+
+
   54              		.file 10 "Generated_Source\\PSoC5/UART_LOG.h"
   55              		.section	.debug_info,"",%progbits
   56              	.Ldebug_info0:
@@ -178,11 +176,11 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cc2ybi1c.s 			page 1
  106 0068 04       		.uleb128 0x4
  107 0069 04       		.byte	0x4
  108 006a 05       		.byte	0x5
-ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cc2ybi1c.s 			page 4
-
-
  109 006b 696E7400 		.ascii	"int\000"
  110 006f 02       		.uleb128 0x2
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccBxL3AZ.s 			page 4
+
+
  111 0070 04       		.byte	0x4
  112 0071 07       		.byte	0x7
  113 0072 70010000 		.4byte	.LASF8
@@ -238,25 +236,25 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cc2ybi1c.s 			page 1
  163 00d7 CF010000 		.4byte	.LASF20
  164 00db 05       		.uleb128 0x5
  165 00dc 04       		.byte	0x4
-ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cc2ybi1c.s 			page 5
-
-
  166 00dd E1000000 		.4byte	0xe1
  167 00e1 06       		.uleb128 0x6
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccBxL3AZ.s 			page 5
+
+
  168 00e2 8F000000 		.4byte	0x8f
  169 00e6 07       		.uleb128 0x7
  170 00e7 8F010000 		.4byte	.LASF30
  171 00eb 01       		.byte	0x1
- 172 00ec 3D       		.byte	0x3d
- 173 00ed 00000000 		.4byte	.LFB103
- 174 00f1 08000000 		.4byte	.LFE103-.LFB103
+ 172 00ec 3B       		.byte	0x3b
+ 173 00ed 00000000 		.4byte	.LFB102
+ 174 00f1 08000000 		.4byte	.LFE102-.LFB102
  175 00f5 01       		.uleb128 0x1
  176 00f6 9C       		.byte	0x9c
  177 00f7 1C010000 		.4byte	0x11c
  178 00fb 08       		.uleb128 0x8
  179 00fc 3A010000 		.4byte	.LASF31
  180 0100 01       		.byte	0x1
- 181 0101 3D       		.byte	0x3d
+ 181 0101 3B       		.byte	0x3b
  182 0102 DB000000 		.4byte	0xdb
  183 0106 00000000 		.4byte	.LLST0
  184 010a 09       		.uleb128 0x9
@@ -298,11 +296,11 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cc2ybi1c.s 			page 1
  220 014f B3000000 		.4byte	0xb3
  221 0153 0C       		.uleb128 0xc
  222 0154 43010000 		.4byte	.LASF26
-ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cc2ybi1c.s 			page 6
-
-
  223 0158 09       		.byte	0x9
  224 0159 1207     		.2byte	0x712
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccBxL3AZ.s 			page 6
+
+
  225 015b 5F010000 		.4byte	0x15f
  226 015f 0D       		.uleb128 0xd
  227 0160 76000000 		.4byte	0x76
@@ -358,11 +356,11 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cc2ybi1c.s 			page 1
  277 0029 00       		.byte	0
  278 002a 00       		.byte	0
  279 002b 04       		.uleb128 0x4
-ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cc2ybi1c.s 			page 7
-
-
  280 002c 24       		.uleb128 0x24
  281 002d 00       		.byte	0
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccBxL3AZ.s 			page 7
+
+
  282 002e 0B       		.uleb128 0xb
  283 002f 0B       		.uleb128 0xb
  284 0030 3E       		.uleb128 0x3e
@@ -418,11 +416,11 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cc2ybi1c.s 			page 1
  334 0063 03       		.uleb128 0x3
  335 0064 0E       		.uleb128 0xe
  336 0065 3A       		.uleb128 0x3a
-ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cc2ybi1c.s 			page 8
-
-
  337 0066 0B       		.uleb128 0xb
  338 0067 3B       		.uleb128 0x3b
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccBxL3AZ.s 			page 8
+
+
  339 0068 0B       		.uleb128 0xb
  340 0069 49       		.uleb128 0x49
  341 006a 13       		.uleb128 0x13
@@ -478,11 +476,11 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cc2ybi1c.s 			page 1
  391 00a1 13       		.uleb128 0x13
  392 00a2 3F       		.uleb128 0x3f
  393 00a3 19       		.uleb128 0x19
-ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cc2ybi1c.s 			page 9
-
-
  394 00a4 3C       		.uleb128 0x3c
  395 00a5 19       		.uleb128 0x19
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccBxL3AZ.s 			page 9
+
+
  396 00a6 00       		.byte	0
  397 00a7 00       		.byte	0
  398 00a8 0D       		.uleb128 0xd
@@ -518,7 +516,7 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cc2ybi1c.s 			page 1
  428 0008 0100     		.2byte	0x1
  429 000a 50       		.byte	0x50
  430 000b 05000000 		.4byte	.LVL1-1
- 431 000f 08000000 		.4byte	.LFE103
+ 431 000f 08000000 		.4byte	.LFE102
  432 0013 0400     		.2byte	0x4
  433 0015 F3       		.byte	0xf3
  434 0016 01       		.uleb128 0x1
@@ -534,17 +532,17 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cc2ybi1c.s 			page 1
  444 000b 00       		.byte	0
  445 000c 0000     		.2byte	0
  446 000e 0000     		.2byte	0
- 447 0010 00000000 		.4byte	.LFB103
- 448 0014 08000000 		.4byte	.LFE103-.LFB103
+ 447 0010 00000000 		.4byte	.LFB102
+ 448 0014 08000000 		.4byte	.LFE102-.LFB102
  449 0018 00000000 		.4byte	0
  450 001c 00000000 		.4byte	0
-ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cc2ybi1c.s 			page 10
-
-
  451              		.section	.debug_ranges,"",%progbits
  452              	.Ldebug_ranges0:
- 453 0000 00000000 		.4byte	.LFB103
- 454 0004 08000000 		.4byte	.LFE103
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccBxL3AZ.s 			page 10
+
+
+ 453 0000 00000000 		.4byte	.LFB102
+ 454 0004 08000000 		.4byte	.LFE102
  455 0008 00000000 		.4byte	0
  456 000c 00000000 		.4byte	0
  457              		.section	.debug_line,"",%progbits
@@ -598,11 +596,11 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cc2ybi1c.s 			page 1
  476      6973696F 
  476      6E203233 
  476      37373135 
-ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cc2ybi1c.s 			page 11
-
-
  477 00cc 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
  477      66756E63 
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccBxL3AZ.s 			page 11
+
+
  477      74696F6E 
  477      2D736563 
  477      74696F6E 
@@ -658,11 +656,11 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cc2ybi1c.s 			page 1
  499 0185 45455F55 		.ascii	"EE_UINT32\000"
  499      494E5433 
  499      3200
-ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cc2ybi1c.s 			page 12
-
-
  500              	.LASF30:
  501 018f 434F4E53 		.ascii	"CONSOLE_Write\000"
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccBxL3AZ.s 			page 12
+
+
  501      4F4C455F 
  501      57726974 
  501      6500
@@ -718,11 +716,11 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cc2ybi1c.s 			page 1
  522      7420696E 
  522      7400
  523              	.LASF4:
-ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cc2ybi1c.s 			page 13
-
-
  524 026a 6C6F6E67 		.ascii	"long int\000"
  524      20696E74 
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccBxL3AZ.s 			page 13
+
+
  524      00
  525              	.LASF14:
  526 0273 6C6F6E67 		.ascii	"long double\000"

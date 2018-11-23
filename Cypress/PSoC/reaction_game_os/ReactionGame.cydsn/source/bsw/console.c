@@ -21,10 +21,8 @@
 /* Include files                                                             */
 /*****************************************************************************/
 #include "global.h"
-#include "UART_LOG.h"
 #include "console.h"
-#include <stdarg.h>
-#include <stdio.h>
+#include "UART_LOG.h"
 
 /*****************************************************************************/
 /* Local pre-processor symbols/macros ('#define')                            */

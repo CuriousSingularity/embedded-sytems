@@ -172,6 +172,14 @@
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\UART_LOG_BOOT.c</File>
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\UART_LOG_IntClock.c</File>
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\UART_LOG_IntClock.h</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\isr_BUTTON.c</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\isr_BUTTON.h</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\BUTTON_2_aliases.h</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\BUTTON_2.c</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\BUTTON_2.h</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\BUTTON_1_aliases.h</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\BUTTON_1.c</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\BUTTON_1.h</File>
         </Files>
       </Folder>
       <Folder BuildType="STRICT" Path="D:\HDA\1_sem\Embedded System Design\Lab\Assignment_1\ReactionGame_OS\ReactionGame.cydsn">
@@ -186,6 +194,8 @@
           <File BuildType="BUILD" Toolchain="">source\bsw\derivate.h</File>
           <File BuildType="BUILD" Toolchain="">source\bsw\global.h</File>
           <File BuildType="BUILD" Toolchain="">source\bsw\console.c</File>
+          <File BuildType="BUILD" Toolchain="">source\bsw\button.c</File>
+          <File BuildType="BUILD" Toolchain="">source\bsw\button.h</File>
         </Files>
       </Folder>
       <Folder BuildType="STRICT" Path="D:\HDA\1_sem\Embedded System Design\Lab\Assignment_1\ReactionGame_OS\ReactionGame.cydsn\Export\ARM_GCC_Generic">

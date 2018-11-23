@@ -251,6 +251,8 @@
   <Data key="DataVersionKey" value="2" />
   <Group key="DWRInstGuidMapping">
     <Group key="Pin">
+      <Data key="6a5f8180-4c8b-4ece-b0a2-3095f74ca6cb" value="BUTTON_b2" />
+      <Data key="8d318d8b-cf7b-4b6b-b02c-ab1c5c49d0ba" value="BUTTON_b1" />
       <Data key="721cd332-101c-4baf-8392-c2f062fce926" value="UART_LOG_Tx" />
       <Data key="ea34e17e-4bec-49d8-a85a-dd83a0bea6f6" value="UART_LOG_Rx" />
     </Group>
@@ -3339,6 +3341,16 @@
     </Group>
   </Group>
   <Group key="Pin2">
+    <Group key="6a5f8180-4c8b-4ece-b0a2-3095f74ca6cb">
+      <Group key="0">
+        <Data key="Port Format" value="0,4" />
+      </Group>
+    </Group>
+    <Group key="8d318d8b-cf7b-4b6b-b02c-ab1c5c49d0ba">
+      <Group key="0">
+        <Data key="Port Format" value="0,3" />
+      </Group>
+    </Group>
     <Group key="721cd332-101c-4baf-8392-c2f062fce926">
       <Group key="0">
         <Data key="Port Format" value="12,7" />

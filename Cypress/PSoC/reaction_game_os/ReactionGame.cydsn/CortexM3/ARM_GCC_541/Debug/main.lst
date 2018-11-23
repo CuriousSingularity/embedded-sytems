@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccaF03r3.s 			page 1
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccWscWlu.s 			page 1
 
 
    1              		.syntax unified
@@ -26,7 +26,7 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccaF03r3.s 			page 1
   23              		.thumb_func
   24              		.type	main, %function
   25              	main:
-  26              	.LFB103:
+  26              	.LFB102:
   27              		.file 1 "source\\asw\\main.c"
    1:source\asw/main.c **** /* ========================================
    2:source\asw/main.c ****  *
@@ -40,12 +40,11 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccaF03r3.s 			page 1
   10:source\asw/main.c ****  * ========================================
   11:source\asw/main.c **** */
   12:source\asw/main.c **** #include "project.h"
-  13:source\asw/main.c **** #include <stdio.h>
-  14:source\asw/main.c **** #include <string.h>
-  15:source\asw/main.c **** 
-  16:source\asw/main.c **** int main(void)
-  17:source\asw/main.c **** {
-  28              		.loc 1 17 0
+  13:source\asw/main.c **** #include "global.h"
+  14:source\asw/main.c **** 
+  15:source\asw/main.c **** int main(void)
+  16:source\asw/main.c **** {
+  28              		.loc 1 16 0
   29              		.cfi_startproc
   30              		@ Volatile: function does not return.
   31              		@ args = 0, pretend = 0, frame = 0
@@ -54,19 +53,19 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccaF03r3.s 			page 1
   34              		.cfi_def_cfa_offset 8
   35              		.cfi_offset 3, -8
   36              		.cfi_offset 14, -4
-  18:source\asw/main.c ****     CyGlobalIntEnable; /* Enable global interrupts. */
-  37              		.loc 1 18 0
+  17:source\asw/main.c ****     CyGlobalIntEnable; /* Enable global interrupts. */
+  37              		.loc 1 17 0
   38              		.syntax unified
-  39              	@ 18 "source\asw\main.c" 1
-ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccaF03r3.s 			page 2
-
-
+  39              	@ 17 "source\asw\main.c" 1
   40 0002 62B6     		CPSIE   i
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccWscWlu.s 			page 2
+
+
   41              	@ 0 "" 2
-  19:source\asw/main.c ****     
-  20:source\asw/main.c ****     /* Place your initialization/startup code here (e.g. MyInst_Start()) */
-  21:source\asw/main.c ****     UART_LOG_Start();
-  42              		.loc 1 21 0
+  18:source\asw/main.c **** 
+  19:source\asw/main.c ****     /* Place your initialization/startup code here (e.g. MyInst_Start()) */
+  20:source\asw/main.c ****     UART_LOG_Start();
+  42              		.loc 1 20 0
   43              		.thumb
   44              		.syntax unified
   45 0004 FFF7FEFF 		bl	UART_LOG_Start
@@ -74,7 +73,7 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccaF03r3.s 			page 1
   47              	.L2:
   48 0008 FEE7     		b	.L2
   49              		.cfi_endproc
-  50              	.LFE103:
+  50              	.LFE102:
   51              		.size	main, .-main
   52 000a 00BF     		.text
   53              	.Letext0:
@@ -118,10 +117,10 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccaF03r3.s 			page 1
   91 003c 07       		.byte	0x7
   92 003d F6000000 		.4byte	.LASF3
   93 0041 03       		.uleb128 0x3
-ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccaF03r3.s 			page 3
-
-
   94 0042 00000000 		.4byte	.LASF9
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccWscWlu.s 			page 3
+
+
   95 0046 02       		.byte	0x2
   96 0047 3F       		.byte	0x3f
   97 0048 4C000000 		.4byte	0x4c
@@ -178,10 +177,10 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccaF03r3.s 			page 1
  148 00a8 03       		.uleb128 0x3
  149 00a9 68010000 		.4byte	.LASF16
  150 00ad 04       		.byte	0x4
-ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccaF03r3.s 			page 4
-
-
  151 00ae 54       		.byte	0x54
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccWscWlu.s 			page 4
+
+
  152 00af 6F000000 		.4byte	0x6f
  153 00b3 03       		.uleb128 0x3
  154 00b4 2A020000 		.4byte	.LASF17
@@ -205,10 +204,10 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccaF03r3.s 			page 1
  172 00db 05       		.uleb128 0x5
  173 00dc 35010000 		.4byte	.LASF30
  174 00e0 01       		.byte	0x1
- 175 00e1 10       		.byte	0x10
+ 175 00e1 0F       		.byte	0xf
  176 00e2 68000000 		.4byte	0x68
- 177 00e6 00000000 		.4byte	.LFB103
- 178 00ea 0A000000 		.4byte	.LFE103-.LFB103
+ 177 00e6 00000000 		.4byte	.LFB102
+ 178 00ea 0A000000 		.4byte	.LFE102-.LFB102
  179 00ee 01       		.uleb128 0x1
  180 00ef 9C       		.byte	0x9c
  181 00f0 FE000000 		.4byte	0xfe
@@ -238,10 +237,10 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccaF03r3.s 			page 1
  205 0126 C9000000 		.4byte	0xc9
  206 012a 07       		.uleb128 0x7
  207 012b 32020000 		.4byte	.LASF25
-ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccaF03r3.s 			page 5
-
-
  208 012f 08       		.byte	0x8
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccWscWlu.s 			page 5
+
+
  209 0130 44       		.byte	0x44
  210 0131 B3000000 		.4byte	0xb3
  211 0135 08       		.uleb128 0x8
@@ -298,10 +297,10 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccaF03r3.s 			page 1
  262 0024 0B       		.uleb128 0xb
  263 0025 3B       		.uleb128 0x3b
  264 0026 0B       		.uleb128 0xb
-ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccaF03r3.s 			page 6
-
-
  265 0027 49       		.uleb128 0x49
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccWscWlu.s 			page 6
+
+
  266 0028 13       		.uleb128 0x13
  267 0029 00       		.byte	0
  268 002a 00       		.byte	0
@@ -358,10 +357,10 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccaF03r3.s 			page 1
  319 0061 34       		.uleb128 0x34
  320 0062 00       		.byte	0
  321 0063 03       		.uleb128 0x3
-ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccaF03r3.s 			page 7
-
-
  322 0064 0E       		.uleb128 0xe
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccWscWlu.s 			page 7
+
+
  323 0065 3A       		.uleb128 0x3a
  324 0066 0B       		.uleb128 0xb
  325 0067 3B       		.uleb128 0x3b
@@ -418,23 +417,23 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccaF03r3.s 			page 1
  376 009a 00       		.byte	0
  377              		.section	.debug_aranges,"",%progbits
  378 0000 1C000000 		.4byte	0x1c
-ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccaF03r3.s 			page 8
-
-
  379 0004 0200     		.2byte	0x2
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccWscWlu.s 			page 8
+
+
  380 0006 00000000 		.4byte	.Ldebug_info0
  381 000a 04       		.byte	0x4
  382 000b 00       		.byte	0
  383 000c 0000     		.2byte	0
  384 000e 0000     		.2byte	0
- 385 0010 00000000 		.4byte	.LFB103
- 386 0014 0A000000 		.4byte	.LFE103-.LFB103
+ 385 0010 00000000 		.4byte	.LFB102
+ 386 0014 0A000000 		.4byte	.LFE102-.LFB102
  387 0018 00000000 		.4byte	0
  388 001c 00000000 		.4byte	0
  389              		.section	.debug_ranges,"",%progbits
  390              	.Ldebug_ranges0:
- 391 0000 00000000 		.4byte	.LFB103
- 392 0004 0A000000 		.4byte	.LFE103
+ 391 0000 00000000 		.4byte	.LFB102
+ 392 0004 0A000000 		.4byte	.LFE102
  393 0008 00000000 		.4byte	0
  394 000c 00000000 		.4byte	0
  395              		.section	.debug_line,"",%progbits
@@ -478,10 +477,10 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccaF03r3.s 			page 1
  411      31363036 
  412 0080 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m3 -mthumb -g -O"
  412      20726576 
-ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccaF03r3.s 			page 9
-
-
  412      6973696F 
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccWscWlu.s 			page 9
+
+
  412      6E203233 
  412      37373135 
  413 00b3 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
@@ -538,10 +537,10 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccaF03r3.s 			page 1
  433      52454700 
  434              	.LASF16:
  435 0168 45455F55 		.ascii	"EE_UINT32\000"
-ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccaF03r3.s 			page 10
-
-
  435      494E5433 
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccWscWlu.s 			page 10
+
+
  435      3200
  436              	.LASF7:
  437 0172 6C6F6E67 		.ascii	"long long unsigned int\000"
@@ -598,10 +597,10 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccaF03r3.s 			page 1
  456      6576656C 
  457              	.LASF2:
  458 0247 73686F72 		.ascii	"short int\000"
-ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccaF03r3.s 			page 11
-
-
  458      7420696E 
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccWscWlu.s 			page 11
+
+
  458      7400
  459              	.LASF4:
  460 0251 6C6F6E67 		.ascii	"long int\000"
