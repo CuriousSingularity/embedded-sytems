@@ -14,29 +14,29 @@
 #define RSC_PRIORITIES
     //Resource One
     #if 0 > 0
-    #if 0 > 0
+    #if 1 > 0
         //Ceiling from Task 1
         #if (0 > 0) && (0 == 1)
-           #define RESPRI_1 0
+           #define RESPRI_1 1
         #elif (0 > 1) && (0 == 1)
-            #define RESPRI_1 0
+            #define RESPRI_1 1
         #elif (0 > 2) && (0 == 1)
-            #define RESPRI_1 0
+            #define RESPRI_1 1
         #elif (0 > 3) && (0 == 1)
-            #define RESPRI_1 0
+            #define RESPRI_1 1
         #elif (0 > 4) && (0 == 1)
-            #define RESPRI_1 0
+            #define RESPRI_1 1
         #elif (0 > 5) && (0 == 1)
-            #define RESPRI_1 0
+            #define RESPRI_1 1
         #elif (0 > 6) && (0 == 1)
-            #define RESPRI_1 0
+            #define RESPRI_1 1
         #elif (0 > 7) && (0 == 1)
-            #define RESPRI_1 0
+            #define RESPRI_1 1
         #else
             #define RESPRI_1 0
         #endif
     #endif
-    #if 0 > 1    
+    #if 1 > 1    
         //Ceiling from Task 2
         #if (0 > 0) && (0 == 1)
             #if RESPRI_1 < 0
@@ -80,7 +80,7 @@
             #endif
         #endif
     #endif
-    #if 0 > 2    
+    #if 1 > 2    
         //Ceiling from Task 3
         #if (0 > 0) && (0 == 1)
             #if RESPRI_1 < 0
@@ -124,7 +124,7 @@
             #endif
         #endif
     #endif
-    #if 0 > 3    
+    #if 1 > 3    
         //Ceiling from Task 4
         #if (0 > 0) && (0 == 1)
             #if RESPRI_1 < 0
@@ -168,7 +168,7 @@
             #endif
         #endif
     #endif
-    #if 0 > 4    
+    #if 1 > 4    
         //Ceiling from Task 5
         #if (0 > 0) && (0 == 1)
             #if RESPRI_1 < 0
@@ -212,7 +212,7 @@
             #endif
         #endif        
     #endif
-    #if 0 > 5    
+    #if 1 > 5    
         //Ceiling from Task 6
         #if (0 > 0) && (0 == 1)
             #if RESPRI_1 < 0
@@ -256,7 +256,7 @@
             #endif
         #endif        
     #endif
-    #if 0 > 6    
+    #if 1 > 6    
         //Ceiling from Task 7
         #if (0 > 0) && (0 == 1)
             #if RESPRI_1 < 0
@@ -300,7 +300,7 @@
             #endif
         #endif
     #endif
-    #if 0 > 7    
+    #if 1 > 7    
         //Ceiling from Task 8
         #if (0 > 0) && (0 == 1)
             #if RESPRI_1 < 0
@@ -524,29 +524,29 @@
 
     //Resource Two
     #if 0 > 1
-    #if 0 > 0
+    #if 1 > 0
         //Ceiling from Task 1
         #if (0 > 0) && (0 == 2)
-           #define RESPRI_2 0
+           #define RESPRI_2 1
         #elif (0 > 1) && (0 == 2)
-            #define RESPRI_2 0
+            #define RESPRI_2 1
         #elif (0 > 2) && (0 == 2)
-            #define RESPRI_2 0
+            #define RESPRI_2 1
         #elif (0 > 3) && (0 == 2)
-            #define RESPRI_2 0
+            #define RESPRI_2 1
         #elif (0 > 4) && (0 == 2)
-            #define RESPRI_2 0
+            #define RESPRI_2 1
         #elif (0 > 5) && (0 == 2)
-            #define RESPRI_2 0
+            #define RESPRI_2 1
         #elif (0 > 6) && (0 == 2)
-            #define RESPRI_2 0
+            #define RESPRI_2 1
         #elif (0 > 7) && (0 == 2)
-            #define RESPRI_2 0
+            #define RESPRI_2 1
         #else
             #define RESPRI_2 0
         #endif
     #endif
-    #if 0 > 1    
+    #if 1 > 1    
         //Ceiling from Task 2
         #if (0 > 0) && (0 == 2)
             #if RESPRI_2 < 0
@@ -590,7 +590,7 @@
             #endif
         #endif
     #endif
-    #if 0 > 2    
+    #if 1 > 2    
         //Ceiling from Task 3
         #if (0 > 0) && (0 == 2)
             #if RESPRI_2 < 0
@@ -634,7 +634,7 @@
             #endif
         #endif
     #endif
-    #if 0 > 3    
+    #if 1 > 3    
         //Ceiling from Task 4
         #if (0 > 0) && (0 == 2)
             #if RESPRI_2 < 0
@@ -678,7 +678,7 @@
             #endif
         #endif
     #endif
-    #if 0 > 4    
+    #if 1 > 4    
         //Ceiling from Task 5
         #if (0 > 0) && (0 == 2)
             #if RESPRI_2 < 0
@@ -722,7 +722,7 @@
             #endif
         #endif        
     #endif
-    #if 0 > 5    
+    #if 1 > 5    
         //Ceiling from Task 6
         #if (0 > 0) && (0 == 2)
             #if RESPRI_2 < 0
@@ -766,7 +766,7 @@
             #endif
         #endif        
     #endif
-    #if 0 > 6    
+    #if 1 > 6    
         //Ceiling from Task 7
         #if (0 > 0) && (0 == 2)
             #if RESPRI_2 < 0
@@ -810,7 +810,7 @@
             #endif
         #endif
     #endif
-    #if 0 > 7    
+    #if 1 > 7    
         //Ceiling from Task 8
         #if (0 > 0) && (0 == 2)
             #if RESPRI_2 < 0
@@ -1034,29 +1034,29 @@
 
     //Resource Three
     #if 0 > 2
-    #if 0 > 0
+    #if 1 > 0
         //Ceiling from Task 1
         #if (0 > 0) && (0 == 3)
-           #define RESPRI_3 0
+           #define RESPRI_3 1
         #elif (0 > 1) && (0 == 3)
-            #define RESPRI_3 0
+            #define RESPRI_3 1
         #elif (0 > 2) && (0 == 3)
-            #define RESPRI_3 0
+            #define RESPRI_3 1
         #elif (0 > 3) && (0 == 3)
-            #define RESPRI_3 0
+            #define RESPRI_3 1
         #elif (0 > 4) && (0 == 3)
-            #define RESPRI_3 0
+            #define RESPRI_3 1
         #elif (0 > 5) && (0 == 3)
-            #define RESPRI_3 0
+            #define RESPRI_3 1
         #elif (0 > 6) && (0 == 3)
-            #define RESPRI_3 0
+            #define RESPRI_3 1
         #elif (0 > 7) && (0 == 3)
-            #define RESPRI_3 0
+            #define RESPRI_3 1
         #else
             #define RESPRI_3 0
         #endif
     #endif
-    #if 0 > 1    
+    #if 1 > 1    
         //Ceiling from Task 2
         #if (0 > 0) && (0 == 3)
             #if RESPRI_3 < 0
@@ -1100,7 +1100,7 @@
             #endif
         #endif
     #endif
-    #if 0 > 2    
+    #if 1 > 2    
         //Ceiling from Task 3
         #if (0 > 0) && (0 == 3)
             #if RESPRI_3 < 0
@@ -1144,7 +1144,7 @@
             #endif
         #endif
     #endif
-    #if 0 > 3    
+    #if 1 > 3    
         //Ceiling from Task 4
         #if (0 > 0) && (0 == 3)
             #if RESPRI_3 < 0
@@ -1188,7 +1188,7 @@
             #endif
         #endif
     #endif
-    #if 0 > 4    
+    #if 1 > 4    
         //Ceiling from Task 5
         #if (0 > 0) && (0 == 3)
             #if RESPRI_3 < 0
@@ -1232,7 +1232,7 @@
             #endif
         #endif        
     #endif
-    #if 0 > 5    
+    #if 1 > 5    
         //Ceiling from Task 6
         #if (0 > 0) && (0 == 3)
             #if RESPRI_3 < 0
@@ -1276,7 +1276,7 @@
             #endif
         #endif        
     #endif
-    #if 0 > 6    
+    #if 1 > 6    
         //Ceiling from Task 7
         #if (0 > 0) && (0 == 3)
             #if RESPRI_3 < 0
@@ -1320,7 +1320,7 @@
             #endif
         #endif
     #endif
-    #if 0 > 7    
+    #if 1 > 7    
         //Ceiling from Task 8
         #if (0 > 0) && (0 == 3)
             #if RESPRI_3 < 0
@@ -1544,29 +1544,29 @@
 
     //Resource Four
     #if 0 > 3
-    #if 0 > 0
+    #if 1 > 0
         //Ceiling from Task 1
         #if (0 > 0) && (0 == 4)
-           #define RESPRI_4 0
+           #define RESPRI_4 1
         #elif (0 > 1) && (0 == 4)
-            #define RESPRI_4 0
+            #define RESPRI_4 1
         #elif (0 > 2) && (0 == 4)
-            #define RESPRI_4 0
+            #define RESPRI_4 1
         #elif (0 > 3) && (0 == 4)
-            #define RESPRI_4 0
+            #define RESPRI_4 1
         #elif (0 > 4) && (0 == 4)
-            #define RESPRI_4 0
+            #define RESPRI_4 1
         #elif (0 > 5) && (0 == 4)
-            #define RESPRI_4 0
+            #define RESPRI_4 1
         #elif (0 > 6) && (0 == 4)
-            #define RESPRI_4 0
+            #define RESPRI_4 1
         #elif (0 > 7) && (0 == 4)
-            #define RESPRI_4 0
+            #define RESPRI_4 1
         #else
             #define RESPRI_4 0
         #endif
     #endif
-    #if 0 > 1    
+    #if 1 > 1    
         //Ceiling from Task 2
         #if (0 > 0) && (0 == 4)
             #if RESPRI_4 < 0
@@ -1610,7 +1610,7 @@
             #endif
         #endif
     #endif
-    #if 0 > 2    
+    #if 1 > 2    
         //Ceiling from Task 3
         #if (0 > 0) && (0 == 4)
             #if RESPRI_4 < 0
@@ -1654,7 +1654,7 @@
             #endif
         #endif
     #endif
-    #if 0 > 3    
+    #if 1 > 3    
         //Ceiling from Task 4
         #if (0 > 0) && (0 == 4)
             #if RESPRI_4 < 0
@@ -1698,7 +1698,7 @@
             #endif
         #endif
     #endif
-    #if 0 > 4    
+    #if 1 > 4    
         //Ceiling from Task 5
         #if (0 > 0) && (0 == 4)
             #if RESPRI_4 < 0
@@ -1742,7 +1742,7 @@
             #endif
         #endif        
     #endif
-    #if 0 > 5    
+    #if 1 > 5    
         //Ceiling from Task 6
         #if (0 > 0) && (0 == 4)
             #if RESPRI_4 < 0
@@ -1786,7 +1786,7 @@
             #endif
         #endif        
     #endif
-    #if 0 > 6    
+    #if 1 > 6    
         //Ceiling from Task 7
         #if (0 > 0) && (0 == 4)
             #if RESPRI_4 < 0
@@ -1830,7 +1830,7 @@
             #endif
         #endif
     #endif
-    #if 0 > 7    
+    #if 1 > 7    
         //Ceiling from Task 8
         #if (0 > 0) && (0 == 4)
             #if RESPRI_4 < 0
@@ -2054,29 +2054,29 @@
     
     //Resource Five
     #if 0 > 4
-    #if 0 > 0
+    #if 1 > 0
         //Ceiling from Task 1
         #if (0 > 0) && (0 == 5)
-           #define RESPRI_5 0
+           #define RESPRI_5 1
         #elif (0 > 1) && (0 == 5)
-            #define RESPRI_5 0
+            #define RESPRI_5 1
         #elif (0 > 2) && (0 == 5)
-            #define RESPRI_5 0
+            #define RESPRI_5 1
         #elif (0 > 3) && (0 == 5)
-            #define RESPRI_5 0
+            #define RESPRI_5 1
         #elif (0 > 4) && (0 == 5)
-            #define RESPRI_5 0
+            #define RESPRI_5 1
         #elif (0 > 5) && (0 == 5)
-            #define RESPRI_5 0
+            #define RESPRI_5 1
         #elif (0 > 6) && (0 == 5)
-            #define RESPRI_5 0
+            #define RESPRI_5 1
         #elif (0 > 7) && (0 == 5)
-            #define RESPRI_5 0
+            #define RESPRI_5 1
         #else
             #define RESPRI_5 0
         #endif
     #endif
-    #if 0 > 1    
+    #if 1 > 1    
         //Ceiling from Task 2
         #if (0 > 0) && (0 == 5)
             #if RESPRI_5 < 0
@@ -2120,7 +2120,7 @@
             #endif
         #endif
     #endif
-    #if 0 > 2    
+    #if 1 > 2    
         //Ceiling from Task 3
         #if (0 > 0) && (0 == 5)
             #if RESPRI_5 < 0
@@ -2164,7 +2164,7 @@
             #endif
         #endif
     #endif
-    #if 0 > 3    
+    #if 1 > 3    
         //Ceiling from Task 4
         #if (0 > 0) && (0 == 5)
             #if RESPRI_5 < 0
@@ -2208,7 +2208,7 @@
             #endif
         #endif
     #endif
-    #if 0 > 4    
+    #if 1 > 4    
         //Ceiling from Task 5
         #if (0 > 0) && (0 == 5)
             #if RESPRI_5 < 0
@@ -2252,7 +2252,7 @@
             #endif
         #endif        
     #endif
-    #if 0 > 5    
+    #if 1 > 5    
         //Ceiling from Task 6
         #if (0 > 0) && (0 == 5)
             #if RESPRI_5 < 0
@@ -2296,7 +2296,7 @@
             #endif
         #endif        
     #endif
-    #if 0 > 6    
+    #if 1 > 6    
         //Ceiling from Task 7
         #if (0 > 0) && (0 == 5)
             #if RESPRI_5 < 0
@@ -2340,7 +2340,7 @@
             #endif
         #endif
     #endif
-    #if 0 > 7    
+    #if 1 > 7    
         //Ceiling from Task 8
         #if (0 > 0) && (0 == 5)
             #if RESPRI_5 < 0
@@ -2564,29 +2564,29 @@
     
     //Resource Six
     #if 0 > 5
-    #if 0 > 0
+    #if 1 > 0
         //Ceiling from Task 1
         #if (0 > 0) && (0 == 6)
-           #define RESPRI_6 0
+           #define RESPRI_6 1
         #elif (0 > 1) && (0 == 6)
-            #define RESPRI_6 0
+            #define RESPRI_6 1
         #elif (0 > 2) && (0 == 6)
-            #define RESPRI_6 0
+            #define RESPRI_6 1
         #elif (0 > 3) && (0 == 6)
-            #define RESPRI_6 0
+            #define RESPRI_6 1
         #elif (0 > 4) && (0 == 6)
-            #define RESPRI_6 0
+            #define RESPRI_6 1
         #elif (0 > 5) && (0 == 6)
-            #define RESPRI_6 0
+            #define RESPRI_6 1
         #elif (0 > 6) && (0 == 6)
-            #define RESPRI_6 0
+            #define RESPRI_6 1
         #elif (0 > 7) && (0 == 6)
-            #define RESPRI_6 0
+            #define RESPRI_6 1
         #else
             #define RESPRI_6 0
         #endif
     #endif
-    #if 0 > 1    
+    #if 1 > 1    
         //Ceiling from Task 2
         #if (0 > 0) && (0 == 6)
             #if RESPRI_6 < 0
@@ -2630,7 +2630,7 @@
             #endif
         #endif
     #endif
-    #if 0 > 2    
+    #if 1 > 2    
         //Ceiling from Task 3
         #if (0 > 0) && (0 == 6)
             #if RESPRI_6 < 0
@@ -2674,7 +2674,7 @@
             #endif
         #endif
     #endif
-    #if 0 > 3    
+    #if 1 > 3    
         //Ceiling from Task 4
         #if (0 > 0) && (0 == 6)
             #if RESPRI_6 < 0
@@ -2718,7 +2718,7 @@
             #endif
         #endif
     #endif
-    #if 0 > 4    
+    #if 1 > 4    
         //Ceiling from Task 5
         #if (0 > 0) && (0 == 6)
             #if RESPRI_6 < 0
@@ -2762,7 +2762,7 @@
             #endif
         #endif        
     #endif
-    #if 0 > 5    
+    #if 1 > 5    
         //Ceiling from Task 6
         #if (0 > 0) && (0 == 6)
             #if RESPRI_6 < 0
@@ -2806,7 +2806,7 @@
             #endif
         #endif        
     #endif
-    #if 0 > 6    
+    #if 1 > 6    
         //Ceiling from Task 7
         #if (0 > 0) && (0 == 6)
             #if RESPRI_6 < 0
@@ -2850,7 +2850,7 @@
             #endif
         #endif
     #endif
-    #if 0 > 7    
+    #if 1 > 7    
         //Ceiling from Task 8
         #if (0 > 0) && (0 == 6)
             #if RESPRI_6 < 0
@@ -3074,29 +3074,29 @@
     
     //Resource Seven
     #if 0 > 6
-    #if 0 > 0
+    #if 1 > 0
         //Ceiling from Task 1
         #if (0 > 0) && (0 == 7)
-           #define RESPRI_7 0
+           #define RESPRI_7 1
         #elif (0 > 1) && (0 == 7)
-            #define RESPRI_7 0
+            #define RESPRI_7 1
         #elif (0 > 2) && (0 == 7)
-            #define RESPRI_7 0
+            #define RESPRI_7 1
         #elif (0 > 3) && (0 == 7)
-            #define RESPRI_7 0
+            #define RESPRI_7 1
         #elif (0 > 4) && (0 == 7)
-            #define RESPRI_7 0
+            #define RESPRI_7 1
         #elif (0 > 5) && (0 == 7)
-            #define RESPRI_7 0
+            #define RESPRI_7 1
         #elif (0 > 6) && (0 == 7)
-            #define RESPRI_7 0
+            #define RESPRI_7 1
         #elif (0 > 7) && (0 == 7)
-            #define RESPRI_7 0
+            #define RESPRI_7 1
         #else
             #define RESPRI_7 0
         #endif
     #endif
-    #if 0 > 1    
+    #if 1 > 1    
         //Ceiling from Task 2
         #if (0 > 0) && (0 == 7)
             #if RESPRI_7 < 0
@@ -3140,7 +3140,7 @@
             #endif
         #endif
     #endif
-    #if 0 > 2    
+    #if 1 > 2    
         //Ceiling from Task 3
         #if (0 > 0) && (0 == 7)
             #if RESPRI_7 < 0
@@ -3184,7 +3184,7 @@
             #endif
         #endif
     #endif
-    #if 0 > 3    
+    #if 1 > 3    
         //Ceiling from Task 4
         #if (0 > 0) && (0 == 7)
             #if RESPRI_7 < 0
@@ -3228,7 +3228,7 @@
             #endif
         #endif
     #endif
-    #if 0 > 4    
+    #if 1 > 4    
         //Ceiling from Task 5
         #if (0 > 0) && (0 == 7)
             #if RESPRI_7 < 0
@@ -3272,7 +3272,7 @@
             #endif
         #endif        
     #endif
-    #if 0 > 5    
+    #if 1 > 5    
         //Ceiling from Task 6
         #if (0 > 0) && (0 == 7)
             #if RESPRI_7 < 0
@@ -3316,7 +3316,7 @@
             #endif
         #endif        
     #endif
-    #if 0 > 6    
+    #if 1 > 6    
         //Ceiling from Task 7
         #if (0 > 0) && (0 == 7)
             #if RESPRI_7 < 0
@@ -3360,7 +3360,7 @@
             #endif
         #endif
     #endif
-    #if 0 > 7    
+    #if 1 > 7    
         //Ceiling from Task 8
         #if (0 > 0) && (0 == 7)
             #if RESPRI_7 < 0
@@ -3584,29 +3584,29 @@
     
     //Resource Eight
     #if 0 > 7
-    #if 0 > 0
+    #if 1 > 0
         //Ceiling from Task 1
         #if (0 > 0) && (0 == 8)
-           #define RESPRI_8 0
+           #define RESPRI_8 1
         #elif (0 > 1) && (0 == 8)
-            #define RESPRI_8 0
+            #define RESPRI_8 1
         #elif (0 > 2) && (0 == 8)
-            #define RESPRI_8 0
+            #define RESPRI_8 1
         #elif (0 > 3) && (0 == 8)
-            #define RESPRI_8 0
+            #define RESPRI_8 1
         #elif (0 > 4) && (0 == 8)
-            #define RESPRI_8 0
+            #define RESPRI_8 1
         #elif (0 > 5) && (0 == 8)
-            #define RESPRI_8 0
+            #define RESPRI_8 1
         #elif (0 > 6) && (0 == 8)
-            #define RESPRI_8 0
+            #define RESPRI_8 1
         #elif (0 > 7) && (0 == 8)
-            #define RESPRI_8 0
+            #define RESPRI_8 1
         #else
             #define RESPRI_8 0
         #endif
     #endif
-    #if 0 > 1    
+    #if 1 > 1    
         //Ceiling from Task 2
         #if (0 > 0) && (0 == 8)
             #if RESPRI_8 < 0
@@ -3650,7 +3650,7 @@
             #endif
         #endif
     #endif
-    #if 0 > 2    
+    #if 1 > 2    
         //Ceiling from Task 3
         #if (0 > 0) && (0 == 8)
             #if RESPRI_8 < 0
@@ -3694,7 +3694,7 @@
             #endif
         #endif
     #endif
-    #if 0 > 3    
+    #if 1 > 3    
         //Ceiling from Task 4
         #if (0 > 0) && (0 == 8)
             #if RESPRI_8 < 0
@@ -3738,7 +3738,7 @@
             #endif
         #endif
     #endif
-    #if 0 > 4    
+    #if 1 > 4    
         //Ceiling from Task 5
         #if (0 > 0) && (0 == 8)
             #if RESPRI_8 < 0
@@ -3782,7 +3782,7 @@
             #endif
         #endif        
     #endif
-    #if 0 > 5    
+    #if 1 > 5    
         //Ceiling from Task 6
         #if (0 > 0) && (0 == 8)
             #if RESPRI_8 < 0
@@ -3826,7 +3826,7 @@
             #endif
         #endif        
     #endif
-    #if 0 > 6    
+    #if 1 > 6    
         //Ceiling from Task 7
         #if (0 > 0) && (0 == 8)
             #if RESPRI_8 < 0
@@ -3870,7 +3870,7 @@
             #endif
         #endif
     #endif
-    #if 0 > 7    
+    #if 1 > 7    
         //Ceiling from Task 8
         #if (0 > 0) && (0 == 8)
             #if RESPRI_8 < 0

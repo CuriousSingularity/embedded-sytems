@@ -109,6 +109,14 @@ public:
 /*****************************************************************************/
 /* API functions                                                             */
 /*****************************************************************************/
+
+/**
+ * A function initializes the UART port used to transmit the log messages.
+ * @param void
+ * @return RC_SUCCESS on successful transmission
+ */
+RC_t CONSOLE_Init(void);
+
 /**
  * A function transmits the string characters over serial console.
  * @param const sint8_t *pMessaage      : IN String

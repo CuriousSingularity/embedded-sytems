@@ -16,7 +16,7 @@
 #if 1
     #if ((1 == 2) && (EE_MAX_TASK > 0))
     #define TASK_1_STACK_SIZE 0/4 // size = 0 bytes
-    int EE_cortex_mx_stack_1[TASK_1_STACK_SIZE];	/* Task 1 (Task_1) */
+    int EE_cortex_mx_stack_1[TASK_1_STACK_SIZE];	/* Task 1 (tsk_init) */
     #endif
     #if ((1 == 2) && (EE_MAX_TASK > 1))
     #define TASK_2_STACK_SIZE 0/4 // size = 0 bytes
@@ -115,7 +115,7 @@
     const EE_UREG EE_std_thread_tos[EE_MAX_TASK+1] = {
         0U	 /* dummy*/
     #if EE_MAX_TASK > 0
-        ,Tsk1	 /* Task_1*/
+        ,Tsk1	 /* tsk_init*/
     #endif
     #if EE_MAX_TASK > 1
         ,Tsk2	 /* Task_2*/
@@ -143,7 +143,7 @@
     struct EE_TOS EE_cortex_mx_system_tos[EE_CORTEX_MX_SYSTEM_TOS_SIZE] = {
         {0}
         #ifdef TASK_1_STACK_SIZE
-        ,{(EE_ADDR)(&EE_cortex_mx_stack_1[(TASK_1_STACK_SIZE) - CORTEX_MX_INIT_TOS_OFFSET])}	/* Task_1*/
+        ,{(EE_ADDR)(&EE_cortex_mx_stack_1[(TASK_1_STACK_SIZE) - CORTEX_MX_INIT_TOS_OFFSET])}	/* tsk_init*/
         #endif
         #ifdef TASK_2_STACK_SIZE
         ,{(EE_ADDR)(&EE_cortex_mx_stack_2[(TASK_2_STACK_SIZE) - CORTEX_MX_INIT_TOS_OFFSET])}	/* Task_2*/
@@ -185,7 +185,7 @@
  **************************************************************************/
     /* Definition of task's body */
     #if EE_MAX_TASK > 0
-    DeclareTask(Task_1);
+    DeclareTask(tsk_init);
     #endif
     #if EE_MAX_TASK > 1
     DeclareTask(Task_2);
@@ -211,7 +211,7 @@
 
     const EE_THREAD_PTR EE_hal_thread_body[EE_MAX_TASK] = {
     #if EE_MAX_TASK > 0
-        &EE_oo_thread_stub       /* thread Task_1 */
+        &EE_oo_thread_stub       /* thread tsk_init */
     #endif
     #if EE_MAX_TASK > 1
         ,&EE_oo_thread_stub      /* thread Task_2 */
@@ -241,7 +241,7 @@
     /* ip of each thread body (ROM) */
     const EE_THREAD_PTR EE_terminate_real_th_body[EE_MAX_TASK] = {
     #if EE_MAX_TASK > 0
-        &FuncTask_1
+        &Functsk_init
     #endif
     #if EE_MAX_TASK > 1
         ,&FuncTask_2
@@ -269,7 +269,7 @@
     /* ready priority */
     const EE_TYPEPRIO EE_th_ready_prio[EE_MAX_TASK] = {
     #if EE_MAX_TASK > 0
-        0U
+        1U
     #endif
     #if EE_MAX_TASK > 1
         ,0U
@@ -298,8 +298,8 @@
     
     const EE_TYPEPRIO EE_th_dispatch_prio[EE_MAX_TASK] = {
     #if EE_MAX_TASK > 0
-        #if 1
-        0U
+        #if 0
+        1U
         #else
         MAX_PRIORITY
         #endif
@@ -1553,47 +1553,47 @@
 #ifdef __OO_AUTOSTART_TASK__
     static const EE_TID EE_oo_autostart_task_mode_OSDEFAULTAPPMODE[EE_OO_AUTOSTART_TASK_MODE_OSDEFAULTAPPMODE_SIZE] = 
         { 
-    #if (EE_MAX_TASK > 0) && 0
-        Task_1
+    #if (EE_MAX_TASK > 0) && 1
+        tsk_init
     #endif
     #if (EE_MAX_TASK > 1) && 0
-    #if 0
+    #if 1
         ,
     #endif
         Task_2
     #endif
     #if (EE_MAX_TASK > 2) && 0
-    #if 0 || 0
+    #if 1 || 0
         ,
     #endif
         Task_3
     #endif
     #if (EE_MAX_TASK > 3) && 0
-    #if 0 || 0 || 0
+    #if 1 || 0 || 0
         ,
     #endif
         Task_4
     #endif
     #if (EE_MAX_TASK > 4) && 0
-    #if 0 || 0 || 0 || 0
+    #if 1 || 0 || 0 || 0
         ,
     #endif
         Task_5
     #endif
     #if (EE_MAX_TASK > 5) && 0
-    #if 0 || 0 || 0 || 0 || 0
+    #if 1 || 0 || 0 || 0 || 0
         ,
     #endif
         Task_6
     #endif
     #if (EE_MAX_TASK > 6) && 0
-    #if 0 || 0 || 0 || 0 || 0 || 0
+    #if 1 || 0 || 0 || 0 || 0 || 0
         ,
     #endif
         Task_7
     #endif
     #if (EE_MAX_TASK > 7) && 0
-    #if 0 || 0 || 0 || 0 || 0 || 0 || 0
+    #if 1 || 0 || 0 || 0 || 0 || 0 || 0
         ,
     #endif
         Task_8

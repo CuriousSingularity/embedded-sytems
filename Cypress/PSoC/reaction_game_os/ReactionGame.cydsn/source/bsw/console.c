@@ -51,9 +51,21 @@
 /*****************************************************************************/
 
 /**
+ * A function initializes the UART port used to transmit the log messages.
+ * @param void
+ * @return RC_SUCCESS on successful transmission
+ */
+RC_t CONSOLE_Init(void)
+{
+    UART_LOG_Start();
+    
+    return RC_SUCCESS;
+}
+
+/**
  * A function transmits the string characters over serial console.
  * @param const sint8_t *pMessaage      : IN String
- * @return Transmits the messsage character by character over the UART.
+ * @return RC_SUCCESS on successful transmission
  */
 RC_t CONSOLE_Write(const char *pMessage)
 {

@@ -19,9 +19,9 @@
  **************************************************************************/
 
     /* TASK definition */
-    #define EE_MAX_TASK 0
+    #define EE_MAX_TASK 1
     #if EE_MAX_TASK > 0
-    #define Task_1 0
+    #define tsk_init 0
     #endif
     #if EE_MAX_TASK > 1
     #define Task_2 1
@@ -372,7 +372,7 @@ extern void ISR_16(void);
     #define EE_COUNTER_OBJECTS_ROM_SIZE EE_MAX_ALARM
     #define EE_COUNTER_ROM_SIZE EE_MAX_COUNTER
 
-    #if 0 && (EE_MAX_TASK > 0)
+    #if 1 && (EE_MAX_TASK > 0)
         #define TSK1_AS 1
     #else
         #define TSK1_AS 0
