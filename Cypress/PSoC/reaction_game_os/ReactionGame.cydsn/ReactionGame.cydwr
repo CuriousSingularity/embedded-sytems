@@ -251,10 +251,19 @@
   <Data key="DataVersionKey" value="2" />
   <Group key="DWRInstGuidMapping">
     <Group key="Pin">
-      <Data key="6a5f8180-4c8b-4ece-b0a2-3095f74ca6cb" value="BUTTON_b2" />
-      <Data key="8d318d8b-cf7b-4b6b-b02c-ab1c5c49d0ba" value="BUTTON_b1" />
+      <Data key="6a5f8180-4c8b-4ece-b0a2-3095f74ca6cb" value="BUTTON_2" />
+      <Data key="6d66aa52-1fbb-4894-ba25-d0e60ca8fed7" value="S7D_Display" />
+      <Data key="7a418d6f-b8b5-4504-92e4-c2b7a5451c30" value="S7D_SegmentE" />
+      <Data key="8d318d8b-cf7b-4b6b-b02c-ab1c5c49d0ba" value="BUTTON_1" />
+      <Data key="656d8c72-3504-48a5-94f8-3ee85c34a6ea" value="S7D_SegmentB" />
       <Data key="721cd332-101c-4baf-8392-c2f062fce926" value="UART_LOG_Tx" />
+      <Data key="b6495826-b8d7-4ff9-a606-51c549ae30e1" value="S7D_SegmentF" />
+      <Data key="de733a14-f259-4819-99f8-5ed732b6784c" value="S7D_SegmentA" />
       <Data key="ea34e17e-4bec-49d8-a85a-dd83a0bea6f6" value="UART_LOG_Rx" />
+      <Data key="eada11e0-e1f7-4ccc-a3f5-8e223fbd057e" value="S7D_Select" />
+      <Data key="eb2f354b-7c53-4d5a-951e-ea947bb3f7ee" value="S7D_SegmentG" />
+      <Data key="eddf3864-6954-4295-a3ea-fe2755cc7d27" value="S7D_SegmentD" />
+      <Data key="eeb1fc7c-349a-470c-ad43-61887b454531" value="S7D_SegmentC" />
     </Group>
   </Group>
   <Group key="EEPROM">
@@ -3346,9 +3355,24 @@
         <Data key="Port Format" value="0,4" />
       </Group>
     </Group>
+    <Group key="6d66aa52-1fbb-4894-ba25-d0e60ca8fed7">
+      <Group key="0">
+        <Data key="Port Format" value="1,0" />
+      </Group>
+    </Group>
+    <Group key="7a418d6f-b8b5-4504-92e4-c2b7a5451c30">
+      <Group key="0">
+        <Data key="Port Format" value="1,3" />
+      </Group>
+    </Group>
     <Group key="8d318d8b-cf7b-4b6b-b02c-ab1c5c49d0ba">
       <Group key="0">
         <Data key="Port Format" value="0,3" />
+      </Group>
+    </Group>
+    <Group key="656d8c72-3504-48a5-94f8-3ee85c34a6ea">
+      <Group key="0">
+        <Data key="Port Format" value="1,6" />
       </Group>
     </Group>
     <Group key="721cd332-101c-4baf-8392-c2f062fce926">
@@ -3356,9 +3380,39 @@
         <Data key="Port Format" value="12,7" />
       </Group>
     </Group>
+    <Group key="b6495826-b8d7-4ff9-a606-51c549ae30e1">
+      <Group key="0">
+        <Data key="Port Format" value="1,2" />
+      </Group>
+    </Group>
+    <Group key="de733a14-f259-4819-99f8-5ed732b6784c">
+      <Group key="0">
+        <Data key="Port Format" value="1,7" />
+      </Group>
+    </Group>
     <Group key="ea34e17e-4bec-49d8-a85a-dd83a0bea6f6">
       <Group key="0">
         <Data key="Port Format" value="12,6" />
+      </Group>
+    </Group>
+    <Group key="eada11e0-e1f7-4ccc-a3f5-8e223fbd057e">
+      <Group key="0">
+        <Data key="Port Format" value="3,5" />
+      </Group>
+    </Group>
+    <Group key="eb2f354b-7c53-4d5a-951e-ea947bb3f7ee">
+      <Group key="0">
+        <Data key="Port Format" value="1,1" />
+      </Group>
+    </Group>
+    <Group key="eddf3864-6954-4295-a3ea-fe2755cc7d27">
+      <Group key="0">
+        <Data key="Port Format" value="1,4" />
+      </Group>
+    </Group>
+    <Group key="eeb1fc7c-349a-470c-ad43-61887b454531">
+      <Group key="0">
+        <Data key="Port Format" value="1,5" />
       </Group>
     </Group>
   </Group>
@@ -3370,7 +3424,7 @@
     <Data key="CYDEV_CONFIG_UNUSED_IO" value="AllowButWarn" />
     <Data key="CYDEV_CONFIGURATION_ECC" value="True" />
     <Data key="CYDEV_CONFIGURATION_MODE" value="COMPRESSED" />
-    <Data key="CYDEV_DEBUGGING_DPS" value="SWD_SWV" />
+    <Data key="CYDEV_DEBUGGING_DPS" value="Disable" />
     <Data key="CYDEV_DEBUGGING_XRES" value="False" />
     <Data key="CYDEV_ECC_ENABLE" value="False" />
     <Data key="CYDEV_HEAP_SIZE" value="0x80" />

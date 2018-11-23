@@ -18,6 +18,7 @@ int main(void)
 
     /* Place your initialization/startup code here (e.g. MyInst_Start()) */
     UART_LOG_Start();
+    S7D_init();
 
     for(;;)
     {

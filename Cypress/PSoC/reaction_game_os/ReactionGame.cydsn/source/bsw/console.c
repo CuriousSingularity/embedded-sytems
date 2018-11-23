@@ -20,7 +20,6 @@
 /*****************************************************************************/
 /* Include files                                                             */
 /*****************************************************************************/
-#include "global.h"
 #include "console.h"
 #include "UART_LOG.h"
 
@@ -56,7 +55,9 @@
  * @param const sint8_t *pMessaage      : IN String
  * @return Transmits the messsage character by character over the UART.
  */
-void CONSOLE_Write(const char *pMessage)
+RC_t CONSOLE_Write(const char *pMessage)
 {
     UART_LOG_PutString(pMessage);
+    
+    return RC_SUCCESS;
 }

@@ -75,6 +75,8 @@
 #ifndef CONSOLE_H_
 #define CONSOLE_H_
 
+#include "global.h"
+    
 /*****************************************************************************/
 /* Global pre-processor symbols/macros and type declarations                 */
 /*****************************************************************************/
@@ -110,9 +112,9 @@ public:
 /**
  * A function transmits the string characters over serial console.
  * @param const sint8_t *pMessaage      : IN String
- * @return Transmits the messsage character by character over the UART.
+ * @return RC_SUCCESS on successful transmission
  */
-void CONSOLE_Write(const char *pMessage);
+RC_t CONSOLE_Write(const char *pMessage);
 
 /*****************************************************************************/
 /* Private stuff, only visible for Together, declared static in cpp - File   */
