@@ -115,6 +115,7 @@ struct REACTIONGAME_s
         uint8_t         IncorrectButtonPresses;
         uint8_t         MissedPresses;
         uint32_t        AvgReactionTime;
+        uint32_t        TotalReactionTime;
     };
     uint32_t            MeasureReactionTime;
     EventMaskType       Event;

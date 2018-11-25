@@ -1,5 +1,5 @@
 # ReactionGame
-# 2018-11-25 00:53:39Z
+# 2018-11-25 15:10:58Z
 
 set_io "UART_LOG_Tx(0)" iocell 12 7
 set_io "UART_LOG_Rx(0)" iocell 12 6
@@ -14,3 +14,9 @@ set_io "S7D_SegmentF(0)" iocell 1 2
 set_io "S7D_SegmentG(0)" iocell 1 1
 set_io "S7D_Select(0)" iocell 3 5
 set_io "S7D_Display(0)" iocell 1 0
+set_io "RGB_B(0)" iocell 2 3
+set_io "RGB_G(0)" iocell 2 4
+set_io "RGB_R(0)" iocell 2 5
+set_io "LED_Red(0)" iocell 0 6
+set_io "LED_Green(0)" iocell 0 7
+set_io "LED_Yellow(0)" iocell 2 0

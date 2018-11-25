@@ -23,8 +23,10 @@
 #include "global.h"
 #include "tsk_Init.h"
 #include "tsk_ReactionGame.h"
+#include "tsk_ArcadianLed.h"
 #include "seven.h"
 #include "console.h"
+#include "pwm.h"
 
 /*****************************************************************************/
 /* Local pre-processor symbols/macros ('#define')                            */
@@ -48,6 +50,7 @@ static RC_tFunctPtrv fptr_init_functions[] =
     // Add all the initialization functions here
     CONSOLE_Init,
     S7D_Init,
+    PWM_Init,
 };
 
 /*****************************************************************************/
@@ -81,6 +84,9 @@ TASK(tsk_Init)
     
     // Activate Tasks here
     ActivateTask(tsk_ReactionGame);
+    
+    // Set Alarms here
+    SetRelAlarm(alrm_ArcadianLed, TSK_ARCADIANLED_CYCLIC_TIME, TSK_ARCADIANLED_CYCLIC_TIME);
     
     // Terminate the init task and let the schedular do its thing!
     TerminateTask();

@@ -35,7 +35,7 @@
 #define GAME_TIMEOUT                10
 #define MAX_RANDOM_NUMBER           2
 #define MAX_RANDOM_SECONDS          3
-#define MAX_ROUNDS_IN_GAME          5
+#define MAX_ROUNDS_IN_GAME          10
 
 /*****************************************************************************/
 /* Global variable definitions (declared in header file with 'extern')       */
@@ -145,7 +145,8 @@ static RC_t REACTIONGAME__ProcessReaction(REACTIONGAME_t *Game, uint8_t RandomNu
             CONSOLE_Write("ms\n\n");
             
             Game->CorrectButtonPresses++;
-            Game->AvgReactionTime += Game->MeasureReactionTime;
+            Game->AvgReactionTime   += Game->MeasureReactionTime;
+            Game->TotalReactionTime += Game->MeasureReactionTime;
         }
         else
         {
@@ -180,11 +181,15 @@ static RC_t REACTIONGAME__Summary(REACTIONGAME_t *Game)
     CONSOLE_Write("Average  Reaction Time : ");
     CONSOLE_WriteNumber(Game->AvgReactionTime / Game->CorrectButtonPresses);
     CONSOLE_Write("ms\n");
+    CONSOLE_Write("Total    Reaction Time : ");
+    CONSOLE_WriteNumber(Game->TotalReactionTime);
+    CONSOLE_Write("ms\n");
     CONSOLE_Write("=========================================================\n\n\n");
     
     // Reset Game parameters
     Game->Rounds                 = 0;
     Game->AvgReactionTime        = 0;
+    Game->TotalReactionTime      = 0;
     Game->MeasureReactionTime    = 0;
     Game->MissedPresses          = 0;
     Game->CorrectButtonPresses   = 0;
@@ -293,6 +298,7 @@ TASK(tsk_ReactionGame)
         .IncorrectButtonPresses = 0,
         .MissedPresses          = 0,
         .AvgReactionTime        = 0,
+        .TotalReactionTime      = 0,
         .MeasureReactionTime    = 0,
         .Event                  = 0,
         .CurrentState           = RG__STATE_STANDBY, 

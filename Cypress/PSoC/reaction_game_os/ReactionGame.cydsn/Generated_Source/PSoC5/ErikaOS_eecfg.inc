@@ -19,7 +19,7 @@
  **************************************************************************/
 
     /* TASK definition */
-    #define EE_MAX_TASK 3
+    #define EE_MAX_TASK 4
     #if EE_MAX_TASK > 0
     #define tsk_Init 0
     #endif
@@ -30,7 +30,7 @@
     #define tsk_ReactionGame 2
     #endif
     #if EE_MAX_TASK > 3
-    #define Task_4 3
+    #define tsk_ArcadianLed 3
     #endif
     #if EE_MAX_TASK > 4
     #define Task_5 4
@@ -86,7 +86,7 @@
     #endif
     
     /* ALARM definition */
-    #define EE_MAX_ALARM 2U
+    #define EE_MAX_ALARM 3U
     #if EE_MAX_ALARM > 0
     #define alrm_Tick1ms 0U
     #endif
@@ -94,7 +94,7 @@
     #define alrm_Timeout 1U
     #endif
     #if EE_MAX_ALARM > 2
-    #define Alarm_3 2U
+    #define alrm_ArcadianLed 2U
     #endif
     #if EE_MAX_ALARM > 3
     #define Alarm_4 3U

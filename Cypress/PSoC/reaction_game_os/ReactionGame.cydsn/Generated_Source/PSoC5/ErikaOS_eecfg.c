@@ -28,7 +28,7 @@
     #endif
     #if ((1 == 2) && (EE_MAX_TASK > 3))
     #define TASK_4_STACK_SIZE 0/4 // size = 0 bytes
-    int EE_cortex_mx_stack_4[TASK_4_STACK_SIZE];	/* Task 4 (Task_4) */
+    int EE_cortex_mx_stack_4[TASK_4_STACK_SIZE];	/* Task 4 (tsk_ArcadianLed) */
     #endif
     #if ((1 == 2) && (EE_MAX_TASK > 4))
     #define TASK_5_STACK_SIZE 0/4 // size = 0 bytes
@@ -124,7 +124,7 @@
         ,Tsk3	 /* tsk_ReactionGame*/
     #endif
     #if EE_MAX_TASK > 3
-        ,Tsk4	 /* Task_4*/
+        ,Tsk4	 /* tsk_ArcadianLed*/
     #endif
     #if EE_MAX_TASK > 4
         ,Tsk5	 /* Task_5*/
@@ -152,7 +152,7 @@
         ,{(EE_ADDR)(&EE_cortex_mx_stack_3[(TASK_3_STACK_SIZE) - CORTEX_MX_INIT_TOS_OFFSET])} 	/* tsk_ReactionGame*/
         #endif
         #ifdef TASK_4_STACK_SIZE
-        ,{(EE_ADDR)(&EE_cortex_mx_stack_4[(TASK_4_STACK_SIZE) - CORTEX_MX_INIT_TOS_OFFSET])}    /* Task_4*/
+        ,{(EE_ADDR)(&EE_cortex_mx_stack_4[(TASK_4_STACK_SIZE) - CORTEX_MX_INIT_TOS_OFFSET])}    /* tsk_ArcadianLed*/
         #endif
         #ifdef TASK_5_STACK_SIZE
         ,{(EE_ADDR)(&EE_cortex_mx_stack_5[(TASK_5_STACK_SIZE) - CORTEX_MX_INIT_TOS_OFFSET])}    /* Task_5*/
@@ -194,7 +194,7 @@
     DeclareTask(tsk_ReactionGame);
     #endif
     #if EE_MAX_TASK > 3
-    DeclareTask(Task_4);
+    DeclareTask(tsk_ArcadianLed);
     #endif
     #if EE_MAX_TASK > 4
     DeclareTask(Task_5);
@@ -220,7 +220,7 @@
         ,&EE_oo_thread_stub      /* thread tsk_ReactionGame */
     #endif
     #if EE_MAX_TASK > 3
-        ,&EE_oo_thread_stub      /* thread Task_4 */
+        ,&EE_oo_thread_stub      /* thread tsk_ArcadianLed */
     #endif
     #if EE_MAX_TASK > 4
         ,&EE_oo_thread_stub      /* thread Task_5 */
@@ -250,7 +250,7 @@
         ,&Functsk_ReactionGame
     #endif
     #if EE_MAX_TASK > 3
-        ,&FuncTask_4
+        ,&Functsk_ArcadianLed
     #endif
     #if EE_MAX_TASK > 4
         ,&FuncTask_5
@@ -272,13 +272,13 @@
         1U
     #endif
     #if EE_MAX_TASK > 1
-        ,2U
+        ,4U
     #endif
     #if EE_MAX_TASK > 2
         ,128U
     #endif
     #if EE_MAX_TASK > 3
-        ,0U
+        ,2U
     #endif
     #if EE_MAX_TASK > 4
         ,0U
@@ -306,7 +306,7 @@
     #endif
     #if EE_MAX_TASK > 1
         #if 1
-        ,2U
+        ,4U
         #else
         ,MAX_PRIORITY
         #endif
@@ -320,7 +320,7 @@
     #endif
     #if EE_MAX_TASK > 3
         #if 1
-        ,0U
+        ,2U
         #else
         ,MAX_PRIORITY
         #endif
@@ -1291,7 +1291,7 @@
         ,{alrm_Timeout}
     #endif
     #if EE_MAX_ALARM > 2
-        ,{Alarm_3}
+        ,{alrm_ArcadianLed}
     #endif
     #if EE_MAX_ALARM > 3
         ,{Alarm_4}
@@ -1352,7 +1352,7 @@
         ,{0, alrm_Timeout, EE_ALARM }
         #endif
         #if EE_MAX_ALARM > 2
-        ,{0, Alarm_3, EE_ALARM }
+        ,{0, alrm_ArcadianLed, EE_ALARM }
         #endif
         #if EE_MAX_ALARM > 3
         ,{0, Alarm_4, EE_ALARM }
@@ -1422,7 +1422,7 @@
     #if EE_ACTION_ROM_SIZE > 2
         ,{0    , 
             #if 0 != 3 
-                0,
+                3,
             #else
                 0,
             #endif
@@ -1572,7 +1572,7 @@
     #if 1 || 0 || 0
         ,
     #endif
-        Task_4
+        tsk_ArcadianLed
     #endif
     #if (EE_MAX_TASK > 4) && 0
     #if 1 || 0 || 0 || 0

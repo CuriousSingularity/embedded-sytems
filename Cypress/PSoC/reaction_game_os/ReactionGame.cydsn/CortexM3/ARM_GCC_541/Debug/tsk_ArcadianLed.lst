@@ -1,0 +1,1793 @@
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cc08oxrp.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m3
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 1
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.thumb
+  14              		.syntax unified
+  15              		.file	"tsk_ArcadianLed.c"
+  16              		.text
+  17              	.Ltext0:
+  18              		.cfi_sections	.debug_frame
+  19              		.section	.text.ARCADIANLED__Fader,"ax",%progbits
+  20              		.align	2
+  21              		.thumb
+  22              		.thumb_func
+  23              		.type	ARCADIANLED__Fader, %function
+  24              	ARCADIANLED__Fader:
+  25              	.LFB110:
+  26              		.file 1 "source\\asw\\tsk_ArcadianLed.c"
+   1:source\asw/tsk_ArcadianLed.c **** /**
+   2:source\asw/tsk_ArcadianLed.c **** * \file <tsk_ArcadianLed.c>
+   3:source\asw/tsk_ArcadianLed.c **** * \author <Bharath Ramachandraiah>
+   4:source\asw/tsk_ArcadianLed.c **** * \date <13/11/2018>
+   5:source\asw/tsk_ArcadianLed.c **** *
+   6:source\asw/tsk_ArcadianLed.c **** * \brief <Symbolic File name>
+   7:source\asw/tsk_ArcadianLed.c **** *
+   8:source\asw/tsk_ArcadianLed.c **** * \copyright Copyright ©2016
+   9:source\asw/tsk_ArcadianLed.c **** * Department of electrical engineering and information technology, Hochschule Darmstadt - Universit
+  10:source\asw/tsk_ArcadianLed.c **** * Permission to use, copy, modify, and distribute this software and its documentation for education
+  11:source\asw/tsk_ArcadianLed.c **** * (unless permitted by h_da) and official h_da projects, is hereby granted for enrolled students of
+  12:source\asw/tsk_ArcadianLed.c **** * this paragraph and the following paragraph appear in all copies, modifications, and distributions
+  13:source\asw/tsk_ArcadianLed.c **** * Contact Prof.Dr.-Ing. Peter Fromm, peter.fromm@h-da.de, Birkenweg 8 64295 Darmstadt - GERMANY for
+  14:source\asw/tsk_ArcadianLed.c **** *
+  15:source\asw/tsk_ArcadianLed.c **** * \warning This software is a PROTOTYPE version and is not designed or intended for use in producti
+  16:source\asw/tsk_ArcadianLed.c **** * The user represents and warrants that it will NOT use or redistribute the Software for such purpo
+  17:source\asw/tsk_ArcadianLed.c **** * This prototype is for research purposes only. This software is provided "AS IS," without a warran
+  18:source\asw/tsk_ArcadianLed.c **** */
+  19:source\asw/tsk_ArcadianLed.c **** 
+  20:source\asw/tsk_ArcadianLed.c **** /*****************************************************************************/
+  21:source\asw/tsk_ArcadianLed.c **** /* Include files                                                             */
+  22:source\asw/tsk_ArcadianLed.c **** /*****************************************************************************/
+  23:source\asw/tsk_ArcadianLed.c **** #include "tsk_ArcadianLed.h"
+  24:source\asw/tsk_ArcadianLed.c **** #include "pwm.h"
+  25:source\asw/tsk_ArcadianLed.c **** 
+  26:source\asw/tsk_ArcadianLed.c **** /*****************************************************************************/
+  27:source\asw/tsk_ArcadianLed.c **** /* Local pre-processor symbols/macros ('#define')                            */
+  28:source\asw/tsk_ArcadianLed.c **** /*****************************************************************************/
+  29:source\asw/tsk_ArcadianLed.c **** #define ARCADIANLED__FADER_TIME_DURATION    500
+  30:source\asw/tsk_ArcadianLed.c **** 
+  31:source\asw/tsk_ArcadianLed.c **** /*****************************************************************************/
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cc08oxrp.s 			page 2
+
+
+  32:source\asw/tsk_ArcadianLed.c **** /* Global variable definitions (declared in header file with 'extern')       */
+  33:source\asw/tsk_ArcadianLed.c **** /*****************************************************************************/
+  34:source\asw/tsk_ArcadianLed.c **** 
+  35:source\asw/tsk_ArcadianLed.c **** /*****************************************************************************/
+  36:source\asw/tsk_ArcadianLed.c **** /* Local type definitions ('typedef')                                        */
+  37:source\asw/tsk_ArcadianLed.c **** /*****************************************************************************/
+  38:source\asw/tsk_ArcadianLed.c **** 
+  39:source\asw/tsk_ArcadianLed.c **** 
+  40:source\asw/tsk_ArcadianLed.c **** /*****************************************************************************/
+  41:source\asw/tsk_ArcadianLed.c **** /* Local variable definitions ('static')                                     */
+  42:source\asw/tsk_ArcadianLed.c **** /*****************************************************************************/
+  43:source\asw/tsk_ArcadianLed.c **** static const ARCADIANLED__Fader_t  Led_fadertable[] = {
+  44:source\asw/tsk_ArcadianLed.c ****     
+  45:source\asw/tsk_ArcadianLed.c ****     //Red    Yellow Green   TimeInMS
+  46:source\asw/tsk_ArcadianLed.c ****     {0,      0,     0,      ARCADIANLED__FADER_TIME_DURATION},
+  47:source\asw/tsk_ArcadianLed.c ****     {127,    0,     0,      ARCADIANLED__FADER_TIME_DURATION},
+  48:source\asw/tsk_ArcadianLed.c ****     {255,    127,   0,      ARCADIANLED__FADER_TIME_DURATION},
+  49:source\asw/tsk_ArcadianLed.c ****     {127,    255,   127,    ARCADIANLED__FADER_TIME_DURATION},
+  50:source\asw/tsk_ArcadianLed.c ****     {0,      127,   255,    ARCADIANLED__FADER_TIME_DURATION},
+  51:source\asw/tsk_ArcadianLed.c ****     {0,      0,     127,    ARCADIANLED__FADER_TIME_DURATION},
+  52:source\asw/tsk_ArcadianLed.c **** };
+  53:source\asw/tsk_ArcadianLed.c **** 
+  54:source\asw/tsk_ArcadianLed.c **** 
+  55:source\asw/tsk_ArcadianLed.c **** static const ARCADIANLED__Glower_t RGB_glowtable[] = {
+  56:source\asw/tsk_ArcadianLed.c ****     
+  57:source\asw/tsk_ArcadianLed.c ****     //Red   Green   Blue    TimeInMS
+  58:source\asw/tsk_ArcadianLed.c ****     {255,   0,      0,      500},
+  59:source\asw/tsk_ArcadianLed.c ****     {0,     255,    0,      500},
+  60:source\asw/tsk_ArcadianLed.c ****     {0,     0,      255,    500},
+  61:source\asw/tsk_ArcadianLed.c ****     {0,     0,      0,      100},
+  62:source\asw/tsk_ArcadianLed.c ****     {255,   255,    255,    100},
+  63:source\asw/tsk_ArcadianLed.c ****     {0,     0,      0,      100},
+  64:source\asw/tsk_ArcadianLed.c ****     {255,   255,    255,    100},
+  65:source\asw/tsk_ArcadianLed.c ****     {0,     0,      0,      100},
+  66:source\asw/tsk_ArcadianLed.c ****     {255,   255,    255,    100},
+  67:source\asw/tsk_ArcadianLed.c **** };
+  68:source\asw/tsk_ArcadianLed.c **** 
+  69:source\asw/tsk_ArcadianLed.c **** /*****************************************************************************/
+  70:source\asw/tsk_ArcadianLed.c **** /* Local function prototypes ('static')                                      */
+  71:source\asw/tsk_ArcadianLed.c **** /*****************************************************************************/
+  72:source\asw/tsk_ArcadianLed.c **** 
+  73:source\asw/tsk_ArcadianLed.c **** 
+  74:source\asw/tsk_ArcadianLed.c **** /*****************************************************************************/
+  75:source\asw/tsk_ArcadianLed.c **** /* Function implementation - global ('extern') and local ('static')          */
+  76:source\asw/tsk_ArcadianLed.c **** /*****************************************************************************/
+  77:source\asw/tsk_ArcadianLed.c **** static RC_t ARCADIANLED__Fader(void)
+  78:source\asw/tsk_ArcadianLed.c **** {
+  27              		.loc 1 78 0
+  28              		.cfi_startproc
+  29              		@ args = 0, pretend = 0, frame = 0
+  30              		@ frame_needed = 0, uses_anonymous_args = 0
+  31 0000 38B5     		push	{r3, r4, r5, lr}
+  32              		.cfi_def_cfa_offset 16
+  33              		.cfi_offset 3, -16
+  34              		.cfi_offset 4, -12
+  35              		.cfi_offset 5, -8
+  36              		.cfi_offset 14, -4
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cc08oxrp.s 			page 3
+
+
+  79:source\asw/tsk_ArcadianLed.c ****     static uint8_t Index = 0, TimeCount = 0;
+  80:source\asw/tsk_ArcadianLed.c ****     
+  81:source\asw/tsk_ArcadianLed.c ****     if (Index < (sizeof(Led_fadertable) / sizeof(ARCADIANLED__Fader_t)))
+  37              		.loc 1 81 0
+  38 0002 1A4B     		ldr	r3, .L5
+  39 0004 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+  40 0006 052B     		cmp	r3, #5
+  41 0008 2AD8     		bhi	.L2
+  82:source\asw/tsk_ArcadianLed.c ****     {
+  83:source\asw/tsk_ArcadianLed.c ****         PWM_SetRed   (Led_fadertable[Index].rgb_R_pwm);
+  42              		.loc 1 83 0
+  43 000a 194D     		ldr	r5, .L5+4
+  44 000c 03EB4303 		add	r3, r3, r3, lsl #1
+  45 0010 5A00     		lsls	r2, r3, #1
+  46 0012 A85C     		ldrb	r0, [r5, r2]	@ zero_extendqisi2
+  47 0014 FFF7FEFF 		bl	PWM_SetRed
+  48              	.LVL0:
+  84:source\asw/tsk_ArcadianLed.c ****         PWM_SetYellow(Led_fadertable[Index].rgb_B_pwm);
+  49              		.loc 1 84 0
+  50 0018 144C     		ldr	r4, .L5
+  51 001a 2378     		ldrb	r3, [r4]	@ zero_extendqisi2
+  52 001c 03EB4303 		add	r3, r3, r3, lsl #1
+  53 0020 5A00     		lsls	r2, r3, #1
+  54 0022 2A44     		add	r2, r2, r5
+  55 0024 5078     		ldrb	r0, [r2, #1]	@ zero_extendqisi2
+  56 0026 FFF7FEFF 		bl	PWM_SetYellow
+  57              	.LVL1:
+  85:source\asw/tsk_ArcadianLed.c ****         PWM_SetGreen (Led_fadertable[Index].rgb_G_pwm);
+  58              		.loc 1 85 0
+  59 002a 2378     		ldrb	r3, [r4]	@ zero_extendqisi2
+  60 002c 03EB4303 		add	r3, r3, r3, lsl #1
+  61 0030 5A00     		lsls	r2, r3, #1
+  62 0032 2A44     		add	r2, r2, r5
+  63 0034 9078     		ldrb	r0, [r2, #2]	@ zero_extendqisi2
+  64 0036 FFF7FEFF 		bl	PWM_SetGreen
+  65              	.LVL2:
+  86:source\asw/tsk_ArcadianLed.c ****         
+  87:source\asw/tsk_ArcadianLed.c ****         // Has the time elapsed ?
+  88:source\asw/tsk_ArcadianLed.c ****         if (Led_fadertable[Index].TimeDuration <= (TimeCount++ * TSK_ARCADIANLED_CYCLIC_TIME))
+  66              		.loc 1 88 0
+  67 003a 2278     		ldrb	r2, [r4]	@ zero_extendqisi2
+  68 003c 02EB4201 		add	r1, r2, r2, lsl #1
+  69 0040 4B00     		lsls	r3, r1, #1
+  70 0042 1D44     		add	r5, r5, r3
+  71 0044 A888     		ldrh	r0, [r5, #4]
+  72 0046 6178     		ldrb	r1, [r4, #1]	@ zero_extendqisi2
+  73 0048 4B1C     		adds	r3, r1, #1
+  74 004a 6370     		strb	r3, [r4, #1]
+  75 004c 6423     		movs	r3, #100
+  76 004e 03FB01F3 		mul	r3, r3, r1
+  77 0052 9842     		cmp	r0, r3
+  78 0054 08DC     		bgt	.L3
+  89:source\asw/tsk_ArcadianLed.c ****         {
+  90:source\asw/tsk_ArcadianLed.c ****             Index++;
+  79              		.loc 1 90 0
+  80 0056 0132     		adds	r2, r2, #1
+  81 0058 2270     		strb	r2, [r4]
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cc08oxrp.s 			page 4
+
+
+  91:source\asw/tsk_ArcadianLed.c ****             TimeCount = 0;
+  82              		.loc 1 91 0
+  83 005a 0022     		movs	r2, #0
+  84 005c 6270     		strb	r2, [r4, #1]
+  85 005e 03E0     		b	.L3
+  86              	.L2:
+  92:source\asw/tsk_ArcadianLed.c ****         }
+  93:source\asw/tsk_ArcadianLed.c ****     }
+  94:source\asw/tsk_ArcadianLed.c ****     else
+  95:source\asw/tsk_ArcadianLed.c ****     {
+  96:source\asw/tsk_ArcadianLed.c ****         Index       = 0;
+  87              		.loc 1 96 0
+  88 0060 024B     		ldr	r3, .L5
+  89 0062 0022     		movs	r2, #0
+  90 0064 1A70     		strb	r2, [r3]
+  97:source\asw/tsk_ArcadianLed.c ****         TimeCount   = 0;
+  91              		.loc 1 97 0
+  92 0066 5A70     		strb	r2, [r3, #1]
+  93              	.L3:
+  98:source\asw/tsk_ArcadianLed.c ****     }
+  99:source\asw/tsk_ArcadianLed.c ****     
+ 100:source\asw/tsk_ArcadianLed.c ****     return RC_SUCCESS;
+ 101:source\asw/tsk_ArcadianLed.c **** }
+  94              		.loc 1 101 0
+  95 0068 0020     		movs	r0, #0
+  96 006a 38BD     		pop	{r3, r4, r5, pc}
+  97              	.L6:
+  98              		.align	2
+  99              	.L5:
+ 100 006c 00000000 		.word	.LANCHOR0
+ 101 0070 00000000 		.word	.LANCHOR1
+ 102              		.cfi_endproc
+ 103              	.LFE110:
+ 104              		.size	ARCADIANLED__Fader, .-ARCADIANLED__Fader
+ 105              		.section	.text.ARCADIANLED__Glower,"ax",%progbits
+ 106              		.align	2
+ 107              		.thumb
+ 108              		.thumb_func
+ 109              		.type	ARCADIANLED__Glower, %function
+ 110              	ARCADIANLED__Glower:
+ 111              	.LFB111:
+ 102:source\asw/tsk_ArcadianLed.c **** 
+ 103:source\asw/tsk_ArcadianLed.c **** 
+ 104:source\asw/tsk_ArcadianLed.c **** static RC_t ARCADIANLED__Glower(void)
+ 105:source\asw/tsk_ArcadianLed.c **** {
+ 112              		.loc 1 105 0
+ 113              		.cfi_startproc
+ 114              		@ args = 0, pretend = 0, frame = 0
+ 115              		@ frame_needed = 0, uses_anonymous_args = 0
+ 116 0000 38B5     		push	{r3, r4, r5, lr}
+ 117              		.cfi_def_cfa_offset 16
+ 118              		.cfi_offset 3, -16
+ 119              		.cfi_offset 4, -12
+ 120              		.cfi_offset 5, -8
+ 121              		.cfi_offset 14, -4
+ 106:source\asw/tsk_ArcadianLed.c ****     static uint8_t Index = 0, TimeCount = 0;
+ 107:source\asw/tsk_ArcadianLed.c ****     
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cc08oxrp.s 			page 5
+
+
+ 108:source\asw/tsk_ArcadianLed.c ****     if (Index < (sizeof(RGB_glowtable) / sizeof(ARCADIANLED__Glower_t)))
+ 122              		.loc 1 108 0
+ 123 0002 1C4B     		ldr	r3, .L11
+ 124 0004 9B78     		ldrb	r3, [r3, #2]	@ zero_extendqisi2
+ 125 0006 082B     		cmp	r3, #8
+ 126 0008 2ED8     		bhi	.L8
+ 109:source\asw/tsk_ArcadianLed.c ****     {
+ 110:source\asw/tsk_ArcadianLed.c ****         PWM_RGB_SetRed  (RGB_glowtable[Index].rgb_R_pwm);
+ 127              		.loc 1 110 0
+ 128 000a 1B4D     		ldr	r5, .L11+4
+ 129 000c 03EB4303 		add	r3, r3, r3, lsl #1
+ 130 0010 5A00     		lsls	r2, r3, #1
+ 131 0012 2A44     		add	r2, r2, r5
+ 132 0014 92F82400 		ldrb	r0, [r2, #36]	@ zero_extendqisi2
+ 133 0018 FFF7FEFF 		bl	PWM_RGB_SetRed
+ 134              	.LVL3:
+ 111:source\asw/tsk_ArcadianLed.c ****         PWM_RGB_SetGreen(RGB_glowtable[Index].rgb_G_pwm);
+ 135              		.loc 1 111 0
+ 136 001c 154C     		ldr	r4, .L11
+ 137 001e A378     		ldrb	r3, [r4, #2]	@ zero_extendqisi2
+ 138 0020 03EB4303 		add	r3, r3, r3, lsl #1
+ 139 0024 5A00     		lsls	r2, r3, #1
+ 140 0026 2A44     		add	r2, r2, r5
+ 141 0028 92F82500 		ldrb	r0, [r2, #37]	@ zero_extendqisi2
+ 142 002c FFF7FEFF 		bl	PWM_RGB_SetGreen
+ 143              	.LVL4:
+ 112:source\asw/tsk_ArcadianLed.c ****         PWM_RGB_SetBlue (RGB_glowtable[Index].rgb_B_pwm);
+ 144              		.loc 1 112 0
+ 145 0030 A378     		ldrb	r3, [r4, #2]	@ zero_extendqisi2
+ 146 0032 03EB4303 		add	r3, r3, r3, lsl #1
+ 147 0036 5A00     		lsls	r2, r3, #1
+ 148 0038 2A44     		add	r2, r2, r5
+ 149 003a 92F82600 		ldrb	r0, [r2, #38]	@ zero_extendqisi2
+ 150 003e FFF7FEFF 		bl	PWM_RGB_SetBlue
+ 151              	.LVL5:
+ 113:source\asw/tsk_ArcadianLed.c ****         
+ 114:source\asw/tsk_ArcadianLed.c ****         // Has the time elapsed ?
+ 115:source\asw/tsk_ArcadianLed.c ****         if (RGB_glowtable[Index].TimeDuration <= (TimeCount++ * TSK_ARCADIANLED_CYCLIC_TIME))
+ 152              		.loc 1 115 0
+ 153 0042 A278     		ldrb	r2, [r4, #2]	@ zero_extendqisi2
+ 154 0044 02EB4201 		add	r1, r2, r2, lsl #1
+ 155 0048 4B00     		lsls	r3, r1, #1
+ 156 004a 1D44     		add	r5, r5, r3
+ 157 004c 288D     		ldrh	r0, [r5, #40]
+ 158 004e E178     		ldrb	r1, [r4, #3]	@ zero_extendqisi2
+ 159 0050 4B1C     		adds	r3, r1, #1
+ 160 0052 E370     		strb	r3, [r4, #3]
+ 161 0054 6423     		movs	r3, #100
+ 162 0056 03FB01F3 		mul	r3, r3, r1
+ 163 005a 9842     		cmp	r0, r3
+ 164 005c 08DC     		bgt	.L9
+ 116:source\asw/tsk_ArcadianLed.c ****         {
+ 117:source\asw/tsk_ArcadianLed.c ****             Index++;
+ 165              		.loc 1 117 0
+ 166 005e 0132     		adds	r2, r2, #1
+ 167 0060 A270     		strb	r2, [r4, #2]
+ 118:source\asw/tsk_ArcadianLed.c ****             TimeCount = 0;
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cc08oxrp.s 			page 6
+
+
+ 168              		.loc 1 118 0
+ 169 0062 0022     		movs	r2, #0
+ 170 0064 E270     		strb	r2, [r4, #3]
+ 171 0066 03E0     		b	.L9
+ 172              	.L8:
+ 119:source\asw/tsk_ArcadianLed.c ****         }
+ 120:source\asw/tsk_ArcadianLed.c ****     }
+ 121:source\asw/tsk_ArcadianLed.c ****     else
+ 122:source\asw/tsk_ArcadianLed.c ****     {
+ 123:source\asw/tsk_ArcadianLed.c ****         Index       = 0;
+ 173              		.loc 1 123 0
+ 174 0068 024B     		ldr	r3, .L11
+ 175 006a 0022     		movs	r2, #0
+ 176 006c 9A70     		strb	r2, [r3, #2]
+ 124:source\asw/tsk_ArcadianLed.c ****         TimeCount   = 0;
+ 177              		.loc 1 124 0
+ 178 006e DA70     		strb	r2, [r3, #3]
+ 179              	.L9:
+ 125:source\asw/tsk_ArcadianLed.c ****     }
+ 126:source\asw/tsk_ArcadianLed.c ****     
+ 127:source\asw/tsk_ArcadianLed.c ****     return RC_SUCCESS;
+ 128:source\asw/tsk_ArcadianLed.c **** }
+ 180              		.loc 1 128 0
+ 181 0070 0020     		movs	r0, #0
+ 182 0072 38BD     		pop	{r3, r4, r5, pc}
+ 183              	.L12:
+ 184              		.align	2
+ 185              	.L11:
+ 186 0074 00000000 		.word	.LANCHOR0
+ 187 0078 00000000 		.word	.LANCHOR1
+ 188              		.cfi_endproc
+ 189              	.LFE111:
+ 190              		.size	ARCADIANLED__Glower, .-ARCADIANLED__Glower
+ 191              		.section	.text.Functsk_ArcadianLed,"ax",%progbits
+ 192              		.align	2
+ 193              		.global	Functsk_ArcadianLed
+ 194              		.thumb
+ 195              		.thumb_func
+ 196              		.type	Functsk_ArcadianLed, %function
+ 197              	Functsk_ArcadianLed:
+ 198              	.LFB112:
+ 129:source\asw/tsk_ArcadianLed.c **** 
+ 130:source\asw/tsk_ArcadianLed.c **** 
+ 131:source\asw/tsk_ArcadianLed.c **** /**
+ 132:source\asw/tsk_ArcadianLed.c ****  * The Task declaration
+ 133:source\asw/tsk_ArcadianLed.c ****  * The tsk_ArcadianLed is a cyclic task which is activated every 100ms.
+ 134:source\asw/tsk_ArcadianLed.c ****  * The task is activated via an alarm.
+ 135:source\asw/tsk_ArcadianLed.c ****  */
+ 136:source\asw/tsk_ArcadianLed.c **** TASK(tsk_ArcadianLed)
+ 137:source\asw/tsk_ArcadianLed.c **** {
+ 199              		.loc 1 137 0
+ 200              		.cfi_startproc
+ 201              		@ args = 0, pretend = 0, frame = 0
+ 202              		@ frame_needed = 0, uses_anonymous_args = 0
+ 203 0000 08B5     		push	{r3, lr}
+ 204              		.cfi_def_cfa_offset 8
+ 205              		.cfi_offset 3, -8
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cc08oxrp.s 			page 7
+
+
+ 206              		.cfi_offset 14, -4
+ 138:source\asw/tsk_ArcadianLed.c ****     // call fader
+ 139:source\asw/tsk_ArcadianLed.c ****     ARCADIANLED__Fader();
+ 207              		.loc 1 139 0
+ 208 0002 FFF7FEFF 		bl	ARCADIANLED__Fader
+ 209              	.LVL6:
+ 140:source\asw/tsk_ArcadianLed.c ****     
+ 141:source\asw/tsk_ArcadianLed.c ****     // call glower
+ 142:source\asw/tsk_ArcadianLed.c ****     ARCADIANLED__Glower();
+ 210              		.loc 1 142 0
+ 211 0006 FFF7FEFF 		bl	ARCADIANLED__Glower
+ 212              	.LVL7:
+ 143:source\asw/tsk_ArcadianLed.c ****     
+ 144:source\asw/tsk_ArcadianLed.c ****     // Terminate the init task and let the schedular do its thing!
+ 145:source\asw/tsk_ArcadianLed.c ****     TerminateTask();
+ 213              		.loc 1 145 0
+ 214 000a FFF7FEFF 		bl	EE_oo_TerminateTask
+ 215              	.LVL8:
+ 216 000e 08BD     		pop	{r3, pc}
+ 217              		.cfi_endproc
+ 218              	.LFE112:
+ 219              		.size	Functsk_ArcadianLed, .-Functsk_ArcadianLed
+ 220              		.section	.rodata
+ 221              		.align	2
+ 222              		.set	.LANCHOR1,. + 0
+ 223              		.type	Led_fadertable, %object
+ 224              		.size	Led_fadertable, 36
+ 225              	Led_fadertable:
+ 226 0000 00       		.byte	0
+ 227 0001 00       		.byte	0
+ 228 0002 00       		.byte	0
+ 229 0003 00       		.space	1
+ 230 0004 F401     		.short	500
+ 231 0006 7F       		.byte	127
+ 232 0007 00       		.byte	0
+ 233 0008 00       		.byte	0
+ 234 0009 00       		.space	1
+ 235 000a F401     		.short	500
+ 236 000c FF       		.byte	-1
+ 237 000d 7F       		.byte	127
+ 238 000e 00       		.byte	0
+ 239 000f 00       		.space	1
+ 240 0010 F401     		.short	500
+ 241 0012 7F       		.byte	127
+ 242 0013 FF       		.byte	-1
+ 243 0014 7F       		.byte	127
+ 244 0015 00       		.space	1
+ 245 0016 F401     		.short	500
+ 246 0018 00       		.byte	0
+ 247 0019 7F       		.byte	127
+ 248 001a FF       		.byte	-1
+ 249 001b 00       		.space	1
+ 250 001c F401     		.short	500
+ 251 001e 00       		.byte	0
+ 252 001f 00       		.byte	0
+ 253 0020 7F       		.byte	127
+ 254 0021 00       		.space	1
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cc08oxrp.s 			page 8
+
+
+ 255 0022 F401     		.short	500
+ 256              		.type	RGB_glowtable, %object
+ 257              		.size	RGB_glowtable, 54
+ 258              	RGB_glowtable:
+ 259 0024 FF       		.byte	-1
+ 260 0025 00       		.byte	0
+ 261 0026 00       		.byte	0
+ 262 0027 00       		.space	1
+ 263 0028 F401     		.short	500
+ 264 002a 00       		.byte	0
+ 265 002b FF       		.byte	-1
+ 266 002c 00       		.byte	0
+ 267 002d 00       		.space	1
+ 268 002e F401     		.short	500
+ 269 0030 00       		.byte	0
+ 270 0031 00       		.byte	0
+ 271 0032 FF       		.byte	-1
+ 272 0033 00       		.space	1
+ 273 0034 F401     		.short	500
+ 274 0036 00       		.byte	0
+ 275 0037 00       		.byte	0
+ 276 0038 00       		.byte	0
+ 277 0039 00       		.space	1
+ 278 003a 6400     		.short	100
+ 279 003c FF       		.byte	-1
+ 280 003d FF       		.byte	-1
+ 281 003e FF       		.byte	-1
+ 282 003f 00       		.space	1
+ 283 0040 6400     		.short	100
+ 284 0042 00       		.byte	0
+ 285 0043 00       		.byte	0
+ 286 0044 00       		.byte	0
+ 287 0045 00       		.space	1
+ 288 0046 6400     		.short	100
+ 289 0048 FF       		.byte	-1
+ 290 0049 FF       		.byte	-1
+ 291 004a FF       		.byte	-1
+ 292 004b 00       		.space	1
+ 293 004c 6400     		.short	100
+ 294 004e 00       		.byte	0
+ 295 004f 00       		.byte	0
+ 296 0050 00       		.byte	0
+ 297 0051 00       		.space	1
+ 298 0052 6400     		.short	100
+ 299 0054 FF       		.byte	-1
+ 300 0055 FF       		.byte	-1
+ 301 0056 FF       		.byte	-1
+ 302 0057 00       		.space	1
+ 303 0058 6400     		.short	100
+ 304              		.bss
+ 305              		.set	.LANCHOR0,. + 0
+ 306              		.type	Index.6553, %object
+ 307              		.size	Index.6553, 1
+ 308              	Index.6553:
+ 309 0000 00       		.space	1
+ 310              		.type	TimeCount.6554, %object
+ 311              		.size	TimeCount.6554, 1
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cc08oxrp.s 			page 9
+
+
+ 312              	TimeCount.6554:
+ 313 0001 00       		.space	1
+ 314              		.type	Index.6558, %object
+ 315              		.size	Index.6558, 1
+ 316              	Index.6558:
+ 317 0002 00       		.space	1
+ 318              		.type	TimeCount.6559, %object
+ 319              		.size	TimeCount.6559, 1
+ 320              	TimeCount.6559:
+ 321 0003 00       		.space	1
+ 322              		.text
+ 323              	.Letext0:
+ 324              		.file 2 "d:\\installations\\cypress\\psoc creator\\4.2\\psoc creator\\import\\gnu\\arm\\5.4.1\\arm
+ 325              		.file 3 "d:\\installations\\cypress\\psoc creator\\4.2\\psoc creator\\import\\gnu\\arm\\5.4.1\\arm
+ 326              		.file 4 "Generated_Source\\PSoC5/ErikaOS_common_ee_types.inc"
+ 327              		.file 5 "Generated_Source\\PSoC5/ErikaOS_cortex_mx_ee_cpu.inc"
+ 328              		.file 6 ".\\source\\bsw/global.h"
+ 329              		.file 7 "source\\asw\\tsk_ArcadianLed.h"
+ 330              		.file 8 "Generated_Source\\PSoC5/ErikaOS_ee_oo_intfunc.inc"
+ 331              		.file 9 "Generated_Source\\PSoC5/ErikaOS_cortex_mx_ee_context.inc"
+ 332              		.file 10 "Generated_Source\\PSoC5/ErikaOS_common_ee_primitives.inc"
+ 333              		.file 11 "Generated_Source\\PSoC5/core_cm3.h"
+ 334              		.file 12 ".\\source\\bsw/pwm.h"
+ 335              		.file 13 "Generated_Source\\PSoC5/ErikaOS_ee_oo_kernel.inc"
+ 336              		.section	.debug_info,"",%progbits
+ 337              	.Ldebug_info0:
+ 338 0000 10040000 		.4byte	0x410
+ 339 0004 0400     		.2byte	0x4
+ 340 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 341 000a 04       		.byte	0x4
+ 342 000b 01       		.uleb128 0x1
+ 343 000c 64030000 		.4byte	.LASF78
+ 344 0010 0C       		.byte	0xc
+ 345 0011 F3040000 		.4byte	.LASF79
+ 346 0015 38000000 		.4byte	.LASF80
+ 347 0019 00000000 		.4byte	.Ldebug_ranges0+0
+ 348 001d 00000000 		.4byte	0
+ 349 0021 00000000 		.4byte	.Ldebug_line0
+ 350 0025 02       		.uleb128 0x2
+ 351 0026 01       		.byte	0x1
+ 352 0027 06       		.byte	0x6
+ 353 0028 9E020000 		.4byte	.LASF0
+ 354 002c 03       		.uleb128 0x3
+ 355 002d 36020000 		.4byte	.LASF3
+ 356 0031 02       		.byte	0x2
+ 357 0032 1D       		.byte	0x1d
+ 358 0033 37000000 		.4byte	0x37
+ 359 0037 02       		.uleb128 0x2
+ 360 0038 01       		.byte	0x1
+ 361 0039 08       		.byte	0x8
+ 362 003a 86020000 		.4byte	.LASF1
+ 363 003e 02       		.uleb128 0x2
+ 364 003f 02       		.byte	0x2
+ 365 0040 05       		.byte	0x5
+ 366 0041 90000000 		.4byte	.LASF2
+ 367 0045 03       		.uleb128 0x3
+ 368 0046 2B010000 		.4byte	.LASF4
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cc08oxrp.s 			page 10
+
+
+ 369 004a 02       		.byte	0x2
+ 370 004b 2B       		.byte	0x2b
+ 371 004c 50000000 		.4byte	0x50
+ 372 0050 02       		.uleb128 0x2
+ 373 0051 02       		.byte	0x2
+ 374 0052 07       		.byte	0x7
+ 375 0053 51030000 		.4byte	.LASF5
+ 376 0057 03       		.uleb128 0x3
+ 377 0058 D6040000 		.4byte	.LASF6
+ 378 005c 02       		.byte	0x2
+ 379 005d 3F       		.byte	0x3f
+ 380 005e 62000000 		.4byte	0x62
+ 381 0062 02       		.uleb128 0x2
+ 382 0063 04       		.byte	0x4
+ 383 0064 05       		.byte	0x5
+ 384 0065 0D020000 		.4byte	.LASF7
+ 385 0069 02       		.uleb128 0x2
+ 386 006a 04       		.byte	0x4
+ 387 006b 07       		.byte	0x7
+ 388 006c 7F040000 		.4byte	.LASF8
+ 389 0070 02       		.uleb128 0x2
+ 390 0071 08       		.byte	0x8
+ 391 0072 05       		.byte	0x5
+ 392 0073 C2010000 		.4byte	.LASF9
+ 393 0077 02       		.uleb128 0x2
+ 394 0078 08       		.byte	0x8
+ 395 0079 07       		.byte	0x7
+ 396 007a AA020000 		.4byte	.LASF10
+ 397 007e 04       		.uleb128 0x4
+ 398 007f 04       		.byte	0x4
+ 399 0080 05       		.byte	0x5
+ 400 0081 696E7400 		.ascii	"int\000"
+ 401 0085 02       		.uleb128 0x2
+ 402 0086 04       		.byte	0x4
+ 403 0087 07       		.byte	0x7
+ 404 0088 C1020000 		.4byte	.LASF11
+ 405 008c 03       		.uleb128 0x3
+ 406 008d 55010000 		.4byte	.LASF12
+ 407 0091 03       		.byte	0x3
+ 408 0092 18       		.byte	0x18
+ 409 0093 2C000000 		.4byte	0x2c
+ 410 0097 03       		.uleb128 0x3
+ 411 0098 DC020000 		.4byte	.LASF13
+ 412 009c 03       		.byte	0x3
+ 413 009d 24       		.byte	0x24
+ 414 009e 45000000 		.4byte	0x45
+ 415 00a2 03       		.uleb128 0x3
+ 416 00a3 19040000 		.4byte	.LASF14
+ 417 00a7 03       		.byte	0x3
+ 418 00a8 2C       		.byte	0x2c
+ 419 00a9 57000000 		.4byte	0x57
+ 420 00ad 02       		.uleb128 0x2
+ 421 00ae 04       		.byte	0x4
+ 422 00af 04       		.byte	0x4
+ 423 00b0 BC010000 		.4byte	.LASF15
+ 424 00b4 02       		.uleb128 0x2
+ 425 00b5 08       		.byte	0x8
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cc08oxrp.s 			page 11
+
+
+ 426 00b6 04       		.byte	0x4
+ 427 00b7 A0040000 		.4byte	.LASF16
+ 428 00bb 02       		.uleb128 0x2
+ 429 00bc 01       		.byte	0x1
+ 430 00bd 08       		.byte	0x8
+ 431 00be F2030000 		.4byte	.LASF17
+ 432 00c2 02       		.uleb128 0x2
+ 433 00c3 08       		.byte	0x8
+ 434 00c4 04       		.byte	0x4
+ 435 00c5 6D020000 		.4byte	.LASF18
+ 436 00c9 03       		.uleb128 0x3
+ 437 00ca 48030000 		.4byte	.LASF19
+ 438 00ce 04       		.byte	0x4
+ 439 00cf 53       		.byte	0x53
+ 440 00d0 7E000000 		.4byte	0x7e
+ 441 00d4 03       		.uleb128 0x3
+ 442 00d5 94020000 		.4byte	.LASF20
+ 443 00d9 04       		.byte	0x4
+ 444 00da 54       		.byte	0x54
+ 445 00db 85000000 		.4byte	0x85
+ 446 00df 03       		.uleb128 0x3
+ 447 00e0 B9040000 		.4byte	.LASF21
+ 448 00e4 05       		.byte	0x5
+ 449 00e5 4D       		.byte	0x4d
+ 450 00e6 D4000000 		.4byte	0xd4
+ 451 00ea 03       		.uleb128 0x3
+ 452 00eb F0000000 		.4byte	.LASF22
+ 453 00ef 05       		.byte	0x5
+ 454 00f0 4F       		.byte	0x4f
+ 455 00f1 D4000000 		.4byte	0xd4
+ 456 00f5 03       		.uleb128 0x3
+ 457 00f6 36010000 		.4byte	.LASF23
+ 458 00fa 05       		.byte	0x5
+ 459 00fb 78       		.byte	0x78
+ 460 00fc C9000000 		.4byte	0xc9
+ 461 0100 02       		.uleb128 0x2
+ 462 0101 04       		.byte	0x4
+ 463 0102 07       		.byte	0x7
+ 464 0103 CF000000 		.4byte	.LASF24
+ 465 0107 05       		.uleb128 0x5
+ 466 0108 65524300 		.ascii	"eRC\000"
+ 467 010c 01       		.byte	0x1
+ 468 010d 25000000 		.4byte	0x25
+ 469 0111 06       		.byte	0x6
+ 470 0112 AC       		.byte	0xac
+ 471 0113 AE010000 		.4byte	0x1ae
+ 472 0117 06       		.uleb128 0x6
+ 473 0118 19000000 		.4byte	.LASF25
+ 474 011c 00       		.byte	0
+ 475 011d 07       		.uleb128 0x7
+ 476 011e 39050000 		.4byte	.LASF26
+ 477 0122 7F       		.sleb128 -1
+ 478 0123 07       		.uleb128 0x7
+ 479 0124 24030000 		.4byte	.LASF27
+ 480 0128 7E       		.sleb128 -2
+ 481 0129 07       		.uleb128 0x7
+ 482 012a E2000000 		.4byte	.LASF28
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cc08oxrp.s 			page 12
+
+
+ 483 012e 7D       		.sleb128 -3
+ 484 012f 07       		.uleb128 0x7
+ 485 0130 42050000 		.4byte	.LASF29
+ 486 0134 7C       		.sleb128 -4
+ 487 0135 07       		.uleb128 0x7
+ 488 0136 AD010000 		.4byte	.LASF30
+ 489 013a 7B       		.sleb128 -5
+ 490 013b 07       		.uleb128 0x7
+ 491 013c 9A000000 		.4byte	.LASF31
+ 492 0140 7A       		.sleb128 -6
+ 493 0141 07       		.uleb128 0x7
+ 494 0142 16020000 		.4byte	.LASF32
+ 495 0146 79       		.sleb128 -7
+ 496 0147 07       		.uleb128 0x7
+ 497 0148 04040000 		.4byte	.LASF33
+ 498 014c 78       		.sleb128 -8
+ 499 014d 07       		.uleb128 0x7
+ 500 014e 32030000 		.4byte	.LASF34
+ 501 0152 77       		.sleb128 -9
+ 502 0153 07       		.uleb128 0x7
+ 503 0154 28020000 		.4byte	.LASF35
+ 504 0158 76       		.sleb128 -10
+ 505 0159 07       		.uleb128 0x7
+ 506 015a 85050000 		.4byte	.LASF36
+ 507 015e 75       		.sleb128 -11
+ 508 015f 07       		.uleb128 0x7
+ 509 0160 CE020000 		.4byte	.LASF37
+ 510 0164 74       		.sleb128 -12
+ 511 0165 07       		.uleb128 0x7
+ 512 0166 A7040000 		.4byte	.LASF38
+ 513 016a 73       		.sleb128 -13
+ 514 016b 07       		.uleb128 0x7
+ 515 016c 06000000 		.4byte	.LASF39
+ 516 0170 72       		.sleb128 -14
+ 517 0171 07       		.uleb128 0x7
+ 518 0172 24000000 		.4byte	.LASF40
+ 519 0176 71       		.sleb128 -15
+ 520 0177 07       		.uleb128 0x7
+ 521 0178 40020000 		.4byte	.LASF41
+ 522 017c 70       		.sleb128 -16
+ 523 017d 07       		.uleb128 0x7
+ 524 017e F8000000 		.4byte	.LASF42
+ 525 0182 6F       		.sleb128 -17
+ 526 0183 07       		.uleb128 0x7
+ 527 0184 AB000000 		.4byte	.LASF43
+ 528 0188 6E       		.sleb128 -18
+ 529 0189 07       		.uleb128 0x7
+ 530 018a E9010000 		.4byte	.LASF44
+ 531 018e 6D       		.sleb128 -19
+ 532 018f 07       		.uleb128 0x7
+ 533 0190 31040000 		.4byte	.LASF45
+ 534 0194 6C       		.sleb128 -20
+ 535 0195 07       		.uleb128 0x7
+ 536 0196 51020000 		.4byte	.LASF46
+ 537 019a 6B       		.sleb128 -21
+ 538 019b 07       		.uleb128 0x7
+ 539 019c 10050000 		.4byte	.LASF47
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cc08oxrp.s 			page 13
+
+
+ 540 01a0 6A       		.sleb128 -22
+ 541 01a1 07       		.uleb128 0x7
+ 542 01a2 5D010000 		.4byte	.LASF48
+ 543 01a6 69       		.sleb128 -23
+ 544 01a7 07       		.uleb128 0x7
+ 545 01a8 FC010000 		.4byte	.LASF49
+ 546 01ac 68       		.sleb128 -24
+ 547 01ad 00       		.byte	0
+ 548 01ae 03       		.uleb128 0x3
+ 549 01af 6A050000 		.4byte	.LASF50
+ 550 01b3 06       		.byte	0x6
+ 551 01b4 C8       		.byte	0xc8
+ 552 01b5 07010000 		.4byte	0x107
+ 553 01b9 08       		.uleb128 0x8
+ 554 01ba 6F050000 		.4byte	.LASF56
+ 555 01be 06       		.byte	0x6
+ 556 01bf 07       		.byte	0x7
+ 557 01c0 5C       		.byte	0x5c
+ 558 01c1 F6010000 		.4byte	0x1f6
+ 559 01c5 09       		.uleb128 0x9
+ 560 01c6 63020000 		.4byte	.LASF51
+ 561 01ca 07       		.byte	0x7
+ 562 01cb 5E       		.byte	0x5e
+ 563 01cc 8C000000 		.4byte	0x8c
+ 564 01d0 00       		.byte	0
+ 565 01d1 09       		.uleb128 0x9
+ 566 01d2 22050000 		.4byte	.LASF52
+ 567 01d6 07       		.byte	0x7
+ 568 01d7 5F       		.byte	0x5f
+ 569 01d8 8C000000 		.4byte	0x8c
+ 570 01dc 01       		.byte	0x1
+ 571 01dd 09       		.uleb128 0x9
+ 572 01de D8000000 		.4byte	.LASF53
+ 573 01e2 07       		.byte	0x7
+ 574 01e3 60       		.byte	0x60
+ 575 01e4 8C000000 		.4byte	0x8c
+ 576 01e8 02       		.byte	0x2
+ 577 01e9 09       		.uleb128 0x9
+ 578 01ea 79020000 		.4byte	.LASF54
+ 579 01ee 07       		.byte	0x7
+ 580 01ef 61       		.byte	0x61
+ 581 01f0 97000000 		.4byte	0x97
+ 582 01f4 04       		.byte	0x4
+ 583 01f5 00       		.byte	0
+ 584 01f6 03       		.uleb128 0x3
+ 585 01f7 E5020000 		.4byte	.LASF55
+ 586 01fb 07       		.byte	0x7
+ 587 01fc 64       		.byte	0x64
+ 588 01fd B9010000 		.4byte	0x1b9
+ 589 0201 08       		.uleb128 0x8
+ 590 0202 0F030000 		.4byte	.LASF57
+ 591 0206 06       		.byte	0x6
+ 592 0207 07       		.byte	0x7
+ 593 0208 66       		.byte	0x66
+ 594 0209 3E020000 		.4byte	0x23e
+ 595 020d 09       		.uleb128 0x9
+ 596 020e 63020000 		.4byte	.LASF51
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cc08oxrp.s 			page 14
+
+
+ 597 0212 07       		.byte	0x7
+ 598 0213 68       		.byte	0x68
+ 599 0214 8C000000 		.4byte	0x8c
+ 600 0218 00       		.byte	0
+ 601 0219 09       		.uleb128 0x9
+ 602 021a D8000000 		.4byte	.LASF53
+ 603 021e 07       		.byte	0x7
+ 604 021f 69       		.byte	0x69
+ 605 0220 8C000000 		.4byte	0x8c
+ 606 0224 01       		.byte	0x1
+ 607 0225 09       		.uleb128 0x9
+ 608 0226 22050000 		.4byte	.LASF52
+ 609 022a 07       		.byte	0x7
+ 610 022b 6A       		.byte	0x6a
+ 611 022c 8C000000 		.4byte	0x8c
+ 612 0230 02       		.byte	0x2
+ 613 0231 09       		.uleb128 0x9
+ 614 0232 79020000 		.4byte	.LASF54
+ 615 0236 07       		.byte	0x7
+ 616 0237 6B       		.byte	0x6b
+ 617 0238 97000000 		.4byte	0x97
+ 618 023c 04       		.byte	0x4
+ 619 023d 00       		.byte	0
+ 620 023e 03       		.uleb128 0x3
+ 621 023f C1040000 		.4byte	.LASF58
+ 622 0243 07       		.byte	0x7
+ 623 0244 6D       		.byte	0x6d
+ 624 0245 01020000 		.4byte	0x201
+ 625 0249 0A       		.uleb128 0xa
+ 626 024a E0040000 		.4byte	.LASF61
+ 627 024e 01       		.byte	0x1
+ 628 024f 4D       		.byte	0x4d
+ 629 0250 AE010000 		.4byte	0x1ae
+ 630 0254 00000000 		.4byte	.LFB110
+ 631 0258 74000000 		.4byte	.LFE110-.LFB110
+ 632 025c 01       		.uleb128 0x1
+ 633 025d 9C       		.byte	0x9c
+ 634 025e A0020000 		.4byte	0x2a0
+ 635 0262 0B       		.uleb128 0xb
+ 636 0263 00000000 		.4byte	.LASF59
+ 637 0267 01       		.byte	0x1
+ 638 0268 4F       		.byte	0x4f
+ 639 0269 8C000000 		.4byte	0x8c
+ 640 026d 05       		.uleb128 0x5
+ 641 026e 03       		.byte	0x3
+ 642 026f 00000000 		.4byte	Index.6553
+ 643 0273 0B       		.uleb128 0xb
+ 644 0274 3D010000 		.4byte	.LASF60
+ 645 0278 01       		.byte	0x1
+ 646 0279 4F       		.byte	0x4f
+ 647 027a 8C000000 		.4byte	0x8c
+ 648 027e 05       		.uleb128 0x5
+ 649 027f 03       		.byte	0x3
+ 650 0280 01000000 		.4byte	TimeCount.6554
+ 651 0284 0C       		.uleb128 0xc
+ 652 0285 18000000 		.4byte	.LVL0
+ 653 0289 C6030000 		.4byte	0x3c6
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cc08oxrp.s 			page 15
+
+
+ 654 028d 0C       		.uleb128 0xc
+ 655 028e 2A000000 		.4byte	.LVL1
+ 656 0292 D1030000 		.4byte	0x3d1
+ 657 0296 0C       		.uleb128 0xc
+ 658 0297 3A000000 		.4byte	.LVL2
+ 659 029b DC030000 		.4byte	0x3dc
+ 660 029f 00       		.byte	0
+ 661 02a0 0A       		.uleb128 0xa
+ 662 02a1 44040000 		.4byte	.LASF62
+ 663 02a5 01       		.byte	0x1
+ 664 02a6 68       		.byte	0x68
+ 665 02a7 AE010000 		.4byte	0x1ae
+ 666 02ab 00000000 		.4byte	.LFB111
+ 667 02af 7C000000 		.4byte	.LFE111-.LFB111
+ 668 02b3 01       		.uleb128 0x1
+ 669 02b4 9C       		.byte	0x9c
+ 670 02b5 F7020000 		.4byte	0x2f7
+ 671 02b9 0B       		.uleb128 0xb
+ 672 02ba 00000000 		.4byte	.LASF59
+ 673 02be 01       		.byte	0x1
+ 674 02bf 6A       		.byte	0x6a
+ 675 02c0 8C000000 		.4byte	0x8c
+ 676 02c4 05       		.uleb128 0x5
+ 677 02c5 03       		.byte	0x3
+ 678 02c6 02000000 		.4byte	Index.6558
+ 679 02ca 0B       		.uleb128 0xb
+ 680 02cb 3D010000 		.4byte	.LASF60
+ 681 02cf 01       		.byte	0x1
+ 682 02d0 6A       		.byte	0x6a
+ 683 02d1 8C000000 		.4byte	0x8c
+ 684 02d5 05       		.uleb128 0x5
+ 685 02d6 03       		.byte	0x3
+ 686 02d7 03000000 		.4byte	TimeCount.6559
+ 687 02db 0C       		.uleb128 0xc
+ 688 02dc 1C000000 		.4byte	.LVL3
+ 689 02e0 E7030000 		.4byte	0x3e7
+ 690 02e4 0C       		.uleb128 0xc
+ 691 02e5 30000000 		.4byte	.LVL4
+ 692 02e9 F2030000 		.4byte	0x3f2
+ 693 02ed 0C       		.uleb128 0xc
+ 694 02ee 42000000 		.4byte	.LVL5
+ 695 02f2 FD030000 		.4byte	0x3fd
+ 696 02f6 00       		.byte	0
+ 697 02f7 0D       		.uleb128 0xd
+ 698 02f8 FB020000 		.4byte	.LASF81
+ 699 02fc 01       		.byte	0x1
+ 700 02fd 88       		.byte	0x88
+ 701 02fe 00000000 		.4byte	.LFB112
+ 702 0302 10000000 		.4byte	.LFE112-.LFB112
+ 703 0306 01       		.uleb128 0x1
+ 704 0307 9C       		.byte	0x9c
+ 705 0308 28030000 		.4byte	0x328
+ 706 030c 0C       		.uleb128 0xc
+ 707 030d 06000000 		.4byte	.LVL6
+ 708 0311 49020000 		.4byte	0x249
+ 709 0315 0C       		.uleb128 0xc
+ 710 0316 0A000000 		.4byte	.LVL7
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cc08oxrp.s 			page 16
+
+
+ 711 031a A0020000 		.4byte	0x2a0
+ 712 031e 0C       		.uleb128 0xc
+ 713 031f 0E000000 		.4byte	.LVL8
+ 714 0323 08040000 		.4byte	0x408
+ 715 0327 00       		.byte	0
+ 716 0328 0E       		.uleb128 0xe
+ 717 0329 38030000 		.4byte	0x338
+ 718 032d 38030000 		.4byte	0x338
+ 719 0331 0F       		.uleb128 0xf
+ 720 0332 00010000 		.4byte	0x100
+ 721 0336 05       		.byte	0x5
+ 722 0337 00       		.byte	0
+ 723 0338 10       		.uleb128 0x10
+ 724 0339 3E020000 		.4byte	0x23e
+ 725 033d 0B       		.uleb128 0xb
+ 726 033e 91040000 		.4byte	.LASF63
+ 727 0342 01       		.byte	0x1
+ 728 0343 2B       		.byte	0x2b
+ 729 0344 4E030000 		.4byte	0x34e
+ 730 0348 05       		.uleb128 0x5
+ 731 0349 03       		.byte	0x3
+ 732 034a 00000000 		.4byte	Led_fadertable
+ 733 034e 10       		.uleb128 0x10
+ 734 034f 28030000 		.4byte	0x328
+ 735 0353 0E       		.uleb128 0xe
+ 736 0354 63030000 		.4byte	0x363
+ 737 0358 63030000 		.4byte	0x363
+ 738 035c 0F       		.uleb128 0xf
+ 739 035d 00010000 		.4byte	0x100
+ 740 0361 08       		.byte	0x8
+ 741 0362 00       		.byte	0
+ 742 0363 10       		.uleb128 0x10
+ 743 0364 F6010000 		.4byte	0x1f6
+ 744 0368 0B       		.uleb128 0xb
+ 745 0369 1D010000 		.4byte	.LASF64
+ 746 036d 01       		.byte	0x1
+ 747 036e 37       		.byte	0x37
+ 748 036f 79030000 		.4byte	0x379
+ 749 0373 05       		.uleb128 0x5
+ 750 0374 03       		.byte	0x3
+ 751 0375 24000000 		.4byte	RGB_glowtable
+ 752 0379 10       		.uleb128 0x10
+ 753 037a 53030000 		.4byte	0x353
+ 754 037e 11       		.uleb128 0x11
+ 755 037f 52050000 		.4byte	.LASF65
+ 756 0383 08       		.byte	0x8
+ 757 0384 40       		.byte	0x40
+ 758 0385 DF000000 		.4byte	0xdf
+ 759 0389 11       		.uleb128 0x11
+ 760 038a D0010000 		.4byte	.LASF66
+ 761 038e 08       		.byte	0x8
+ 762 038f 47       		.byte	0x47
+ 763 0390 EA000000 		.4byte	0xea
+ 764 0394 11       		.uleb128 0x11
+ 765 0395 6C040000 		.4byte	.LASF67
+ 766 0399 08       		.byte	0x8
+ 767 039a 4A       		.byte	0x4a
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cc08oxrp.s 			page 17
+
+
+ 768 039b DF000000 		.4byte	0xdf
+ 769 039f 11       		.uleb128 0x11
+ 770 03a0 94010000 		.4byte	.LASF68
+ 771 03a4 09       		.byte	0x9
+ 772 03a5 48       		.byte	0x48
+ 773 03a6 F5000000 		.4byte	0xf5
+ 774 03aa 11       		.uleb128 0x11
+ 775 03ab 74010000 		.4byte	.LASF69
+ 776 03af 0A       		.byte	0xa
+ 777 03b0 44       		.byte	0x44
+ 778 03b1 DF000000 		.4byte	0xdf
+ 779 03b5 12       		.uleb128 0x12
+ 780 03b6 2C050000 		.4byte	.LASF70
+ 781 03ba 0B       		.byte	0xb
+ 782 03bb 1207     		.2byte	0x712
+ 783 03bd C1030000 		.4byte	0x3c1
+ 784 03c1 13       		.uleb128 0x13
+ 785 03c2 A2000000 		.4byte	0xa2
+ 786 03c6 14       		.uleb128 0x14
+ 787 03c7 89010000 		.4byte	.LASF71
+ 788 03cb 89010000 		.4byte	.LASF71
+ 789 03cf 0C       		.byte	0xc
+ 790 03d0 7E       		.byte	0x7e
+ 791 03d1 14       		.uleb128 0x14
+ 792 03d2 47010000 		.4byte	.LASF72
+ 793 03d6 47010000 		.4byte	.LASF72
+ 794 03da 0C       		.byte	0xc
+ 795 03db 82       		.byte	0x82
+ 796 03dc 14       		.uleb128 0x14
+ 797 03dd F7030000 		.4byte	.LASF73
+ 798 03e1 F7030000 		.4byte	.LASF73
+ 799 03e5 0C       		.byte	0xc
+ 800 03e6 80       		.byte	0x80
+ 801 03e7 14       		.uleb128 0x14
+ 802 03e8 C0000000 		.4byte	.LASF74
+ 803 03ec C0000000 		.4byte	.LASF74
+ 804 03f0 0C       		.byte	0xc
+ 805 03f1 78       		.byte	0x78
+ 806 03f2 14       		.uleb128 0x14
+ 807 03f3 0C010000 		.4byte	.LASF75
+ 808 03f7 0C010000 		.4byte	.LASF75
+ 809 03fb 0C       		.byte	0xc
+ 810 03fc 7A       		.byte	0x7a
+ 811 03fd 14       		.uleb128 0x14
+ 812 03fe 21040000 		.4byte	.LASF76
+ 813 0402 21040000 		.4byte	.LASF76
+ 814 0406 0C       		.byte	0xc
+ 815 0407 7C       		.byte	0x7c
+ 816 0408 14       		.uleb128 0x14
+ 817 0409 58040000 		.4byte	.LASF77
+ 818 040d 58040000 		.4byte	.LASF77
+ 819 0411 0D       		.byte	0xd
+ 820 0412 9F       		.byte	0x9f
+ 821 0413 00       		.byte	0
+ 822              		.section	.debug_abbrev,"",%progbits
+ 823              	.Ldebug_abbrev0:
+ 824 0000 01       		.uleb128 0x1
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cc08oxrp.s 			page 18
+
+
+ 825 0001 11       		.uleb128 0x11
+ 826 0002 01       		.byte	0x1
+ 827 0003 25       		.uleb128 0x25
+ 828 0004 0E       		.uleb128 0xe
+ 829 0005 13       		.uleb128 0x13
+ 830 0006 0B       		.uleb128 0xb
+ 831 0007 03       		.uleb128 0x3
+ 832 0008 0E       		.uleb128 0xe
+ 833 0009 1B       		.uleb128 0x1b
+ 834 000a 0E       		.uleb128 0xe
+ 835 000b 55       		.uleb128 0x55
+ 836 000c 17       		.uleb128 0x17
+ 837 000d 11       		.uleb128 0x11
+ 838 000e 01       		.uleb128 0x1
+ 839 000f 10       		.uleb128 0x10
+ 840 0010 17       		.uleb128 0x17
+ 841 0011 00       		.byte	0
+ 842 0012 00       		.byte	0
+ 843 0013 02       		.uleb128 0x2
+ 844 0014 24       		.uleb128 0x24
+ 845 0015 00       		.byte	0
+ 846 0016 0B       		.uleb128 0xb
+ 847 0017 0B       		.uleb128 0xb
+ 848 0018 3E       		.uleb128 0x3e
+ 849 0019 0B       		.uleb128 0xb
+ 850 001a 03       		.uleb128 0x3
+ 851 001b 0E       		.uleb128 0xe
+ 852 001c 00       		.byte	0
+ 853 001d 00       		.byte	0
+ 854 001e 03       		.uleb128 0x3
+ 855 001f 16       		.uleb128 0x16
+ 856 0020 00       		.byte	0
+ 857 0021 03       		.uleb128 0x3
+ 858 0022 0E       		.uleb128 0xe
+ 859 0023 3A       		.uleb128 0x3a
+ 860 0024 0B       		.uleb128 0xb
+ 861 0025 3B       		.uleb128 0x3b
+ 862 0026 0B       		.uleb128 0xb
+ 863 0027 49       		.uleb128 0x49
+ 864 0028 13       		.uleb128 0x13
+ 865 0029 00       		.byte	0
+ 866 002a 00       		.byte	0
+ 867 002b 04       		.uleb128 0x4
+ 868 002c 24       		.uleb128 0x24
+ 869 002d 00       		.byte	0
+ 870 002e 0B       		.uleb128 0xb
+ 871 002f 0B       		.uleb128 0xb
+ 872 0030 3E       		.uleb128 0x3e
+ 873 0031 0B       		.uleb128 0xb
+ 874 0032 03       		.uleb128 0x3
+ 875 0033 08       		.uleb128 0x8
+ 876 0034 00       		.byte	0
+ 877 0035 00       		.byte	0
+ 878 0036 05       		.uleb128 0x5
+ 879 0037 04       		.uleb128 0x4
+ 880 0038 01       		.byte	0x1
+ 881 0039 03       		.uleb128 0x3
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cc08oxrp.s 			page 19
+
+
+ 882 003a 08       		.uleb128 0x8
+ 883 003b 0B       		.uleb128 0xb
+ 884 003c 0B       		.uleb128 0xb
+ 885 003d 49       		.uleb128 0x49
+ 886 003e 13       		.uleb128 0x13
+ 887 003f 3A       		.uleb128 0x3a
+ 888 0040 0B       		.uleb128 0xb
+ 889 0041 3B       		.uleb128 0x3b
+ 890 0042 0B       		.uleb128 0xb
+ 891 0043 01       		.uleb128 0x1
+ 892 0044 13       		.uleb128 0x13
+ 893 0045 00       		.byte	0
+ 894 0046 00       		.byte	0
+ 895 0047 06       		.uleb128 0x6
+ 896 0048 28       		.uleb128 0x28
+ 897 0049 00       		.byte	0
+ 898 004a 03       		.uleb128 0x3
+ 899 004b 0E       		.uleb128 0xe
+ 900 004c 1C       		.uleb128 0x1c
+ 901 004d 0B       		.uleb128 0xb
+ 902 004e 00       		.byte	0
+ 903 004f 00       		.byte	0
+ 904 0050 07       		.uleb128 0x7
+ 905 0051 28       		.uleb128 0x28
+ 906 0052 00       		.byte	0
+ 907 0053 03       		.uleb128 0x3
+ 908 0054 0E       		.uleb128 0xe
+ 909 0055 1C       		.uleb128 0x1c
+ 910 0056 0D       		.uleb128 0xd
+ 911 0057 00       		.byte	0
+ 912 0058 00       		.byte	0
+ 913 0059 08       		.uleb128 0x8
+ 914 005a 13       		.uleb128 0x13
+ 915 005b 01       		.byte	0x1
+ 916 005c 03       		.uleb128 0x3
+ 917 005d 0E       		.uleb128 0xe
+ 918 005e 0B       		.uleb128 0xb
+ 919 005f 0B       		.uleb128 0xb
+ 920 0060 3A       		.uleb128 0x3a
+ 921 0061 0B       		.uleb128 0xb
+ 922 0062 3B       		.uleb128 0x3b
+ 923 0063 0B       		.uleb128 0xb
+ 924 0064 01       		.uleb128 0x1
+ 925 0065 13       		.uleb128 0x13
+ 926 0066 00       		.byte	0
+ 927 0067 00       		.byte	0
+ 928 0068 09       		.uleb128 0x9
+ 929 0069 0D       		.uleb128 0xd
+ 930 006a 00       		.byte	0
+ 931 006b 03       		.uleb128 0x3
+ 932 006c 0E       		.uleb128 0xe
+ 933 006d 3A       		.uleb128 0x3a
+ 934 006e 0B       		.uleb128 0xb
+ 935 006f 3B       		.uleb128 0x3b
+ 936 0070 0B       		.uleb128 0xb
+ 937 0071 49       		.uleb128 0x49
+ 938 0072 13       		.uleb128 0x13
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cc08oxrp.s 			page 20
+
+
+ 939 0073 38       		.uleb128 0x38
+ 940 0074 0B       		.uleb128 0xb
+ 941 0075 00       		.byte	0
+ 942 0076 00       		.byte	0
+ 943 0077 0A       		.uleb128 0xa
+ 944 0078 2E       		.uleb128 0x2e
+ 945 0079 01       		.byte	0x1
+ 946 007a 03       		.uleb128 0x3
+ 947 007b 0E       		.uleb128 0xe
+ 948 007c 3A       		.uleb128 0x3a
+ 949 007d 0B       		.uleb128 0xb
+ 950 007e 3B       		.uleb128 0x3b
+ 951 007f 0B       		.uleb128 0xb
+ 952 0080 27       		.uleb128 0x27
+ 953 0081 19       		.uleb128 0x19
+ 954 0082 49       		.uleb128 0x49
+ 955 0083 13       		.uleb128 0x13
+ 956 0084 11       		.uleb128 0x11
+ 957 0085 01       		.uleb128 0x1
+ 958 0086 12       		.uleb128 0x12
+ 959 0087 06       		.uleb128 0x6
+ 960 0088 40       		.uleb128 0x40
+ 961 0089 18       		.uleb128 0x18
+ 962 008a 9742     		.uleb128 0x2117
+ 963 008c 19       		.uleb128 0x19
+ 964 008d 01       		.uleb128 0x1
+ 965 008e 13       		.uleb128 0x13
+ 966 008f 00       		.byte	0
+ 967 0090 00       		.byte	0
+ 968 0091 0B       		.uleb128 0xb
+ 969 0092 34       		.uleb128 0x34
+ 970 0093 00       		.byte	0
+ 971 0094 03       		.uleb128 0x3
+ 972 0095 0E       		.uleb128 0xe
+ 973 0096 3A       		.uleb128 0x3a
+ 974 0097 0B       		.uleb128 0xb
+ 975 0098 3B       		.uleb128 0x3b
+ 976 0099 0B       		.uleb128 0xb
+ 977 009a 49       		.uleb128 0x49
+ 978 009b 13       		.uleb128 0x13
+ 979 009c 02       		.uleb128 0x2
+ 980 009d 18       		.uleb128 0x18
+ 981 009e 00       		.byte	0
+ 982 009f 00       		.byte	0
+ 983 00a0 0C       		.uleb128 0xc
+ 984 00a1 898201   		.uleb128 0x4109
+ 985 00a4 00       		.byte	0
+ 986 00a5 11       		.uleb128 0x11
+ 987 00a6 01       		.uleb128 0x1
+ 988 00a7 31       		.uleb128 0x31
+ 989 00a8 13       		.uleb128 0x13
+ 990 00a9 00       		.byte	0
+ 991 00aa 00       		.byte	0
+ 992 00ab 0D       		.uleb128 0xd
+ 993 00ac 2E       		.uleb128 0x2e
+ 994 00ad 01       		.byte	0x1
+ 995 00ae 3F       		.uleb128 0x3f
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cc08oxrp.s 			page 21
+
+
+ 996 00af 19       		.uleb128 0x19
+ 997 00b0 03       		.uleb128 0x3
+ 998 00b1 0E       		.uleb128 0xe
+ 999 00b2 3A       		.uleb128 0x3a
+ 1000 00b3 0B       		.uleb128 0xb
+ 1001 00b4 3B       		.uleb128 0x3b
+ 1002 00b5 0B       		.uleb128 0xb
+ 1003 00b6 27       		.uleb128 0x27
+ 1004 00b7 19       		.uleb128 0x19
+ 1005 00b8 11       		.uleb128 0x11
+ 1006 00b9 01       		.uleb128 0x1
+ 1007 00ba 12       		.uleb128 0x12
+ 1008 00bb 06       		.uleb128 0x6
+ 1009 00bc 40       		.uleb128 0x40
+ 1010 00bd 18       		.uleb128 0x18
+ 1011 00be 9742     		.uleb128 0x2117
+ 1012 00c0 19       		.uleb128 0x19
+ 1013 00c1 01       		.uleb128 0x1
+ 1014 00c2 13       		.uleb128 0x13
+ 1015 00c3 00       		.byte	0
+ 1016 00c4 00       		.byte	0
+ 1017 00c5 0E       		.uleb128 0xe
+ 1018 00c6 01       		.uleb128 0x1
+ 1019 00c7 01       		.byte	0x1
+ 1020 00c8 49       		.uleb128 0x49
+ 1021 00c9 13       		.uleb128 0x13
+ 1022 00ca 01       		.uleb128 0x1
+ 1023 00cb 13       		.uleb128 0x13
+ 1024 00cc 00       		.byte	0
+ 1025 00cd 00       		.byte	0
+ 1026 00ce 0F       		.uleb128 0xf
+ 1027 00cf 21       		.uleb128 0x21
+ 1028 00d0 00       		.byte	0
+ 1029 00d1 49       		.uleb128 0x49
+ 1030 00d2 13       		.uleb128 0x13
+ 1031 00d3 2F       		.uleb128 0x2f
+ 1032 00d4 0B       		.uleb128 0xb
+ 1033 00d5 00       		.byte	0
+ 1034 00d6 00       		.byte	0
+ 1035 00d7 10       		.uleb128 0x10
+ 1036 00d8 26       		.uleb128 0x26
+ 1037 00d9 00       		.byte	0
+ 1038 00da 49       		.uleb128 0x49
+ 1039 00db 13       		.uleb128 0x13
+ 1040 00dc 00       		.byte	0
+ 1041 00dd 00       		.byte	0
+ 1042 00de 11       		.uleb128 0x11
+ 1043 00df 34       		.uleb128 0x34
+ 1044 00e0 00       		.byte	0
+ 1045 00e1 03       		.uleb128 0x3
+ 1046 00e2 0E       		.uleb128 0xe
+ 1047 00e3 3A       		.uleb128 0x3a
+ 1048 00e4 0B       		.uleb128 0xb
+ 1049 00e5 3B       		.uleb128 0x3b
+ 1050 00e6 0B       		.uleb128 0xb
+ 1051 00e7 49       		.uleb128 0x49
+ 1052 00e8 13       		.uleb128 0x13
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cc08oxrp.s 			page 22
+
+
+ 1053 00e9 3F       		.uleb128 0x3f
+ 1054 00ea 19       		.uleb128 0x19
+ 1055 00eb 3C       		.uleb128 0x3c
+ 1056 00ec 19       		.uleb128 0x19
+ 1057 00ed 00       		.byte	0
+ 1058 00ee 00       		.byte	0
+ 1059 00ef 12       		.uleb128 0x12
+ 1060 00f0 34       		.uleb128 0x34
+ 1061 00f1 00       		.byte	0
+ 1062 00f2 03       		.uleb128 0x3
+ 1063 00f3 0E       		.uleb128 0xe
+ 1064 00f4 3A       		.uleb128 0x3a
+ 1065 00f5 0B       		.uleb128 0xb
+ 1066 00f6 3B       		.uleb128 0x3b
+ 1067 00f7 05       		.uleb128 0x5
+ 1068 00f8 49       		.uleb128 0x49
+ 1069 00f9 13       		.uleb128 0x13
+ 1070 00fa 3F       		.uleb128 0x3f
+ 1071 00fb 19       		.uleb128 0x19
+ 1072 00fc 3C       		.uleb128 0x3c
+ 1073 00fd 19       		.uleb128 0x19
+ 1074 00fe 00       		.byte	0
+ 1075 00ff 00       		.byte	0
+ 1076 0100 13       		.uleb128 0x13
+ 1077 0101 35       		.uleb128 0x35
+ 1078 0102 00       		.byte	0
+ 1079 0103 49       		.uleb128 0x49
+ 1080 0104 13       		.uleb128 0x13
+ 1081 0105 00       		.byte	0
+ 1082 0106 00       		.byte	0
+ 1083 0107 14       		.uleb128 0x14
+ 1084 0108 2E       		.uleb128 0x2e
+ 1085 0109 00       		.byte	0
+ 1086 010a 3F       		.uleb128 0x3f
+ 1087 010b 19       		.uleb128 0x19
+ 1088 010c 3C       		.uleb128 0x3c
+ 1089 010d 19       		.uleb128 0x19
+ 1090 010e 6E       		.uleb128 0x6e
+ 1091 010f 0E       		.uleb128 0xe
+ 1092 0110 03       		.uleb128 0x3
+ 1093 0111 0E       		.uleb128 0xe
+ 1094 0112 3A       		.uleb128 0x3a
+ 1095 0113 0B       		.uleb128 0xb
+ 1096 0114 3B       		.uleb128 0x3b
+ 1097 0115 0B       		.uleb128 0xb
+ 1098 0116 00       		.byte	0
+ 1099 0117 00       		.byte	0
+ 1100 0118 00       		.byte	0
+ 1101              		.section	.debug_aranges,"",%progbits
+ 1102 0000 2C000000 		.4byte	0x2c
+ 1103 0004 0200     		.2byte	0x2
+ 1104 0006 00000000 		.4byte	.Ldebug_info0
+ 1105 000a 04       		.byte	0x4
+ 1106 000b 00       		.byte	0
+ 1107 000c 0000     		.2byte	0
+ 1108 000e 0000     		.2byte	0
+ 1109 0010 00000000 		.4byte	.LFB110
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cc08oxrp.s 			page 23
+
+
+ 1110 0014 74000000 		.4byte	.LFE110-.LFB110
+ 1111 0018 00000000 		.4byte	.LFB111
+ 1112 001c 7C000000 		.4byte	.LFE111-.LFB111
+ 1113 0020 00000000 		.4byte	.LFB112
+ 1114 0024 10000000 		.4byte	.LFE112-.LFB112
+ 1115 0028 00000000 		.4byte	0
+ 1116 002c 00000000 		.4byte	0
+ 1117              		.section	.debug_ranges,"",%progbits
+ 1118              	.Ldebug_ranges0:
+ 1119 0000 00000000 		.4byte	.LFB110
+ 1120 0004 74000000 		.4byte	.LFE110
+ 1121 0008 00000000 		.4byte	.LFB111
+ 1122 000c 7C000000 		.4byte	.LFE111
+ 1123 0010 00000000 		.4byte	.LFB112
+ 1124 0014 10000000 		.4byte	.LFE112
+ 1125 0018 00000000 		.4byte	0
+ 1126 001c 00000000 		.4byte	0
+ 1127              		.section	.debug_line,"",%progbits
+ 1128              	.Ldebug_line0:
+ 1129 0000 8D020000 		.section	.debug_str,"MS",%progbits,1
+ 1129      02004002 
+ 1129      00000201 
+ 1129      FB0E0D00 
+ 1129      01010101 
+ 1130              	.LASF59:
+ 1131 0000 496E6465 		.ascii	"Index\000"
+ 1131      7800
+ 1132              	.LASF39:
+ 1133 0006 52435F45 		.ascii	"RC_ERROR_READ_ONLY\000"
+ 1133      52524F52 
+ 1133      5F524541 
+ 1133      445F4F4E 
+ 1133      4C5900
+ 1134              	.LASF25:
+ 1135 0019 52435F53 		.ascii	"RC_SUCCESS\000"
+ 1135      55434345 
+ 1135      535300
+ 1136              	.LASF40:
+ 1137 0024 52435F45 		.ascii	"RC_ERROR_WRITE_ONLY\000"
+ 1137      52524F52 
+ 1137      5F575249 
+ 1137      54455F4F 
+ 1137      4E4C5900 
+ 1138              	.LASF80:
+ 1139 0038 443A5C48 		.ascii	"D:\\HDA\\1_sem\\Embedded System Design\\Lab\\Assign"
+ 1139      44415C31 
+ 1139      5F73656D 
+ 1139      5C456D62 
+ 1139      65646465 
+ 1140 0066 6D656E74 		.ascii	"ment_1\\ReactionGame_OS\\ReactionGame.cydsn\000"
+ 1140      5F315C52 
+ 1140      65616374 
+ 1140      696F6E47 
+ 1140      616D655F 
+ 1141              	.LASF2:
+ 1142 0090 73686F72 		.ascii	"short int\000"
+ 1142      7420696E 
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cc08oxrp.s 			page 24
+
+
+ 1142      7400
+ 1143              	.LASF31:
+ 1144 009a 52435F45 		.ascii	"RC_ERROR_OVERRUN\000"
+ 1144      52524F52 
+ 1144      5F4F5645 
+ 1144      5252554E 
+ 1144      00
+ 1145              	.LASF43:
+ 1146 00ab 52435F45 		.ascii	"RC_ERROR_WRITE_FAILS\000"
+ 1146      52524F52 
+ 1146      5F575249 
+ 1146      54455F46 
+ 1146      41494C53 
+ 1147              	.LASF74:
+ 1148 00c0 50574D5F 		.ascii	"PWM_RGB_SetRed\000"
+ 1148      5247425F 
+ 1148      53657452 
+ 1148      656400
+ 1149              	.LASF24:
+ 1150 00cf 73697A65 		.ascii	"sizetype\000"
+ 1150      74797065 
+ 1150      00
+ 1151              	.LASF53:
+ 1152 00d8 7267625F 		.ascii	"rgb_B_pwm\000"
+ 1152      425F7077 
+ 1152      6D00
+ 1153              	.LASF28:
+ 1154 00e2 52435F45 		.ascii	"RC_ERROR_ZERO\000"
+ 1154      52524F52 
+ 1154      5F5A4552 
+ 1154      4F00
+ 1155              	.LASF22:
+ 1156 00f0 45455F46 		.ascii	"EE_FREG\000"
+ 1156      52454700 
+ 1157              	.LASF42:
+ 1158 00f8 52435F45 		.ascii	"RC_ERROR_READ_FAILS\000"
+ 1158      52524F52 
+ 1158      5F524541 
+ 1158      445F4641 
+ 1158      494C5300 
+ 1159              	.LASF75:
+ 1160 010c 50574D5F 		.ascii	"PWM_RGB_SetGreen\000"
+ 1160      5247425F 
+ 1160      53657447 
+ 1160      7265656E 
+ 1160      00
+ 1161              	.LASF64:
+ 1162 011d 5247425F 		.ascii	"RGB_glowtable\000"
+ 1162      676C6F77 
+ 1162      7461626C 
+ 1162      6500
+ 1163              	.LASF4:
+ 1164 012b 5F5F7569 		.ascii	"__uint16_t\000"
+ 1164      6E743136 
+ 1164      5F7400
+ 1165              	.LASF23:
+ 1166 0136 45455F54 		.ascii	"EE_TID\000"
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cc08oxrp.s 			page 25
+
+
+ 1166      494400
+ 1167              	.LASF60:
+ 1168 013d 54696D65 		.ascii	"TimeCount\000"
+ 1168      436F756E 
+ 1168      7400
+ 1169              	.LASF72:
+ 1170 0147 50574D5F 		.ascii	"PWM_SetYellow\000"
+ 1170      53657459 
+ 1170      656C6C6F 
+ 1170      7700
+ 1171              	.LASF12:
+ 1172 0155 75696E74 		.ascii	"uint8_t\000"
+ 1172      385F7400 
+ 1173              	.LASF48:
+ 1174 015d 52435F45 		.ascii	"RC_ERROR_INVALID_STATE\000"
+ 1174      52524F52 
+ 1174      5F494E56 
+ 1174      414C4944 
+ 1174      5F535441 
+ 1175              	.LASF69:
+ 1176 0174 45455F49 		.ascii	"EE_IRQ_nesting_level\000"
+ 1176      52515F6E 
+ 1176      65737469 
+ 1176      6E675F6C 
+ 1176      6576656C 
+ 1177              	.LASF71:
+ 1178 0189 50574D5F 		.ascii	"PWM_SetRed\000"
+ 1178      53657452 
+ 1178      656400
+ 1179              	.LASF68:
+ 1180 0194 45455F73 		.ascii	"EE_std_endcycle_next_tid\000"
+ 1180      74645F65 
+ 1180      6E646379 
+ 1180      636C655F 
+ 1180      6E657874 
+ 1181              	.LASF30:
+ 1182 01ad 52435F45 		.ascii	"RC_ERROR_RANGE\000"
+ 1182      52524F52 
+ 1182      5F52414E 
+ 1182      474500
+ 1183              	.LASF15:
+ 1184 01bc 666C6F61 		.ascii	"float\000"
+ 1184      7400
+ 1185              	.LASF9:
+ 1186 01c2 6C6F6E67 		.ascii	"long long int\000"
+ 1186      206C6F6E 
+ 1186      6720696E 
+ 1186      7400
+ 1187              	.LASF66:
+ 1188 01d0 45455F6F 		.ascii	"EE_oo_IRQ_suspend_status\000"
+ 1188      6F5F4952 
+ 1188      515F7375 
+ 1188      7370656E 
+ 1188      645F7374 
+ 1189              	.LASF44:
+ 1190 01e9 52435F45 		.ascii	"RC_ERROR_NOT_MATCH\000"
+ 1190      52524F52 
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cc08oxrp.s 			page 26
+
+
+ 1190      5F4E4F54 
+ 1190      5F4D4154 
+ 1190      434800
+ 1191              	.LASF49:
+ 1192 01fc 52435F45 		.ascii	"RC_ERROR_UNKNOWN\000"
+ 1192      52524F52 
+ 1192      5F554E4B 
+ 1192      4E4F574E 
+ 1192      00
+ 1193              	.LASF7:
+ 1194 020d 6C6F6E67 		.ascii	"long int\000"
+ 1194      20696E74 
+ 1194      00
+ 1195              	.LASF32:
+ 1196 0216 52435F45 		.ascii	"RC_ERROR_UNDERRUN\000"
+ 1196      52524F52 
+ 1196      5F554E44 
+ 1196      45525255 
+ 1196      4E00
+ 1197              	.LASF35:
+ 1198 0228 52435F45 		.ascii	"RC_ERROR_BUSY\000"
+ 1198      52524F52 
+ 1198      5F425553 
+ 1198      5900
+ 1199              	.LASF3:
+ 1200 0236 5F5F7569 		.ascii	"__uint8_t\000"
+ 1200      6E74385F 
+ 1200      7400
+ 1201              	.LASF41:
+ 1202 0240 52435F45 		.ascii	"RC_ERROR_INVALID\000"
+ 1202      52524F52 
+ 1202      5F494E56 
+ 1202      414C4944 
+ 1202      00
+ 1203              	.LASF46:
+ 1204 0251 52435F45 		.ascii	"RC_ERROR_BAD_DATA\000"
+ 1204      52524F52 
+ 1204      5F424144 
+ 1204      5F444154 
+ 1204      4100
+ 1205              	.LASF51:
+ 1206 0263 7267625F 		.ascii	"rgb_R_pwm\000"
+ 1206      525F7077 
+ 1206      6D00
+ 1207              	.LASF18:
+ 1208 026d 6C6F6E67 		.ascii	"long double\000"
+ 1208      20646F75 
+ 1208      626C6500 
+ 1209              	.LASF54:
+ 1210 0279 54696D65 		.ascii	"TimeDuration\000"
+ 1210      44757261 
+ 1210      74696F6E 
+ 1210      00
+ 1211              	.LASF1:
+ 1212 0286 756E7369 		.ascii	"unsigned char\000"
+ 1212      676E6564 
+ 1212      20636861 
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cc08oxrp.s 			page 27
+
+
+ 1212      7200
+ 1213              	.LASF20:
+ 1214 0294 45455F55 		.ascii	"EE_UINT32\000"
+ 1214      494E5433 
+ 1214      3200
+ 1215              	.LASF0:
+ 1216 029e 7369676E 		.ascii	"signed char\000"
+ 1216      65642063 
+ 1216      68617200 
+ 1217              	.LASF10:
+ 1218 02aa 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 1218      206C6F6E 
+ 1218      6720756E 
+ 1218      7369676E 
+ 1218      65642069 
+ 1219              	.LASF11:
+ 1220 02c1 756E7369 		.ascii	"unsigned int\000"
+ 1220      676E6564 
+ 1220      20696E74 
+ 1220      00
+ 1221              	.LASF37:
+ 1222 02ce 52435F45 		.ascii	"RC_ERROR_OPEN\000"
+ 1222      52524F52 
+ 1222      5F4F5045 
+ 1222      4E00
+ 1223              	.LASF13:
+ 1224 02dc 75696E74 		.ascii	"uint16_t\000"
+ 1224      31365F74 
+ 1224      00
+ 1225              	.LASF55:
+ 1226 02e5 41524341 		.ascii	"ARCADIANLED__Glower_t\000"
+ 1226      4449414E 
+ 1226      4C45445F 
+ 1226      5F476C6F 
+ 1226      7765725F 
+ 1227              	.LASF81:
+ 1228 02fb 46756E63 		.ascii	"Functsk_ArcadianLed\000"
+ 1228      74736B5F 
+ 1228      41726361 
+ 1228      6469616E 
+ 1228      4C656400 
+ 1229              	.LASF57:
+ 1230 030f 41524341 		.ascii	"ARCADIANLED__Fader_s\000"
+ 1230      4449414E 
+ 1230      4C45445F 
+ 1230      5F466164 
+ 1230      65725F73 
+ 1231              	.LASF27:
+ 1232 0324 52435F45 		.ascii	"RC_ERROR_NULL\000"
+ 1232      52524F52 
+ 1232      5F4E554C 
+ 1232      4C00
+ 1233              	.LASF34:
+ 1234 0332 52435F45 		.ascii	"RC_ERROR_BUFFER_EMTPY\000"
+ 1234      52524F52 
+ 1234      5F425546 
+ 1234      4645525F 
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cc08oxrp.s 			page 28
+
+
+ 1234      454D5450 
+ 1235              	.LASF19:
+ 1236 0348 45455F49 		.ascii	"EE_INT32\000"
+ 1236      4E543332 
+ 1236      00
+ 1237              	.LASF5:
+ 1238 0351 73686F72 		.ascii	"short unsigned int\000"
+ 1238      7420756E 
+ 1238      7369676E 
+ 1238      65642069 
+ 1238      6E7400
+ 1239              	.LASF78:
+ 1240 0364 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
+ 1240      43313120 
+ 1240      352E342E 
+ 1240      31203230 
+ 1240      31363036 
+ 1241 0397 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m3 -mthumb -g -O"
+ 1241      20726576 
+ 1241      6973696F 
+ 1241      6E203233 
+ 1241      37373135 
+ 1242 03ca 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
+ 1242      66756E63 
+ 1242      74696F6E 
+ 1242      2D736563 
+ 1242      74696F6E 
+ 1243              	.LASF17:
+ 1244 03f2 63686172 		.ascii	"char\000"
+ 1244      00
+ 1245              	.LASF73:
+ 1246 03f7 50574D5F 		.ascii	"PWM_SetGreen\000"
+ 1246      53657447 
+ 1246      7265656E 
+ 1246      00
+ 1247              	.LASF33:
+ 1248 0404 52435F45 		.ascii	"RC_ERROR_BUFFER_FULL\000"
+ 1248      52524F52 
+ 1248      5F425546 
+ 1248      4645525F 
+ 1248      46554C4C 
+ 1249              	.LASF14:
+ 1250 0419 696E7433 		.ascii	"int32_t\000"
+ 1250      325F7400 
+ 1251              	.LASF76:
+ 1252 0421 50574D5F 		.ascii	"PWM_RGB_SetBlue\000"
+ 1252      5247425F 
+ 1252      53657442 
+ 1252      6C756500 
+ 1253              	.LASF45:
+ 1254 0431 52435F45 		.ascii	"RC_ERROR_BAD_PARAM\000"
+ 1254      52524F52 
+ 1254      5F424144 
+ 1254      5F504152 
+ 1254      414D00
+ 1255              	.LASF62:
+ 1256 0444 41524341 		.ascii	"ARCADIANLED__Glower\000"
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cc08oxrp.s 			page 29
+
+
+ 1256      4449414E 
+ 1256      4C45445F 
+ 1256      5F476C6F 
+ 1256      77657200 
+ 1257              	.LASF77:
+ 1258 0458 45455F6F 		.ascii	"EE_oo_TerminateTask\000"
+ 1258      6F5F5465 
+ 1258      726D696E 
+ 1258      61746554 
+ 1258      61736B00 
+ 1259              	.LASF67:
+ 1260 046c 45455F41 		.ascii	"EE_ApplicationMode\000"
+ 1260      70706C69 
+ 1260      63617469 
+ 1260      6F6E4D6F 
+ 1260      646500
+ 1261              	.LASF8:
+ 1262 047f 6C6F6E67 		.ascii	"long unsigned int\000"
+ 1262      20756E73 
+ 1262      69676E65 
+ 1262      6420696E 
+ 1262      7400
+ 1263              	.LASF63:
+ 1264 0491 4C65645F 		.ascii	"Led_fadertable\000"
+ 1264      66616465 
+ 1264      72746162 
+ 1264      6C6500
+ 1265              	.LASF16:
+ 1266 04a0 646F7562 		.ascii	"double\000"
+ 1266      6C6500
+ 1267              	.LASF38:
+ 1268 04a7 52435F45 		.ascii	"RC_ERROR_CHECKSUM\000"
+ 1268      52524F52 
+ 1268      5F434845 
+ 1268      434B5355 
+ 1268      4D00
+ 1269              	.LASF21:
+ 1270 04b9 45455F55 		.ascii	"EE_UREG\000"
+ 1270      52454700 
+ 1271              	.LASF58:
+ 1272 04c1 41524341 		.ascii	"ARCADIANLED__Fader_t\000"
+ 1272      4449414E 
+ 1272      4C45445F 
+ 1272      5F466164 
+ 1272      65725F74 
+ 1273              	.LASF6:
+ 1274 04d6 5F5F696E 		.ascii	"__int32_t\000"
+ 1274      7433325F 
+ 1274      7400
+ 1275              	.LASF61:
+ 1276 04e0 41524341 		.ascii	"ARCADIANLED__Fader\000"
+ 1276      4449414E 
+ 1276      4C45445F 
+ 1276      5F466164 
+ 1276      657200
+ 1277              	.LASF79:
+ 1278 04f3 736F7572 		.ascii	"source\\asw\\tsk_ArcadianLed.c\000"
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cc08oxrp.s 			page 30
+
+
+ 1278      63655C61 
+ 1278      73775C74 
+ 1278      736B5F41 
+ 1278      72636164 
+ 1279              	.LASF47:
+ 1280 0510 52435F45 		.ascii	"RC_ERROR_CANCELED\000"
+ 1280      52524F52 
+ 1280      5F43414E 
+ 1280      43454C45 
+ 1280      4400
+ 1281              	.LASF52:
+ 1282 0522 7267625F 		.ascii	"rgb_G_pwm\000"
+ 1282      475F7077 
+ 1282      6D00
+ 1283              	.LASF70:
+ 1284 052c 49544D5F 		.ascii	"ITM_RxBuffer\000"
+ 1284      52784275 
+ 1284      66666572 
+ 1284      00
+ 1285              	.LASF26:
+ 1286 0539 52435F45 		.ascii	"RC_ERROR\000"
+ 1286      52524F52 
+ 1286      00
+ 1287              	.LASF29:
+ 1288 0542 52435F45 		.ascii	"RC_ERROR_MEMORY\000"
+ 1288      52524F52 
+ 1288      5F4D454D 
+ 1288      4F525900 
+ 1289              	.LASF65:
+ 1290 0552 45455F6F 		.ascii	"EE_oo_IRQ_disable_count\000"
+ 1290      6F5F4952 
+ 1290      515F6469 
+ 1290      7361626C 
+ 1290      655F636F 
+ 1291              	.LASF50:
+ 1292 056a 52435F74 		.ascii	"RC_t\000"
+ 1292      00
+ 1293              	.LASF56:
+ 1294 056f 41524341 		.ascii	"ARCADIANLED__Glower_s\000"
+ 1294      4449414E 
+ 1294      4C45445F 
+ 1294      5F476C6F 
+ 1294      7765725F 
+ 1295              	.LASF36:
+ 1296 0585 52435F45 		.ascii	"RC_ERROR_TIME_OUT\000"
+ 1296      52524F52 
+ 1296      5F54494D 
+ 1296      455F4F55 
+ 1296      5400
+ 1297              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran

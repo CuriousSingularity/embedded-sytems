@@ -132,6 +132,80 @@
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\ErikaOS_event_definition.inc</File>
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\ErikaOS_resource_priorities.inc</File>
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\ErikaOS_ISR_definition.inc</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\UART_LOG.c</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\UART_LOG.h</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\UART_LOG_PM.c</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\UART_LOG_INT.c</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\UART_LOG_BOOT.c</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\BUTTON_2_aliases.h</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\BUTTON_2.c</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\BUTTON_2.h</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\BUTTON_1_aliases.h</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\BUTTON_1.c</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\BUTTON_1.h</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\isr_BUTTON.c</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\isr_BUTTON.h</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\S7D_SegmentA_aliases.h</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\S7D_SegmentA.c</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\S7D_SegmentA.h</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\S7D_SegmentB_aliases.h</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\S7D_SegmentB.c</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\S7D_SegmentB.h</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\S7D_SegmentC_aliases.h</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\S7D_SegmentC.c</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\S7D_SegmentC.h</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\S7D_SegmentD_aliases.h</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\S7D_SegmentD.c</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\S7D_SegmentD.h</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\S7D_SegmentE_aliases.h</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\S7D_SegmentE.c</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\S7D_SegmentE.h</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\S7D_SegmentF_aliases.h</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\S7D_SegmentF.c</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\S7D_SegmentF.h</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\S7D_SegmentG_aliases.h</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\S7D_SegmentG.c</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\S7D_SegmentG.h</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\S7D_Select_aliases.h</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\S7D_Select.c</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\S7D_Select.h</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\S7D_Display_aliases.h</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\S7D_Display.c</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\S7D_Display.h</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\S7D_ControlReg.h</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\S7D_ControlReg.c</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\S7D_ControlReg_PM.c</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\PWM_Red.c</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\PWM_Red.h</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\PWM_Red_PM.c</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\PWM_CLK.c</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\PWM_CLK.h</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\PWM_Green.c</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\PWM_Green.h</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\PWM_Green_PM.c</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\PWM_Blue.c</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\PWM_Blue.h</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\PWM_Blue_PM.c</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\RGB_B_aliases.h</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\RGB_B.c</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\RGB_B.h</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\RGB_G_aliases.h</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\RGB_G.c</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\RGB_G.h</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\RGB_R_aliases.h</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\RGB_R.c</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\RGB_R.h</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\LED_Red_aliases.h</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\LED_Red.c</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\LED_Red.h</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\LED_Green_aliases.h</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\LED_Green.c</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\LED_Green.h</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\LED_Yellow_aliases.h</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\LED_Yellow.c</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\LED_Yellow.h</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\UART_LOG_IntClock.c</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\UART_LOG_IntClock.h</File>
           <File BuildType="BUILD" Toolchain="ARM GCC Generic">Generated_Source\PSoC5\cm3gcc.ld</File>
           <File BuildType="BUILD" Toolchain="ARM MDK Generic">Generated_Source\PSoC5\Cm3RealView.scat</File>
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\Cm3Start.c</File>
@@ -165,51 +239,6 @@
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\cycodeshareimport.ld</File>
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\cycodeshareexport.ld</File>
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\cycodeshareimport.scat</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\UART_LOG.c</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\UART_LOG.h</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\UART_LOG_PM.c</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\UART_LOG_INT.c</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\UART_LOG_BOOT.c</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\UART_LOG_IntClock.c</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\UART_LOG_IntClock.h</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\isr_BUTTON.c</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\isr_BUTTON.h</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\BUTTON_2_aliases.h</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\BUTTON_2.c</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\BUTTON_2.h</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\BUTTON_1_aliases.h</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\BUTTON_1.c</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\BUTTON_1.h</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\S7D_SegmentA_aliases.h</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\S7D_SegmentA.c</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\S7D_SegmentA.h</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\S7D_SegmentB_aliases.h</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\S7D_SegmentB.c</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\S7D_SegmentB.h</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\S7D_SegmentC_aliases.h</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\S7D_SegmentC.c</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\S7D_SegmentC.h</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\S7D_SegmentD_aliases.h</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\S7D_SegmentD.c</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\S7D_SegmentD.h</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\S7D_SegmentE_aliases.h</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\S7D_SegmentE.c</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\S7D_SegmentE.h</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\S7D_SegmentF_aliases.h</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\S7D_SegmentF.c</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\S7D_SegmentF.h</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\S7D_SegmentG_aliases.h</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\S7D_SegmentG.c</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\S7D_SegmentG.h</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\S7D_Select_aliases.h</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\S7D_Select.c</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\S7D_Select.h</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\S7D_Display_aliases.h</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\S7D_Display.c</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\S7D_Display.h</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\S7D_ControlReg.h</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\S7D_ControlReg.c</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\S7D_ControlReg_PM.c</File>
         </Files>
       </Folder>
       <Folder BuildType="STRICT" Path="D:\HDA\1_sem\Embedded System Design\Lab\Assignment_1\ReactionGame_OS\ReactionGame.cydsn">
@@ -224,6 +253,8 @@
           <File BuildType="BUILD" Toolchain="">source\asw\tsk_ReactionGame.h</File>
           <File BuildType="BUILD" Toolchain="">source\asw\signal_handler.c</File>
           <File BuildType="BUILD" Toolchain="">source\asw\signal_handler.h</File>
+          <File BuildType="BUILD" Toolchain="">source\asw\tsk_ArcadianLed.c</File>
+          <File BuildType="BUILD" Toolchain="">source\asw\tsk_ArcadianLed.h</File>
         </Files>
       </Folder>
       <Folder BuildType="STRICT" Path="D:\HDA\1_sem\Embedded System Design\Lab\Assignment_1\ReactionGame_OS\ReactionGame.cydsn">
@@ -236,6 +267,8 @@
           <File BuildType="BUILD" Toolchain="">source\bsw\button.h</File>
           <File BuildType="BUILD" Toolchain="">source\bsw\seven.c</File>
           <File BuildType="BUILD" Toolchain="">source\bsw\seven.h</File>
+          <File BuildType="BUILD" Toolchain="">source\bsw\pwm.c</File>
+          <File BuildType="BUILD" Toolchain="">source\bsw\pwm.h</File>
         </Files>
       </Folder>
       <Folder BuildType="STRICT" Path="D:\HDA\1_sem\Embedded System Design\Lab\Assignment_1\ReactionGame_OS\ReactionGame.cydsn\Export\ARM_GCC_Generic">
