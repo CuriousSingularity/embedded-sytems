@@ -73,3 +73,46 @@ RC_t CONSOLE_Write(const char *pMessage)
     
     return RC_SUCCESS;
 }
+
+
+/**
+ * A function transmits the numberover serial console.
+ * @param const sint32_t Number      : IN Number
+ * @return RC_SUCCESS on successful transmission
+ */
+RC_t CONSOLE_WriteNumber(sint32_t Number)
+{
+    uint8_t NumberString[sizeof(Number) * sizeof(BYTE_L)] = {0};
+    sint32_t temp = 0;
+    uint8_t count = 0, Index, SignCount = 0;
+    
+    // check if the number is negative
+    if(Number >> ((sizeof(Number) * sizeof(BYTE_L)) - 1))
+    {
+        /*CONVERTING 2's complement value to normal value*/    
+        Number = ~Number + 1;
+        
+        NumberString[count++] = '-';
+        
+        SignCount = 1;
+    }
+    
+    if (Number)
+    {
+        // non-zero
+        for(temp = Number; temp != 0; temp /= 10, count++);
+        
+        for(Index = count - 1, temp = Number; Index >= SignCount && temp; Index--)
+        {
+            NumberString[Index] = (temp % 10) + '0';
+            temp /= 10;
+        }
+    }
+    else
+    {
+        // zero
+        NumberString[count++] = '0';
+    }
+    
+    return CONSOLE_Write((const char *)NumberString);
+}

@@ -126,14 +126,28 @@ public:
  * @param void
  * @return the displays are reset.
  */
-RC_t S7D_init(void);
+RC_t S7D_Init(void);
 
 /**
  * The function clears the displays.
  * @param void
  * @return the displays are reset.
  */
-RC_t S7D_clear(void);
+RC_t S7D_Clear(void);
+
+/**
+ * The function clears the DP of displays.
+ * @param void
+ * @return the DP of displays are reset.
+ */
+RC_t S7D_ClearDot(void);
+
+/**
+ * The function sets the DP of displays.
+ * @param void
+ * @return the DP of displays are set.
+ */
+RC_t S7D_SetDot(void);
 
 /**
  * The function takes the number as an input and updates on to the displays.
@@ -141,6 +155,14 @@ RC_t S7D_clear(void);
  * @return Updates the seven segment display with the values.
  */
 RC_t S7D_Write(uint8 Value);
+
+/**
+ * The function takes the number as an input and updates the same value on all the LCDs.
+ * @param uint8 Value       : IN 0 - 0xF
+ * @return Updates the seven segment display with the identical value.
+ */
+RC_t S7D_IdenticalWrite(uint8 Value);
+
 
 /*****************************************************************************/
 /* Private stuff, only visible for Together, declared static in cpp - File   */

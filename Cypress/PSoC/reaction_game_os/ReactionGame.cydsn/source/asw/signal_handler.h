@@ -1,7 +1,7 @@
 /**
-* \file <console.h>
+* \file <signal_handler.h>
 * \author <Bharath Ramachandraiah>
-* \date <25/09/2018>
+* \date <13/11/2018>
 *
 * \brief <Symbolic File name>
 *
@@ -72,8 +72,8 @@
 
 
  
-#ifndef CONSOLE_H_
-#define CONSOLE_H_
+#ifndef SIGNAL_HANDLER_H_
+#define SIGNAL_HANDLER_H_
 
 #include "global.h"
     
@@ -83,12 +83,11 @@
 
 //####################### Defines/Macros
 
-    
+
 //####################### Enumerations
 
 
 //####################### Structures
-
 
 // Wrapper to allow representing the file in Together as class
 #ifdef TOGETHER
@@ -102,34 +101,18 @@ public:
 /* Extern global variables                                                   */
 /*****************************************************************************/
 
-/**
- * <description>
- */
 
 /*****************************************************************************/
 /* API functions                                                             */
 /*****************************************************************************/
 
 /**
- * A function initializes the UART port used to transmit the log messages.
- * @param void
- * @return RC_SUCCESS on successful transmission
+ * The Task declaration
+ * The tsk_Init initializes all the necessary hardware components.
+ * This is an autostart task which will be run once the OS starts.
  */
-RC_t CONSOLE_Init(void);
+DeclareTask(tsk_ReactionGame);
 
-/**
- * A function transmits the string characters over serial console.
- * @param const sint8_t *pMessaage      : IN String
- * @return RC_SUCCESS on successful transmission
- */
-RC_t CONSOLE_Write(const char *pMessage);
-
-/**
- * A function transmits the numberover serial console.
- * @param const sint32_t Number      : IN Number
- * @return RC_SUCCESS on successful transmission
- */
-RC_t CONSOLE_WriteNumber(sint32_t Number);
 
 /*****************************************************************************/
 /* Private stuff, only visible for Together, declared static in cpp - File   */
@@ -160,4 +143,4 @@ static type FILE__function(uint16_t cmd);
 };
 #endif /* Together */
 
-#endif /* CONSOLE_H_ */
+#endif /* SIGNAL_HANDLER_H_ */

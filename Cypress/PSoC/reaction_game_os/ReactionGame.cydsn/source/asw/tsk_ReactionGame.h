@@ -1,5 +1,5 @@
 /**
-* \file <tsk_init.h>
+* \file <tsk_ReactionGame.h>
 * \author <Bharath Ramachandraiah>
 * \date <13/11/2018>
 *
@@ -72,8 +72,8 @@
 
 
  
-#ifndef TSK_INIT_H_
-#define TSK_INIT_H_
+#ifndef TSK_REACTIONGAME_H_
+#define TSK_REACTIONGAME_H_
 
 #include "global.h"
     
@@ -85,9 +85,46 @@
 
 
 //####################### Enumerations
+enum REACTION_State_e
+{
+    RG__STATE_STANDBY = 0,
+    RG__STATE_DISPLAY_NUMBER,
+    RG__STATE_PROCESS_REACTION,
+};
 
+typedef enum REACTION_State_e REACTION_State_t;
+
+enum REACTION_Status_e
+{
+    RG__STATUS_IDLE = 0,
+    RG__STATUS_START,
+    RG__STATUS_RUNNING,
+    RG__STATUS_END,
+    RG__STATUS_TIMEOUT,
+};
+
+typedef enum REACTION_Status_e REACTION_Status_t;
 
 //####################### Structures
+struct REACTIONGAME_s
+{
+    struct
+    {
+        uint8_t         Rounds;
+        uint8_t         CorrectButtonPresses;
+        uint8_t         IncorrectButtonPresses;
+        uint8_t         MissedPresses;
+        uint32_t        AvgReactionTime;
+    };
+    uint32_t            MeasureReactionTime;
+    EventMaskType       Event;
+    REACTION_State_t    CurrentState;
+    REACTION_State_t    NextState;
+    REACTION_Status_t   Status;
+};
+
+typedef struct REACTIONGAME_s REACTIONGAME_t;
+
 
 // Wrapper to allow representing the file in Together as class
 #ifdef TOGETHER
@@ -111,7 +148,7 @@ public:
  * The tsk_Init initializes all the necessary hardware components.
  * This is an autostart task which will be run once the OS starts.
  */
-DeclareTask(tsk_Init);
+DeclareTask(tsk_ReactionGame);
 
 
 /*****************************************************************************/
@@ -143,4 +180,4 @@ static type FILE__function(uint16_t cmd);
 };
 #endif /* Together */
 
-#endif /* TSK_INIT_H_ */
+#endif /* TSK_REACTIONGAME_H_ */

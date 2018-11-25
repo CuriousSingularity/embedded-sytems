@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccLpyK4j.s 			page 1
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cc8NiwAD.s 			page 1
 
 
    1              		.syntax unified
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccLpyK4j.s 			page 1
   28:Generated_Source\PSoC5/ErikaOS_ee_alsetabs.c ****  * exception statement from your version.
   29:Generated_Source\PSoC5/ErikaOS_ee_alsetabs.c ****  *
   30:Generated_Source\PSoC5/ErikaOS_ee_alsetabs.c ****  * ERIKA Enterprise is distributed in the hope that it will be
-ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccLpyK4j.s 			page 2
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cc8NiwAD.s 			page 2
 
 
   31:Generated_Source\PSoC5/ErikaOS_ee_alsetabs.c ****  * useful, but WITHOUT ANY WARRANTY; without even the implied warranty
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccLpyK4j.s 			page 1
   42              	.LBB33:
   43              	.LBB34:
   44              		.file 2 "Generated_Source\\PSoC5\\ErikaOS_cortex_mx_ee_cpu.inc"
-ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccLpyK4j.s 			page 3
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cc8NiwAD.s 			page 3
 
 
    1:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_cpu.inc **** /* ###*B*###
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccLpyK4j.s 			page 1
   55:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_cpu.inc **** #ifndef __INCLUDE_CORTEX_MX_EE_CPU_H__
   56:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_cpu.inc **** #define __INCLUDE_CORTEX_MX_EE_CPU_H__
   57:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_cpu.inc **** 
-ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccLpyK4j.s 			page 4
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cc8NiwAD.s 			page 4
 
 
   58:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_cpu.inc **** #include "ErikaOS_eecfg.inc"
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccLpyK4j.s 			page 1
  112:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_cpu.inc **** #define __breakpoint(value)	__ASM ("bkpt "#value)
  113:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_cpu.inc **** 
  114:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_cpu.inc **** #endif
-ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccLpyK4j.s 			page 5
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cc8NiwAD.s 			page 5
 
 
  115:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_cpu.inc **** 
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccLpyK4j.s 			page 1
  169:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_cpu.inc **** 
  170:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_cpu.inc **** /*********************************************************************
  171:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_cpu.inc ****  Cortex M0 interrupt disabling/enabling
-ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccLpyK4j.s 			page 6
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cc8NiwAD.s 			page 6
 
 
  172:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_cpu.inc ****  *********************************************************************/
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccLpyK4j.s 			page 1
  226:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_cpu.inc **** 	__ASM ("    msr    primask, r0\n");
  227:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_cpu.inc **** #else	/* __CCS__ */
  228:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_cpu.inc **** #ifdef __KEIL__
-ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccLpyK4j.s 			page 7
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cc8NiwAD.s 			page 7
 
 
  229:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_cpu.inc **** 	register EE_FREG PRIMASK __ASM("primask");
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccLpyK4j.s 			page 1
   76:Generated_Source\PSoC5/ErikaOS_ee_alsetabs.c ****   EE_ORTI_set_service_in(EE_SERVICETRACE_SETABSALARM);
   77:Generated_Source\PSoC5/ErikaOS_ee_alsetabs.c **** 
   78:Generated_Source\PSoC5/ErikaOS_ee_alsetabs.c ****   EE_as_monitoring_the_stack();
-ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccLpyK4j.s 			page 8
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cc8NiwAD.s 			page 8
 
 
   79:Generated_Source\PSoC5/ErikaOS_ee_alsetabs.c **** 
@@ -465,8 +465,8 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccLpyK4j.s 			page 1
  120:Generated_Source\PSoC5/ErikaOS_ee_alsetabs.c **** #elif defined(__OO_EXTENDED_STATUS__)
  121:Generated_Source\PSoC5/ErikaOS_ee_alsetabs.c ****     if ( AlarmID >= EE_MAX_ALARM ) {
   61              		.loc 1 121 0
-  62 0008 0028     		cmp	r0, #0
-  63 000a 40D1     		bne	.L7
+  62 0008 0128     		cmp	r0, #1
+  63 000a 40D8     		bhi	.L7
  122:Generated_Source\PSoC5/ErikaOS_ee_alsetabs.c ****       ev = E_OS_ID;
  123:Generated_Source\PSoC5/ErikaOS_ee_alsetabs.c ****     } else
  124:Generated_Source\PSoC5/ErikaOS_ee_alsetabs.c **** #endif /* EE_AS_OSAPPLICATIONS__ || E_SERVICE_PROTECTION__ ||
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccLpyK4j.s 			page 1
   66 0010 AB00     		lsls	r3, r5, #2
   67 0012 254D     		ldr	r5, .L13
   68 0014 EB58     		ldr	r3, [r5, r3]
-ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccLpyK4j.s 			page 9
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cc8NiwAD.s 			page 9
 
 
   69 0016 03EB4306 		add	r6, r3, r3, lsl #1
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccLpyK4j.s 			page 1
   14:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc ****  * making a combined work based on this code.  Thus, the terms and
   15:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc ****  * conditions of the GNU General Public License cover the whole
   16:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc ****  * combination.
-ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccLpyK4j.s 			page 10
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cc8NiwAD.s 			page 10
 
 
   17:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc ****  *
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccLpyK4j.s 			page 1
   71:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** #ifdef __OO_HAS_ERRORHOOK__
   72:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** /* Error Parameters Data Structure Utilities Macros from user space */
   73:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** #define EE_OS_ERROR_PARAMETERS()  EE_oo_ErrorHook_parameters error_parameters
-ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccLpyK4j.s 			page 11
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cc8NiwAD.s 			page 11
 
 
   74:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** 
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccLpyK4j.s 			page 1
  128:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** {
  129:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc ****   EE_ORTI_set_lasterror(Error);
  130:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc ****   if ( EE_ErrorHook_nested_flag == 0U )
-ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccLpyK4j.s 			page 12
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cc8NiwAD.s 			page 12
 
 
  131:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc ****   {
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccLpyK4j.s 			page 1
  185:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** }
  186:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** #endif /* __OO_HAS_ERRORHOOK__ */
  187:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** 
-ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccLpyK4j.s 			page 13
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cc8NiwAD.s 			page 13
 
 
  188:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** /*******************************************************************************
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccLpyK4j.s 			page 1
  242:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** /* This function notifies a tick to a hardware counter.
  243:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc ****    That is, the counter is
  244:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc ****    incremented by 1.  It must be called into an ISR2 or into a
-ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccLpyK4j.s 			page 14
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cc8NiwAD.s 			page 14
 
 
  245:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc ****    task notify that the event linked to the counter occurred.
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccLpyK4j.s 			page 1
  285:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc ****   /* Handling wrap around for alarm time */
  286:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc ****   start_rel = absstart - EE_counter_RAM[cnt].value;
  113              		.loc 3 286 0
-ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccLpyK4j.s 			page 15
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cc8NiwAD.s 			page 15
 
 
  114 005c 154A     		ldr	r2, .L13+12
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccLpyK4j.s 			page 1
  305:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc ****   EE_oo_counter_object_insert(ObjectID, alarm_time);
  150              		.loc 3 305 0
  151 0086 FFF7FEFF 		bl	EE_oo_counter_object_insert
-ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccLpyK4j.s 			page 16
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cc8NiwAD.s 			page 16
 
 
  152              	.LVL15:
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccLpyK4j.s 			page 1
  198              	.LBE38:
  199              	.LBE37:
  142:Generated_Source\PSoC5/ErikaOS_ee_alsetabs.c ****     }
-ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccLpyK4j.s 			page 17
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cc8NiwAD.s 			page 17
 
 
  143:Generated_Source\PSoC5/ErikaOS_ee_alsetabs.c **** #else /* EE_MAX_ALARM > 0U */
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccLpyK4j.s 			page 1
  236 0026 01       		.byte	0x1
  237 0027 06       		.byte	0x6
  238 0028 BD000000 		.4byte	.LASF0
-ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccLpyK4j.s 			page 18
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cc8NiwAD.s 			page 18
 
 
  239 002c 02       		.uleb128 0x2
@@ -1078,7 +1078,7 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccLpyK4j.s 			page 1
  293 008f 3A000000 		.4byte	0x3a
  294 0093 04       		.uleb128 0x4
  295 0094 8C050000 		.4byte	.LASF13
-ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccLpyK4j.s 			page 19
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cc8NiwAD.s 			page 19
 
 
  296 0098 04       		.byte	0x4
@@ -1138,7 +1138,7 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccLpyK4j.s 			page 1
  350 0112 0C       		.byte	0xc
  351 0113 05       		.byte	0x5
  352 0114 6902     		.2byte	0x269
-ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccLpyK4j.s 			page 20
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cc8NiwAD.s 			page 20
 
 
  353 0116 42010000 		.4byte	0x142
@@ -1198,7 +1198,7 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccLpyK4j.s 			page 1
  407 018b 09       		.uleb128 0x9
  408 018c C6030000 		.4byte	.LASF31
  409 0190 00       		.byte	0
-ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccLpyK4j.s 			page 21
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cc8NiwAD.s 			page 21
 
 
  410 0191 09       		.uleb128 0x9
@@ -1258,7 +1258,7 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccLpyK4j.s 			page 1
  464 0201 07       		.uleb128 0x7
  465 0202 95050000 		.4byte	.LASF39
  466 0206 05       		.byte	0x5
-ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccLpyK4j.s 			page 22
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cc8NiwAD.s 			page 22
 
 
  467 0207 9802     		.2byte	0x298
@@ -1318,7 +1318,7 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccLpyK4j.s 			page 1
  521 0279 8E03     		.2byte	0x38e
  522 027b 03       		.byte	0x3
  523 027c 8D020000 		.4byte	0x28d
-ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccLpyK4j.s 			page 23
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cc8NiwAD.s 			page 23
 
 
  524 0280 10       		.uleb128 0x10
@@ -1378,7 +1378,7 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccLpyK4j.s 			page 1
  578 02eb C9000000 		.4byte	.LASF49
  579 02ef 03       		.byte	0x3
  580 02f0 1101     		.2byte	0x111
-ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccLpyK4j.s 			page 24
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cc8NiwAD.s 			page 24
 
 
  581 02f2 03       		.byte	0x3
@@ -1438,7 +1438,7 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccLpyK4j.s 			page 1
  635 0373 45       		.byte	0x45
  636 0374 E1000000 		.4byte	0xe1
  637 0378 9E000000 		.4byte	.LLST1
-ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccLpyK4j.s 			page 25
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cc8NiwAD.s 			page 25
 
 
  638 037c 18       		.uleb128 0x18
@@ -1498,7 +1498,7 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccLpyK4j.s 			page 1
  692 03fc 5E010000 		.4byte	.LLST5
  693 0400 1F       		.uleb128 0x1f
  694 0401 F7020000 		.4byte	0x2f7
-ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccLpyK4j.s 			page 26
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cc8NiwAD.s 			page 26
 
 
  695 0405 7F010000 		.4byte	.LLST6
@@ -1555,10 +1555,10 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccLpyK4j.s 			page 1
  746 0486 91040000 		.4byte	0x491
  747 048a 23       		.uleb128 0x23
  748 048b 91040000 		.4byte	0x491
- 749 048f 01       		.byte	0x1
+ 749 048f 02       		.byte	0x2
  750 0490 00       		.byte	0
  751 0491 02       		.uleb128 0x2
-ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccLpyK4j.s 			page 27
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cc8NiwAD.s 			page 27
 
 
  752 0492 04       		.byte	0x4
@@ -1585,7 +1585,7 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccLpyK4j.s 			page 1
  773 04c2 CD040000 		.4byte	0x4cd
  774 04c6 23       		.uleb128 0x23
  775 04c7 91040000 		.4byte	0x491
- 776 04cb 01       		.byte	0x1
+ 776 04cb 02       		.byte	0x2
  777 04cc 00       		.byte	0
  778 04cd 21       		.uleb128 0x21
  779 04ce BB010000 		.4byte	.LASF65
@@ -1597,7 +1597,7 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccLpyK4j.s 			page 1
  785 04dd E8040000 		.4byte	0x4e8
  786 04e1 23       		.uleb128 0x23
  787 04e2 91040000 		.4byte	0x491
- 788 04e6 01       		.byte	0x1
+ 788 04e6 02       		.byte	0x2
  789 04e7 00       		.byte	0
  790 04e8 21       		.uleb128 0x21
  791 04e9 CF030000 		.4byte	.LASF66
@@ -1618,7 +1618,7 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccLpyK4j.s 			page 1
  806 050a 41030000 		.4byte	.LASF69
  807 050e 05       		.byte	0x5
  808 050f EE       		.byte	0xee
-ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccLpyK4j.s 			page 28
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cc8NiwAD.s 			page 28
 
 
  809 0510 A9000000 		.4byte	0xa9
@@ -1637,7 +1637,7 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccLpyK4j.s 			page 1
  822 0531 3C050000 		.4byte	0x53c
  823 0535 23       		.uleb128 0x23
  824 0536 91040000 		.4byte	0x491
- 825 053a 01       		.byte	0x1
+ 825 053a 02       		.byte	0x2
  826 053b 00       		.byte	0
  827 053c 24       		.uleb128 0x24
  828 053d A2010000 		.4byte	.LASF72
@@ -1665,7 +1665,7 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccLpyK4j.s 			page 1
  850 0573 7E050000 		.4byte	0x57e
  851 0577 23       		.uleb128 0x23
  852 0578 91040000 		.4byte	0x491
- 853 057c 00       		.byte	0
+ 853 057c 01       		.byte	0x1
  854 057d 00       		.byte	0
  855 057e 16       		.uleb128 0x16
  856 057f DF010000 		.4byte	0x1df
@@ -1678,7 +1678,7 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccLpyK4j.s 			page 1
  863 0590 6E050000 		.4byte	0x56e
  864 0594 22       		.uleb128 0x22
  865 0595 72010000 		.4byte	0x172
-ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccLpyK4j.s 			page 29
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cc8NiwAD.s 			page 29
 
 
  866 0599 A4050000 		.4byte	0x5a4
@@ -1696,7 +1696,7 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccLpyK4j.s 			page 1
  878 05b5 C0050000 		.4byte	0x5c0
  879 05b9 23       		.uleb128 0x23
  880 05ba 91040000 		.4byte	0x491
- 881 05be 00       		.byte	0
+ 881 05be 01       		.byte	0x1
  882 05bf 00       		.byte	0
  883 05c0 24       		.uleb128 0x24
  884 05c1 42050000 		.4byte	.LASF76
@@ -1738,7 +1738,7 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccLpyK4j.s 			page 1
  920 0614 3F020000 		.4byte	.LASF88
  921 0618 3F020000 		.4byte	.LASF88
  922 061c 03       		.byte	0x3
-ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccLpyK4j.s 			page 30
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cc8NiwAD.s 			page 30
 
 
  923 061d 0B01     		.2byte	0x10b
@@ -1798,7 +1798,7 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccLpyK4j.s 			page 1
  977 0032 49       		.uleb128 0x49
  978 0033 13       		.uleb128 0x13
  979 0034 00       		.byte	0
-ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccLpyK4j.s 			page 31
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cc8NiwAD.s 			page 31
 
 
  980 0035 00       		.byte	0
@@ -1858,7 +1858,7 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccLpyK4j.s 			page 1
  1034 006b 13       		.uleb128 0x13
  1035 006c 00       		.byte	0
  1036 006d 00       		.byte	0
-ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccLpyK4j.s 			page 32
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cc8NiwAD.s 			page 32
 
 
  1037 006e 09       		.uleb128 0x9
@@ -1918,7 +1918,7 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccLpyK4j.s 			page 1
  1091 00a4 00       		.byte	0
  1092 00a5 00       		.byte	0
  1093 00a6 0D       		.uleb128 0xd
-ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccLpyK4j.s 			page 33
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cc8NiwAD.s 			page 33
 
 
  1094 00a7 2E       		.uleb128 0x2e
@@ -1978,7 +1978,7 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccLpyK4j.s 			page 1
  1148 00dd 05       		.uleb128 0x5
  1149 00de 49       		.uleb128 0x49
  1150 00df 13       		.uleb128 0x13
-ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccLpyK4j.s 			page 34
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cc8NiwAD.s 			page 34
 
 
  1151 00e0 00       		.byte	0
@@ -2038,7 +2038,7 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccLpyK4j.s 			page 1
  1205 0116 3B       		.uleb128 0x3b
  1206 0117 05       		.uleb128 0x5
  1207 0118 49       		.uleb128 0x49
-ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccLpyK4j.s 			page 35
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cc8NiwAD.s 			page 35
 
 
  1208 0119 13       		.uleb128 0x13
@@ -2098,7 +2098,7 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccLpyK4j.s 			page 1
  1262 0150 0E       		.uleb128 0xe
  1263 0151 3A       		.uleb128 0x3a
  1264 0152 0B       		.uleb128 0xb
-ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccLpyK4j.s 			page 36
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cc8NiwAD.s 			page 36
 
 
  1265 0153 3B       		.uleb128 0x3b
@@ -2158,7 +2158,7 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccLpyK4j.s 			page 1
  1319 0189 00       		.byte	0
  1320 018a 1C       		.uleb128 0x1c
  1321 018b 1D       		.uleb128 0x1d
-ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccLpyK4j.s 			page 37
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cc8NiwAD.s 			page 37
 
 
  1322 018c 01       		.byte	0x1
@@ -2218,7 +2218,7 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccLpyK4j.s 			page 1
  1376 01c4 3A       		.uleb128 0x3a
  1377 01c5 0B       		.uleb128 0xb
  1378 01c6 3B       		.uleb128 0x3b
-ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccLpyK4j.s 			page 38
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cc8NiwAD.s 			page 38
 
 
  1379 01c7 0B       		.uleb128 0xb
@@ -2278,7 +2278,7 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccLpyK4j.s 			page 1
  1433 01fd 0E       		.uleb128 0xe
  1434 01fe 3A       		.uleb128 0x3a
  1435 01ff 0B       		.uleb128 0xb
-ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccLpyK4j.s 			page 39
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cc8NiwAD.s 			page 39
 
 
  1436 0200 3B       		.uleb128 0x3b
@@ -2338,7 +2338,7 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccLpyK4j.s 			page 1
  1490 006c 0100     		.2byte	0x1
  1491 006e 50       		.byte	0x50
  1492 006f 9C000000 		.4byte	.LVL23
-ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccLpyK4j.s 			page 40
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cc8NiwAD.s 			page 40
 
 
  1493 0073 9E000000 		.4byte	.LVL24
@@ -2398,7 +2398,7 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccLpyK4j.s 			page 1
  1547 00ef 89000000 		.4byte	.LVL15-1
  1548 00f3 8E000000 		.4byte	.LVL16
  1549 00f7 0400     		.2byte	0x4
-ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccLpyK4j.s 			page 41
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cc8NiwAD.s 			page 41
 
 
  1550 00f9 F3       		.byte	0xf3
@@ -2458,7 +2458,7 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccLpyK4j.s 			page 1
  1604 0176 9F       		.byte	0x9f
  1605 0177 00000000 		.4byte	0
  1606 017b 00000000 		.4byte	0
-ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccLpyK4j.s 			page 42
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cc8NiwAD.s 			page 42
 
 
  1607              	.LLST6:
@@ -2518,7 +2518,7 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccLpyK4j.s 			page 1
  1661 0200 86000000 		.4byte	.LVL14
  1662 0204 0100     		.2byte	0x1
  1663 0206 51       		.byte	0x51
-ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccLpyK4j.s 			page 43
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cc8NiwAD.s 			page 43
 
 
  1664 0207 00000000 		.4byte	0
@@ -2578,7 +2578,7 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccLpyK4j.s 			page 1
  1708      00
  1709              	.LASF46:
  1710 0025 45455F4F 		.ascii	"EE_ORTI_set_service_in\000"
-ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccLpyK4j.s 			page 44
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cc8NiwAD.s 			page 44
 
 
  1710      5254495F 
@@ -2638,7 +2638,7 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccLpyK4j.s 			page 1
  1733              	.LASF30:
  1734 00f3 45455F6F 		.ascii	"EE_oo_counter_RAM_type\000"
  1734      6F5F636F 
-ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccLpyK4j.s 			page 45
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cc8NiwAD.s 			page 45
 
 
  1734      756E7465 
@@ -2698,7 +2698,7 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccLpyK4j.s 			page 1
  1758      685F7761 
  1758      73776169 
  1758      74696E67 
-ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccLpyK4j.s 			page 46
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cc8NiwAD.s 			page 46
 
 
  1758      00
@@ -2758,7 +2758,7 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccLpyK4j.s 			page 1
  1780      63685F70 
  1780      72696F00 
  1781              	.LASF10:
-ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccLpyK4j.s 			page 47
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cc8NiwAD.s 			page 47
 
 
  1782 026f 45455F55 		.ascii	"EE_UINT8\000"
@@ -2818,7 +2818,7 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccLpyK4j.s 			page 1
  1802      5C50536F 
  1803              	.LASF38:
  1804 033c 75736564 		.ascii	"used\000"
-ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccLpyK4j.s 			page 48
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cc8NiwAD.s 			page 48
 
 
  1804      00
@@ -2878,7 +2878,7 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccLpyK4j.s 			page 1
  1826      61637469 
  1826      766500
  1827              	.LASF2:
-ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccLpyK4j.s 			page 49
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cc8NiwAD.s 			page 49
 
 
  1828 03ed 73686F72 		.ascii	"short int\000"
@@ -2938,7 +2938,7 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccLpyK4j.s 			page 1
  1848      414D00
  1849              	.LASF35:
  1850 04eb 73706563 		.ascii	"spec_id\000"
-ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccLpyK4j.s 			page 50
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cc8NiwAD.s 			page 50
 
 
  1850      5F696400 
@@ -2998,7 +2998,7 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccLpyK4j.s 			page 1
  1874      79636C65 
  1874      00
  1875              	.LASF63:
-ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccLpyK4j.s 			page 51
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cc8NiwAD.s 			page 51
 
 
  1876 059e 45455F74 		.ascii	"EE_th_ready_prio\000"

@@ -95,11 +95,55 @@ static RC_t S7D_Set(eSegments_t DisplayNo, uint8 Value)
  * @param void
  * @return the displays are reset.
  */
-RC_t S7D_init(void)
+RC_t S7D_Init(void)
 {
+    S7D_ClearDot();
+    
+    /* Select 0th Display */
+    S7D_Select_Write(S7D_DISPLAY0);
+    S7D_ControlReg_Write(LookUpForDisplay[(sizeof(LookUpForDisplay) / sizeof(uint8)) - 1]);
+    
+    /* Select 1st Display */
+    S7D_Select_Write(S7D_DISPLAY1);
+    S7D_ControlReg_Write(LookUpForDisplay[(sizeof(LookUpForDisplay) / sizeof(uint8)) - 1]);
+    
+    return RC_SUCCESS;
+}
+
+
+/**
+ * The function clears the DP of displays.
+ * @param void
+ * @return the DP of displays are reset.
+ */
+RC_t S7D_ClearDot(void)
+{
+    /* Select 0th Display */
+    S7D_Select_Write(S7D_DISPLAY0);
+    S7D_Display_Write(SEGMENT_OFF);
+    
+    /* Select 1st Display */
+    S7D_Select_Write(S7D_DISPLAY1);
+    S7D_Display_Write(SEGMENT_OFF);
+    
+    return RC_SUCCESS;
+}
+
+
+/**
+ * The function sets the DP of displays.
+ * @param void
+ * @return the DP of displays are set.
+ */
+RC_t S7D_SetDot(void)
+{
+    /* Select 0th Display */
+    S7D_Select_Write(S7D_DISPLAY0);
     S7D_Display_Write(SEGMENT_ON);
     
-    S7D_Write(LookUpForDisplay[(sizeof(LookUpForDisplay) / sizeof(uint8)) - 1]);
+    /* Select 1st Display */
+    S7D_Select_Write(S7D_DISPLAY1);
+    S7D_Display_Write(SEGMENT_ON);
     
     return RC_SUCCESS;
 }
@@ -110,9 +154,9 @@ RC_t S7D_init(void)
  * @param void
  * @return the displays are reset.
  */
-RC_t S7D_clear(void)
+RC_t S7D_Clear(void)
 {   
-    return (S7D_init());
+    return (S7D_Init());
 }
 
 
@@ -128,6 +172,19 @@ RC_t S7D_Write(uint8 Value)
     
     /* Update 1st display */
     S7D_Set(S7D_DISPLAY1, (Value & MASK_LSB_UINT8) >> SHIFT_NIBBLE);
+    
+    return RC_SUCCESS;
+}
+
+
+/**
+ * The function takes the number as an input and updates the same value on all the LCDs.
+ * @param uint8 Value       : IN 0 - 0xF
+ * @return Updates the seven segment display with the identical value.
+ */
+RC_t S7D_IdenticalWrite(uint8 Value)
+{
+    S7D_Write(((Value & MASK_MSB_UINT8) << NIBBLE_L) | (Value & MASK_MSB_UINT8));
     
     return RC_SUCCESS;
 }

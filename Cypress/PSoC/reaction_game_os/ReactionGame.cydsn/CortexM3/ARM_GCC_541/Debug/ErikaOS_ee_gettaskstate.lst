@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccRdDD7v.s 			page 1
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cc1FeKDY.s 			page 1
 
 
    1              		.syntax unified
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccRdDD7v.s 			page 1
   28:Generated_Source\PSoC5/ErikaOS_ee_gettaskstate.c ****  * exception statement from your version.
   29:Generated_Source\PSoC5/ErikaOS_ee_gettaskstate.c ****  *
   30:Generated_Source\PSoC5/ErikaOS_ee_gettaskstate.c ****  * ERIKA Enterprise is distributed in the hope that it will be
-ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccRdDD7v.s 			page 2
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cc1FeKDY.s 			page 2
 
 
   31:Generated_Source\PSoC5/ErikaOS_ee_gettaskstate.c ****  * useful, but WITHOUT ANY WARRANTY; without even the implied warranty
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccRdDD7v.s 			page 1
   79:Generated_Source\PSoC5/ErikaOS_ee_gettaskstate.c ****   if ( (EE_as_execution_context > ErrorHook_Context) &&
   80:Generated_Source\PSoC5/ErikaOS_ee_gettaskstate.c ****        (EE_as_execution_context != PreTaskHook_Context) &&
   81:Generated_Source\PSoC5/ErikaOS_ee_gettaskstate.c ****        (EE_as_execution_context != PostTaskHook_Context) )
-ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccRdDD7v.s 			page 3
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cc1FeKDY.s 			page 3
 
 
   82:Generated_Source\PSoC5/ErikaOS_ee_gettaskstate.c ****   {
@@ -178,13 +178,13 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccRdDD7v.s 			page 1
  134:Generated_Source\PSoC5/ErikaOS_ee_gettaskstate.c ****       ev = E_OS_ACCESS;
  135:Generated_Source\PSoC5/ErikaOS_ee_gettaskstate.c ****     } else
  136:Generated_Source\PSoC5/ErikaOS_ee_gettaskstate.c **** #elif defined(__OO_EXTENDED_STATUS__)
-ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccRdDD7v.s 			page 4
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cc1FeKDY.s 			page 4
 
 
  137:Generated_Source\PSoC5/ErikaOS_ee_gettaskstate.c ****     /* check if the task Id is valid */
  138:Generated_Source\PSoC5/ErikaOS_ee_gettaskstate.c ****     if ( (TaskID < 0) || (TaskID >= EE_MAX_TASK) ) {
   36              		.loc 1 138 0
-  37 0002 0128     		cmp	r0, #1
+  37 0002 0228     		cmp	r0, #2
   38 0004 07D8     		bhi	.L4
  139:Generated_Source\PSoC5/ErikaOS_ee_gettaskstate.c ****       ev = E_OS_ID;
  140:Generated_Source\PSoC5/ErikaOS_ee_gettaskstate.c ****     } else
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccRdDD7v.s 			page 1
   61              	.L6:
   62 001a 00BF     		.align	2
   63              	.L5:
-ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccRdDD7v.s 			page 5
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cc1FeKDY.s 			page 5
 
 
   64 001c 00000000 		.word	EE_th_status
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccRdDD7v.s 			page 1
  118 0052 D8010000 		.4byte	.LASF6
  119 0056 02       		.uleb128 0x2
  120 0057 08       		.byte	0x8
-ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccRdDD7v.s 			page 6
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cc1FeKDY.s 			page 6
 
 
  121 0058 07       		.byte	0x7
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccRdDD7v.s 			page 1
  175 00ca 04       		.uleb128 0x4
  176 00cb 36010000 		.4byte	.LASF18
  177 00cf 03       		.byte	0x3
-ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccRdDD7v.s 			page 7
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cc1FeKDY.s 			page 7
 
 
  178 00d0 78       		.byte	0x78
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccRdDD7v.s 			page 1
  232 014b 04       		.byte	0x4
  233 014c 6C02     		.2byte	0x26c
  234 014e FF000000 		.4byte	0xff
-ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccRdDD7v.s 			page 8
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cc1FeKDY.s 			page 8
 
 
  235 0152 08       		.byte	0x8
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccRdDD7v.s 			page 1
  289 01c3 0C       		.byte	0xc
  290 01c4 04       		.byte	0x4
  291 01c5 8B02     		.2byte	0x28b
-ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccRdDD7v.s 			page 9
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cc1FeKDY.s 			page 9
 
 
  292 01c7 F1010000 		.4byte	0x1f1
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccRdDD7v.s 			page 1
  346 023a 00       		.byte	0
  347 023b 05       		.uleb128 0x5
  348 023c 58020000 		.4byte	.LASF43
-ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccRdDD7v.s 			page 10
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cc1FeKDY.s 			page 10
 
 
  349 0240 04       		.byte	0x4
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccRdDD7v.s 			page 1
  403 02b2 47020000 		.4byte	0x247
  404 02b6 00       		.byte	0
  405 02b7 10       		.uleb128 0x10
-ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccRdDD7v.s 			page 11
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cc1FeKDY.s 			page 11
 
 
  406 02b8 DC000000 		.4byte	.LASF76
@@ -645,7 +645,7 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccRdDD7v.s 			page 1
  447 0316 21030000 		.4byte	0x321
  448 031a 16       		.uleb128 0x16
  449 031b 21030000 		.4byte	0x321
- 450 031f 01       		.byte	0x1
+ 450 031f 02       		.byte	0x2
  451 0320 00       		.byte	0
  452 0321 02       		.uleb128 0x2
  453 0322 04       		.byte	0x4
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccRdDD7v.s 			page 1
  460 0332 04       		.byte	0x4
  461 0333 B2       		.byte	0xb2
  462 0334 38030000 		.4byte	0x338
-ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccRdDD7v.s 			page 12
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cc1FeKDY.s 			page 12
 
 
  463 0338 17       		.uleb128 0x17
@@ -675,7 +675,7 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccRdDD7v.s 			page 1
  474 0352 5D030000 		.4byte	0x35d
  475 0356 16       		.uleb128 0x16
  476 0357 21030000 		.4byte	0x321
- 477 035b 01       		.byte	0x1
+ 477 035b 02       		.byte	0x2
  478 035c 00       		.byte	0
  479 035d 14       		.uleb128 0x14
  480 035e 69040000 		.4byte	.LASF57
@@ -687,7 +687,7 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccRdDD7v.s 			page 1
  486 036d 78030000 		.4byte	0x378
  487 0371 16       		.uleb128 0x16
  488 0372 21030000 		.4byte	0x321
- 489 0376 01       		.byte	0x1
+ 489 0376 02       		.byte	0x2
  490 0377 00       		.byte	0
  491 0378 14       		.uleb128 0x14
  492 0379 8A040000 		.4byte	.LASF58
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccRdDD7v.s 			page 1
  517 03b1 50000000 		.4byte	.LASF63
  518 03b5 04       		.byte	0x4
  519 03b6 5301     		.2byte	0x153
-ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccRdDD7v.s 			page 13
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cc1FeKDY.s 			page 13
 
 
  520 03b8 4D030000 		.4byte	0x34d
@@ -727,7 +727,7 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccRdDD7v.s 			page 1
  523 03c1 CC030000 		.4byte	0x3cc
  524 03c5 16       		.uleb128 0x16
  525 03c6 21030000 		.4byte	0x321
- 526 03ca 01       		.byte	0x1
+ 526 03ca 02       		.byte	0x2
  527 03cb 00       		.byte	0
  528 03cc 18       		.uleb128 0x18
  529 03cd 4C010000 		.4byte	.LASF64
@@ -755,7 +755,7 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccRdDD7v.s 			page 1
  551 0403 0E040000 		.4byte	0x40e
  552 0407 16       		.uleb128 0x16
  553 0408 21030000 		.4byte	0x321
- 554 040c 00       		.byte	0
+ 554 040c 01       		.byte	0x1
  555 040d 00       		.byte	0
  556 040e 17       		.uleb128 0x17
  557 040f F1010000 		.4byte	0x1f1
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccRdDD7v.s 			page 1
  574 0439 04       		.byte	0x4
  575 043a F202     		.2byte	0x2f2
  576 043c 24040000 		.4byte	0x424
-ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccRdDD7v.s 			page 14
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cc1FeKDY.s 			page 14
 
 
  577 0440 15       		.uleb128 0x15
@@ -786,7 +786,7 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccRdDD7v.s 			page 1
  579 0445 50040000 		.4byte	0x450
  580 0449 16       		.uleb128 0x16
  581 044a 21030000 		.4byte	0x321
- 582 044e 00       		.byte	0
+ 582 044e 01       		.byte	0x1
  583 044f 00       		.byte	0
  584 0450 18       		.uleb128 0x18
  585 0451 01030000 		.4byte	.LASF68
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccRdDD7v.s 			page 1
  631 0008 0E       		.uleb128 0xe
  632 0009 1B       		.uleb128 0x1b
  633 000a 0E       		.uleb128 0xe
-ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccRdDD7v.s 			page 15
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cc1FeKDY.s 			page 15
 
 
  634 000b 55       		.uleb128 0x55
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccRdDD7v.s 			page 1
  688 0041 00       		.byte	0
  689 0042 00       		.byte	0
  690 0043 06       		.uleb128 0x6
-ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccRdDD7v.s 			page 16
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cc1FeKDY.s 			page 16
 
 
  691 0044 0F       		.uleb128 0xf
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccRdDD7v.s 			page 1
  745 007a 03       		.uleb128 0x3
  746 007b 0E       		.uleb128 0xe
  747 007c 1C       		.uleb128 0x1c
-ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccRdDD7v.s 			page 17
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cc1FeKDY.s 			page 17
 
 
  748 007d 0B       		.uleb128 0xb
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccRdDD7v.s 			page 1
  802 00b3 0B       		.uleb128 0xb
  803 00b4 3B       		.uleb128 0x3b
  804 00b5 0B       		.uleb128 0xb
-ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccRdDD7v.s 			page 18
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cc1FeKDY.s 			page 18
 
 
  805 00b6 27       		.uleb128 0x27
@@ -1078,7 +1078,7 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccRdDD7v.s 			page 1
  859 00ed 0B       		.uleb128 0xb
  860 00ee 3B       		.uleb128 0x3b
  861 00ef 0B       		.uleb128 0xb
-ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccRdDD7v.s 			page 19
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cc1FeKDY.s 			page 19
 
 
  862 00f0 49       		.uleb128 0x49
@@ -1138,7 +1138,7 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccRdDD7v.s 			page 1
  916 0126 01       		.uleb128 0x1
  917 0127 01       		.byte	0x1
  918 0128 49       		.uleb128 0x49
-ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccRdDD7v.s 			page 20
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cc1FeKDY.s 			page 20
 
 
  919 0129 13       		.uleb128 0x13
@@ -1198,7 +1198,7 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccRdDD7v.s 			page 1
  973 001d 14000000 		.4byte	.LVL4
  974 0021 0100     		.2byte	0x1
  975 0023 50       		.byte	0x50
-ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccRdDD7v.s 			page 21
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cc1FeKDY.s 			page 21
 
 
  976 0024 14000000 		.4byte	.LVL4
@@ -1258,7 +1258,7 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccRdDD7v.s 			page 1
  1028      00000201 
  1028      FB0E0D00 
  1028      01010101 
-ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccRdDD7v.s 			page 22
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cc1FeKDY.s 			page 22
 
 
  1029              	.LASF53:
@@ -1318,7 +1318,7 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccRdDD7v.s 			page 1
  1052              	.LASF44:
  1053 00d1 53746174 		.ascii	"StatusType\000"
  1053      75735479 
-ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccRdDD7v.s 			page 23
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cc1FeKDY.s 			page 23
 
 
  1053      706500
@@ -1378,7 +1378,7 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccRdDD7v.s 			page 1
  1078              	.LASF34:
  1079 0176 45455F6F 		.ascii	"EE_oo_counter_object_kind_type\000"
  1079      6F5F636F 
-ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccRdDD7v.s 			page 24
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cc1FeKDY.s 			page 24
 
 
  1079      756E7465 
@@ -1438,7 +1438,7 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccRdDD7v.s 			page 1
  1099      20696E74 
  1099      00
  1100              	.LASF25:
-ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccRdDD7v.s 			page 25
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cc1FeKDY.s 			page 25
 
 
  1101 0248 6D617861 		.ascii	"maxallowedvalue\000"
@@ -1498,7 +1498,7 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccRdDD7v.s 			page 1
  1121      6963655F 
  1122              	.LASF68:
  1123 0301 45455F6F 		.ascii	"EE_oo_counter_object_RAM\000"
-ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccRdDD7v.s 			page 26
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cc1FeKDY.s 			page 26
 
 
  1123      6F5F636F 
@@ -1558,7 +1558,7 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccRdDD7v.s 			page 1
  1146              	.LASF71:
  1147 03d0 45455F41 		.ascii	"EE_ApplicationMode\000"
  1147      70706C69 
-ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccRdDD7v.s 			page 27
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cc1FeKDY.s 			page 27
 
 
  1147      63617469 
@@ -1618,7 +1618,7 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccRdDD7v.s 			page 1
  1169      73706174 
  1169      63685F70 
  1169      72696F00 
-ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccRdDD7v.s 			page 28
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cc1FeKDY.s 			page 28
 
 
  1170              	.LASF58:

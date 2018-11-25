@@ -1,5 +1,5 @@
 /**
-* \file <tsk_init.c>
+* \file <signal_handler.c>
 * \author <Bharath Ramachandraiah>
 * \date <13/11/2018>
 *
@@ -21,9 +21,7 @@
 /* Include files                                                             */
 /*****************************************************************************/
 #include "global.h"
-#include "tsk_Init.h"
-#include "seven.h"
-#include "console.h"
+#include "button.h"
 
 /*****************************************************************************/
 /* Local pre-processor symbols/macros ('#define')                            */
@@ -37,17 +35,12 @@
 /*****************************************************************************/
 /* Local type definitions ('typedef')                                        */
 /*****************************************************************************/
-typedef RC_t (*RC_tFunctPtrv)(void);
+
 
 /*****************************************************************************/
 /* Local variable definitions ('static')                                     */
 /*****************************************************************************/
-static RC_tFunctPtrv fptr_init_functions[] = 
-{
-    // Add all the initialization functions here
-    CONSOLE_Init,
-    S7D_init,
-};
+
 
 /*****************************************************************************/
 /* Local function prototypes ('static')                                      */
@@ -57,32 +50,23 @@ static RC_tFunctPtrv fptr_init_functions[] =
 /*****************************************************************************/
 /* Function implementation - global ('extern') and local ('static')          */
 /*****************************************************************************/
+static void SIGNAL__from_button1(void)
+{
+    // Events for button 1 press
+    SetEvent(tsk_ReactionGame, ev_Button1);
+}
+
+static void SIGNAL__from_button2(void)
+{
+    // Events for button 2 press
+    SetEvent(tsk_ReactionGame, ev_Button2);
+}
 
 /**
- * The Task declaration
- * The tsk_Init initializes all the necessary hardware components.
- * This is an autostart task which will be run once the OS starts.
+ * The button press interrupt - Category 2
  */
-TASK(tsk_Init)
+ISR2(isr_BUTTON)
 {
-    // MCAL - hardware initialization 
-    for (unsigned int Index = 0; Index < sizeof(fptr_init_functions)/sizeof(RC_tFunctPtrv); Index++)
-    {
-        if (RC_SUCCESS != fptr_init_functions[Index]())
-        {
-            // Hardware Fault - Take necessary action
-            while(1) __asm("NOP");
-        }
-    }
-    
-    // OS initialization - This will override and reconfigures the interrupts by OS parameters
-    EE_system_init();
-    
-    // Activate Tasks here
-    
-    // Set Alarms here
-    SetRelAlarm(alrm_Tick1ms, 1, 1);
-    
-    // Terminate the init task and let the schedular do its thing!
-    TerminateTask();
+    if (BUTTON_IsPressed(BUTTON_1)) SIGNAL__from_button1();
+    if (BUTTON_IsPressed(BUTTON_2)) SIGNAL__from_button2();
 }

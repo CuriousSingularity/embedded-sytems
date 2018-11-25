@@ -22,9 +22,9 @@
     #define TASK_2_STACK_SIZE 0/4 // size = 0 bytes
     int EE_cortex_mx_stack_2[TASK_2_STACK_SIZE];	/* Task 2 (tsk_Timer) */
     #endif
-    #if ((1 == 2) && (EE_MAX_TASK > 2))
-    #define TASK_3_STACK_SIZE 0/4 // size = 0 bytes
-    int EE_cortex_mx_stack_3[TASK_3_STACK_SIZE];	/* Task 3 (Task_3) */
+    #if ((2 == 2) && (EE_MAX_TASK > 2))
+    #define TASK_3_STACK_SIZE 400/4 // size = 400 bytes
+    int EE_cortex_mx_stack_3[TASK_3_STACK_SIZE];	/* Task 3 (tsk_ReactionGame) */
     #endif
     #if ((1 == 2) && (EE_MAX_TASK > 3))
     #define TASK_4_STACK_SIZE 0/4 // size = 0 bytes
@@ -121,7 +121,7 @@
         ,Tsk2	 /* tsk_Timer*/
     #endif
     #if EE_MAX_TASK > 2
-        ,Tsk3	 /* Task_3*/
+        ,Tsk3	 /* tsk_ReactionGame*/
     #endif
     #if EE_MAX_TASK > 3
         ,Tsk4	 /* Task_4*/
@@ -149,7 +149,7 @@
         ,{(EE_ADDR)(&EE_cortex_mx_stack_2[(TASK_2_STACK_SIZE) - CORTEX_MX_INIT_TOS_OFFSET])}	/* tsk_Timer*/
         #endif
         #ifdef TASK_3_STACK_SIZE
-        ,{(EE_ADDR)(&EE_cortex_mx_stack_3[(TASK_3_STACK_SIZE) - CORTEX_MX_INIT_TOS_OFFSET])} 	/* Task_3*/
+        ,{(EE_ADDR)(&EE_cortex_mx_stack_3[(TASK_3_STACK_SIZE) - CORTEX_MX_INIT_TOS_OFFSET])} 	/* tsk_ReactionGame*/
         #endif
         #ifdef TASK_4_STACK_SIZE
         ,{(EE_ADDR)(&EE_cortex_mx_stack_4[(TASK_4_STACK_SIZE) - CORTEX_MX_INIT_TOS_OFFSET])}    /* Task_4*/
@@ -191,7 +191,7 @@
     DeclareTask(tsk_Timer);
     #endif
     #if EE_MAX_TASK > 2
-    DeclareTask(Task_3);
+    DeclareTask(tsk_ReactionGame);
     #endif
     #if EE_MAX_TASK > 3
     DeclareTask(Task_4);
@@ -217,7 +217,7 @@
         ,&EE_oo_thread_stub      /* thread tsk_Timer */
     #endif
     #if EE_MAX_TASK > 2
-        ,&EE_oo_thread_stub      /* thread Task_3 */
+        ,&EE_oo_thread_stub      /* thread tsk_ReactionGame */
     #endif
     #if EE_MAX_TASK > 3
         ,&EE_oo_thread_stub      /* thread Task_4 */
@@ -247,7 +247,7 @@
         ,&Functsk_Timer
     #endif
     #if EE_MAX_TASK > 2
-        ,&FuncTask_3
+        ,&Functsk_ReactionGame
     #endif
     #if EE_MAX_TASK > 3
         ,&FuncTask_4
@@ -275,7 +275,7 @@
         ,2U
     #endif
     #if EE_MAX_TASK > 2
-        ,0U
+        ,128U
     #endif
     #if EE_MAX_TASK > 3
         ,0U
@@ -313,7 +313,7 @@
     #endif
     #if EE_MAX_TASK > 2
         #if 1
-        ,0U
+        ,128U
         #else
         ,MAX_PRIORITY
         #endif
@@ -738,7 +738,7 @@
         #endif
     #endif
     #if EE_MAX_TASK > 2
-        #if 0
+        #if 2
         ,1U
         #else
         ,0U
@@ -1288,7 +1288,7 @@
         {alrm_Tick1ms}
     #endif
     #if EE_MAX_ALARM > 1
-        ,{Alarm_2}
+        ,{alrm_Timeout}
     #endif
     #if EE_MAX_ALARM > 2
         ,{Alarm_3}
@@ -1315,7 +1315,7 @@
 #if (EE_MAX_ALARM > 0) && (0 == 3)
     void alarm_callback_1(void);
 #endif
-#if (EE_MAX_ALARM > 1) && (0 == 3)
+#if (EE_MAX_ALARM > 1) && (1 == 3)
     void alarm_callback_2(void);
 #endif
 #if (EE_MAX_ALARM > 2) && (0 == 3)
@@ -1349,7 +1349,7 @@
         {0, alrm_Tick1ms, EE_ALARM }
         #endif
         #if EE_MAX_ALARM > 1
-        ,{0, Alarm_2, EE_ALARM }
+        ,{0, alrm_Timeout, EE_ALARM }
         #endif
         #if EE_MAX_ALARM > 2
         ,{0, Alarm_3, EE_ALARM }
@@ -1401,18 +1401,18 @@
             (EE_TYPECOUNTER)-1 }
     #endif
     #if EE_ACTION_ROM_SIZE > 1
-        ,{0    , 
-            #if 0 != 3 
-                0,
+        ,{1    , 
+            #if 1 != 3 
+                2,
             #else
                 0,
             #endif
-            #if 0 == 1
-                1U,
+            #if 1 == 1
+                4U,
             #else
                 0U,
             #endif
-            #if 0 != 3
+            #if 1 != 3
              (EE_VOID_CALLBACK)NULL,
             #else
                 alarm_callback_2,
@@ -1566,7 +1566,7 @@
     #if 1 || 0
         ,
     #endif
-        Task_3
+        tsk_ReactionGame
     #endif
     #if (EE_MAX_TASK > 3) && 0
     #if 1 || 0 || 0

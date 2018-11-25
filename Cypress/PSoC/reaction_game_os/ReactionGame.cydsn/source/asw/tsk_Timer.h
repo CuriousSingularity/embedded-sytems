@@ -80,7 +80,8 @@
 /*****************************************************************************/
 /* Global pre-processor symbols/macros and type declarations                 */
 /*****************************************************************************/
-
+#define MILLISECONDS            1000
+    
 //####################### Defines/Macros
 
 
@@ -113,6 +114,9 @@ public:
  */
 DeclareTask(tsk_Timer);
 
+RC_t TIMER_StartTimeMeasurement(void);
+
+RC_t TIMER_ElapsedTimeMeasurement(uint32_t *MeasureReactionTime);
 
 /*****************************************************************************/
 /* Private stuff, only visible for Together, declared static in cpp - File   */

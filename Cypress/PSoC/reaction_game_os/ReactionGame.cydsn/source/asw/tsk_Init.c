@@ -1,5 +1,5 @@
 /**
-* \file <tsk_Timer.c>
+* \file <tsk_Init.c>
 * \author <Bharath Ramachandraiah>
 * \date <13/11/2018>
 *
@@ -20,7 +20,11 @@
 /*****************************************************************************/
 /* Include files                                                             */
 /*****************************************************************************/
-#include "tsk_Timer.h"
+#include "global.h"
+#include "tsk_Init.h"
+#include "tsk_ReactionGame.h"
+#include "seven.h"
+#include "console.h"
 
 /*****************************************************************************/
 /* Local pre-processor symbols/macros ('#define')                            */
@@ -34,12 +38,17 @@
 /*****************************************************************************/
 /* Local type definitions ('typedef')                                        */
 /*****************************************************************************/
-
+typedef RC_t (*RC_tFunctPtrv)(void);
 
 /*****************************************************************************/
 /* Local variable definitions ('static')                                     */
 /*****************************************************************************/
-static uint32_t TIMER__1ms_counter = 0;
+static RC_tFunctPtrv fptr_init_functions[] = 
+{
+    // Add all the initialization functions here
+    CONSOLE_Init,
+    S7D_Init,
+};
 
 /*****************************************************************************/
 /* Local function prototypes ('static')                                      */
@@ -52,27 +61,30 @@ static uint32_t TIMER__1ms_counter = 0;
 
 /**
  * The Task declaration
- * The tsk_Timer is a cyclic task which is activated every 1ms.
- * The task is activated via an alarm.
+ * The tsk_Init initializes all the necessary hardware components.
+ * This is an autostart task which will be run once the OS starts.
  */
-TASK(tsk_Timer)
+TASK(tsk_Init)
 {
-    ++TIMER__1ms_counter;
+    // MCAL - hardware initialization 
+    for (unsigned int Index = 0; Index < sizeof(fptr_init_functions)/sizeof(RC_tFunctPtrv); Index++)
+    {
+        if (RC_SUCCESS != fptr_init_functions[Index]())
+        {
+            // Hardware Fault - Take necessary action
+            while(1) __asm("NOP");
+        }
+    }
+    
+    // OS initialization - This will override and reconfigures the interrupts by OS parameters
+    EE_system_init();
+    
+    // Activate Tasks here
+    ActivateTask(tsk_ReactionGame);
+    
+    // Set Alarms here
+    SetRelAlarm(alrm_Tick1ms, 1, 1);
+    
     // Terminate the init task and let the schedular do its thing!
     TerminateTask();
-}
-
-RC_t TIMER_StartTimeMeasurement(void)
-{
-    TIMER__1ms_counter = 0;
-    
-    return RC_SUCCESS;
-}
-
-
-RC_t TIMER_ElapsedTimeMeasurement(uint32_t *MeasureReactionTime)
-{
-    *MeasureReactionTime = TIMER__1ms_counter;
-    
-    return RC_SUCCESS;
 }

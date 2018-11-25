@@ -19,7 +19,7 @@
  **************************************************************************/
 
     /* TASK definition */
-    #define EE_MAX_TASK 2
+    #define EE_MAX_TASK 3
     #if EE_MAX_TASK > 0
     #define tsk_Init 0
     #endif
@@ -27,7 +27,7 @@
     #define tsk_Timer 1
     #endif
     #if EE_MAX_TASK > 2
-    #define Task_3 2
+    #define tsk_ReactionGame 2
     #endif
     #if EE_MAX_TASK > 3
     #define Task_4 3
@@ -86,12 +86,12 @@
     #endif
     
     /* ALARM definition */
-    #define EE_MAX_ALARM 1U
+    #define EE_MAX_ALARM 2U
     #if EE_MAX_ALARM > 0
     #define alrm_Tick1ms 0U
     #endif
     #if EE_MAX_ALARM > 1
-    #define Alarm_2 1U
+    #define alrm_Timeout 1U
     #endif
     #if EE_MAX_ALARM > 2
     #define Alarm_3 2U
@@ -142,7 +142,7 @@
 
     /* Number of isr */
     #include "ErikaOS_ISR_definition.inc"
-    #define EE_MAX_ISR_ID 0    
+    #define EE_MAX_ISR_ID 1    
     #define EE_MAX_ISR2   Number_ISR2
     #define EE_MAX_ISR2_WITH_RESOURCES Number_ISR2_Resources
     
@@ -243,7 +243,7 @@ extern void systick_handler(void);
 #endif
 
 #if EE_MAX_ISR_ID > 0
-extern void ISR_1(void);
+extern void isr_BUTTON(void);
 #endif
 #if EE_MAX_ISR_ID > 1
 extern void ISR_2(void);
@@ -336,7 +336,7 @@ extern void ISR_16(void);
     #else
         #define TSK2_STCK 0
     #endif
-    #if (1 == 2) && (EE_MAX_TASK > 2)
+    #if (2 == 2) && (EE_MAX_TASK > 2)
         #define TSK3_STCK 1
     #else
         #define TSK3_STCK 0
