@@ -16,11 +16,11 @@
 #if 1
     #if ((1 == 2) && (EE_MAX_TASK > 0))
     #define TASK_1_STACK_SIZE 0/4 // size = 0 bytes
-    int EE_cortex_mx_stack_1[TASK_1_STACK_SIZE];	/* Task 1 (tsk_init) */
+    int EE_cortex_mx_stack_1[TASK_1_STACK_SIZE];	/* Task 1 (tsk_Init) */
     #endif
     #if ((1 == 2) && (EE_MAX_TASK > 1))
     #define TASK_2_STACK_SIZE 0/4 // size = 0 bytes
-    int EE_cortex_mx_stack_2[TASK_2_STACK_SIZE];	/* Task 2 (Task_2) */
+    int EE_cortex_mx_stack_2[TASK_2_STACK_SIZE];	/* Task 2 (tsk_Timer) */
     #endif
     #if ((1 == 2) && (EE_MAX_TASK > 2))
     #define TASK_3_STACK_SIZE 0/4 // size = 0 bytes
@@ -115,10 +115,10 @@
     const EE_UREG EE_std_thread_tos[EE_MAX_TASK+1] = {
         0U	 /* dummy*/
     #if EE_MAX_TASK > 0
-        ,Tsk1	 /* tsk_init*/
+        ,Tsk1	 /* tsk_Init*/
     #endif
     #if EE_MAX_TASK > 1
-        ,Tsk2	 /* Task_2*/
+        ,Tsk2	 /* tsk_Timer*/
     #endif
     #if EE_MAX_TASK > 2
         ,Tsk3	 /* Task_3*/
@@ -143,10 +143,10 @@
     struct EE_TOS EE_cortex_mx_system_tos[EE_CORTEX_MX_SYSTEM_TOS_SIZE] = {
         {0}
         #ifdef TASK_1_STACK_SIZE
-        ,{(EE_ADDR)(&EE_cortex_mx_stack_1[(TASK_1_STACK_SIZE) - CORTEX_MX_INIT_TOS_OFFSET])}	/* tsk_init*/
+        ,{(EE_ADDR)(&EE_cortex_mx_stack_1[(TASK_1_STACK_SIZE) - CORTEX_MX_INIT_TOS_OFFSET])}	/* tsk_Init*/
         #endif
         #ifdef TASK_2_STACK_SIZE
-        ,{(EE_ADDR)(&EE_cortex_mx_stack_2[(TASK_2_STACK_SIZE) - CORTEX_MX_INIT_TOS_OFFSET])}	/* Task_2*/
+        ,{(EE_ADDR)(&EE_cortex_mx_stack_2[(TASK_2_STACK_SIZE) - CORTEX_MX_INIT_TOS_OFFSET])}	/* tsk_Timer*/
         #endif
         #ifdef TASK_3_STACK_SIZE
         ,{(EE_ADDR)(&EE_cortex_mx_stack_3[(TASK_3_STACK_SIZE) - CORTEX_MX_INIT_TOS_OFFSET])} 	/* Task_3*/
@@ -185,10 +185,10 @@
  **************************************************************************/
     /* Definition of task's body */
     #if EE_MAX_TASK > 0
-    DeclareTask(tsk_init);
+    DeclareTask(tsk_Init);
     #endif
     #if EE_MAX_TASK > 1
-    DeclareTask(Task_2);
+    DeclareTask(tsk_Timer);
     #endif
     #if EE_MAX_TASK > 2
     DeclareTask(Task_3);
@@ -211,10 +211,10 @@
 
     const EE_THREAD_PTR EE_hal_thread_body[EE_MAX_TASK] = {
     #if EE_MAX_TASK > 0
-        &EE_oo_thread_stub       /* thread tsk_init */
+        &EE_oo_thread_stub       /* thread tsk_Init */
     #endif
     #if EE_MAX_TASK > 1
-        ,&EE_oo_thread_stub      /* thread Task_2 */
+        ,&EE_oo_thread_stub      /* thread tsk_Timer */
     #endif
     #if EE_MAX_TASK > 2
         ,&EE_oo_thread_stub      /* thread Task_3 */
@@ -241,10 +241,10 @@
     /* ip of each thread body (ROM) */
     const EE_THREAD_PTR EE_terminate_real_th_body[EE_MAX_TASK] = {
     #if EE_MAX_TASK > 0
-        &Functsk_init
+        &Functsk_Init
     #endif
     #if EE_MAX_TASK > 1
-        ,&FuncTask_2
+        ,&Functsk_Timer
     #endif
     #if EE_MAX_TASK > 2
         ,&FuncTask_3
@@ -272,7 +272,7 @@
         1U
     #endif
     #if EE_MAX_TASK > 1
-        ,0U
+        ,2U
     #endif
     #if EE_MAX_TASK > 2
         ,0U
@@ -306,7 +306,7 @@
     #endif
     #if EE_MAX_TASK > 1
         #if 1
-        ,0U
+        ,2U
         #else
         ,MAX_PRIORITY
         #endif
@@ -1251,7 +1251,7 @@
  **************************************************************************/
 #if EE_MAX_COUNTER
     const EE_oo_counter_ROM_type EE_counter_ROM[EE_COUNTER_ROM_SIZE] = {
-        {OSMAXALLOWEDVALUE_myCounter_1, OSTICKSPERBASE_myCounter_1, OSMINCYCLE_myCounter_1} /* myCounter_1 */
+        {OSMAXALLOWEDVALUE_cnt_systick, OSTICKSPERBASE_cnt_systick, OSMINCYCLE_cnt_systick} /* cnt_systick */
         #if EE_COUNTER_ROM_SIZE > 1
         ,{OSMAXALLOWEDVALUE_myCounter_2, OSTICKSPERBASE_myCounter_2, OSMINCYCLE_myCounter_2} /* myCounter_2 */
         #endif
@@ -1285,7 +1285,7 @@
 #if EE_ALARM_ROM_SIZE
     const EE_oo_alarm_ROM_type EE_alarm_ROM[EE_ALARM_ROM_SIZE] = {
     #if EE_MAX_ALARM > 0
-        {Alarm_1}
+        {alrm_Tick1ms}
     #endif
     #if EE_MAX_ALARM > 1
         ,{Alarm_2}
@@ -1346,7 +1346,7 @@
 #if EE_COUNTER_OBJECTS_ROM_SIZE
     const EE_oo_counter_object_ROM_type   EE_oo_counter_object_ROM[EE_COUNTER_OBJECTS_ROM_SIZE] = {
         #if EE_MAX_ALARM > 0
-        {0, Alarm_1, EE_ALARM }
+        {0, alrm_Tick1ms, EE_ALARM }
         #endif
         #if EE_MAX_ALARM > 1
         ,{0, Alarm_2, EE_ALARM }
@@ -1384,7 +1384,7 @@
     #if EE_ACTION_ROM_SIZE > 0
         {0    , 
             #if 0 != 3 
-                0,
+                1,
             #else
                 0,
             #endif
@@ -1554,13 +1554,13 @@
     static const EE_TID EE_oo_autostart_task_mode_OSDEFAULTAPPMODE[EE_OO_AUTOSTART_TASK_MODE_OSDEFAULTAPPMODE_SIZE] = 
         { 
     #if (EE_MAX_TASK > 0) && 1
-        tsk_init
+        tsk_Init
     #endif
     #if (EE_MAX_TASK > 1) && 0
     #if 1
         ,
     #endif
-        Task_2
+        tsk_Timer
     #endif
     #if (EE_MAX_TASK > 2) && 0
     #if 1 || 0

@@ -1,5 +1,5 @@
 /**
-* \file <tsk_init.h>
+* \file <tsk_Timer.h>
 * \author <Bharath Ramachandraiah>
 * \date <13/11/2018>
 *
@@ -72,11 +72,11 @@
 
 
  
-#ifndef TSK_INIT_H_
-#define TSK_INIT_H_
-
+#ifndef TSK_TIMER_H_
+#define TSK_TIMER_H_
+   
 #include "global.h"
-    
+     
 /*****************************************************************************/
 /* Global pre-processor symbols/macros and type declarations                 */
 /*****************************************************************************/
@@ -108,10 +108,10 @@ public:
 
 /**
  * The Task declaration
- * The tsk_Init initializes all the necessary hardware components.
+ * The tsk_init initializes all the necessary hardware components.
  * This is an autostart task which will be run once the OS starts.
  */
-DeclareTask(tsk_Init);
+DeclareTask(tsk_Timer);
 
 
 /*****************************************************************************/
@@ -143,4 +143,4 @@ static type FILE__function(uint16_t cmd);
 };
 #endif /* Together */
 
-#endif /* TSK_INIT_H_ */
+#endif /* TSK_TIMER_H_ */

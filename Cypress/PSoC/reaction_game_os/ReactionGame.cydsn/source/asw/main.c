@@ -21,7 +21,12 @@
 /*****************************************************************************/
 #include "project.h"
 #include "global.h"
-#include "tsk_init.h"
+#include "tsk_Init.h"
+
+ISR(systick_handler)
+{
+    CounterTick(cnt_systick);
+}
 
 /*****************************************************************************/
 /* Function implementation - global ('extern') and local ('static')          */

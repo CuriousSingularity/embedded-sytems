@@ -19,12 +19,12 @@
  **************************************************************************/
 
     /* TASK definition */
-    #define EE_MAX_TASK 1
+    #define EE_MAX_TASK 2
     #if EE_MAX_TASK > 0
-    #define tsk_init 0
+    #define tsk_Init 0
     #endif
     #if EE_MAX_TASK > 1
-    #define Task_2 1
+    #define tsk_Timer 1
     #endif
     #if EE_MAX_TASK > 2
     #define Task_3 2
@@ -86,9 +86,9 @@
     #endif
     
     /* ALARM definition */
-    #define EE_MAX_ALARM 0U
+    #define EE_MAX_ALARM 1U
     #if EE_MAX_ALARM > 0
-    #define Alarm_1 0U
+    #define alrm_Tick1ms 0U
     #endif
     #if EE_MAX_ALARM > 1
     #define Alarm_2 1U
@@ -119,9 +119,9 @@
     #define EE_MAX_COUNTER_OBJECTS (EE_MAX_ALARM + EE_MAX_SCHEDULETABLE)
 
     /* COUNTER definition */
-    #define EE_MAX_COUNTER 0
+    #define EE_MAX_COUNTER 1
     #if EE_MAX_COUNTER > 0
-    #define myCounter_1 0U
+    #define cnt_systick 0U
     #endif
     #if EE_MAX_COUNTER > 1
     #define myCounter_2 1U
@@ -222,7 +222,7 @@
 #if 0
 #define __OO_HAS_USERESSCHEDULER__
 #endif
-#if 0
+#if 1
 #define __USE_SYSTICK__
 #endif
 #define __ALLOW_NESTED_IRQ__
@@ -298,9 +298,9 @@ extern void ISR_16(void);
  *
  **************************************************************************/
 #if EE_MAX_COUNTER > 0
-#define OSMAXALLOWEDVALUE_myCounter_1 0U
-#define OSTICKSPERBASE_myCounter_1    0U
-#define OSMINCYCLE_myCounter_1        0U
+#define OSMAXALLOWEDVALUE_cnt_systick 10000U
+#define OSTICKSPERBASE_cnt_systick    0U
+#define OSMINCYCLE_cnt_systick        1U
 #endif
 #if EE_MAX_COUNTER > 1
 #define OSMAXALLOWEDVALUE_myCounter_2 0U

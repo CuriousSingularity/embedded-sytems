@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cckYGNgk.s 			page 1
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccZ0vfwj.s 			page 1
 
 
    1              		.syntax unified
@@ -26,7 +26,7 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cckYGNgk.s 			page 1
   23              		.thumb_func
   24              		.type	BUTTON_IsPressed, %function
   25              	BUTTON_IsPressed:
-  26              	.LFB102:
+  26              	.LFB110:
   27              		.file 1 "source\\bsw\\button.c"
    1:source\bsw/button.c **** /**
    2:source\bsw/button.c **** * \file <button.c>
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cckYGNgk.s 			page 1
   28:source\bsw/button.c **** 
   29:source\bsw/button.c **** /*****************************************************************************/
   30:source\bsw/button.c **** /* Global variable definitions (declared in header file with 'extern')       */
-ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cckYGNgk.s 			page 2
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccZ0vfwj.s 			page 2
 
 
   31:source\bsw/button.c **** /*****************************************************************************/
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cckYGNgk.s 			page 1
   50              	.LVL3:
   51              	.L4:
   63:source\bsw/button.c ****         break;
-ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cckYGNgk.s 			page 3
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccZ0vfwj.s 			page 3
 
 
   64:source\bsw/button.c ****         
@@ -154,7 +154,7 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cckYGNgk.s 			page 1
   71              		.loc 1 72 0
   72 0026 08BD     		pop	{r3, pc}
   73              		.cfi_endproc
-  74              	.LFE102:
+  74              	.LFE110:
   75              		.size	BUTTON_IsPressed, .-BUTTON_IsPressed
   76              		.text
   77              	.Letext0:
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cckYGNgk.s 			page 1
   95 000a 04       		.byte	0x4
   96 000b 01       		.uleb128 0x1
   97 000c 81000000 		.4byte	.LASF34
-ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cckYGNgk.s 			page 4
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccZ0vfwj.s 			page 4
 
 
   98 0010 0C       		.byte	0xc
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cckYGNgk.s 			page 1
  152 007c 2C       		.byte	0x2c
  153 007d 41000000 		.4byte	0x41
  154 0081 02       		.uleb128 0x2
-ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cckYGNgk.s 			page 5
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccZ0vfwj.s 			page 5
 
 
  155 0082 04       		.byte	0x4
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cckYGNgk.s 			page 1
  209 00f1 57       		.byte	0x57
  210 00f2 09010000 		.4byte	0x109
  211 00f6 06       		.uleb128 0x6
-ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cckYGNgk.s 			page 6
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccZ0vfwj.s 			page 6
 
 
  212 00f7 BD020000 		.4byte	.LASF22
@@ -320,8 +320,8 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cckYGNgk.s 			page 1
  228 0119 01       		.byte	0x1
  229 011a 38       		.byte	0x38
  230 011b DB000000 		.4byte	0xdb
- 231 011f 00000000 		.4byte	.LFB102
- 232 0123 28000000 		.4byte	.LFE102-.LFB102
+ 231 011f 00000000 		.4byte	.LFB110
+ 232 0123 28000000 		.4byte	.LFE110-.LFB110
  233 0127 01       		.uleb128 0x1
  234 0128 9C       		.byte	0x9c
  235 0129 5E010000 		.4byte	0x15e
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cckYGNgk.s 			page 1
  266 0175 D1010000 		.4byte	.LASF28
  267 0179 08       		.byte	0x8
  268 017a 4A       		.byte	0x4a
-ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cckYGNgk.s 			page 7
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccZ0vfwj.s 			page 7
 
 
  269 017b B3000000 		.4byte	0xb3
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cckYGNgk.s 			page 1
  323 0017 0B       		.uleb128 0xb
  324 0018 3E       		.uleb128 0x3e
  325 0019 0B       		.uleb128 0xb
-ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cckYGNgk.s 			page 8
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccZ0vfwj.s 			page 8
 
 
  326 001a 03       		.uleb128 0x3
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cckYGNgk.s 			page 1
  380 0050 07       		.uleb128 0x7
  381 0051 2E       		.uleb128 0x2e
  382 0052 01       		.byte	0x1
-ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cckYGNgk.s 			page 9
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccZ0vfwj.s 			page 9
 
 
  383 0053 3F       		.uleb128 0x3f
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cckYGNgk.s 			page 1
  437 008a 0A       		.uleb128 0xa
  438 008b 898201   		.uleb128 0x4109
  439 008e 00       		.byte	0
-ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cckYGNgk.s 			page 10
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccZ0vfwj.s 			page 10
 
 
  440 008f 11       		.uleb128 0x11
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cckYGNgk.s 			page 1
  494 00c5 6E       		.uleb128 0x6e
  495 00c6 0E       		.uleb128 0xe
  496 00c7 03       		.uleb128 0x3
-ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cckYGNgk.s 			page 11
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccZ0vfwj.s 			page 11
 
 
  497 00c8 0E       		.uleb128 0xe
@@ -639,7 +639,7 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cckYGNgk.s 			page 1
  532 003a 0100     		.2byte	0x1
  533 003c 50       		.byte	0x50
  534 003d 1E000000 		.4byte	.LVL6
- 535 0041 28000000 		.4byte	.LFE102
+ 535 0041 28000000 		.4byte	.LFE110
  536 0045 0400     		.2byte	0x4
  537 0047 F3       		.byte	0xf3
  538 0048 01       		.uleb128 0x1
@@ -654,11 +654,11 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cckYGNgk.s 			page 1
  547 005d 30       		.byte	0x30
  548 005e 9F       		.byte	0x9f
  549 005f 26000000 		.4byte	.LVL7
- 550 0063 28000000 		.4byte	.LFE102
+ 550 0063 28000000 		.4byte	.LFE110
  551 0067 0100     		.2byte	0x1
  552 0069 50       		.byte	0x50
  553 006a 00000000 		.4byte	0
-ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cckYGNgk.s 			page 12
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccZ0vfwj.s 			page 12
 
 
  554 006e 00000000 		.4byte	0
@@ -670,14 +670,14 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cckYGNgk.s 			page 1
  560 000b 00       		.byte	0
  561 000c 0000     		.2byte	0
  562 000e 0000     		.2byte	0
- 563 0010 00000000 		.4byte	.LFB102
- 564 0014 28000000 		.4byte	.LFE102-.LFB102
+ 563 0010 00000000 		.4byte	.LFB110
+ 564 0014 28000000 		.4byte	.LFE110-.LFB110
  565 0018 00000000 		.4byte	0
  566 001c 00000000 		.4byte	0
  567              		.section	.debug_ranges,"",%progbits
  568              	.Ldebug_ranges0:
- 569 0000 00000000 		.4byte	.LFB102
- 570 0004 28000000 		.4byte	.LFE102
+ 569 0000 00000000 		.4byte	.LFB110
+ 570 0004 28000000 		.4byte	.LFE110
  571 0008 00000000 		.4byte	0
  572 000c 00000000 		.4byte	0
  573              		.section	.debug_line,"",%progbits
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cckYGNgk.s 			page 1
  588              	.LASF19:
  589 0055 45455F54 		.ascii	"EE_TID\000"
  589      494400
-ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cckYGNgk.s 			page 13
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccZ0vfwj.s 			page 13
 
 
  590              	.LASF11:
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cckYGNgk.s 			page 1
  609      52784275 
  609      66666572 
  609      00
-ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cckYGNgk.s 			page 14
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccZ0vfwj.s 			page 14
 
 
  610              	.LASF25:
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cckYGNgk.s 			page 1
  635 0203 6C6F6E67 		.ascii	"long long int\000"
  635      206C6F6E 
  635      6720696E 
-ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cckYGNgk.s 			page 15
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccZ0vfwj.s 			page 15
 
 
  635      7400
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cckYGNgk.s 			page 1
  660 02d7 42555454 		.ascii	"BUTTON_2\000"
  660      4F4E5F32 
  660      00
-ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cckYGNgk.s 			page 16
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccZ0vfwj.s 			page 16
 
 
  661              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran

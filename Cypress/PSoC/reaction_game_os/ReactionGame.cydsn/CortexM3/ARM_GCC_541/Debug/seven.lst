@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cco4Ki0s.s 			page 1
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cc9xV06r.s 			page 1
 
 
    1              		.syntax unified
@@ -25,7 +25,7 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cco4Ki0s.s 			page 1
   22              		.thumb_func
   23              		.type	S7D_Set, %function
   24              	S7D_Set:
-  25              	.LFB102:
+  25              	.LFB110:
   26              		.file 1 "source\\bsw\\seven.c"
    1:source\bsw/seven.c **** /**
    2:source\bsw/seven.c **** * \file <seven.c>
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cco4Ki0s.s 			page 1
   29:source\bsw/seven.c **** /* Local pre-processor symbols/macros ('#define')                            */
   30:source\bsw/seven.c **** /*****************************************************************************/
   31:source\bsw/seven.c **** 
-ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cco4Ki0s.s 			page 2
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cc9xV06r.s 			page 2
 
 
   32:source\bsw/seven.c **** 
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cco4Ki0s.s 			page 1
   32 0000 10B5     		push	{r4, lr}
   33              		.cfi_def_cfa_offset 8
   34              		.cfi_offset 4, -8
-ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cco4Ki0s.s 			page 3
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cc9xV06r.s 			page 3
 
 
   35              		.cfi_offset 14, -4
@@ -154,7 +154,7 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cco4Ki0s.s 			page 1
   55              	.L3:
   56 0018 00000000 		.word	.LANCHOR0
   57              		.cfi_endproc
-  58              	.LFE102:
+  58              	.LFE110:
   59              		.size	S7D_Set, .-S7D_Set
   60              		.section	.text.S7D_Write,"ax",%progbits
   61              		.align	2
@@ -163,7 +163,7 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cco4Ki0s.s 			page 1
   64              		.thumb_func
   65              		.type	S7D_Write, %function
   66              	S7D_Write:
-  67              	.LFB105:
+  67              	.LFB113:
   91:source\bsw/seven.c **** 
   92:source\bsw/seven.c **** 
   93:source\bsw/seven.c **** /**
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cco4Ki0s.s 			page 1
  102:source\bsw/seven.c ****     S7D_Write(LookUpForDisplay[(sizeof(LookUpForDisplay) / sizeof(uint8)) - 1]);
  103:source\bsw/seven.c ****     
  104:source\bsw/seven.c ****     return RC_SUCCESS;
-ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cco4Ki0s.s 			page 4
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cc9xV06r.s 			page 4
 
 
  105:source\bsw/seven.c **** }
@@ -235,10 +235,10 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cco4Ki0s.s 			page 1
   90 0016 0020     		movs	r0, #0
   91 0018 10BD     		pop	{r4, pc}
   92              		.cfi_endproc
-  93              	.LFE105:
+  93              	.LFE113:
   94              		.size	S7D_Write, .-S7D_Write
   95 001a 00BF     		.section	.text.S7D_init,"ax",%progbits
-ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cco4Ki0s.s 			page 5
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cc9xV06r.s 			page 5
 
 
   96              		.align	2
@@ -247,7 +247,7 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cco4Ki0s.s 			page 1
   99              		.thumb_func
  100              		.type	S7D_init, %function
  101              	S7D_init:
- 102              	.LFB103:
+ 102              	.LFB111:
   99:source\bsw/seven.c **** {
  103              		.loc 1 99 0
  104              		.cfi_startproc
@@ -272,7 +272,7 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cco4Ki0s.s 			page 1
  120 000e 0020     		movs	r0, #0
  121 0010 08BD     		pop	{r3, pc}
  122              		.cfi_endproc
- 123              	.LFE103:
+ 123              	.LFE111:
  124              		.size	S7D_init, .-S7D_init
  125 0012 00BF     		.section	.text.S7D_clear,"ax",%progbits
  126              		.align	2
@@ -281,7 +281,7 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cco4Ki0s.s 			page 1
  129              		.thumb_func
  130              		.type	S7D_clear, %function
  131              	S7D_clear:
- 132              	.LFB104:
+ 132              	.LFB112:
  114:source\bsw/seven.c **** {   
  133              		.loc 1 114 0
  134              		.cfi_startproc
@@ -298,11 +298,11 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cco4Ki0s.s 			page 1
  116:source\bsw/seven.c **** }
  144              		.loc 1 116 0
  145 0006 08BD     		pop	{r3, pc}
-ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cco4Ki0s.s 			page 6
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cc9xV06r.s 			page 6
 
 
  146              		.cfi_endproc
- 147              	.LFE104:
+ 147              	.LFE112:
  148              		.size	S7D_clear, .-S7D_clear
  149              		.section	.rodata
  150              		.align	2
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cco4Ki0s.s 			page 1
  200 001d 00000000 		.4byte	0
  201 0021 00000000 		.4byte	.Ldebug_line0
  202 0025 02       		.uleb128 0x2
-ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cco4Ki0s.s 			page 7
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cc9xV06r.s 			page 7
 
 
  203 0026 01       		.byte	0x1
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cco4Ki0s.s 			page 1
  257 008d 02       		.uleb128 0x2
  258 008e 04       		.byte	0x4
  259 008f 04       		.byte	0x4
-ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cco4Ki0s.s 			page 8
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cc9xV06r.s 			page 8
 
 
  260 0090 67010000 		.4byte	.LASF12
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cco4Ki0s.s 			page 1
  314 0102 7F       		.sleb128 -1
  315 0103 08       		.uleb128 0x8
  316 0104 B3020000 		.4byte	.LASF24
-ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cco4Ki0s.s 			page 9
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cc9xV06r.s 			page 9
 
 
  317 0108 7E       		.sleb128 -2
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cco4Ki0s.s 			page 1
  371 0174 6C       		.sleb128 -20
  372 0175 08       		.uleb128 0x8
  373 0176 14020000 		.4byte	.LASF43
-ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cco4Ki0s.s 			page 10
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cc9xV06r.s 			page 10
 
 
  374 017a 6B       		.sleb128 -21
@@ -595,10 +595,10 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cco4Ki0s.s 			page 1
  425 01e3 01       		.byte	0x1
  426 01e4 4F       		.byte	0x4f
  427 01e5 8E010000 		.4byte	0x18e
- 428 01e9 00000000 		.4byte	.LFB102
- 429 01ed 1C000000 		.4byte	.LFE102-.LFB102
+ 428 01e9 00000000 		.4byte	.LFB110
+ 429 01ed 1C000000 		.4byte	.LFE110-.LFB110
  430 01f1 01       		.uleb128 0x1
-ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cco4Ki0s.s 			page 11
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cc9xV06r.s 			page 11
 
 
  431 01f2 9C       		.byte	0x9c
@@ -645,8 +645,8 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cco4Ki0s.s 			page 1
  472 024b 01       		.byte	0x1
  473 024c 7C       		.byte	0x7c
  474 024d 8E010000 		.4byte	0x18e
- 475 0251 00000000 		.4byte	.LFB105
- 476 0255 1A000000 		.4byte	.LFE105-.LFB105
+ 475 0251 00000000 		.4byte	.LFB113
+ 476 0255 1A000000 		.4byte	.LFE113-.LFB113
  477 0259 01       		.uleb128 0x1
  478 025a 9C       		.byte	0x9c
  479 025b A1020000 		.4byte	0x2a1
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cco4Ki0s.s 			page 1
  485 026a 68000000 		.4byte	.LLST3
  486 026e 11       		.uleb128 0x11
  487 026f 0E000000 		.4byte	.LVL8
-ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cco4Ki0s.s 			page 12
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cc9xV06r.s 			page 12
 
 
  488 0273 DE010000 		.4byte	0x1de
@@ -700,8 +700,8 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cco4Ki0s.s 			page 1
  524 02a6 01       		.byte	0x1
  525 02a7 62       		.byte	0x62
  526 02a8 8E010000 		.4byte	0x18e
- 527 02ac 00000000 		.4byte	.LFB103
- 528 02b0 12000000 		.4byte	.LFE103-.LFB103
+ 527 02ac 00000000 		.4byte	.LFB111
+ 528 02b0 12000000 		.4byte	.LFE111-.LFB111
  529 02b4 01       		.uleb128 0x1
  530 02b5 9C       		.byte	0x9c
  531 02b6 DD020000 		.4byte	0x2dd
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cco4Ki0s.s 			page 1
  542 02cd 0E       		.uleb128 0xe
  543 02ce 0E000000 		.4byte	.LVL11
  544 02d2 46020000 		.4byte	0x246
-ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cco4Ki0s.s 			page 13
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cc9xV06r.s 			page 13
 
 
  545 02d6 0F       		.uleb128 0xf
@@ -733,8 +733,8 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cco4Ki0s.s 			page 1
  554 02e2 01       		.byte	0x1
  555 02e3 71       		.byte	0x71
  556 02e4 8E010000 		.4byte	0x18e
- 557 02e8 00000000 		.4byte	.LFB104
- 558 02ec 08000000 		.4byte	.LFE104-.LFB104
+ 557 02e8 00000000 		.4byte	.LFB112
+ 558 02ec 08000000 		.4byte	.LFE112-.LFB112
  559 02f0 01       		.uleb128 0x1
  560 02f1 9C       		.byte	0x9c
  561 02f2 00030000 		.4byte	0x300
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cco4Ki0s.s 			page 1
  599 0348 BF000000 		.4byte	0xbf
  600 034c 16       		.uleb128 0x16
  601 034d 3F010000 		.4byte	.LASF65
-ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cco4Ki0s.s 			page 14
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cc9xV06r.s 			page 14
 
 
  602 0351 0A       		.byte	0xa
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cco4Ki0s.s 			page 1
  656 0015 00       		.byte	0
  657 0016 0B       		.uleb128 0xb
  658 0017 0B       		.uleb128 0xb
-ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cco4Ki0s.s 			page 15
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cc9xV06r.s 			page 15
 
 
  659 0018 3E       		.uleb128 0x3e
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cco4Ki0s.s 			page 1
  713 004e 3B       		.uleb128 0x3b
  714 004f 0B       		.uleb128 0xb
  715 0050 01       		.uleb128 0x1
-ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cco4Ki0s.s 			page 16
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cc9xV06r.s 			page 16
 
 
  716 0051 13       		.uleb128 0x13
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cco4Ki0s.s 			page 1
  770 0087 06       		.uleb128 0x6
  771 0088 40       		.uleb128 0x40
  772 0089 18       		.uleb128 0x18
-ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cco4Ki0s.s 			page 17
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cc9xV06r.s 			page 17
 
 
  773 008a 9742     		.uleb128 0x2117
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cco4Ki0s.s 			page 1
  827 00c5 0F       		.uleb128 0xf
  828 00c6 8A8201   		.uleb128 0x410a
  829 00c9 00       		.byte	0
-ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cco4Ki0s.s 			page 18
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cc9xV06r.s 			page 18
 
 
  830 00ca 02       		.uleb128 0x2
@@ -1078,7 +1078,7 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cco4Ki0s.s 			page 1
  884 0104 21       		.uleb128 0x21
  885 0105 00       		.byte	0
  886 0106 49       		.uleb128 0x49
-ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cco4Ki0s.s 			page 19
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cc9xV06r.s 			page 19
 
 
  887 0107 13       		.uleb128 0x13
@@ -1138,7 +1138,7 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cco4Ki0s.s 			page 1
  941 013d 13       		.uleb128 0x13
  942 013e 3F       		.uleb128 0x3f
  943 013f 19       		.uleb128 0x19
-ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cco4Ki0s.s 			page 20
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cc9xV06r.s 			page 20
 
 
  944 0140 3C       		.uleb128 0x3c
@@ -1178,7 +1178,7 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cco4Ki0s.s 			page 1
  978 0008 0100     		.2byte	0x1
  979 000a 50       		.byte	0x50
  980 000b 07000000 		.4byte	.LVL2-1
- 981 000f 1C000000 		.4byte	.LFE102
+ 981 000f 1C000000 		.4byte	.LFE110
  982 0013 0400     		.2byte	0x4
  983 0015 F3       		.byte	0xf3
  984 0016 01       		.uleb128 0x1
@@ -1192,13 +1192,13 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cco4Ki0s.s 			page 1
  992 0029 0100     		.2byte	0x1
  993 002b 51       		.byte	0x51
  994 002c 07000000 		.4byte	.LVL2-1
- 995 0030 1C000000 		.4byte	.LFE102
+ 995 0030 1C000000 		.4byte	.LFE110
  996 0034 0400     		.2byte	0x4
  997 0036 F3       		.byte	0xf3
  998 0037 01       		.uleb128 0x1
  999 0038 51       		.byte	0x51
  1000 0039 9F       		.byte	0x9f
-ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cco4Ki0s.s 			page 21
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cc9xV06r.s 			page 21
 
 
  1001 003a 00000000 		.4byte	0
@@ -1225,7 +1225,7 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cco4Ki0s.s 			page 1
  1022 0070 0100     		.2byte	0x1
  1023 0072 50       		.byte	0x50
  1024 0073 0A000000 		.4byte	.LVL7
- 1025 0077 1A000000 		.4byte	.LFE105
+ 1025 0077 1A000000 		.4byte	.LFE113
  1026 007b 0400     		.2byte	0x4
  1027 007d F3       		.byte	0xf3
  1028 007e 01       		.uleb128 0x1
@@ -1241,29 +1241,29 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cco4Ki0s.s 			page 1
  1038 000b 00       		.byte	0
  1039 000c 0000     		.2byte	0
  1040 000e 0000     		.2byte	0
- 1041 0010 00000000 		.4byte	.LFB102
- 1042 0014 1C000000 		.4byte	.LFE102-.LFB102
- 1043 0018 00000000 		.4byte	.LFB105
- 1044 001c 1A000000 		.4byte	.LFE105-.LFB105
- 1045 0020 00000000 		.4byte	.LFB103
- 1046 0024 12000000 		.4byte	.LFE103-.LFB103
- 1047 0028 00000000 		.4byte	.LFB104
- 1048 002c 08000000 		.4byte	.LFE104-.LFB104
+ 1041 0010 00000000 		.4byte	.LFB110
+ 1042 0014 1C000000 		.4byte	.LFE110-.LFB110
+ 1043 0018 00000000 		.4byte	.LFB113
+ 1044 001c 1A000000 		.4byte	.LFE113-.LFB113
+ 1045 0020 00000000 		.4byte	.LFB111
+ 1046 0024 12000000 		.4byte	.LFE111-.LFB111
+ 1047 0028 00000000 		.4byte	.LFB112
+ 1048 002c 08000000 		.4byte	.LFE112-.LFB112
  1049 0030 00000000 		.4byte	0
  1050 0034 00000000 		.4byte	0
  1051              		.section	.debug_ranges,"",%progbits
  1052              	.Ldebug_ranges0:
- 1053 0000 00000000 		.4byte	.LFB102
- 1054 0004 1C000000 		.4byte	.LFE102
- 1055 0008 00000000 		.4byte	.LFB105
- 1056 000c 1A000000 		.4byte	.LFE105
- 1057 0010 00000000 		.4byte	.LFB103
-ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cco4Ki0s.s 			page 22
+ 1053 0000 00000000 		.4byte	.LFB110
+ 1054 0004 1C000000 		.4byte	.LFE110
+ 1055 0008 00000000 		.4byte	.LFB113
+ 1056 000c 1A000000 		.4byte	.LFE113
+ 1057 0010 00000000 		.4byte	.LFB111
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cc9xV06r.s 			page 22
 
 
- 1058 0014 12000000 		.4byte	.LFE103
- 1059 0018 00000000 		.4byte	.LFB104
- 1060 001c 08000000 		.4byte	.LFE104
+ 1058 0014 12000000 		.4byte	.LFE111
+ 1059 0018 00000000 		.4byte	.LFB112
+ 1060 001c 08000000 		.4byte	.LFE112
  1061 0020 00000000 		.4byte	0
  1062 0024 00000000 		.4byte	0
  1063              		.section	.debug_line,"",%progbits
@@ -1318,7 +1318,7 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cco4Ki0s.s 			page 1
  1082 00af 52435F45 		.ascii	"RC_ERROR_WRITE_FAILS\000"
  1082      52524F52 
  1082      5F575249 
-ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cco4Ki0s.s 			page 23
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cc9xV06r.s 			page 23
 
 
  1082      54455F46 
@@ -1378,7 +1378,7 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cco4Ki0s.s 			page 1
  1106      5F52414E 
  1106      474500
  1107              	.LASF12:
-ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cco4Ki0s.s 			page 24
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cc9xV06r.s 			page 24
 
 
  1108 0167 666C6F61 		.ascii	"float\000"
@@ -1438,7 +1438,7 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cco4Ki0s.s 			page 1
  1128      53746174 
  1128      657300
  1129              	.LASF43:
-ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cco4Ki0s.s 			page 25
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cc9xV06r.s 			page 25
 
 
  1130 0214 52435F45 		.ascii	"RC_ERROR_BAD_DATA\000"
@@ -1498,7 +1498,7 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cco4Ki0s.s 			page 1
  1153              	.LASF24:
  1154 02b3 52435F45 		.ascii	"RC_ERROR_NULL\000"
  1154      52524F52 
-ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cco4Ki0s.s 			page 26
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cc9xV06r.s 			page 26
 
 
  1154      5F4E554C 
@@ -1558,7 +1558,7 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cco4Ki0s.s 			page 1
  1174      5F425546 
  1174      4645525F 
  1174      46554C4C 
-ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cco4Ki0s.s 			page 27
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cc9xV06r.s 			page 27
 
 
  1175              	.LASF10:
@@ -1618,7 +1618,7 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cco4Ki0s.s 			page 1
  1197              	.LASF70:
  1198 0460 5337445F 		.ascii	"S7D_Display_Write\000"
  1198      44697370 
-ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cco4Ki0s.s 			page 28
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cc9xV06r.s 			page 28
 
 
  1198      6C61795F 

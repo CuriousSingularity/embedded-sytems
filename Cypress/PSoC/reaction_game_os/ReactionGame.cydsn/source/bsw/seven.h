@@ -105,7 +105,6 @@ typedef enum eSegments eSegments_t;
 
 //####################### Structures
 
-typedef void (*FunctionPtr)(uint8);
 // Wrapper to allow representing the file in Together as class
 #ifdef TOGETHER
 

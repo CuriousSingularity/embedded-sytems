@@ -1,5 +1,5 @@
 /**
-* \file <tsk_init.c>
+* \file <tsk_Timer.c>
 * \author <Bharath Ramachandraiah>
 * \date <13/11/2018>
 *
@@ -20,10 +20,7 @@
 /*****************************************************************************/
 /* Include files                                                             */
 /*****************************************************************************/
-#include "global.h"
-#include "tsk_Init.h"
-#include "seven.h"
-#include "console.h"
+#include "tsk_Timer.h"
 
 /*****************************************************************************/
 /* Local pre-processor symbols/macros ('#define')                            */
@@ -37,17 +34,12 @@
 /*****************************************************************************/
 /* Local type definitions ('typedef')                                        */
 /*****************************************************************************/
-typedef RC_t (*RC_tFunctPtrv)(void);
+
 
 /*****************************************************************************/
 /* Local variable definitions ('static')                                     */
 /*****************************************************************************/
-static RC_tFunctPtrv fptr_init_functions[] = 
-{
-    // Add all the initialization functions here
-    CONSOLE_Init,
-    S7D_init,
-};
+
 
 /*****************************************************************************/
 /* Local function prototypes ('static')                                      */
@@ -60,28 +52,14 @@ static RC_tFunctPtrv fptr_init_functions[] =
 
 /**
  * The Task declaration
- * The tsk_Init initializes all the necessary hardware components.
- * This is an autostart task which will be run once the OS starts.
+ * The tsk_Timer is a cyclic task which is activated every 1ms.
+ * The task is activated via an alarm.
  */
-TASK(tsk_Init)
+TASK(tsk_Timer)
 {
-    // MCAL - hardware initialization 
-    for (unsigned int Index = 0; Index < sizeof(fptr_init_functions)/sizeof(RC_tFunctPtrv); Index++)
-    {
-        if (RC_SUCCESS != fptr_init_functions[Index]())
-        {
-            // Hardware Fault - Take necessary action
-            while(1) __asm("NOP");
-        }
-    }
-    
-    // OS initialization - This will override and reconfigures the interrupts by OS parameters
-    EE_system_init();
-    
     // Activate Tasks here
     
     // Set Alarms here
-    SetRelAlarm(alrm_Tick1ms, 1, 1);
     
     // Terminate the init task and let the schedular do its thing!
     TerminateTask();
