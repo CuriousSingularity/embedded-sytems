@@ -82,9 +82,6 @@ TASK(tsk_Init)
     // Activate Tasks here
     ActivateTask(tsk_ReactionGame);
     
-    // Set Alarms here
-    SetRelAlarm(alrm_Tick1ms, 1, 1);
-    
     // Terminate the init task and let the schedular do its thing!
     TerminateTask();
 }

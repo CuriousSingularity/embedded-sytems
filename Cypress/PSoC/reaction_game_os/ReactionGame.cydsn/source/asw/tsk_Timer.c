@@ -52,7 +52,7 @@ static uint32_t TIMER__1ms_counter = 0;
 
 /**
  * The Task declaration
- * The tsk_Timer is a cyclic task which is activated every 1ms.
+ * The tsk_Timer is a cyclic task which is activated every 1ms to measure elapsed time.
  * The task is activated via an alarm.
  */
 TASK(tsk_Timer)
@@ -62,9 +62,13 @@ TASK(tsk_Timer)
     TerminateTask();
 }
 
+
 RC_t TIMER_StartTimeMeasurement(void)
 {
     TIMER__1ms_counter = 0;
+    
+    // Set Alarms here
+    SetRelAlarm(alrm_Tick1ms, 1, 1);
     
     return RC_SUCCESS;
 }
@@ -73,6 +77,9 @@ RC_t TIMER_StartTimeMeasurement(void)
 RC_t TIMER_ElapsedTimeMeasurement(uint32_t *MeasureReactionTime)
 {
     *MeasureReactionTime = TIMER__1ms_counter;
+    
+    // Cancel Alarms here
+    CancelAlarm(alrm_Tick1ms);
     
     return RC_SUCCESS;
 }
