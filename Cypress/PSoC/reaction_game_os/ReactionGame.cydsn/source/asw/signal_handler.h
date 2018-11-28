@@ -75,7 +75,6 @@
 #ifndef SIGNAL_HANDLER_H_
 #define SIGNAL_HANDLER_H_
 
-#include "global.h"
     
 /*****************************************************************************/
 /* Global pre-processor symbols/macros and type declarations                 */
@@ -106,12 +105,6 @@ public:
 /* API functions                                                             */
 /*****************************************************************************/
 
-/**
- * The Task declaration
- * The tsk_Init initializes all the necessary hardware components.
- * This is an autostart task which will be run once the OS starts.
- */
-DeclareTask(tsk_ReactionGame);
 
 
 /*****************************************************************************/

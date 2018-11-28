@@ -48,10 +48,9 @@
 /* Function implementation - global ('extern') and local ('static')          */
 /*****************************************************************************/
 /**
- * This is a callback function for Button 1 press. The process of the ISR is
- * done here.
- * @param void
- * @return void
+ * The function returns if the corresponding button is pressed or not.
+ * @param BUTTON_id_t Button        : IN Button number
+ * @return boolean_t                : TRUE if button is pressed, else FALSE
  */
 boolean_t BUTTON_IsPressed(BUTTON_id_t Button)
 {

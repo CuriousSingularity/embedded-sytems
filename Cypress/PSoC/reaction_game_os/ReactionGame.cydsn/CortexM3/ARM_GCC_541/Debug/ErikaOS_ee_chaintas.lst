@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccryjKi9.s 			page 1
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccmdaUlO.s 			page 1
 
 
    1              		.syntax unified
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccryjKi9.s 			page 1
   28:Generated_Source\PSoC5/ErikaOS_ee_chaintas.c ****  * exception statement from your version.
   29:Generated_Source\PSoC5/ErikaOS_ee_chaintas.c ****  *
   30:Generated_Source\PSoC5/ErikaOS_ee_chaintas.c ****  * ERIKA Enterprise is distributed in the hope that it will be
-ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccryjKi9.s 			page 2
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccmdaUlO.s 			page 2
 
 
   31:Generated_Source\PSoC5/ErikaOS_ee_chaintas.c ****  * useful, but WITHOUT ANY WARRANTY; without even the implied warranty
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccryjKi9.s 			page 1
    1:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_cpu.inc **** /* ###*B*###
    2:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_cpu.inc ****  * ERIKA Enterprise - a tiny RTOS for small microcontrollers
    3:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_cpu.inc ****  *
-ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccryjKi9.s 			page 3
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccmdaUlO.s 			page 3
 
 
    4:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_cpu.inc ****  * Copyright (C) 2002-2011  Evidence Srl
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccryjKi9.s 			page 1
   58:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_cpu.inc **** #include "ErikaOS_eecfg.inc"
   59:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_cpu.inc **** 
   60:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_cpu.inc **** 
-ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccryjKi9.s 			page 4
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccmdaUlO.s 			page 4
 
 
   61:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_cpu.inc **** #ifdef __GNU__
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccryjKi9.s 			page 1
  115:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_cpu.inc **** 
  116:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_cpu.inc **** /* ISR Priority representation type */
  117:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_cpu.inc **** typedef EE_UREG EE_TYPEISR2PRIO;
-ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccryjKi9.s 			page 5
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccmdaUlO.s 			page 5
 
 
  118:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_cpu.inc **** 
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccryjKi9.s 			page 1
  172:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_cpu.inc ****  *********************************************************************/
  173:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_cpu.inc **** 
  174:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_cpu.inc **** /* Used to check the value returned by EE_cortex_mx_disableIRQ */
-ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccryjKi9.s 			page 6
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccmdaUlO.s 			page 6
 
 
  175:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_cpu.inc **** #define EE_cortex_mx_are_IRQs_enabled(ie) ((ie) ^ 1)
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccryjKi9.s 			page 1
  229:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_cpu.inc **** 	register EE_FREG PRIMASK __ASM("primask");
  230:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_cpu.inc **** 	PRIMASK = f;
  231:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_cpu.inc **** #else	/* __KEIL__ */
-ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccryjKi9.s 			page 7
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccmdaUlO.s 			page 7
 
 
  232:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_cpu.inc **** 	__ASM volatile("msr primask, %0" :: "r" (f));
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccryjKi9.s 			page 1
    6:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc ****  * This file is part of ERIKA Enterprise.
    7:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc ****  *
    8:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc ****  * ERIKA Enterprise is free software; you can redistribute it
-ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccryjKi9.s 			page 8
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccmdaUlO.s 			page 8
 
 
    9:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc ****  * and/or modify it under the terms of the GNU General Public License
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccryjKi9.s 			page 1
   63:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** /* Error Parameters Utilities Macros */
   64:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** #define EE_OS_PARAM(param_name)   EE_os_param param_name
   65:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** #define EE_OS_PARAM_VALUE(param_name, param_value)  \
-ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccryjKi9.s 			page 9
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccmdaUlO.s 			page 9
 
 
   66:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc ****   ((param_name).value_param = (param_value))
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccryjKi9.s 			page 1
  120:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** #else /* !__OO_ERRORHOOK_NOMACROS__ */
  121:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** 
  122:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** #define EE_os_fill_error_data(ServiceID,param1,param2,param3) ((void)0)
-ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccryjKi9.s 			page 10
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccmdaUlO.s 			page 10
 
 
  123:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** #endif /* !__OO_ERRORHOOK_NOMACROS__ */
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccryjKi9.s 			page 1
  177:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** 
  178:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** /* Macro used for remapping to prevent compiler warnings on unused parameters */
  179:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** #define EE_os_notify_error_from_us(x,y,z) EE_os_notify_error_from_us_impl(z)
-ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccryjKi9.s 			page 11
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccmdaUlO.s 			page 11
 
 
  180:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** 
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccryjKi9.s 			page 1
  234:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc ****    (see WaitEvent.c) */
  235:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** #ifndef __PRIVATE_STK_QUERYFIRST__
  236:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** __INLINE__ EE_TID  EE_stk_queryfirst(void)
-ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccryjKi9.s 			page 12
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccmdaUlO.s 			page 12
 
 
  237:Generated_Source\PSoC5/ErikaOS_ee_oo_internal.inc **** {
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccryjKi9.s 			page 1
   45:Generated_Source\PSoC5/ErikaOS_common_ee_primitives.inc ****  * Author: 2009 Bernardo Dal Seno
   46:Generated_Source\PSoC5/ErikaOS_common_ee_primitives.inc ****  */
   47:Generated_Source\PSoC5/ErikaOS_common_ee_primitives.inc **** 
-ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccryjKi9.s 			page 13
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccmdaUlO.s 			page 13
 
 
   48:Generated_Source\PSoC5/ErikaOS_common_ee_primitives.inc **** /*
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccryjKi9.s 			page 1
   89:Generated_Source\PSoC5/ErikaOS_ee_chaintas.c ****   /* [OS088]: If an OS-Application makes a service call from the wrong context
   90:Generated_Source\PSoC5/ErikaOS_ee_chaintas.c ****       AND is currently not inside a Category 1 ISR the Operating System module
   91:Generated_Source\PSoC5/ErikaOS_ee_chaintas.c ****       shall not perform the requested action (the service call shall have no
-ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccryjKi9.s 			page 14
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccmdaUlO.s 			page 14
 
 
   92:Generated_Source\PSoC5/ErikaOS_ee_chaintas.c ****       effect), and return E_OS_CALLEVEL (see [12], section 13.1) or the
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccryjKi9.s 			page 1
  141:Generated_Source\PSoC5/ErikaOS_ee_chaintas.c ****     EE_TID tmp_tid;
  142:Generated_Source\PSoC5/ErikaOS_ee_chaintas.c **** 
  143:Generated_Source\PSoC5/ErikaOS_ee_chaintas.c ****     EE_os_param unmarked_tid;
-ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccryjKi9.s 			page 15
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccmdaUlO.s 			page 15
 
 
  144:Generated_Source\PSoC5/ErikaOS_ee_chaintas.c ****     /* Two steps macro assignment to meet MISRA 10.3 required rule */
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccryjKi9.s 			page 1
  187:Generated_Source\PSoC5/ErikaOS_ee_chaintas.c ****       /* [SWS_Os_00466]: If an attempt is made to activate a task before the
  188:Generated_Source\PSoC5/ErikaOS_ee_chaintas.c ****           end of an OsTaskTimeFrame then the Operating System module shall not
  189:Generated_Source\PSoC5/ErikaOS_ee_chaintas.c ****           perform the activation AND shall call the ProtectionHook()
-ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccryjKi9.s 			page 16
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccmdaUlO.s 			page 16
 
 
  190:Generated_Source\PSoC5/ErikaOS_ee_chaintas.c ****           with E_OS_PROTECTION_ARRIVAL. */
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccryjKi9.s 			page 1
  205:Generated_Source\PSoC5/ErikaOS_ee_chaintas.c ****   if ( ev != E_OK ) {
  125              		.loc 1 205 0
  126 004c 10B9     		cbnz	r0, .L4
-ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccryjKi9.s 			page 17
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccmdaUlO.s 			page 17
 
 
  206:Generated_Source\PSoC5/ErikaOS_ee_chaintas.c ****     EE_ORTI_set_lasterror(ev);
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccryjKi9.s 			page 1
  167              		.section	.debug_info,"",%progbits
  168              	.Ldebug_info0:
  169 0000 A0050000 		.4byte	0x5a0
-ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccryjKi9.s 			page 18
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccmdaUlO.s 			page 18
 
 
  170 0004 0400     		.2byte	0x4
@@ -1078,7 +1078,7 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccryjKi9.s 			page 1
  224 006e DB020000 		.4byte	.LASF9
  225 0072 04       		.uleb128 0x4
  226 0073 1E000000 		.4byte	.LASF10
-ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccryjKi9.s 			page 19
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccmdaUlO.s 			page 19
 
 
  227 0077 05       		.byte	0x5
@@ -1138,7 +1138,7 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccryjKi9.s 			page 1
  281 00ee 84020000 		.4byte	.LASF21
  282 00f2 06       		.byte	0x6
  283 00f3 2C02     		.2byte	0x22c
-ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccryjKi9.s 			page 20
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccmdaUlO.s 			page 20
 
 
  284 00f5 A9000000 		.4byte	0xa9
@@ -1198,7 +1198,7 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccryjKi9.s 			page 1
  338 016a 7602     		.2byte	0x276
  339 016c F9000000 		.4byte	0xf9
  340 0170 04       		.byte	0x4
-ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccryjKi9.s 			page 21
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccmdaUlO.s 			page 21
 
 
  341 0171 00       		.byte	0
@@ -1258,7 +1258,7 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccryjKi9.s 			page 1
  395 01e0 11040000 		.4byte	.LASF37
  396 01e4 06       		.byte	0x6
  397 01e5 9202     		.2byte	0x292
-ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccryjKi9.s 			page 22
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccmdaUlO.s 			page 22
 
 
  398 01e7 B0010000 		.4byte	0x1b0
@@ -1318,7 +1318,7 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccryjKi9.s 			page 1
  452 025d 0D       		.uleb128 0xd
  453 025e 39040000 		.4byte	.LASF44
  454 0262 02       		.byte	0x2
-ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccryjKi9.s 			page 23
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccmdaUlO.s 			page 23
 
 
  455 0263 DC       		.byte	0xdc
@@ -1378,7 +1378,7 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccryjKi9.s 			page 1
  509 02ce B4000000 		.4byte	0xb4
  510 02d2 03       		.byte	0x3
  511 02d3 0F       		.uleb128 0xf
-ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccryjKi9.s 			page 24
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccmdaUlO.s 			page 24
 
 
  512 02d4 29030000 		.4byte	.LASF50
@@ -1438,7 +1438,7 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccryjKi9.s 			page 1
  566 034a B4000000 		.4byte	0xb4
  567 034e 01       		.uleb128 0x1
  568 034f 52       		.byte	0x52
-ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccryjKi9.s 			page 25
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccmdaUlO.s 			page 25
 
 
  569 0350 17       		.uleb128 0x17
@@ -1498,7 +1498,7 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccryjKi9.s 			page 1
  623 03da 00       		.byte	0
  624 03db 1D       		.uleb128 0x1d
  625 03dc 54000000 		.4byte	.LVL14
-ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccryjKi9.s 			page 26
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccmdaUlO.s 			page 26
 
 
  626 03e0 98050000 		.4byte	0x598
@@ -1558,7 +1558,7 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccryjKi9.s 			page 1
  680 045b 20       		.uleb128 0x20
  681 045c 0B040000 		.4byte	0x40b
  682 0460 03       		.byte	0x3
-ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccryjKi9.s 			page 27
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccmdaUlO.s 			page 27
 
 
  683 0461 00       		.byte	0
@@ -1618,7 +1618,7 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccryjKi9.s 			page 1
  737 04dc 00       		.byte	0
  738 04dd 21       		.uleb128 0x21
  739 04de 42010000 		.4byte	0x142
-ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccryjKi9.s 			page 28
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccmdaUlO.s 			page 28
 
 
  740 04e2 22       		.uleb128 0x22
@@ -1678,7 +1678,7 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccryjKi9.s 			page 1
  794 0561 09       		.byte	0x9
  795 0562 47       		.byte	0x47
  796 0563 B4000000 		.4byte	0xb4
-ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccryjKi9.s 			page 29
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccmdaUlO.s 			page 29
 
 
  797 0567 1E       		.uleb128 0x1e
@@ -1738,7 +1738,7 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccryjKi9.s 			page 1
  851 0019 0B       		.uleb128 0xb
  852 001a 03       		.uleb128 0x3
  853 001b 0E       		.uleb128 0xe
-ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccryjKi9.s 			page 30
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccmdaUlO.s 			page 30
 
 
  854 001c 00       		.byte	0
@@ -1798,7 +1798,7 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccryjKi9.s 			page 1
  908 0052 00       		.byte	0
  909 0053 03       		.uleb128 0x3
  910 0054 0E       		.uleb128 0xe
-ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccryjKi9.s 			page 31
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccmdaUlO.s 			page 31
 
 
  911 0055 3A       		.uleb128 0x3a
@@ -1858,7 +1858,7 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccryjKi9.s 			page 1
  965 008b 3A       		.uleb128 0x3a
  966 008c 0B       		.uleb128 0xb
  967 008d 3B       		.uleb128 0x3b
-ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccryjKi9.s 			page 32
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccmdaUlO.s 			page 32
 
 
  968 008e 0B       		.uleb128 0xb
@@ -1918,7 +1918,7 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccryjKi9.s 			page 1
  1022 00c4 0F       		.uleb128 0xf
  1023 00c5 2E       		.uleb128 0x2e
  1024 00c6 01       		.byte	0x1
-ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccryjKi9.s 			page 33
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccmdaUlO.s 			page 33
 
 
  1025 00c7 03       		.uleb128 0x3
@@ -1978,7 +1978,7 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccryjKi9.s 			page 1
  1079 00fd 19       		.uleb128 0x19
  1080 00fe 20       		.uleb128 0x20
  1081 00ff 0B       		.uleb128 0xb
-ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccryjKi9.s 			page 34
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccmdaUlO.s 			page 34
 
 
  1082 0100 00       		.byte	0
@@ -2038,7 +2038,7 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccryjKi9.s 			page 1
  1136 0137 13       		.uleb128 0x13
  1137 0138 02       		.uleb128 0x2
  1138 0139 17       		.uleb128 0x17
-ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccryjKi9.s 			page 35
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccmdaUlO.s 			page 35
 
 
  1139 013a 00       		.byte	0
@@ -2098,7 +2098,7 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccryjKi9.s 			page 1
  1193 0170 12       		.uleb128 0x12
  1194 0171 06       		.uleb128 0x6
  1195 0172 00       		.byte	0
-ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccryjKi9.s 			page 36
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccmdaUlO.s 			page 36
 
 
  1196 0173 00       		.byte	0
@@ -2158,7 +2158,7 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccryjKi9.s 			page 1
  1250 01ab 3F       		.uleb128 0x3f
  1251 01ac 19       		.uleb128 0x19
  1252 01ad 3C       		.uleb128 0x3c
-ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccryjKi9.s 			page 37
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccmdaUlO.s 			page 37
 
 
  1253 01ae 19       		.uleb128 0x19
@@ -2218,7 +2218,7 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccryjKi9.s 			page 1
  1307 01e4 03       		.uleb128 0x3
  1308 01e5 0E       		.uleb128 0xe
  1309 01e6 3A       		.uleb128 0x3a
-ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccryjKi9.s 			page 38
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccmdaUlO.s 			page 38
 
 
  1310 01e7 0B       		.uleb128 0xb
@@ -2278,7 +2278,7 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccryjKi9.s 			page 1
  1364 0065 50       		.byte	0x50
  1365 0066 9F       		.byte	0x9f
  1366 0067 4A000000 		.4byte	.LVL11
-ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccryjKi9.s 			page 39
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccmdaUlO.s 			page 39
 
 
  1367 006b 4C000000 		.4byte	.LVL12
@@ -2338,7 +2338,7 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccryjKi9.s 			page 1
  1421              		.section	.debug_ranges,"",%progbits
  1422              	.Ldebug_ranges0:
  1423 0000 00000000 		.4byte	.LFB70
-ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccryjKi9.s 			page 40
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccmdaUlO.s 			page 40
 
 
  1424 0004 6C000000 		.4byte	.LFE70
@@ -2398,7 +2398,7 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccryjKi9.s 			page 1
  1448 00b5 45455F74 		.ascii	"EE_th_waswaiting\000"
  1448      685F7761 
  1448      73776169 
-ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccryjKi9.s 			page 41
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccmdaUlO.s 			page 41
 
 
  1448      74696E67 
@@ -2458,7 +2458,7 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccryjKi9.s 			page 1
  1474      725F6F62 
  1474      6A656374 
  1475              	.LASF33:
-ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccryjKi9.s 			page 42
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccmdaUlO.s 			page 42
 
 
  1476 0161 45455F6F 		.ascii	"EE_oo_counter_object_kind_type\000"
@@ -2518,7 +2518,7 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccryjKi9.s 			page 1
  1496 0220 6C6F6E67 		.ascii	"long int\000"
  1496      20696E74 
  1496      00
-ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccryjKi9.s 			page 43
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccmdaUlO.s 			page 43
 
 
  1497              	.LASF24:
@@ -2578,7 +2578,7 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccryjKi9.s 			page 1
  1518 02f6 5461736B 		.ascii	"TaskType\000"
  1518      54797065 
  1518      00
-ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccryjKi9.s 			page 44
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccmdaUlO.s 			page 44
 
 
  1519              	.LASF1:
@@ -2638,7 +2638,7 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccryjKi9.s 			page 1
  1538      20696E74 
  1538      00
  1539              	.LASF60:
-ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccryjKi9.s 			page 45
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccmdaUlO.s 			page 45
 
 
  1540 03cf 45455F74 		.ascii	"EE_th_status\000"
@@ -2698,7 +2698,7 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccryjKi9.s 			page 1
  1562      69676E65 
  1562      6420696E 
  1562      7400
-ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccryjKi9.s 			page 46
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccmdaUlO.s 			page 46
 
 
  1563              	.LASF17:
@@ -2758,7 +2758,7 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccryjKi9.s 			page 1
  1588 0529 45455F74 		.ascii	"EE_th_next\000"
  1588      685F6E65 
  1588      787400
-ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccryjKi9.s 			page 47
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccmdaUlO.s 			page 47
 
 
  1589              	.LASF77:

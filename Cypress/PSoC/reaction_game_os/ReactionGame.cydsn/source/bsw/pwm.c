@@ -52,7 +52,7 @@
 /**
  * A function initializes the PWM
  * @param void
- * @return RC_SUCCESS on successful transmission
+ * @return RC_SUCCESS on successful initialization
  */
 RC_t PWM_Init(void)
 {
@@ -73,36 +73,72 @@ RC_t PWM_Init(void)
     return RC_SUCCESS;
 }
 
+
+/**
+ * A function which sets the Duty cycle of Red RGB led
+ * @param uint8 value       : IN 0 - 0xFF
+ * @return RC_SUCCESS on successful
+ */
 RC_t PWM_RGB_SetRed(uint8_t value)
 {
     PWM_Red_WriteCompare1(value);
     return RC_SUCCESS;
 }
 
+
+/**
+ * A function which sets the Duty cycle of Green RGB led
+ * @param uint8 value       : IN 0 - 0xFF
+ * @return RC_SUCCESS on successful
+ */
 RC_t PWM_RGB_SetGreen(uint8_t value)
 {
     PWM_Green_WriteCompare1(value);
     return RC_SUCCESS;
 }
 
+
+/**
+ * A function which sets the Duty cycle of Blue RGB led
+ * @param uint8 value       : IN 0 - 0xFF
+ * @return RC_SUCCESS on successful
+ */
 RC_t PWM_RGB_SetBlue(uint8_t value)
 {
     PWM_Blue_WriteCompare1(value);
     return RC_SUCCESS;
 }
 
+
+/**
+ * A function which sets the Duty cycle of Red led
+ * @param uint8 value       : IN 0 - 0xFF
+ * @return RC_SUCCESS on successful
+ */
 RC_t PWM_SetRed(uint8_t value)
 {
     PWM_Red_WriteCompare2(value);
     return RC_SUCCESS;
 }
 
+
+/**
+ * A function which sets the Duty cycle of Green led
+ * @param uint8 value       : IN 0 - 0xFF
+ * @return RC_SUCCESS on successful
+ */
 RC_t PWM_SetGreen(uint8_t value)
 {
     PWM_Green_WriteCompare2(value);
     return RC_SUCCESS;
 }
 
+
+/**
+ * A function which sets the Duty cycle of Yellow led
+ * @param uint8 value       : IN 0 - 0xFF
+ * @return RC_SUCCESS on successful
+ */
 RC_t PWM_SetYellow(uint8_t value)
 {
     PWM_Blue_WriteCompare2(value);

@@ -96,7 +96,6 @@ struct ARCADIANLED__Glower_s
     uint8_t     rgb_B_pwm;
     uint16_t    TimeDuration;
 };
-
 typedef struct ARCADIANLED__Glower_s ARCADIANLED__Glower_t;
 
 struct ARCADIANLED__Fader_s

@@ -88,8 +88,8 @@
 enum REACTION_State_e
 {
     RG__STATE_STANDBY = 0,
-    RG__STATE_DISPLAY_NUMBER,
-    RG__STATE_PROCESS_REACTION,
+    RG__STATE_DISPLAY,
+    RG__STATE_PROCESS,
 };
 
 typedef enum REACTION_State_e REACTION_State_t;
@@ -114,6 +114,7 @@ struct REACTIONGAME_s
         uint8_t         CorrectButtonPresses;
         uint8_t         IncorrectButtonPresses;
         uint8_t         MissedPresses;
+        uint8_t         RandomNumber;
         uint32_t        AvgReactionTime;
         uint32_t        TotalReactionTime;
     };

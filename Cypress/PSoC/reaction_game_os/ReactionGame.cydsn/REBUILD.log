@@ -1,4 +1,4 @@
---------------- Rebuild Started: 11/25/2018 16:10:53 Project: ReactionGame, Configuration: ARM GCC 5.4-2016-q2-update Debug ---------------
+--------------- Rebuild Started: 11/28/2018 01:14:07 Project: ReactionGame, Configuration: ARM GCC 5.4-2016-q2-update Debug ---------------
 Deleting file ".\CortexM3\ARM_GCC_541\Debug\main.o"
 Deleting file ".\CortexM3\ARM_GCC_541\Debug\tsk_Timer.o"
 Deleting file ".\CortexM3\ARM_GCC_541\Debug\tsk_Init.o"
@@ -57,26 +57,13 @@ Deleting file ".\CortexM3\ARM_GCC_541\Debug\ErikaOS_ee_gnu_multi_context.o"
 Deleting file ".\CortexM3\ARM_GCC_541\Debug\ErikaOS_ee_gnu_oo.o"
 Deleting file ".\CortexM3\ARM_GCC_541\Debug\ErikaOS_common_ee_hal_structs.o"
 Deleting file ".\CortexM3\ARM_GCC_541\Debug\ErikaOS_eecfg.o"
-Deleting file ".\CortexM3\ARM_GCC_541\Debug\Cm3Start.o"
-Deleting file ".\CortexM3\ARM_GCC_541\Debug\CyBootAsmGnu.o"
-Deleting file ".\CortexM3\ARM_GCC_541\Debug\CyDmac.o"
-Deleting file ".\CortexM3\ARM_GCC_541\Debug\CyFlash.o"
-Deleting file ".\CortexM3\ARM_GCC_541\Debug\CyLib.o"
-Deleting file ".\CortexM3\ARM_GCC_541\Debug\cyPm.o"
-Deleting file ".\CortexM3\ARM_GCC_541\Debug\CySpc.o"
-Deleting file ".\CortexM3\ARM_GCC_541\Debug\cyutils.o"
-Deleting file ".\CortexM3\ARM_GCC_541\Debug\cy_em_eeprom.o"
-Deleting file ".\CortexM3\ARM_GCC_541\Debug\LED_Red.o"
-Deleting file ".\CortexM3\ARM_GCC_541\Debug\LED_Yellow.o"
-Deleting file ".\CortexM3\ARM_GCC_541\Debug\LED_Green.o"
 Deleting file ".\CortexM3\ARM_GCC_541\Debug\UART_LOG.o"
 Deleting file ".\CortexM3\ARM_GCC_541\Debug\UART_LOG_PM.o"
 Deleting file ".\CortexM3\ARM_GCC_541\Debug\UART_LOG_INT.o"
 Deleting file ".\CortexM3\ARM_GCC_541\Debug\UART_LOG_BOOT.o"
-Deleting file ".\CortexM3\ARM_GCC_541\Debug\UART_LOG_IntClock.o"
-Deleting file ".\CortexM3\ARM_GCC_541\Debug\isr_BUTTON.o"
 Deleting file ".\CortexM3\ARM_GCC_541\Debug\BUTTON_2.o"
 Deleting file ".\CortexM3\ARM_GCC_541\Debug\BUTTON_1.o"
+Deleting file ".\CortexM3\ARM_GCC_541\Debug\isr_BUTTON.o"
 Deleting file ".\CortexM3\ARM_GCC_541\Debug\S7D_SegmentA.o"
 Deleting file ".\CortexM3\ARM_GCC_541\Debug\S7D_SegmentB.o"
 Deleting file ".\CortexM3\ARM_GCC_541\Debug\S7D_SegmentC.o"
@@ -88,16 +75,29 @@ Deleting file ".\CortexM3\ARM_GCC_541\Debug\S7D_Select.o"
 Deleting file ".\CortexM3\ARM_GCC_541\Debug\S7D_Display.o"
 Deleting file ".\CortexM3\ARM_GCC_541\Debug\S7D_ControlReg.o"
 Deleting file ".\CortexM3\ARM_GCC_541\Debug\S7D_ControlReg_PM.o"
-Deleting file ".\CortexM3\ARM_GCC_541\Debug\PWM_CLK.o"
-Deleting file ".\CortexM3\ARM_GCC_541\Debug\RGB_B.o"
-Deleting file ".\CortexM3\ARM_GCC_541\Debug\RGB_G.o"
-Deleting file ".\CortexM3\ARM_GCC_541\Debug\RGB_R.o"
 Deleting file ".\CortexM3\ARM_GCC_541\Debug\PWM_Red.o"
 Deleting file ".\CortexM3\ARM_GCC_541\Debug\PWM_Red_PM.o"
+Deleting file ".\CortexM3\ARM_GCC_541\Debug\PWM_CLK.o"
 Deleting file ".\CortexM3\ARM_GCC_541\Debug\PWM_Green.o"
 Deleting file ".\CortexM3\ARM_GCC_541\Debug\PWM_Green_PM.o"
 Deleting file ".\CortexM3\ARM_GCC_541\Debug\PWM_Blue.o"
 Deleting file ".\CortexM3\ARM_GCC_541\Debug\PWM_Blue_PM.o"
+Deleting file ".\CortexM3\ARM_GCC_541\Debug\RGB_B.o"
+Deleting file ".\CortexM3\ARM_GCC_541\Debug\RGB_G.o"
+Deleting file ".\CortexM3\ARM_GCC_541\Debug\RGB_R.o"
+Deleting file ".\CortexM3\ARM_GCC_541\Debug\LED_Red.o"
+Deleting file ".\CortexM3\ARM_GCC_541\Debug\LED_Green.o"
+Deleting file ".\CortexM3\ARM_GCC_541\Debug\LED_Yellow.o"
+Deleting file ".\CortexM3\ARM_GCC_541\Debug\UART_LOG_IntClock.o"
+Deleting file ".\CortexM3\ARM_GCC_541\Debug\Cm3Start.o"
+Deleting file ".\CortexM3\ARM_GCC_541\Debug\CyBootAsmGnu.o"
+Deleting file ".\CortexM3\ARM_GCC_541\Debug\CyDmac.o"
+Deleting file ".\CortexM3\ARM_GCC_541\Debug\CyFlash.o"
+Deleting file ".\CortexM3\ARM_GCC_541\Debug\CyLib.o"
+Deleting file ".\CortexM3\ARM_GCC_541\Debug\cyPm.o"
+Deleting file ".\CortexM3\ARM_GCC_541\Debug\CySpc.o"
+Deleting file ".\CortexM3\ARM_GCC_541\Debug\cyutils.o"
+Deleting file ".\CortexM3\ARM_GCC_541\Debug\cy_em_eeprom.o"
 Deleting file ".\CortexM3\ARM_GCC_541\Debug\ReactionGame.hex"
 Deleting file ".\CortexM3\ARM_GCC_541\Debug\ReactionGame.elf"
 Deleting file ".\CortexM3\ARM_GCC_541\Debug\ReactionGame.map"
@@ -213,7 +213,6 @@ Generated_Source\PSoC5\cytypes.h:490:25: warning: typedef 'float32' locally defi
 Generated_Source\PSoC5\cytypes.h:494:34: warning: typedef 'float64' locally defined but not used [-Wunused-local-typedefs]
      typedef               double float64;
                                   ^
-arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -I.\source\asw -I.\source\bsw -I. -IGenerated_Source\PSoC5 -Wa,-alh=.\CortexM3\ARM_GCC_541\Debug/ErikaOS_ee_terminat.lst -g -D DEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -Og -c Generated_Source\PSoC5\ErikaOS_ee_terminat.c -o .\CortexM3\ARM_GCC_541\Debug\ErikaOS_ee_terminat.o
 Generated_Source\PSoC5\cytypes.h:495:34: warning: typedef 'int64' locally defined but not used [-Wunused-local-typedefs]
      typedef          long long   int64;
                                   ^
@@ -240,6 +239,7 @@ Generated_Source\PSoC5\cyPm.h:267:3: warning: typedef 'CY_PM_CLOCK_BACKUP_STRUCT
 Generated_Source\PSoC5\cyPm.h:315:3: warning: typedef 'CY_PM_BACKUP_STRUCT' locally defined but not used [-Wunused-local-typedefs]
  } CY_PM_BACKUP_STRUCT;
    ^
+arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -I.\source\asw -I.\source\bsw -I. -IGenerated_Source\PSoC5 -Wa,-alh=.\CortexM3\ARM_GCC_541\Debug/ErikaOS_ee_terminat.lst -g -D DEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -Og -c Generated_Source\PSoC5\ErikaOS_ee_terminat.c -o .\CortexM3\ARM_GCC_541\Debug\ErikaOS_ee_terminat.o
 arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -I.\source\asw -I.\source\bsw -I. -IGenerated_Source\PSoC5 -Wa,-alh=.\CortexM3\ARM_GCC_541\Debug/ErikaOS_ee_thendin.lst -g -D DEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -Og -c Generated_Source\PSoC5\ErikaOS_ee_thendin.c -o .\CortexM3\ARM_GCC_541\Debug\ErikaOS_ee_thendin.o
 arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -I.\source\asw -I.\source\bsw -I. -IGenerated_Source\PSoC5 -Wa,-alh=.\CortexM3\ARM_GCC_541\Debug/ErikaOS_ee_tnterm.lst -g -D DEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -Og -c Generated_Source\PSoC5\ErikaOS_ee_tnterm.c -o .\CortexM3\ARM_GCC_541\Debug\ErikaOS_ee_tnterm.o
 arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -I.\source\asw -I.\source\bsw -I. -IGenerated_Source\PSoC5 -Wa,-alh=.\CortexM3\ARM_GCC_541\Debug/ErikaOS_ee_tstub.lst -g -D DEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -Og -c Generated_Source\PSoC5\ErikaOS_ee_tstub.c -o .\CortexM3\ARM_GCC_541\Debug\ErikaOS_ee_tstub.o
@@ -307,6 +307,6 @@ No ELF section .cychecksum found, creating one
 Application checksum calculated and stored in ELF section .cychecksum
 Checksum calculated and stored in ELF section .cymeta
 cyelftool.exe -S "D:\HDA\1_sem\Embedded System Design\Lab\Assignment_1\ReactionGame_OS\ReactionGame.cydsn\CortexM3\ARM_GCC_541\Debug\ReactionGame.elf"
-Flash used: 10536 of 262144 bytes (4.0%).
+Flash used: 10568 of 262144 bytes (4.0%).
 SRAM used: 3881 of 65536 bytes (5.9%). Stack: 2048 bytes. Heap: 128 bytes.
---------------- Rebuild Succeeded: 11/25/2018 16:11:20 ---------------
+--------------- Rebuild Succeeded: 11/28/2018 01:14:56 ---------------

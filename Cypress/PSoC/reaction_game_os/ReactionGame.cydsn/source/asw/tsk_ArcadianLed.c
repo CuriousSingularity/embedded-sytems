@@ -26,7 +26,7 @@
 /*****************************************************************************/
 /* Local pre-processor symbols/macros ('#define')                            */
 /*****************************************************************************/
-#define ARCADIANLED__FADER_TIME_DURATION    500
+#define ARCADIANLED__FADER_TIME_DURATION    100
 
 /*****************************************************************************/
 /* Global variable definitions (declared in header file with 'extern')       */
@@ -43,11 +43,13 @@
 static const ARCADIANLED__Fader_t  Led_fadertable[] = {
     
     //Red    Yellow Green   TimeInMS
-    {0,      0,     0,      ARCADIANLED__FADER_TIME_DURATION},
+    //{0,      0,     0,      ARCADIANLED__FADER_TIME_DURATION},
     {127,    0,     0,      ARCADIANLED__FADER_TIME_DURATION},
-    {255,    127,   0,      ARCADIANLED__FADER_TIME_DURATION},
-    {127,    255,   127,    ARCADIANLED__FADER_TIME_DURATION},
-    {0,      127,   255,    ARCADIANLED__FADER_TIME_DURATION},
+    {255,    0,     0,      ARCADIANLED__FADER_TIME_DURATION},
+    {127,    127,   0,      ARCADIANLED__FADER_TIME_DURATION},
+    {0,      255,   0,      ARCADIANLED__FADER_TIME_DURATION},
+    {0,      127,   127,    ARCADIANLED__FADER_TIME_DURATION},
+    {0,      0,     255,    ARCADIANLED__FADER_TIME_DURATION},
     {0,      0,     127,    ARCADIANLED__FADER_TIME_DURATION},
 };
 
@@ -74,6 +76,11 @@ static const ARCADIANLED__Glower_t RGB_glowtable[] = {
 /*****************************************************************************/
 /* Function implementation - global ('extern') and local ('static')          */
 /*****************************************************************************/
+/**
+ * A function which provides the arcadian style fader functionality to the leds
+ * @param   void
+ * @return  RC_SUCCESS
+ */
 static RC_t ARCADIANLED__Fader(void)
 {
     static uint8_t Index = 0, TimeCount = 0;
@@ -85,7 +92,7 @@ static RC_t ARCADIANLED__Fader(void)
         PWM_SetGreen (Led_fadertable[Index].rgb_G_pwm);
         
         // Has the time elapsed ?
-        if (Led_fadertable[Index].TimeDuration <= (TimeCount++ * TSK_ARCADIANLED_CYCLIC_TIME))
+        if (Led_fadertable[Index].TimeDuration <= (++TimeCount * TSK_ARCADIANLED_CYCLIC_TIME))
         {
             Index++;
             TimeCount = 0;
@@ -101,6 +108,11 @@ static RC_t ARCADIANLED__Fader(void)
 }
 
 
+/**
+ * A function which provides the arcadian style glower functionality to the RGB led
+ * @param   void
+ * @return  RC_SUCCESS
+ */
 static RC_t ARCADIANLED__Glower(void)
 {
     static uint8_t Index = 0, TimeCount = 0;
@@ -129,7 +141,7 @@ static RC_t ARCADIANLED__Glower(void)
 
 
 /**
- * The Task declaration
+ * The Task definition
  * The tsk_ArcadianLed is a cyclic task which is activated every 100ms.
  * The task is activated via an alarm.
  */

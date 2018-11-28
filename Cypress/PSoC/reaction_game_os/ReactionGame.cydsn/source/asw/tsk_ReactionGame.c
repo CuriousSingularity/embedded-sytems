@@ -76,6 +76,12 @@ static uint8_t GetRandomNumber(uint8_t NumberRange)
 }
 
 
+/**
+ * A function to display the welcome message and takes an button press to start the game;
+ * now the game is in start status.
+ * @param REACTIONGAME_t *Game  : OUT changes the status to START.
+ * @return RC_t                 : RC_SUCCESS on successful
+ */
 static RC_t REACTIONGAME__WelcomeScreen(REACTIONGAME_t *Game)
 {
     CONSOLE_Write("=========================================================\n");
@@ -94,6 +100,13 @@ static RC_t REACTIONGAME__WelcomeScreen(REACTIONGAME_t *Game)
 }
 
 
+/**
+ * A function to get the user reaction and measure the reaction time; the outcome could be
+ *      1. Button press
+ *      2. Timeout
+ * @param REACTIONGAME_t *Game  : OUT measures the reaction time.
+ * @return RC_t                 : RC_SUCCESS on successful
+ */
 static RC_t REACTIONGAME__GetUserReaction(REACTIONGAME_t *Game)
 {
     // Start a timeout for 1 second to read the user reaction
@@ -117,7 +130,15 @@ static RC_t REACTIONGAME__GetUserReaction(REACTIONGAME_t *Game)
 }
 
 
-static RC_t REACTIONGAME__ProcessReaction(REACTIONGAME_t *Game, uint8_t RandomNumber)
+/**
+ * A function to process the user reaction; the outcome could be
+ *      1. Correct Button press
+ *      2. Incorrect Button press
+ *      3. Timeout
+ * @param REACTIONGAME_t *Game  : OUT update the statistics of the game.
+ * @return RC_t                 : RC_SUCCESS on successful
+ */
+static RC_t REACTIONGAME__ProcessReaction(REACTIONGAME_t *Game)
 {
     /**
     * Outcome:
@@ -136,8 +157,8 @@ static RC_t REACTIONGAME__ProcessReaction(REACTIONGAME_t *Game, uint8_t RandomNu
     else
     {
         // Some button pressed; check valid button pressed or not
-        if (((Game->Event & ev_Button1) && (RandomNumber == BUTTON_1)) ||
-            ((Game->Event & ev_Button2) && (RandomNumber == BUTTON_2)))
+        if (((Game->Event & ev_Button1) && (Game->RandomNumber == BUTTON_1)) ||
+            ((Game->Event & ev_Button2) && (Game->RandomNumber == BUTTON_2)))
         {
             // Valid button pressed
             CONSOLE_Write("Correct button pressed | Reaction Time is ");
@@ -161,6 +182,11 @@ static RC_t REACTIONGAME__ProcessReaction(REACTIONGAME_t *Game, uint8_t RandomNu
 }
 
 
+/**
+ * A function to display the summary information of the current game and reset the values
+ * @param REACTIONGAME_t *Game  : IN and OUT display the statistics and reset the values
+ * @return RC_t                 : RC_SUCCESS on successful
+ */
 static RC_t REACTIONGAME__Summary(REACTIONGAME_t *Game)
 {
     CONSOLE_Write("=========================================================\n");
@@ -200,6 +226,11 @@ static RC_t REACTIONGAME__Summary(REACTIONGAME_t *Game)
 }
 
 
+/**
+ * A function to handle the end of a current game. The status of the game is Idle.
+ * @param REACTIONGAME_t *Game  : IN 
+ * @return RC_t                 : RC_SUCCESS on successful
+ */
 static RC_t REACTIONGAME__EndRound(REACTIONGAME_t *Game)
 {
     // Game ended, cleanup
@@ -222,9 +253,21 @@ static RC_t REACTIONGAME__EndRound(REACTIONGAME_t *Game)
 }
 
 
+/**
+ * A function to handle a round in the game. A random number of seconds is allowed to expire. 
+ * @param REACTIONGAME_t *Game  : IN 
+ * @return RC_t                 : RC_SUCCESS on successful
+ */
 static RC_t REACTIONGAME__GameRound(REACTIONGAME_t *Game)
 {
-    uint8_t RandomNumber = 0;
+    // Clear the Display
+    S7D_Clear();
+    
+    // check if it is the begining of new game
+    if (!Game->Rounds)
+    {
+        REACTIONGAME__WelcomeScreen(Game);
+    }
     
     CONSOLE_Write("Reaction Game - Round ");
     CONSOLE_WriteNumber(Game->Rounds + 1);
@@ -266,8 +309,8 @@ static RC_t REACTIONGAME__GameRound(REACTIONGAME_t *Game)
         S7D_SetDot();
         
         // Set a timer alarm for random time and wait until it expires
-        RandomNumber = GetRandomNumber(MAX_RANDOM_SECONDS) + 1;
-        SetRelAlarm(alrm_Timeout, RandomNumber * MILLISECONDS, 0);
+        Game->RandomNumber = GetRandomNumber(MAX_RANDOM_SECONDS) + 1;
+        SetRelAlarm(alrm_Timeout, Game->RandomNumber * MILLISECONDS, 0);
         
         WaitEvent(ev_Timeout);
         
@@ -277,10 +320,41 @@ static RC_t REACTIONGAME__GameRound(REACTIONGAME_t *Game)
         ClearEvent(Game->Event);
         
         // change the state 
-        Game->NextState = RG__STATE_DISPLAY_NUMBER;
+        Game->NextState = RG__STATE_DISPLAY;
     }
     
     return RC_SUCCESS;
+}
+
+
+/**
+ * A function to check if the game has reached its end by comparing the number of rounds played. 
+ * @param REACTIONGAME_t *Game  : IN 
+ * @return RC_t                 : RC_SUCCESS on successful
+ */
+RC_t REACTIONGAME__HasGameEnded(REACTIONGAME_t *Game)
+{
+    if (++(Game->Rounds) >= MAX_ROUNDS_IN_GAME)
+    {
+        REACTIONGAME__EndRound(Game);
+    }
+    else
+    {
+        Game->Status = RG__STATUS_IDLE;
+    }
+    
+    return RC_SUCCESS;
+}
+
+
+/*
+ * A function to generate a random number and display onto the 7-segment Display.
+ * param@ REACTIONGAME_t *Game      : IN Display the random number
+ */
+void REACTIONGAME__DisplayRandNumber(REACTIONGAME_t *Game)
+{
+    Game->RandomNumber = GetRandomNumber(MAX_RANDOM_NUMBER) + 1;
+    S7D_IdenticalWrite(Game->RandomNumber);
 }
 
 
@@ -290,13 +364,12 @@ static RC_t REACTIONGAME__GameRound(REACTIONGAME_t *Game)
  */
 TASK(tsk_ReactionGame)
 {
-    uint8_t RandomNumber = 0;
-    
     REACTIONGAME_t Game = {
         .Rounds                 = 0,
         .CorrectButtonPresses   = 0,
         .IncorrectButtonPresses = 0,
         .MissedPresses          = 0,
+        .RandomNumber           = 0,
         .AvgReactionTime        = 0,
         .TotalReactionTime      = 0,
         .MeasureReactionTime    = 0,
@@ -312,48 +385,31 @@ TASK(tsk_ReactionGame)
         {
             case RG__STATE_STANDBY:
                 
-                // Clear the Display
-                S7D_Clear();
-                
-                // check if it is the begining of new game
-                if (!Game.Rounds)
-                {
-                    REACTIONGAME__WelcomeScreen(&Game);
-                }
-                
                 // Start the a Game Round
                 REACTIONGAME__GameRound(&Game);
                 
             break;
             
-            case RG__STATE_DISPLAY_NUMBER:
+            case RG__STATE_DISPLAY:
                 
-                // Generate Random number and update it on Display 
-                RandomNumber = GetRandomNumber(MAX_RANDOM_NUMBER) + 1;
-                S7D_IdenticalWrite(RandomNumber);
+                // Generate Random number and update it on Display
+                REACTIONGAME__DisplayRandNumber(&Game);
                 
                 REACTIONGAME__GetUserReaction(&Game);
                 
                 // change the state 
-                Game.NextState = RG__STATE_PROCESS_REACTION;
+                Game.NextState = RG__STATE_PROCESS;
                 
             break;
             
-            case RG__STATE_PROCESS_REACTION:
+            case RG__STATE_PROCESS:
                 
                 // Process the events
-                REACTIONGAME__ProcessReaction(&Game, RandomNumber);
+                REACTIONGAME__ProcessReaction(&Game);
                 
                 // Game ended ?
-                if (++Game.Rounds >= MAX_ROUNDS_IN_GAME)
-                {
-                    REACTIONGAME__EndRound(&Game);
-                }
-                else
-                {
-                    Game.Status = RG__STATUS_IDLE;
-                }
-                
+                REACTIONGAME__HasGameEnded(&Game);
+                                
                 Game.NextState = RG__STATE_STANDBY;
                 
             break;

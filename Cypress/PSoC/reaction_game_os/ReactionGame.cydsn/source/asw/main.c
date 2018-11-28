@@ -31,6 +31,10 @@ ISR(systick_handler)
 /*****************************************************************************/
 /* Function implementation - global ('extern') and local ('static')          */
 /*****************************************************************************/
+/**
+ * An entry point to the application software.
+ * @param void
+ */
 int main(void)
 {
     CyGlobalIntEnable; /* Enable global interrupts. */
@@ -45,5 +49,7 @@ int main(void)
         /* Place your application code here. */
         StartOS(OSDEFAULTAPPMODE);
     }
+    
+    return 0;
 }
 /* [] END OF FILE */

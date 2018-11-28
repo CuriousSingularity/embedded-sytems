@@ -63,6 +63,10 @@ TASK(tsk_Timer)
 }
 
 
+/**
+ * A function which triggers the time measurement.
+ * @return RC_t     :   RC_SUCCESS on successful start of the timer.
+ */
 RC_t TIMER_StartTimeMeasurement(void)
 {
     TIMER__1ms_counter = 0;
@@ -74,6 +78,11 @@ RC_t TIMER_StartTimeMeasurement(void)
 }
 
 
+/**
+ * A function which measures the elapsed time from the start time.
+ * @param uint32_t *MeasureReactionTime : OUT the value of measured time will be updated. 
+ * @return RC_t                         : RC_SUCCESS on successful retrival of the time.
+ */
 RC_t TIMER_ElapsedTimeMeasurement(uint32_t *MeasureReactionTime)
 {
     *MeasureReactionTime = TIMER__1ms_counter;

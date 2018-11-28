@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccnl7YDM.s 			page 1
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cclho8ca.s 			page 1
 
 
    1              		.syntax unified
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccnl7YDM.s 			page 1
   28:source\asw/tsk_Timer.c **** 
   29:source\asw/tsk_Timer.c **** 
   30:source\asw/tsk_Timer.c **** /*****************************************************************************/
-ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccnl7YDM.s 			page 2
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cclho8ca.s 			page 2
 
 
   31:source\asw/tsk_Timer.c **** /* Global variable definitions (declared in header file with 'extern')       */
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccnl7YDM.s 			page 1
   50              	.LFE110:
   51              		.size	Functsk_Timer, .-Functsk_Timer
   52              		.section	.text.TIMER_StartTimeMeasurement,"ax",%progbits
-ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccnl7YDM.s 			page 3
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cclho8ca.s 			page 3
 
 
   53              		.align	2
@@ -131,9 +131,13 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccnl7YDM.s 			page 1
   63:source\asw/tsk_Timer.c **** }
   64:source\asw/tsk_Timer.c **** 
   65:source\asw/tsk_Timer.c **** 
-  66:source\asw/tsk_Timer.c **** RC_t TIMER_StartTimeMeasurement(void)
-  67:source\asw/tsk_Timer.c **** {
-  60              		.loc 1 67 0
+  66:source\asw/tsk_Timer.c **** /**
+  67:source\asw/tsk_Timer.c ****  * A function which triggers the time measurement.
+  68:source\asw/tsk_Timer.c ****  * @return RC_t     :   RC_SUCCESS on successful start of the timer.
+  69:source\asw/tsk_Timer.c ****  */
+  70:source\asw/tsk_Timer.c **** RC_t TIMER_StartTimeMeasurement(void)
+  71:source\asw/tsk_Timer.c **** {
+  60              		.loc 1 71 0
   61              		.cfi_startproc
   62              		@ args = 0, pretend = 0, frame = 0
   63              		@ frame_needed = 0, uses_anonymous_args = 0
@@ -141,24 +145,24 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccnl7YDM.s 			page 1
   65              		.cfi_def_cfa_offset 8
   66              		.cfi_offset 4, -8
   67              		.cfi_offset 14, -4
-  68:source\asw/tsk_Timer.c ****     TIMER__1ms_counter = 0;
-  68              		.loc 1 68 0
+  72:source\asw/tsk_Timer.c ****     TIMER__1ms_counter = 0;
+  68              		.loc 1 72 0
   69 0002 0024     		movs	r4, #0
   70 0004 044B     		ldr	r3, .L7
   71 0006 1C60     		str	r4, [r3]
-  69:source\asw/tsk_Timer.c ****     
-  70:source\asw/tsk_Timer.c ****     // Set Alarms here
-  71:source\asw/tsk_Timer.c ****     SetRelAlarm(alrm_Tick1ms, 1, 1);
-  72              		.loc 1 71 0
+  73:source\asw/tsk_Timer.c ****     
+  74:source\asw/tsk_Timer.c ****     // Set Alarms here
+  75:source\asw/tsk_Timer.c ****     SetRelAlarm(alrm_Tick1ms, 1, 1);
+  72              		.loc 1 75 0
   73 0008 0122     		movs	r2, #1
   74 000a 1146     		mov	r1, r2
   75 000c 2046     		mov	r0, r4
   76 000e FFF7FEFF 		bl	EE_oo_SetRelAlarm
   77              	.LVL1:
-  72:source\asw/tsk_Timer.c ****     
-  73:source\asw/tsk_Timer.c ****     return RC_SUCCESS;
-  74:source\asw/tsk_Timer.c **** }
-  78              		.loc 1 74 0
+  76:source\asw/tsk_Timer.c ****     
+  77:source\asw/tsk_Timer.c ****     return RC_SUCCESS;
+  78:source\asw/tsk_Timer.c **** }
+  78              		.loc 1 78 0
   79 0012 2046     		mov	r0, r4
   80 0014 10BD     		pop	{r4, pc}
   81              	.L8:
@@ -174,16 +178,21 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccnl7YDM.s 			page 1
   91              		.thumb
   92              		.thumb_func
   93              		.type	TIMER_ElapsedTimeMeasurement, %function
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cclho8ca.s 			page 4
+
+
   94              	TIMER_ElapsedTimeMeasurement:
   95              	.LFB112:
-  75:source\asw/tsk_Timer.c **** 
-  76:source\asw/tsk_Timer.c **** 
-ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccnl7YDM.s 			page 4
-
-
-  77:source\asw/tsk_Timer.c **** RC_t TIMER_ElapsedTimeMeasurement(uint32_t *MeasureReactionTime)
-  78:source\asw/tsk_Timer.c **** {
-  96              		.loc 1 78 0
+  79:source\asw/tsk_Timer.c **** 
+  80:source\asw/tsk_Timer.c **** 
+  81:source\asw/tsk_Timer.c **** /**
+  82:source\asw/tsk_Timer.c ****  * A function which measures the elapsed time from the start time.
+  83:source\asw/tsk_Timer.c ****  * @param uint32_t *MeasureReactionTime : OUT the value of measured time will be updated. 
+  84:source\asw/tsk_Timer.c ****  * @return RC_t                         : RC_SUCCESS on successful retrival of the time.
+  85:source\asw/tsk_Timer.c ****  */
+  86:source\asw/tsk_Timer.c **** RC_t TIMER_ElapsedTimeMeasurement(uint32_t *MeasureReactionTime)
+  87:source\asw/tsk_Timer.c **** {
+  96              		.loc 1 87 0
   97              		.cfi_startproc
   98              		@ args = 0, pretend = 0, frame = 0
   99              		@ frame_needed = 0, uses_anonymous_args = 0
@@ -192,23 +201,23 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccnl7YDM.s 			page 1
  102              		.cfi_def_cfa_offset 8
  103              		.cfi_offset 3, -8
  104              		.cfi_offset 14, -4
-  79:source\asw/tsk_Timer.c ****     *MeasureReactionTime = TIMER__1ms_counter;
- 105              		.loc 1 79 0
+  88:source\asw/tsk_Timer.c ****     *MeasureReactionTime = TIMER__1ms_counter;
+ 105              		.loc 1 88 0
  106 0002 044B     		ldr	r3, .L11
  107 0004 1B68     		ldr	r3, [r3]
  108 0006 0360     		str	r3, [r0]
-  80:source\asw/tsk_Timer.c ****     
-  81:source\asw/tsk_Timer.c ****     // Cancel Alarms here
-  82:source\asw/tsk_Timer.c ****     CancelAlarm(alrm_Tick1ms);
- 109              		.loc 1 82 0
+  89:source\asw/tsk_Timer.c ****     
+  90:source\asw/tsk_Timer.c ****     // Cancel Alarms here
+  91:source\asw/tsk_Timer.c ****     CancelAlarm(alrm_Tick1ms);
+ 109              		.loc 1 91 0
  110 0008 0020     		movs	r0, #0
  111              	.LVL3:
  112 000a FFF7FEFF 		bl	EE_oo_CancelAlarm
  113              	.LVL4:
-  83:source\asw/tsk_Timer.c ****     
-  84:source\asw/tsk_Timer.c ****     return RC_SUCCESS;
-  85:source\asw/tsk_Timer.c **** }...
- 114              		.loc 1 85 0
+  92:source\asw/tsk_Timer.c ****     
+  93:source\asw/tsk_Timer.c ****     return RC_SUCCESS;
+  94:source\asw/tsk_Timer.c **** }...
+ 114              		.loc 1 94 0
  115 000e 0020     		movs	r0, #0
  116 0010 08BD     		pop	{r3, pc}
  117              	.L12:
@@ -229,6 +238,9 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccnl7YDM.s 			page 1
  132              	.Letext0:
  133              		.file 2 "d:\\installations\\cypress\\psoc creator\\4.2\\psoc creator\\import\\gnu\\arm\\5.4.1\\arm
  134              		.file 3 "d:\\installations\\cypress\\psoc creator\\4.2\\psoc creator\\import\\gnu\\arm\\5.4.1\\arm
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cclho8ca.s 			page 5
+
+
  135              		.file 4 "Generated_Source\\PSoC5/ErikaOS_common_ee_types.inc"
  136              		.file 5 "Generated_Source\\PSoC5/ErikaOS_cortex_mx_ee_cpu.inc"
  137              		.file 6 ".\\source\\bsw/global.h"
@@ -238,9 +250,6 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccnl7YDM.s 			page 1
  141              		.file 10 "Generated_Source\\PSoC5/core_cm3.h"
  142              		.file 11 "Generated_Source\\PSoC5/ErikaOS_ee_oo_kernel.inc"
  143              		.section	.debug_info,"",%progbits
-ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccnl7YDM.s 			page 5
-
-
  144              	.Ldebug_info0:
  145 0000 AD020000 		.4byte	0x2ad
  146 0004 0400     		.2byte	0x4
@@ -289,6 +298,9 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccnl7YDM.s 			page 1
  189 0060 07       		.byte	0x7
  190 0061 04040000 		.4byte	.LASF7
  191 0065 02       		.uleb128 0x2
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cclho8ca.s 			page 6
+
+
  192 0066 08       		.byte	0x8
  193 0067 05       		.byte	0x5
  194 0068 C4010000 		.4byte	.LASF8
@@ -298,9 +310,6 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccnl7YDM.s 			page 1
  198 006f 9F020000 		.4byte	.LASF9
  199 0073 04       		.uleb128 0x4
  200 0074 04       		.byte	0x4
-ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccnl7YDM.s 			page 6
-
-
  201 0075 05       		.byte	0x5
  202 0076 696E7400 		.ascii	"int\000"
  203 007a 02       		.uleb128 0x2
@@ -349,6 +358,9 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccnl7YDM.s 			page 1
  246 00cf 4D       		.byte	0x4d
  247 00d0 BE000000 		.4byte	0xbe
  248 00d4 03       		.uleb128 0x3
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cclho8ca.s 			page 7
+
+
  249 00d5 27010000 		.4byte	.LASF20
  250 00d9 05       		.byte	0x5
  251 00da 4F       		.byte	0x4f
@@ -358,9 +370,6 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccnl7YDM.s 			page 1
  255 00e4 05       		.byte	0x5
  256 00e5 78       		.byte	0x78
  257 00e6 B3000000 		.4byte	0xb3
-ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccnl7YDM.s 			page 7
-
-
  258 00ea 02       		.uleb128 0x2
  259 00eb 04       		.byte	0x4
  260 00ec 07       		.byte	0x7
@@ -409,6 +418,9 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccnl7YDM.s 			page 1
  303 0144 BF040000 		.4byte	.LASF34
  304 0148 75       		.sleb128 -11
  305 0149 07       		.uleb128 0x7
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cclho8ca.s 			page 8
+
+
  306 014a CC020000 		.4byte	.LASF35
  307 014e 74       		.sleb128 -12
  308 014f 07       		.uleb128 0x7
@@ -418,9 +430,6 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccnl7YDM.s 			page 1
  312 0156 39000000 		.4byte	.LASF37
  313 015a 72       		.sleb128 -14
  314 015b 07       		.uleb128 0x7
-ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccnl7YDM.s 			page 8
-
-
  315 015c 74000000 		.4byte	.LASF38
  316 0160 71       		.sleb128 -15
  317 0161 07       		.uleb128 0x7
@@ -469,18 +478,18 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccnl7YDM.s 			page 1
  360 01b9 0E000000 		.4byte	.LVL0
  361 01bd 8D020000 		.4byte	0x28d
  362 01c1 00       		.byte	0
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cclho8ca.s 			page 9
+
+
  363 01c2 0A       		.uleb128 0xa
  364 01c3 4C020000 		.4byte	.LASF49
  365 01c7 01       		.byte	0x1
- 366 01c8 42       		.byte	0x42
+ 366 01c8 46       		.byte	0x46
  367 01c9 98010000 		.4byte	0x198
  368 01cd 00000000 		.4byte	.LFB111
  369 01d1 1C000000 		.4byte	.LFE111-.LFB111
  370 01d5 01       		.uleb128 0x1
  371 01d6 9C       		.byte	0x9c
-ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccnl7YDM.s 			page 9
-
-
  372 01d7 F6010000 		.4byte	0x1f6
  373 01db 0B       		.uleb128 0xb
  374 01dc 12000000 		.4byte	.LVL1
@@ -506,7 +515,7 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccnl7YDM.s 			page 1
  394 01f6 0A       		.uleb128 0xa
  395 01f7 57000000 		.4byte	.LASF50
  396 01fb 01       		.byte	0x1
- 397 01fc 4D       		.byte	0x4d
+ 397 01fc 56       		.byte	0x56
  398 01fd 98010000 		.4byte	0x198
  399 0201 00000000 		.4byte	.LFB112
  400 0205 18000000 		.4byte	.LFE112-.LFB112
@@ -516,7 +525,7 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccnl7YDM.s 			page 1
  404 020f 0D       		.uleb128 0xd
  405 0210 38020000 		.4byte	.LASF64
  406 0214 01       		.byte	0x1
- 407 0215 4D       		.byte	0x4d
+ 407 0215 56       		.byte	0x56
  408 0216 2E020000 		.4byte	0x22e
  409 021a 00000000 		.4byte	.LLST0
  410 021e 0B       		.uleb128 0xb
@@ -529,6 +538,9 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccnl7YDM.s 			page 1
  417 022b 30       		.byte	0x30
  418 022c 00       		.byte	0
  419 022d 00       		.byte	0
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cclho8ca.s 			page 10
+
+
  420 022e 0E       		.uleb128 0xe
  421 022f 04       		.byte	0x4
  422 0230 8C000000 		.4byte	0x8c
@@ -538,9 +550,6 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccnl7YDM.s 			page 1
  426 023a 2A       		.byte	0x2a
  427 023b 8C000000 		.4byte	0x8c
  428 023f 05       		.uleb128 0x5
-ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccnl7YDM.s 			page 10
-
-
  429 0240 03       		.byte	0x3
  430 0241 00000000 		.4byte	TIMER__1ms_counter
  431 0245 10       		.uleb128 0x10
@@ -589,6 +598,9 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccnl7YDM.s 			page 1
  474 02a5 4E040000 		.4byte	.LASF59
  475 02a9 4E040000 		.4byte	.LASF59
  476 02ad 0B       		.byte	0xb
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cclho8ca.s 			page 11
+
+
  477 02ae F901     		.2byte	0x1f9
  478 02b0 00       		.byte	0
  479              		.section	.debug_abbrev,"",%progbits
@@ -598,9 +610,6 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccnl7YDM.s 			page 1
  483 0002 01       		.byte	0x1
  484 0003 25       		.uleb128 0x25
  485 0004 0E       		.uleb128 0xe
-ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccnl7YDM.s 			page 11
-
-
  486 0005 13       		.uleb128 0x13
  487 0006 0B       		.uleb128 0xb
  488 0007 03       		.uleb128 0x3
@@ -649,6 +658,9 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccnl7YDM.s 			page 1
  531 0032 03       		.uleb128 0x3
  532 0033 08       		.uleb128 0x8
  533 0034 00       		.byte	0
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cclho8ca.s 			page 12
+
+
  534 0035 00       		.byte	0
  535 0036 05       		.uleb128 0x5
  536 0037 04       		.uleb128 0x4
@@ -658,9 +670,6 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccnl7YDM.s 			page 1
  540 003b 0B       		.uleb128 0xb
  541 003c 0B       		.uleb128 0xb
  542 003d 49       		.uleb128 0x49
-ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccnl7YDM.s 			page 12
-
-
  543 003e 13       		.uleb128 0x13
  544 003f 3A       		.uleb128 0x3a
  545 0040 0B       		.uleb128 0xb
@@ -709,6 +718,9 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccnl7YDM.s 			page 1
  588 006b 18       		.uleb128 0x18
  589 006c 9742     		.uleb128 0x2117
  590 006e 19       		.uleb128 0x19
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cclho8ca.s 			page 13
+
+
  591 006f 01       		.uleb128 0x1
  592 0070 13       		.uleb128 0x13
  593 0071 00       		.byte	0
@@ -718,9 +730,6 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccnl7YDM.s 			page 1
  597 0077 00       		.byte	0
  598 0078 11       		.uleb128 0x11
  599 0079 01       		.uleb128 0x1
-ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccnl7YDM.s 			page 13
-
-
  600 007a 31       		.uleb128 0x31
  601 007b 13       		.uleb128 0x13
  602 007c 00       		.byte	0
@@ -769,6 +778,9 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccnl7YDM.s 			page 1
  645 00ac 9142     		.uleb128 0x2111
  646 00ae 18       		.uleb128 0x18
  647 00af 00       		.byte	0
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cclho8ca.s 			page 14
+
+
  648 00b0 00       		.byte	0
  649 00b1 0D       		.uleb128 0xd
  650 00b2 05       		.uleb128 0x5
@@ -778,9 +790,6 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccnl7YDM.s 			page 1
  654 00b6 3A       		.uleb128 0x3a
  655 00b7 0B       		.uleb128 0xb
  656 00b8 3B       		.uleb128 0x3b
-ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccnl7YDM.s 			page 14
-
-
  657 00b9 0B       		.uleb128 0xb
  658 00ba 49       		.uleb128 0x49
  659 00bb 13       		.uleb128 0x13
@@ -829,6 +838,9 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccnl7YDM.s 			page 1
  702 00e6 19       		.uleb128 0x19
  703 00e7 00       		.byte	0
  704 00e8 00       		.byte	0
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cclho8ca.s 			page 15
+
+
  705 00e9 11       		.uleb128 0x11
  706 00ea 34       		.uleb128 0x34
  707 00eb 00       		.byte	0
@@ -838,9 +850,6 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccnl7YDM.s 			page 1
  711 00ef 0B       		.uleb128 0xb
  712 00f0 3B       		.uleb128 0x3b
  713 00f1 05       		.uleb128 0x5
-ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccnl7YDM.s 			page 15
-
-
  714 00f2 49       		.uleb128 0x49
  715 00f3 13       		.uleb128 0x13
  716 00f4 3F       		.uleb128 0x3f
@@ -889,6 +898,9 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccnl7YDM.s 			page 1
  759 011f 3B       		.uleb128 0x3b
  760 0120 05       		.uleb128 0x5
  761 0121 00       		.byte	0
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cclho8ca.s 			page 16
+
+
  762 0122 00       		.byte	0
  763 0123 00       		.byte	0
  764              		.section	.debug_loc,"",%progbits
@@ -898,9 +910,6 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccnl7YDM.s 			page 1
  768 0004 0A000000 		.4byte	.LVL3
  769 0008 0100     		.2byte	0x1
  770 000a 50       		.byte	0x50
-ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccnl7YDM.s 			page 16
-
-
  771 000b 0A000000 		.4byte	.LVL3
  772 000f 18000000 		.4byte	.LFE112
  773 0013 0400     		.2byte	0x4
@@ -949,6 +958,9 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccnl7YDM.s 			page 1
  810      6E646379 
  810      636C655F 
  810      6E657874 
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cclho8ca.s 			page 17
+
+
  811              	.LASF58:
  812 0019 45455F6F 		.ascii	"EE_oo_SetRelAlarm\000"
  812      6F5F5365 
@@ -958,9 +970,6 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccnl7YDM.s 			page 1
  813              	.LASF63:
  814 002b 46756E63 		.ascii	"Functsk_Timer\000"
  814      74736B5F 
-ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccnl7YDM.s 			page 17
-
-
  814      54696D65 
  814      7200
  815              	.LASF37:
@@ -1009,6 +1018,9 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccnl7YDM.s 			page 1
  830              	.LASF41:
  831 00fb 52435F45 		.ascii	"RC_ERROR_WRITE_FAILS\000"
  831      52524F52 
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cclho8ca.s 			page 18
+
+
  831      5F575249 
  831      54455F46 
  831      41494C53 
@@ -1018,9 +1030,6 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccnl7YDM.s 			page 1
  833      00
  834              	.LASF26:
  835 0119 52435F45 		.ascii	"RC_ERROR_ZERO\000"
-ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccnl7YDM.s 			page 18
-
-
  835      52524F52 
  835      5F5A4552 
  835      4F00
@@ -1069,6 +1078,9 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccnl7YDM.s 			page 1
  853      6F756E74 
  853      657200
  854              	.LASF28:
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cclho8ca.s 			page 19
+
+
  855 01af 52435F45 		.ascii	"RC_ERROR_RANGE\000"
  855      52524F52 
  855      5F52414E 
@@ -1078,9 +1090,6 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccnl7YDM.s 			page 1
  857      7400
  858              	.LASF8:
  859 01c4 6C6F6E67 		.ascii	"long long int\000"
-ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccnl7YDM.s 			page 19
-
-
  859      206C6F6E 
  859      6720696E 
  859      7400
@@ -1129,6 +1138,9 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccnl7YDM.s 			page 1
  875      61727454 
  875      696D654D 
  875      65617375 
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cclho8ca.s 			page 20
+
+
  876              	.LASF44:
  877 0267 52435F45 		.ascii	"RC_ERROR_BAD_DATA\000"
  877      52524F52 
@@ -1138,9 +1150,6 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccnl7YDM.s 			page 1
  878              	.LASF16:
  879 0279 6C6F6E67 		.ascii	"long double\000"
  879      20646F75 
-ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccnl7YDM.s 			page 20
-
-
  879      626C6500 
  880              	.LASF1:
  881 0285 756E7369 		.ascii	"unsigned char\000"
@@ -1189,6 +1198,9 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccnl7YDM.s 			page 1
  898              	.LASF3:
  899 0307 73686F72 		.ascii	"short unsigned int\000"
  899      7420756E 
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cclho8ca.s 			page 21
+
+
  899      7369676E 
  899      65642069 
  899      6E7400
@@ -1198,9 +1210,6 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccnl7YDM.s 			page 1
  901      352E342E 
  901      31203230 
  901      31363036 
-ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccnl7YDM.s 			page 21
-
-
  902 034d 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m3 -mthumb -g -O"
  902      20726576 
  902      6973696F 
@@ -1249,6 +1258,9 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccnl7YDM.s 			page 1
  917      7400
  918              	.LASF14:
  919 0416 646F7562 		.ascii	"double\000"
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cclho8ca.s 			page 22
+
+
  919      6C6500
  920              	.LASF61:
  921 041d 736F7572 		.ascii	"source\\asw\\tsk_Timer.c\000"
@@ -1258,9 +1270,6 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccnl7YDM.s 			page 1
  921      696D6572 
  922              	.LASF36:
  923 0434 52435F45 		.ascii	"RC_ERROR_CHECKSUM\000"
-ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccnl7YDM.s 			page 22
-
-
  923      52524F52 
  923      5F434845 
  923      434B5355 
@@ -1309,6 +1318,9 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccnl7YDM.s 			page 1
  941      00
  942              	.LASF34:
  943 04bf 52435F45 		.ascii	"RC_ERROR_TIME_OUT\000"
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cclho8ca.s 			page 23
+
+
  943      52524F52 
  943      5F54494D 
  943      455F4F55 

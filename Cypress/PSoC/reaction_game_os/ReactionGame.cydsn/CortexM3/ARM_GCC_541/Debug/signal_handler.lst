@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cceIfx1b.s 			page 1
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cckgNYUc.s 			page 1
 
 
    1              		.syntax unified
@@ -50,41 +50,48 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cceIfx1b.s 			page 1
   21:source\asw/signal_handler.c **** /* Include files                                                             */
   22:source\asw/signal_handler.c **** /*****************************************************************************/
   23:source\asw/signal_handler.c **** #include "global.h"
-  24:source\asw/signal_handler.c **** #include "button.h"
-  25:source\asw/signal_handler.c **** 
-  26:source\asw/signal_handler.c **** /*****************************************************************************/
-  27:source\asw/signal_handler.c **** /* Local pre-processor symbols/macros ('#define')                            */
-  28:source\asw/signal_handler.c **** /*****************************************************************************/
-  29:source\asw/signal_handler.c **** 
+  24:source\asw/signal_handler.c **** #include "signal_handler.h"
+  25:source\asw/signal_handler.c **** #include "button.h"
+  26:source\asw/signal_handler.c **** 
+  27:source\asw/signal_handler.c **** /*****************************************************************************/
+  28:source\asw/signal_handler.c **** /* Local pre-processor symbols/macros ('#define')                            */
+  29:source\asw/signal_handler.c **** /*****************************************************************************/
   30:source\asw/signal_handler.c **** 
-  31:source\asw/signal_handler.c **** /*****************************************************************************/
-ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cceIfx1b.s 			page 2
+  31:source\asw/signal_handler.c **** 
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cckgNYUc.s 			page 2
 
 
-  32:source\asw/signal_handler.c **** /* Global variable definitions (declared in header file with 'extern')       */
-  33:source\asw/signal_handler.c **** /*****************************************************************************/
-  34:source\asw/signal_handler.c **** 
-  35:source\asw/signal_handler.c **** /*****************************************************************************/
-  36:source\asw/signal_handler.c **** /* Local type definitions ('typedef')                                        */
-  37:source\asw/signal_handler.c **** /*****************************************************************************/
-  38:source\asw/signal_handler.c **** 
+  32:source\asw/signal_handler.c **** /*****************************************************************************/
+  33:source\asw/signal_handler.c **** /* Global variable definitions (declared in header file with 'extern')       */
+  34:source\asw/signal_handler.c **** /*****************************************************************************/
+  35:source\asw/signal_handler.c **** 
+  36:source\asw/signal_handler.c **** /*****************************************************************************/
+  37:source\asw/signal_handler.c **** /* Local type definitions ('typedef')                                        */
+  38:source\asw/signal_handler.c **** /*****************************************************************************/
   39:source\asw/signal_handler.c **** 
-  40:source\asw/signal_handler.c **** /*****************************************************************************/
-  41:source\asw/signal_handler.c **** /* Local variable definitions ('static')                                     */
-  42:source\asw/signal_handler.c **** /*****************************************************************************/
-  43:source\asw/signal_handler.c **** 
+  40:source\asw/signal_handler.c **** 
+  41:source\asw/signal_handler.c **** /*****************************************************************************/
+  42:source\asw/signal_handler.c **** /* Local variable definitions ('static')                                     */
+  43:source\asw/signal_handler.c **** /*****************************************************************************/
   44:source\asw/signal_handler.c **** 
-  45:source\asw/signal_handler.c **** /*****************************************************************************/
-  46:source\asw/signal_handler.c **** /* Local function prototypes ('static')                                      */
-  47:source\asw/signal_handler.c **** /*****************************************************************************/
-  48:source\asw/signal_handler.c **** 
+  45:source\asw/signal_handler.c **** 
+  46:source\asw/signal_handler.c **** /*****************************************************************************/
+  47:source\asw/signal_handler.c **** /* Local function prototypes ('static')                                      */
+  48:source\asw/signal_handler.c **** /*****************************************************************************/
   49:source\asw/signal_handler.c **** 
-  50:source\asw/signal_handler.c **** /*****************************************************************************/
-  51:source\asw/signal_handler.c **** /* Function implementation - global ('extern') and local ('static')          */
-  52:source\asw/signal_handler.c **** /*****************************************************************************/
-  53:source\asw/signal_handler.c **** static void SIGNAL__from_button1(void)
-  54:source\asw/signal_handler.c **** {
-  27              		.loc 1 54 0
+  50:source\asw/signal_handler.c **** 
+  51:source\asw/signal_handler.c **** /*****************************************************************************/
+  52:source\asw/signal_handler.c **** /* Function implementation - global ('extern') and local ('static')          */
+  53:source\asw/signal_handler.c **** /*****************************************************************************/
+  54:source\asw/signal_handler.c **** 
+  55:source\asw/signal_handler.c **** /**
+  56:source\asw/signal_handler.c ****  * The function which sets button 1 press event to the tsk_ReactionGame.
+  57:source\asw/signal_handler.c ****  * @param   void
+  58:source\asw/signal_handler.c ****  * @return  void
+  59:source\asw/signal_handler.c ****  */
+  60:source\asw/signal_handler.c **** static void SIGNAL__from_button1(void)
+  61:source\asw/signal_handler.c **** {
+  27              		.loc 1 61 0
   28              		.cfi_startproc
   29              		@ args = 0, pretend = 0, frame = 0
   30              		@ frame_needed = 0, uses_anonymous_args = 0
@@ -92,9 +99,9 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cceIfx1b.s 			page 1
   32              		.cfi_def_cfa_offset 8
   33              		.cfi_offset 3, -8
   34              		.cfi_offset 14, -4
-  55:source\asw/signal_handler.c ****     // Events for button 1 press
-  56:source\asw/signal_handler.c ****     SetEvent(tsk_ReactionGame, ev_Button1);
-  35              		.loc 1 56 0
+  62:source\asw/signal_handler.c ****     // Events for button 1 press
+  63:source\asw/signal_handler.c ****     SetEvent(tsk_ReactionGame, ev_Button1);
+  35              		.loc 1 63 0
   36 0002 0121     		movs	r1, #1
   37 0004 0220     		movs	r0, #2
   38 0006 FFF7FEFF 		bl	EE_oo_SetEvent
@@ -110,24 +117,29 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cceIfx1b.s 			page 1
   48              		.type	SIGNAL__from_button2, %function
   49              	SIGNAL__from_button2:
   50              	.LFB111:
-  57:source\asw/signal_handler.c **** }
-  58:source\asw/signal_handler.c **** 
-  59:source\asw/signal_handler.c **** static void SIGNAL__from_button2(void)
-  60:source\asw/signal_handler.c **** {
-  51              		.loc 1 60 0
+  64:source\asw/signal_handler.c **** }
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cckgNYUc.s 			page 3
+
+
+  65:source\asw/signal_handler.c **** 
+  66:source\asw/signal_handler.c **** /**
+  67:source\asw/signal_handler.c ****  * The function which sets button 2 press event to the tsk_ReactionGame.
+  68:source\asw/signal_handler.c ****  * @param   void
+  69:source\asw/signal_handler.c ****  * @return  void
+  70:source\asw/signal_handler.c ****  */
+  71:source\asw/signal_handler.c **** static void SIGNAL__from_button2(void)
+  72:source\asw/signal_handler.c **** {
+  51              		.loc 1 72 0
   52              		.cfi_startproc
   53              		@ args = 0, pretend = 0, frame = 0
   54              		@ frame_needed = 0, uses_anonymous_args = 0
-ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cceIfx1b.s 			page 3
-
-
   55 0000 08B5     		push	{r3, lr}
   56              		.cfi_def_cfa_offset 8
   57              		.cfi_offset 3, -8
   58              		.cfi_offset 14, -4
-  61:source\asw/signal_handler.c ****     // Events for button 2 press
-  62:source\asw/signal_handler.c ****     SetEvent(tsk_ReactionGame, ev_Button2);
-  59              		.loc 1 62 0
+  73:source\asw/signal_handler.c ****     // Events for button 2 press
+  74:source\asw/signal_handler.c ****     SetEvent(tsk_ReactionGame, ev_Button2);
+  59              		.loc 1 74 0
   60 0002 0221     		movs	r1, #2
   61 0004 0846     		mov	r0, r1
   62 0006 FFF7FEFF 		bl	EE_oo_SetEvent
@@ -144,14 +156,15 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cceIfx1b.s 			page 1
   73              		.type	ISR2_isr_BUTTON, %function
   74              	ISR2_isr_BUTTON:
   75              	.LFB113:
-  63:source\asw/signal_handler.c **** }
-  64:source\asw/signal_handler.c **** 
-  65:source\asw/signal_handler.c **** /**
-  66:source\asw/signal_handler.c ****  * The button press interrupt - Category 2
-  67:source\asw/signal_handler.c ****  */
-  68:source\asw/signal_handler.c **** ISR2(isr_BUTTON)
-  69:source\asw/signal_handler.c **** {
-  76              		.loc 1 69 0
+  75:source\asw/signal_handler.c **** }
+  76:source\asw/signal_handler.c **** 
+  77:source\asw/signal_handler.c **** /**
+  78:source\asw/signal_handler.c ****  * The button press interrupt - Category 2
+  79:source\asw/signal_handler.c ****  * Corresponding event function will be invoked.
+  80:source\asw/signal_handler.c ****  */
+  81:source\asw/signal_handler.c **** ISR2(isr_BUTTON)
+  82:source\asw/signal_handler.c **** {
+  76              		.loc 1 82 0
   77              		.cfi_startproc
   78              		@ args = 0, pretend = 0, frame = 0
   79              		@ frame_needed = 0, uses_anonymous_args = 0
@@ -159,28 +172,28 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cceIfx1b.s 			page 1
   81              		.cfi_def_cfa_offset 8
   82              		.cfi_offset 3, -8
   83              		.cfi_offset 14, -4
-  70:source\asw/signal_handler.c ****     if (BUTTON_IsPressed(BUTTON_1)) SIGNAL__from_button1();
-  84              		.loc 1 70 0
+  83:source\asw/signal_handler.c ****     if (BUTTON_IsPressed(BUTTON_1)) SIGNAL__from_button1();
+  84              		.loc 1 83 0
   85 0002 0120     		movs	r0, #1
   86 0004 FFF7FEFF 		bl	BUTTON_IsPressed
   87              	.LVL2:
   88 0008 08B1     		cbz	r0, .L6
-  89              		.loc 1 70 0 is_stmt 0 discriminator 1
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cckgNYUc.s 			page 4
+
+
+  89              		.loc 1 83 0 is_stmt 0 discriminator 1
   90 000a FFF7FEFF 		bl	SIGNAL__from_button1
   91              	.LVL3:
   92              	.L6:
-  71:source\asw/signal_handler.c ****     if (BUTTON_IsPressed(BUTTON_2)) SIGNAL__from_button2();
-  93              		.loc 1 71 0 is_stmt 1
+  84:source\asw/signal_handler.c ****     if (BUTTON_IsPressed(BUTTON_2)) SIGNAL__from_button2();
+  93              		.loc 1 84 0 is_stmt 1
   94 000e 0220     		movs	r0, #2
   95 0010 FFF7FEFF 		bl	BUTTON_IsPressed
   96              	.LVL4:
   97 0014 08B1     		cbz	r0, .L5
-  98              		.loc 1 71 0 is_stmt 0 discriminator 1
+  98              		.loc 1 84 0 is_stmt 0 discriminator 1
   99 0016 FFF7FEFF 		bl	SIGNAL__from_button2
  100              	.LVL5:
-ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cceIfx1b.s 			page 4
-
-
  101              	.L5:
  102 001a 08BD     		pop	{r3, pc}
  103              		.cfi_endproc
@@ -194,8 +207,8 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cceIfx1b.s 			page 1
  111              		.type	isr_BUTTON, %function
  112              	isr_BUTTON:
  113              	.LFB112:
-  68:source\asw/signal_handler.c **** {
- 114              		.loc 1 68 0 is_stmt 1
+  81:source\asw/signal_handler.c **** {
+ 114              		.loc 1 81 0 is_stmt 1
  115              		.cfi_startproc
  116              		@ Stack Align: May be called with mis-aligned SP.
  117              		@ args = 0, pretend = 0, frame = 0
@@ -225,6 +238,9 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cceIfx1b.s 			page 1
    9:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_cpu.inc ****  * and/or modify it under the terms of the GNU General Public License
   10:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_cpu.inc ****  * version 2 as published by the Free Software Foundation, 
   11:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_cpu.inc ****  * (with a special exception described below).
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cckgNYUc.s 			page 5
+
+
   12:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_cpu.inc ****  *
   13:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_cpu.inc ****  * Linking this code statically or dynamically with other modules is
   14:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_cpu.inc ****  * making a combined work based on this code.  Thus, the terms and
@@ -238,9 +254,6 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cceIfx1b.s 			page 1
   22:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_cpu.inc ****  * terms of your choice, provided that you also meet, for each linked
   23:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_cpu.inc ****  * independent module, the terms and conditions of the license of that
   24:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_cpu.inc ****  * module.  An independent module is a module which is not derived from
-ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cceIfx1b.s 			page 5
-
-
   25:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_cpu.inc ****  * or based on this library.  If you modify this code, you may extend
   26:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_cpu.inc ****  * this exception to your version of the code, but you are not
   27:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_cpu.inc ****  * obligated to do so.  If you do not wish to do so, delete this
@@ -285,6 +298,9 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cceIfx1b.s 			page 1
   66:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_cpu.inc **** #ifndef CORTEX_MX_INIT_TOS_OFFSET
   67:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_cpu.inc **** #define CORTEX_MX_INIT_TOS_OFFSET 10
   68:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_cpu.inc **** #endif
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cckgNYUc.s 			page 6
+
+
   69:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_cpu.inc **** 
   70:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_cpu.inc **** /*************************************************************************
   71:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_cpu.inc ****  HAL Types and structures
@@ -298,9 +314,6 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cceIfx1b.s 			page 1
   79:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_cpu.inc **** typedef EE_UINT32 EE_FREG;
   80:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_cpu.inc **** #define EE_UREG_SIZE 4
   81:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_cpu.inc **** 
-ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cceIfx1b.s 			page 6
-
-
   82:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_cpu.inc **** /* boolean type */
   83:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_cpu.inc **** #ifndef EE_TYPEBOOL
   84:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_cpu.inc **** typedef EE_UREG EE_TYPEBOOL;
@@ -345,6 +358,9 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cceIfx1b.s 			page 1
  123:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_cpu.inc **** typedef EE_UINT32 EE_UTID;
  124:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_cpu.inc **** 
  125:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_cpu.inc **** /* Used by the common layer to decide whether to start a new thread */
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cckgNYUc.s 			page 7
+
+
  126:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_cpu.inc **** #define TID_IS_STACKED_MARK 0x80000000
  127:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_cpu.inc **** 
  128:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_cpu.inc **** /* EE_TYPEIRQ is currently unused */
@@ -358,9 +374,6 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cceIfx1b.s 			page 1
  136:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_cpu.inc ****  Application dependent data types
  137:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_cpu.inc ****  ******************************************************************************/
  138:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_cpu.inc **** 
-ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cceIfx1b.s 			page 7
-
-
  139:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_cpu.inc **** #ifdef	__HAS_TYPES_H__
  140:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_cpu.inc **** #include	"types.h"
  141:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_cpu.inc **** #endif
@@ -405,6 +418,9 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cceIfx1b.s 			page 1
  180:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_cpu.inc **** __INLINE__ void  EE_cortex_mx_enableIRQ(void)
  181:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_cpu.inc **** {
  182:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_cpu.inc **** #ifdef __IAR__
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cckgNYUc.s 			page 8
+
+
  183:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_cpu.inc **** 	__ASM ("cpsie i");
  184:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_cpu.inc **** #else	/* __IAR__ */
  185:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_cpu.inc **** #ifdef __CCS__
@@ -418,9 +434,6 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cceIfx1b.s 			page 1
  193:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_cpu.inc **** #endif	/* !__CCS__ */
  194:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_cpu.inc **** #endif	/* !__IAR__ */
  195:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_cpu.inc **** }
-ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cceIfx1b.s 			page 8
-
-
  196:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_cpu.inc **** 
  197:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_cpu.inc **** /**
  198:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_cpu.inc ****  * Disable interrupts
@@ -465,6 +478,9 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cceIfx1b.s 			page 1
  226:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_cpu.inc **** 	__ASM ("    msr    primask, r0\n");
  227:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_cpu.inc **** #else	/* __CCS__ */
  228:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_cpu.inc **** #ifdef __KEIL__
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cckgNYUc.s 			page 9
+
+
  229:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_cpu.inc **** 	register EE_FREG PRIMASK __ASM("primask");
  230:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_cpu.inc **** 	PRIMASK = f;
  231:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_cpu.inc **** #else	/* __KEIL__ */
@@ -478,9 +494,6 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cceIfx1b.s 			page 1
  239:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_cpu.inc ****  * Suspend interrupts
  240:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_cpu.inc ****  */
  241:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_cpu.inc **** __INLINE__ EE_FREG  EE_cortex_mx_suspendIRQ(void)
-ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cceIfx1b.s 			page 9
-
-
  242:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_cpu.inc **** {
  243:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_cpu.inc **** #ifndef __CCS__
  244:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_cpu.inc **** 	EE_FREG istat;
@@ -525,6 +538,9 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cceIfx1b.s 			page 1
  283:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_cpu.inc **** #ifdef __CCS__
  284:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_cpu.inc **** 	__ASM ("    MRS     r0, PRIMASK\n"
  285:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_cpu.inc **** 	       "    EOR     r0, #1\n"
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cckgNYUc.s 			page 10
+
+
  286:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_cpu.inc **** 	       "    bx      lr\n");
  287:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_cpu.inc **** #else	/* __CCS__ */
  288:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_cpu.inc **** #ifdef __KEIL__
@@ -538,9 +554,6 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cceIfx1b.s 			page 1
  296:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_cpu.inc **** #ifdef __CCS__
  297:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_cpu.inc **** 	return 0;
  298:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_cpu.inc **** #else
-ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cceIfx1b.s 			page 10
-
-
  299:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_cpu.inc **** 	return EE_cortex_mx_are_IRQs_enabled(ie);
  300:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_cpu.inc **** #endif
  301:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_cpu.inc **** }
@@ -585,6 +598,9 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cceIfx1b.s 			page 1
  328:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_cpu.inc **** #endif	/* !__GNU__ */
  329:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_cpu.inc **** #endif	/* !__KEIL__ */
  330:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_cpu.inc **** #endif	/* !__CCS__ */
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cckgNYUc.s 			page 11
+
+
  331:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_cpu.inc **** 
  332:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_cpu.inc **** #ifdef __CCS__
  333:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_cpu.inc **** 	return 0;
@@ -598,9 +614,6 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cceIfx1b.s 			page 1
  341:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_cpu.inc **** }
  342:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_cpu.inc **** 
  343:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_cpu.inc **** __INLINE__ void  EE_cortex_mx_set_int_prio(
-ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cceIfx1b.s 			page 11
-
-
  344:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_cpu.inc ****   EE_TYPEISR2PRIO prio
  345:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_cpu.inc **** )
  346:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_cpu.inc **** {
@@ -645,6 +658,9 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cceIfx1b.s 			page 1
  164              		.loc 2 376 0
  165 001a 103B     		subs	r3, r3, #16
  166              	.LVL9:
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cckgNYUc.s 			page 12
+
+
  377:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_cpu.inc ****     prio = NVIC_GET_PRI(vectact);
  167              		.loc 2 377 0
  168 001c 23F00302 		bic	r2, r3, #3
@@ -658,9 +674,6 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cceIfx1b.s 			page 1
  176 0032 9A40     		lsls	r2, r2, r3
  177 0034 0A40     		ands	r2, r2, r1
  178 0036 22FA03F3 		lsr	r3, r2, r3
-ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cceIfx1b.s 			page 12
-
-
  179              	.LVL11:
  180 003a 06E0     		b	.L11
  181              	.LVL12:
@@ -705,6 +718,9 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cceIfx1b.s 			page 1
  214              		.file 3 "Generated_Source\\PSoC5/ErikaOS_common_ee_irqstub.inc"
    1:Generated_Source\PSoC5/ErikaOS_common_ee_irqstub.inc **** /* ###*B*###
    2:Generated_Source\PSoC5/ErikaOS_common_ee_irqstub.inc ****  * ERIKA Enterprise - a tiny RTOS for small microcontrollers
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cckgNYUc.s 			page 13
+
+
    3:Generated_Source\PSoC5/ErikaOS_common_ee_irqstub.inc ****  *
    4:Generated_Source\PSoC5/ErikaOS_common_ee_irqstub.inc ****  * Copyright (C) 2002-2010  Evidence Srl
    5:Generated_Source\PSoC5/ErikaOS_common_ee_irqstub.inc ****  *
@@ -718,9 +734,6 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cceIfx1b.s 			page 1
   13:Generated_Source\PSoC5/ErikaOS_common_ee_irqstub.inc ****  * Linking this code statically or dynamically with other modules is
   14:Generated_Source\PSoC5/ErikaOS_common_ee_irqstub.inc ****  * making a combined work based on this code.  Thus, the terms and
   15:Generated_Source\PSoC5/ErikaOS_common_ee_irqstub.inc ****  * conditions of the GNU General Public License cover the whole
-ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cceIfx1b.s 			page 13
-
-
   16:Generated_Source\PSoC5/ErikaOS_common_ee_irqstub.inc ****  * combination.
   17:Generated_Source\PSoC5/ErikaOS_common_ee_irqstub.inc ****  *
   18:Generated_Source\PSoC5/ErikaOS_common_ee_irqstub.inc ****  * As a special exception, the copyright holders of this library give you
@@ -765,6 +778,9 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cceIfx1b.s 			page 1
   57:Generated_Source\PSoC5/ErikaOS_common_ee_irqstub.inc ****  ******************************************************************************/
   58:Generated_Source\PSoC5/ErikaOS_common_ee_irqstub.inc **** 
   59:Generated_Source\PSoC5/ErikaOS_common_ee_irqstub.inc **** #ifndef PKG_CPU_COMMON_INC_EE_IRQSTUB_H
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cckgNYUc.s 			page 14
+
+
   60:Generated_Source\PSoC5/ErikaOS_common_ee_irqstub.inc **** #define PKG_CPU_COMMON_INC_EE_IRQSTUB_H
   61:Generated_Source\PSoC5/ErikaOS_common_ee_irqstub.inc **** 
   62:Generated_Source\PSoC5/ErikaOS_common_ee_irqstub.inc **** /* this bring EE_IRQ_nesting_level definition */
@@ -778,9 +794,6 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cceIfx1b.s 			page 1
   70:Generated_Source\PSoC5/ErikaOS_common_ee_irqstub.inc **** 
   71:Generated_Source\PSoC5/ErikaOS_common_ee_irqstub.inc **** 
   72:Generated_Source\PSoC5/ErikaOS_common_ee_irqstub.inc **** /* EE_decrement_IRQ_nesting_level() and EE_increment_IRQ_nesting_level() are
-ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cceIfx1b.s 			page 14
-
-
   73:Generated_Source\PSoC5/ErikaOS_common_ee_irqstub.inc ****  * used to keep track of the current IRQ nesting level.
   74:Generated_Source\PSoC5/ErikaOS_common_ee_irqstub.inc ****  * EE_std_enableIRQ_nested() and EE_std_disableIRQ_nested() are used to control
   75:Generated_Source\PSoC5/ErikaOS_common_ee_irqstub.inc ****  * when IRQ nesting is enabled.
@@ -801,12 +814,12 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cceIfx1b.s 			page 1
  219 0054 1360     		str	r3, [r2]
  220              	.LBE59:
  221              	.LBE58:
-  68:source\asw/signal_handler.c **** {
- 222              		.loc 1 68 0
+  81:source\asw/signal_handler.c **** {
+ 222              		.loc 1 81 0
  223 0056 012B     		cmp	r3, #1
  224 0058 01D1     		bne	.L12
-  68:source\asw/signal_handler.c **** {
- 225              		.loc 1 68 0 is_stmt 0 discriminator 1
+  81:source\asw/signal_handler.c **** {
+ 225              		.loc 1 81 0 is_stmt 0 discriminator 1
  226 005a FFF7FEFF 		bl	EE_cortex_mx_change_IRQ_stack
  227              	.LVL17:
  228              	.L12:
@@ -822,9 +835,12 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cceIfx1b.s 			page 1
  237              		.syntax unified
  238              	.LBE61:
  239              	.LBE60:
-  68:source\asw/signal_handler.c **** {
- 240              		.loc 1 68 0 discriminator 3
+  81:source\asw/signal_handler.c **** {
+ 240              		.loc 1 81 0 discriminator 3
  241 0060 FFF7FEFF 		bl	ISR2_isr_BUTTON
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cckgNYUc.s 			page 15
+
+
  242              	.LVL18:
  243              	.LBB62:
  244              	.LBB63:
@@ -838,9 +854,6 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cceIfx1b.s 			page 1
  251              		.thumb
  252              		.syntax unified
  253              	.LBE63:
-ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cceIfx1b.s 			page 15
-
-
  254              	.LBE62:
  255              	.LBB64:
  256              	.LBB65:
@@ -885,22 +898,22 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cceIfx1b.s 			page 1
  276              		.loc 3 84 0 discriminator 3
  277 006e 094A     		ldr	r2, .L15+8
  278 0070 1368     		ldr	r3, [r2]
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cckgNYUc.s 			page 16
+
+
  279 0072 013B     		subs	r3, r3, #1
  280 0074 1360     		str	r3, [r2]
  281              	.LBE69:
  282              	.LBE68:
-  68:source\asw/signal_handler.c **** {
- 283              		.loc 1 68 0 discriminator 3
+  81:source\asw/signal_handler.c **** {
+ 283              		.loc 1 81 0 discriminator 3
  284 0076 1BB9     		cbnz	r3, .L13
-  68:source\asw/signal_handler.c **** {
- 285              		.loc 1 68 0 is_stmt 0 discriminator 4
+  81:source\asw/signal_handler.c **** {
+ 285              		.loc 1 81 0 is_stmt 0 discriminator 4
  286 0078 FFF7FEFF 		bl	EE_cortex_mx_change_IRQ_stack_back
  287              	.LVL22:
  288              	.LBB70:
  289              	.LBB71:
-ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cceIfx1b.s 			page 16
-
-
  290              		.file 4 "Generated_Source\\PSoC5/ErikaOS_cortex_mx_ee_irq_cng_cont.inc"
    1:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_irq_cng_cont.inc **** /* ###*B*###
    2:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_irq_cng_cont.inc ****  * ERIKA Enterprise - a tiny RTOS for small microcontrollers
@@ -945,6 +958,9 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cceIfx1b.s 			page 1
   41:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_irq_cng_cont.inc ****  /** 
   42:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_irq_cng_cont.inc **** 	
   43:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_irq_cng_cont.inc **** 	@file	ee_irq_cng_cont.h
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cckgNYUc.s 			page 17
+
+
   44:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_irq_cng_cont.inc **** 	@brief	Function active the context change interrupt
   45:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_irq_cng_cont.inc **** 	@author	Gianluca Franchino
   46:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_irq_cng_cont.inc **** 	@author	Giuseppe Serano
@@ -958,9 +974,6 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cceIfx1b.s 			page 1
   54:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_irq_cng_cont.inc ****  */
   55:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_irq_cng_cont.inc **** 
   56:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_irq_cng_cont.inc **** #ifndef __INCLUDE_CORTEX_MX_IRQ_CNG_CONTEXT_H__
-ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cceIfx1b.s 			page 17
-
-
   57:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_irq_cng_cont.inc **** #define __INCLUDE_CORTEX_MX_IRQ_CNG_CONTEXT_H__
   58:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_irq_cng_cont.inc **** 
   59:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_irq_cng_cont.inc **** #ifdef __GNU__
@@ -991,8 +1004,8 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cceIfx1b.s 			page 1
  305              		.syntax unified
  306              	.LBE73:
  307              	.LBE72:
-  68:source\asw/signal_handler.c **** {
- 308              		.loc 1 68 0 discriminator 6
+  81:source\asw/signal_handler.c **** {
+ 308              		.loc 1 81 0 discriminator 6
  309 0082 BDE81940 		pop	{r0, r3, r4, lr}
  310              		.cfi_restore 14
  311              		.cfi_restore 4
@@ -1005,6 +1018,9 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cceIfx1b.s 			page 1
  318 008a 00BF     		.align	2
  319              	.L15:
  320 008c 04ED00E0 		.word	-536810236
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cckgNYUc.s 			page 18
+
+
  321 0090 20ED00E0 		.word	-536810208
  322 0094 00000000 		.word	EE_IRQ_nesting_level
  323              		.cfi_endproc
@@ -1018,9 +1034,6 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cceIfx1b.s 			page 1
  331              		.file 8 "Generated_Source\\PSoC5/ErikaOS_ee_oo_intfunc.inc"
  332              		.file 9 "Generated_Source\\PSoC5/ErikaOS_cortex_mx_ee_context.inc"
  333              		.file 10 "Generated_Source\\PSoC5/ErikaOS_common_ee_primitives.inc"
-ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cceIfx1b.s 			page 18
-
-
  334              		.file 11 "Generated_Source\\PSoC5/core_cm3.h"
  335              		.file 12 "Generated_Source\\PSoC5/ErikaOS_ee_oo_kernel.inc"
  336              		.file 13 ".\\source\\bsw/button.h"
@@ -1065,6 +1078,9 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cceIfx1b.s 			page 1
  375 004d 04       		.byte	0x4
  376 004e 05       		.byte	0x5
  377 004f 4F040000 		.4byte	.LASF4
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cckgNYUc.s 			page 19
+
+
  378 0053 02       		.uleb128 0x2
  379 0054 04       		.byte	0x4
  380 0055 07       		.byte	0x7
@@ -1078,9 +1094,6 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cceIfx1b.s 			page 1
  388 0063 07       		.byte	0x7
  389 0064 DA000000 		.4byte	.LASF7
  390 0068 04       		.uleb128 0x4
-ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cceIfx1b.s 			page 19
-
-
  391 0069 04       		.byte	0x4
  392 006a 05       		.byte	0x5
  393 006b 696E7400 		.ascii	"int\000"
@@ -1125,6 +1138,9 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cceIfx1b.s 			page 1
  432 00b9 4D       		.byte	0x4d
  433 00ba A8000000 		.4byte	0xa8
  434 00be 03       		.uleb128 0x3
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cckgNYUc.s 			page 20
+
+
  435 00bf AF020000 		.4byte	.LASF18
  436 00c3 02       		.byte	0x2
  437 00c4 4F       		.byte	0x4f
@@ -1138,9 +1154,6 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cceIfx1b.s 			page 1
  445 00d5 0A040000 		.4byte	.LASF20
  446 00d9 02       		.byte	0x2
  447 00da 75       		.byte	0x75
-ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cceIfx1b.s 			page 20
-
-
  448 00db B3000000 		.4byte	0xb3
  449 00df 03       		.uleb128 0x3
  450 00e0 9A000000 		.4byte	.LASF21
@@ -1185,6 +1198,9 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cceIfx1b.s 			page 1
  489 012f 5801     		.2byte	0x158
  490 0131 D4000000 		.4byte	0xd4
  491 0135 00       		.byte	0
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cckgNYUc.s 			page 21
+
+
  492 0136 0A       		.uleb128 0xa
  493 0137 00000000 		.4byte	.LASF34
  494 013b 02       		.byte	0x2
@@ -1198,9 +1214,6 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cceIfx1b.s 			page 1
  502 014d 3401     		.2byte	0x134
  503 014f B3000000 		.4byte	0xb3
  504 0153 00       		.byte	0
-ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cceIfx1b.s 			page 21
-
-
  505 0154 07       		.uleb128 0x7
  506 0155 35030000 		.4byte	.LASF27
  507 0159 02       		.byte	0x2
@@ -1235,7 +1248,7 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cceIfx1b.s 			page 1
  536 0188 0D       		.uleb128 0xd
  537 0189 34020000 		.4byte	.LASF32
  538 018d 01       		.byte	0x1
- 539 018e 35       		.byte	0x35
+ 539 018e 3C       		.byte	0x3c
  540 018f 00000000 		.4byte	.LFB110
  541 0193 0C000000 		.4byte	.LFE110-.LFB110
  542 0197 01       		.uleb128 0x1
@@ -1245,6 +1258,9 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cceIfx1b.s 			page 1
  546 019e 0A000000 		.4byte	.LVL0
  547 01a2 F9030000 		.4byte	0x3f9
  548 01a6 0F       		.uleb128 0xf
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cckgNYUc.s 			page 22
+
+
  549 01a7 01       		.uleb128 0x1
  550 01a8 50       		.byte	0x50
  551 01a9 01       		.uleb128 0x1
@@ -1258,11 +1274,8 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cceIfx1b.s 			page 1
  559 01b1 00       		.byte	0
  560 01b2 0D       		.uleb128 0xd
  561 01b3 49020000 		.4byte	.LASF33
-ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cceIfx1b.s 			page 22
-
-
  562 01b7 01       		.byte	0x1
- 563 01b8 3B       		.byte	0x3b
+ 563 01b8 47       		.byte	0x47
  564 01b9 00000000 		.4byte	.LFB111
  565 01bd 0C000000 		.4byte	.LFE111-.LFB111
  566 01c1 01       		.uleb128 0x1
@@ -1286,7 +1299,7 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cceIfx1b.s 			page 1
  584 01dc 10       		.uleb128 0x10
  585 01dd 5E020000 		.4byte	.LASF38
  586 01e1 01       		.byte	0x1
- 587 01e2 44       		.byte	0x44
+ 587 01e2 51       		.byte	0x51
  588 01e3 00000000 		.4byte	.LFB113
  589 01e7 1C000000 		.4byte	.LFE113-.LFB113
  590 01eb 01       		.uleb128 0x1
@@ -1305,6 +1318,9 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cceIfx1b.s 			page 1
  603 0204 12       		.uleb128 0x12
  604 0205 0E000000 		.4byte	.LVL3
  605 0209 88010000 		.4byte	0x188
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cckgNYUc.s 			page 23
+
+
  606 020d 11       		.uleb128 0x11
  607 020e 14000000 		.4byte	.LVL4
  608 0212 05040000 		.4byte	0x405
@@ -1318,9 +1334,6 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cceIfx1b.s 			page 1
  616 0220 12       		.uleb128 0x12
  617 0221 1A000000 		.4byte	.LVL5
  618 0225 B2010000 		.4byte	0x1b2
-ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cceIfx1b.s 			page 23
-
-
  619 0229 00       		.byte	0
  620 022a 0A       		.uleb128 0xa
  621 022b A1000000 		.4byte	.LASF35
@@ -1343,7 +1356,7 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cceIfx1b.s 			page 1
  638 0254 10       		.uleb128 0x10
  639 0255 93040000 		.4byte	.LASF39
  640 0259 01       		.byte	0x1
- 641 025a 44       		.byte	0x44
+ 641 025a 51       		.byte	0x51
  642 025b 00000000 		.4byte	.LFB112
  643 025f 98000000 		.4byte	.LFE112-.LFB112
  644 0263 01       		.uleb128 0x1
@@ -1352,7 +1365,7 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cceIfx1b.s 			page 1
  647 0269 13       		.uleb128 0x13
  648 026a 69706C00 		.ascii	"ipl\000"
  649 026e 01       		.byte	0x1
- 650 026f 44       		.byte	0x44
+ 650 026f 51       		.byte	0x51
  651 0270 B3000000 		.4byte	0xb3
  652 0274 00000000 		.4byte	.LLST0
  653 0278 14       		.uleb128 0x14
@@ -1360,13 +1373,16 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cceIfx1b.s 			page 1
  655 027d 0A000000 		.4byte	.LBB50
  656 0281 02000000 		.4byte	.LBE50-.LBB50
  657 0285 01       		.byte	0x1
- 658 0286 44       		.byte	0x44
+ 658 0286 51       		.byte	0x51
  659 0287 15       		.uleb128 0x15
  660 0288 36010000 		.4byte	0x136
  661 028c 0C000000 		.4byte	.LBB52
  662 0290 04000000 		.4byte	.LBE52-.LBB52
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cckgNYUc.s 			page 24
+
+
  663 0294 01       		.byte	0x1
- 664 0295 44       		.byte	0x44
+ 664 0295 51       		.byte	0x51
  665 0296 AA020000 		.4byte	0x2aa
  666 029a 16       		.uleb128 0x16
  667 029b 0C000000 		.4byte	.LBB53
@@ -1378,12 +1394,9 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cceIfx1b.s 			page 1
  673 02aa 15       		.uleb128 0x15
  674 02ab 2A020000 		.4byte	0x22a
  675 02af 10000000 		.4byte	.LBB54
-ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cceIfx1b.s 			page 24
-
-
  676 02b3 3A000000 		.4byte	.LBE54-.LBB54
  677 02b7 01       		.byte	0x1
- 678 02b8 44       		.byte	0x44
+ 678 02b8 51       		.byte	0x51
  679 02b9 DA020000 		.4byte	0x2da
  680 02bd 16       		.uleb128 0x16
  681 02be 10000000 		.4byte	.LBB55
@@ -1401,7 +1414,7 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cceIfx1b.s 			page 1
  693 02df 4A000000 		.4byte	.LBB56
  694 02e3 04000000 		.4byte	.LBE56-.LBB56
  695 02e7 01       		.byte	0x1
- 696 02e8 44       		.byte	0x44
+ 696 02e8 51       		.byte	0x51
  697 02e9 F3020000 		.4byte	0x2f3
  698 02ed 19       		.uleb128 0x19
  699 02ee 29010000 		.4byte	0x129
@@ -1411,25 +1424,28 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cceIfx1b.s 			page 1
  703 02f8 4E000000 		.4byte	.LBB58
  704 02fc 08000000 		.4byte	.LBE58-.LBB58
  705 0300 01       		.byte	0x1
- 706 0301 44       		.byte	0x44
+ 706 0301 51       		.byte	0x51
  707 0302 14       		.uleb128 0x14
  708 0303 78010000 		.4byte	0x178
  709 0307 5E000000 		.4byte	.LBB60
  710 030b 02000000 		.4byte	.LBE60-.LBB60
  711 030f 01       		.byte	0x1
- 712 0310 44       		.byte	0x44
+ 712 0310 51       		.byte	0x51
  713 0311 14       		.uleb128 0x14
  714 0312 54010000 		.4byte	0x154
  715 0316 64000000 		.4byte	.LBB62
  716 031a 02000000 		.4byte	.LBE62-.LBB62
  717 031e 01       		.byte	0x1
- 718 031f 44       		.byte	0x44
+ 718 031f 51       		.byte	0x51
  719 0320 15       		.uleb128 0x15
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cckgNYUc.s 			page 25
+
+
  720 0321 1C010000 		.4byte	0x11c
  721 0325 66000000 		.4byte	.LBB64
  722 0329 04000000 		.4byte	.LBE64-.LBB64
  723 032d 01       		.byte	0x1
- 724 032e 44       		.byte	0x44
+ 724 032e 51       		.byte	0x51
  725 032f 3D030000 		.4byte	0x33d
  726 0333 1A       		.uleb128 0x1a
  727 0334 29010000 		.4byte	0x129
@@ -1438,12 +1454,9 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cceIfx1b.s 			page 1
  730 033d 15       		.uleb128 0x15
  731 033e 70010000 		.4byte	0x170
  732 0342 6A000000 		.4byte	.LBB66
-ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cceIfx1b.s 			page 25
-
-
  733 0346 04000000 		.4byte	.LBE66-.LBB66
  734 034a 01       		.byte	0x1
- 735 034b 44       		.byte	0x44
+ 735 034b 51       		.byte	0x51
  736 034c 5A030000 		.4byte	0x35a
  737 0350 12       		.uleb128 0x12
  738 0351 6E000000 		.4byte	.LVL21
@@ -1454,13 +1467,13 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cceIfx1b.s 			page 1
  743 035f 6E000000 		.4byte	.LBB68
  744 0363 08000000 		.4byte	.LBE68-.LBB68
  745 0367 01       		.byte	0x1
- 746 0368 44       		.byte	0x44
+ 746 0368 51       		.byte	0x51
  747 0369 15       		.uleb128 0x15
  748 036a 80010000 		.4byte	0x180
  749 036e 7C000000 		.4byte	.LBB70
  750 0372 04000000 		.4byte	.LBE70-.LBB70
  751 0376 01       		.byte	0x1
- 752 0377 44       		.byte	0x44
+ 752 0377 51       		.byte	0x51
  753 0378 86030000 		.4byte	0x386
  754 037c 12       		.uleb128 0x12
  755 037d 80000000 		.4byte	.LVL23
@@ -1471,7 +1484,7 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cceIfx1b.s 			page 1
  760 038b 80000000 		.4byte	.LBB72
  761 038f 02000000 		.4byte	.LBE72-.LBB72
  762 0393 01       		.byte	0x1
- 763 0394 44       		.byte	0x44
+ 763 0394 51       		.byte	0x51
  764 0395 12       		.uleb128 0x12
  765 0396 5E000000 		.4byte	.LVL17
  766 039a 26040000 		.4byte	0x426
@@ -1485,6 +1498,9 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cceIfx1b.s 			page 1
  774 03b1 1B       		.uleb128 0x1b
  775 03b2 F3010000 		.4byte	.LASF40
  776 03b6 08       		.byte	0x8
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cckgNYUc.s 			page 26
+
+
  777 03b7 40       		.byte	0x40
  778 03b8 B3000000 		.4byte	0xb3
  779 03bc 1B       		.uleb128 0x1b
@@ -1498,9 +1514,6 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cceIfx1b.s 			page 1
  787 03cd 4A       		.byte	0x4a
  788 03ce B3000000 		.4byte	0xb3
  789 03d2 1B       		.uleb128 0x1b
-ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cceIfx1b.s 			page 26
-
-
  790 03d3 C1000000 		.4byte	.LASF43
  791 03d7 09       		.byte	0x9
  792 03d8 48       		.byte	0x48
@@ -1526,7 +1539,7 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cceIfx1b.s 			page 1
  812 0406 F1000000 		.4byte	.LASF47
  813 040a F1000000 		.4byte	.LASF47
  814 040e 0D       		.byte	0xd
- 815 040f 7C       		.byte	0x7c
+ 815 040f 7B       		.byte	0x7b
  816 0410 1F       		.uleb128 0x1f
  817 0411 60000000 		.4byte	.LASF48
  818 0415 60000000 		.4byte	.LASF48
@@ -1545,6 +1558,9 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cceIfx1b.s 			page 1
  831 0431 1F       		.uleb128 0x1f
  832 0432 2C040000 		.4byte	.LASF51
  833 0436 2C040000 		.4byte	.LASF51
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cckgNYUc.s 			page 27
+
+
  834 043a 0F       		.byte	0xf
  835 043b 69       		.byte	0x69
  836 043c 00       		.byte	0
@@ -1558,9 +1574,6 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cceIfx1b.s 			page 1
  844 0005 13       		.uleb128 0x13
  845 0006 0B       		.uleb128 0xb
  846 0007 03       		.uleb128 0x3
-ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cceIfx1b.s 			page 27
-
-
  847 0008 0E       		.uleb128 0xe
  848 0009 1B       		.uleb128 0x1b
  849 000a 0E       		.uleb128 0xe
@@ -1605,6 +1618,9 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cceIfx1b.s 			page 1
  888 0031 0B       		.uleb128 0xb
  889 0032 03       		.uleb128 0x3
  890 0033 08       		.uleb128 0x8
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cckgNYUc.s 			page 28
+
+
  891 0034 00       		.byte	0
  892 0035 00       		.byte	0
  893 0036 05       		.uleb128 0x5
@@ -1618,9 +1634,6 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cceIfx1b.s 			page 1
  901 003e 13       		.uleb128 0x13
  902 003f 3A       		.uleb128 0x3a
  903 0040 0B       		.uleb128 0xb
-ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cceIfx1b.s 			page 28
-
-
  904 0041 3B       		.uleb128 0x3b
  905 0042 0B       		.uleb128 0xb
  906 0043 01       		.uleb128 0x1
@@ -1665,6 +1678,9 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cceIfx1b.s 			page 1
  945 006a 20       		.uleb128 0x20
  946 006b 0B       		.uleb128 0xb
  947 006c 01       		.uleb128 0x1
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cckgNYUc.s 			page 29
+
+
  948 006d 13       		.uleb128 0x13
  949 006e 00       		.byte	0
  950 006f 00       		.byte	0
@@ -1678,9 +1694,6 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cceIfx1b.s 			page 1
  958 0077 3B       		.uleb128 0x3b
  959 0078 05       		.uleb128 0x5
  960 0079 49       		.uleb128 0x49
-ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cceIfx1b.s 			page 29
-
-
  961 007a 13       		.uleb128 0x13
  962 007b 00       		.byte	0
  963 007c 00       		.byte	0
@@ -1725,6 +1738,9 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cceIfx1b.s 			page 1
  1002 00a3 0B       		.uleb128 0xb
  1003 00a4 3B       		.uleb128 0x3b
  1004 00a5 0B       		.uleb128 0xb
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cckgNYUc.s 			page 30
+
+
  1005 00a6 27       		.uleb128 0x27
  1006 00a7 19       		.uleb128 0x19
  1007 00a8 49       		.uleb128 0x49
@@ -1738,9 +1754,6 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cceIfx1b.s 			page 1
  1015 00b0 01       		.byte	0x1
  1016 00b1 03       		.uleb128 0x3
  1017 00b2 0E       		.uleb128 0xe
-ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cceIfx1b.s 			page 30
-
-
  1018 00b3 3A       		.uleb128 0x3a
  1019 00b4 0B       		.uleb128 0xb
  1020 00b5 3B       		.uleb128 0x3b
@@ -1785,6 +1798,9 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cceIfx1b.s 			page 1
  1059 00e2 03       		.uleb128 0x3
  1060 00e3 0E       		.uleb128 0xe
  1061 00e4 3A       		.uleb128 0x3a
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cckgNYUc.s 			page 31
+
+
  1062 00e5 0B       		.uleb128 0xb
  1063 00e6 3B       		.uleb128 0x3b
  1064 00e7 0B       		.uleb128 0xb
@@ -1798,9 +1814,6 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cceIfx1b.s 			page 1
  1072 00ef 18       		.uleb128 0x18
  1073 00f0 9742     		.uleb128 0x2117
  1074 00f2 19       		.uleb128 0x19
-ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cceIfx1b.s 			page 31
-
-
  1075 00f3 01       		.uleb128 0x1
  1076 00f4 13       		.uleb128 0x13
  1077 00f5 00       		.byte	0
@@ -1845,6 +1858,9 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cceIfx1b.s 			page 1
  1116 0120 00       		.byte	0
  1117 0121 31       		.uleb128 0x31
  1118 0122 13       		.uleb128 0x13
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cckgNYUc.s 			page 32
+
+
  1119 0123 11       		.uleb128 0x11
  1120 0124 01       		.uleb128 0x1
  1121 0125 12       		.uleb128 0x12
@@ -1858,9 +1874,6 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cceIfx1b.s 			page 1
  1129 012d 15       		.uleb128 0x15
  1130 012e 1D       		.uleb128 0x1d
  1131 012f 01       		.byte	0x1
-ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cceIfx1b.s 			page 32
-
-
  1132 0130 31       		.uleb128 0x31
  1133 0131 13       		.uleb128 0x13
  1134 0132 11       		.uleb128 0x11
@@ -1905,6 +1918,9 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cceIfx1b.s 			page 1
  1173 0159 00       		.byte	0
  1174 015a 31       		.uleb128 0x31
  1175 015b 13       		.uleb128 0x13
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cckgNYUc.s 			page 33
+
+
  1176 015c 00       		.byte	0
  1177 015d 00       		.byte	0
  1178 015e 1A       		.uleb128 0x1a
@@ -1918,9 +1934,6 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cceIfx1b.s 			page 1
  1186 0166 00       		.byte	0
  1187 0167 1B       		.uleb128 0x1b
  1188 0168 34       		.uleb128 0x34
-ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cceIfx1b.s 			page 33
-
-
  1189 0169 00       		.byte	0
  1190 016a 03       		.uleb128 0x3
  1191 016b 0E       		.uleb128 0xe
@@ -1965,6 +1978,9 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cceIfx1b.s 			page 1
  1230 0192 00       		.byte	0
  1231 0193 3F       		.uleb128 0x3f
  1232 0194 19       		.uleb128 0x19
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cckgNYUc.s 			page 34
+
+
  1233 0195 3C       		.uleb128 0x3c
  1234 0196 19       		.uleb128 0x19
  1235 0197 6E       		.uleb128 0x6e
@@ -1978,9 +1994,6 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cceIfx1b.s 			page 1
  1243 019f 00       		.byte	0
  1244 01a0 00       		.byte	0
  1245 01a1 1F       		.uleb128 0x1f
-ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cceIfx1b.s 			page 34
-
-
  1246 01a2 2E       		.uleb128 0x2e
  1247 01a3 00       		.byte	0
  1248 01a4 3F       		.uleb128 0x3f
@@ -2025,6 +2038,9 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cceIfx1b.s 			page 1
  1287 0039 00000000 		.4byte	0
  1288              	.LLST2:
  1289 003d 16000000 		.4byte	.LVL8
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cckgNYUc.s 			page 35
+
+
  1290 0041 3A000000 		.4byte	.LVL11
  1291 0045 0200     		.2byte	0x2
  1292 0047 30       		.byte	0x30
@@ -2038,9 +2054,6 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cceIfx1b.s 			page 1
  1300 005c 0200     		.2byte	0x2
  1301 005e 30       		.byte	0x30
  1302 005f 9F       		.byte	0x9f
-ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cceIfx1b.s 			page 35
-
-
  1303 0060 46000000 		.4byte	.LVL14
  1304 0064 48000000 		.4byte	.LVL15
  1305 0068 0100     		.2byte	0x1
@@ -2085,22 +2098,22 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cceIfx1b.s 			page 1
  1344 000c 0C000000 		.4byte	.LFE111
  1345 0010 00000000 		.4byte	.LFB113
  1346 0014 1C000000 		.4byte	.LFE113
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cckgNYUc.s 			page 36
+
+
  1347 0018 00000000 		.4byte	.LFB112
  1348 001c 98000000 		.4byte	.LFE112
  1349 0020 00000000 		.4byte	0
  1350 0024 00000000 		.4byte	0
  1351              		.section	.debug_line,"",%progbits
  1352              	.Ldebug_line0:
- 1353 0000 85030000 		.section	.debug_str,"MS",%progbits,1
+ 1353 0000 84030000 		.section	.debug_str,"MS",%progbits,1
  1353      0200A402 
  1353      00000201 
  1353      FB0E0D00 
  1353      01010101 
  1354              	.LASF34:
  1355 0000 45455F63 		.ascii	"EE_cortex_mx_get_int_prio\000"
-ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cceIfx1b.s 			page 36
-
-
  1355      6F727465 
  1355      785F6D78 
  1355      5F676574 
@@ -2145,6 +2158,9 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cceIfx1b.s 			page 1
  1371      645F7374 
  1372              	.LASF21:
  1373 009a 45455F54 		.ascii	"EE_TID\000"
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cckgNYUc.s 			page 37
+
+
  1373      494400
  1374              	.LASF35:
  1375 00a1 45455F63 		.ascii	"EE_cortex_mx_get_isr_prio\000"
@@ -2158,9 +2174,6 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cceIfx1b.s 			page 1
  1378              	.LASF43:
  1379 00c1 45455F73 		.ascii	"EE_std_endcycle_next_tid\000"
  1379      74645F65 
-ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cceIfx1b.s 			page 37
-
-
  1379      6E646379 
  1379      636C655F 
  1379      6E657874 
@@ -2205,6 +2218,9 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cceIfx1b.s 			page 1
  1393 01a7 6C6F6E67 		.ascii	"long unsigned int\000"
  1393      20756E73 
  1393      69676E65 
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cckgNYUc.s 			page 38
+
+
  1393      6420696E 
  1393      7400
  1394              	.LASF31:
@@ -2218,9 +2234,6 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cceIfx1b.s 			page 1
  1397      7420756E 
  1397      7369676E 
  1397      65642069 
-ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cceIfx1b.s 			page 38
-
-
  1397      6E7400
  1398              	.LASF40:
  1399 01f3 45455F6F 		.ascii	"EE_oo_IRQ_disable_count\000"
@@ -2265,6 +2278,9 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cceIfx1b.s 			page 1
  1412              	.LASF28:
  1413 0283 45455F64 		.ascii	"EE_decrement_IRQ_nesting_level\000"
  1413      65637265 
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cckgNYUc.s 			page 39
+
+
  1413      6D656E74 
  1413      5F495251 
  1413      5F6E6573 
@@ -2278,9 +2294,6 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cceIfx1b.s 			page 1
  1417      52454700 
  1418              	.LASF16:
  1419 02b7 45455F55 		.ascii	"EE_UINT32\000"
-ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cceIfx1b.s 			page 39
-
-
  1419      494E5433 
  1419      3200
  1420              	.LASF50:
@@ -2325,6 +2338,9 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cceIfx1b.s 			page 1
  1437 034d 6C6F6E67 		.ascii	"long long int\000"
  1437      206C6F6E 
  1437      6720696E 
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cckgNYUc.s 			page 40
+
+
  1437      7400
  1438              	.LASF46:
  1439 035b 45455F6F 		.ascii	"EE_oo_SetEvent\000"
@@ -2338,9 +2354,6 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cceIfx1b.s 			page 1
  1441      5F736574 
  1441      5F696E74 
  1442              	.LASF13:
-ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cceIfx1b.s 			page 40
-
-
  1443 0384 63686172 		.ascii	"char\000"
  1443      00
  1444              	.LASF54:
@@ -2385,6 +2398,9 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cceIfx1b.s 			page 1
  1458      5F636861 
  1458      6E67655F 
  1459              	.LASF4:
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cckgNYUc.s 			page 41
+
+
  1460 044f 6C6F6E67 		.ascii	"long int\000"
  1460      20696E74 
  1460      00
@@ -2398,9 +2414,6 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cceIfx1b.s 			page 1
  1464      68617200 
  1465              	.LASF23:
  1466 0470 42555454 		.ascii	"BUTTON_UNPRESSED\000"
-ARM GAS  C:\Users\rbhar\AppData\Local\Temp\cceIfx1b.s 			page 41
-
-
  1466      4F4E5F55 
  1466      4E505245 
  1466      53534544 

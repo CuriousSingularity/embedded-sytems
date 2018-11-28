@@ -21,6 +21,7 @@
 /* Include files                                                             */
 /*****************************************************************************/
 #include "global.h"
+#include "signal_handler.h"
 #include "button.h"
 
 /*****************************************************************************/
@@ -50,12 +51,23 @@
 /*****************************************************************************/
 /* Function implementation - global ('extern') and local ('static')          */
 /*****************************************************************************/
+
+/**
+ * The function which sets button 1 press event to the tsk_ReactionGame.
+ * @param   void
+ * @return  void
+ */
 static void SIGNAL__from_button1(void)
 {
     // Events for button 1 press
     SetEvent(tsk_ReactionGame, ev_Button1);
 }
 
+/**
+ * The function which sets button 2 press event to the tsk_ReactionGame.
+ * @param   void
+ * @return  void
+ */
 static void SIGNAL__from_button2(void)
 {
     // Events for button 2 press
@@ -64,6 +76,7 @@ static void SIGNAL__from_button2(void)
 
 /**
  * The button press interrupt - Category 2
+ * Corresponding event function will be invoked.
  */
 ISR2(isr_BUTTON)
 {

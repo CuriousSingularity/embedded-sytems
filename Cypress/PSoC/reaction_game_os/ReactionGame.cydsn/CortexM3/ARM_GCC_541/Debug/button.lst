@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccqEUc2I.s 			page 1
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccNo1ndc.s 			page 1
 
 
    1              		.syntax unified
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccqEUc2I.s 			page 1
   28:source\bsw/button.c **** 
   29:source\bsw/button.c **** /*****************************************************************************/
   30:source\bsw/button.c **** /* Global variable definitions (declared in header file with 'extern')       */
-ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccqEUc2I.s 			page 2
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccNo1ndc.s 			page 2
 
 
   31:source\bsw/button.c **** /*****************************************************************************/
@@ -81,14 +81,13 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccqEUc2I.s 			page 1
   48:source\bsw/button.c **** /* Function implementation - global ('extern') and local ('static')          */
   49:source\bsw/button.c **** /*****************************************************************************/
   50:source\bsw/button.c **** /**
-  51:source\bsw/button.c ****  * This is a callback function for Button 1 press. The process of the ISR is
-  52:source\bsw/button.c ****  * done here.
-  53:source\bsw/button.c ****  * @param void
-  54:source\bsw/button.c ****  * @return void
-  55:source\bsw/button.c ****  */
-  56:source\bsw/button.c **** boolean_t BUTTON_IsPressed(BUTTON_id_t Button)
-  57:source\bsw/button.c **** {
-  28              		.loc 1 57 0
+  51:source\bsw/button.c ****  * The function returns if the corresponding button is pressed or not.
+  52:source\bsw/button.c ****  * @param BUTTON_id_t Button        : IN Button number
+  53:source\bsw/button.c ****  * @return boolean_t                : TRUE if button is pressed, else FALSE
+  54:source\bsw/button.c ****  */
+  55:source\bsw/button.c **** boolean_t BUTTON_IsPressed(BUTTON_id_t Button)
+  56:source\bsw/button.c **** {
+  28              		.loc 1 56 0
   29              		.cfi_startproc
   30              		@ args = 0, pretend = 0, frame = 0
   31              		@ frame_needed = 0, uses_anonymous_args = 0
@@ -98,60 +97,60 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccqEUc2I.s 			page 1
   35              		.cfi_offset 3, -8
   36              		.cfi_offset 14, -4
   37              	.LVL1:
-  58:source\bsw/button.c ****     boolean_t result = FALSE;
-  59:source\bsw/button.c ****     
-  60:source\bsw/button.c ****     switch (Button)
-  38              		.loc 1 60 0
+  57:source\bsw/button.c ****     boolean_t result = FALSE;
+  58:source\bsw/button.c ****     
+  59:source\bsw/button.c ****     switch (Button)
+  38              		.loc 1 59 0
   39 0002 0128     		cmp	r0, #1
   40 0004 02D0     		beq	.L3
   41 0006 0228     		cmp	r0, #2
   42 0008 04D0     		beq	.L4
   43 000a 07E0     		b	.L8
   44              	.L3:
-  61:source\bsw/button.c ****     {
-  62:source\bsw/button.c ****         case BUTTON_1:  if (BUTTON_1_Read()) result = TRUE; break;
-  45              		.loc 1 62 0
+  60:source\bsw/button.c ****     {
+  61:source\bsw/button.c ****         case BUTTON_1:  if (BUTTON_1_Read()) result = TRUE; break;
+  45              		.loc 1 61 0
   46 000c FFF7FEFF 		bl	BUTTON_1_Read
   47              	.LVL2:
   48 0010 30B9     		cbnz	r0, .L6
   49 0012 08BD     		pop	{r3, pc}
   50              	.LVL3:
   51              	.L4:
-  63:source\bsw/button.c ****         break;
-ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccqEUc2I.s 			page 3
+  62:source\bsw/button.c ****         break;
+  63:source\bsw/button.c ****         
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccNo1ndc.s 			page 3
 
 
-  64:source\bsw/button.c ****         
-  65:source\bsw/button.c ****         case BUTTON_2:  if (BUTTON_2_Read()) result = TRUE; break;
-  52              		.loc 1 65 0
+  64:source\bsw/button.c ****         case BUTTON_2:  if (BUTTON_2_Read()) result = TRUE; break;
+  52              		.loc 1 64 0
   53 0014 FFF7FEFF 		bl	BUTTON_2_Read
   54              	.LVL4:
   55 0018 20B9     		cbnz	r0, .L7
   56 001a 08BD     		pop	{r3, pc}
   57              	.LVL5:
   58              	.L8:
-  58:source\bsw/button.c ****     
-  59              		.loc 1 58 0
+  57:source\bsw/button.c ****     
+  59              		.loc 1 57 0
   60 001c 0020     		movs	r0, #0
   61              	.LVL6:
   62 001e 08BD     		pop	{r3, pc}
   63              	.L6:
-  62:source\bsw/button.c ****         break;
-  64              		.loc 1 62 0
+  61:source\bsw/button.c ****         break;
+  64              		.loc 1 61 0
   65 0020 0120     		movs	r0, #1
   66 0022 08BD     		pop	{r3, pc}
   67              	.L7:
-  68              		.loc 1 65 0
+  68              		.loc 1 64 0
   69 0024 0120     		movs	r0, #1
   70              	.LVL7:
-  66:source\bsw/button.c ****         break;
-  67:source\bsw/button.c ****         
-  68:source\bsw/button.c ****         default:
-  69:source\bsw/button.c ****         break;
-  70:source\bsw/button.c ****     }
-  71:source\bsw/button.c ****     return result;
-  72:source\bsw/button.c **** }...
-  71              		.loc 1 72 0
+  65:source\bsw/button.c ****         break;
+  66:source\bsw/button.c ****         
+  67:source\bsw/button.c ****         default:
+  68:source\bsw/button.c ****         break;
+  69:source\bsw/button.c ****     }
+  70:source\bsw/button.c ****     return result;
+  71:source\bsw/button.c **** }...
+  71              		.loc 1 71 0
   72 0026 08BD     		pop	{r3, pc}
   73              		.cfi_endproc
   74              	.LFE110:
@@ -178,10 +177,10 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccqEUc2I.s 			page 1
   95 000a 04       		.byte	0x4
   96 000b 01       		.uleb128 0x1
   97 000c 81000000 		.4byte	.LASF34
-ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccqEUc2I.s 			page 4
-
-
   98 0010 0C       		.byte	0xc
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccNo1ndc.s 			page 4
+
+
   99 0011 2A010000 		.4byte	.LASF35
  100 0015 16020000 		.4byte	.LASF36
  101 0019 00000000 		.4byte	.Ldebug_ranges0+0
@@ -238,10 +237,10 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccqEUc2I.s 			page 1
  152 007c 2C       		.byte	0x2c
  153 007d 41000000 		.4byte	0x41
  154 0081 02       		.uleb128 0x2
-ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccqEUc2I.s 			page 5
-
-
  155 0082 04       		.byte	0x4
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccNo1ndc.s 			page 5
+
+
  156 0083 04       		.byte	0x4
  157 0084 5C000000 		.4byte	.LASF11
  158 0088 02       		.uleb128 0x2
@@ -298,10 +297,10 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccqEUc2I.s 			page 1
  209 00f1 57       		.byte	0x57
  210 00f2 09010000 		.4byte	0x109
  211 00f6 06       		.uleb128 0x6
-ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccqEUc2I.s 			page 6
-
-
  212 00f7 BD020000 		.4byte	.LASF22
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccNo1ndc.s 			page 6
+
+
  213 00fb 00       		.byte	0
  214 00fc 06       		.uleb128 0x6
  215 00fd CE020000 		.4byte	.LASF23
@@ -318,7 +317,7 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccqEUc2I.s 			page 1
  226 0114 07       		.uleb128 0x7
  227 0115 62000000 		.4byte	.LASF38
  228 0119 01       		.byte	0x1
- 229 011a 38       		.byte	0x38
+ 229 011a 37       		.byte	0x37
  230 011b DB000000 		.4byte	0xdb
  231 011f 00000000 		.4byte	.LFB110
  232 0123 28000000 		.4byte	.LFE110-.LFB110
@@ -328,13 +327,13 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccqEUc2I.s 			page 1
  236 012d 08       		.uleb128 0x8
  237 012e 95020000 		.4byte	.LASF39
  238 0132 01       		.byte	0x1
- 239 0133 38       		.byte	0x38
+ 239 0133 37       		.byte	0x37
  240 0134 09010000 		.4byte	0x109
  241 0138 00000000 		.4byte	.LLST0
  242 013c 09       		.uleb128 0x9
  243 013d CA010000 		.4byte	.LASF40
  244 0141 01       		.byte	0x1
- 245 0142 3A       		.byte	0x3a
+ 245 0142 39       		.byte	0x39
  246 0143 DB000000 		.4byte	0xdb
  247 0147 53000000 		.4byte	.LLST1
  248 014b 0A       		.uleb128 0xa
@@ -358,10 +357,10 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccqEUc2I.s 			page 1
  266 0175 D1010000 		.4byte	.LASF28
  267 0179 08       		.byte	0x8
  268 017a 4A       		.byte	0x4a
-ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccqEUc2I.s 			page 7
-
-
  269 017b B3000000 		.4byte	0xb3
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccNo1ndc.s 			page 7
+
+
  270 017f 0B       		.uleb128 0xb
  271 0180 7B010000 		.4byte	.LASF29
  272 0184 09       		.byte	0x9
@@ -418,10 +417,10 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccqEUc2I.s 			page 1
  323 0017 0B       		.uleb128 0xb
  324 0018 3E       		.uleb128 0x3e
  325 0019 0B       		.uleb128 0xb
-ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccqEUc2I.s 			page 8
-
-
  326 001a 03       		.uleb128 0x3
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccNo1ndc.s 			page 8
+
+
  327 001b 0E       		.uleb128 0xe
  328 001c 00       		.byte	0
  329 001d 00       		.byte	0
@@ -478,10 +477,10 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccqEUc2I.s 			page 1
  380 0050 07       		.uleb128 0x7
  381 0051 2E       		.uleb128 0x2e
  382 0052 01       		.byte	0x1
-ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccqEUc2I.s 			page 9
-
-
  383 0053 3F       		.uleb128 0x3f
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccNo1ndc.s 			page 9
+
+
  384 0054 19       		.uleb128 0x19
  385 0055 03       		.uleb128 0x3
  386 0056 0E       		.uleb128 0xe
@@ -538,10 +537,10 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccqEUc2I.s 			page 1
  437 008a 0A       		.uleb128 0xa
  438 008b 898201   		.uleb128 0x4109
  439 008e 00       		.byte	0
-ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccqEUc2I.s 			page 10
-
-
  440 008f 11       		.uleb128 0x11
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccNo1ndc.s 			page 10
+
+
  441 0090 01       		.uleb128 0x1
  442 0091 31       		.uleb128 0x31
  443 0092 13       		.uleb128 0x13
@@ -598,10 +597,10 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccqEUc2I.s 			page 1
  494 00c5 6E       		.uleb128 0x6e
  495 00c6 0E       		.uleb128 0xe
  496 00c7 03       		.uleb128 0x3
-ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccqEUc2I.s 			page 11
-
-
  497 00c8 0E       		.uleb128 0xe
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccNo1ndc.s 			page 11
+
+
  498 00c9 3A       		.uleb128 0x3a
  499 00ca 0B       		.uleb128 0xb
  500 00cb 3B       		.uleb128 0x3b
@@ -658,10 +657,10 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccqEUc2I.s 			page 1
  551 0067 0100     		.2byte	0x1
  552 0069 50       		.byte	0x50
  553 006a 00000000 		.4byte	0
-ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccqEUc2I.s 			page 12
-
-
  554 006e 00000000 		.4byte	0
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccNo1ndc.s 			page 12
+
+
  555              		.section	.debug_aranges,"",%progbits
  556 0000 1C000000 		.4byte	0x1c
  557 0004 0200     		.2byte	0x2
@@ -718,10 +717,10 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccqEUc2I.s 			page 1
  588              	.LASF19:
  589 0055 45455F54 		.ascii	"EE_TID\000"
  589      494400
-ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccqEUc2I.s 			page 13
-
-
  590              	.LASF11:
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccNo1ndc.s 			page 13
+
+
  591 005c 666C6F61 		.ascii	"float\000"
  591      7400
  592              	.LASF38:
@@ -778,10 +777,10 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccqEUc2I.s 			page 1
  609      52784275 
  609      66666572 
  609      00
-ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccqEUc2I.s 			page 14
-
-
  610              	.LASF25:
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccNo1ndc.s 			page 14
+
+
  611 0163 42555454 		.ascii	"BUTTON_id_t\000"
  611      4F4E5F69 
  611      645F7400 
@@ -838,10 +837,10 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccqEUc2I.s 			page 1
  635 0203 6C6F6E67 		.ascii	"long long int\000"
  635      206C6F6E 
  635      6720696E 
-ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccqEUc2I.s 			page 15
-
-
  635      7400
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccNo1ndc.s 			page 15
+
+
  636              	.LASF13:
  637 0211 63686172 		.ascii	"char\000"
  637      00
@@ -898,7 +897,7 @@ ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccqEUc2I.s 			page 1
  660 02d7 42555454 		.ascii	"BUTTON_2\000"
  660      4F4E5F32 
  660      00
-ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccqEUc2I.s 			page 16
-
-
  661              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccNo1ndc.s 			page 16
+
+
