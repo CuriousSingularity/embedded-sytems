@@ -73,9 +73,9 @@ TASK(tsk_Init)
     EE_system_init();
     
     // Activate Tasks here
-    ActivateTask(tsk_EventDispatcher);
     ActivateTask(tsk_Background);
-
+    ActivateTask(tsk_EventDispatcher);
+    
 #define TSK_CYCLICDISPATCHER_CYCLIC_TIME    10
     // Set Alarms here
     SetRelAlarm(alrm_10ms, 10, TSK_CYCLICDISPATCHER_CYCLIC_TIME);
@@ -86,6 +86,12 @@ TASK(tsk_Init)
 
 TASK(tsk_CyclicDispatcher)
 {
+    uint16_t        Index = 0;
+    
+    for (Index = 0; Index < RTE_cyclicActivation_size; Index++)
+    {
+        RTE_cyclicActivationTable[Index].run();
+    }
     
     TerminateTask();
 }
@@ -93,8 +99,28 @@ TASK(tsk_CyclicDispatcher)
 
 TASK(tsk_EventDispatcher)
 {
+    uint16_t        Index = 0;
+    EventMaskType   EventsToMonitor = 0, EventsReceived = 0;
     
-    TerminateTask();
+    for (Index = 0; Index < RTE_eventActivation_size; Index++)
+    {
+        EventsToMonitor = EventsToMonitor | RTE_eventActivationTable[Index].event;
+    }
+    
+    while (1)
+    {
+        WaitEvent(EventsToMonitor);
+        GetEvent(tsk_EventDispatcher, &EventsReceived);
+        ClearEvent(EventsReceived);
+        
+        for (Index = 0; Index < RTE_eventActivation_size; Index++)
+        {
+            if (RTE_eventActivationTable[Index].event & EventsReceived)
+            {
+                RTE_eventActivationTable[Index].run();
+            }
+        }
+    }
 }
 
 

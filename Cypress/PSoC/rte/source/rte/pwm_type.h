@@ -19,7 +19,7 @@
 //#error "Provide your data structure"
 typedef struct
 {
-    uint16_t    pwmData;
+    uint16_t    Channel1;
 } PWM_data_t;
 
 //#error "Provide a sensible init value"

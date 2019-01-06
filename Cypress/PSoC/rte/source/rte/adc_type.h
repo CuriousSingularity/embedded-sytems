@@ -19,7 +19,8 @@
 //#error "Provide your data structure"
 typedef struct
 {
-    sint8_t adcData;
+    sint8_t Channel1;
+    sint8_t Channel2;
 } ADC_data_t;
 
 //#error "Provide a sensible init value"
