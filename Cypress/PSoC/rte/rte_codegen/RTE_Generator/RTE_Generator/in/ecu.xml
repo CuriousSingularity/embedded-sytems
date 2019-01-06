@@ -17,7 +17,7 @@
 	<signalclasses>
 		<signalclass name="adc" synchronisation="asynchronous"/>
 		<signalclass name="pwm" synchronisation="asynchronous"/>
-		<signalclass name="gpio" synchronisation="asynchronous"/>
+		<signalclass name="gpio" synchronisation="synchronous"/>
     </signalclasses>
 
 	<signalobjects>
