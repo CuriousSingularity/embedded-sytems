@@ -19,7 +19,7 @@
 //#error "Provide your data structure"
 typedef struct
 {
-    boolean_t   gpioData_b;
+    boolean_t   state;
 } GPIO_data_t;
 
 //#error "Provide a sensible init value"

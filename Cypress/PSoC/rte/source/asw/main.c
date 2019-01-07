@@ -11,13 +11,17 @@
 */
 #include "project.h"
 #include "rte_activation.h"
+#include "rte_signalpool.h"
+
+#include "adc.h"
+#include "pwm.h"
+#include "gpio.h"
 
 ISR(systick_handler)
 {
     CounterTick(cnt_systick);
 }
 
-#if 0
 typedef RC_t (*RC_tFunctPtrv)(void);
 
 /*****************************************************************************/
@@ -26,11 +30,10 @@ typedef RC_t (*RC_tFunctPtrv)(void);
 static RC_tFunctPtrv fptr_init_functions[] = 
 {
     // Add all the initialization functions here
-    CONSOLE_Init,
-    S7D_Init,
+    ADC_Init,
     PWM_Init,
+    GPIO_Init,
 };
-#endif
 
 int main(void)
 {
@@ -57,7 +60,6 @@ int main(void)
  */
 TASK(tsk_Init)
 {
-    #if 0
     // MCAL - hardware initialization 
     for (unsigned int Index = 0; Index < sizeof(fptr_init_functions)/sizeof(RC_tFunctPtrv); Index++)
     {
@@ -67,7 +69,11 @@ TASK(tsk_Init)
             while(1) __asm("NOP");
         }
     }
-    #endif
+    
+    // RTE Initializations
+    RTE_ADC_init(&JOYSTICK_signal, &ADC_INIT_DATA);
+    RTE_PWM_init(&ENGINE_signal, &PWM_INIT_DATA);
+    RTE_GPIO_init(&BRAKELIGHT_signal, &GPIO_INIT_DATA);
     
     // OS initialization - This will override and reconfigures the interrupts by OS parameters
     EE_system_init();
@@ -126,6 +132,7 @@ TASK(tsk_EventDispatcher)
 
 TASK(tsk_Background)
 {
+    while(1);
     TerminateTask();
 }
 /* [] END OF FILE */

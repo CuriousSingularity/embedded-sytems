@@ -9,6 +9,7 @@
 #include "global.h"
 
 #include "gpio_type.h"
+#include "gpio.h"
 
 /*****************************************************************************************
  *************** Port Wrapper Implementation for GPIO signal                     **************************
@@ -35,10 +36,12 @@ inline RC_t GPIO_driverIn(GPIO_data_t *const data)
 inline RC_t GPIO_driverOut(const GPIO_data_t  *const data)
 {
 //#error "Add your code here"
+    RC_t ret = RC_SUCCESS;
 
 	//Scale application data to drive format
 
 	//Write scaled data to driver
+    ret = GPIO_LedRed_Write(data->state);
 
-	return RC_SUCCESS;
+	return ret;
 }

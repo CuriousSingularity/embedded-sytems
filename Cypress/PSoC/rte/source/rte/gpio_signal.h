@@ -12,7 +12,7 @@
 #define GPIO_SIGNAL_H_INCLUDED
 
 /*================================================[ configuration  ]================================================*/
-#define GPIO_ASYNCHRONOUS
+#define GPIO_SYNCHRONOUS
 
 /*================================================[ public includes  ]================================================*/
 #include "global.h"

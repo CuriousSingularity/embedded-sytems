@@ -9,6 +9,7 @@
 #include "global.h"
 
 #include "pwm_type.h"
+#include "pwm.h"
 
 /*****************************************************************************************
  *************** Port Wrapper Implementation for PWM signal                     **************************
@@ -39,6 +40,7 @@ inline RC_t PWM_driverOut(const PWM_data_t  *const data)
 	//Scale application data to drive format
 
 	//Write scaled data to driver
+    PWM_RGB_SetGreen(data->Channel1);
 
 	return RC_SUCCESS;
 }

@@ -21,10 +21,18 @@
 inline RC_t ADC_driverIn(ADC_data_t *const data)
 {
 //#error "Add your code here"
+    uint8_t Channel1_data = 0, Channel2_data = 0;
 
 	//Read data from the MCAL driver
-
+    ADC_1_IsEndConversion(ADC_1_WAIT_FOR_RESULT);
+    ADC_2_IsEndConversion(ADC_2_WAIT_FOR_RESULT);
+    
+    Channel1_data = (uint8_t)ADC_1_GetResult8();
+    Channel2_data = (uint8_t)ADC_2_GetResult8();
+    
 	//Scale it to the application type
+    data->Channel1 = (sint8_t)(~Channel1_data - 127);
+    data->Channel2 = (sint8_t)(~Channel2_data - 127);
 
 	return RC_SUCCESS;
 }

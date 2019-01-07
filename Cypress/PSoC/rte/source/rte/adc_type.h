@@ -24,7 +24,7 @@ typedef struct
 } ADC_data_t;
 
 //#error "Provide a sensible init value"
-#define ADC_INIT_DATA ((ADC_data_t){0})
+#define ADC_INIT_DATA ((ADC_data_t){0,0})
 
 
 /**
