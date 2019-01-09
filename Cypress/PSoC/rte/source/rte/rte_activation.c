@@ -26,6 +26,7 @@ const RTE_eventTable_t RTE_eventActivationTable[] = {
    { run_calculateControl, ev_joystick_onUpdate },
    { run_setEngine, ev_engine_onUpdate },
    { run_setBrakeLight, ev_engine_onUpdate },
+   { run_systemShutdown, ev_shutdown },
 }; 
 
 const uint16_t RTE_eventActivation_size = sizeof (RTE_eventActivationTable) / sizeof(RTE_eventTable_t); 

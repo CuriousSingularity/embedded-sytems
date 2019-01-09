@@ -1,5 +1,5 @@
 /**
-* \file <gpio.h>
+* \file <uart.h>
 * \author <Bharath Ramachandraiah>
 * \date <25/09/2018>
 *
@@ -72,8 +72,8 @@
 
 
  
-#ifndef GPIO_H_
-#define GPIO_H_
+#ifndef UART_H_
+#define UART_H_
 
 #include "global.h"
     
@@ -82,20 +82,18 @@
 /*****************************************************************************/
 
 //####################### Defines/Macros
-
+#define UART_RING_BUFFER_SIZE       50
     
 //####################### Enumerations
-enum BUTTON_id_e
-{
-    BUTTON_UNPRESSED,
-    BUTTON_1,
-    BUTTON_2,
-};
-
-typedef enum BUTTON_id_e BUTTON_id_t;
 
 
 //####################### Structures
+typedef struct
+{
+    uint16_t ReadIndex;
+    uint16_t WriteIndex;
+    uint8_t RingBuffer[UART_RING_BUFFER_SIZE];
+}UART_RingBuffer_t;
 
 
 // Wrapper to allow representing the file in Together as class
@@ -119,39 +117,39 @@ public:
 /*****************************************************************************/
 
 /**
- * A function initializes the GPIO
+ * A function initializes the UART port used to transmit the log messages.
  * @param void
- * @return RC_SUCCESS on successful initialization
+ * @return RC_SUCCESS on successful transmission
  */
-RC_t GPIO_Init(void);
+RC_t UART_Init(void);
 
 /**
- * A function which sets the Red led
- * @param uint8 value       : IN 
- * @return RC_SUCCESS on successful
+ * A function transmits the string characters over serial console.
+ * @param const sint8_t *pMessaage      : IN String
+ * @return RC_SUCCESS on successful transmission
  */
-RC_t GPIO_LedRed_Write(uint8_t value);
+RC_t UART_Write(const char *pMessage);
 
 /**
- * A function which sets the Green led
- * @param uint8 value       : IN 
- * @return RC_SUCCESS on successful
+ * A function transmits the numberover serial console.
+ * @param const sint32_t Number      : IN Number
+ * @return RC_SUCCESS on successful transmission
  */
-RC_t GPIO_LedGreen_Write(uint8_t value);
+RC_t UART_WriteNumber(sint32_t Number);
 
 /**
- * A function which sets the Yellow led
- * @param uint8 value       : IN 
- * @return RC_SUCCESS on successful
+ * A function transmits the log messages.
+ * @param void
+ * @return RC_SUCCESS on successful transmission
  */
-RC_t GPIO_LedYellow_Write(uint8_t value);
+RC_t UART_Flush(void);
 
 /**
- * The function returns if the corresponding button is pressed or not.
- * @param BUTTON_id_t Button        : IN Button number
- * @return boolean_t                : TRUE if button is pressed, else FALSE
+ * A function checks the buffer status
+ * @param void
+ * @return RC_SUCCESS on successful transmission
  */
-boolean_t BUTTON_IsPressed(BUTTON_id_t Button);
+RC_t UART_DataInBuffer(void);
 
 /*****************************************************************************/
 /* Private stuff, only visible for Together, declared static in cpp - File   */
@@ -182,4 +180,4 @@ static type FILE__function(uint16_t cmd);
 };
 #endif /* Together */
 
-#endif /* GPIO_H_ */
+#endif /* UART_H_ */

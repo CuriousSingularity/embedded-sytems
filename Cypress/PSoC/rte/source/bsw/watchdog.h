@@ -1,5 +1,5 @@
 /**
-* \file <gpio.h>
+* \file <watchdog.h>
 * \author <Bharath Ramachandraiah>
 * \date <25/09/2018>
 *
@@ -72,8 +72,8 @@
 
 
  
-#ifndef GPIO_H_
-#define GPIO_H_
+#ifndef WATCHDOG_H_
+#define WATCHDOG_H_
 
 #include "global.h"
     
@@ -81,21 +81,23 @@
 /* Global pre-processor symbols/macros and type declarations                 */
 /*****************************************************************************/
 
+
 //####################### Defines/Macros
+#define WDT_RESET_BIT_MASK          (0x08)
 
     
 //####################### Enumerations
-enum BUTTON_id_e
-{
-    BUTTON_UNPRESSED,
-    BUTTON_1,
-    BUTTON_2,
-};
-
-typedef enum BUTTON_id_e BUTTON_id_t;
 
 
 //####################### Structures
+enum WDT_TimeOut_e
+{
+    WDT_4_TO_6_MS       = CYWDT_2_TICKS,        /*    4 -    6 ms */
+    WDT_32_TO_48_MS     = CYWDT_16_TICKS,       /*   32 -   48 ms */
+    WDT_256_TO_384_MS   = CYWDT_128_TICKS,      /*  256 -  384 ms */
+    WDT_2048_TO_3072_MS = CYWDT_1024_TICKS,     /* 2048 - 3072 ms */
+};
+typedef enum WDT_TimeOut_e WDT_TimeOut_t;
 
 
 // Wrapper to allow representing the file in Together as class
@@ -119,39 +121,41 @@ public:
 /*****************************************************************************/
 
 /**
- * A function initializes the GPIO
- * @param void
- * @return RC_SUCCESS on successful initialization
- */
-RC_t GPIO_Init(void);
+* Activate the Watchdog Trigger
+* \param WDT_TimeOut_t timeout - [IN] Timeout Period
+* @return RC_SUCCESS
+*/
+RC_t WD_Start(WDT_TimeOut_t timeout);
 
 /**
- * A function which sets the Red led
- * @param uint8 value       : IN 
- * @return RC_SUCCESS on successful
- */
-RC_t GPIO_LedRed_Write(uint8_t value);
+* Service the Watchdog Trigger
+* @return RC_SUCCESS
+*/
+RC_t WD_Trigger();
 
 /**
- * A function which sets the Green led
- * @param uint8 value       : IN 
- * @return RC_SUCCESS on successful
- */
-RC_t GPIO_LedGreen_Write(uint8_t value);
+* Checks the watchdog bit
+* @return TRUE if watchdog reset bit was set
+*/
+boolean_t WD_CheckResetBit();
 
 /**
- * A function which sets the Yellow led
- * @param uint8 value       : IN 
- * @return RC_SUCCESS on successful
- */
-RC_t GPIO_LedYellow_Write(uint8_t value);
+* Set the bit to track the runnables
+* @return RC_SUCCESS if successful
+*/
+RC_t WD_Alive(uint8_t myBitPosition);
 
 /**
- * The function returns if the corresponding button is pressed or not.
- * @param BUTTON_id_t Button        : IN Button number
- * @return boolean_t                : TRUE if button is pressed, else FALSE
- */
-boolean_t BUTTON_IsPressed(BUTTON_id_t Button);
+* clear the bits to track the runnables
+* @return RC_SUCCESS if successful
+*/
+RC_t WD_Alive_ClearBit();
+
+/**
+* status of the bits to track the runnables
+* @return RC_SUCCESS if successful
+*/
+uint32_t WD_Alive_GetStatus();
 
 /*****************************************************************************/
 /* Private stuff, only visible for Together, declared static in cpp - File   */
@@ -182,4 +186,4 @@ static type FILE__function(uint16_t cmd);
 };
 #endif /* Together */
 
-#endif /* GPIO_H_ */
+#endif /* WATCHDOG_H_ */

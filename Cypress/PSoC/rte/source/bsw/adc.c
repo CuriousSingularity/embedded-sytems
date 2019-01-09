@@ -75,3 +75,21 @@ RC_t ADC_Init(void)
     
     return RC_SUCCESS;
 }
+
+RC_t ADC_1_Read(sint8_t * const pdata)
+{
+    ADC_1_IsEndConversion(ADC_1_WAIT_FOR_RESULT);
+    
+    *pdata = ADC_1_GetResult8();
+    
+    return RC_SUCCESS;
+}
+
+RC_t ADC_2_Read(sint8_t * const pdata)
+{
+    ADC_2_IsEndConversion(ADC_2_WAIT_FOR_RESULT);
+    
+    *pdata = ADC_2_GetResult8();
+    
+    return RC_SUCCESS;
+}

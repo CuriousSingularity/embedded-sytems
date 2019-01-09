@@ -1,5 +1,5 @@
 /**
-* \file <gpio.c>
+* \file <watchdog.c>
 * \author <Bharath Ramachandraiah>
 * \date <25/09/2018>
 *
@@ -20,7 +20,7 @@
 /*****************************************************************************/
 /* Include files                                                             */
 /*****************************************************************************/
-#include "gpio.h"
+#include "watchdog.h"
 
 /*****************************************************************************/
 /* Local pre-processor symbols/macros ('#define')                            */
@@ -29,6 +29,7 @@
 /*****************************************************************************/
 /* Global variable definitions (declared in header file with 'extern')       */
 /*****************************************************************************/
+static uint32_t WD_Alive_BitField = 0;
 
 /*****************************************************************************/
 /* Local type definitions ('typedef')                                        */
@@ -50,64 +51,70 @@
 /*****************************************************************************/
 
 /**
- * A function initializes the PWM
- * @param void
- * @return RC_SUCCESS on successful initialization
- */
-RC_t GPIO_Init(void)
+* Activate the Watchdog Trigger
+* \param WDT_TimeOut_t timeout - [IN] Timeout Period
+* @return RC_SUCCESS
+*/
+RC_t WD_Start(WDT_TimeOut_t timeout)
 {
+    CyWdtStart(timeout, CYWDT_LPMODE_MAXINTER);
+    return RC_SUCCESS;
+}
+
+
+/**
+* Service the Watchdog Trigger
+* @return RC_SUCCESS
+*/
+RC_t WD_Trigger()
+{
+    CyWdtClear();
     return RC_SUCCESS;
 }
 
 /**
- * A function which sets the Red led
- * @param uint8 value       : IN 
- * @return RC_SUCCESS on successful
- */
-RC_t GPIO_LedRed_Write(uint8_t value)
+* Checks the watchdog bit
+* @return TRUE if watchdog reset bit was set
+*/
+boolean_t WD_CheckResetBit()
 {
-    LED_Red_Write(value);
-    return RC_SUCCESS;
-}
-
-/**
- * A function which sets the Green led
- * @param uint8 value       : IN 
- * @return RC_SUCCESS on successful
- */
-RC_t GPIO_LedGreen_Write(uint8_t value)
-{
-    LED_Green_Write(value);
-    return RC_SUCCESS;
-}
-
-/**
- * A function which sets the Yellow led
- * @param uint8 value       : IN 
- * @return RC_SUCCESS on successful
- */
-RC_t GPIO_LedYellow_Write(uint8_t value)
-{
-    LED_Yellow_Write(value);
-    return RC_SUCCESS;
-}
-
-/**
- * The function returns if the corresponding button is pressed or not.
- * @param BUTTON_id_t Button        : IN Button number
- * @return boolean_t                : TRUE if button is pressed, else FALSE
- */
-boolean_t BUTTON_IsPressed(BUTTON_id_t Button)
-{
-    boolean_t result = FALSE;
+    uint8_t reg = CyResetStatus;
     
-    switch (Button)
-    {
-        case BUTTON_1:  if (Shutdown_Read()) result = TRUE; break;
-        break;
-        
-        default:
-        break;
-    }
-    return result;
+    return (reg & WDT_RESET_BIT_MASK) ? TRUE : FALSE;
+}
+
+/**
+* Set the bit to track the runnables
+* @return RC_SUCCESS if successful
+*/
+RC_t WD_Alive(uint8_t myBitPosition)
+{
+    RC_t ret = RC_SUCCESS;
+    
+    WD_Alive_BitField |= 1 << myBitPosition;
+    
+    return ret;
+}
+
+/**
+* clear the bits to track the runnables
+* @return RC_SUCCESS if successful
+*/
+RC_t WD_Alive_ClearBit()
+{
+    RC_t ret = RC_SUCCESS;
+    
+    WD_Alive_BitField = 0;
+    
+    return ret;
+}
+
+
+/**
+* status of the bits to track the runnables
+* @return RC_SUCCESS if successful
+*/
+uint32_t WD_Alive_GetStatus()
+{
+    return WD_Alive_BitField;
 }

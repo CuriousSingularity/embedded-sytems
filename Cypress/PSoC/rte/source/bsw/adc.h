@@ -117,6 +117,10 @@ public:
  */
 RC_t ADC_Init(void);
 
+RC_t ADC_1_Read(sint8_t * const pdata);
+
+RC_t ADC_2_Read(sint8_t * const pdata);
+
 
 /*****************************************************************************/
 /* Private stuff, only visible for Together, declared static in cpp - File   */
