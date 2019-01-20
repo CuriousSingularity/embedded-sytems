@@ -21,6 +21,7 @@
 #include "swc_application.h"
 
 #define TSK_CYCLICDISPATCHER_CYCLIC_TIME    10
+#define DEADLINE_MONITORING_RUNNABLE        5
 
 ISR(systick_handler)
 {
@@ -110,6 +111,7 @@ TASK(tsk_Init)
 TASK(tsk_CyclicDispatcher)
 {
     uint16_t        Index = 0;
+    TickType        RemainingTicks = 0;
     static uint16_t TimeToMonitor = 0;
     
     TimeToMonitor += TSK_CYCLICDISPATCHER_CYCLIC_TIME;
@@ -120,7 +122,16 @@ TASK(tsk_CyclicDispatcher)
     {
         if (TimeToMonitor % RTE_cyclicActivationTable[Index].cycleTime == 0)
         {
+            SetRelAlarm(alrm_DM_cyclicDispatcherTsk, DEADLINE_MONITORING_RUNNABLE, 0);
             RTE_cyclicActivationTable[Index].run();
+            GetAlarm(alrm_DM_cyclicDispatcherTsk, &RemainingTicks);
+            CancelAlarm(alrm_DM_cyclicDispatcherTsk);
+            
+            UART_Write("CRunnable ");
+            UART_WriteNumber(Index);
+            UART_Write(" : ");
+            UART_WriteNumber(DEADLINE_MONITORING_RUNNABLE - RemainingTicks);
+            UART_Write("\n\n");
         }
     }
     
@@ -137,6 +148,7 @@ TASK(tsk_CyclicDispatcher)
 
 TASK(tsk_EventDispatcher)
 {
+    TickType        RemainingTicks = 0;
     uint16_t        Index = 0;
     EventMaskType   EventsToMonitor = 0, EventsReceived = 0;
     
@@ -155,7 +167,16 @@ TASK(tsk_EventDispatcher)
         {
             if (RTE_eventActivationTable[Index].event & EventsReceived)
             {
+                SetRelAlarm(alrm_DM_eventDispatcherTsk, DEADLINE_MONITORING_RUNNABLE, 0);
                 RTE_eventActivationTable[Index].run();
+                GetAlarm(alrm_DM_eventDispatcherTsk, &RemainingTicks);
+                CancelAlarm(alrm_DM_eventDispatcherTsk);
+                
+                UART_Write("ERunnable ");
+                UART_WriteNumber(Index);
+                UART_Write(" : ");
+                UART_WriteNumber(DEADLINE_MONITORING_RUNNABLE - RemainingTicks);
+                UART_Write("\n\n");
             }
         }
     }

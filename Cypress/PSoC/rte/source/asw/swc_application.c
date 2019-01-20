@@ -37,8 +37,8 @@ void run_calculateControl(void)
         JoyStickValues.Channel1 -= Offset_V;
         JoyStickValues.Channel2 -= Offset_H;
         
-        UART_Write("JOYSTICK H : ");UART_WriteNumber(JoyStickValues.Channel1);UART_Write("\n");
-        UART_Write("JOYSTICK V : ");UART_WriteNumber(JoyStickValues.Channel2);UART_Write("\n\n");
+        //UART_Write("JOYSTICK H : ");UART_WriteNumber(JoyStickValues.Channel1);UART_Write("\n");
+        //UART_Write("JOYSTICK V : ");UART_WriteNumber(JoyStickValues.Channel2);UART_Write("\n\n");
         
         // check if the acceleration is pressed
         if ((JoyStickValues.Channel1) > 0 && (JoyStickValues.Channel2) > 0)

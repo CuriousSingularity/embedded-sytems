@@ -82,7 +82,7 @@
 /*****************************************************************************/
 
 //####################### Defines/Macros
-#define UART_RING_BUFFER_SIZE       50
+#define UART_RING_BUFFER_SIZE       100
     
 //####################### Enumerations
 
