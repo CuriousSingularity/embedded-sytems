@@ -1,5 +1,7 @@
 #define timertickperiod 100
 
+#include <math.h>
+
 enum Runables_e
 {
     RUN_READJOYSTICK = 0,
@@ -10,6 +12,8 @@ enum Runables_e
     RUN_MAX,
     RUN_SYSTEMSHUTDOWN,
 };
+
+#define ALL_RUNNABLES_ALIVE             (pow(2, RUN_MAX) - 1)
 
 void run_readJoystick(void);
 

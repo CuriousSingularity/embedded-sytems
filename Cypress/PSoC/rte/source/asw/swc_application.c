@@ -111,10 +111,3 @@ void run_setBrakeLight(void)
         UART_Write("ERROR: Brake Light push data failed.\n");
     }
 }
-
-void run_systemShutdown(void)
-{
-    WD_Alive(RUN_SYSTEMSHUTDOWN);
-    
-    ShutdownOS(E_OK);
-}

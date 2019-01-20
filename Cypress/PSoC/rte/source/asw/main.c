@@ -13,13 +13,14 @@
 #include "rte_activation.h"
 #include "rte_signalpool.h"
 
-#include <math.h>
 #include "adc.h"
 #include "pwm.h"
 #include "gpio.h"
 #include "uart.h"
 #include "watchdog.h"
 #include "swc_application.h"
+
+#define TSK_CYCLICDISPATCHER_CYCLIC_TIME    10
 
 ISR(systick_handler)
 {
@@ -83,10 +84,10 @@ TASK(tsk_Init)
     EE_system_init();
     
     // Activate Tasks here
-    ActivateTask(tsk_Background);
+    ActivateTask(tsk_Errorhandler);
     ActivateTask(tsk_EventDispatcher);
-    
-#define TSK_CYCLICDISPATCHER_CYCLIC_TIME    10
+    ActivateTask(tsk_Background);
+        
     // Set Alarms here
     SetRelAlarm(alrm_10ms, TSK_CYCLICDISPATCHER_CYCLIC_TIME, TSK_CYCLICDISPATCHER_CYCLIC_TIME);
     
@@ -112,6 +113,8 @@ TASK(tsk_CyclicDispatcher)
     static uint16_t TimeToMonitor = 0;
     
     TimeToMonitor += TSK_CYCLICDISPATCHER_CYCLIC_TIME;
+    
+    RTE_timertick();
     
     for (Index = 0; Index < RTE_cyclicActivation_size; Index++)
     {
@@ -170,11 +173,38 @@ TASK(tsk_Background)
             UART_Flush();
         }
         
-        if (WD_Alive_GetStatus() == (pow(2, RUN_MAX) - 1))
+        if (WD_Alive_GetStatus() == ALL_RUNNABLES_ALIVE)
         {
             WD_Alive_ClearBit();
             WD_Trigger();
         }
+    }
+    
+    TerminateTask();
+}
+
+
+TASK(tsk_Errorhandler)
+{
+    EventMaskType   EventsReceived = 0;
+    
+    WaitEvent(ev_shutdown | ev_DM_cyclicDispatcherTsk | ev_DM_eventDispatcherTsk);
+    GetEvent(tsk_Errorhandler, &EventsReceived);
+    ClearEvent(EventsReceived);
+
+    if (EventsReceived & ev_shutdown)
+    {
+        ShutdownOS(E_OK);
+    }
+    
+    if (EventsReceived & ev_DM_cyclicDispatcherTsk)
+    {
+        // disable a few runnable
+    }
+    
+    if (EventsReceived & ev_DM_eventDispatcherTsk)
+    {
+        // disable a few runnable
     }
     
     TerminateTask();
@@ -188,7 +218,7 @@ TASK(tsk_Background)
 static void SIGNAL__from_button1(void)
 {
     // Events for button 1 press
-    SetEvent(tsk_EventDispatcher, ev_shutdown);
+    SetEvent(tsk_Errorhandler, ev_shutdown);
 }
 /**
  * The button press interrupt - Category 2
