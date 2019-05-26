@@ -1,0 +1,903 @@
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccNo1ndc.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m3
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 1
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.thumb
+  14              		.syntax unified
+  15              		.file	"button.c"
+  16              		.text
+  17              	.Ltext0:
+  18              		.cfi_sections	.debug_frame
+  19              		.section	.text.BUTTON_IsPressed,"ax",%progbits
+  20              		.align	2
+  21              		.global	BUTTON_IsPressed
+  22              		.thumb
+  23              		.thumb_func
+  24              		.type	BUTTON_IsPressed, %function
+  25              	BUTTON_IsPressed:
+  26              	.LFB110:
+  27              		.file 1 "source\\bsw\\button.c"
+   1:source\bsw/button.c **** /**
+   2:source\bsw/button.c **** * \file <button.c>
+   3:source\bsw/button.c **** * \author <Bharath Ramachandraiah>
+   4:source\bsw/button.c **** * \date <25/09/2018>
+   5:source\bsw/button.c **** *
+   6:source\bsw/button.c **** * \brief <Symbolic File name>
+   7:source\bsw/button.c **** *
+   8:source\bsw/button.c **** * \copyright Copyright ©2016
+   9:source\bsw/button.c **** * Department of electrical engineering and information technology, Hochschule Darmstadt - Universit
+  10:source\bsw/button.c **** * Permission to use, copy, modify, and distribute this software and its documentation for education
+  11:source\bsw/button.c **** * (unless permitted by h_da) and official h_da projects, is hereby granted for enrolled students of
+  12:source\bsw/button.c **** * this paragraph and the following paragraph appear in all copies, modifications, and distributions
+  13:source\bsw/button.c **** * Contact Prof.Dr.-Ing. Peter Fromm, peter.fromm@h-da.de, Birkenweg 8 64295 Darmstadt - GERMANY for
+  14:source\bsw/button.c **** *
+  15:source\bsw/button.c **** * \warning This software is a PROTOTYPE version and is not designed or intended for use in producti
+  16:source\bsw/button.c **** * The user represents and warrants that it will NOT use or redistribute the Software for such purpo
+  17:source\bsw/button.c **** * This prototype is for research purposes only. This software is provided "AS IS," without a warran
+  18:source\bsw/button.c **** */
+  19:source\bsw/button.c **** 
+  20:source\bsw/button.c **** /*****************************************************************************/
+  21:source\bsw/button.c **** /* Include files                                                             */
+  22:source\bsw/button.c **** /*****************************************************************************/
+  23:source\bsw/button.c **** #include "button.h"
+  24:source\bsw/button.c **** 
+  25:source\bsw/button.c **** /*****************************************************************************/
+  26:source\bsw/button.c **** /* Local pre-processor symbols/macros ('#define')                            */
+  27:source\bsw/button.c **** /*****************************************************************************/
+  28:source\bsw/button.c **** 
+  29:source\bsw/button.c **** /*****************************************************************************/
+  30:source\bsw/button.c **** /* Global variable definitions (declared in header file with 'extern')       */
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccNo1ndc.s 			page 2
+
+
+  31:source\bsw/button.c **** /*****************************************************************************/
+  32:source\bsw/button.c **** 
+  33:source\bsw/button.c **** /*****************************************************************************/
+  34:source\bsw/button.c **** /* Local type definitions ('typedef')                                        */
+  35:source\bsw/button.c **** /*****************************************************************************/
+  36:source\bsw/button.c **** 
+  37:source\bsw/button.c **** /*****************************************************************************/
+  38:source\bsw/button.c **** /* Local variable definitions ('static')                                     */
+  39:source\bsw/button.c **** /*****************************************************************************/
+  40:source\bsw/button.c **** 
+  41:source\bsw/button.c **** 
+  42:source\bsw/button.c **** /*****************************************************************************/
+  43:source\bsw/button.c **** /* Local function prototypes ('static')                                      */
+  44:source\bsw/button.c **** /*****************************************************************************/
+  45:source\bsw/button.c **** 
+  46:source\bsw/button.c **** 
+  47:source\bsw/button.c **** /*****************************************************************************/
+  48:source\bsw/button.c **** /* Function implementation - global ('extern') and local ('static')          */
+  49:source\bsw/button.c **** /*****************************************************************************/
+  50:source\bsw/button.c **** /**
+  51:source\bsw/button.c ****  * The function returns if the corresponding button is pressed or not.
+  52:source\bsw/button.c ****  * @param BUTTON_id_t Button        : IN Button number
+  53:source\bsw/button.c ****  * @return boolean_t                : TRUE if button is pressed, else FALSE
+  54:source\bsw/button.c ****  */
+  55:source\bsw/button.c **** boolean_t BUTTON_IsPressed(BUTTON_id_t Button)
+  56:source\bsw/button.c **** {
+  28              		.loc 1 56 0
+  29              		.cfi_startproc
+  30              		@ args = 0, pretend = 0, frame = 0
+  31              		@ frame_needed = 0, uses_anonymous_args = 0
+  32              	.LVL0:
+  33 0000 08B5     		push	{r3, lr}
+  34              		.cfi_def_cfa_offset 8
+  35              		.cfi_offset 3, -8
+  36              		.cfi_offset 14, -4
+  37              	.LVL1:
+  57:source\bsw/button.c ****     boolean_t result = FALSE;
+  58:source\bsw/button.c ****     
+  59:source\bsw/button.c ****     switch (Button)
+  38              		.loc 1 59 0
+  39 0002 0128     		cmp	r0, #1
+  40 0004 02D0     		beq	.L3
+  41 0006 0228     		cmp	r0, #2
+  42 0008 04D0     		beq	.L4
+  43 000a 07E0     		b	.L8
+  44              	.L3:
+  60:source\bsw/button.c ****     {
+  61:source\bsw/button.c ****         case BUTTON_1:  if (BUTTON_1_Read()) result = TRUE; break;
+  45              		.loc 1 61 0
+  46 000c FFF7FEFF 		bl	BUTTON_1_Read
+  47              	.LVL2:
+  48 0010 30B9     		cbnz	r0, .L6
+  49 0012 08BD     		pop	{r3, pc}
+  50              	.LVL3:
+  51              	.L4:
+  62:source\bsw/button.c ****         break;
+  63:source\bsw/button.c ****         
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccNo1ndc.s 			page 3
+
+
+  64:source\bsw/button.c ****         case BUTTON_2:  if (BUTTON_2_Read()) result = TRUE; break;
+  52              		.loc 1 64 0
+  53 0014 FFF7FEFF 		bl	BUTTON_2_Read
+  54              	.LVL4:
+  55 0018 20B9     		cbnz	r0, .L7
+  56 001a 08BD     		pop	{r3, pc}
+  57              	.LVL5:
+  58              	.L8:
+  57:source\bsw/button.c ****     
+  59              		.loc 1 57 0
+  60 001c 0020     		movs	r0, #0
+  61              	.LVL6:
+  62 001e 08BD     		pop	{r3, pc}
+  63              	.L6:
+  61:source\bsw/button.c ****         break;
+  64              		.loc 1 61 0
+  65 0020 0120     		movs	r0, #1
+  66 0022 08BD     		pop	{r3, pc}
+  67              	.L7:
+  68              		.loc 1 64 0
+  69 0024 0120     		movs	r0, #1
+  70              	.LVL7:
+  65:source\bsw/button.c ****         break;
+  66:source\bsw/button.c ****         
+  67:source\bsw/button.c ****         default:
+  68:source\bsw/button.c ****         break;
+  69:source\bsw/button.c ****     }
+  70:source\bsw/button.c ****     return result;
+  71:source\bsw/button.c **** }...
+  71              		.loc 1 71 0
+  72 0026 08BD     		pop	{r3, pc}
+  73              		.cfi_endproc
+  74              	.LFE110:
+  75              		.size	BUTTON_IsPressed, .-BUTTON_IsPressed
+  76              		.text
+  77              	.Letext0:
+  78              		.file 2 "d:\\installations\\cypress\\psoc creator\\4.2\\psoc creator\\import\\gnu\\arm\\5.4.1\\arm
+  79              		.file 3 "d:\\installations\\cypress\\psoc creator\\4.2\\psoc creator\\import\\gnu\\arm\\5.4.1\\arm
+  80              		.file 4 "Generated_Source\\PSoC5/ErikaOS_common_ee_types.inc"
+  81              		.file 5 "Generated_Source\\PSoC5/ErikaOS_cortex_mx_ee_cpu.inc"
+  82              		.file 6 "source\\bsw\\global.h"
+  83              		.file 7 "source\\bsw\\button.h"
+  84              		.file 8 "Generated_Source\\PSoC5/ErikaOS_ee_oo_intfunc.inc"
+  85              		.file 9 "Generated_Source\\PSoC5/ErikaOS_cortex_mx_ee_context.inc"
+  86              		.file 10 "Generated_Source\\PSoC5/ErikaOS_common_ee_primitives.inc"
+  87              		.file 11 "Generated_Source\\PSoC5/core_cm3.h"
+  88              		.file 12 "Generated_Source\\PSoC5/BUTTON_1.h"
+  89              		.file 13 "Generated_Source\\PSoC5/BUTTON_2.h"
+  90              		.section	.debug_info,"",%progbits
+  91              	.Ldebug_info0:
+  92 0000 B9010000 		.4byte	0x1b9
+  93 0004 0400     		.2byte	0x4
+  94 0006 00000000 		.4byte	.Ldebug_abbrev0
+  95 000a 04       		.byte	0x4
+  96 000b 01       		.uleb128 0x1
+  97 000c 81000000 		.4byte	.LASF34
+  98 0010 0C       		.byte	0xc
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccNo1ndc.s 			page 4
+
+
+  99 0011 2A010000 		.4byte	.LASF35
+ 100 0015 16020000 		.4byte	.LASF36
+ 101 0019 00000000 		.4byte	.Ldebug_ranges0+0
+ 102 001d 00000000 		.4byte	0
+ 103 0021 00000000 		.4byte	.Ldebug_line0
+ 104 0025 02       		.uleb128 0x2
+ 105 0026 01       		.byte	0x1
+ 106 0027 06       		.byte	0x6
+ 107 0028 B1020000 		.4byte	.LASF0
+ 108 002c 02       		.uleb128 0x2
+ 109 002d 01       		.byte	0x1
+ 110 002e 08       		.byte	0x8
+ 111 002f 73000000 		.4byte	.LASF1
+ 112 0033 02       		.uleb128 0x2
+ 113 0034 02       		.byte	0x2
+ 114 0035 05       		.byte	0x5
+ 115 0036 8B020000 		.4byte	.LASF2
+ 116 003a 02       		.uleb128 0x2
+ 117 003b 02       		.byte	0x2
+ 118 003c 07       		.byte	0x7
+ 119 003d 22000000 		.4byte	.LASF3
+ 120 0041 03       		.uleb128 0x3
+ 121 0042 18000000 		.4byte	.LASF9
+ 122 0046 02       		.byte	0x2
+ 123 0047 3F       		.byte	0x3f
+ 124 0048 4C000000 		.4byte	0x4c
+ 125 004c 02       		.uleb128 0x2
+ 126 004d 04       		.byte	0x4
+ 127 004e 05       		.byte	0x5
+ 128 004f 9C020000 		.4byte	.LASF4
+ 129 0053 02       		.uleb128 0x2
+ 130 0054 04       		.byte	0x4
+ 131 0055 07       		.byte	0x7
+ 132 0056 18010000 		.4byte	.LASF5
+ 133 005a 02       		.uleb128 0x2
+ 134 005b 08       		.byte	0x8
+ 135 005c 05       		.byte	0x5
+ 136 005d 03020000 		.4byte	.LASF6
+ 137 0061 02       		.uleb128 0x2
+ 138 0062 08       		.byte	0x8
+ 139 0063 07       		.byte	0x7
+ 140 0064 B3010000 		.4byte	.LASF7
+ 141 0068 04       		.uleb128 0x4
+ 142 0069 04       		.byte	0x4
+ 143 006a 05       		.byte	0x5
+ 144 006b 696E7400 		.ascii	"int\000"
+ 145 006f 02       		.uleb128 0x2
+ 146 0070 04       		.byte	0x4
+ 147 0071 07       		.byte	0x7
+ 148 0072 94010000 		.4byte	.LASF8
+ 149 0076 03       		.uleb128 0x3
+ 150 0077 F2010000 		.4byte	.LASF10
+ 151 007b 03       		.byte	0x3
+ 152 007c 2C       		.byte	0x2c
+ 153 007d 41000000 		.4byte	0x41
+ 154 0081 02       		.uleb128 0x2
+ 155 0082 04       		.byte	0x4
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccNo1ndc.s 			page 5
+
+
+ 156 0083 04       		.byte	0x4
+ 157 0084 5C000000 		.4byte	.LASF11
+ 158 0088 02       		.uleb128 0x2
+ 159 0089 08       		.byte	0x8
+ 160 008a 04       		.byte	0x4
+ 161 008b 35000000 		.4byte	.LASF12
+ 162 008f 02       		.uleb128 0x2
+ 163 0090 01       		.byte	0x1
+ 164 0091 08       		.byte	0x8
+ 165 0092 11020000 		.4byte	.LASF13
+ 166 0096 02       		.uleb128 0x2
+ 167 0097 08       		.byte	0x8
+ 168 0098 04       		.byte	0x4
+ 169 0099 A5020000 		.4byte	.LASF14
+ 170 009d 03       		.uleb128 0x3
+ 171 009e 0F010000 		.4byte	.LASF15
+ 172 00a2 04       		.byte	0x4
+ 173 00a3 53       		.byte	0x53
+ 174 00a4 68000000 		.4byte	0x68
+ 175 00a8 03       		.uleb128 0x3
+ 176 00a9 A9010000 		.4byte	.LASF16
+ 177 00ad 04       		.byte	0x4
+ 178 00ae 54       		.byte	0x54
+ 179 00af 6F000000 		.4byte	0x6f
+ 180 00b3 03       		.uleb128 0x3
+ 181 00b4 6E020000 		.4byte	.LASF17
+ 182 00b8 05       		.byte	0x5
+ 183 00b9 4D       		.byte	0x4d
+ 184 00ba A8000000 		.4byte	0xa8
+ 185 00be 03       		.uleb128 0x3
+ 186 00bf A1010000 		.4byte	.LASF18
+ 187 00c3 05       		.byte	0x5
+ 188 00c4 4F       		.byte	0x4f
+ 189 00c5 A8000000 		.4byte	0xa8
+ 190 00c9 03       		.uleb128 0x3
+ 191 00ca 55000000 		.4byte	.LASF19
+ 192 00ce 05       		.byte	0x5
+ 193 00cf 78       		.byte	0x78
+ 194 00d0 9D000000 		.4byte	0x9d
+ 195 00d4 02       		.uleb128 0x2
+ 196 00d5 04       		.byte	0x4
+ 197 00d6 07       		.byte	0x7
+ 198 00d7 FA010000 		.4byte	.LASF20
+ 199 00db 03       		.uleb128 0x3
+ 200 00dc 00000000 		.4byte	.LASF21
+ 201 00e0 06       		.byte	0x6
+ 202 00e1 82       		.byte	0x82
+ 203 00e2 2C000000 		.4byte	0x2c
+ 204 00e6 05       		.uleb128 0x5
+ 205 00e7 6F010000 		.4byte	.LASF37
+ 206 00eb 01       		.byte	0x1
+ 207 00ec 2C000000 		.4byte	0x2c
+ 208 00f0 07       		.byte	0x7
+ 209 00f1 57       		.byte	0x57
+ 210 00f2 09010000 		.4byte	0x109
+ 211 00f6 06       		.uleb128 0x6
+ 212 00f7 BD020000 		.4byte	.LASF22
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccNo1ndc.s 			page 6
+
+
+ 213 00fb 00       		.byte	0
+ 214 00fc 06       		.uleb128 0x6
+ 215 00fd CE020000 		.4byte	.LASF23
+ 216 0101 01       		.byte	0x1
+ 217 0102 06       		.uleb128 0x6
+ 218 0103 D7020000 		.4byte	.LASF24
+ 219 0107 02       		.byte	0x2
+ 220 0108 00       		.byte	0
+ 221 0109 03       		.uleb128 0x3
+ 222 010a 63010000 		.4byte	.LASF25
+ 223 010e 07       		.byte	0x7
+ 224 010f 5E       		.byte	0x5e
+ 225 0110 E6000000 		.4byte	0xe6
+ 226 0114 07       		.uleb128 0x7
+ 227 0115 62000000 		.4byte	.LASF38
+ 228 0119 01       		.byte	0x1
+ 229 011a 37       		.byte	0x37
+ 230 011b DB000000 		.4byte	0xdb
+ 231 011f 00000000 		.4byte	.LFB110
+ 232 0123 28000000 		.4byte	.LFE110-.LFB110
+ 233 0127 01       		.uleb128 0x1
+ 234 0128 9C       		.byte	0x9c
+ 235 0129 5E010000 		.4byte	0x15e
+ 236 012d 08       		.uleb128 0x8
+ 237 012e 95020000 		.4byte	.LASF39
+ 238 0132 01       		.byte	0x1
+ 239 0133 37       		.byte	0x37
+ 240 0134 09010000 		.4byte	0x109
+ 241 0138 00000000 		.4byte	.LLST0
+ 242 013c 09       		.uleb128 0x9
+ 243 013d CA010000 		.4byte	.LASF40
+ 244 0141 01       		.byte	0x1
+ 245 0142 39       		.byte	0x39
+ 246 0143 DB000000 		.4byte	0xdb
+ 247 0147 53000000 		.4byte	.LLST1
+ 248 014b 0A       		.uleb128 0xa
+ 249 014c 10000000 		.4byte	.LVL2
+ 250 0150 A6010000 		.4byte	0x1a6
+ 251 0154 0A       		.uleb128 0xa
+ 252 0155 18000000 		.4byte	.LVL4
+ 253 0159 B1010000 		.4byte	0x1b1
+ 254 015d 00       		.byte	0
+ 255 015e 0B       		.uleb128 0xb
+ 256 015f 3E010000 		.4byte	.LASF26
+ 257 0163 08       		.byte	0x8
+ 258 0164 40       		.byte	0x40
+ 259 0165 B3000000 		.4byte	0xb3
+ 260 0169 0B       		.uleb128 0xb
+ 261 016a 3C000000 		.4byte	.LASF27
+ 262 016e 08       		.byte	0x8
+ 263 016f 47       		.byte	0x47
+ 264 0170 BE000000 		.4byte	0xbe
+ 265 0174 0B       		.uleb128 0xb
+ 266 0175 D1010000 		.4byte	.LASF28
+ 267 0179 08       		.byte	0x8
+ 268 017a 4A       		.byte	0x4a
+ 269 017b B3000000 		.4byte	0xb3
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccNo1ndc.s 			page 7
+
+
+ 270 017f 0B       		.uleb128 0xb
+ 271 0180 7B010000 		.4byte	.LASF29
+ 272 0184 09       		.byte	0x9
+ 273 0185 48       		.byte	0x48
+ 274 0186 C9000000 		.4byte	0xc9
+ 275 018a 0B       		.uleb128 0xb
+ 276 018b 76020000 		.4byte	.LASF30
+ 277 018f 0A       		.byte	0xa
+ 278 0190 44       		.byte	0x44
+ 279 0191 B3000000 		.4byte	0xb3
+ 280 0195 0C       		.uleb128 0xc
+ 281 0196 56010000 		.4byte	.LASF31
+ 282 019a 0B       		.byte	0xb
+ 283 019b 1207     		.2byte	0x712
+ 284 019d A1010000 		.4byte	0x1a1
+ 285 01a1 0D       		.uleb128 0xd
+ 286 01a2 76000000 		.4byte	0x76
+ 287 01a6 0E       		.uleb128 0xe
+ 288 01a7 E4010000 		.4byte	.LASF32
+ 289 01ab E4010000 		.4byte	.LASF32
+ 290 01af 0C       		.byte	0xc
+ 291 01b0 29       		.byte	0x29
+ 292 01b1 0E       		.uleb128 0xe
+ 293 01b2 0A000000 		.4byte	.LASF33
+ 294 01b6 0A000000 		.4byte	.LASF33
+ 295 01ba 0D       		.byte	0xd
+ 296 01bb 29       		.byte	0x29
+ 297 01bc 00       		.byte	0
+ 298              		.section	.debug_abbrev,"",%progbits
+ 299              	.Ldebug_abbrev0:
+ 300 0000 01       		.uleb128 0x1
+ 301 0001 11       		.uleb128 0x11
+ 302 0002 01       		.byte	0x1
+ 303 0003 25       		.uleb128 0x25
+ 304 0004 0E       		.uleb128 0xe
+ 305 0005 13       		.uleb128 0x13
+ 306 0006 0B       		.uleb128 0xb
+ 307 0007 03       		.uleb128 0x3
+ 308 0008 0E       		.uleb128 0xe
+ 309 0009 1B       		.uleb128 0x1b
+ 310 000a 0E       		.uleb128 0xe
+ 311 000b 55       		.uleb128 0x55
+ 312 000c 17       		.uleb128 0x17
+ 313 000d 11       		.uleb128 0x11
+ 314 000e 01       		.uleb128 0x1
+ 315 000f 10       		.uleb128 0x10
+ 316 0010 17       		.uleb128 0x17
+ 317 0011 00       		.byte	0
+ 318 0012 00       		.byte	0
+ 319 0013 02       		.uleb128 0x2
+ 320 0014 24       		.uleb128 0x24
+ 321 0015 00       		.byte	0
+ 322 0016 0B       		.uleb128 0xb
+ 323 0017 0B       		.uleb128 0xb
+ 324 0018 3E       		.uleb128 0x3e
+ 325 0019 0B       		.uleb128 0xb
+ 326 001a 03       		.uleb128 0x3
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccNo1ndc.s 			page 8
+
+
+ 327 001b 0E       		.uleb128 0xe
+ 328 001c 00       		.byte	0
+ 329 001d 00       		.byte	0
+ 330 001e 03       		.uleb128 0x3
+ 331 001f 16       		.uleb128 0x16
+ 332 0020 00       		.byte	0
+ 333 0021 03       		.uleb128 0x3
+ 334 0022 0E       		.uleb128 0xe
+ 335 0023 3A       		.uleb128 0x3a
+ 336 0024 0B       		.uleb128 0xb
+ 337 0025 3B       		.uleb128 0x3b
+ 338 0026 0B       		.uleb128 0xb
+ 339 0027 49       		.uleb128 0x49
+ 340 0028 13       		.uleb128 0x13
+ 341 0029 00       		.byte	0
+ 342 002a 00       		.byte	0
+ 343 002b 04       		.uleb128 0x4
+ 344 002c 24       		.uleb128 0x24
+ 345 002d 00       		.byte	0
+ 346 002e 0B       		.uleb128 0xb
+ 347 002f 0B       		.uleb128 0xb
+ 348 0030 3E       		.uleb128 0x3e
+ 349 0031 0B       		.uleb128 0xb
+ 350 0032 03       		.uleb128 0x3
+ 351 0033 08       		.uleb128 0x8
+ 352 0034 00       		.byte	0
+ 353 0035 00       		.byte	0
+ 354 0036 05       		.uleb128 0x5
+ 355 0037 04       		.uleb128 0x4
+ 356 0038 01       		.byte	0x1
+ 357 0039 03       		.uleb128 0x3
+ 358 003a 0E       		.uleb128 0xe
+ 359 003b 0B       		.uleb128 0xb
+ 360 003c 0B       		.uleb128 0xb
+ 361 003d 49       		.uleb128 0x49
+ 362 003e 13       		.uleb128 0x13
+ 363 003f 3A       		.uleb128 0x3a
+ 364 0040 0B       		.uleb128 0xb
+ 365 0041 3B       		.uleb128 0x3b
+ 366 0042 0B       		.uleb128 0xb
+ 367 0043 01       		.uleb128 0x1
+ 368 0044 13       		.uleb128 0x13
+ 369 0045 00       		.byte	0
+ 370 0046 00       		.byte	0
+ 371 0047 06       		.uleb128 0x6
+ 372 0048 28       		.uleb128 0x28
+ 373 0049 00       		.byte	0
+ 374 004a 03       		.uleb128 0x3
+ 375 004b 0E       		.uleb128 0xe
+ 376 004c 1C       		.uleb128 0x1c
+ 377 004d 0B       		.uleb128 0xb
+ 378 004e 00       		.byte	0
+ 379 004f 00       		.byte	0
+ 380 0050 07       		.uleb128 0x7
+ 381 0051 2E       		.uleb128 0x2e
+ 382 0052 01       		.byte	0x1
+ 383 0053 3F       		.uleb128 0x3f
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccNo1ndc.s 			page 9
+
+
+ 384 0054 19       		.uleb128 0x19
+ 385 0055 03       		.uleb128 0x3
+ 386 0056 0E       		.uleb128 0xe
+ 387 0057 3A       		.uleb128 0x3a
+ 388 0058 0B       		.uleb128 0xb
+ 389 0059 3B       		.uleb128 0x3b
+ 390 005a 0B       		.uleb128 0xb
+ 391 005b 27       		.uleb128 0x27
+ 392 005c 19       		.uleb128 0x19
+ 393 005d 49       		.uleb128 0x49
+ 394 005e 13       		.uleb128 0x13
+ 395 005f 11       		.uleb128 0x11
+ 396 0060 01       		.uleb128 0x1
+ 397 0061 12       		.uleb128 0x12
+ 398 0062 06       		.uleb128 0x6
+ 399 0063 40       		.uleb128 0x40
+ 400 0064 18       		.uleb128 0x18
+ 401 0065 9742     		.uleb128 0x2117
+ 402 0067 19       		.uleb128 0x19
+ 403 0068 01       		.uleb128 0x1
+ 404 0069 13       		.uleb128 0x13
+ 405 006a 00       		.byte	0
+ 406 006b 00       		.byte	0
+ 407 006c 08       		.uleb128 0x8
+ 408 006d 05       		.uleb128 0x5
+ 409 006e 00       		.byte	0
+ 410 006f 03       		.uleb128 0x3
+ 411 0070 0E       		.uleb128 0xe
+ 412 0071 3A       		.uleb128 0x3a
+ 413 0072 0B       		.uleb128 0xb
+ 414 0073 3B       		.uleb128 0x3b
+ 415 0074 0B       		.uleb128 0xb
+ 416 0075 49       		.uleb128 0x49
+ 417 0076 13       		.uleb128 0x13
+ 418 0077 02       		.uleb128 0x2
+ 419 0078 17       		.uleb128 0x17
+ 420 0079 00       		.byte	0
+ 421 007a 00       		.byte	0
+ 422 007b 09       		.uleb128 0x9
+ 423 007c 34       		.uleb128 0x34
+ 424 007d 00       		.byte	0
+ 425 007e 03       		.uleb128 0x3
+ 426 007f 0E       		.uleb128 0xe
+ 427 0080 3A       		.uleb128 0x3a
+ 428 0081 0B       		.uleb128 0xb
+ 429 0082 3B       		.uleb128 0x3b
+ 430 0083 0B       		.uleb128 0xb
+ 431 0084 49       		.uleb128 0x49
+ 432 0085 13       		.uleb128 0x13
+ 433 0086 02       		.uleb128 0x2
+ 434 0087 17       		.uleb128 0x17
+ 435 0088 00       		.byte	0
+ 436 0089 00       		.byte	0
+ 437 008a 0A       		.uleb128 0xa
+ 438 008b 898201   		.uleb128 0x4109
+ 439 008e 00       		.byte	0
+ 440 008f 11       		.uleb128 0x11
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccNo1ndc.s 			page 10
+
+
+ 441 0090 01       		.uleb128 0x1
+ 442 0091 31       		.uleb128 0x31
+ 443 0092 13       		.uleb128 0x13
+ 444 0093 00       		.byte	0
+ 445 0094 00       		.byte	0
+ 446 0095 0B       		.uleb128 0xb
+ 447 0096 34       		.uleb128 0x34
+ 448 0097 00       		.byte	0
+ 449 0098 03       		.uleb128 0x3
+ 450 0099 0E       		.uleb128 0xe
+ 451 009a 3A       		.uleb128 0x3a
+ 452 009b 0B       		.uleb128 0xb
+ 453 009c 3B       		.uleb128 0x3b
+ 454 009d 0B       		.uleb128 0xb
+ 455 009e 49       		.uleb128 0x49
+ 456 009f 13       		.uleb128 0x13
+ 457 00a0 3F       		.uleb128 0x3f
+ 458 00a1 19       		.uleb128 0x19
+ 459 00a2 3C       		.uleb128 0x3c
+ 460 00a3 19       		.uleb128 0x19
+ 461 00a4 00       		.byte	0
+ 462 00a5 00       		.byte	0
+ 463 00a6 0C       		.uleb128 0xc
+ 464 00a7 34       		.uleb128 0x34
+ 465 00a8 00       		.byte	0
+ 466 00a9 03       		.uleb128 0x3
+ 467 00aa 0E       		.uleb128 0xe
+ 468 00ab 3A       		.uleb128 0x3a
+ 469 00ac 0B       		.uleb128 0xb
+ 470 00ad 3B       		.uleb128 0x3b
+ 471 00ae 05       		.uleb128 0x5
+ 472 00af 49       		.uleb128 0x49
+ 473 00b0 13       		.uleb128 0x13
+ 474 00b1 3F       		.uleb128 0x3f
+ 475 00b2 19       		.uleb128 0x19
+ 476 00b3 3C       		.uleb128 0x3c
+ 477 00b4 19       		.uleb128 0x19
+ 478 00b5 00       		.byte	0
+ 479 00b6 00       		.byte	0
+ 480 00b7 0D       		.uleb128 0xd
+ 481 00b8 35       		.uleb128 0x35
+ 482 00b9 00       		.byte	0
+ 483 00ba 49       		.uleb128 0x49
+ 484 00bb 13       		.uleb128 0x13
+ 485 00bc 00       		.byte	0
+ 486 00bd 00       		.byte	0
+ 487 00be 0E       		.uleb128 0xe
+ 488 00bf 2E       		.uleb128 0x2e
+ 489 00c0 00       		.byte	0
+ 490 00c1 3F       		.uleb128 0x3f
+ 491 00c2 19       		.uleb128 0x19
+ 492 00c3 3C       		.uleb128 0x3c
+ 493 00c4 19       		.uleb128 0x19
+ 494 00c5 6E       		.uleb128 0x6e
+ 495 00c6 0E       		.uleb128 0xe
+ 496 00c7 03       		.uleb128 0x3
+ 497 00c8 0E       		.uleb128 0xe
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccNo1ndc.s 			page 11
+
+
+ 498 00c9 3A       		.uleb128 0x3a
+ 499 00ca 0B       		.uleb128 0xb
+ 500 00cb 3B       		.uleb128 0x3b
+ 501 00cc 0B       		.uleb128 0xb
+ 502 00cd 00       		.byte	0
+ 503 00ce 00       		.byte	0
+ 504 00cf 00       		.byte	0
+ 505              		.section	.debug_loc,"",%progbits
+ 506              	.Ldebug_loc0:
+ 507              	.LLST0:
+ 508 0000 00000000 		.4byte	.LVL0
+ 509 0004 0F000000 		.4byte	.LVL2-1
+ 510 0008 0100     		.2byte	0x1
+ 511 000a 50       		.byte	0x50
+ 512 000b 0F000000 		.4byte	.LVL2-1
+ 513 000f 14000000 		.4byte	.LVL3
+ 514 0013 0400     		.2byte	0x4
+ 515 0015 F3       		.byte	0xf3
+ 516 0016 01       		.uleb128 0x1
+ 517 0017 50       		.byte	0x50
+ 518 0018 9F       		.byte	0x9f
+ 519 0019 14000000 		.4byte	.LVL3
+ 520 001d 17000000 		.4byte	.LVL4-1
+ 521 0021 0100     		.2byte	0x1
+ 522 0023 50       		.byte	0x50
+ 523 0024 17000000 		.4byte	.LVL4-1
+ 524 0028 1C000000 		.4byte	.LVL5
+ 525 002c 0400     		.2byte	0x4
+ 526 002e F3       		.byte	0xf3
+ 527 002f 01       		.uleb128 0x1
+ 528 0030 50       		.byte	0x50
+ 529 0031 9F       		.byte	0x9f
+ 530 0032 1C000000 		.4byte	.LVL5
+ 531 0036 1E000000 		.4byte	.LVL6
+ 532 003a 0100     		.2byte	0x1
+ 533 003c 50       		.byte	0x50
+ 534 003d 1E000000 		.4byte	.LVL6
+ 535 0041 28000000 		.4byte	.LFE110
+ 536 0045 0400     		.2byte	0x4
+ 537 0047 F3       		.byte	0xf3
+ 538 0048 01       		.uleb128 0x1
+ 539 0049 50       		.byte	0x50
+ 540 004a 9F       		.byte	0x9f
+ 541 004b 00000000 		.4byte	0
+ 542 004f 00000000 		.4byte	0
+ 543              	.LLST1:
+ 544 0053 02000000 		.4byte	.LVL1
+ 545 0057 26000000 		.4byte	.LVL7
+ 546 005b 0200     		.2byte	0x2
+ 547 005d 30       		.byte	0x30
+ 548 005e 9F       		.byte	0x9f
+ 549 005f 26000000 		.4byte	.LVL7
+ 550 0063 28000000 		.4byte	.LFE110
+ 551 0067 0100     		.2byte	0x1
+ 552 0069 50       		.byte	0x50
+ 553 006a 00000000 		.4byte	0
+ 554 006e 00000000 		.4byte	0
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccNo1ndc.s 			page 12
+
+
+ 555              		.section	.debug_aranges,"",%progbits
+ 556 0000 1C000000 		.4byte	0x1c
+ 557 0004 0200     		.2byte	0x2
+ 558 0006 00000000 		.4byte	.Ldebug_info0
+ 559 000a 04       		.byte	0x4
+ 560 000b 00       		.byte	0
+ 561 000c 0000     		.2byte	0
+ 562 000e 0000     		.2byte	0
+ 563 0010 00000000 		.4byte	.LFB110
+ 564 0014 28000000 		.4byte	.LFE110-.LFB110
+ 565 0018 00000000 		.4byte	0
+ 566 001c 00000000 		.4byte	0
+ 567              		.section	.debug_ranges,"",%progbits
+ 568              	.Ldebug_ranges0:
+ 569 0000 00000000 		.4byte	.LFB110
+ 570 0004 28000000 		.4byte	.LFE110
+ 571 0008 00000000 		.4byte	0
+ 572 000c 00000000 		.4byte	0
+ 573              		.section	.debug_line,"",%progbits
+ 574              	.Ldebug_line0:
+ 575 0000 36020000 		.section	.debug_str,"MS",%progbits,1
+ 575      02001802 
+ 575      00000201 
+ 575      FB0E0D00 
+ 575      01010101 
+ 576              	.LASF21:
+ 577 0000 626F6F6C 		.ascii	"boolean_t\000"
+ 577      65616E5F 
+ 577      7400
+ 578              	.LASF33:
+ 579 000a 42555454 		.ascii	"BUTTON_2_Read\000"
+ 579      4F4E5F32 
+ 579      5F526561 
+ 579      6400
+ 580              	.LASF9:
+ 581 0018 5F5F696E 		.ascii	"__int32_t\000"
+ 581      7433325F 
+ 581      7400
+ 582              	.LASF3:
+ 583 0022 73686F72 		.ascii	"short unsigned int\000"
+ 583      7420756E 
+ 583      7369676E 
+ 583      65642069 
+ 583      6E7400
+ 584              	.LASF12:
+ 585 0035 646F7562 		.ascii	"double\000"
+ 585      6C6500
+ 586              	.LASF27:
+ 587 003c 45455F6F 		.ascii	"EE_oo_IRQ_suspend_status\000"
+ 587      6F5F4952 
+ 587      515F7375 
+ 587      7370656E 
+ 587      645F7374 
+ 588              	.LASF19:
+ 589 0055 45455F54 		.ascii	"EE_TID\000"
+ 589      494400
+ 590              	.LASF11:
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccNo1ndc.s 			page 13
+
+
+ 591 005c 666C6F61 		.ascii	"float\000"
+ 591      7400
+ 592              	.LASF38:
+ 593 0062 42555454 		.ascii	"BUTTON_IsPressed\000"
+ 593      4F4E5F49 
+ 593      73507265 
+ 593      73736564 
+ 593      00
+ 594              	.LASF1:
+ 595 0073 756E7369 		.ascii	"unsigned char\000"
+ 595      676E6564 
+ 595      20636861 
+ 595      7200
+ 596              	.LASF34:
+ 597 0081 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
+ 597      43313120 
+ 597      352E342E 
+ 597      31203230 
+ 597      31363036 
+ 598 00b4 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m3 -mthumb -g -O"
+ 598      20726576 
+ 598      6973696F 
+ 598      6E203233 
+ 598      37373135 
+ 599 00e7 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
+ 599      66756E63 
+ 599      74696F6E 
+ 599      2D736563 
+ 599      74696F6E 
+ 600              	.LASF15:
+ 601 010f 45455F49 		.ascii	"EE_INT32\000"
+ 601      4E543332 
+ 601      00
+ 602              	.LASF5:
+ 603 0118 6C6F6E67 		.ascii	"long unsigned int\000"
+ 603      20756E73 
+ 603      69676E65 
+ 603      6420696E 
+ 603      7400
+ 604              	.LASF35:
+ 605 012a 736F7572 		.ascii	"source\\bsw\\button.c\000"
+ 605      63655C62 
+ 605      73775C62 
+ 605      7574746F 
+ 605      6E2E6300 
+ 606              	.LASF26:
+ 607 013e 45455F6F 		.ascii	"EE_oo_IRQ_disable_count\000"
+ 607      6F5F4952 
+ 607      515F6469 
+ 607      7361626C 
+ 607      655F636F 
+ 608              	.LASF31:
+ 609 0156 49544D5F 		.ascii	"ITM_RxBuffer\000"
+ 609      52784275 
+ 609      66666572 
+ 609      00
+ 610              	.LASF25:
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccNo1ndc.s 			page 14
+
+
+ 611 0163 42555454 		.ascii	"BUTTON_id_t\000"
+ 611      4F4E5F69 
+ 611      645F7400 
+ 612              	.LASF37:
+ 613 016f 42555454 		.ascii	"BUTTON_id_e\000"
+ 613      4F4E5F69 
+ 613      645F6500 
+ 614              	.LASF29:
+ 615 017b 45455F73 		.ascii	"EE_std_endcycle_next_tid\000"
+ 615      74645F65 
+ 615      6E646379 
+ 615      636C655F 
+ 615      6E657874 
+ 616              	.LASF8:
+ 617 0194 756E7369 		.ascii	"unsigned int\000"
+ 617      676E6564 
+ 617      20696E74 
+ 617      00
+ 618              	.LASF18:
+ 619 01a1 45455F46 		.ascii	"EE_FREG\000"
+ 619      52454700 
+ 620              	.LASF16:
+ 621 01a9 45455F55 		.ascii	"EE_UINT32\000"
+ 621      494E5433 
+ 621      3200
+ 622              	.LASF7:
+ 623 01b3 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 623      206C6F6E 
+ 623      6720756E 
+ 623      7369676E 
+ 623      65642069 
+ 624              	.LASF40:
+ 625 01ca 72657375 		.ascii	"result\000"
+ 625      6C7400
+ 626              	.LASF28:
+ 627 01d1 45455F41 		.ascii	"EE_ApplicationMode\000"
+ 627      70706C69 
+ 627      63617469 
+ 627      6F6E4D6F 
+ 627      646500
+ 628              	.LASF32:
+ 629 01e4 42555454 		.ascii	"BUTTON_1_Read\000"
+ 629      4F4E5F31 
+ 629      5F526561 
+ 629      6400
+ 630              	.LASF10:
+ 631 01f2 696E7433 		.ascii	"int32_t\000"
+ 631      325F7400 
+ 632              	.LASF20:
+ 633 01fa 73697A65 		.ascii	"sizetype\000"
+ 633      74797065 
+ 633      00
+ 634              	.LASF6:
+ 635 0203 6C6F6E67 		.ascii	"long long int\000"
+ 635      206C6F6E 
+ 635      6720696E 
+ 635      7400
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccNo1ndc.s 			page 15
+
+
+ 636              	.LASF13:
+ 637 0211 63686172 		.ascii	"char\000"
+ 637      00
+ 638              	.LASF36:
+ 639 0216 443A5C48 		.ascii	"D:\\HDA\\1_sem\\Embedded System Design\\Lab\\Assign"
+ 639      44415C31 
+ 639      5F73656D 
+ 639      5C456D62 
+ 639      65646465 
+ 640 0244 6D656E74 		.ascii	"ment_1\\ReactionGame_OS\\ReactionGame.cydsn\000"
+ 640      5F315C52 
+ 640      65616374 
+ 640      696F6E47 
+ 640      616D655F 
+ 641              	.LASF17:
+ 642 026e 45455F55 		.ascii	"EE_UREG\000"
+ 642      52454700 
+ 643              	.LASF30:
+ 644 0276 45455F49 		.ascii	"EE_IRQ_nesting_level\000"
+ 644      52515F6E 
+ 644      65737469 
+ 644      6E675F6C 
+ 644      6576656C 
+ 645              	.LASF2:
+ 646 028b 73686F72 		.ascii	"short int\000"
+ 646      7420696E 
+ 646      7400
+ 647              	.LASF39:
+ 648 0295 42757474 		.ascii	"Button\000"
+ 648      6F6E00
+ 649              	.LASF4:
+ 650 029c 6C6F6E67 		.ascii	"long int\000"
+ 650      20696E74 
+ 650      00
+ 651              	.LASF14:
+ 652 02a5 6C6F6E67 		.ascii	"long double\000"
+ 652      20646F75 
+ 652      626C6500 
+ 653              	.LASF0:
+ 654 02b1 7369676E 		.ascii	"signed char\000"
+ 654      65642063 
+ 654      68617200 
+ 655              	.LASF22:
+ 656 02bd 42555454 		.ascii	"BUTTON_UNPRESSED\000"
+ 656      4F4E5F55 
+ 656      4E505245 
+ 656      53534544 
+ 656      00
+ 657              	.LASF23:
+ 658 02ce 42555454 		.ascii	"BUTTON_1\000"
+ 658      4F4E5F31 
+ 658      00
+ 659              	.LASF24:
+ 660 02d7 42555454 		.ascii	"BUTTON_2\000"
+ 660      4F4E5F32 
+ 660      00
+ 661              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran
+ARM GAS  C:\Users\rbhar\AppData\Local\Temp\ccNo1ndc.s 			page 16
+
+

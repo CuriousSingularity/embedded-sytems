@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<rte>
+	<configset>
+		<config name="version" 			value="Erika 1" />
+		<config name="path_out"			value=".\out" />
+		<config name="timertickperiod"	value="10" />
+		<config name="taskEvent"		value="tsk_EventDispatcher" />
+		<config name="taskCyclic"		value="tsk_CyclicDispatcher" />
+		
+		<!-- filename without extension. Generator will check for .h, .c templates -->
+		<template>
+			<config name="signal" 	value=".\template\signal"  />
+			<config name="type" 	value=".\template\type"  />
+		</template>
+	</configset>
+	
+	<signalclasses>
+		<signalclass name="adc" synchronisation="asynchronous"/>
+		<signalclass name="pwm" synchronisation="asynchronous"/>
+		<signalclass name="gpio" synchronisation="synchronous"/>
+    </signalclasses>
+
+	<signalobjects>
+		<signalobject name="joystick" description="Input signal for joystick position (ADC), range -100..100" signalclass="adc" indriver="default" outdriver="0" onDataUpdate="ev_joystick_onUpdate"></signalobject>
+		<signalobject name="engine" description="Output signal for engine speed (PWM)" signalclass="pwm" indriver="0" outdriver="default" onDataUpdate="ev_engine_onUpdate"></signalobject>
+		<signalobject name="brakeLight" description="Output signal for brakeLight (GPIO), ON / OFF" signalclass="gpio" indriver="0" outdriver="default" onDataUpdate="0"></signalobject>
+	</signalobjects>
+	
+	<runnables>
+		<cyclic>
+			<runnable name="run_readJoystick" component="SWC_application" cycletime="timertickperiod"/>
+		</cyclic>
+		<event>
+			<runnable name="run_calculateControl" component="SWC_application" event="ev_joystick_onUpdate"/>
+			<runnable name="run_setEngine" component="SWC_application" event="ev_engine_onUpdate"/>
+			<runnable name="run_setBrakeLight" component="SWC_application" event="ev_engine_onUpdate"/>
+		</event>
+	</runnables>
+</rte>

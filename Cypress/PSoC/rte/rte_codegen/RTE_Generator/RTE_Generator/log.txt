@@ -1,0 +1,24 @@
+RTE Generator  Erika 1
+Processing:  in/ecu.xml  based on version  Erika 1
+Checking the configuration...
+Creating the signalclasses...
+    class:  .\out\adc_signal.h
+    class:  .\out\adc_type.h
+    class:  .\out\adc_type.c
+    class:  .\out\pwm_signal.h
+    class:  .\out\pwm_type.h
+    class:  .\out\pwm_type.c
+    class:  .\out\gpio_signal.h
+    class:  .\out\gpio_type.h
+    class:  .\out\gpio_type.c
+Creating the signal object pool...
+   Writing Header File...
+      Object:  joystick
+      Object:  engine
+      Object:  brakeLight
+   Writing Source File...
+      Object joystick
+      Object engine
+      Object brakeLight
+Creating the signal activation engine...
+   Writing Source File...
