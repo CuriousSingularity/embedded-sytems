@@ -65,7 +65,7 @@ RC_t ADC_Init(void)
     ADC_2_Start();
     ADC_2_StartConvert();
     
-    	//Read data from the MCAL driver
+	//Read data from the MCAL driver
     ADC_1_IsEndConversion(ADC_1_WAIT_FOR_RESULT);
     ADC_2_IsEndConversion(ADC_2_WAIT_FOR_RESULT);
     

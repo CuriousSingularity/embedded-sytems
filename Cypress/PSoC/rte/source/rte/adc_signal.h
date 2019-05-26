@@ -225,9 +225,11 @@ inline RC_t RTE_ADC_set(ADC_t * const signal, const ADC_data_t value  )
 
 
    //Todo: critical section
+    GetResource(rs_adcRead);
     signal->value  = value;
 	signal->age    = 0;
 	signal->status = RTE_SIGNALSTATUS_VALID;
+    ReleaseResource(rs_adcRead);
 
 #ifdef ADC_ASYNCHRONOUS
 	SetEvent( tsk_EventDispatcher, signal->pSigCfg->evOnUpdate);

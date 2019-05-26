@@ -108,6 +108,13 @@ TASK(tsk_Init)
     TerminateTask();
 }
 
+
+/**
+ * The Task declaration
+ * The tsk_CyclicDispatcher is a cyclic task which is activated
+ * every TSK_CYCLICDISPATCHER_CYCLIC_TIME miliseconds.
+ * The task invokes all the runnable with its appropriate time.
+ */
 TASK(tsk_CyclicDispatcher)
 {
     uint16_t        Index = 0;
@@ -126,12 +133,14 @@ TASK(tsk_CyclicDispatcher)
             RTE_cyclicActivationTable[Index].run();
             GetAlarm(alrm_DM_cyclicDispatcherTsk, &RemainingTicks);
             CancelAlarm(alrm_DM_cyclicDispatcherTsk);
-            
+
+#if (defined(VERBOSE) && (VERBOSE))            
             UART_Write("CRunnable ");
             UART_WriteNumber(Index);
             UART_Write(" : ");
             UART_WriteNumber(DEADLINE_MONITORING_RUNNABLE - RemainingTicks);
             UART_Write("\n\n");
+#endif
         }
     }
     
@@ -146,6 +155,12 @@ TASK(tsk_CyclicDispatcher)
 }
 
 
+/**
+ * The Task declaration
+ * The tsk_EventDispatcher is an event handler task which is activated
+ * when an event corresponding the task is activated, the corresponding 
+ * runnables will be invoked.
+ */
 TASK(tsk_EventDispatcher)
 {
     TickType        RemainingTicks = 0;
@@ -171,12 +186,14 @@ TASK(tsk_EventDispatcher)
                 RTE_eventActivationTable[Index].run();
                 GetAlarm(alrm_DM_eventDispatcherTsk, &RemainingTicks);
                 CancelAlarm(alrm_DM_eventDispatcherTsk);
-                
+
+#if (defined(VERBOSE) && (VERBOSE))
                 UART_Write("ERunnable ");
                 UART_WriteNumber(Index);
                 UART_Write(" : ");
                 UART_WriteNumber(DEADLINE_MONITORING_RUNNABLE - RemainingTicks);
                 UART_Write("\n\n");
+#endif
             }
         }
     }
@@ -185,6 +202,12 @@ TASK(tsk_EventDispatcher)
 }
 
 
+/**
+ * The Task declaration
+ * The tsk_Background is a background task which is used to feed watchdog,
+ * alive monitoring of all the runnables. It is used to flush the log messages
+ * to console.
+ */
 TASK(tsk_Background)
 {
     while (1)
@@ -205,6 +228,11 @@ TASK(tsk_Background)
 }
 
 
+/**
+ * The Task declaration
+ * The tsk_Errorhandler is used to handle shutdown event and deadline monitoring
+ * events.
+ */
 TASK(tsk_Errorhandler)
 {
     EventMaskType   EventsReceived = 0;

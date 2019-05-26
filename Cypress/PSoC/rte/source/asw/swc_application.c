@@ -1,14 +1,18 @@
 
 #include "project.h"
-#include "rte_signalpool.h"
-
 #include "uart.h"
 #include "watchdog.h"
 #include "adc_signal.h"
 #include "swc_application.h"
+#include "rte_signalpool.h"
 
 sint8_t Offset_V = 0, Offset_H = 0;
 
+/**
+ * The runnable which reads the Joystick values
+ * @para void
+ * @return void
+ */
 void run_readJoystick(void)
 {
     RC_t ret = RC_SUCCESS;
@@ -23,6 +27,12 @@ void run_readJoystick(void)
     }
 }
 
+
+/**
+ * The runnable calculates the engine speed based on the acceleration pedel
+ * @para void
+ * @return void
+ */
 void run_calculateControl(void)
 {
     WD_Alive(RUN_CALCULATECONTROL);
@@ -37,17 +47,23 @@ void run_calculateControl(void)
         JoyStickValues.Channel1 -= Offset_V;
         JoyStickValues.Channel2 -= Offset_H;
         
-        //UART_Write("JOYSTICK H : ");UART_WriteNumber(JoyStickValues.Channel1);UART_Write("\n");
-        //UART_Write("JOYSTICK V : ");UART_WriteNumber(JoyStickValues.Channel2);UART_Write("\n\n");
+        //UART_Write("JOYSTICK V : ");UART_WriteNumber(JoyStickValues.Channel1);UART_Write("\n");
+        //UART_Write("JOYSTICK H : ");UART_WriteNumber(JoyStickValues.Channel2);UART_Write("\n\n");
         
         // check if the acceleration is pressed
-        if ((JoyStickValues.Channel1) > 0 && (JoyStickValues.Channel2) > 0)
+#if (defined(DUAL_CHANNEL) && DUAL_CHANNEL)
+        if ((JoyStickValues.Channel1) > 0 && (JoyStickValues.Channel2) > 0 && 
+            (JoyStickValues.Channel1) < MAX_JOYSTICK_VALUE && (JoyStickValues.Channel2) < MAX_JOYSTICK_VALUE)
+#else
+        if ((JoyStickValues.Channel1) > 0 && (JoyStickValues.Channel1) < MAX_JOYSTICK_VALUE)
+#endif
         {
             sint8_t Vertical    = JoyStickValues.Channel1;
             sint8_t Horizontal  = JoyStickValues.Channel2;
             volatile PWM_data_t NewEngineValue = 
             {
-                .Channel1 = 2 * (Vertical < Horizontal ? Vertical : Horizontal),
+                //.Channel1 = 2 * (Vertical < Horizontal ? Vertical : Horizontal),
+                .Channel1 = 2 * Vertical,
             };
             
             RTE_PWM_set(&ENGINE_signal, NewEngineValue);
@@ -66,6 +82,12 @@ void run_calculateControl(void)
     }
 }
 
+
+/**
+ * The runnable which sets the engine speed
+ * @para void
+ * @return void
+ */
 void run_setEngine(void)
 {
     RC_t ret = RC_SUCCESS;
@@ -81,6 +103,12 @@ void run_setEngine(void)
     }
 }
 
+
+/**
+ * The runnable which sets the brake light based on acceleration pedel
+ * @para void
+ * @return void
+ */
 void run_setBrakeLight(void)
 {
     RC_t ret = RC_SUCCESS;
